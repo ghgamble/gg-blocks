@@ -1,0 +1,48 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "ggb/homepage-hero",
+    "title": "Hero Parallax",
+    "category": "gg-blocks",
+    "description": "Full-width hero section with a parallax image on desktop",
+    "supports": {
+      "align": false,
+      "html": false
+    },
+    "attributes": {
+      "mediaUrl": {
+        "type": "string"
+      },
+      "mediaType": {
+        "type": "string",
+        "default": "image"
+      },
+      "heading": {
+        "type": "string",
+        "source": "html",
+        "selector": "h1"
+      },
+      "subheading": {
+        "type": "string",
+        "source": "html",
+        "selector": "p"
+      },
+      "primaryButtonText": {
+        "type": "string",
+        "default": "Learn More"
+      },
+      "primaryButtonUrl": {
+        "type": "string"
+      },
+      "secondaryButtonText": {
+        "type": "string"
+      },
+      "secondaryButtonUrl": {
+        "type": "string"
+      }
+    },
+    "editorScript": "file:./index.js",
+    "editorStyle": "file:./index.css",
+    "style": "file:./style-index.css"
+}
+  
