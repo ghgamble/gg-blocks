@@ -1,0 +1,65 @@
+.gg-hero-parallax {
+	height: 80vh;
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-color: black !important;
+	display: flex;
+	align-items: center;
+	position: relative;
+	overflow: hidden;
+	z-index: 0;
+	will-change: transform;
+
+	@media (max-width: 768px) {
+		background-position: center center;
+	}
+
+	.inner-content {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-wrap: wrap;
+		width: 100%;
+		gap: 3rem;
+		padding: 4rem 0;
+		position: relative;
+		z-index: 1;
+	}
+
+	.left-header {
+		flex: 1 1 40%;
+		display: flex;
+		align-items: center;
+		height: 100%;
+
+		h1 {
+			font-size: clamp(2rem, 5vw, 4rem);
+			line-height: 1.2;
+			margin: auto 0;
+			color: white;
+		}
+	}
+
+	.left-ctas {
+		flex: 1 1 55%;
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+
+		.top-cta,
+		.bottom-cta {
+			.heading h3 {
+				font-size: 1.5rem;
+				margin-bottom: 0.5rem;
+				color: white;
+			}
+
+			.content p {
+				font-size: 1rem;
+				line-height: 1.6;
+				color: white;
+			}
+		}
+	}
+}
