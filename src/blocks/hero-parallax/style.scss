@@ -4,7 +4,7 @@
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-color: black !important;
-    color: #fff;
+	color: #fff;
 	display: flex;
 	align-items: center;
 	position: relative;
@@ -26,6 +26,13 @@
 		padding: 4rem 0;
 		position: relative;
 		z-index: 1;
+
+		@media (max-width: 768px) {
+			margin-left: 1rem;
+			margin-right: 1rem;
+			gap: 1.5rem;
+			padding-top: 1rem;
+		}
 	}
 
 	.left-header {
@@ -42,6 +49,10 @@
 			line-height: 1.2;
 			margin: 0;
 			color: white;
+
+			@media (max-width: 768px) {
+				font-size: clamp(2.5rem, 5vw, 4rem);
+			}
 		}
 	}
 
@@ -55,14 +66,19 @@
 		// ✅ For new flexible InnerBlocks version
 		.wp-block-heading {
 			font-size: 1.5rem;
-			margin-bottom: 0.5rem;
+			line-height: 1rem;
 			color: white;
+			margin-block-start: 0;
 		}
 
 		.wp-block-paragraph {
 			font-size: 1rem;
 			line-height: 1.6;
 			color: white;
+		}
+
+		p {
+			margin-top: 0;
 		}
 
 		.wp-block-button .wp-block-button__link {
@@ -94,7 +110,7 @@
 				.wp-block-paragraph,
 				p {
 					font-size: 1rem;
-					line-height: 1.6;
+					line-height: 1rem;
 					color: white;
 				}
 

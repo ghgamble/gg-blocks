@@ -20,7 +20,7 @@ export default function save({ attributes }) {
 				{`
 					<script>
                         (function () {
-                            const hero = document.querySelector('.gg-hero-parallax');
+                            const hero = document.querySelector('.inner-content');
                             if (!hero) return;
 
                             hero.style.willChange = 'transform';
