@@ -1,22 +1,15 @@
 import {
-	InspectorControls,
+	useBlockProps,
 	MediaUpload,
 	MediaUploadCheck,
-	RichText,
-	useBlockProps,
+	InspectorControls,
+	InnerBlocks,
 } from '@wordpress/block-editor';
-import { PanelBody, TextControl, Button } from '@wordpress/components';
+import { PanelBody, Button } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
 export default function Edit({ attributes, setAttributes }) {
-	const {
-		mediaUrl,
-		heading,
-		ctaHeadingTop,
-		ctaParagraphTop,
-		ctaHeadingBottom,
-		ctaParagraphBottom,
-	} = attributes;
+	const { mediaUrl } = attributes;
 
 	const blockProps = useBlockProps({
 		className: 'gg-hero-parallax alignfull',
@@ -29,11 +22,7 @@ export default function Edit({ attributes, setAttributes }) {
 		<>
 			<InspectorControls>
 				<PanelBody title={__('Hero Settings', 'gg-blocks')} initialOpen={true}>
-					<TextControl
-						label={__('Heading Text', 'gg-blocks')}
-						value={heading}
-						onChange={(value) => setAttributes({ heading: value })}
-					/>
+					{/* other settings here */}
 				</PanelBody>
 			</InspectorControls>
 
@@ -51,53 +40,29 @@ export default function Edit({ attributes, setAttributes }) {
 				</MediaUploadCheck>
 
 				<div className="alignwide inner-content">
-					<div className="left-header">
-						<RichText
-							tagName="h1"
-							value={heading}
-							onChange={(value) => setAttributes({ heading: value })}
-							placeholder={__('Your standout headline here…', 'gg-blocks')}
-						/>
-					</div>
-					<div className="left-ctas">
-						<div className="top-cta">
-							<span className="heading">
-								<RichText
-									tagName="h3"
-									value={ctaHeadingTop}
-									onChange={(value) => setAttributes({ ctaHeadingTop: value })}
-									placeholder={__('CTA heading…', 'gg-blocks')}
-								/>
-							</span>
-							<span className="content">
-								<RichText
-									tagName="p"
-									value={ctaParagraphTop}
-									onChange={(value) => setAttributes({ ctaParagraphTop: value })}
-									placeholder={__('CTA content…', 'gg-blocks')}
-								/>
-							</span>
-						</div>
-
-						<div className="bottom-cta">
-							<span className="heading">
-								<RichText
-									tagName="h3"
-									value={ctaHeadingBottom}
-									onChange={(value) => setAttributes({ ctaHeadingBottom: value })}
-									placeholder={__('CTA heading…', 'gg-blocks')}
-								/>
-							</span>
-							<span className="content">
-								<RichText
-									tagName="p"
-									value={ctaParagraphBottom}
-									onChange={(value) => setAttributes({ ctaParagraphBottom: value })}
-									placeholder={__('CTA content…', 'gg-blocks')}
-								/>
-							</span>
-						</div>
-					</div>
+					<InnerBlocks
+						allowedBlocks={['core/group']}
+						template={[
+							[
+								'core/group',
+								{ className: 'left-header' },
+								[
+									['core/heading', { placeholder: 'Your standout headline here…' }],
+								],
+							],
+							[
+								'core/group',
+								{ className: 'left-ctas' },
+								[
+									['core/heading', { placeholder: 'CTA one' }],
+									['core/paragraph', { placeholder: 'CTA two description…' }],
+									['core/heading', { placeholder: 'CTA two' }],
+									['core/paragraph', { placeholder: 'CTA two description…' }],
+								],
+							],
+						]}
+						templateLock={false}
+					/>
 				</div>
 			</div>
 		</>

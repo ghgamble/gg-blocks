@@ -1,49 +1,25 @@
 {
-  "$schema": "https://schemas.wp.org/trunk/block.json",
-  "apiVersion": 3,
-  "name": "ggb/homepage-hero",
-  "title": "Hero Parallax",
-  "category": "gg-blocks",
-  "description": "Full-width hero section with a parallax image on desktop",
-  "supports": {
-    "align": false,
-    "html": false
-  },
-  "attributes": {
-    "mediaUrl": {
-      "type": "string"
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "ggb/hero-parallax",
+    "title": "Hero Parallax",
+    "category": "gg-blocks",
+    "description": "Full-width hero section with a parallax image and flexible native block content",
+    "supports": {
+      "align": false,
+      "html": false
     },
-    "mediaType": {
-      "type": "string",
-      "default": "image"
+    "attributes": {
+      "mediaUrl": {
+        "type": "string"
+      },
+      "mediaType": {
+        "type": "string",
+        "default": "image"
+      }
     },
-    "heading": {
-      "type": "string",
-      "source": "html",
-      "selector": "h1"
-    },
-    "ctaHeadingTop": {
-      "type": "string",
-      "source": "html",
-      "selector": "h3"
-    },
-    "ctaParagraphTop": {
-      "type": "string",
-      "source": "html",
-      "selector": "p"
-    },
-    "ctaHeadingBottom": {
-      "type": "string",
-      "source": "html",
-      "selector": "h3"
-    },
-    "ctaParagraphBottom": {
-      "type": "string",
-      "source": "html",
-      "selector": "p"
-    }
-  },
-  "editorScript": "file:./index.js",
-  "editorStyle": "file:./index.css",
-  "style": "file:./style-index.css"
-}
+    "editorScript": "file:./index.js",
+    "editorStyle": "file:./index.css",
+    "style": "file:./style-index.css"
+  }
+  

@@ -3,7 +3,7 @@ import metadata from './block.json';
 import edit from './edit';
 import save from './save';
 import './style.scss';
-import GGBIcon from '../../ggb-icon'; // path depends on where this file lives
+import GGBIcon from '../../ggb-icon'; 
 
 registerBlockType(metadata.name, {
   ...metadata,

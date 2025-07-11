@@ -4,6 +4,7 @@
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-color: black !important;
+    color: #fff;
 	display: flex;
 	align-items: center;
 	position: relative;
@@ -30,13 +31,16 @@
 	.left-header {
 		flex: 1 1 40%;
 		display: flex;
-		align-items: center;
+		flex-direction: column;
+		justify-content: center;
+		gap: 1.5rem;
 		height: 100%;
 
-		h1 {
+		h1,
+		.wp-block-heading {
 			font-size: clamp(2rem, 5vw, 4rem);
 			line-height: 1.2;
-			margin: auto 0;
+			margin: 0;
 			color: white;
 		}
 	}
@@ -45,20 +49,67 @@
 		flex: 1 1 55%;
 		display: flex;
 		flex-direction: column;
+		justify-content: center;
 		gap: 2rem;
 
+		// ✅ For new flexible InnerBlocks version
+		.wp-block-heading {
+			font-size: 1.5rem;
+			margin-bottom: 0.5rem;
+			color: white;
+		}
+
+		.wp-block-paragraph {
+			font-size: 1rem;
+			line-height: 1.6;
+			color: white;
+		}
+
+		.wp-block-button .wp-block-button__link {
+			background-color: white;
+			color: black;
+			font-weight: bold;
+			padding: 0.75rem 1.25rem;
+			border-radius: 5px;
+			text-decoration: none;
+
+			&:hover {
+				background-color: #ddd;
+			}
+		}
+
+		// ✅ Legacy nested .top-cta / .bottom-cta support
 		.top-cta,
 		.bottom-cta {
-			.heading h3 {
-				font-size: 1.5rem;
-				margin-bottom: 0.5rem;
-				color: white;
+			.heading {
+				.wp-block-heading,
+				h3 {
+					font-size: 1.5rem;
+					margin-bottom: 0.5rem;
+					color: white;
+				}
 			}
 
-			.content p {
-				font-size: 1rem;
-				line-height: 1.6;
-				color: white;
+			.content {
+				.wp-block-paragraph,
+				p {
+					font-size: 1rem;
+					line-height: 1.6;
+					color: white;
+				}
+
+				.wp-block-button .wp-block-button__link {
+					background-color: white;
+					color: black;
+					font-weight: bold;
+					padding: 0.75rem 1.25rem;
+					border-radius: 5px;
+					text-decoration: none;
+
+					&:hover {
+						background-color: #ddd;
+					}
+				}
 			}
 		}
 	}

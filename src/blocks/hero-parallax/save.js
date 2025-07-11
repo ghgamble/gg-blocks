@@ -1,53 +1,22 @@
-import { useBlockProps, RichText } from '@wordpress/block-editor';
+import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
 import { RawHTML } from '@wordpress/element';
 
-export default function Save({ attributes }) {
-	const {
-		mediaUrl,
-		heading,
-		ctaHeadingTop,
-		ctaParagraphTop,
-		ctaHeadingBottom,
-		ctaParagraphBottom,
-	} = attributes;
-
+export default function save({ attributes }) {
 	const blockProps = useBlockProps.save({
 		className: 'gg-hero-parallax alignfull',
 		style: {
-			backgroundImage: mediaUrl ? `url(${mediaUrl})` : 'none',
-			backgroundColor: 'black',
+			backgroundImage: attributes.mediaUrl ? `url(${attributes.mediaUrl})` : 'none',
 		},
 	});
 
 	return (
-		<>
-			<div {...blockProps}>
-				<div className="alignwide inner-content">
-					<div className="left-header">
-						<RichText.Content tagName="h1" value={heading} />
-					</div>
-					<div className="left-ctas">
-						<div className="top-cta">
-							<span className="heading">
-								<RichText.Content tagName="h3" value={ctaHeadingTop} />
-							</span>
-							<span className="content">
-								<RichText.Content tagName="p" value={ctaParagraphTop} />
-							</span>
-						</div>
-						<div className="bottom-cta">
-							<span className="heading">
-								<RichText.Content tagName="h3" value={ctaHeadingBottom} />
-							</span>
-							<span className="content">
-								<RichText.Content tagName="p" value={ctaParagraphBottom} />
-							</span>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<RawHTML>
+        <>
+            <div {...blockProps}>
+                <div className="alignwide inner-content">
+                    <InnerBlocks.Content />
+                </div>
+            </div>
+            <RawHTML>
 				{`
 					<script>
                         (function () {
@@ -76,6 +45,6 @@ export default function Save({ attributes }) {
 					</script>
 				`}
 			</RawHTML>
-		</>
+        </>
 	);
 }
