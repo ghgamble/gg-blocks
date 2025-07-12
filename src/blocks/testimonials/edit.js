@@ -16,7 +16,8 @@ export default function Edit({ attributes, setAttributes }) {
 		testimonials,
 		navigationColor = '#20ddae',
 		hoverColor = '#1bbd97',
-		customId = ''
+		customId = '',
+		authorColor = '#03678e'
 	} = attributes;
 
 	const updateTestimonial = (index, field, value) => {
@@ -44,7 +45,8 @@ export default function Edit({ attributes, setAttributes }) {
 		id: customId || undefined,
 		style: {
 			'--navigation-color': navigationColor,
-			'--hover-color': hoverColor
+			'--hover-color': hoverColor,
+			'--author-color': authorColor
 		}
 	});
 
@@ -72,6 +74,12 @@ export default function Edit({ attributes, setAttributes }) {
 							setAttributes({ customId: cleanVal });
 						}}
 						help="Used for anchor links like /#your-id. Don’t include the # sign."
+					/>
+				</PanelBody>
+				<PanelBody title="Author Color" initialOpen={true}>
+					<ColorPalette
+						value={hoverColor}
+						onChange={(color) => setAttributes({ hoverColor: color })}
 					/>
 				</PanelBody>
 			</InspectorControls>

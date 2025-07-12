@@ -33,6 +33,10 @@
       "customId": {
         "type": "string",
         "default": ""
+      },
+      "authorColor": {
+        "type": "string",
+        "default": "#03678e"
       }
     },
     "editorScript": "file:./index.js",

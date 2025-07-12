@@ -14,7 +14,8 @@ export default function Save({ attributes }) {
 		testimonials,
 		navigationColor = '#20ddae',
 		hoverColor = '#1bbd97',
-		customId = ''
+		customId = '',
+		authorColor = '#03678e'
 	} = attributes;
 
 	const blockProps = useBlockProps.save({
@@ -22,7 +23,8 @@ export default function Save({ attributes }) {
 		id: customId || undefined,
 		style: {
 			'--navigation-color': navigationColor,
-			'--hover-color': hoverColor
+			'--hover-color': hoverColor,
+			'--author-color': authorColor
 		}
 	});
 
