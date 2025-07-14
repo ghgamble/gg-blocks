@@ -1,0 +1,21 @@
+{
+    "apiVersion": 2,
+    "name": "ggb/cta-fw",
+    "title": "Full Width CTA",
+    "category": "gg-blocks",
+    "description": "Two column full width CTA",
+    "supports": {
+      "align": ["full"],
+      "html": false
+    },
+    "attributes": {
+      "backgroundColor": {
+        "type": "string",
+        "default": "#282b35"
+      }
+    },
+    "editorScript": "file:./index.js",
+    "editorStyle": "file:./index.css",
+    "style": "file:./style-index.css"
+}
+  
