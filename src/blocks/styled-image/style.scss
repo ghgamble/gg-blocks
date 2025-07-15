@@ -1,6 +1,6 @@
 .styled-image-block {
 	display: flex;
-	justify-content: flex-end; // ✅ Right-aligns image inside column
+	justify-content: flex-start; // ✅ Right-aligns image inside column
 
 	.styled-image-wrapper {
 		max-width: 500px;
