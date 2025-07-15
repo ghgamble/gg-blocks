@@ -78,8 +78,8 @@ export default function Edit({ attributes, setAttributes }) {
 				</PanelBody>
 				<PanelBody title="Author Color" initialOpen={true}>
 					<ColorPalette
-						value={hoverColor}
-						onChange={(color) => setAttributes({ hoverColor: color })}
+						value={authorColor}
+						onChange={(color) => setAttributes({ authorColor: color })}
 					/>
 				</PanelBody>
 			</InspectorControls>

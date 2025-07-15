@@ -6,8 +6,6 @@ const GGBIcon = () => (
     alt="GG Blocks Logo"
     width="24"
     height="24"
-    role="img"
-    aria-label="GG Blocks Logo"
     style={{ width: 24, height: 24 }}
   />
 );
