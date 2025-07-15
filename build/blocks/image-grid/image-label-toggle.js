@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",()=>{window.matchMedia("(hover: none) and (pointer: coarse)").matches&&document.querySelectorAll("[data-touchable]").forEach(e=>{e.addEventListener("click",()=>{e.classList.toggle("touched")})})});

@@ -1,0 +1,54 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "ggb/testimonials",
+  "title": "Testimonials",
+  "category": "gg-blocks",
+  "description": "A testimonial carousel with star ratings, quotes, and authors.",
+  "supports": {
+    "align": [
+      "full"
+    ],
+    "html": false
+  },
+  "attributes": {
+    "testimonials": {
+      "type": "array",
+      "default": [],
+      "items": {
+        "type": "object",
+        "properties": {
+          "stars": {
+            "type": "number"
+          },
+          "quote": {
+            "type": "string"
+          },
+          "author": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "navigationColor": {
+      "type": "string",
+      "default": "#20ddae"
+    },
+    "hoverColor": {
+      "type": "string",
+      "default": "#1bbd97"
+    },
+    "customId": {
+      "type": "string",
+      "default": ""
+    },
+    "authorColor": {
+      "type": "string",
+      "default": "#03678e"
+    }
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "script": "file:./testimonial-slider.js"
+}
