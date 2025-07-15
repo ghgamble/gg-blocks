@@ -1,0 +1,50 @@
+.gg-single-testimonial {
+    .form-testimonial {
+        margin-top: 2rem;
+        padding-top: 1.5rem;
+        font-size: 1.1rem;
+        color: #4a4a4a;
+        font-style: italic;
+
+        .paragraph-section {
+            display: flex;
+
+            i.fa-solid.fa-quote-left {
+                margin-top: 1rem;
+                margin-right: 1rem;
+                color: var(--quotes-color, #4a4a4a);
+            }
+
+            i.fa-solid.fa-quote-right {
+                margin-top: 1rem;
+                margin-left: 1rem;
+                color: var(--quotes-color, #4a4a4a);
+            }
+
+            .testimonial-quote {
+                margin-bottom: 0.5rem;
+                font-size: 1.4rem;
+            }
+        }
+
+        .author-section {
+            display: flex;
+            justify-content: flex-end;
+            margin-right: 1rem;
+
+            i.fa-solid.fa-minus {
+                margin-top: .75rem;
+                margin-right: .5rem;
+                color: var(--dash-color, #4a4a4a);
+            }
+
+            .testimonial-author {
+                display: block;
+                margin-top: 0.75rem;
+                font-style: normal;
+                font-weight: 600;
+                color: #292b35;
+            }
+        }
+    }
+}

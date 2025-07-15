@@ -5,3 +5,4 @@ import './blocks/heading-with-hzline';
 import './blocks/page-banner';
 import './blocks/image-grid';
 import './blocks/cta-fw';
+import './blocks/single-testimonial';
