@@ -32,7 +32,6 @@
 			margin-right: 1rem;
 			gap: 1.5rem;
 			padding-top: 1rem;
-			margin-bottom: 3rem;
 		}
 	}
 
@@ -130,5 +129,15 @@
 				}
 			}
 		}
+	}
+}
+
+@media (max-width: 768px) {
+	.gg-hero-parallax {
+	  .inner-content {
+		p:last-of-type {
+		  margin-bottom: 3rem;
+		}
+	  }
 	}
 }
