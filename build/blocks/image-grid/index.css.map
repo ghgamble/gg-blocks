@@ -1,1 +1,0 @@
-{"version":3,"file":"blocks/image-grid/index.css","mappings":";;;AACI;EACE;AAAN,C","sources":["webpack://gg-blocks/./src/blocks/image-grid/editor.scss"],"sourcesContent":[".styled-img-grid {\n    .img-overlay.always-visible {\n      opacity: 1 !important;\n    }\n}\n  "],"names":[],"sourceRoot":""}
