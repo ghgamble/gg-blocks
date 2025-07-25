@@ -1,1 +1,13950 @@
-(()=>{"use strict";var e,t={72:(e,t)=>{var r="function"==typeof Symbol&&Symbol.for,n=r?Symbol.for("react.element"):60103,M=r?Symbol.for("react.portal"):60106,i=r?Symbol.for("react.fragment"):60107,N=r?Symbol.for("react.strict_mode"):60108,o=r?Symbol.for("react.profiler"):60114,a=r?Symbol.for("react.provider"):60109,u=r?Symbol.for("react.context"):60110,c=r?Symbol.for("react.async_mode"):60111,g=r?Symbol.for("react.concurrent_mode"):60111,D=r?Symbol.for("react.forward_ref"):60112,l=r?Symbol.for("react.suspense"):60113,j=r?Symbol.for("react.suspense_list"):60120,z=r?Symbol.for("react.memo"):60115,T=r?Symbol.for("react.lazy"):60116,I=r?Symbol.for("react.block"):60121,s=r?Symbol.for("react.fundamental"):60117,d=r?Symbol.for("react.responder"):60118,y=r?Symbol.for("react.scope"):60119;function p(e){if("object"==typeof e&&null!==e){var t=e.$$typeof;switch(t){case n:switch(e=e.type){case c:case g:case i:case o:case N:case l:return e;default:switch(e=e&&e.$$typeof){case u:case D:case T:case z:case a:return e;default:return t}}case M:return t}}}function O(e){return p(e)===g}t.AsyncMode=c,t.ConcurrentMode=g,t.ContextConsumer=u,t.ContextProvider=a,t.Element=n,t.ForwardRef=D,t.Fragment=i,t.Lazy=T,t.Memo=z,t.Portal=M,t.Profiler=o,t.StrictMode=N,t.Suspense=l,t.isAsyncMode=function(e){return O(e)||p(e)===c},t.isConcurrentMode=O,t.isContextConsumer=function(e){return p(e)===u},t.isContextProvider=function(e){return p(e)===a},t.isElement=function(e){return"object"==typeof e&&null!==e&&e.$$typeof===n},t.isForwardRef=function(e){return p(e)===D},t.isFragment=function(e){return p(e)===i},t.isLazy=function(e){return p(e)===T},t.isMemo=function(e){return p(e)===z},t.isPortal=function(e){return p(e)===M},t.isProfiler=function(e){return p(e)===o},t.isStrictMode=function(e){return p(e)===N},t.isSuspense=function(e){return p(e)===l},t.isValidElementType=function(e){return"string"==typeof e||"function"==typeof e||e===i||e===g||e===o||e===N||e===l||e===j||"object"==typeof e&&null!==e&&(e.$$typeof===T||e.$$typeof===z||e.$$typeof===a||e.$$typeof===u||e.$$typeof===D||e.$$typeof===s||e.$$typeof===d||e.$$typeof===y||e.$$typeof===I)},t.typeOf=p},146:(e,t,r)=>{var n=r(404),M={childContextTypes:!0,contextType:!0,contextTypes:!0,defaultProps:!0,displayName:!0,getDefaultProps:!0,getDerivedStateFromError:!0,getDerivedStateFromProps:!0,mixins:!0,propTypes:!0,type:!0},i={name:!0,length:!0,prototype:!0,caller:!0,callee:!0,arguments:!0,arity:!0},N={$$typeof:!0,compare:!0,defaultProps:!0,displayName:!0,propTypes:!0,type:!0},o={};function a(e){return n.isMemo(e)?N:o[e.$$typeof]||M}o[n.ForwardRef]={$$typeof:!0,render:!0,defaultProps:!0,displayName:!0,propTypes:!0},o[n.Memo]=N;var u=Object.defineProperty,c=Object.getOwnPropertyNames,g=Object.getOwnPropertySymbols,D=Object.getOwnPropertyDescriptor,l=Object.getPrototypeOf,j=Object.prototype;e.exports=function e(t,r,n){if("string"!=typeof r){if(j){var M=l(r);M&&M!==j&&e(t,M,n)}var N=c(r);g&&(N=N.concat(g(r)));for(var o=a(t),z=a(r),T=0;T<N.length;++T){var I=N[T];if(!(i[I]||n&&n[I]||z&&z[I]||o&&o[I])){var s=D(r,I);try{u(t,I,s)}catch(e){}}}}return t}},404:(e,t,r)=>{e.exports=r(72)},555:(e,t,r)=>{const n=window.wp.blocks,M=JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"ggb/image-grid","title":"Image Grid","category":"gg-blocks","description":"Responsive three-column image grid with styled images and optional overlay labels.","supports":{"align":false,"html":false},"attributes":{"images":{"type":"array","default":[],"items":{"type":"object","properties":{"url":{"type":"string"},"label":{"type":"string"},"alt":{"type":"string"},"link":{"type":"string"}}}},"imageIds":{"type":"array","default":[]},"labelBackgroundColor":{"type":"string","default":"#34d399"},"overlayBackgroundColor":{"type":"string","default":"rgba(25, 91, 136, 0.6)"}},"editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","script":"file:./image-label-toggle.js"}'),i=window.wp.blockEditor,N=window.wp.components,o=window.wp.element,a=window.React;var u=r.n(a);function c(e,t){return c=Object.setPrototypeOf?Object.setPrototypeOf.bind():function(e,t){return e.__proto__=t,e},c(e,t)}function g(e,t){e.prototype=Object.create(t.prototype),e.prototype.constructor=e,c(e,t)}function D(){return D=Object.assign?Object.assign.bind():function(e){for(var t=1;t<arguments.length;t++){var r=arguments[t];for(var n in r)({}).hasOwnProperty.call(r,n)&&(e[n]=r[n])}return e},D.apply(null,arguments)}function l(e){return l="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},l(e)}function j(e,t,r){return(t=function(e){var t=function(e){if("object"!=l(e)||!e)return e;var t=e[Symbol.toPrimitive];if(void 0!==t){var r=t.call(e,"string");if("object"!=l(r))return r;throw new TypeError("@@toPrimitive must return a primitive value.")}return String(e)}(e);return"symbol"==l(t)?t:t+""}(t))in e?Object.defineProperty(e,t,{value:r,enumerable:!0,configurable:!0,writable:!0}):e[t]=r,e}function z(e,t){var r=Object.keys(e);if(Object.getOwnPropertySymbols){var n=Object.getOwnPropertySymbols(e);t&&(n=n.filter(function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable})),r.push.apply(r,n)}return r}function T(e){for(var t=1;t<arguments.length;t++){var r=null!=arguments[t]?arguments[t]:{};t%2?z(Object(r),!0).forEach(function(t){j(e,t,r[t])}):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(r)):z(Object(r)).forEach(function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(r,t))})}return e}function I(e){return"Minified Redux error #"+e+"; visit https://redux.js.org/Errors?code="+e+" for the full message or use the non-minified dev environment for full errors. "}var s="function"==typeof Symbol&&Symbol.observable||"@@observable",d=function(){return Math.random().toString(36).substring(7).split("").join(".")},y={INIT:"@@redux/INIT"+d(),REPLACE:"@@redux/REPLACE"+d(),PROBE_UNKNOWN_ACTION:function(){return"@@redux/PROBE_UNKNOWN_ACTION"+d()}};function p(e,t,r){var n;if("function"==typeof t&&"function"==typeof r||"function"==typeof r&&"function"==typeof arguments[3])throw new Error(I(0));if("function"==typeof t&&void 0===r&&(r=t,t=void 0),void 0!==r){if("function"!=typeof r)throw new Error(I(1));return r(p)(e,t)}if("function"!=typeof e)throw new Error(I(2));var M=e,i=t,N=[],o=N,a=!1;function u(){o===N&&(o=N.slice())}function c(){if(a)throw new Error(I(3));return i}function g(e){if("function"!=typeof e)throw new Error(I(4));if(a)throw new Error(I(5));var t=!0;return u(),o.push(e),function(){if(t){if(a)throw new Error(I(6));t=!1,u();var r=o.indexOf(e);o.splice(r,1),N=null}}}function D(e){if(!function(e){if("object"!=typeof e||null===e)return!1;for(var t=e;null!==Object.getPrototypeOf(t);)t=Object.getPrototypeOf(t);return Object.getPrototypeOf(e)===t}(e))throw new Error(I(7));if(void 0===e.type)throw new Error(I(8));if(a)throw new Error(I(9));try{a=!0,i=M(i,e)}finally{a=!1}for(var t=N=o,r=0;r<t.length;r++)(0,t[r])();return e}return D({type:y.INIT}),(n={dispatch:D,subscribe:g,getState:c,replaceReducer:function(e){if("function"!=typeof e)throw new Error(I(10));M=e,D({type:y.REPLACE})}})[s]=function(){var e,t=g;return(e={subscribe:function(e){if("object"!=typeof e||null===e)throw new Error(I(11));function r(){e.next&&e.next(c())}return r(),{unsubscribe:t(r)}}})[s]=function(){return this},e},n}function O(e,t){return function(){return t(e.apply(this,arguments))}}function A(e,t){if("function"==typeof e)return O(e,t);if("object"!=typeof e||null===e)throw new Error(I(16));var r={};for(var n in e){var M=e[n];"function"==typeof M&&(r[n]=O(M,t))}return r}function f(){for(var e=arguments.length,t=new Array(e),r=0;r<e;r++)t[r]=arguments[r];return 0===t.length?function(e){return e}:1===t.length?t[0]:t.reduce(function(e,t){return function(){return e(t.apply(void 0,arguments))}})}var E=u().createContext(null),x=function(e){e()},L=function(){return x},U={notify:function(){},get:function(){return[]}};function S(e,t){var r,n=U;function M(){N.onStateChange&&N.onStateChange()}function i(){r||(r=t?t.addNestedSub(M):e.subscribe(M),n=function(){var e=L(),t=null,r=null;return{clear:function(){t=null,r=null},notify:function(){e(function(){for(var e=t;e;)e.callback(),e=e.next})},get:function(){for(var e=[],r=t;r;)e.push(r),r=r.next;return e},subscribe:function(e){var n=!0,M=r={callback:e,next:null,prev:r};return M.prev?M.prev.next=M:t=M,function(){n&&null!==t&&(n=!1,M.next?M.next.prev=M.prev:r=M.prev,M.prev?M.prev.next=M.next:t=M.next)}}}}())}var N={addNestedSub:function(e){return i(),n.subscribe(e)},notifyNestedSubs:function(){n.notify()},handleChangeWrapper:M,isSubscribed:function(){return Boolean(r)},trySubscribe:i,tryUnsubscribe:function(){r&&(r(),r=void 0,n.clear(),n=U)},getListeners:function(){return n}};return N}var Q="undefined"!=typeof window&&void 0!==window.document&&void 0!==window.document.createElement?a.useLayoutEffect:a.useEffect;const w=function(e){var t=e.store,r=e.context,n=e.children,M=(0,a.useMemo)(function(){var e=S(t);return{store:t,subscription:e}},[t]),i=(0,a.useMemo)(function(){return t.getState()},[t]);Q(function(){var e=M.subscription;return e.onStateChange=e.notifyNestedSubs,e.trySubscribe(),i!==t.getState()&&e.notifyNestedSubs(),function(){e.tryUnsubscribe(),e.onStateChange=null}},[M,i]);var N=r||E;return u().createElement(N.Provider,{value:M},n)};function v(e,t){if(null==e)return{};var r={};for(var n in e)if({}.hasOwnProperty.call(e,n)){if(t.includes(n))continue;r[n]=e[n]}return r}var m=r(146),C=r.n(m),b=r(737),k=["getDisplayName","methodName","renderCountProp","shouldHandleStateChanges","storeKey","withRef","forwardRef","context"],Y=["reactReduxForwardedRef"],h=[],B=[null,null];function P(e,t){var r=e[1];return[t.payload,r+1]}function R(e,t,r){Q(function(){return e.apply(void 0,t)},r)}function G(e,t,r,n,M,i,N){e.current=n,t.current=M,r.current=!1,i.current&&(i.current=null,N())}function _(e,t,r,n,M,i,N,o,a,u){if(e){var c=!1,g=null,D=function(){if(!c){var e,r,D=t.getState();try{e=n(D,M.current)}catch(e){r=e,g=e}r||(g=null),e===i.current?N.current||a():(i.current=e,o.current=e,N.current=!0,u({type:"STORE_UPDATED",payload:{error:r}}))}};return r.onStateChange=D,r.trySubscribe(),D(),function(){if(c=!0,r.tryUnsubscribe(),r.onStateChange=null,g)throw g}}}var F=function(){return[null,0]};function W(e,t){void 0===t&&(t={});var r=t,n=r.getDisplayName,M=void 0===n?function(e){return"ConnectAdvanced("+e+")"}:n,i=r.methodName,N=void 0===i?"connectAdvanced":i,o=r.renderCountProp,c=void 0===o?void 0:o,g=r.shouldHandleStateChanges,l=void 0===g||g,j=r.storeKey,z=void 0===j?"store":j,T=(r.withRef,r.forwardRef),I=void 0!==T&&T,s=r.context,d=void 0===s?E:s,y=v(r,k),p=d;return function(t){var r=t.displayName||t.name||"Component",n=M(r),i=D({},y,{getDisplayName:M,methodName:N,renderCountProp:c,shouldHandleStateChanges:l,storeKey:z,displayName:n,wrappedComponentName:r,WrappedComponent:t}),o=y.pure,g=o?a.useMemo:function(e){return e()};function j(r){var n=(0,a.useMemo)(function(){var e=r.reactReduxForwardedRef,t=v(r,Y);return[r.context,e,t]},[r]),M=n[0],N=n[1],o=n[2],c=(0,a.useMemo)(function(){return M&&M.Consumer&&(0,b.isContextConsumer)(u().createElement(M.Consumer,null))?M:p},[M,p]),j=(0,a.useContext)(c),z=Boolean(r.store)&&Boolean(r.store.getState)&&Boolean(r.store.dispatch);Boolean(j)&&Boolean(j.store);var T=z?r.store:j.store,I=(0,a.useMemo)(function(){return function(t){return e(t.dispatch,i)}(T)},[T]),s=(0,a.useMemo)(function(){if(!l)return B;var e=S(T,z?null:j.subscription),t=e.notifyNestedSubs.bind(e);return[e,t]},[T,z,j]),d=s[0],y=s[1],O=(0,a.useMemo)(function(){return z?j:D({},j,{subscription:d})},[z,j,d]),A=(0,a.useReducer)(P,h,F),f=A[0][0],E=A[1];if(f&&f.error)throw f.error;var x=(0,a.useRef)(),L=(0,a.useRef)(o),U=(0,a.useRef)(),Q=(0,a.useRef)(!1),w=g(function(){return U.current&&o===L.current?U.current:I(T.getState(),o)},[T,f,o]);R(G,[L,x,Q,o,w,U,y]),R(_,[l,T,d,I,L,x,Q,U,y,E],[T,d,I]);var m=(0,a.useMemo)(function(){return u().createElement(t,D({},w,{ref:N}))},[N,t,w]);return(0,a.useMemo)(function(){return l?u().createElement(c.Provider,{value:O},m):m},[c,m,O])}var T=o?u().memo(j):j;if(T.WrappedComponent=t,T.displayName=j.displayName=n,I){var s=u().forwardRef(function(e,t){return u().createElement(T,D({},e,{reactReduxForwardedRef:t}))});return s.displayName=n,s.WrappedComponent=t,C()(s,t)}return C()(T,t)}}function H(e,t){return e===t?0!==e||0!==t||1/e==1/t:e!=e&&t!=t}function q(e,t){if(H(e,t))return!0;if("object"!=typeof e||null===e||"object"!=typeof t||null===t)return!1;var r=Object.keys(e),n=Object.keys(t);if(r.length!==n.length)return!1;for(var M=0;M<r.length;M++)if(!Object.prototype.hasOwnProperty.call(t,r[M])||!H(e[r[M]],t[r[M]]))return!1;return!0}function V(e){return function(t,r){var n=e(t,r);function M(){return n}return M.dependsOnOwnProps=!1,M}}function $(e){return null!==e.dependsOnOwnProps&&void 0!==e.dependsOnOwnProps?Boolean(e.dependsOnOwnProps):1!==e.length}function J(e,t){return function(t,r){r.displayName;var n=function(e,t){return n.dependsOnOwnProps?n.mapToProps(e,t):n.mapToProps(e)};return n.dependsOnOwnProps=!0,n.mapToProps=function(t,r){n.mapToProps=e,n.dependsOnOwnProps=$(e);var M=n(t,r);return"function"==typeof M&&(n.mapToProps=M,n.dependsOnOwnProps=$(M),M=n(t,r)),M},n}}const X=[function(e){return"function"==typeof e?J(e):void 0},function(e){return e?void 0:V(function(e){return{dispatch:e}})},function(e){return e&&"object"==typeof e?V(function(t){return function(e,t){var r={},n=function(n){var M=e[n];"function"==typeof M&&(r[n]=function(){return t(M.apply(void 0,arguments))})};for(var M in e)n(M);return r}(e,t)}):void 0}],K=[function(e){return"function"==typeof e?J(e):void 0},function(e){return e?void 0:V(function(){return{}})}];function Z(e,t,r){return D({},r,e,t)}const ee=[function(e){return"function"==typeof e?function(e){return function(t,r){r.displayName;var n,M=r.pure,i=r.areMergedPropsEqual,N=!1;return function(t,r,o){var a=e(t,r,o);return N?M&&i(a,n)||(n=a):(N=!0,n=a),n}}}(e):void 0},function(e){return e?void 0:function(){return Z}}];var te=["initMapStateToProps","initMapDispatchToProps","initMergeProps"];function re(e,t,r,n){return function(M,i){return r(e(M,i),t(n,i),i)}}function ne(e,t,r,n,M){var i,N,o,a,u,c=M.areStatesEqual,g=M.areOwnPropsEqual,D=M.areStatePropsEqual,l=!1;return function(M,j){return l?function(M,l){var j,z,T=!g(l,N),I=!c(M,i,l,N);return i=M,N=l,T&&I?(o=e(i,N),t.dependsOnOwnProps&&(a=t(n,N)),u=r(o,a,N)):T?(e.dependsOnOwnProps&&(o=e(i,N)),t.dependsOnOwnProps&&(a=t(n,N)),u=r(o,a,N)):I?(j=e(i,N),z=!D(j,o),o=j,z&&(u=r(o,a,N)),u):u}(M,j):(o=e(i=M,N=j),a=t(n,N),u=r(o,a,N),l=!0,u)}}function Me(e,t){var r=t.initMapStateToProps,n=t.initMapDispatchToProps,M=t.initMergeProps,i=v(t,te),N=r(e,i),o=n(e,i),a=M(e,i);return(i.pure?ne:re)(N,o,a,e,i)}var ie=["pure","areStatesEqual","areOwnPropsEqual","areStatePropsEqual","areMergedPropsEqual"];function Ne(e,t,r){for(var n=t.length-1;n>=0;n--){var M=t[n](e);if(M)return M}return function(t,n){throw new Error("Invalid value of type "+typeof e+" for "+r+" argument when connecting component "+n.wrappedComponentName+".")}}function oe(e,t){return e===t}function ae(e){var t=void 0===e?{}:e,r=t.connectHOC,n=void 0===r?W:r,M=t.mapStateToPropsFactories,i=void 0===M?K:M,N=t.mapDispatchToPropsFactories,o=void 0===N?X:N,a=t.mergePropsFactories,u=void 0===a?ee:a,c=t.selectorFactory,g=void 0===c?Me:c;return function(e,t,r,M){void 0===M&&(M={});var N=M,a=N.pure,c=void 0===a||a,l=N.areStatesEqual,j=void 0===l?oe:l,z=N.areOwnPropsEqual,T=void 0===z?q:z,I=N.areStatePropsEqual,s=void 0===I?q:I,d=N.areMergedPropsEqual,y=void 0===d?q:d,p=v(N,ie),O=Ne(e,i,"mapStateToProps"),A=Ne(t,o,"mapDispatchToProps"),f=Ne(r,u,"mergeProps");return n(g,D({methodName:"connect",getDisplayName:function(e){return"Connect("+e+")"},shouldHandleStateChanges:Boolean(e),initMapStateToProps:O,initMapDispatchToProps:A,initMergeProps:f,pure:c,areStatesEqual:j,areOwnPropsEqual:T,areStatePropsEqual:s,areMergedPropsEqual:y},p))}}const ue=ae(),ce=window.ReactDOM;var ge,De=r.n(ce);function le(e,t){var r=(0,a.useState)(function(){return{inputs:t,result:e()}})[0],n=(0,a.useRef)(!0),M=(0,a.useRef)(r),i=n.current||Boolean(t&&M.current.inputs&&function(e,t){if(e.length!==t.length)return!1;for(var r=0;r<e.length;r++)if(e[r]!==t[r])return!1;return!0}(t,M.current.inputs))?M.current:{inputs:t,result:e()};return(0,a.useEffect)(function(){n.current=!1,M.current=i},[i]),i.result}ge=ce.unstable_batchedUpdates,x=ge;var je=le,ze=function(e,t){return le(function(){return e},t)},Te=function(e){var t=e.top,r=e.right,n=e.bottom,M=e.left;return{top:t,right:r,bottom:n,left:M,width:r-M,height:n-t,x:M,y:t,center:{x:(r+M)/2,y:(n+t)/2}}},Ie=function(e,t){return{top:e.top-t.top,left:e.left-t.left,bottom:e.bottom+t.bottom,right:e.right+t.right}},se=function(e,t){return{top:e.top+t.top,left:e.left+t.left,bottom:e.bottom-t.bottom,right:e.right-t.right}},de={top:0,right:0,bottom:0,left:0},ye=function(e){var t=e.borderBox,r=e.margin,n=void 0===r?de:r,M=e.border,i=void 0===M?de:M,N=e.padding,o=void 0===N?de:N,a=Te(Ie(t,n)),u=Te(se(t,i)),c=Te(se(u,o));return{marginBox:a,borderBox:Te(t),paddingBox:u,contentBox:c,margin:n,border:i,padding:o}},pe=function(e){var t=e.slice(0,-2);if("px"!==e.slice(-2))return 0;var r=Number(t);return isNaN(r)&&function(){throw new Error("Invariant failed")}(),r},Oe=function(e,t){var r,n,M=e.borderBox,i=e.border,N=e.margin,o=e.padding,a=(n=t,{top:(r=M).top+n.y,left:r.left+n.x,bottom:r.bottom+n.y,right:r.right+n.x});return ye({borderBox:a,border:i,margin:N,padding:o})},Ae=function(e,t){return void 0===t&&(t={x:window.pageXOffset,y:window.pageYOffset}),Oe(e,t)},fe=function(e,t){var r={top:pe(t.marginTop),right:pe(t.marginRight),bottom:pe(t.marginBottom),left:pe(t.marginLeft)},n={top:pe(t.paddingTop),right:pe(t.paddingRight),bottom:pe(t.paddingBottom),left:pe(t.paddingLeft)},M={top:pe(t.borderTopWidth),right:pe(t.borderRightWidth),bottom:pe(t.borderBottomWidth),left:pe(t.borderLeftWidth)};return ye({borderBox:e,margin:r,padding:n,border:M})},Ee=function(e){var t=e.getBoundingClientRect(),r=window.getComputedStyle(e);return fe(t,r)},xe=Number.isNaN||function(e){return"number"==typeof e&&e!=e};function Le(e,t){return e===t||!(!xe(e)||!xe(t))}function Ue(e,t){if(e.length!==t.length)return!1;for(var r=0;r<e.length;r++)if(!Le(e[r],t[r]))return!1;return!0}const Se=function(e,t){var r;void 0===t&&(t=Ue);var n,M=[],i=!1;return function(){for(var N=[],o=0;o<arguments.length;o++)N[o]=arguments[o];return i&&r===this&&t(N,M)||(n=e.apply(this,N),i=!0,r=this,M=N),n}},Qe=function(e){var t=[],r=null,n=function(){for(var n=arguments.length,M=new Array(n),i=0;i<n;i++)M[i]=arguments[i];t=M,r||(r=requestAnimationFrame(function(){r=null,e.apply(void 0,t)}))};return n.cancel=function(){r&&(cancelAnimationFrame(r),r=null)},n};function we(e,t){}function ve(){}function me(e,t,r){var n=t.map(function(t){var n,M,i=(n=r,M=t.options,D({},n,{},M));return e.addEventListener(t.eventName,t.fn,i),function(){e.removeEventListener(t.eventName,t.fn,i)}});return function(){n.forEach(function(e){e()})}}we.bind(null,"warn"),we.bind(null,"error");function Ce(e){this.message=e}function be(e,t){if(!e)throw new Ce("Invariant failed")}Ce.prototype.toString=function(){return this.message};var ke=function(e){function t(){for(var t,r=arguments.length,n=new Array(r),M=0;M<r;M++)n[M]=arguments[M];return(t=e.call.apply(e,[this].concat(n))||this).callbacks=null,t.unbind=ve,t.onWindowError=function(e){var r=t.getCallbacks();r.isDragging()&&r.tryAbort(),e.error instanceof Ce&&e.preventDefault()},t.getCallbacks=function(){if(!t.callbacks)throw new Error("Unable to find AppCallbacks in <ErrorBoundary/>");return t.callbacks},t.setCallbacks=function(e){t.callbacks=e},t}g(t,e);var r=t.prototype;return r.componentDidMount=function(){this.unbind=me(window,[{eventName:"error",fn:this.onWindowError}])},r.componentDidCatch=function(e){if(!(e instanceof Ce))throw e;this.setState({})},r.componentWillUnmount=function(){this.unbind()},r.render=function(){return this.props.children(this.setCallbacks)},t}(u().Component),Ye=function(e){return e+1},he=function(e,t){var r=e.droppableId===t.droppableId,n=Ye(e.index),M=Ye(t.index);return r?"\n      You have moved the item from position "+n+"\n      to position "+M+"\n    ":"\n    You have moved the item from position "+n+"\n    in list "+e.droppableId+"\n    to list "+t.droppableId+"\n    in position "+M+"\n  "},Be=function(e,t,r){return t.droppableId===r.droppableId?"\n      The item "+e+"\n      has been combined with "+r.draggableId:"\n      The item "+e+"\n      in list "+t.droppableId+"\n      has been combined with "+r.draggableId+"\n      in list "+r.droppableId+"\n    "},Pe=function(e){return"\n  The item has returned to its starting position\n  of "+Ye(e.index)+"\n"},Re=function(e){return"\n  You have lifted an item in position "+Ye(e.source.index)+"\n"},Ge=function(e){var t=e.destination;if(t)return he(e.source,t);var r=e.combine;return r?Be(e.draggableId,e.source,r):"You are over an area that cannot be dropped on"},_e=function(e){if("CANCEL"===e.reason)return"\n      Movement cancelled.\n      "+Pe(e.source)+"\n    ";var t=e.destination,r=e.combine;return t?"\n      You have dropped the item.\n      "+he(e.source,t)+"\n    ":r?"\n      You have dropped the item.\n      "+Be(e.draggableId,e.source,r)+"\n    ":"\n    The item has been dropped while not over a drop area.\n    "+Pe(e.source)+"\n  "},Fe={x:0,y:0},We=function(e,t){return{x:e.x+t.x,y:e.y+t.y}},He=function(e,t){return{x:e.x-t.x,y:e.y-t.y}},qe=function(e,t){return e.x===t.x&&e.y===t.y},Ve=function(e){return{x:0!==e.x?-e.x:0,y:0!==e.y?-e.y:0}},$e=function(e,t,r){var n;return void 0===r&&(r=0),(n={})[e]=t,n["x"===e?"y":"x"]=r,n},Je=function(e,t){return Math.sqrt(Math.pow(t.x-e.x,2)+Math.pow(t.y-e.y,2))},Xe=function(e,t){return Math.min.apply(Math,t.map(function(t){return Je(e,t)}))},Ke=function(e){return function(t){return{x:e(t.x),y:e(t.y)}}},Ze=function(e,t){return{top:e.top+t.y,left:e.left+t.x,bottom:e.bottom+t.y,right:e.right+t.x}},et=function(e){return[{x:e.left,y:e.top},{x:e.right,y:e.top},{x:e.left,y:e.bottom},{x:e.right,y:e.bottom}]},tt=function(e,t){return t&&t.shouldClipSubject?function(e,t){var r=Te({top:Math.max(t.top,e.top),right:Math.min(t.right,e.right),bottom:Math.min(t.bottom,e.bottom),left:Math.max(t.left,e.left)});return r.width<=0||r.height<=0?null:r}(t.pageMarginBox,e):Te(e)},rt=function(e){var t=e.page,r=e.withPlaceholder,n=e.axis,M=e.frame,i=function(e,t){return t?Ze(e,t.scroll.diff.displacement):e}(t.marginBox,M),N=function(e,t,r){var n;return r&&r.increasedBy?D({},e,((n={})[t.end]=e[t.end]+r.increasedBy[t.line],n)):e}(i,n,r);return{page:t,withPlaceholder:r,active:tt(N,M)}},nt=function(e,t){e.frame||be(!1);var r=e.frame,n=He(t,r.scroll.initial),M=Ve(n),i=D({},r,{scroll:{initial:r.scroll.initial,current:t,diff:{value:n,displacement:M},max:r.scroll.max}});return D({},e,{frame:i,subject:rt({page:e.subject.page,withPlaceholder:e.subject.withPlaceholder,axis:e.axis,frame:i})})};function Mt(e){return Object.values?Object.values(e):Object.keys(e).map(function(t){return e[t]})}function it(e,t){if(e.findIndex)return e.findIndex(t);for(var r=0;r<e.length;r++)if(t(e[r]))return r;return-1}function Nt(e,t){if(e.find)return e.find(t);var r=it(e,t);return-1!==r?e[r]:void 0}function ot(e){return Array.prototype.slice.call(e)}var at=Se(function(e){return e.reduce(function(e,t){return e[t.descriptor.id]=t,e},{})}),ut=Se(function(e){return e.reduce(function(e,t){return e[t.descriptor.id]=t,e},{})}),ct=Se(function(e){return Mt(e)}),gt=Se(function(e){return Mt(e)}),Dt=Se(function(e,t){var r=gt(t).filter(function(t){return e===t.descriptor.droppableId}).sort(function(e,t){return e.descriptor.index-t.descriptor.index});return r});function lt(e){return e.at&&"REORDER"===e.at.type?e.at.destination:null}function jt(e){return e.at&&"COMBINE"===e.at.type?e.at.combine:null}var zt=Se(function(e,t){return t.filter(function(t){return t.descriptor.id!==e.descriptor.id})}),Tt=function(e,t){return e.descriptor.droppableId===t.descriptor.id},It={point:Fe,value:0},st={invisible:{},visible:{},all:[]},dt={displaced:st,displacedBy:It,at:null},yt=function(e,t){return function(r){return e<=r&&r<=t}},pt=function(e){var t=yt(e.top,e.bottom),r=yt(e.left,e.right);return function(n){if(t(n.top)&&t(n.bottom)&&r(n.left)&&r(n.right))return!0;var M=t(n.top)||t(n.bottom),i=r(n.left)||r(n.right);if(M&&i)return!0;var N=n.top<e.top&&n.bottom>e.bottom,o=n.left<e.left&&n.right>e.right;return!(!N||!o)||N&&i||o&&M}},Ot=function(e){var t=yt(e.top,e.bottom),r=yt(e.left,e.right);return function(e){return t(e.top)&&t(e.bottom)&&r(e.left)&&r(e.right)}},At={direction:"vertical",line:"y",crossAxisLine:"x",start:"top",end:"bottom",size:"height",crossAxisStart:"left",crossAxisEnd:"right",crossAxisSize:"width"},ft={direction:"horizontal",line:"x",crossAxisLine:"y",start:"left",end:"right",size:"width",crossAxisStart:"top",crossAxisEnd:"bottom",crossAxisSize:"height"},Et=function(e){var t=e.target,r=e.destination,n=e.viewport,M=e.withDroppableDisplacement,i=e.isVisibleThroughFrameFn,N=M?function(e,t){var r=t.frame?t.frame.scroll.diff.displacement:Fe;return Ze(e,r)}(t,r):t;return function(e,t,r){return!!t.subject.active&&r(t.subject.active)(e)}(N,r,i)&&function(e,t,r){return r(t)(e)}(N,n,i)},xt=function(e){return Et(D({},e,{isVisibleThroughFrameFn:Ot}))};function Lt(e){var t=e.afterDragging,r=e.destination,n=e.displacedBy,M=e.viewport,i=e.forceShouldAnimate,N=e.last;return t.reduce(function(e,t){var o=function(e,t){var r=e.page.marginBox,n={top:t.point.y,right:0,bottom:0,left:t.point.x};return Te(Ie(r,n))}(t,n),a=t.descriptor.id;if(e.all.push(a),!Et(D({},{target:o,destination:r,viewport:M,withDroppableDisplacement:!0},{isVisibleThroughFrameFn:pt})))return e.invisible[t.descriptor.id]=!0,e;var u=function(e,t,r){if("boolean"==typeof r)return r;if(!t)return!0;var n=t.invisible,M=t.visible;if(n[e])return!1;var i=M[e];return!i||i.shouldAnimate}(a,N,i),c={draggableId:a,shouldAnimate:u};return e.visible[a]=c,e},{all:[],visible:{},invisible:{}})}function Ut(e){var t=e.insideDestination,r=e.inHomeList,n=e.displacedBy,M=e.destination,i=function(e,t){if(!e.length)return 0;var r=e[e.length-1].descriptor.index;return t.inHomeList?r:r+1}(t,{inHomeList:r});return{displaced:st,displacedBy:n,at:{type:"REORDER",destination:{droppableId:M.descriptor.id,index:i}}}}function St(e){var t=e.draggable,r=e.insideDestination,n=e.destination,M=e.viewport,i=e.displacedBy,N=e.last,o=e.index,a=e.forceShouldAnimate,u=Tt(t,n);if(null==o)return Ut({insideDestination:r,inHomeList:u,displacedBy:i,destination:n});var c=Nt(r,function(e){return e.descriptor.index===o});if(!c)return Ut({insideDestination:r,inHomeList:u,displacedBy:i,destination:n});var g=zt(t,r),D=r.indexOf(c);return{displaced:Lt({afterDragging:g.slice(D),destination:n,displacedBy:i,last:N,viewport:M.frame,forceShouldAnimate:a}),displacedBy:i,at:{type:"REORDER",destination:{droppableId:n.descriptor.id,index:o}}}}function Qt(e,t){return Boolean(t.effected[e])}var wt=function(e,t){return t.margin[e.start]+t.borderBox[e.size]/2},vt=function(e,t,r){return t[e.crossAxisStart]+r.margin[e.crossAxisStart]+r.borderBox[e.crossAxisSize]/2},mt=function(e){var t=e.axis,r=e.moveRelativeTo,n=e.isMoving;return $e(t.line,r.marginBox[t.end]+wt(t,n),vt(t,r.marginBox,n))},Ct=function(e){var t=e.axis,r=e.moveRelativeTo,n=e.isMoving;return $e(t.line,r.marginBox[t.start]-function(e,t){return t.margin[e.end]+t.borderBox[e.size]/2}(t,n),vt(t,r.marginBox,n))},bt=function(e,t){var r=e.frame;return r?We(t,r.scroll.diff.displacement):t},kt=function(e){var t=function(e){var t=e.impact,r=e.draggable,n=e.droppable,M=e.draggables,i=e.afterCritical,N=r.page.borderBox.center,o=t.at;return n&&o?"REORDER"===o.type?function(e){var t=e.impact,r=e.draggable,n=e.draggables,M=e.droppable,i=e.afterCritical,N=Dt(M.descriptor.id,n),o=r.page,a=M.axis;if(!N.length)return function(e){var t=e.axis,r=e.moveInto,n=e.isMoving;return $e(t.line,r.contentBox[t.start]+wt(t,n),vt(t,r.contentBox,n))}({axis:a,moveInto:M.page,isMoving:o});var u=t.displaced,c=t.displacedBy,g=u.all[0];if(g){var D=n[g];if(Qt(g,i))return Ct({axis:a,moveRelativeTo:D.page,isMoving:o});var l=Oe(D.page,c.point);return Ct({axis:a,moveRelativeTo:l,isMoving:o})}var j=N[N.length-1];if(j.descriptor.id===r.descriptor.id)return o.borderBox.center;if(Qt(j.descriptor.id,i)){var z=Oe(j.page,Ve(i.displacedBy.point));return mt({axis:a,moveRelativeTo:z,isMoving:o})}return mt({axis:a,moveRelativeTo:j.page,isMoving:o})}({impact:t,draggable:r,draggables:M,droppable:n,afterCritical:i}):function(e){var t=e.afterCritical,r=e.impact,n=e.draggables,M=jt(r);M||be(!1);var i=M.draggableId,N=n[i].page.borderBox.center,o=function(e){var t=e.displaced,r=e.afterCritical,n=e.combineWith,M=e.displacedBy,i=Boolean(t.visible[n]||t.invisible[n]);return Qt(n,r)?i?Fe:Ve(M.point):i?M.point:Fe}({displaced:r.displaced,afterCritical:t,combineWith:i,displacedBy:r.displacedBy});return We(N,o)}({impact:t,draggables:M,afterCritical:i}):N}(e),r=e.droppable;return r?bt(r,t):t},Yt=function(e,t){var r=He(t,e.scroll.initial),n=Ve(r);return{frame:Te({top:t.y,bottom:t.y+e.frame.height,left:t.x,right:t.x+e.frame.width}),scroll:{initial:e.scroll.initial,max:e.scroll.max,current:t,diff:{value:r,displacement:n}}}};function ht(e,t){return e.map(function(e){return t[e]})}var Bt=function(e){var t,r,n=e.pageBorderBoxCenter,M=e.draggable,i=(t=e.viewport,r=n,We(t.scroll.diff.displacement,r)),N=He(i,M.page.borderBox.center);return We(M.client.borderBox.center,N)},Pt=function(e){var t=e.draggable,r=e.destination,n=e.newPageBorderBoxCenter,M=e.viewport,i=e.withDroppableDisplacement,N=e.onlyOnMainAxis,o=void 0!==N&&N,a=He(n,t.page.borderBox.center),u={target:Ze(t.page.borderBox,a),destination:r,withDroppableDisplacement:i,viewport:M};return o?function(e){return Et(D({},e,{isVisibleThroughFrameFn:(t=e.destination.axis,function(e){var r=yt(e.top,e.bottom),n=yt(e.left,e.right);return function(e){return t===At?r(e.top)&&r(e.bottom):n(e.left)&&n(e.right)}})}));var t}(u):xt(u)},Rt=function(e){var t=e.isMovingForward,r=e.draggable,n=e.destination,M=e.draggables,i=e.previousImpact,N=e.viewport,o=e.previousPageBorderBoxCenter,a=e.previousClientSelection,u=e.afterCritical;if(!n.isEnabled)return null;var c=Dt(n.descriptor.id,M),g=Tt(r,n),l=function(e){var t=e.isMovingForward,r=e.draggable,n=e.destination,M=e.insideDestination,i=e.previousImpact;if(!n.isCombineEnabled)return null;if(!lt(i))return null;function N(e){var t={type:"COMBINE",combine:{draggableId:e,droppableId:n.descriptor.id}};return D({},i,{at:t})}var o=i.displaced.all,a=o.length?o[0]:null;if(t)return a?N(a):null;var u=zt(r,M);if(!a)return u.length?N(u[u.length-1].descriptor.id):null;var c=it(u,function(e){return e.descriptor.id===a});-1===c&&be(!1);var g=c-1;return g<0?null:N(u[g].descriptor.id)}({isMovingForward:t,draggable:r,destination:n,insideDestination:c,previousImpact:i})||function(e){var t=e.isMovingForward,r=e.isInHomeList,n=e.draggable,M=e.draggables,i=e.destination,N=e.insideDestination,o=e.previousImpact,a=e.viewport,u=e.afterCritical,c=o.at;if(c||be(!1),"REORDER"===c.type){var g=function(e){var t=e.isMovingForward,r=e.isInHomeList,n=e.insideDestination,M=e.location;if(!n.length)return null;var i=M.index,N=t?i+1:i-1,o=n[0].descriptor.index,a=n[n.length-1].descriptor.index;return N<o||N>(r?a:a+1)?null:N}({isMovingForward:t,isInHomeList:r,location:c.destination,insideDestination:N});return null==g?null:St({draggable:n,insideDestination:N,destination:i,viewport:a,last:o.displaced,displacedBy:o.displacedBy,index:g})}var D=function(e){var t=e.isMovingForward,r=e.draggables,n=e.combine,M=e.afterCritical;if(!e.destination.isCombineEnabled)return null;var i=n.draggableId,N=r[i].descriptor.index;return Qt(i,M)?t?N:N-1:t?N+1:N}({isMovingForward:t,destination:i,displaced:o.displaced,draggables:M,combine:c.combine,afterCritical:u});return null==D?null:St({draggable:n,insideDestination:N,destination:i,viewport:a,last:o.displaced,displacedBy:o.displacedBy,index:D})}({isMovingForward:t,isInHomeList:g,draggable:r,draggables:M,destination:n,insideDestination:c,previousImpact:i,viewport:N,afterCritical:u});if(!l)return null;var j=kt({impact:l,draggable:r,droppable:n,draggables:M,afterCritical:u});if(Pt({draggable:r,destination:n,newPageBorderBoxCenter:j,viewport:N.frame,withDroppableDisplacement:!1,onlyOnMainAxis:!0}))return{clientSelection:Bt({pageBorderBoxCenter:j,draggable:r,viewport:N}),impact:l,scrollJumpRequest:null};var z=He(j,o),T=function(e){var t=e.impact,r=e.viewport,n=e.destination,M=e.draggables,i=e.maxScrollChange,N=Yt(r,We(r.scroll.current,i)),o=n.frame?nt(n,We(n.frame.scroll.current,i)):n,a=t.displaced,u=Lt({afterDragging:ht(a.all,M),destination:n,displacedBy:t.displacedBy,viewport:N.frame,last:a,forceShouldAnimate:!1}),c=Lt({afterDragging:ht(a.all,M),destination:o,displacedBy:t.displacedBy,viewport:r.frame,last:a,forceShouldAnimate:!1}),g={},l={},j=[a,u,c];return a.all.forEach(function(e){var t=function(e,t){for(var r=0;r<t.length;r++){var n=t[r].visible[e];if(n)return n}return null}(e,j);t?l[e]=t:g[e]=!0}),D({},t,{displaced:{all:a.all,invisible:g,visible:l}})}({impact:l,viewport:N,destination:n,draggables:M,maxScrollChange:z});return{clientSelection:a,impact:T,scrollJumpRequest:z}},Gt=function(e){var t=e.subject.active;return t||be(!1),t},_t=function(e,t){var r=e.page.borderBox.center;return Qt(e.descriptor.id,t)?He(r,t.displacedBy.point):r},Ft=function(e,t){var r=e.page.borderBox;return Qt(e.descriptor.id,t)?Ze(r,Ve(t.displacedBy.point)):r},Wt=Se(function(e,t){var r=t[e.line];return{value:r,point:$e(e.line,r)}}),Ht=function(e,t){return D({},e,{scroll:D({},e.scroll,{max:t})})},qt=function(e,t,r){var n=e.frame;Tt(t,e)&&be(!1),e.subject.withPlaceholder&&be(!1);var M=Wt(e.axis,t.displaceBy).point,i=function(e,t,r){var n=e.axis;if("virtual"===e.descriptor.mode)return $e(n.line,t[n.line]);var M=e.subject.page.contentBox[n.size],i=Dt(e.descriptor.id,r).reduce(function(e,t){return e+t.client.marginBox[n.size]},0)+t[n.line]-M;return i<=0?null:$e(n.line,i)}(e,M,r),N={placeholderSize:M,increasedBy:i,oldFrameMaxScroll:e.frame?e.frame.scroll.max:null};if(!n)return D({},e,{subject:rt({page:e.subject.page,withPlaceholder:N,axis:e.axis,frame:e.frame})});var o=i?We(n.scroll.max,i):n.scroll.max,a=Ht(n,o);return D({},e,{subject:rt({page:e.subject.page,withPlaceholder:N,axis:e.axis,frame:a}),frame:a})},Vt=function(e){var t=e.at;return t?"REORDER"===t.type?t.destination.droppableId:t.combine.droppableId:null},$t=function(e){var t=e.state,r=e.type,n=function(e,t){var r=Vt(e);return r?t[r]:null}(t.impact,t.dimensions.droppables),M=Boolean(n),i=t.dimensions.droppables[t.critical.droppable.id],N=n||i,o=N.axis.direction,a="vertical"===o&&("MOVE_UP"===r||"MOVE_DOWN"===r)||"horizontal"===o&&("MOVE_LEFT"===r||"MOVE_RIGHT"===r);if(a&&!M)return null;var u="MOVE_DOWN"===r||"MOVE_RIGHT"===r,c=t.dimensions.draggables[t.critical.draggable.id],g=t.current.page.borderBoxCenter,D=t.dimensions,l=D.draggables,j=D.droppables;return a?Rt({isMovingForward:u,previousPageBorderBoxCenter:g,draggable:c,destination:N,draggables:l,viewport:t.viewport,previousClientSelection:t.current.client.selection,previousImpact:t.impact,afterCritical:t.afterCritical}):function(e){var t=e.isMovingForward,r=e.previousPageBorderBoxCenter,n=e.draggable,M=e.isOver,i=e.draggables,N=e.droppables,o=e.viewport,a=e.afterCritical,u=function(e){var t=e.isMovingForward,r=e.pageBorderBoxCenter,n=e.source,M=e.droppables,i=e.viewport,N=n.subject.active;if(!N)return null;var o=n.axis,a=yt(N[o.start],N[o.end]),u=ct(M).filter(function(e){return e!==n}).filter(function(e){return e.isEnabled}).filter(function(e){return Boolean(e.subject.active)}).filter(function(e){return pt(i.frame)(Gt(e))}).filter(function(e){var r=Gt(e);return t?N[o.crossAxisEnd]<r[o.crossAxisEnd]:r[o.crossAxisStart]<N[o.crossAxisStart]}).filter(function(e){var t=Gt(e),r=yt(t[o.start],t[o.end]);return a(t[o.start])||a(t[o.end])||r(N[o.start])||r(N[o.end])}).sort(function(e,r){var n=Gt(e)[o.crossAxisStart],M=Gt(r)[o.crossAxisStart];return t?n-M:M-n}).filter(function(e,t,r){return Gt(e)[o.crossAxisStart]===Gt(r[0])[o.crossAxisStart]});if(!u.length)return null;if(1===u.length)return u[0];var c=u.filter(function(e){return yt(Gt(e)[o.start],Gt(e)[o.end])(r[o.line])});return 1===c.length?c[0]:c.length>1?c.sort(function(e,t){return Gt(e)[o.start]-Gt(t)[o.start]})[0]:u.sort(function(e,t){var n=Xe(r,et(Gt(e))),M=Xe(r,et(Gt(t)));return n!==M?n-M:Gt(e)[o.start]-Gt(t)[o.start]})[0]}({isMovingForward:t,pageBorderBoxCenter:r,source:M,droppables:N,viewport:o});if(!u)return null;var c=Dt(u.descriptor.id,i),g=function(e){var t=e.pageBorderBoxCenter,r=e.viewport,n=e.destination,M=e.afterCritical,i=e.insideDestination.filter(function(e){return xt({target:Ft(e,M),destination:n,viewport:r.frame,withDroppableDisplacement:!0})}).sort(function(e,r){var i=Je(t,bt(n,_t(e,M))),N=Je(t,bt(n,_t(r,M)));return i<N?-1:N<i?1:e.descriptor.index-r.descriptor.index});return i[0]||null}({pageBorderBoxCenter:r,viewport:o,destination:u,insideDestination:c,afterCritical:a}),D=function(e){var t=e.previousPageBorderBoxCenter,r=e.moveRelativeTo,n=e.insideDestination,M=e.draggable,i=e.draggables,N=e.destination,o=e.viewport,a=e.afterCritical;if(!r){if(n.length)return null;var u={displaced:st,displacedBy:It,at:{type:"REORDER",destination:{droppableId:N.descriptor.id,index:0}}},c=kt({impact:u,draggable:M,droppable:N,draggables:i,afterCritical:a}),g=Tt(M,N)?N:qt(N,M,i);return Pt({draggable:M,destination:g,newPageBorderBoxCenter:c,viewport:o.frame,withDroppableDisplacement:!1,onlyOnMainAxis:!0})?u:null}var D,l=Boolean(t[N.axis.line]<=r.page.borderBox.center[N.axis.line]),j=(D=r.descriptor.index,r.descriptor.id===M.descriptor.id||l?D:D+1);return St({draggable:M,insideDestination:n,destination:N,viewport:o,displacedBy:Wt(N.axis,M.displaceBy),last:st,index:j})}({previousPageBorderBoxCenter:r,destination:u,draggable:n,draggables:i,moveRelativeTo:g,insideDestination:c,viewport:o,afterCritical:a});if(!D)return null;var l=kt({impact:D,draggable:n,droppable:u,draggables:i,afterCritical:a});return{clientSelection:Bt({pageBorderBoxCenter:l,draggable:n,viewport:o}),impact:D,scrollJumpRequest:null}}({isMovingForward:u,previousPageBorderBoxCenter:g,draggable:c,isOver:N,draggables:l,droppables:j,viewport:t.viewport,afterCritical:t.afterCritical})};function Jt(e){return"DRAGGING"===e.phase||"COLLECTING"===e.phase}function Xt(e){var t=yt(e.top,e.bottom),r=yt(e.left,e.right);return function(e){return t(e.y)&&r(e.x)}}var Kt=function(e,t){return Te(Ze(e,t))};function Zt(e){var t=e.displaced,r=e.id;return Boolean(t.visible[r]||t.invisible[r])}var er=function(e){var t=e.pageOffset,r=e.draggable,n=e.draggables,M=e.droppables,i=e.previousImpact,N=e.viewport,o=e.afterCritical,a=Kt(r.page.borderBox,t),u=function(e){var t=e.pageBorderBox,r=e.draggable,n=e.droppables,M=ct(n).filter(function(e){if(!e.isEnabled)return!1;var r,n,M=e.subject.active;if(!M)return!1;if(n=M,!((r=t).left<n.right&&r.right>n.left&&r.top<n.bottom&&r.bottom>n.top))return!1;if(Xt(M)(t.center))return!0;var i=e.axis,N=M.center[i.crossAxisLine],o=t[i.crossAxisStart],a=t[i.crossAxisEnd],u=yt(M[i.crossAxisStart],M[i.crossAxisEnd]),c=u(o),g=u(a);return!c&&!g||(c?o<N:a>N)});return M.length?1===M.length?M[0].descriptor.id:function(e){var t=e.pageBorderBox,r=e.candidates,n=e.draggable.page.borderBox.center,M=r.map(function(e){var r=e.axis,M=$e(e.axis.line,t.center[r.line],e.page.borderBox.center[r.crossAxisLine]);return{id:e.descriptor.id,distance:Je(n,M)}}).sort(function(e,t){return t.distance-e.distance});return M[0]?M[0].id:null}({pageBorderBox:t,draggable:r,candidates:M}):null}({pageBorderBox:a,draggable:r,droppables:M});if(!u)return dt;var c=M[u],g=Dt(c.descriptor.id,n),D=function(e,t){var r=e.frame;return r?Kt(t,r.scroll.diff.value):t}(c,a);return function(e){var t=e.draggable,r=e.pageBorderBoxWithDroppableScroll,n=e.previousImpact,M=e.destination,i=e.insideDestination,N=e.afterCritical;if(!M.isCombineEnabled)return null;var o=M.axis,a=Wt(M.axis,t.displaceBy),u=a.value,c=r[o.start],g=r[o.end],D=Nt(zt(t,i),function(e){var t=e.descriptor.id,r=e.page.borderBox,M=r[o.size]/4,i=Qt(t,N),a=Zt({displaced:n.displaced,id:t});return i?a?g>r[o.start]+M&&g<r[o.end]-M:c>r[o.start]-u+M&&c<r[o.end]-u-M:a?g>r[o.start]+u+M&&g<r[o.end]+u-M:c>r[o.start]+M&&c<r[o.end]-M});return D?{displacedBy:a,displaced:n.displaced,at:{type:"COMBINE",combine:{draggableId:D.descriptor.id,droppableId:M.descriptor.id}}}:null}({pageBorderBoxWithDroppableScroll:D,draggable:r,previousImpact:i,destination:c,insideDestination:g,afterCritical:o})||function(e){var t=e.pageBorderBoxWithDroppableScroll,r=e.draggable,n=e.destination,M=e.insideDestination,i=e.last,N=e.viewport,o=e.afterCritical,a=n.axis,u=Wt(n.axis,r.displaceBy),c=u.value,g=t[a.start],D=t[a.end],l=function(e){var t=e.draggable,r=e.closest;return r?e.inHomeList&&r.descriptor.index>t.descriptor.index?r.descriptor.index-1:r.descriptor.index:null}({draggable:r,closest:Nt(zt(r,M),function(e){var t=e.descriptor.id,r=e.page.borderBox.center[a.line],n=Qt(t,o),M=Zt({displaced:i,id:t});return n?M?D<=r:g<r-c:M?D<=r+c:g<r}),inHomeList:Tt(r,n)});return St({draggable:r,insideDestination:M,destination:n,viewport:N,last:i,displacedBy:u,index:l})}({pageBorderBoxWithDroppableScroll:D,draggable:r,destination:c,insideDestination:g,last:i.displaced,viewport:N,afterCritical:o})},tr=function(e,t){var r;return D({},e,((r={})[t.descriptor.id]=t,r))},rr=function(e){var t=e.state,r=e.clientSelection,n=e.dimensions,M=e.viewport,i=e.impact,N=e.scrollJumpRequest,o=M||t.viewport,a=n||t.dimensions,u=r||t.current.client.selection,c=He(u,t.initial.client.selection),g={offset:c,selection:u,borderBoxCenter:We(t.initial.client.borderBoxCenter,c)},l={selection:We(g.selection,o.scroll.current),borderBoxCenter:We(g.borderBoxCenter,o.scroll.current),offset:We(g.offset,o.scroll.diff.value)},j={client:g,page:l};if("COLLECTING"===t.phase)return D({phase:"COLLECTING"},t,{dimensions:a,viewport:o,current:j});var z=a.draggables[t.critical.draggable.id],T=i||er({pageOffset:l.offset,draggable:z,draggables:a.draggables,droppables:a.droppables,previousImpact:t.impact,viewport:o,afterCritical:t.afterCritical}),I=function(e){var t=e.draggable,r=e.draggables,n=e.droppables,M=e.impact,i=function(e){var t=e.previousImpact,r=e.impact,n=e.droppables,M=Vt(t),i=Vt(r);if(!M)return n;if(M===i)return n;var N=n[M];if(!N.subject.withPlaceholder)return n;var o=function(e){var t=e.subject.withPlaceholder;t||be(!1);var r=e.frame;if(!r)return D({},e,{subject:rt({page:e.subject.page,axis:e.axis,frame:null,withPlaceholder:null})});var n=t.oldFrameMaxScroll;n||be(!1);var M=Ht(r,n);return D({},e,{subject:rt({page:e.subject.page,axis:e.axis,frame:M,withPlaceholder:null}),frame:M})}(N);return tr(n,o)}({previousImpact:e.previousImpact,impact:M,droppables:n}),N=Vt(M);if(!N)return i;var o=n[N];if(Tt(t,o))return i;if(o.subject.withPlaceholder)return i;var a=qt(o,t,r);return tr(i,a)}({draggable:z,impact:T,previousImpact:t.impact,draggables:a.draggables,droppables:a.droppables});return D({},t,{current:j,dimensions:{draggables:a.draggables,droppables:I},impact:T,viewport:o,scrollJumpRequest:N||null,forceShouldAnimate:!N&&null})},nr=function(e){var t=e.impact,r=e.viewport,n=e.draggables,M=e.destination,i=e.forceShouldAnimate,N=t.displaced,o=function(e,t){return e.map(function(e){return t[e]})}(N.all,n);return D({},t,{displaced:Lt({afterDragging:o,destination:M,displacedBy:t.displacedBy,viewport:r.frame,forceShouldAnimate:i,last:N})})},Mr=function(e){var t=e.impact,r=e.draggable,n=e.droppable,M=e.draggables,i=e.viewport,N=e.afterCritical,o=kt({impact:t,draggable:r,draggables:M,droppable:n,afterCritical:N});return Bt({pageBorderBoxCenter:o,draggable:r,viewport:i})},ir=function(e){var t=e.state,r=e.dimensions,n=e.viewport;"SNAP"!==t.movementMode&&be(!1);var M=t.impact,i=n||t.viewport,N=r||t.dimensions,o=N.draggables,a=N.droppables,u=o[t.critical.draggable.id],c=Vt(M);c||be(!1);var g=a[c],D=nr({impact:M,viewport:i,destination:g,draggables:o}),l=Mr({impact:D,draggable:u,droppable:g,draggables:o,viewport:i,afterCritical:t.afterCritical});return rr({impact:D,clientSelection:l,state:t,dimensions:N,viewport:i})},Nr=function(e){var t=e.draggable,r=e.home,n=e.draggables,M=e.viewport,i=Wt(r.axis,t.displaceBy),N=Dt(r.descriptor.id,n),o=N.indexOf(t);-1===o&&be(!1);var a,u=N.slice(o+1),c=u.reduce(function(e,t){return e[t.descriptor.id]=!0,e},{}),g={inVirtualList:"virtual"===r.descriptor.mode,displacedBy:i,effected:c};return{impact:{displaced:Lt({afterDragging:u,destination:r,displacedBy:i,last:null,viewport:M.frame,forceShouldAnimate:!1}),displacedBy:i,at:{type:"REORDER",destination:(a=t.descriptor,{index:a.index,droppableId:a.droppableId})}},afterCritical:g}},or=function(e){return"SNAP"===e.movementMode},ar=function(e,t,r){var n=function(e,t){return{draggables:e.draggables,droppables:tr(e.droppables,t)}}(e.dimensions,t);return!or(e)||r?rr({state:e,dimensions:n}):ir({state:e,dimensions:n})};function ur(e){return e.isDragging&&"SNAP"===e.movementMode?D({phase:"DRAGGING"},e,{scrollJumpRequest:null}):e}var cr={phase:"IDLE",completed:null,shouldFlush:!1},gr=function(e,t){if(void 0===e&&(e=cr),"FLUSH"===t.type)return D({},cr,{shouldFlush:!0});if("INITIAL_PUBLISH"===t.type){"IDLE"!==e.phase&&be(!1);var r=t.payload,n=r.critical,M=r.clientSelection,i=r.viewport,N=r.dimensions,o=r.movementMode,a=N.draggables[n.draggable.id],u=N.droppables[n.droppable.id],c={selection:M,borderBoxCenter:a.client.borderBox.center,offset:Fe},g={client:c,page:{selection:We(c.selection,i.scroll.initial),borderBoxCenter:We(c.selection,i.scroll.initial),offset:We(c.selection,i.scroll.diff.value)}},l=ct(N.droppables).every(function(e){return!e.isFixedOnPage}),j=Nr({draggable:a,home:u,draggables:N.draggables,viewport:i}),z=j.impact;return{phase:"DRAGGING",isDragging:!0,critical:n,movementMode:o,dimensions:N,initial:g,current:g,isWindowScrollAllowed:l,impact:z,afterCritical:j.afterCritical,onLiftImpact:z,viewport:i,scrollJumpRequest:null,forceShouldAnimate:null}}if("COLLECTION_STARTING"===t.type)return"COLLECTING"===e.phase||"DROP_PENDING"===e.phase?e:("DRAGGING"!==e.phase&&be(!1),D({phase:"COLLECTING"},e,{phase:"COLLECTING"}));if("PUBLISH_WHILE_DRAGGING"===t.type)return"COLLECTING"!==e.phase&&"DROP_PENDING"!==e.phase&&be(!1),function(e){var t=e.state,r=e.published,n=r.modified.map(function(e){var r=t.dimensions.droppables[e.droppableId];return nt(r,e.scroll)}),M=D({},t.dimensions.droppables,{},at(n)),i=ut(function(e){var t=e.additions,r=e.updatedDroppables,n=e.viewport,M=n.scroll.diff.value;return t.map(function(e){var t=e.descriptor.droppableId,i=function(e){var t=e.frame;return t||be(!1),t}(r[t]),N=i.scroll.diff.value,o=function(e){var t=e.draggable,r=e.offset,n=e.initialWindowScroll,M=Oe(t.client,r),i=Ae(M,n);return D({},t,{placeholder:D({},t.placeholder,{client:M}),client:M,page:i})}({draggable:e,offset:We(M,N),initialWindowScroll:n.scroll.initial});return o})}({additions:r.additions,updatedDroppables:M,viewport:t.viewport})),N=D({},t.dimensions.draggables,{},i);r.removals.forEach(function(e){delete N[e]});var o={droppables:M,draggables:N},a=Vt(t.impact),u=a?o.droppables[a]:null,c=o.draggables[t.critical.draggable.id],g=o.droppables[t.critical.droppable.id],l=Nr({draggable:c,home:g,draggables:N,viewport:t.viewport}),j=l.impact,z=l.afterCritical,T=u&&u.isCombineEnabled?t.impact:j,I=er({pageOffset:t.current.page.offset,draggable:o.draggables[t.critical.draggable.id],draggables:o.draggables,droppables:o.droppables,previousImpact:T,viewport:t.viewport,afterCritical:z}),s=D({phase:"DRAGGING"},t,{phase:"DRAGGING",impact:I,onLiftImpact:j,dimensions:o,afterCritical:z,forceShouldAnimate:!1});return"COLLECTING"===t.phase?s:D({phase:"DROP_PENDING"},s,{phase:"DROP_PENDING",reason:t.reason,isWaiting:!1})}({state:e,published:t.payload});if("MOVE"===t.type){if("DROP_PENDING"===e.phase)return e;Jt(e)||be(!1);var T=t.payload.client;return qe(T,e.current.client.selection)?e:rr({state:e,clientSelection:T,impact:or(e)?e.impact:null})}if("UPDATE_DROPPABLE_SCROLL"===t.type){if("DROP_PENDING"===e.phase)return ur(e);if("COLLECTING"===e.phase)return ur(e);Jt(e)||be(!1);var I=t.payload,s=I.id,d=I.newScroll,y=e.dimensions.droppables[s];if(!y)return e;var p=nt(y,d);return ar(e,p,!1)}if("UPDATE_DROPPABLE_IS_ENABLED"===t.type){if("DROP_PENDING"===e.phase)return e;Jt(e)||be(!1);var O=t.payload,A=O.id,f=O.isEnabled,E=e.dimensions.droppables[A];E||be(!1),E.isEnabled===f&&be(!1);var x=D({},E,{isEnabled:f});return ar(e,x,!0)}if("UPDATE_DROPPABLE_IS_COMBINE_ENABLED"===t.type){if("DROP_PENDING"===e.phase)return e;Jt(e)||be(!1);var L=t.payload,U=L.id,S=L.isCombineEnabled,Q=e.dimensions.droppables[U];Q||be(!1),Q.isCombineEnabled===S&&be(!1);var w=D({},Q,{isCombineEnabled:S});return ar(e,w,!0)}if("MOVE_BY_WINDOW_SCROLL"===t.type){if("DROP_PENDING"===e.phase||"DROP_ANIMATING"===e.phase)return e;Jt(e)||be(!1),e.isWindowScrollAllowed||be(!1);var v=t.payload.newScroll;if(qe(e.viewport.scroll.current,v))return ur(e);var m=Yt(e.viewport,v);return or(e)?ir({state:e,viewport:m}):rr({state:e,viewport:m})}if("UPDATE_VIEWPORT_MAX_SCROLL"===t.type){if(!Jt(e))return e;var C=t.payload.maxScroll;if(qe(C,e.viewport.scroll.max))return e;var b=D({},e.viewport,{scroll:D({},e.viewport.scroll,{max:C})});return D({phase:"DRAGGING"},e,{viewport:b})}if("MOVE_UP"===t.type||"MOVE_DOWN"===t.type||"MOVE_LEFT"===t.type||"MOVE_RIGHT"===t.type){if("COLLECTING"===e.phase||"DROP_PENDING"===e.phase)return e;"DRAGGING"!==e.phase&&be(!1);var k=$t({state:e,type:t.type});return k?rr({state:e,impact:k.impact,clientSelection:k.clientSelection,scrollJumpRequest:k.scrollJumpRequest}):e}if("DROP_PENDING"===t.type){var Y=t.payload.reason;return"COLLECTING"!==e.phase&&be(!1),D({phase:"DROP_PENDING"},e,{phase:"DROP_PENDING",isWaiting:!0,reason:Y})}if("DROP_ANIMATE"===t.type){var h=t.payload,B=h.completed,P=h.dropDuration,R=h.newHomeClientOffset;return"DRAGGING"!==e.phase&&"DROP_PENDING"!==e.phase&&be(!1),{phase:"DROP_ANIMATING",completed:B,dropDuration:P,newHomeClientOffset:R,dimensions:e.dimensions}}return"DROP_COMPLETE"===t.type?{phase:"IDLE",completed:t.payload.completed,shouldFlush:!1}:e},Dr=function(e){return{type:"PUBLISH_WHILE_DRAGGING",payload:e}},lr=function(){return{type:"COLLECTION_STARTING",payload:null}},jr=function(e){return{type:"UPDATE_DROPPABLE_SCROLL",payload:e}},zr=function(e){return{type:"UPDATE_DROPPABLE_IS_ENABLED",payload:e}},Tr=function(e){return{type:"UPDATE_DROPPABLE_IS_COMBINE_ENABLED",payload:e}},Ir=function(e){return{type:"MOVE",payload:e}},sr=function(){return{type:"MOVE_UP",payload:null}},dr=function(){return{type:"MOVE_DOWN",payload:null}},yr=function(){return{type:"MOVE_RIGHT",payload:null}},pr=function(){return{type:"MOVE_LEFT",payload:null}},Or=function(e){return{type:"DROP_COMPLETE",payload:e}},Ar=function(e){return{type:"DROP",payload:e}},fr="cubic-bezier(.2,1,.1,1)",Er=0,xr=.7,Lr=.75,Ur="0.2s cubic-bezier(0.2, 0, 0, 1)",Sr={fluid:"opacity "+Ur,snap:"transform "+Ur+", opacity "+Ur,drop:function(e){var t=e+"s "+fr;return"transform "+t+", opacity "+t},outOfTheWay:"transform "+Ur,placeholder:"height "+Ur+", width "+Ur+", margin "+Ur},Qr=function(e){return qe(e,Fe)?null:"translate("+e.x+"px, "+e.y+"px)"},wr=Qr,vr=.33,mr=.55-vr,Cr=function(e){var t=e.getState,r=e.dispatch;return function(e){return function(n){if("DROP"===n.type){var M=t(),i=n.payload.reason;if("COLLECTING"!==M.phase){if("IDLE"!==M.phase){"DROP_PENDING"===M.phase&&M.isWaiting&&be(!1),"DRAGGING"!==M.phase&&"DROP_PENDING"!==M.phase&&be(!1);var N=M.critical,o=M.dimensions,a=o.draggables[M.critical.draggable.id],u=function(e){var t=e.draggables,r=e.reason,n=e.lastImpact,M=e.home,i=e.viewport,N=e.onLiftImpact;return n.at&&"DROP"===r?"REORDER"===n.at.type?{impact:n,didDropInsideDroppable:!0}:{impact:D({},n,{displaced:st}),didDropInsideDroppable:!0}:{impact:nr({draggables:t,impact:N,destination:M,viewport:i,forceShouldAnimate:!0}),didDropInsideDroppable:!1}}({reason:i,lastImpact:M.impact,afterCritical:M.afterCritical,onLiftImpact:M.onLiftImpact,home:M.dimensions.droppables[M.critical.droppable.id],viewport:M.viewport,draggables:M.dimensions.draggables}),c=u.impact,g=u.didDropInsideDroppable,l=g?lt(c):null,j=g?jt(c):null,z={index:N.draggable.index,droppableId:N.droppable.id},T={draggableId:a.descriptor.id,type:a.descriptor.type,source:z,reason:i,mode:M.movementMode,destination:l,combine:j},I=function(e){var t=e.impact,r=e.draggable,n=e.dimensions,M=e.viewport,i=e.afterCritical,N=n.draggables,o=n.droppables,a=Vt(t),u=a?o[a]:null,c=o[r.descriptor.droppableId],g=Mr({impact:t,draggable:r,draggables:N,afterCritical:i,droppable:u||c,viewport:M});return He(g,r.client.borderBox.center)}({impact:c,draggable:a,dimensions:o,viewport:M.viewport,afterCritical:M.afterCritical}),s={critical:M.critical,afterCritical:M.afterCritical,result:T,impact:c};if(!qe(M.current.client.offset,I)||Boolean(T.combine)){var d=function(e){var t=e.reason,r=Je(e.current,e.destination);if(r<=0)return vr;if(r>=1500)return.55;var n=vr+mr*(r/1500);return Number(("CANCEL"===t?.6*n:n).toFixed(2))}({current:M.current.client.offset,destination:I,reason:i});r({type:"DROP_ANIMATE",payload:{newHomeClientOffset:I,dropDuration:d,completed:s}})}else r(Or({completed:s}))}}else r(function(e){return{type:"DROP_PENDING",payload:e}}({reason:i}))}else e(n)}}},br=function(){return{x:window.pageXOffset,y:window.pageYOffset}};var kr=function(e){var t=function(e){var t=e.onWindowScroll,r=Qe(function(){t(br())}),n=function(e){return{eventName:"scroll",options:{passive:!0,capture:!1},fn:function(t){t.target!==window&&t.target!==window.document||e()}}}(r),M=ve;function i(){return M!==ve}return{start:function(){i()&&be(!1),M=me(window,[n])},stop:function(){i()||be(!1),r.cancel(),M(),M=ve},isActive:i}}({onWindowScroll:function(t){e.dispatch({type:"MOVE_BY_WINDOW_SCROLL",payload:{newScroll:t}})}});return function(e){return function(r){t.isActive()||"INITIAL_PUBLISH"!==r.type||t.start(),t.isActive()&&function(e){return"DROP_COMPLETE"===e.type||"DROP_ANIMATE"===e.type||"FLUSH"===e.type}(r)&&t.stop(),e(r)}}},Yr=function(e,t){t()},hr=function(e,t){return{draggableId:e.draggable.id,type:e.droppable.type,source:{droppableId:e.droppable.id,index:e.draggable.index},mode:t}},Br=function(e,t,r,n){if(e){var M=function(e){var t=!1,r=!1,n=setTimeout(function(){r=!0}),M=function(M){t||r||(t=!0,e(M),clearTimeout(n))};return M.wasCalled=function(){return t},M}(r);e(t,{announce:M}),M.wasCalled()||r(n(t))}else r(n(t))},Pr=function(e,t){var r=function(e,t){var r,n=(r=[],{add:function(e){var t=setTimeout(function(){return function(e){var t=it(r,function(t){return t.timerId===e});-1===t&&be(!1),r.splice(t,1)[0].callback()}(t)}),n={timerId:t,callback:e};r.push(n)},flush:function(){if(r.length){var e=[].concat(r);r.length=0,e.forEach(function(e){clearTimeout(e.timerId),e.callback()})}}}),M=null,i=function(r){M||be(!1),M=null,Yr(0,function(){return Br(e().onDragEnd,r,t,_e)})};return{beforeCapture:function(t,r){M&&be(!1),Yr(0,function(){var n=e().onBeforeCapture;n&&n({draggableId:t,mode:r})})},beforeStart:function(t,r){M&&be(!1),Yr(0,function(){var n=e().onBeforeDragStart;n&&n(hr(t,r))})},start:function(r,i){M&&be(!1);var N=hr(r,i);M={mode:i,lastCritical:r,lastLocation:N.source,lastCombine:null},n.add(function(){Yr(0,function(){return Br(e().onDragStart,N,t,Re)})})},update:function(r,i){var N=lt(i),o=jt(i);M||be(!1);var a=!function(e,t){if(e===t)return!0;var r=e.draggable.id===t.draggable.id&&e.draggable.droppableId===t.draggable.droppableId&&e.draggable.type===t.draggable.type&&e.draggable.index===t.draggable.index,n=e.droppable.id===t.droppable.id&&e.droppable.type===t.droppable.type;return r&&n}(r,M.lastCritical);a&&(M.lastCritical=r);var u,c,g=(c=N,!(null==(u=M.lastLocation)&&null==c||null!=u&&null!=c&&u.droppableId===c.droppableId&&u.index===c.index));g&&(M.lastLocation=N);var l=!function(e,t){return null==e&&null==t||null!=e&&null!=t&&e.draggableId===t.draggableId&&e.droppableId===t.droppableId}(M.lastCombine,o);if(l&&(M.lastCombine=o),a||g||l){var j=D({},hr(r,M.mode),{combine:o,destination:N});n.add(function(){Yr(0,function(){return Br(e().onDragUpdate,j,t,Ge)})})}},flush:function(){M||be(!1),n.flush()},drop:i,abort:function(){if(M){var e=D({},hr(M.lastCritical,M.mode),{combine:null,destination:null,reason:"CANCEL"});i(e)}}}}(e,t);return function(e){return function(t){return function(n){if("BEFORE_INITIAL_CAPTURE"!==n.type){if("INITIAL_PUBLISH"===n.type){var M=n.payload.critical;return r.beforeStart(M,n.payload.movementMode),t(n),void r.start(M,n.payload.movementMode)}if("DROP_COMPLETE"===n.type){var i=n.payload.completed.result;return r.flush(),t(n),void r.drop(i)}if(t(n),"FLUSH"!==n.type){var N=e.getState();"DRAGGING"===N.phase&&r.update(N.critical,N.impact)}else r.abort()}else r.beforeCapture(n.payload.draggableId,n.payload.movementMode)}}}},Rr=function(e){return function(t){return function(r){if("DROP_ANIMATION_FINISHED"===r.type){var n=e.getState();"DROP_ANIMATING"!==n.phase&&be(!1),e.dispatch(Or({completed:n.completed}))}else t(r)}}},Gr=function(e){var t=null,r=null;return function(n){return function(M){if("FLUSH"!==M.type&&"DROP_COMPLETE"!==M.type&&"DROP_ANIMATION_FINISHED"!==M.type||(r&&(cancelAnimationFrame(r),r=null),t&&(t(),t=null)),n(M),"DROP_ANIMATE"===M.type){var i={eventName:"scroll",options:{capture:!0,passive:!1,once:!0},fn:function(){"DROP_ANIMATING"===e.getState().phase&&e.dispatch({type:"DROP_ANIMATION_FINISHED",payload:null})}};r=requestAnimationFrame(function(){r=null,t=me(window,[i])})}}}},_r=function(e){return function(t){return function(r){if(t(r),"PUBLISH_WHILE_DRAGGING"===r.type){var n=e.getState();"DROP_PENDING"===n.phase&&(n.isWaiting||e.dispatch(Ar({reason:n.reason})))}}}},Fr=f,Wr=function(e){var t=e.scrollHeight,r=e.scrollWidth,n=e.height,M=e.width,i=He({x:r,y:t},{x:M,y:n});return{x:Math.max(0,i.x),y:Math.max(0,i.y)}},Hr=function(){var e=document.documentElement;return e||be(!1),e},qr=function(){var e=Hr();return Wr({scrollHeight:e.scrollHeight,scrollWidth:e.scrollWidth,width:e.clientWidth,height:e.clientHeight})};function Vr(e,t,r){return r.descriptor.id!==t.id&&r.descriptor.type===t.type&&"virtual"===e.droppable.getById(r.descriptor.droppableId).descriptor.mode}var $r,Jr,Xr=function(e,t){var r=null,n=function(e){var t=e.registry,r=e.callbacks,n={additions:{},removals:{},modified:{}},M=null,i=function(){M||(r.collectionStarting(),M=requestAnimationFrame(function(){M=null;var e=n,i=e.additions,N=e.removals,o=e.modified,a=Object.keys(i).map(function(e){return t.draggable.getById(e).getDimension(Fe)}).sort(function(e,t){return e.descriptor.index-t.descriptor.index}),u=Object.keys(o).map(function(e){return{droppableId:e,scroll:t.droppable.getById(e).callbacks.getScrollWhileDragging()}}),c={additions:a,removals:Object.keys(N),modified:u};n={additions:{},removals:{},modified:{}},r.publish(c)}))};return{add:function(e){var t=e.descriptor.id;n.additions[t]=e,n.modified[e.descriptor.droppableId]=!0,n.removals[t]&&delete n.removals[t],i()},remove:function(e){var t=e.descriptor;n.removals[t.id]=!0,n.modified[t.droppableId]=!0,n.additions[t.id]&&delete n.additions[t.id],i()},stop:function(){M&&(cancelAnimationFrame(M),M=null,n={additions:{},removals:{},modified:{}})}}}({callbacks:{publish:t.publishWhileDragging,collectionStarting:t.collectionStarting},registry:e}),M=function(t){r||be(!1);var M=r.critical.draggable;"ADDITION"===t.type&&Vr(e,M,t.value)&&n.add(t.value),"REMOVAL"===t.type&&Vr(e,M,t.value)&&n.remove(t.value)};return{updateDroppableIsEnabled:function(n,M){e.droppable.exists(n)||be(!1),r&&t.updateDroppableIsEnabled({id:n,isEnabled:M})},updateDroppableIsCombineEnabled:function(n,M){r&&(e.droppable.exists(n)||be(!1),t.updateDroppableIsCombineEnabled({id:n,isCombineEnabled:M}))},scrollDroppable:function(t,n){r&&e.droppable.getById(t).callbacks.scroll(n)},updateDroppableScroll:function(n,M){r&&(e.droppable.exists(n)||be(!1),t.updateDroppableScroll({id:n,newScroll:M}))},startPublishing:function(t){r&&be(!1);var n=e.draggable.getById(t.draggableId),i=e.droppable.getById(n.descriptor.droppableId),N={draggable:n.descriptor,droppable:i.descriptor},o=e.subscribe(M);return r={critical:N,unsubscribe:o},function(e){var t,r,n,M,i,N,o,a=e.critical,u=e.scrollOptions,c=e.registry,g=(t=br(),r=qr(),n=t.y,M=t.x,N=(i=Hr()).clientWidth,o=i.clientHeight,{frame:Te({top:n,left:M,right:M+N,bottom:n+o}),scroll:{initial:t,current:t,max:r,diff:{value:Fe,displacement:Fe}}}),D=g.scroll.current,l=a.droppable,j=c.droppable.getAllByType(l.type).map(function(e){return e.callbacks.getDimensionAndWatchScroll(D,u)}),z=c.draggable.getAllByType(a.draggable.type).map(function(e){return e.getDimension(D)});return{dimensions:{draggables:ut(z),droppables:at(j)},critical:a,viewport:g}}({critical:N,registry:e,scrollOptions:t.scrollOptions})},stopPublishing:function(){if(r){n.stop();var t=r.critical.droppable;e.droppable.getAllByType(t.type).forEach(function(e){return e.callbacks.dragStopped()}),r.unsubscribe(),r=null}}}},Kr=function(e,t){return"IDLE"===e.phase||"DROP_ANIMATING"===e.phase&&e.completed.result.draggableId!==t&&"DROP"===e.completed.result.reason},Zr=function(e){window.scrollBy(e.x,e.y)},en=Se(function(e){return ct(e).filter(function(e){return!!e.isEnabled&&!!e.frame})}),tn=function(e){return Math.pow(e,2)},rn=function(e){var t=e.startOfRange,r=e.endOfRange,n=e.current,M=r-t;return 0===M?0:(n-t)/M},nn=360,Mn=1200,Nn=function(e){var t=e.distanceToEdge,r=e.thresholds,n=e.dragStartTime,M=e.shouldUseTimeDampening,i=function(e,t){if(e>t.startScrollingFrom)return 0;if(e<=t.maxScrollValueAt)return 28;if(e===t.startScrollingFrom)return 1;var r=rn({startOfRange:t.maxScrollValueAt,endOfRange:t.startScrollingFrom,current:e}),n=28*tn(1-r);return Math.ceil(n)}(t,r);return 0===i?0:M?Math.max(function(e,t){var r=t,n=Mn,M=Date.now()-r;if(M>=Mn)return e;if(M<nn)return 1;var i=rn({startOfRange:nn,endOfRange:n,current:M}),N=e*tn(i);return Math.ceil(N)}(i,n),1):i},on=function(e){var t=e.container,r=e.distanceToEdges,n=e.dragStartTime,M=e.axis,i=e.shouldUseTimeDampening,N=function(e,t){return{startScrollingFrom:.25*e[t.size],maxScrollValueAt:.05*e[t.size]}}(t,M);return r[M.end]<r[M.start]?Nn({distanceToEdge:r[M.end],thresholds:N,dragStartTime:n,shouldUseTimeDampening:i}):-1*Nn({distanceToEdge:r[M.start],thresholds:N,dragStartTime:n,shouldUseTimeDampening:i})},an=Ke(function(e){return 0===e?0:e}),un=function(e){var t=e.dragStartTime,r=e.container,n=e.subject,M=e.center,i=e.shouldUseTimeDampening,N={top:M.y-r.top,right:r.right-M.x,bottom:r.bottom-M.y,left:M.x-r.left},o=on({container:r,distanceToEdges:N,dragStartTime:t,axis:At,shouldUseTimeDampening:i}),a=on({container:r,distanceToEdges:N,dragStartTime:t,axis:ft,shouldUseTimeDampening:i}),u=an({x:a,y:o});if(qe(u,Fe))return null;var c=function(e){var t=e.container,r=e.subject,n=e.proposedScroll,M=r.height>t.height,i=r.width>t.width;return i||M?i&&M?null:{x:i?0:n.x,y:M?0:n.y}:n}({container:r,subject:n,proposedScroll:u});return c?qe(c,Fe)?null:c:null},cn=Ke(function(e){return 0===e?0:e>0?1:-1}),gn=($r=function(e,t){return e<0?e:e>t?e-t:0},function(e){var t=e.current,r=e.max,n=e.change,M=We(t,n),i={x:$r(M.x,r.x),y:$r(M.y,r.y)};return qe(i,Fe)?null:i}),Dn=function(e){var t=e.max,r=e.current,n=e.change,M={x:Math.max(r.x,t.x),y:Math.max(r.y,t.y)},i=cn(n),N=gn({max:M,current:r,change:i});return!N||0!==i.x&&0===N.x||0!==i.y&&0===N.y},ln=function(e,t){return Dn({current:e.scroll.current,max:e.scroll.max,change:t})},jn=function(e,t){var r=e.frame;return!!r&&Dn({current:r.scroll.current,max:r.scroll.max,change:t})},zn=function(e){var t=e.state,r=e.dragStartTime,n=e.shouldUseTimeDampening,M=e.scrollWindow,i=e.scrollDroppable,N=t.current.page.borderBoxCenter,o=t.dimensions.draggables[t.critical.draggable.id].page.marginBox;if(t.isWindowScrollAllowed){var a=function(e){var t=e.viewport,r=e.subject,n=e.center,M=e.shouldUseTimeDampening,i=un({dragStartTime:e.dragStartTime,container:t.frame,subject:r,center:n,shouldUseTimeDampening:M});return i&&ln(t,i)?i:null}({dragStartTime:r,viewport:t.viewport,subject:o,center:N,shouldUseTimeDampening:n});if(a)return void M(a)}var u=function(e){var t=e.center,r=e.destination,n=e.droppables;if(r){var M=n[r];return M.frame?M:null}var i=function(e,t){var r=Nt(en(t),function(t){return t.frame||be(!1),Xt(t.frame.pageMarginBox)(e)});return r}(t,n);return i}({center:N,destination:Vt(t.impact),droppables:t.dimensions.droppables});if(u){var c=function(e){var t=e.droppable,r=e.subject,n=e.center,M=e.dragStartTime,i=e.shouldUseTimeDampening,N=t.frame;if(!N)return null;var o=un({dragStartTime:M,container:N.pageMarginBox,subject:r,center:n,shouldUseTimeDampening:i});return o&&jn(t,o)?o:null}({dragStartTime:r,droppable:u,subject:o,center:N,shouldUseTimeDampening:n});c&&i(u.descriptor.id,c)}},Tn=function(e){var t=e.move,r=e.scrollDroppable,n=e.scrollWindow;return function(e){var M=e.scrollJumpRequest;if(M){var i=Vt(e.impact);i||be(!1);var N=function(e,t){if(!jn(e,t))return t;var n=function(e,t){var r=e.frame;return r&&jn(e,t)?gn({current:r.scroll.current,max:r.scroll.max,change:t}):null}(e,t);if(!n)return r(e.descriptor.id,t),null;var M=He(t,n);return r(e.descriptor.id,M),He(t,M)}(e.dimensions.droppables[i],M);if(N){var o=e.viewport,a=function(e,t,r){if(!e)return r;if(!ln(t,r))return r;var M=function(e,t){if(!ln(e,t))return null;var r=e.scroll.max,n=e.scroll.current;return gn({current:n,max:r,change:t})}(t,r);if(!M)return n(r),null;var i=He(r,M);return n(i),He(r,i)}(e.isWindowScrollAllowed,o,N);a&&function(e,r){var n=We(e.current.client.selection,r);t({client:n})}(e,a)}}}},In="data-rbd",sn={base:Jr=In+"-drag-handle",draggableId:Jr+"-draggable-id",contextId:Jr+"-context-id"},dn=function(){var e=In+"-draggable";return{base:e,contextId:e+"-context-id",id:e+"-id"}}(),yn=function(){var e=In+"-droppable";return{base:e,contextId:e+"-context-id",id:e+"-id"}}(),pn={contextId:In+"-scroll-container-context-id"},On=function(e,t){return e.map(function(e){var r=e.styles[t];return r?e.selector+" { "+r+" }":""}).join(" ")},An="undefined"!=typeof window&&void 0!==window.document&&void 0!==window.document.createElement?a.useLayoutEffect:a.useEffect,fn=function(){var e=document.querySelector("head");return e||be(!1),e},En=function(e){var t=document.createElement("style");return e&&t.setAttribute("nonce",e),t.type="text/css",t};var xn=function(e){return e&&e.ownerDocument?e.ownerDocument.defaultView:window};function Ln(e){return e instanceof xn(e).HTMLElement}function Un(){var e={draggables:{},droppables:{}},t=[];function r(e){t.length&&t.forEach(function(t){return t(e)})}function n(t){return e.draggables[t]||null}function M(t){return e.droppables[t]||null}return{draggable:{register:function(t){e.draggables[t.descriptor.id]=t,r({type:"ADDITION",value:t})},update:function(t,r){var n=e.draggables[r.descriptor.id];n&&n.uniqueId===t.uniqueId&&(delete e.draggables[r.descriptor.id],e.draggables[t.descriptor.id]=t)},unregister:function(t){var M=t.descriptor.id,i=n(M);i&&t.uniqueId===i.uniqueId&&(delete e.draggables[M],r({type:"REMOVAL",value:t}))},getById:function(e){var t=n(e);return t||be(!1),t},findById:n,exists:function(e){return Boolean(n(e))},getAllByType:function(t){return Mt(e.draggables).filter(function(e){return e.descriptor.type===t})}},droppable:{register:function(t){e.droppables[t.descriptor.id]=t},unregister:function(t){var r=M(t.descriptor.id);r&&t.uniqueId===r.uniqueId&&delete e.droppables[t.descriptor.id]},getById:function(e){var t=M(e);return t||be(!1),t},findById:M,exists:function(e){return Boolean(M(e))},getAllByType:function(t){return Mt(e.droppables).filter(function(e){return e.descriptor.type===t})}},subscribe:function(e){return t.push(e),function(){var r=t.indexOf(e);-1!==r&&t.splice(r,1)}},clean:function(){e.draggables={},e.droppables={},t.length=0}}}var Sn=u().createContext(null),Qn=function(){var e=document.body;return e||be(!1),e},wn={position:"absolute",width:"1px",height:"1px",margin:"-1px",border:"0",padding:"0",overflow:"hidden",clip:"rect(0 0 0 0)","clip-path":"inset(100%)"},vn=0,mn={separator:"::"};function Cn(e,t){return void 0===t&&(t=mn),je(function(){return""+e+t.separator+vn++},[t.separator,e])}var bn=u().createContext(null);function kn(e){var t=(0,a.useRef)(e);return(0,a.useEffect)(function(){t.current=e}),t}var Yn,hn,Bn=((Yn={})[13]=!0,Yn[9]=!0,Yn),Pn=function(e){Bn[e.keyCode]&&e.preventDefault()},Rn=function(){var e="visibilitychange";return"undefined"==typeof document?e:Nt([e,"ms"+e,"webkit"+e,"moz"+e,"o"+e],function(e){return"on"+e in document})||e}(),Gn={type:"IDLE"};function Fn(){}var Wn=((hn={})[34]=!0,hn[33]=!0,hn[36]=!0,hn[35]=!0,hn);var Hn={type:"IDLE"},qn={input:!0,button:!0,textarea:!0,select:!0,option:!0,optgroup:!0,video:!0,audio:!0};function Vn(e,t){if(null==t)return!1;if(Boolean(qn[t.tagName.toLowerCase()]))return!0;var r=t.getAttribute("contenteditable");return"true"===r||""===r||t!==e&&Vn(e,t.parentElement)}function $n(e,t){var r=t.target;return!!Ln(r)&&Vn(e,r)}var Jn=function(e){return Te(e.getBoundingClientRect()).center},Xn=function(){var e="matches";return"undefined"==typeof document?e:Nt([e,"msMatchesSelector","webkitMatchesSelector"],function(e){return e in Element.prototype})||e}();function Kn(e,t){return null==e?null:e[Xn](t)?e:Kn(e.parentElement,t)}function Zn(e,t){return e.closest?e.closest(t):Kn(e,t)}function eM(e){e.preventDefault()}function tM(e){var t=e.expected,r=e.phase,n=e.isLockActive;return e.shouldWarn,!!n()&&t===r}function rM(e){var t=e.lockAPI,r=e.store,n=e.registry,M=e.draggableId;if(t.isClaimed())return!1;var i=n.draggable.findById(M);return!!i&&!!i.options.isEnabled&&!!Kr(r.getState(),M)}var nM=[function(e){var t=(0,a.useRef)(Gn),r=(0,a.useRef)(ve),n=je(function(){return{eventName:"mousedown",fn:function(t){if(!t.defaultPrevented&&0===t.button&&!(t.ctrlKey||t.metaKey||t.shiftKey||t.altKey)){var n=e.findClosestDraggableId(t);if(n){var M=e.tryGetLock(n,N,{sourceEvent:t});if(M){t.preventDefault();var i={x:t.clientX,y:t.clientY};r.current(),c(M,i)}}}}}},[e]),M=je(function(){return{eventName:"webkitmouseforcewillbegin",fn:function(t){if(!t.defaultPrevented){var r=e.findClosestDraggableId(t);if(r){var n=e.findOptionsForDraggable(r);n&&(n.shouldRespectForcePress||e.canGetLock(r)&&t.preventDefault())}}}}},[e]),i=ze(function(){r.current=me(window,[M,n],{passive:!1,capture:!0})},[M,n]),N=ze(function(){"IDLE"!==t.current.type&&(t.current=Gn,r.current(),i())},[i]),o=ze(function(){var e=t.current;N(),"DRAGGING"===e.type&&e.actions.cancel({shouldBlockNextClick:!0}),"PENDING"===e.type&&e.actions.abort()},[N]),u=ze(function(){var e=function(e){var t=e.cancel,r=e.completed,n=e.getPhase,M=e.setPhase;return[{eventName:"mousemove",fn:function(e){var t=e.button,r=e.clientX,i=e.clientY;if(0===t){var N={x:r,y:i},o=n();if("DRAGGING"===o.type)return e.preventDefault(),void o.actions.move(N);if("PENDING"!==o.type&&be(!1),a=o.point,u=N,Math.abs(u.x-a.x)>=5||Math.abs(u.y-a.y)>=5){var a,u;e.preventDefault();var c=o.actions.fluidLift(N);M({type:"DRAGGING",actions:c})}}}},{eventName:"mouseup",fn:function(e){var M=n();"DRAGGING"===M.type?(e.preventDefault(),M.actions.drop({shouldBlockNextClick:!0}),r()):t()}},{eventName:"mousedown",fn:function(e){"DRAGGING"===n().type&&e.preventDefault(),t()}},{eventName:"keydown",fn:function(e){if("PENDING"!==n().type)return 27===e.keyCode?(e.preventDefault(),void t()):void Pn(e);t()}},{eventName:"resize",fn:t},{eventName:"scroll",options:{passive:!0,capture:!1},fn:function(){"PENDING"===n().type&&t()}},{eventName:"webkitmouseforcedown",fn:function(e){var r=n();"IDLE"===r.type&&be(!1),r.actions.shouldRespectForcePress()?t():e.preventDefault()}},{eventName:Rn,fn:t}]}({cancel:o,completed:N,getPhase:function(){return t.current},setPhase:function(e){t.current=e}});r.current=me(window,e,{capture:!0,passive:!1})},[o,N]),c=ze(function(e,r){"IDLE"!==t.current.type&&be(!1),t.current={type:"PENDING",point:r,actions:e},u()},[u]);An(function(){return i(),function(){r.current()}},[i])},function(e){var t=(0,a.useRef)(Fn),r=je(function(){return{eventName:"keydown",fn:function(r){if(!r.defaultPrevented&&32===r.keyCode){var M=e.findClosestDraggableId(r);if(M){var i=e.tryGetLock(M,a,{sourceEvent:r});if(i){r.preventDefault();var N=!0,o=i.snapLift();t.current(),t.current=me(window,function(e,t){function r(){t(),e.cancel()}return[{eventName:"keydown",fn:function(n){return 27===n.keyCode?(n.preventDefault(),void r()):32===n.keyCode?(n.preventDefault(),t(),void e.drop()):40===n.keyCode?(n.preventDefault(),void e.moveDown()):38===n.keyCode?(n.preventDefault(),void e.moveUp()):39===n.keyCode?(n.preventDefault(),void e.moveRight()):37===n.keyCode?(n.preventDefault(),void e.moveLeft()):void(Wn[n.keyCode]?n.preventDefault():Pn(n))}},{eventName:"mousedown",fn:r},{eventName:"mouseup",fn:r},{eventName:"click",fn:r},{eventName:"touchstart",fn:r},{eventName:"resize",fn:r},{eventName:"wheel",fn:r,options:{passive:!0}},{eventName:Rn,fn:r}]}(o,a),{capture:!0,passive:!1})}}}function a(){N||be(!1),N=!1,t.current(),n()}}}},[e]),n=ze(function(){t.current=me(window,[r],{passive:!1,capture:!0})},[r]);An(function(){return n(),function(){t.current()}},[n])},function(e){var t=(0,a.useRef)(Hn),r=(0,a.useRef)(ve),n=ze(function(){return t.current},[]),M=ze(function(e){t.current=e},[]),i=je(function(){return{eventName:"touchstart",fn:function(t){if(!t.defaultPrevented){var n=e.findClosestDraggableId(t);if(n){var M=e.tryGetLock(n,o,{sourceEvent:t});if(M){var i=t.touches[0],N={x:i.clientX,y:i.clientY};r.current(),D(M,N)}}}}}},[e]),N=ze(function(){r.current=me(window,[i],{capture:!0,passive:!1})},[i]),o=ze(function(){var e=t.current;"IDLE"!==e.type&&("PENDING"===e.type&&clearTimeout(e.longPressTimerId),M(Hn),r.current(),N())},[N,M]),u=ze(function(){var e=t.current;o(),"DRAGGING"===e.type&&e.actions.cancel({shouldBlockNextClick:!0}),"PENDING"===e.type&&e.actions.abort()},[o]),c=ze(function(){var e={capture:!0,passive:!1},t={cancel:u,completed:o,getPhase:n},M=me(window,function(e){var t=e.cancel,r=e.completed,n=e.getPhase;return[{eventName:"touchmove",options:{capture:!1},fn:function(e){var r=n();if("DRAGGING"===r.type){r.hasMoved=!0;var M=e.touches[0],i={x:M.clientX,y:M.clientY};e.preventDefault(),r.actions.move(i)}else t()}},{eventName:"touchend",fn:function(e){var M=n();"DRAGGING"===M.type?(e.preventDefault(),M.actions.drop({shouldBlockNextClick:!0}),r()):t()}},{eventName:"touchcancel",fn:function(e){"DRAGGING"===n().type?(e.preventDefault(),t()):t()}},{eventName:"touchforcechange",fn:function(e){var r=n();"IDLE"===r.type&&be(!1);var M=e.touches[0];if(M&&M.force>=.15){var i=r.actions.shouldRespectForcePress();if("PENDING"!==r.type)return i?r.hasMoved?void e.preventDefault():void t():void e.preventDefault();i&&t()}}},{eventName:Rn,fn:t}]}(t),e),i=me(window,function(e){var t=e.cancel,r=e.getPhase;return[{eventName:"orientationchange",fn:t},{eventName:"resize",fn:t},{eventName:"contextmenu",fn:function(e){e.preventDefault()}},{eventName:"keydown",fn:function(e){"DRAGGING"===r().type?(27===e.keyCode&&e.preventDefault(),t()):t()}},{eventName:Rn,fn:t}]}(t),e);r.current=function(){M(),i()}},[u,n,o]),g=ze(function(){var e=n();"PENDING"!==e.type&&be(!1);var t=e.actions.fluidLift(e.point);M({type:"DRAGGING",actions:t,hasMoved:!1})},[n,M]),D=ze(function(e,t){"IDLE"!==n().type&&be(!1);var r=setTimeout(g,120);M({type:"PENDING",point:t,actions:e,longPressTimerId:r}),c()},[c,n,M,g]);An(function(){return N(),function(){r.current();var e=n();"PENDING"===e.type&&(clearTimeout(e.longPressTimerId),M(Hn))}},[n,N,M]),An(function(){return me(window,[{eventName:"touchmove",fn:function(){},options:{capture:!1,passive:!1}}])},[])}];function MM(e){var t=e.contextId,r=e.store,n=e.registry,M=e.customSensors,i=e.enableDefaultSensors,N=[].concat(i?nM:[],M||[]),o=(0,a.useState)(function(){return function(){var e=null;function t(){e||be(!1),e=null}return{isClaimed:function(){return Boolean(e)},isActive:function(t){return t===e},claim:function(t){e&&be(!1);var r={abandon:t};return e=r,r},release:t,tryAbandon:function(){e&&(e.abandon(),t())}}}()})[0],u=ze(function(e,t){e.isDragging&&!t.isDragging&&o.tryAbandon()},[o]);An(function(){var e=r.getState();return r.subscribe(function(){var t=r.getState();u(e,t),e=t})},[o,r,u]),An(function(){return o.tryAbandon},[o.tryAbandon]);for(var c=ze(function(e){return rM({lockAPI:o,registry:n,store:r,draggableId:e})},[o,n,r]),g=ze(function(e,M,i){return function(e){var t=e.lockAPI,r=e.contextId,n=e.store,M=e.registry,i=e.draggableId,N=e.forceSensorStop,o=e.sourceEvent;if(!rM({lockAPI:t,store:n,registry:M,draggableId:i}))return null;var a=M.draggable.getById(i),u=function(e,t){var r="["+dn.contextId+'="'+e+'"]',n=Nt(ot(document.querySelectorAll(r)),function(e){return e.getAttribute(dn.id)===t});return n&&Ln(n)?n:null}(r,a.descriptor.id);if(!u)return null;if(o&&!a.options.canDragInteractiveElements&&$n(u,o))return null;var c=t.claim(N||ve),g="PRE_DRAG";function l(){return a.options.shouldRespectForcePress}function j(){return t.isActive(c)}var z=function(e,t){tM({expected:e,phase:g,isLockActive:j,shouldWarn:!0})&&n.dispatch(t())}.bind(null,"DRAGGING");function T(e){function r(){t.release(),g="COMPLETED"}function M(t,M){if(void 0===M&&(M={shouldBlockNextClick:!1}),e.cleanup(),M.shouldBlockNextClick){var i=me(window,[{eventName:"click",fn:eM,options:{once:!0,passive:!1,capture:!0}}]);setTimeout(i)}r(),n.dispatch(Ar({reason:t}))}return"PRE_DRAG"!==g&&(r(),"PRE_DRAG"!==g&&be(!1)),n.dispatch(function(e){return{type:"LIFT",payload:e}}(e.liftActionArgs)),g="DRAGGING",D({isActive:function(){return tM({expected:"DRAGGING",phase:g,isLockActive:j,shouldWarn:!1})},shouldRespectForcePress:l,drop:function(e){return M("DROP",e)},cancel:function(e){return M("CANCEL",e)}},e.actions)}return{isActive:function(){return tM({expected:"PRE_DRAG",phase:g,isLockActive:j,shouldWarn:!1})},shouldRespectForcePress:l,fluidLift:function(e){var t=Qe(function(e){z(function(){return Ir({client:e})})});return D({},T({liftActionArgs:{id:i,clientSelection:e,movementMode:"FLUID"},cleanup:function(){return t.cancel()},actions:{move:t}}),{move:t})},snapLift:function(){var e={moveUp:function(){return z(sr)},moveRight:function(){return z(yr)},moveDown:function(){return z(dr)},moveLeft:function(){return z(pr)}};return T({liftActionArgs:{id:i,clientSelection:Jn(u),movementMode:"SNAP"},cleanup:ve,actions:e})},abort:function(){tM({expected:"PRE_DRAG",phase:g,isLockActive:j,shouldWarn:!0})&&t.release()}}}({lockAPI:o,registry:n,contextId:t,store:r,draggableId:e,forceSensorStop:M,sourceEvent:i&&i.sourceEvent?i.sourceEvent:null})},[t,o,n,r]),l=ze(function(e){return function(e,t){var r=function(e,t){var r,n=t.target;if(!((r=n)instanceof xn(r).Element))return null;var M=function(e){return"["+sn.contextId+'="'+e+'"]'}(e),i=Zn(n,M);return i&&Ln(i)?i:null}(e,t);return r?r.getAttribute(sn.draggableId):null}(t,e)},[t]),j=ze(function(e){var t=n.draggable.findById(e);return t?t.options:null},[n.draggable]),z=ze(function(){o.isClaimed()&&(o.tryAbandon(),"IDLE"!==r.getState().phase&&r.dispatch({type:"FLUSH",payload:null}))},[o,r]),T=ze(o.isClaimed,[o]),I=je(function(){return{canGetLock:c,tryGetLock:g,findClosestDraggableId:l,findOptionsForDraggable:j,tryReleaseLock:z,isLockClaimed:T}},[c,g,l,j,z,T]),s=0;s<N.length;s++)N[s](I)}function iM(e){return e.current||be(!1),e.current}function NM(e){var t=e.contextId,r=e.setCallbacks,n=e.sensors,M=e.nonce,i=e.dragHandleUsageInstructions,N=(0,a.useRef)(null),o=kn(e),c=ze(function(){return function(e){return{onBeforeCapture:e.onBeforeCapture,onBeforeDragStart:e.onBeforeDragStart,onDragStart:e.onDragStart,onDragEnd:e.onDragEnd,onDragUpdate:e.onDragUpdate}}(o.current)},[o]),g=function(e){var t=je(function(){return function(e){return"rbd-announcement-"+e}(e)},[e]),r=(0,a.useRef)(null);return(0,a.useEffect)(function(){var e=document.createElement("div");return r.current=e,e.id=t,e.setAttribute("aria-live","assertive"),e.setAttribute("aria-atomic","true"),D(e.style,wn),Qn().appendChild(e),function(){setTimeout(function(){var t=Qn();t.contains(e)&&t.removeChild(e),e===r.current&&(r.current=null)})}},[t]),ze(function(e){var t=r.current;t&&(t.textContent=e)},[])}(t),l=function(e){var t=e.contextId,r=e.text,n=Cn("hidden-text",{separator:"-"}),M=je(function(){return"rbd-hidden-text-"+(e={contextId:t,uniqueId:n}).contextId+"-"+e.uniqueId;var e},[n,t]);return(0,a.useEffect)(function(){var e=document.createElement("div");return e.id=M,e.textContent=r,e.style.display="none",Qn().appendChild(e),function(){var t=Qn();t.contains(e)&&t.removeChild(e)}},[M,r]),M}({contextId:t,text:i}),j=function(e,t){var r=je(function(){return function(e){var t,r,n,M=(t=e,function(e){return"["+e+'="'+t+'"]'}),i=(r="\n      cursor: -webkit-grab;\n      cursor: grab;\n    ",{selector:M(sn.contextId),styles:{always:"\n          -webkit-touch-callout: none;\n          -webkit-tap-highlight-color: rgba(0,0,0,0);\n          touch-action: manipulation;\n        ",resting:r,dragging:"pointer-events: none;",dropAnimating:r}}),N=[(n="\n      transition: "+Sr.outOfTheWay+";\n    ",{selector:M(dn.contextId),styles:{dragging:n,dropAnimating:n,userCancel:n}}),i,{selector:M(yn.contextId),styles:{always:"overflow-anchor: none;"}},{selector:"body",styles:{dragging:"\n        cursor: grabbing;\n        cursor: -webkit-grabbing;\n        user-select: none;\n        -webkit-user-select: none;\n        -moz-user-select: none;\n        -ms-user-select: none;\n        overflow-anchor: none;\n      "}}];return{always:On(N,"always"),resting:On(N,"resting"),dragging:On(N,"dragging"),dropAnimating:On(N,"dropAnimating"),userCancel:On(N,"userCancel")}}(e)},[e]),n=(0,a.useRef)(null),M=(0,a.useRef)(null),i=ze(Se(function(e){var t=M.current;t||be(!1),t.textContent=e}),[]),N=ze(function(e){var t=n.current;t||be(!1),t.textContent=e},[]);An(function(){(n.current||M.current)&&be(!1);var o=En(t),a=En(t);return n.current=o,M.current=a,o.setAttribute(In+"-always",e),a.setAttribute(In+"-dynamic",e),fn().appendChild(o),fn().appendChild(a),N(r.always),i(r.resting),function(){var e=function(e){var t=e.current;t||be(!1),fn().removeChild(t),e.current=null};e(n),e(M)}},[t,N,i,r.always,r.resting,e]);var o=ze(function(){return i(r.dragging)},[i,r.dragging]),u=ze(function(e){i("DROP"!==e?r.userCancel:r.dropAnimating)},[i,r.dropAnimating,r.userCancel]),c=ze(function(){M.current&&i(r.resting)},[i,r.resting]);return je(function(){return{dragging:o,dropping:u,resting:c}},[o,u,c])}(t,M),z=ze(function(e){iM(N).dispatch(e)},[]),s=je(function(){return A({publishWhileDragging:Dr,updateDroppableScroll:jr,updateDroppableIsEnabled:zr,updateDroppableIsCombineEnabled:Tr,collectionStarting:lr},z)},[z]),d=function(){var e=je(Un,[]);return(0,a.useEffect)(function(){return function(){requestAnimationFrame(e.clean)}},[e]),e}(),y=je(function(){return Xr(d,s)},[d,s]),O=je(function(){return function(e){var t=e.scrollDroppable,r=e.scrollWindow,n=e.move,M=function(e){var t=e.scrollDroppable,r=Qe(e.scrollWindow),n=Qe(t),M=null,i=function(e){M||be(!1);var t=M,i=t.shouldUseTimeDampening,N=t.dragStartTime;zn({state:e,scrollWindow:r,scrollDroppable:n,dragStartTime:N,shouldUseTimeDampening:i})};return{start:function(e){M&&be(!1);var t=Date.now(),r=!1,n=function(){r=!0};zn({state:e,dragStartTime:0,shouldUseTimeDampening:!1,scrollWindow:n,scrollDroppable:n}),M={dragStartTime:t,shouldUseTimeDampening:r},r&&i(e)},stop:function(){M&&(r.cancel(),n.cancel(),M=null)},scroll:i}}({scrollWindow:r,scrollDroppable:t}),i=Tn({move:n,scrollWindow:r,scrollDroppable:t});return{scroll:function(e){"DRAGGING"===e.phase&&("FLUID"!==e.movementMode?e.scrollJumpRequest&&i(e):M.scroll(e))},start:M.start,stop:M.stop}}(D({scrollWindow:Zr,scrollDroppable:y.scrollDroppable},A({move:Ir},z)))},[y.scrollDroppable,z]),E=function(e){var t=(0,a.useRef)({}),r=(0,a.useRef)(null),n=(0,a.useRef)(null),M=(0,a.useRef)(!1),i=ze(function(e,r){var n={id:e,focus:r};return t.current[e]=n,function(){var r=t.current;r[e]!==n&&delete r[e]}},[]),N=ze(function(t){var r=function(e,t){var r="["+sn.contextId+'="'+e+'"]',n=ot(document.querySelectorAll(r));if(!n.length)return null;var M=Nt(n,function(e){return e.getAttribute(sn.draggableId)===t});return M&&Ln(M)?M:null}(e,t);r&&r!==document.activeElement&&r.focus()},[e]),o=ze(function(e,t){r.current===e&&(r.current=t)},[]),u=ze(function(){n.current||M.current&&(n.current=requestAnimationFrame(function(){n.current=null;var e=r.current;e&&N(e)}))},[N]),c=ze(function(e){r.current=null;var t=document.activeElement;t&&t.getAttribute(sn.draggableId)===e&&(r.current=e)},[]);return An(function(){return M.current=!0,function(){M.current=!1;var e=n.current;e&&cancelAnimationFrame(e)}},[]),je(function(){return{register:i,tryRecordFocus:c,tryRestoreFocusRecorded:u,tryShiftRecord:o}},[i,c,u,o])}(t),x=je(function(){return function(e){var t,r=e.dimensionMarshal,n=e.focusMarshal,M=e.styleMarshal,i=e.getResponders,N=e.announce,o=e.autoScroller;return p(gr,Fr(function(){for(var e=arguments.length,t=new Array(e),r=0;r<e;r++)t[r]=arguments[r];return function(e){return function(){var r=e.apply(void 0,arguments),n=function(){throw new Error(I(15))},M={getState:r.getState,dispatch:function(){return n.apply(void 0,arguments)}},i=t.map(function(e){return e(M)});return n=f.apply(void 0,i)(r.dispatch),T(T({},r),{},{dispatch:n})}}}((t=M,function(){return function(e){return function(r){"INITIAL_PUBLISH"===r.type&&t.dragging(),"DROP_ANIMATE"===r.type&&t.dropping(r.payload.completed.result.reason),"FLUSH"!==r.type&&"DROP_COMPLETE"!==r.type||t.resting(),e(r)}}}),function(e){return function(){return function(t){return function(r){"DROP_COMPLETE"!==r.type&&"FLUSH"!==r.type&&"DROP_ANIMATE"!==r.type||e.stopPublishing(),t(r)}}}}(r),function(e){return function(t){var r=t.getState,n=t.dispatch;return function(t){return function(M){if("LIFT"===M.type){var i=M.payload,N=i.id,o=i.clientSelection,a=i.movementMode,u=r();"DROP_ANIMATING"===u.phase&&n(Or({completed:u.completed})),"IDLE"!==r().phase&&be(!1),n({type:"FLUSH",payload:null}),n({type:"BEFORE_INITIAL_CAPTURE",payload:{draggableId:N,movementMode:a}});var c={draggableId:N,scrollOptions:{shouldPublishImmediately:"SNAP"===a}},g=e.startPublishing(c),D=g.critical,l=g.dimensions,j=g.viewport;n({type:"INITIAL_PUBLISH",payload:{critical:D,dimensions:l,clientSelection:o,movementMode:a,viewport:j}})}else t(M)}}}}(r),Cr,Rr,Gr,_r,function(e){return function(t){return function(r){return function(n){if(function(e){return"DROP_COMPLETE"===e.type||"DROP_ANIMATE"===e.type||"FLUSH"===e.type}(n))return e.stop(),void r(n);if("INITIAL_PUBLISH"===n.type){r(n);var M=t.getState();return"DRAGGING"!==M.phase&&be(!1),void e.start(M)}r(n),e.scroll(t.getState())}}}}(o),kr,function(e){var t=!1;return function(){return function(r){return function(n){if("INITIAL_PUBLISH"===n.type)return t=!0,e.tryRecordFocus(n.payload.critical.draggable.id),r(n),void e.tryRestoreFocusRecorded();if(r(n),t){if("FLUSH"===n.type)return t=!1,void e.tryRestoreFocusRecorded();if("DROP_COMPLETE"===n.type){t=!1;var M=n.payload.completed.result;M.combine&&e.tryShiftRecord(M.draggableId,M.combine.draggableId),e.tryRestoreFocusRecorded()}}}}}}(n),Pr(i,N))))}({announce:g,autoScroller:O,dimensionMarshal:y,focusMarshal:E,getResponders:c,styleMarshal:j})},[g,O,y,E,c,j]);N.current=x;var L=ze(function(){var e=iM(N);"IDLE"!==e.getState().phase&&e.dispatch({type:"FLUSH",payload:null})},[]),U=ze(function(){var e=iM(N).getState();return e.isDragging||"DROP_ANIMATING"===e.phase},[]);r(je(function(){return{isDragging:U,tryAbort:L}},[U,L]));var S=ze(function(e){return Kr(iM(N).getState(),e)},[]),Q=ze(function(){return Jt(iM(N).getState())},[]),v=je(function(){return{marshal:y,focus:E,contextId:t,canLift:S,isMovementAllowed:Q,dragHandleUsageInstructionsId:l,registry:d}},[t,y,l,E,S,Q,d]);return MM({contextId:t,store:x,registry:d,customSensors:n,enableDefaultSensors:!1!==e.enableDefaultSensors}),(0,a.useEffect)(function(){return L},[L]),u().createElement(bn.Provider,{value:v},u().createElement(w,{context:Sn,store:x},e.children))}var oM=0;function aM(e){var t=je(function(){return""+oM++},[]),r=e.dragHandleUsageInstructions||"\n  Press space bar to start a drag.\n  When dragging you can use the arrow keys to move the item around and escape to cancel.\n  Some screen readers may require you to be in focus mode or to use your pass through key\n";return u().createElement(ke,null,function(n){return u().createElement(NM,{nonce:e.nonce,contextId:t,setCallbacks:n,dragHandleUsageInstructions:r,enableDefaultSensors:e.enableDefaultSensors,sensors:e.sensors,onBeforeCapture:e.onBeforeCapture,onBeforeDragStart:e.onBeforeDragStart,onDragStart:e.onDragStart,onDragUpdate:e.onDragUpdate,onDragEnd:e.onDragEnd},e.children)})}var uM=function(e){return function(t){return e===t}},cM=uM("scroll"),gM=uM("auto"),DM=(uM("visible"),function(e,t){return t(e.overflowX)||t(e.overflowY)}),lM=function e(t){return null==t||t===document.body||t===document.documentElement?null:function(e){var t=window.getComputedStyle(e),r={overflowX:t.overflowX,overflowY:t.overflowY};return DM(r,cM)||DM(r,gM)}(t)?t:e(t.parentElement)},jM=function(e){return{x:e.scrollLeft,y:e.scrollTop}},zM=function e(t){return!!t&&("fixed"===window.getComputedStyle(t).position||e(t.parentElement))},TM={passive:!1},IM={passive:!0},sM=function(e){return e.shouldPublishImmediately?TM:IM};function dM(e){var t=(0,a.useContext)(e);return t||be(!1),t}var yM=function(e){return e&&e.env.closestScrollable||null};function pM(){}var OM={width:0,height:0,margin:{top:0,right:0,bottom:0,left:0}},AM=u().memo(function(e){var t=(0,a.useRef)(null),r=ze(function(){t.current&&(clearTimeout(t.current),t.current=null)},[]),n=e.animate,M=e.onTransitionEnd,i=e.onClose,N=e.contextId,o=(0,a.useState)("open"===e.animate),c=o[0],g=o[1];(0,a.useEffect)(function(){return c?"open"!==n?(r(),g(!1),pM):t.current?pM:(t.current=setTimeout(function(){t.current=null,g(!1)}),r):pM},[n,c,r]);var D=ze(function(e){"height"===e.propertyName&&(M(),"close"===n&&i())},[n,i,M]),l=function(e){var t=e.isAnimatingOpenOnMount,r=e.placeholder,n=e.animate,M=function(e){var t=e.placeholder;return e.isAnimatingOpenOnMount||"close"===e.animate?OM:{height:t.client.borderBox.height,width:t.client.borderBox.width,margin:t.client.margin}}({isAnimatingOpenOnMount:t,placeholder:r,animate:n});return{display:r.display,boxSizing:"border-box",width:M.width,height:M.height,marginTop:M.margin.top,marginRight:M.margin.right,marginBottom:M.margin.bottom,marginLeft:M.margin.left,flexShrink:"0",flexGrow:"0",pointerEvents:"none",transition:"none"!==n?Sr.placeholder:null}}({isAnimatingOpenOnMount:c,animate:e.animate,placeholder:e.placeholder});return u().createElement(e.placeholder.tagName,{style:l,"data-rbd-placeholder-context-id":N,onTransitionEnd:D,ref:e.innerRef})}),fM=u().createContext(null),EM=function(e){function t(){for(var t,r=arguments.length,n=new Array(r),M=0;M<r;M++)n[M]=arguments[M];return(t=e.call.apply(e,[this].concat(n))||this).state={isVisible:Boolean(t.props.on),data:t.props.on,animate:t.props.shouldAnimate&&t.props.on?"open":"none"},t.onClose=function(){"close"===t.state.animate&&t.setState({isVisible:!1})},t}return g(t,e),t.getDerivedStateFromProps=function(e,t){return e.shouldAnimate?e.on?{isVisible:!0,data:e.on,animate:"open"}:t.isVisible?{isVisible:!0,data:t.data,animate:"close"}:{isVisible:!1,animate:"close",data:null}:{isVisible:Boolean(e.on),data:e.on,animate:"none"}},t.prototype.render=function(){if(!this.state.isVisible)return null;var e={onClose:this.onClose,data:this.state.data,animate:this.state.animate};return this.props.children(e)},t}(u().PureComponent),xM=function(e,t){return t?Sr.drop(t.duration):e?Sr.snap:Sr.fluid},LM=function(e,t){return e?t?Er:xr:null};function UM(e){return"DRAGGING"===e.type?function(e){var t=e.dimension.client,r=e.offset,n=e.combineWith,M=e.dropping,i=Boolean(n),N=function(e){return null!=e.forceShouldAnimate?e.forceShouldAnimate:"SNAP"===e.mode}(e),o=Boolean(M),a=o?function(e,t){var r=Qr(e);return r?t?r+" scale("+Lr+")":r:null}(r,i):wr(r);return{position:"fixed",top:t.marginBox.top,left:t.marginBox.left,boxSizing:"border-box",width:t.borderBox.width,height:t.borderBox.height,transition:xM(N,M),transform:a,opacity:LM(i,o),zIndex:o?4500:5e3,pointerEvents:"none"}}(e):{transform:wr((t=e).offset),transition:t.shouldAnimateDisplacement?null:"none"};var t}function SM(e){e.preventDefault()}var QM=function(e,t){return e===t},wM=function(e){var t=e.combine,r=e.destination;return r?r.droppableId:t?t.droppableId:null};function vM(e){return{isDragging:!1,isDropAnimating:!1,isClone:!1,dropAnimation:null,mode:null,draggingOver:null,combineTargetFor:e,combineWith:null}}var mM={mapped:{type:"SECONDARY",offset:Fe,combineTargetFor:null,shouldAnimateDisplacement:!0,snapshot:vM(null)}},CM=ue(function(){var e,t,r,n=(e=Se(function(e,t){return{x:e,y:t}}),t=Se(function(e,t,r,n,M){return{isDragging:!0,isClone:t,isDropAnimating:Boolean(M),dropAnimation:M,mode:e,draggingOver:r,combineWith:n,combineTargetFor:null}}),r=Se(function(e,r,n,M,i,N,o){return{mapped:{type:"DRAGGING",dropping:null,draggingOver:i,combineWith:N,mode:r,offset:e,dimension:n,forceShouldAnimate:o,snapshot:t(r,M,i,N,null)}}}),function(n,M){if(n.isDragging){if(n.critical.draggable.id!==M.draggableId)return null;var i=n.current.client.offset,N=n.dimensions.draggables[M.draggableId],o=Vt(n.impact),a=(c=n.impact).at&&"COMBINE"===c.at.type?c.at.combine.draggableId:null,u=n.forceShouldAnimate;return r(e(i.x,i.y),n.movementMode,N,M.isClone,o,a,u)}var c;if("DROP_ANIMATING"===n.phase){var g=n.completed;if(g.result.draggableId!==M.draggableId)return null;var D=M.isClone,l=n.dimensions.draggables[M.draggableId],j=g.result,z=j.mode,T=wM(j),I=function(e){return e.combine?e.combine.draggableId:null}(j),s={duration:n.dropDuration,curve:fr,moveTo:n.newHomeClientOffset,opacity:I?Er:null,scale:I?Lr:null};return{mapped:{type:"DRAGGING",offset:n.newHomeClientOffset,dimension:l,dropping:s,draggingOver:T,combineWith:I,mode:z,forceShouldAnimate:null,snapshot:t(z,D,T,I,s)}}}return null}),M=function(){var e=Se(function(e,t){return{x:e,y:t}}),t=Se(vM),r=Se(function(e,r,n){return void 0===r&&(r=null),{mapped:{type:"SECONDARY",offset:e,combineTargetFor:r,shouldAnimateDisplacement:n,snapshot:t(r)}}}),n=function(e){return e?r(Fe,e,!0):null},M=function(t,M,i,N){var o=i.displaced.visible[t],a=Boolean(N.inVirtualList&&N.effected[t]),u=jt(i),c=u&&u.draggableId===t?M:null;if(!o){if(!a)return n(c);if(i.displaced.invisible[t])return null;var g=Ve(N.displacedBy.point),D=e(g.x,g.y);return r(D,c,!0)}if(a)return n(c);var l=i.displacedBy.point,j=e(l.x,l.y);return r(j,c,o.shouldAnimate)};return function(e,t){if(e.isDragging)return e.critical.draggable.id===t.draggableId?null:M(t.draggableId,e.critical.draggable.id,e.impact,e.afterCritical);if("DROP_ANIMATING"===e.phase){var r=e.completed;return r.result.draggableId===t.draggableId?null:M(t.draggableId,r.result.draggableId,r.impact,r.afterCritical)}return null}}();return function(e,t){return n(e,t)||M(e,t)||mM}},{dropAnimationFinished:function(){return{type:"DROP_ANIMATION_FINISHED",payload:null}}},null,{context:Sn,pure:!0,areStatePropsEqual:QM})(function(e){var t=(0,a.useRef)(null),r=ze(function(e){t.current=e},[]),n=ze(function(){return t.current},[]),M=dM(bn),i=M.contextId,N=M.dragHandleUsageInstructionsId,o=M.registry,u=dM(fM),c=u.type,g=u.droppableId,D=je(function(){return{id:e.draggableId,index:e.index,type:c,droppableId:g}},[e.draggableId,e.index,c,g]),l=e.children,j=e.draggableId,z=e.isEnabled,T=e.shouldRespectForcePress,I=e.canDragInteractiveElements,s=e.isClone,d=e.mapped,y=e.dropAnimationFinished;s||function(e){var t=Cn("draggable"),r=e.descriptor,n=e.registry,M=e.getDraggableRef,i=e.canDragInteractiveElements,N=e.shouldRespectForcePress,o=e.isEnabled,u=je(function(){return{canDragInteractiveElements:i,shouldRespectForcePress:N,isEnabled:o}},[i,o,N]),c=ze(function(e){var t=M();return t||be(!1),function(e,t,r){void 0===r&&(r=Fe);var n=window.getComputedStyle(t),M=t.getBoundingClientRect(),i=fe(M,n),N=Ae(i,r);return{descriptor:e,placeholder:{client:i,tagName:t.tagName.toLowerCase(),display:n.display},displaceBy:{x:i.marginBox.width,y:i.marginBox.height},client:i,page:N}}(r,t,e)},[r,M]),g=je(function(){return{uniqueId:t,descriptor:r,options:u,getDimension:c}},[r,c,u,t]),D=(0,a.useRef)(g),l=(0,a.useRef)(!0);An(function(){return n.draggable.register(D.current),function(){return n.draggable.unregister(D.current)}},[n.draggable]),An(function(){if(l.current)l.current=!1;else{var e=D.current;D.current=g,n.draggable.update(g,e)}},[g,n.draggable])}(je(function(){return{descriptor:D,registry:o,getDraggableRef:n,canDragInteractiveElements:I,shouldRespectForcePress:T,isEnabled:z}},[D,o,n,I,T,z]));var p=je(function(){return z?{tabIndex:0,role:"button","aria-describedby":N,"data-rbd-drag-handle-draggable-id":j,"data-rbd-drag-handle-context-id":i,draggable:!1,onDragStart:SM}:null},[i,N,j,z]),O=ze(function(e){"DRAGGING"===d.type&&d.dropping&&"transform"===e.propertyName&&y()},[y,d]),A=je(function(){var e=UM(d),t="DRAGGING"===d.type&&d.dropping?O:null;return{innerRef:r,draggableProps:{"data-rbd-draggable-context-id":i,"data-rbd-draggable-id":j,style:e,onTransitionEnd:t},dragHandleProps:p}},[i,p,j,d,O,r]),f=je(function(){return{draggableId:D.id,type:D.type,source:{index:D.index,droppableId:D.droppableId}}},[D.droppableId,D.id,D.index,D.type]);return l(A,d.snapshot,f)});function bM(e){return dM(fM).isUsingCloneFor!==e.draggableId||e.isClone?u().createElement(CM,e):null}function kM(e){var t="boolean"!=typeof e.isDragDisabled||!e.isDragDisabled,r=Boolean(e.disableInteractiveElementBlocking),n=Boolean(e.shouldRespectForcePress);return u().createElement(bM,D({},e,{isClone:!1,isEnabled:t,canDragInteractiveElements:r,shouldRespectForcePress:n}))}var YM=function(e,t){return e===t.droppable.type},hM=function(e,t){return t.draggables[e.draggable.id]},BM={mode:"standard",type:"DEFAULT",direction:"vertical",isDropDisabled:!1,isCombineEnabled:!1,ignoreContainerClipping:!1,renderClone:null,getContainerForClone:function(){return document.body||be(!1),document.body}},PM=ue(function(){var e={placeholder:null,shouldAnimatePlaceholder:!0,snapshot:{isDraggingOver:!1,draggingOverWith:null,draggingFromThisWith:null,isUsingPlaceholder:!1},useClone:null},t=D({},e,{shouldAnimatePlaceholder:!1}),r=Se(function(e){return{draggableId:e.id,type:e.type,source:{index:e.index,droppableId:e.droppableId}}}),n=Se(function(n,M,i,N,o,a){var u=o.descriptor.id;if(o.descriptor.droppableId===n){var c=a?{render:a,dragging:r(o.descriptor)}:null,g={isDraggingOver:i,draggingOverWith:i?u:null,draggingFromThisWith:u,isUsingPlaceholder:!0};return{placeholder:o.placeholder,shouldAnimatePlaceholder:!1,snapshot:g,useClone:c}}if(!M)return t;if(!N)return e;var D={isDraggingOver:i,draggingOverWith:u,draggingFromThisWith:null,isUsingPlaceholder:!0};return{placeholder:o.placeholder,shouldAnimatePlaceholder:!0,snapshot:D,useClone:null}});return function(r,M){var i=M.droppableId,N=M.type,o=!M.isDropDisabled,a=M.renderClone;if(r.isDragging){var u=r.critical;if(!YM(N,u))return t;var c=hM(u,r.dimensions),g=Vt(r.impact)===i;return n(i,o,g,g,c,a)}if("DROP_ANIMATING"===r.phase){var D=r.completed;if(!YM(N,D.critical))return t;var l=hM(D.critical,r.dimensions);return n(i,o,wM(D.result)===i,Vt(D.impact)===i,l,a)}if("IDLE"===r.phase&&r.completed&&!r.shouldFlush){var j=r.completed;if(!YM(N,j.critical))return t;var z=Vt(j.impact)===i,T=Boolean(j.impact.at&&"COMBINE"===j.impact.at.type),I=j.critical.droppable.id===i;return z?T?e:t:I?e:t}return t}},{updateViewportMaxScroll:function(e){return{type:"UPDATE_VIEWPORT_MAX_SCROLL",payload:e}}},null,{context:Sn,pure:!0,areStatePropsEqual:QM})(function(e){var t=(0,a.useContext)(bn);t||be(!1);var r=t.contextId,n=t.isMovementAllowed,M=(0,a.useRef)(null),i=(0,a.useRef)(null),N=e.children,o=e.droppableId,c=e.type,g=e.mode,D=e.direction,l=e.ignoreContainerClipping,j=e.isDropDisabled,z=e.isCombineEnabled,T=e.snapshot,I=e.useClone,s=e.updateViewportMaxScroll,d=e.getContainerForClone,y=ze(function(){return M.current},[]),p=ze(function(e){M.current=e},[]),O=(ze(function(){return i.current},[]),ze(function(e){i.current=e},[])),A=ze(function(){n()&&s({maxScroll:qr()})},[n,s]);!function(e){var t=(0,a.useRef)(null),r=dM(bn),n=Cn("droppable"),M=r.registry,i=r.marshal,N=kn(e),o=je(function(){return{id:e.droppableId,type:e.type,mode:e.mode}},[e.droppableId,e.mode,e.type]),u=(0,a.useRef)(o),c=je(function(){return Se(function(e,r){t.current||be(!1);var n={x:e,y:r};i.updateDroppableScroll(o.id,n)})},[o.id,i]),g=ze(function(){var e=t.current;return e&&e.env.closestScrollable?jM(e.env.closestScrollable):Fe},[]),D=ze(function(){var e=g();c(e.x,e.y)},[g,c]),l=je(function(){return Qe(D)},[D]),j=ze(function(){var e=t.current,r=yM(e);e&&r||be(!1),e.scrollOptions.shouldPublishImmediately?D():l()},[l,D]),z=ze(function(e,n){t.current&&be(!1);var M=N.current,i=M.getDroppableRef();i||be(!1);var a=function(e){return{closestScrollable:lM(e),isFixedOnPage:zM(e)}}(i),u={ref:i,descriptor:o,env:a,scrollOptions:n};t.current=u;var c=function(e){var t=e.ref,r=e.descriptor,n=e.env,M=e.windowScroll,i=e.direction,N=e.isDropDisabled,o=e.isCombineEnabled,a=e.shouldClipSubject,u=n.closestScrollable,c=function(e,t){var r=Ee(e);if(!t)return r;if(e!==t)return r;var n=r.paddingBox.top-t.scrollTop,M=r.paddingBox.left-t.scrollLeft,i=n+t.scrollHeight,N=M+t.scrollWidth,o=Ie({top:n,right:N,bottom:i,left:M},r.border);return ye({borderBox:o,margin:r.margin,border:r.border,padding:r.padding})}(t,u),g=Ae(c,M),D=function(){if(!u)return null;var e=Ee(u),t={scrollHeight:u.scrollHeight,scrollWidth:u.scrollWidth};return{client:e,page:Ae(e,M),scroll:jM(u),scrollSize:t,shouldClipSubject:a}}(),l=function(e){var t=e.descriptor,r=e.isEnabled,n=e.isCombineEnabled,M=e.isFixedOnPage,i=e.direction,N=e.client,o=e.page,a=e.closest,u=function(){if(!a)return null;var e=a.scrollSize,t=a.client,r=Wr({scrollHeight:e.scrollHeight,scrollWidth:e.scrollWidth,height:t.paddingBox.height,width:t.paddingBox.width});return{pageMarginBox:a.page.marginBox,frameClient:t,scrollSize:e,shouldClipSubject:a.shouldClipSubject,scroll:{initial:a.scroll,current:a.scroll,max:r,diff:{value:Fe,displacement:Fe}}}}(),c="vertical"===i?At:ft;return{descriptor:t,isCombineEnabled:n,isFixedOnPage:M,axis:c,isEnabled:r,client:N,page:o,frame:u,subject:rt({page:o,withPlaceholder:null,axis:c,frame:u})}}({descriptor:r,isEnabled:!N,isCombineEnabled:o,isFixedOnPage:n.isFixedOnPage,direction:i,client:c,page:g,closest:D});return l}({ref:i,descriptor:o,env:a,windowScroll:e,direction:M.direction,isDropDisabled:M.isDropDisabled,isCombineEnabled:M.isCombineEnabled,shouldClipSubject:!M.ignoreContainerClipping}),g=a.closestScrollable;return g&&(g.setAttribute(pn.contextId,r.contextId),g.addEventListener("scroll",j,sM(u.scrollOptions))),c},[r.contextId,o,j,N]),T=ze(function(){var e=t.current,r=yM(e);return e&&r||be(!1),jM(r)},[]),I=ze(function(){var e=t.current;e||be(!1);var r=yM(e);t.current=null,r&&(l.cancel(),r.removeAttribute(pn.contextId),r.removeEventListener("scroll",j,sM(e.scrollOptions)))},[j,l]),s=ze(function(e){var r=t.current;r||be(!1);var n=yM(r);n||be(!1),n.scrollTop+=e.y,n.scrollLeft+=e.x},[]),d=je(function(){return{getDimensionAndWatchScroll:z,getScrollWhileDragging:T,dragStopped:I,scroll:s}},[I,z,T,s]),y=je(function(){return{uniqueId:n,descriptor:o,callbacks:d}},[d,o,n]);An(function(){return u.current=y.descriptor,M.droppable.register(y),function(){t.current&&I(),M.droppable.unregister(y)}},[d,o,I,y,i,M.droppable]),An(function(){t.current&&i.updateDroppableIsEnabled(u.current.id,!e.isDropDisabled)},[e.isDropDisabled,i]),An(function(){t.current&&i.updateDroppableIsCombineEnabled(u.current.id,e.isCombineEnabled)},[e.isCombineEnabled,i])}({droppableId:o,type:c,mode:g,direction:D,isDropDisabled:j,isCombineEnabled:z,ignoreContainerClipping:l,getDroppableRef:y});var f=u().createElement(EM,{on:e.placeholder,shouldAnimate:e.shouldAnimatePlaceholder},function(e){var t=e.onClose,n=e.data,M=e.animate;return u().createElement(AM,{placeholder:n,onClose:t,innerRef:O,animate:M,contextId:r,onTransitionEnd:A})}),E=je(function(){return{innerRef:p,placeholder:f,droppableProps:{"data-rbd-droppable-id":o,"data-rbd-droppable-context-id":r}}},[r,o,f,p]),x=I?I.dragging.draggableId:null,L=je(function(){return{droppableId:o,type:c,isUsingCloneFor:x}},[o,x,c]);return u().createElement(fM.Provider,{value:L},N(E,T),function(){if(!I)return null;var e=I.dragging,t=I.render,r=u().createElement(bM,{draggableId:e.draggableId,index:e.source.index,isClone:!0,isEnabled:!0,shouldRespectForcePress:!1,canDragInteractiveElements:!0},function(r,n){return t(r,n,e)});return De().createPortal(r,d())}())});PM.defaultProps=BM;const RM=window.ReactJSXRuntime;(0,n.registerBlockType)(M.name,{...M,icon:()=>(0,RM.jsx)("img",{src:"data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiPgo8cGF0aCBkPSJNMCAwIEMzLjc2NDg3NzYgMS41MDI2NDg1MSA3LjM5NzQ0NjgzIDIuMjQ0Nzc2MDggMTEuMzc1IDIuODU5Mzc1IEMyMi4xMjc0OTUxMSA0LjczMTczNjg5IDMxLjE1ODkyMTk4IDguMTYyNjEzOTkgMzkuNTYyNSAxNS40MjE4NzUgQzM5LjU2MjUgMTYuMDgxODc1IDM5LjU2MjUgMTYuNzQxODc1IDM5LjU2MjUgMTcuNDIxODc1IEM0MC4yMjI1IDE3LjQyMTg3NSA0MC44ODI1IDE3LjQyMTg3NSA0MS41NjI1IDE3LjQyMTg3NSBDNDEuNTYyNSAxOC4wODE4NzUgNDEuNTYyNSAxOC43NDE4NzUgNDEuNTYyNSAxOS40MjE4NzUgQzQyLjIyMjUgMTkuNDIxODc1IDQyLjg4MjUgMTkuNDIxODc1IDQzLjU2MjUgMTkuNDIxODc1IEM1MS43NjY1MTg2NyAyOC40MjY4MTM2OSA1Ny4wMjI0OTg2MyA0MS4wMjMzMzMxNiA1OC45Mzc1IDUyLjkyMTg3NSBDNjAuMDg5NjQ0MjUgNTkuMjgwMjcxMDkgNjIuMjg4ODA5NiA2MS43MTg3ODYyMSA2Ny4zMzk4NDM3NSA2NS41NjI1IEM3Mi41NTI0NzQ1NyA2OS45MjMxNTQyNSA3NS4zNzg3ODc4MSA3Ni44NTc2NTI4OCA3Ni41NjI1IDgzLjQyMTg3NSBDNzcuMzI5Mzc2OCA5NC42MjM3NTQwNCA3Ni41NjE4OTgxNSAxMDQuMzAxNDQ3MSA2OS41NjI1IDExMy40MjE4NzUgQzY5LjAyNjI1IDExNC4yNDY4NzUgNjguNDkgMTE1LjA3MTg3NSA2Ny45Mzc1IDExNS45MjE4NzUgQzYzLjExMjgwNzQ1IDEyMS4wMDA0OTg3NCA1Ni42ODQ0ODg4NyAxMjUuMDQ3MDMzNDggNDkuNTYyNSAxMjUuNDIxODc1IEM0OS40OCAxMjYuNzAwNjI1IDQ5LjM5NzUgMTI3Ljk3OTM3NSA0OS4zMTI1IDEyOS4yOTY4NzUgQzQ4LjMyNTQxNzI4IDEzOC4wMjk4MTUxNSA0NC4zNTMxNzI5NSAxNDguMzQyOTU5MTggMzcuNTExNzE4NzUgMTU0LjE2Nzk2ODc1IEMzNS4xNzAxODAxNiAxNTYuMjE4NDY4NjUgMzMuNzc3NTk4MDggMTU3LjUzNTQ1MjQzIDMyLjU2MjUgMTYwLjQyMTg3NSBDMzMuNDkzOTE1MiAxNjUuNzc2MTUwNzEgMzUuMzUzNDQ5NzggMTcwLjQ3NTY2MzQzIDM3LjU2MjUgMTc1LjQyMTg3NSBDMzguMTExNjQwNjMgMTc0LjcyOTY0ODQ0IDM4LjExMTY0MDYzIDE3NC43Mjk2NDg0NCAzOC42NzE4NzUgMTc0LjAyMzQzNzUgQzQxLjIzNzc5MjExIDE3MS44NDk4MzAwMyA0My41MzY0NjczIDE3MS40OTAxNzQ5NCA0Ni44MTI1IDE3MC43OTY4NzUgQzQ3LjkxMDc4MTI1IDE3MC41NTcxMDkzOCA0OS4wMDkwNjI1IDE3MC4zMTczNDM3NSA1MC4xNDA2MjUgMTcwLjA3MDMxMjUgQzcwLjg3NjgyMzQ4IDE2Ni4xNDA4NTAyMyA5My42NTQxMjc3NyAxNjcuNjg0MDgwNDYgMTExLjY4NzUgMTc5LjYwOTM3NSBDMTEyLjk4NTc0NTYyIDE4MC41Mzc3NDMxIDExNC4yNzgzNzYzMiAxODEuNDc0MDY5NDMgMTE1LjU2MjUgMTgyLjQyMTg3NSBDMTE2LjU1MjUgMTgzLjA4MTg3NSAxMTcuNTQyNSAxODMuNzQxODc1IDExOC41NjI1IDE4NC40MjE4NzUgQzExOC41NjI1IDE4NS4wODE4NzUgMTE4LjU2MjUgMTg1Ljc0MTg3NSAxMTguNTYyNSAxODYuNDIxODc1IEMxMTkuMjIyNSAxODYuNDIxODc1IDExOS44ODI1IDE4Ni40MjE4NzUgMTIwLjU2MjUgMTg2LjQyMTg3NSBDMTIwLjU2MjUgMTg3LjA4MTg3NSAxMjAuNTYyNSAxODcuNzQxODc1IDEyMC41NjI1IDE4OC40MjE4NzUgQzEyMS4yMjI1IDE4OC40MjE4NzUgMTIxLjg4MjUgMTg4LjQyMTg3NSAxMjIuNTYyNSAxODguNDIxODc1IEMxMjIuNTYyNSAxODkuMDgxODc1IDEyMi41NjI1IDE4OS43NDE4NzUgMTIyLjU2MjUgMTkwLjQyMTg3NSBDMTIzLjIyMjUgMTkwLjQyMTg3NSAxMjMuODgyNSAxOTAuNDIxODc1IDEyNC41NjI1IDE5MC40MjE4NzUgQzEzOS4yMTYwNTQ5OCAyMDYuODk3MjIzMzEgMTQ2LjE1MjA2NTY4IDIzMC45OTY5OTQxMyAxNDUuNzY1NjI1IDI1Mi42MDU0Njg3NSBDMTQ1LjQ0Mzg0NDkyIDI1Ny4wNjcwNzMyNiAxNDQuNzQ2ODE3MTYgMjYxLjQ1ODg5MTc2IDE0NCAyNjUuODY3MTg3NSBDMTQyLjk1MDY3OTIyIDI3NC4zOTI5MTg4MiAxNDQuMDQ2Mjg5MDIgMjgxLjg2MjU5ODg1IDE0NS44MTI1IDI5MC4yMzQzNzUgQzE0Ny43MjIyNDMwMSAyOTkuNzIzODU3MzggMTQ5LjM4NDA4NzAxIDMwOS4yMTM2MDI5NiAxNTAuNzUgMzE4Ljc5Njg3NSBDMTUwLjk4MTU0Nzg1IDMyMC4zOTU1OTQ0OCAxNTAuOTgxNTQ3ODUgMzIwLjM5NTU5NDQ4IDE1MS4yMTc3NzM0NCAzMjIuMDI2NjExMzMgQzE1MS43MDAwNDc3MyAzMjUuNDg4MDUzOTggMTUyLjEzNDkzNCAzMjguOTUzMjU3MiAxNTIuNTYyNSAzMzIuNDIxODc1IEMxNTIuNjUwNDM4MjMgMzMzLjA2OTk4MTM4IDE1Mi43MzgzNzY0NiAzMzMuNzE4MDg3NzcgMTUyLjgyODk3OTQ5IDMzNC4zODU4MzM3NCBDMTU1LjAyMTIwNzE5IDM1MC43NDA0OTg1MyAxNTQuOTM3NDYyIDM2Ny4xNjgzNjMxOCAxNTQuOTMzMTA1NDcgMzgzLjYzNjQ3NDYxIEMxNTQuOTMyOTQzMzkgMzg2Ljg1NjEwNTMyIDE1NC45NDY3ODU3NiAzOTAuMDc1MTY0MTMgMTU0Ljk3NDEyMTA5IDM5My4yOTQ2Nzc3MyBDMTU1LjI5OTU2MzQ0IDQzMi4yNzA5NzM5MiAxNTEuMDczNTUxNjMgNDcwLjgxODQ1MjU0IDEyOS41NjI1IDUwNC40MjE4NzUgQzEyOC41NjI1IDUwNS40MjE4NzUgMTI4LjU2MjUgNTA1LjQyMTg3NSAxMjUuODM5ODQzNzUgNTA1LjUxOTUzMTI1IEMxMjQuMTg2NjIxMDkgNTA1LjUwMjEyODkxIDEyNC4xODY2MjEwOSA1MDUuNTAyMTI4OTEgMTIyLjUgNTA1LjQ4NDM3NSBDMTIxLjM5NTI3MzQ0IDUwNS40NzUzNTE1NiAxMjAuMjkwNTQ2ODggNTA1LjQ2NjMyODEzIDExOS4xNTIzNDM3NSA1MDUuNDU3MDMxMjUgQzExNy44NzAzNzEwOSA1MDUuNDM5NjI4OTEgMTE3Ljg3MDM3MTA5IDUwNS40Mzk2Mjg5MSAxMTYuNTYyNSA1MDUuNDIxODc1IEMxMTcuODQ0NTgzNDcgNTAxLjg1NTY5MTM3IDExOS4zNTgzOTg3MSA0OTkuMjA4MDQxNTMgMTIxLjY4NzUgNDk2LjIzNDM3NSBDMTM1LjYzMjY1ODQ0IDQ3Ni42MDY3ODE5MyAxNDAuMjA1MTIyNTcgNDUxLjczMjcwNTMzIDE0My41NjI1IDQyOC40MjE4NzUgQzE0My42Njk5NzU1OSA0MjcuNjc4ODkxNiAxNDMuNzc3NDUxMTcgNDI2LjkzNTkwODIgMTQzLjg4ODE4MzU5IDQyNi4xNzA0MTAxNiBDMTQ0LjExNTQ5OTIzIDQyNC41ODc5MjgzOCAxNDQuMzM5NDk3NzIgNDIzLjAwNDk3MDM3IDE0NC41NjI1IDQyMS40MjE4NzUgQzE0NC4wNTQ0NDgyNCA0MjEuNTc2OTYwMyAxNDMuNTQ2Mzk2NDggNDIxLjczMjA0NTU5IDE0My4wMjI5NDkyMiA0MjEuODkxODMwNDQgQzEzOS43NjI5NDcxIDQyMi41OTQxMTk0MiAxMzYuNTE2MDY4NDMgNDIyLjczOTg3OTg3IDEzMy4xOTUzMTI1IDQyMi45MDI1ODc4OSBDMTMyLjQ1OTg4MjIgNDIyLjk0MTc0ODIgMTMxLjcyNDQ1MTkgNDIyLjk4MDkwODUxIDEzMC45NjY3MzU4NCA0MjMuMDIxMjU1NDkgQzEyOC41NDA1MDU3MyA0MjMuMTQ5NDc0MjUgMTI2LjExNDAyNjk0IDQyMy4yNzIwNjkwNyAxMjMuNjg3NSA0MjMuMzk0NTMxMjUgQzEyMS45OTg4NDQzMSA0MjMuNDgyNDY5MjYgMTIwLjMxMDIwNTE3IDQyMy41NzA3MjU1NCAxMTguNjIxNTgyMDMgNDIzLjY1OTI4NjUgQzExNS4wODQ0MjgzMSA0MjMuODQ0MDA0NDcgMTExLjU0NzE1NjEyIDQyNC4wMjYxNzI3NSAxMDguMDA5NzY1NjIgNDI0LjIwNjI5ODgzIEMxMDMuNDc2NzU3MzUgNDI0LjQzNzE0MDgyIDk4Ljk0Mzk4NjE1IDQyNC42NzIyODQ5NiA5NC40MTEyODU0IDQyNC45MDkwODE0NiBDOTAuMDg2NzY0NzcgNDI1LjEzNDg0MDczIDg1Ljc2MjEzODc1IDQyNS4zNTg1NDc4OSA4MS40Mzc1IDQyNS41ODIwMzEyNSBDODAuMjAwMjcxOTEgNDI1LjY0NjE5NTc4IDgwLjIwMDI3MTkxIDQyNS42NDYxOTU3OCA3OC45MzgwNDkzMiA0MjUuNzExNjU2NTcgQzc2LjYwMTk4NDY5IDQyNS44MzI0MTUwOCA3NC4yNjU4NTA5MyA0MjUuOTUxNzI2NjUgNzEuOTI5Njg3NSA0MjYuMDcwNTU2NjQgQzcxLjIzOTY5NjY2IDQyNi4xMDYzODg1NSA3MC41NDk3MDU4MSA0MjYuMTQyMjIwNDYgNjkuODM4ODA2MTUgNDI2LjE3OTEzODE4IEM2Ni43Mzg5MTQ3MiA0MjYuMzM1MzUzNzYgNjMuNjY4MDIwMTIgNDI2LjQyMTg3NSA2MC41NjI1IDQyNi40MjE4NzUgQzYwLjU2MjUgNDUyLjQ5MTg3NSA2MC41NjI1IDQ3OC41NjE4NzUgNjAuNTYyNSA1MDUuNDIxODc1IEM1Ny4yNjI1IDUwNS40MjE4NzUgNTMuOTYyNSA1MDUuNDIxODc1IDUwLjU2MjUgNTA1LjQyMTg3NSBDNTAuNTYyNSA0NjEuMjAxODc1IDUwLjU2MjUgNDE2Ljk4MTg3NSA1MC41NjI1IDM3MS40MjE4NzUgQzAuMDcyNSAzNzEuNDIxODc1IC01MC40MTc1IDM3MS40MjE4NzUgLTEwMi40Mzc1IDM3MS40MjE4NzUgQy0xMDIuNDM3NSA0MTUuNjQxODc1IC0xMDIuNDM3NSA0NTkuODYxODc1IC0xMDIuNDM3NSA1MDUuNDIxODc1IEMtMTA1LjQwNzUgNTA1LjQyMTg3NSAtMTA4LjM3NzUgNTA1LjQyMTg3NSAtMTExLjQzNzUgNTA1LjQyMTg3NSBDLTExMS43Njc1IDUwMi40NTE4NzUgLTExMi4wOTc1IDQ5OS40ODE4NzUgLTExMi40Mzc1IDQ5Ni40MjE4NzUgQy0xMTIuNzQzMDA3ODEgNDk3LjA3MTU2MjUgLTExMy4wNDg1MTU2MiA0OTcuNzIxMjUgLTExMy4zNjMyODEyNSA0OTguMzkwNjI1IEMtMTE0Ljg2MjU5NDkxIDUwMS4xMjc0MDAzNSAtMTE2LjE5MTAxNDI2IDUwMy4yNDMzMzU5IC0xMTguNDM3NSA1MDUuNDIxODc1IEMtMTIyLjIxNDIyMDA0IDUwNi4yMTQ1MTk5NSAtMTI1LjYzNTQ5MzM5IDUwNS45Njk4NTEwNCAtMTI5LjQzNzUgNTA1LjQyMTg3NSBDLTEyNi44NTcwODE3NCA0OTkuMDAxMTg3MjEgLTEyMy44NzcxMjY3IDQ5Mi43ODc0ODA5OCAtMTE5LjQzNzUgNDg3LjQyMTg3NSBDLTExOC43Nzc1IDQ4Ny40MjE4NzUgLTExOC4xMTc1IDQ4Ny40MjE4NzUgLTExNy40Mzc1IDQ4Ny40MjE4NzUgQy0xMTcuNDM3NSA0ODYuNzYxODc1IC0xMTcuNDM3NSA0ODYuMTAxODc1IC0xMTcuNDM3NSA0ODUuNDIxODc1IEMtMTE2Ljc3NzUgNDg1LjQyMTg3NSAtMTE2LjExNzUgNDg1LjQyMTg3NSAtMTE1LjQzNzUgNDg1LjQyMTg3NSBDLTExNS40Mzc1IDQ4NC43NjE4NzUgLTExNS40Mzc1IDQ4NC4xMDE4NzUgLTExNS40Mzc1IDQ4My40MjE4NzUgQy0xMTQuNDQ3NSA0ODIuNzYxODc1IC0xMTMuNDU3NSA0ODIuMTAxODc1IC0xMTIuNDM3NSA0ODEuNDIxODc1IEMtMTExLjkyNTI5NDU5IDQ3OC4zMTk3Mzc3NSAtMTExLjkyNTI5NDU5IDQ3OC4zMTk3Mzc3NSAtMTExLjkyNTc4MTI1IDQ3NC42NjQwNjI1IEMtMTExLjkwNzgzMDA1IDQ3NC4wMDEwMTEwNSAtMTExLjg4OTg3ODg1IDQ3My4zMzc5NTk1OSAtMTExLjg3MTM4MzY3IDQ3Mi42NTQ4MTU2NyBDLTExMS44MTcxNzA3NiA0NzAuNTM1NTY2OTcgLTExMS43ODMzNTIyOSA0NjguNDE2NTQ0NzUgLTExMS43NSA0NjYuMjk2ODc1IEMtMTExLjcxNjgzNjMzIDQ2NC44NjA2NDU0OCAtMTExLjY4MjM0NzU1IDQ2My40MjQ0NDU5IC0xMTEuNjQ2NDg0MzggNDYxLjk4ODI4MTI1IEMtMTExLjU2MTQ0MDM2IDQ1OC40NjYzNjM3MSAtMTExLjQ5NDY4MTI3IDQ1NC45NDQzNjc0MSAtMTExLjQzNzUgNDUxLjQyMTg3NSBDLTEzOC44MDIxMzQ5NyA0NTcuMjg4MDY2MjEgLTE2MC40MTkwNTg3NiA0NjguOTQ3MzM4NzMgLTE3Ni4wOTQ5NzA3IDQ5Mi44NDI1MjkzIEMtMTc4Ljc0MTE3ODE0IDQ5Ni45NTQzMTIyMiAtMTgxLjI0NjY0MzIxIDUwMS4wNDAxNjE0MiAtMTgzLjQzNzUgNTA1LjQyMTg3NSBDLTE4Ny4wNjc1IDUwNS40MjE4NzUgLTE5MC42OTc1IDUwNS40MjE4NzUgLTE5NC40Mzc1IDUwNS40MjE4NzUgQy0xOTEuMjM5OTk2NzggNDk2LjI0NjQzMDk2IC0xODYuMzcxNTkxMjcgNDg2LjI1NjMzNTcyIC0xNzkuMzMyOTQ2NzggNDc5LjM1OTgxNzUgQy0xNzYuNTUzNzY2NiA0NzUuMDUyMDg4MjMgLTE3Ni44NjU0NDczOSA0NzEuMjQyNzI1NCAtMTc2Ljg5MTYwMTU2IDQ2Ni4yMTU1NzYxNyBDLTE3Ni44ODEyMDcyNCA0NjUuMTc0MTk0IC0xNzYuODcwODEyOTEgNDY0LjEzMjgxMTgzIC0xNzYuODYwMTAzNjEgNDYzLjA1OTg3MjYzIEMtMTc2LjgzMTAwMDI5IDQ1OS42OTQ2OTcyMSAtMTc2LjgyOTAzNTgzIDQ1Ni4zMzAxMzI1NCAtMTc2LjgyODEyNSA0NTIuOTY0ODQzNzUgQy0xNzYuODE0MTI4OTMgNDUwLjg4NDk1NjI1IC0xNzYuNzk4MzUxOTQgNDQ4LjgwNTA3OTk0IC0xNzYuNzgwNzYxNzIgNDQ2LjcyNTIxOTczIEMtMTc2LjcyODA4NjUyIDQzOS4wMjAwNTU0OSAtMTc2LjcwOTg4MjIzIDQzMS4zMTQ2ODY3OCAtMTc2LjY4NzUgNDIzLjYwOTM3NSBDLTE3Ni42MDUgNDA2LjM4NzUgLTE3Ni41MjI1IDM4OS4xNjU2MjUgLTE3Ni40Mzc1IDM3MS40MjE4NzUgQy0yMjcuMjU3NSAzNzEuNDIxODc1IC0yNzguMDc3NSAzNzEuNDIxODc1IC0zMzAuNDM3NSAzNzEuNDIxODc1IEMtMzMwLjQzNzUgNDE1LjY0MTg3NSAtMzMwLjQzNzUgNDU5Ljg2MTg3NSAtMzMwLjQzNzUgNTA1LjQyMTg3NSBDLTMzMy40MDc1IDUwNS40MjE4NzUgLTMzNi4zNzc1IDUwNS40MjE4NzUgLTMzOS40Mzc1IDUwNS40MjE4NzUgQy0zMzkuNDM3NSA0NjEuMjAxODc1IC0zMzkuNDM3NSA0MTYuOTgxODc1IC0zMzkuNDM3NSAzNzEuNDIxODc1IEMtMzQ1LjA0NzUgMzcxLjQyMTg3NSAtMzUwLjY1NzUgMzcxLjQyMTg3NSAtMzU2LjQzNzUgMzcxLjQyMTg3NSBDLTM1Ny40Mzc1IDM3MC40MjE4NzUgLTM1Ny40Mzc1IDM3MC40MjE4NzUgLTM1Ny41NTEwMjUzOSAzNjcuNTU0NDQzMzYgQy0zNTcuNTQ1Nzg4NTcgMzY2LjMwMjg0NDI0IC0zNTcuNTQwNTUxNzYgMzY1LjA1MTI0NTEyIC0zNTcuNTM1MTU2MjUgMzYzLjc2MTcxODc1IEMtMzU3LjUzMjY1ODY5IDM2Mi41NDYwNTIyNSAtMzU3LjUzMDE2MTEzIDM2MS4zMzAzODU3NCAtMzU3LjUyNzU4Nzg5IDM2MC4wNzc4ODA4NiBDLTM1Ny41MTM5MzE4OCAzNTcuNzQyMjIwNDYgLTM1Ny41MTM5MzE4OCAzNTcuNzQyMjIwNDYgLTM1Ny41IDM1NS4zNTkzNzUgQy0zNTcuNDc5Mzc1IDM1MC40MyAtMzU3LjQ1ODc1IDM0NS41MDA2MjUgLTM1Ny40Mzc1IDM0MC40MjE4NzUgQy0zNDMuOTA3NSAzNDAuNDIxODc1IC0zMzAuMzc3NSAzNDAuNDIxODc1IC0zMTYuNDM3NSAzNDAuNDIxODc1IEMtMzE2LjQzNzUgMzM4LjQ0MTg3NSAtMzE2LjQzNzUgMzM2LjQ2MTg3NSAtMzE2LjQzNzUgMzM0LjQyMTg3NSBDLTMxNy44Mjk2ODc1IDMzNC41MTQ2ODc1IC0zMTcuODI5Njg3NSAzMzQuNTE0Njg3NSAtMzE5LjI1IDMzNC42MDkzNzUgQy0zMjIuNDM3NSAzMzQuNDIxODc1IC0zMjIuNDM3NSAzMzQuNDIxODc1IC0zMjQuMDQ5Nzc0MTcgMzMzLjIyNTUyNDkgQy0zMjUuNzg0NDg3NTIgMzMwLjk3MDg4OTY2IC0zMjYuMjI0MDc5MjggMzI5LjE1NDUxNjc0IC0zMjYuODI4NjEzMjggMzI2LjM3NTk3NjU2IEMtMzI3LjA1OTkzNDU0IDMyNS4zMzk0Njk2IC0zMjcuMjkxMjU1OCAzMjQuMzAyOTYyNjUgLTMyNy41Mjk1ODY3OSAzMjMuMjM1MDQ2MzkgQy0zMjcuNzY5OTAxMjggMzIyLjEwNTYwNjA4IC0zMjguMDEwMjE1NzYgMzIwLjk3NjE2NTc3IC0zMjguMjU3ODEyNSAzMTkuODEyNSBDLTMyOC41MTc4MjU0NyAzMTguNjM0NTU4NzIgLTMyOC43Nzc4Mzg0NCAzMTcuNDU2NjE3NDMgLTMyOS4wNDU3MzA1OSAzMTYuMjQyOTgwOTYgQy0zMjkuNzQ4ODQ1OCAzMTMuMDQ5OTc5MDQgLTMzMC40NDIzODcyIDMwOS44NTUwNzUzNiAtMzMxLjEzMjA2MSAzMDYuNjU5MTQ5MTcgQy0zMzEuODUxMTQwODcgMzAzLjMzOTI2MjEyIC0zMzIuNTgzMDU5MzYgMzAwLjAyMjIxNjI5IC0zMzMuMzE0Njk3MjcgMjk2LjcwNTA3ODEyIEMtMzM0LjE5NTIwOTAyIDI5Mi43MTA3MTA2NSAtMzM1LjA3NTI3NzQ4IDI4OC43MTYyNTY3NSAtMzM1Ljk1MDM5MzY4IDI4NC43MjA3MDMxMiBDLTMzOC4xNzYyMjY2IDI3NC41NjIyNDI5MSAtMzQwLjQ3MDQyODI2IDI2NC40MjExMzUxMiAtMzQyLjgyNDQzMjM3IDI1NC4yOTE2NTY0OSBDLTM0My4zNzAwNDkzNyAyNTEuOTQzMTgzNzYgLTM0My45MTMwMTQyNiAyNDkuNTk0MTExODcgLTM0NC40NTUzMjIyNyAyNDcuMjQ0ODczMDUgQy0zNDYuMDUxMTA1MzIgMjQwLjM0MDQ2NTAxIC0zNDcuNjY3NTg2ODEgMjMzLjQ0MTc5MjIyIC0zNDkuMzIwMzEyNSAyMjYuNTUwNzgxMjUgQy0zNDkuNjA2NTY0OTQgMjI1LjM0NTUwNzgxIC0zNDkuODkyODE3MzggMjI0LjE0MDIzNDM4IC0zNTAuMTg3NzQ0MTQgMjIyLjg5ODQzNzUgQy0zNTAuNzA1MjE3NDYgMjIwLjcyMzQwMDg4IC0zNTEuMjI5Njk3ODQgMjE4LjU1MDAxMDg5IC0zNTEuNzYzNDI3NzMgMjE2LjM3ODkwNjI1IEMtMzUzLjA1ODcwNzE1IDIxMC45MTYwNjQxMyAtMzUzLjc5NTYwNDIzIDIwNi4wNDA4NTYgLTM1My40Mzc1IDIwMC40MjE4NzUgQy0zNTEuNzY3NzY4OTUgMTk4Ljc1MjE0Mzk1IC0zNDkuNzMyMzU4NzcgMTk5LjI5MjE1ODY5IC0zNDcuNTAxODg5NzcgMTk5LjI3ODgwNzQgQy0zNDYuNzkwMjMyMzYgMTk5LjI3OTY3Mzg4IC0zNDYuMDc4NTc0OTUgMTk5LjI4MDU0MDM3IC0zNDUuMzQ1MzUyMTcgMTk5LjI4MTQzMzExIEMtMzQ0LjIxOTEyNjc4IDE5OS4yNzY5NzY0MiAtMzQ0LjIxOTEyNjc4IDE5OS4yNzY5NzY0MiAtMzQzLjA3MDE0OTM2IDE5OS4yNzI0Mjk3IEMtMzQwLjUzNTExNzgyIDE5OS4yNjM3MDUzIC0zMzguMDAwMTMzMjkgMTk5LjI2MjIzMTMzIC0zMzUuNDY1MDg3ODkgMTk5LjI2MDc0MjE5IEMtMzMzLjY1NTM5OTU2IDE5OS4yNTYxMTY3IC0zMzEuODQ1NzEyMiAxOTkuMjUxMDkyNDEgLTMzMC4wMzYwMjYgMTk5LjI0NTY5NzAyIEMtMzI1LjEwNjM1NjQ2IDE5OS4yMzI1NDYxMyAtMzIwLjE3NjcwMDU1IDE5OS4yMjYxMjI5OSAtMzE1LjI0NzAxNjE5IDE5OS4yMjE2ODYzNiBDLTMxMi4xNzEwMTI0MiAxOTkuMjE4NzYwMzMgLTMwOS4wOTUwMTI0MiAxOTkuMjE0NjU2NDYgLTMwNi4wMTkwMTA1NCAxOTkuMjEwMTgyMTkgQy0yOTYuNDA2MDI2NzEgMTk5LjE5NjUwMDk4IC0yODYuNzkzMDUxNDQgMTk5LjE4NjgzNzA0IC0yNzcuMTgwMDU4NTQgMTk5LjE4Mjk4MDMgQy0yNjYuMDYyMzY1MzIgMTk5LjE3ODQ5NjA0IC0yNTQuOTQ0Nzk0ODQgMTk5LjE2MDkzMzcxIC0yNDMuODI3MTM4OTYgMTk5LjEzMTk3OTcgQy0yMzUuMjQ3MTEzNTEgMTk5LjExMDQwNTc3IC0yMjYuNjY3MTIyNzEgMTk5LjEwMDI3ODM0IC0yMTguMDg3MDcwNDEgMTk5LjA5ODkzOTE4IEMtMjEyLjk1NjE0NzI2IDE5OS4wOTc4ODgxOCAtMjA3LjgyNTMzOTM4IDE5OS4wOTE5MTgwMiAtMjAyLjY5NDQ0NDY2IDE5OS4wNzQxMTk1NyBDLTE5Ny44NzA2NjM5NyAxOTkuMDU3NzEyNTMgLTE5My4wNDcwODYxMiAxOTkuMDU1NDQ3MjYgLTE4OC4yMjMyODc1OCAxOTkuMDY0MjU4NTggQy0xODYuNDQ4Njk1NzIgMTk5LjA2NTAzMjg5IC0xODQuNjc0MDkzMjggMTk5LjA2MDYzNDc3IC0xODIuODk5NTI4NSAxOTkuMDUwODAwMzIgQy0xODAuNDg0OTgzNTMgMTk5LjAzODE5OTUyIC0xNzguMDcxMTY5OTUgMTk5LjA0Mzg5MTkyIC0xNzUuNjU2NjMxNDcgMTk5LjA1NDM4MjMyIEMtMTc0LjU5MjQ5MTQ0IDE5OS4wNDIyOTc3MiAtMTc0LjU5MjQ5MTQ0IDE5OS4wNDIyOTc3MiAtMTczLjUwNjg1MzY0IDE5OS4wMjk5Njg5OCBDLTE3MS41NTQzOTg1NCAxOTkuMDQ5OTM4MiAtMTcxLjU1NDM5ODU0IDE5OS4wNDk5MzgyIC0xNjguNDM3NSAxOTkuNDIxODc1IEMtMTY2LjE3Mzg1MDU1IDIwMi44MTczNDkxNyAtMTY1LjQxODcxNiAyMDUuOTk0NDcwMzMgLTE2NC41MTk1MzEyNSAyMDkuOTAyMzQzNzUgQy0xNjQuMjUyMjk1IDIxMS4wMzIzNTU1OCAtMTY0LjI1MjI5NSAyMTEuMDMyMzU1NTggLTE2My45Nzk2NjAwMyAyMTIuMTg1MTk1OTIgQy0xNjMuMzk2ODQ1ODMgMjE0LjY1ODQ5OTc4IC0xNjIuODIzMjQyNTMgMjE3LjEzMzgzNjc0IC0xNjIuMjUgMjE5LjYwOTM3NSBDLTE2MS44NDk4OTc3OCAyMjEuMzE2Nzk5MzggLTE2MS40NDk1MDQ1MiAyMjMuMDI0MTU1NTggLTE2MS4wNDg4MjgxMiAyMjQuNzMxNDQ1MzEgQy0xNTguMDg5NzU1NjQgMjM3LjM5MDU2NzAxIC0xNTUuMjY3ODA2OTMgMjUwLjA3ODk3Nzg5IC0xNTIuNTU3ODYxMzMgMjYyLjc5MzcwMTE3IEMtMTUyLjE1Nzk2OTk3IDI2NC42NTkyNTY1OSAtMTUyLjE1Nzk2OTk3IDI2NC42NTkyNTY1OSAtMTUxLjc1IDI2Ni41NjI1IEMtMTUxLjUxOTI1NzgxIDI2Ny42NTA3OTEwMiAtMTUxLjI4ODUxNTYzIDI2OC43MzkwODIwMyAtMTUxLjA1MDc4MTI1IDI2OS44NjAzNTE1NiBDLTE1MC41NDcwNDYxOCAyNzIuMzkxNjY4ODcgLTE1MC41NDcwNDYxOCAyNzIuMzkxNjY4ODcgLTE0OS40Mzc1IDI3NC40MjE4NzUgQy0xNDguODE4NzUgMjczLjc2MTg3NSAtMTQ4LjIgMjczLjEwMTg3NSAtMTQ3LjU2MjUgMjcyLjQyMTg3NSBDLTE0NS40Mzc1IDI3MC40MjE4NzUgLTE0NS40Mzc1IDI3MC40MjE4NzUgLTE0My40Mzc1IDI3MC40MjE4NzUgQy0xNDMuNDM3NSAyNjkuNzYxODc1IC0xNDMuNDM3NSAyNjkuMTAxODc1IC0xNDMuNDM3NSAyNjguNDIxODc1IEMtMTQxLjkyOTYyODM5IDI2Ny4wNDY5NjIwMSAtMTQwLjM1MjEwMjM5IDI2NS43NDgyMzAzOCAtMTM4Ljc1IDI2NC40ODQzNzUgQy0xMzUuNDE4MjA2MDIgMjYxLjgyNzU5MzgyIC0xMzIuMTExNTQwODMgMjU5LjE2NDEzMzg1IC0xMjguODgyODEyNSAyNTYuMzgyODEyNSBDLTEyOC4yOTg0NjQzNiAyNTUuODc5OTk3NTYgLTEyNy43MTQxMTYyMSAyNTUuMzc3MTgyNjIgLTEyNy4xMTIwNjA1NSAyNTQuODU5MTMwODYgQy0xMjUuOTY0NzQ2NDEgMjUzLjg2ODU1NDUxIC0xMjQuODIwMzExOTggMjUyLjg3NDYzMTggLTEyMy42Nzg5NTUwOCAyNTEuODc3MTk3MjcgQy0xMTkuNjU3NzMzNDQgMjQ4LjQyMTg3NSAtMTE5LjY1NzczMzQ0IDI0OC40MjE4NzUgLTExNy40Mzc1IDI0OC40MjE4NzUgQy0xMTcuNDM3NSAyNDcuNzYxODc1IC0xMTcuNDM3NSAyNDcuMTAxODc1IC0xMTcuNDM3NSAyNDYuNDIxODc1IEMtMTE1LjMyMDMxMjUgMjQ0LjQ3NjU2MjUgLTExNS4zMjAzMTI1IDI0NC40NzY1NjI1IC0xMTIuNTYyNSAyNDIuMjk2ODc1IEMtMTExLjY1NzU3ODEyIDI0MS41NzI0MjE4OCAtMTEwLjc1MjY1NjI1IDI0MC44NDc5Njg3NSAtMTA5LjgyMDMxMjUgMjQwLjEwMTU2MjUgQy0xMDcuNDM3NSAyMzguNDIxODc1IC0xMDcuNDM3NSAyMzguNDIxODc1IC0xMDUuNDM3NSAyMzguNDIxODc1IEMtMTA1LjQzNzUgMjM3Ljc2MTg3NSAtMTA1LjQzNzUgMjM3LjEwMTg3NSAtMTA1LjQzNzUgMjM2LjQyMTg3NSBDLTEwMy4zOTEwMTU0NCAyMzQuNjUwODc4NzUgLTEwMS4zMzc4MjM5NSAyMzIuOTk2MTYzNzggLTk5LjE4NzUgMjMxLjM1OTM3NSBDLTk4LjIzMTIxNzA0IDIzMC42MjE4Mjk4MyAtOTguMjMxMjE3MDQgMjMwLjYyMTgyOTgzIC05Ny4yNTU2MTUyMyAyMjkuODY5Mzg0NzcgQy05NS4zMjA4MTkwOSAyMjguMzgwODAyMzMgLTkzLjM3OTI4MSAyMjYuOTAxMzI3MTkgLTkxLjQzNzUgMjI1LjQyMTg3NSBDLTkwLjQyMzAwNzgxIDIyNC42MzgxMjUgLTg5LjQwODUxNTYzIDIyMy44NTQzNzUgLTg4LjM2MzI4MTI1IDIyMy4wNDY4NzUgQy02OS4xNjcyMTIxNCAyMDguMzgxMzkyNDYgLTQ4LjY3Nzc4NjU2IDE5Ni4zNTg1ODY2OSAtMjUuMTk1MzEyNSAxODkuOTY0ODQzNzUgQy0yMy40MjkxMTQ1IDE4OS41NjkxMzAwNiAtMjMuNDI5MTE0NSAxODkuNTY5MTMwMDYgLTIyLjQzNzUgMTg4LjQyMTg3NSBDLTIyLjc2NDkzNjk3IDE4Ni41MDA0Nzg4NyAtMjIuNzY0OTM2OTcgMTg2LjUwMDQ3ODg3IC0yMy4zNzUgMTg0LjM1OTM3NSBDLTIzLjU2OTY0ODQ0IDE4My42MjU4OTg0NCAtMjMuNzY0Mjk2ODggMTgyLjg5MjQyMTg3IC0yMy45NjQ4NDM3NSAxODIuMTM2NzE4NzUgQy0yNC4xMjA4MjAzMSAxODEuNTcwODIwMzEgLTI0LjI3Njc5Njg4IDE4MS4wMDQ5MjE4OCAtMjQuNDM3NSAxODAuNDIxODc1IEMtMjUuNDkwNjY0MDYgMTgwLjQ2ODI4MTI1IC0yNi41NDM4MjgxMyAxODAuNTE0Njg3NSAtMjcuNjI4OTA2MjUgMTgwLjU2MjUgQy00NS41ODc0MjAzNCAxODEuMTExNzc5NzkgLTYwLjcwNjc5NzY0IDE3Ni45MzE4NDIxMyAtNzQuMTI1IDE2NC41NDY4NzUgQy03NS45MTQzOTUwOCAxNjIuODU1OTM4ODEgLTc3LjY3OTcxMTE3IDE2MS4xNDU5MTkyIC03OS40Mzc1IDE1OS40MjE4NzUgQy04MS43NTYzNTQ3NiAxNjIuMjIzNDA0MTggLTgxLjc1NjM1NDc2IDE2Mi4yMjM0MDQxOCAtODEuMTg3NSAxNjUuMjk2ODc1IEMtODAuNTU1MDMwODUgMTY4LjM1NDYxMzAyIC04MC41NTUwMzA4NSAxNjguMzU0NjEzMDIgLTc5LjM3NSAxNzAuNzk2ODc1IEMtNzcuNTg1NDYyNzUgMTc1LjgwNzU3OTMxIC03Ny44MjE1MTQ0NCAxODAuNDQ1NzQyNjggLTc5LjgxMjUgMTg1LjI5Njg3NSBDLTgxLjQzNzUgMTg4LjQyMTg3NSAtODEuNDM3NSAxODguNDIxODc1IC04My40Mzc1IDE5MC40MjE4NzUgQy04Ni42NTQxNjg3NCAxOTEuMjc5NjUzMzMgLTg4Ljg2OTQ5NTQgMTkxLjU1Mzk2OTA5IC05Mi4xMjUgMTkwLjc5Njg3NSBDLTk1LjA5NDk0NzMyIDE4OS4wMzA5NjAzOCAtOTUuOTM5NDk1OTYgMTg3LjUzMjc4Njc5IC05Ny40Mzc1IDE4NC40MjE4NzUgQy05Ny44MDA3ODEyNSAxODEuMDExNzE4NzUgLTk3LjgwMDc4MTI1IDE4MS4wMTE3MTg3NSAtOTcuNzUgMTc3LjM1OTM3NSBDLTk3Ljc0NjEzMjgxIDE3Ni4xNTE1MjM0NCAtOTcuNzQyMjY1NjMgMTc0Ljk0MzY3MTg4IC05Ny43MzgyODEyNSAxNzMuNjk5MjE4NzUgQy05Ny40NTg4MjY5NCAxNzAuNjU0MjU1NTkgLTk3LjEzNTg3NzYxIDE2OC45MjQ0MzE0MSAtOTUuNDM3NSAxNjYuNDIxODc1IEMtOTQuNzc3NSAxNjYuMDkxODc1IC05NC4xMTc1IDE2NS43NjE4NzUgLTkzLjQzNzUgMTY1LjQyMTg3NSBDLTkyLjUwNTI1OTczIDE2My4yMDMwODUwNyAtOTEuNjY1MDAzMTkgMTYwLjk0NTE5NzYgLTkwLjg3NSAxNTguNjcxODc1IEMtOTAuNDQwNTg1OTQgMTU3LjQzOTUzMTI1IC05MC4wMDYxNzE4OCAxNTYuMjA3MTg3NSAtODkuNTU4NTkzNzUgMTU0LjkzNzUgQy04Ny4xNzEzMzc0MSAxNDcuNDUxMzMwMjkgLTg3LjgxNzU4NjQ5IDE0My44NDUzNzIyNyAtOTAuNzc3MzQzNzUgMTM2LjUwNzgxMjUgQy05Mi44MjA2NjczIDEzMi43MDk2MzQ2MSAtOTQuOTQ2NjY2NjcgMTMxLjA2NzU2NjU2IC05OC41MDM5MDYyNSAxMjguNzgxMjUgQy0xMDMuMDA3ODU4NzQgMTI1LjYxNDgzNDkxIC0xMDUuMDA2MjY2OCAxMjEuNTg2MDc2NDEgLTEwNi4wNjY0MDYyNSAxMTYuMjY1NjI1IEMtMTA2Ljc1ODQzNjU4IDEwOS45MTM1MTUwMSAtMTA3LjE4MzIwMzU3IDEwNC43NTY2NjQ5MyAtMTAzLjQzNzUgOTkuNDIxODc1IEMtOTguMTU3MDAwNzMgOTUuOTAxMjc3NTQgLTkyLjI3NjUzMTUyIDk0LjM4Mjg3MDE3IC04Ni4xMjUgOTMuMTcxODc1IEMtODUuMjkyNjY4NDYgOTMuMDA0OTQxNDEgLTg0LjQ2MDMzNjkxIDkyLjgzODAwNzgxIC04My42MDI3ODMyIDkyLjY2NjAxNTYyIEMtNjguODI3MjQxMjEgODkuODQ4MDY2NTggLTY4LjgyNzI0MTIxIDg5Ljg0ODA2NjU4IC02MS45Mzc1IDkzLjA0Njg3NSBDLTU3LjQ3OTkxNjY1IDk3LjI4MTU3OTE4IC01NS43MjI4NDcyOCAxMDIuMTQ3Mzk4MDIgLTU1LjE5OTIxODc1IDEwOC4xNTYyNSBDLTU1LjAwODQ0OTg3IDExNS45MDc0OTA2NiAtNTUuNjE0NjE0MiAxMjEuMzg3NjI3NzMgLTYxLjA2MjUgMTI3LjEzNjcxODc1IEMtNjYuNDgxOTI0OTQgMTMxLjc1NDUyMDQyIC03Mi41NjAxNTI0NyAxMzMuMTE1MTc4OTcgLTc5LjQzNzUgMTM0LjQyMTg3NSBDLTc5LjQzNzUgMTQyLjUxMzA3NTggLTcyLjcxNDYyMTQzIDE1MC43MDQ5OTM0NSAtNjcuNDM3NSAxNTYuNDIxODc1IEMtNTguODUwODM5MDUgMTY0LjI5Mjk4MDg3IC00Ny43OTY3NTg2MSAxNjkuMzkxMTIxOSAtMzYuMTg3NSAxNzAuMDQ2ODc1IEMtMzQuODc3ODEyNSAxNzAuMTI2Nzk2ODcgLTMzLjU2ODEyNSAxNzAuMjA2NzE4NzUgLTMyLjIxODc1IDE3MC4yODkwNjI1IEMtMjguMjQ1MzU4NTggMTcwLjQyODYyMzc3IC0yNC4zNDk2ODk4OCAxNzAuMzE4ODcxMzggLTIwLjM5MDYyNSAxNjkuOTY4NzUgQy0xOC40Mzc1IDE3MC40MjE4NzUgLTE4LjQzNzUgMTcwLjQyMTg3NSAtMTYuOTU2Nzg3MTEgMTcyLjU5MzI2MTcyIEMtMTQuMzQ3NDQ2IDE3Ny40NTEzNDA3OSAtMTIuNjE5OTgzNTYgMTgyLjYxOTM3NjY1IC0xMC43NSAxODcuNzk2ODc1IEMtMTAuMzM0Mjc3MzQgMTg4LjkwODA0Njg3IC05LjkxODU1NDY5IDE5MC4wMTkyMTg3NSAtOS40OTAyMzQzOCAxOTEuMTY0MDYyNSBDLTUuMDE3NTMxNjUgMjAzLjUwMjU1Mjc3IC01LjAxNzUzMTY1IDIwMy41MDI1NTI3NyAtNy40OTYwOTM3NSAyMTAuMzQzNzUgQy03Ljk1MTEzMjgxIDIxMS4yNzcwMzEyNSAtOC40MDYxNzE4NyAyMTIuMjEwMzEyNSAtOC44NzUgMjEzLjE3MTg3NSBDLTExLjM3OTczOTgyIDIxOC44NjgzNjg5OSAtMTIuOTUwNTE1NjkgMjI0LjE0ODEyMDY1IC0xMi40Mzc1IDIzMC40MjE4NzUgQy0xMS4yMjU3OTE1OSAyMzMuMzAwOTI1OTUgLTExLjIyNTc5MTU5IDIzMy4zMDA5MjU5NSAtOC40Mzc1IDIzNC40MjE4NzUgQy0yLjQzNDM5ODYyIDIzNS4xMTA3NTU0OSAxLjIwMTEwMzUyIDIzNC4wNTAwMTA1MyA2LjU2MjUgMjMxLjQyMTg3NSBDNy41NTI1IDIzMS4wOTE4NzUgOC41NDI1IDIzMC43NjE4NzUgOS41NjI1IDIzMC40MjE4NzUgQzkuNTYyNSAyMjkuNzYxODc1IDkuNTYyNSAyMjkuMTAxODc1IDkuNTYyNSAyMjguNDIxODc1IEMxMC4yMjI1IDIyOC40MjE4NzUgMTAuODgyNSAyMjguNDIxODc1IDExLjU2MjUgMjI4LjQyMTg3NSBDMTEuNTYyNSAyMjcuNzYxODc1IDExLjU2MjUgMjI3LjEwMTg3NSAxMS41NjI1IDIyNi40MjE4NzUgQzEyLjIyMjUgMjI2LjQyMTg3NSAxMi44ODI1IDIyNi40MjE4NzUgMTMuNTYyNSAyMjYuNDIxODc1IEMxMy44MzcwNzAzMSAyMjUuNjgzMjQyMTkgMTQuMTExNjQwNjMgMjI0Ljk0NDYwOTM3IDE0LjM5NDUzMTI1IDIyNC4xODM1OTM3NSBDMTUuNDgxNTIyNDQgMjIxLjYxMzM1MDM3IDE2LjcxMDM4NDg1IDIxOS41NTAxMjQ5IDE4LjI1IDIxNy4yMzQzNzUgQzIxLjE3NDQyMTc1IDIxMi40NDQzNzM4NiAyMy4zMjMxODU2NyAyMDcuNTAyODY3NjkgMjUuMzc1IDIwMi4yOTY4NzUgQzI1LjgyNzgyMzQ5IDIwMS4xNjkyMjcyOSAyNS44Mjc4MjM0OSAyMDEuMTY5MjI3MjkgMjYuMjg5Nzk0OTIgMjAwLjAxODc5ODgzIEMzMC4yMDI3MzUyMSAxODkuODExMTc3MTEgMjkuNTYyODE4OTEgMTgzLjk0MTQ5MzE3IDI1LjYyNSAxNzMuODU5Mzc1IEMyMC43NDY1NjYgMTYxLjE5NDk5MjkyIDIwLjc0NjU2NiAxNjEuMTk0OTkyOTIgMjEuNTYyNSAxNTUuNDIxODc1IEMyNC4xMjUgMTUzLjEwOTM3NSAyNC4xMjUgMTUzLjEwOTM3NSAyNS43NzczNDM3NSAxNTEuOTE0MDYyNSBDMzMuMjU0MTc2NTcgMTQ1LjY2NDI4MTAyIDM3LjM5OTU3MTk0IDEzNS43MDk3NDI1NSAzOS41NjI1IDEyNi40MjE4NzUgQzM4LjI4Mzc1IDEyNi41MDQzNzUgMzcuMDA1IDEyNi41ODY4NzUgMzUuNjg3NSAxMjYuNjcxODc1IEMyNi4xODM4MTUyNCAxMjYuNTk3NTExMjcgMTkuNTA0MTk0NTcgMTIyLjI4NzkwMDAyIDEyLjc2NTYyNSAxMTUuODY3MTg3NSBDOC42NjA3Mzc1MiAxMTEuMzExMDUzNTMgNS44NzA2NTczOSAxMDYuNDIzMjE1NiA0LjU2MjUgMTAwLjQyMTg3NSBDNC4yNzI0NjA5NCAxMDEuNDUyNDgwNDcgNC4yNzI0NjA5NCAxMDEuNDUyNDgwNDcgMy45NzY1NjI1IDEwMi41MDM5MDYyNSBDMy43MTYxNzE4NyAxMDMuNDA0OTYwOTQgMy40NTU3ODEyNSAxMDQuMzA2MDE1NjMgMy4xODc1IDEwNS4yMzQzNzUgQzIuODA0NjQ4NDQgMTA2LjU3NDM1NTQ3IDIuODA0NjQ4NDQgMTA2LjU3NDM1NTQ3IDIuNDE0MDYyNSAxMDcuOTQxNDA2MjUgQzEuNTYyNSAxMTAuNDIxODc1IDEuNTYyNSAxMTAuNDIxODc1IC0wLjQzNzUgMTEzLjQyMTg3NSBDLTEuMDk3NSAxMTMuNDIxODc1IC0xLjc1NzUgMTEzLjQyMTg3NSAtMi40Mzc1IDExMy40MjE4NzUgQy0yLjQzNzUgMTE0LjA4MTg3NSAtMi40Mzc1IDExNC43NDE4NzUgLTIuNDM3NSAxMTUuNDIxODc1IEMtMy4wOTc1IDExNS40MjE4NzUgLTMuNzU3NSAxMTUuNDIxODc1IC00LjQzNzUgMTE1LjQyMTg3NSBDLTQuNDM3NSAxMTYuMDgxODc1IC00LjQzNzUgMTE2Ljc0MTg3NSAtNC40Mzc1IDExNy40MjE4NzUgQy0xNS43ODg3OTMxNyAxMjIuMDI0OTU4NDUgLTI5LjYxMjg1MDA1IDEyNi4yMjcxNTcwNCAtNDEuNzUgMTIyLjIzNDM3NSBDLTQ3LjIyMjE3Mjg2IDExOS44ODQ0Mjk4IC01MC44OTU5OTYzOSAxMTUuNzQ2OTMwMTggLTUzLjQzNzUgMTEwLjQyMTg3NSBDLTU1LjY3NzYxMjA3IDEwMy41MTU5NjczOCAtNTYuMjA1MDc3MzcgOTcuMzk4OTI0MDggLTUzLjE4NzUgOTAuNjA5Mzc1IEMtNDkuNDQ2NTEyMTIgODUuOTMzMTQwMTUgLTQ0LjgzMjA1NzYgODQuODU0NDUxNzIgLTM5LjEyNSA4My43MzQzNzUgQy0zNy44NzA3NDIxOSA4My40ODMwMDc4MSAtMzYuNjE2NDg0MzggODMuMjMxNjQwNjIgLTM1LjMyNDIxODc1IDgyLjk3MjY1NjI1IEMtMzQuMzcxNjAxNTYgODIuNzkwODk4NDQgLTMzLjQxODk4NDM3IDgyLjYwOTE0MDYyIC0zMi40Mzc1IDgyLjQyMTg3NSBDLTMzLjQwMjM2MzI4IDgyLjI5MjMyNDIyIC0zMy40MDIzNjMyOCA4Mi4yOTIzMjQyMiAtMzQuMzg2NzE4NzUgODIuMTYwMTU2MjUgQy00Ny4xNzc2OTM1NCA4MC4xNzEyNjAwMyAtNTcuNjg1Mzc5NjYgNzYuMjg5MTMwMzYgLTY2LjQzNzUgNjYuNDIxODc1IEMtNjkuMTIwMjYzNCA2Mi41MDE4MjgyNiAtNjkuNzcwMzk4NjkgNjAuMTkzNDIyODQgLTY5LjQzNzUgNTUuNDIxODc1IEMtNjYuNDEzNDk4NzYgNTMuOTA5ODc0MzggLTY0Ljc5ODQ2MTY2IDUzLjg0MDE3MDEgLTYxLjQzNzUgNTQuNDIxODc1IEMtNTkuNjc4OTA2NzcgNTYuMjg2NzgxMTcgLTU4LjMwMzEzMzA0IDU4LjI3NjgxMTg0IC01Ni44NTU0Njg3NSA2MC4zOTA2MjUgQy01MC45MDAwMzc5NyA2OC45MjE4MjA2MSAtMzkuNTc4NzIyNDggNzAuODEzNjE1IC0zMC4wMjczNDM3NSA3Mi44MDg1OTM3NSBDLTI3LjQzNzUgNzMuNDIxODc1IC0yNy40Mzc1IDczLjQyMTg3NSAtMjYuNDM3NSA3NC40MjE4NzUgQy0yNi4zOTY1NzA2MyA3Ni43NTQ4NDkzMyAtMjYuMzk1MDgyNzcgNzkuMDg4OTI3MjUgLTI2LjQzNzUgODEuNDIxODc1IEMtMjUuMzY1IDgxLjA5MTg3NSAtMjQuMjkyNSA4MC43NjE4NzUgLTIzLjE4NzUgODAuNDIxODc1IEMtMTYuMzg1ODQ2NTggNzguNzUxNzE4MTEgLTkuMzMzNzg1ODkgNzguMTAwNzYyMTQgLTIuODc1IDgxLjA0Njg3NSBDLTAuMjEwMTEwNDUgODMuNjQzNDM0MDUgMC45ODQ2NDgyIDg2LjA4MzIzMjA1IDIuNTYyNSA4OS40MjE4NzUgQzIuODA0ODQzNzUgODguNDkyNDYwOTQgMy4wNDcxODc1IDg3LjU2MzA0Njg3IDMuMjk2ODc1IDg2LjYwNTQ2ODc1IEM1LjcwNzU5OTgzIDc3LjcxMzYwMjkzIDguMjI3NTE2OTEgNzAuMzkwMzU2NCAxNC41NjI1IDYzLjQyMTg3NSBDMTUuMjIyNSA2My40MjE4NzUgMTUuODgyNSA2My40MjE4NzUgMTYuNTYyNSA2My40MjE4NzUgQzguMTU2NjIxNTIgNDQuOTA3MzE5NSAtMy4yMzkyNjYzMSAzMi4xMjQ4MDkyIC0yMi40Mzc1IDI0LjQyMTg3NSBDLTQwLjkwMTQ2ODMzIDE3LjYzOTk3MjUxIC02MS45MjU2NjYwNSAxOC41NTczMzczNCAtNzkuODc1IDI2LjYwOTM3NSBDLTg4LjcxOTQwNzk0IDMxLjU0NDczNTc1IC05NS4yODg5MjMzNSAzOC4yMDY1OTQwOCAtOTkuNDM3NSA0Ny40MjE4NzUgQy05OS45OTQzNzUgNDguNTc2ODc1IC0xMDAuNTUxMjUgNDkuNzMxODc1IC0xMDEuMTI1IDUwLjkyMTg3NSBDLTEwNC4xNTg1MDcxMyA1OS4wMTEyMjczNSAtMTA0LjczMDM5MjAyIDY2LjU3NDEwNDcyIC0xMDQuNjI1IDc1LjE3MTg3NSBDLTEwNC42MjQzNTU0NyA3Ni4xODYzNjcxOSAtMTA0LjYyMzcxMDk0IDc3LjIwMDg1OTM3IC0xMDQuNjIzMDQ2ODggNzguMjQ2MDkzNzUgQy0xMDQuNTk2MDY1NyA4Mi44MDg5MTAxNyAtMTA0LjM2OTM5NzM0IDg2Ljk0OTg1NzE2IC0xMDMuNDM3NSA5MS40MjE4NzUgQy0xMDMuMjUgOTUuMTA5Mzc1IC0xMDMuMjUgOTUuMTA5Mzc1IC0xMDMuNDM3NSA5OC40MjE4NzUgQy0xMDQuMDk3NSA5OS4wODE4NzUgLTEwNC43NTc1IDk5Ljc0MTg3NSAtMTA1LjQzNzUgMTAwLjQyMTg3NSBDLTEwOS4wNjI1IDEwMC4wNDY4NzUgLTEwOS4wNjI1IDEwMC4wNDY4NzUgLTExMi40Mzc1IDk5LjQyMTg3NSBDLTExNy42Njg2NTUzNSA3NS41NTE1NTQ0NSAtMTE2LjMyNDk5MDc1IDUyLjg3NDk3MzM0IC0xMDMuMjQyMTg3NSAzMS44NDM3NSBDLTEwMi42NDY2NDA2MyAzMS4wNDQ1MzEyNSAtMTAyLjA1MTA5Mzc1IDMwLjI0NTMxMjUgLTEwMS40Mzc1IDI5LjQyMTg3NSBDLTEwMC43Nzc1IDI5LjQyMTg3NSAtMTAwLjExNzUgMjkuNDIxODc1IC05OS40Mzc1IDI5LjQyMTg3NSBDLTk5LjQzNzUgMjguNzYxODc1IC05OS40Mzc1IDI4LjEwMTg3NSAtOTkuNDM3NSAyNy40MjE4NzUgQy05OC43Nzc1IDI3LjQyMTg3NSAtOTguMTE3NSAyNy40MjE4NzUgLTk3LjQzNzUgMjcuNDIxODc1IEMtOTcuNDM3NSAyNi43NjE4NzUgLTk3LjQzNzUgMjYuMTAxODc1IC05Ny40Mzc1IDI1LjQyMTg3NSBDLTkxLjQ3MzM2MTY5IDIwLjI2OTg3NDY4IC04NC44NDM3NjI1MSAxNi45NTg5MTM4NiAtNzcuNDM3NSAxNC40MjE4NzUgQy03OS43NDc1IDEzLjc2MTg3NSAtODIuMDU3NSAxMy4xMDE4NzUgLTg0LjQzNzUgMTIuNDIxODc1IEMtODQuNDM3NSAxMC4xMTE4NzUgLTg0LjQzNzUgNy44MDE4NzUgLTg0LjQzNzUgNS40MjE4NzUgQy01Ni41MDcwMTk1IC01LjQ0Nzc5NTYyIC0yOC41ODgzODIxOSAtMTMuMTI0NjY2MzcgMCAwIFogTS01MS4zMTI1IDUuMjM0Mzc1IEMtNTIuNTI4MDg1OTQgNS41OTA4MDA3OCAtNTMuNzQzNjcxODggNS45NDcyMjY1NiAtNTQuOTk2MDkzNzUgNi4zMTQ0NTMxMiBDLTU4LjQ4MDE1NTcgNy4zMzg2MjQ1MiAtNjEuOTU5NTIxMzYgOC4zNzcyNTQyNSAtNjUuNDM3NSA5LjQyMTg3NSBDLTY2LjQ2MzkxNjAyIDkuNzI5MTU1MjcgLTY3LjQ5MDMzMjAzIDEwLjAzNjQzNTU1IC02OC41NDc4NTE1NiAxMC4zNTMwMjczNCBDLTcwLjg0NDg1MjA0IDExLjA0MTE1NjU4IC03My4xNDE0MjQ5NCAxMS43MzA2NjU1NyAtNzUuNDM3NSAxMi40MjE4NzUgQy03Mi4wOTM3MjAxOSAxMy41MjU2NzA0NSAtNjkuODYyNTI3NzcgMTMuMjcxMDUzNjcgLTY2LjQ1MzEyNSAxMi41MDM5MDYyNSBDLTYwLjMyNjM4OTEzIDExLjI5NzQ2Mzc0IC01NC40MTk2MTgwMiAxMS4wNzYwOTcxNyAtNDguMTg3NSAxMS4xMDkzNzUgQy00Ni41NDY2MDQgMTEuMTE2NzQ2ODMgLTQ2LjU0NjYwNCAxMS4xMTY3NDY4MyAtNDQuODcyNTU4NTkgMTEuMTI0MjY3NTggQy0zMi4wODQ2MzUzNSAxMS4zMDg2MjY5NiAtMjAuODE1NTMzMDUgMTMuMzA0NjUyOTMgLTkuNDM3NSAxOS40MjE4NzUgQy04LjYwODYzMjgxIDE5Ljg1MjQyMTg4IC03Ljc3OTc2NTYyIDIwLjI4Mjk2ODc1IC02LjkyNTc4MTI1IDIwLjcyNjU2MjUgQzguNTQ2MjIyNiAyOS4zMjQ4MTg5NiAxNy4wODE3ODY5MiA0Mi40MTk1MTkzMyAyNS41NjI1IDU3LjQyMTg3NSBDMjYuODgyNSA1Ni43NjE4NzUgMjguMjAyNSA1Ni4xMDE4NzUgMjkuNTYyNSA1NS40MjE4NzUgQzI5LjAxMDQ4OTcyIDUwLjAyNzU0Njc0IDI3LjcwMDkzNzY3IDQ1LjYxNTA5Mjk5IDI1LjUgNDAuNjcxODc1IEMyNS4xOTQ4OTUwMiAzOS45ODAyOTI5NyAyNC44ODk3OTAwNCAzOS4yODg3MTA5NCAyNC41NzU0Mzk0NSAzOC41NzYxNzE4OCBDMjEuNzA4MDc5MTkgMzIuMzIxMTY3MTMgMTguMjUxNjEzNjkgMjYuNTA5ODMyODQgMTMuNTYyNSAyMS40MjE4NzUgQzEyLjkwMjUgMjEuNDIxODc1IDEyLjI0MjUgMjEuNDIxODc1IDExLjU2MjUgMjEuNDIxODc1IEMxMS41NjI1IDIwLjc2MTg3NSAxMS41NjI1IDIwLjEwMTg3NSAxMS41NjI1IDE5LjQyMTg3NSBDMTAuOTAyNSAxOS40MjE4NzUgMTAuMjQyNSAxOS40MjE4NzUgOS41NjI1IDE5LjQyMTg3NSBDOS41NjI1IDE4Ljc2MTg3NSA5LjU2MjUgMTguMTAxODc1IDkuNTYyNSAxNy40MjE4NzUgQy04Ljg2MzYyNDc2IDMuMTY4MjMxMzggLTI5LjA2NDIyOTUyIC0xLjQ1ODg2MTI3IC01MS4zMTI1IDUuMjM0Mzc1IFogTTIxLjU2MjUgMTYuNDIxODc1IEMyMS45MjYwMTU2MiAxNi45NDM5NDUzMSAyMi4yODk1MzEyNSAxNy40NjYwMTU2MyAyMi42NjQwNjI1IDE4LjAwMzkwNjI1IEMzMC41ODYzNzgyMiAyOS42MDI5ODkwMSAzNS40MjI0NzYzMiA0MS4wNzY5MDUwNCAzOS41NjI1IDU0LjQyMTg3NSBDNDIuODYyNSA1NC43NTE4NzUgNDYuMTYyNSA1NS4wODE4NzUgNDkuNTYyNSA1NS40MjE4NzUgQzQ2Ljk1MjU0ODYyIDQ0LjQwMjA4MDI4IDQyLjc4ODk3NjIzIDM0LjI1NDIzNDg0IDM1LjU2MjUgMjUuNDIxODc1IEMzNC45MDI1IDI1LjQyMTg3NSAzNC4yNDI1IDI1LjQyMTg3NSAzMy41NjI1IDI1LjQyMTg3NSBDMzMuNTYyNSAyNC43NjE4NzUgMzMuNTYyNSAyNC4xMDE4NzUgMzMuNTYyNSAyMy40MjE4NzUgQzMxLjM4NzkxNzIyIDIxLjYwMDgzMyAzMS4zODc5MTcyMiAyMS42MDA4MzMgMjguNjg3NSAxOS43OTY4NzUgQzI3Ljc4MjU3ODEyIDE5LjE2NTIzNDM4IDI2Ljg3NzY1NjI1IDE4LjUzMzU5Mzc1IDI1Ljk0NTMxMjUgMTcuODgyODEyNSBDMjMuNzQ0MTYyOTQgMTYuMjQ3NjQzOTUgMjMuNzQ0MTYyOTQgMTYuMjQ3NjQzOTUgMjEuNTYyNSAxNi40MjE4NzUgWiBNMTkuMjIyNjU2MjUgNzMuMjM0Mzc1IEMxNC4yMDQ5NjE0MiA3OS44NDU5MjU4NCAxMi44MjY0NTY1NiA4NS45MDc2MDIyIDEzLjExNzE4NzUgOTQuMjAzMTI1IEMxNC4wNDQ1MjQ1NyAxMDAuOTA1OTgyNDUgMTYuOTAxNzYxODIgMTA2LjIyMjg2NDY1IDIxLjg3NSAxMTAuNzk2ODc1IEMyMy4wNzk4Njg4NiAxMTEuNzA1MDQxNjggMjQuMzA5NTMyOTcgMTEyLjU4MTMxMDEyIDI1LjU2MjUgMTEzLjQyMTg3NSBDMjYuMTQ2NDQ1MzEgMTEzLjgzNDM3NSAyNi43MzAzOTA2MiAxMTQuMjQ2ODc1IDI3LjMzMjAzMTI1IDExNC42NzE4NzUgQzMzLjMzMTQyMDcgMTE4LjMwOTM5OTU1IDM5Ljc0MzQzNTQgMTE4LjM1NjIxNzk5IDQ2LjU2MjUgMTE3LjQyMTg3NSBDNTMuMzc5MzI2MjYgMTE1LjI4MjE0ODk4IDU5LjQxNDcwNzg5IDExMS4yODU5OTQ4OCA2My41NjI1IDEwNS40MjE4NzUgQzY3LjEwNTU1MzQ3IDk4LjM4ODMzNTYxIDY5LjE5Mzk3MjE2IDkxLjUxNDUwNzczIDY2LjcyNjU2MjUgODMuODEyNSBDNjUuMjgyOTk4NzUgODAuMDU3MDYzNDkgNjMuNzk5NTkxNTMgNzYuNzc3NTEyMyA2MS41NjI1IDczLjQyMTg3NSBDNjAuOTAyNSA3My40MjE4NzUgNjAuMjQyNSA3My40MjE4NzUgNTkuNTYyNSA3My40MjE4NzUgQzU5LjU2MjUgNzIuNzYxODc1IDU5LjU2MjUgNzIuMTAxODc1IDU5LjU2MjUgNzEuNDIxODc1IEM1OC45MDI1IDcxLjQyMTg3NSA1OC4yNDI1IDcxLjQyMTg3NSA1Ny41NjI1IDcxLjQyMTg3NSBDNTcuNTYyNSA3MC43NjE4NzUgNTcuNTYyNSA3MC4xMDE4NzUgNTcuNTYyNSA2OS40MjE4NzUgQzU1Ljk4MTc1NDM2IDY4LjYwNDM1MTk3IDU0LjM5Nzc4Nzc3IDY3Ljc5MzA1NTAzIDUyLjgxMjUgNjYuOTg0Mzc1IEM1MS45MzA3ODEyNSA2Ni41MzE5MTQwNiA1MS4wNDkwNjI1IDY2LjA3OTQ1MzEzIDUwLjE0MDYyNSA2NS42MTMyODEyNSBDMzkuMDQ5ODk2ODUgNjAuNDg4MDIwNTEgMjcuMTIxOTUyODggNjQuNDEwNTIwMDQgMTkuMjIyNjU2MjUgNzMuMjM0Mzc1IFogTS0yNS40MDY5ODI0MiA5MC44MjA1NTY2NCBDLTI3LjM2MjQzMzc5IDkxLjIzMTczMjY4IC0yOS4zMjA4NzM1IDkxLjYyODYxMTUgLTMxLjI3OTI5Njg4IDkyLjAyNTM5MDYyIEMtMzIuNTE2MTUyMzQgOTIuMjg2NDI1NzggLTMzLjc1MzAwNzgxIDkyLjU0NzQ2MDk0IC0zNS4wMjczNDM3NSA5Mi44MTY0MDYyNSBDLTM2LjcyNjg1MTgxIDkzLjE2OTg5MTM2IC0zNi43MjY4NTE4MSA5My4xNjk4OTEzNiAtMzguNDYwNjkzMzYgOTMuNTMwNTE3NTggQy00MS40MDM5ODc3NSA5NC40MTE4NDAyOSAtNDMuMTQ0NzM3NjQgOTUuNDE1NDAxNjkgLTQ1LjQzNzUgOTcuNDIxODc1IEMtNDQuOTE2MDQyNTcgMTAzLjU3NTA3MjYyIC00NC4yMDc0NzQzMiAxMDcuNjUxOTAwNjggLTM5LjY4NzUgMTEyLjE3MTg3NSBDLTMyLjExNzk2NjgxIDExNi4zNzcxNzEyMSAtMjMuMjc3ODUwNTggMTEzLjQ4NTU3OTYxIC0xNS40Mzc1IDExMS40MjE4NzUgQy0xMS43NTA1NDM4MSAxMTAuMjM4NDgxIC05LjI4NDQzMjIyIDEwOC45MTA1MTAxMyAtNy4yOTI5Njg3NSAxMDUuNDEwMTU2MjUgQy01LjY4OTM1MTc3IDEwMS4zOTA4Nzc5NCAtNS4zNjUyODgyOSA5OC44Njk1ODc2MSAtNi4wNjI1IDk0LjU0Njg3NSBDLTcuNjE4MDQ3MzcgOTAuOTQxOTM4IC03LjYxODA0NzM3IDkwLjk0MTkzOCAtMTAuNDM3NSA4OC40MjE4NzUgQy0xNS41Mjg2OTEwOSA4OC40MjE4NzUgLTIwLjQ0MDI4MTc3IDg5Ljc2OTIwMjE2IC0yNS40MDY5ODI0MiA5MC44MjA1NTY2NCBaIE0tODAuNzUgMTAyLjI5Njg3NSBDLTgxLjYwNTI5Mjk3IDEwMi40NzA4OTg0NCAtODIuNDYwNTg1OTQgMTAyLjY0NDkyMTg3IC04My4zNDE3OTY4OCAxMDIuODI0MjE4NzUgQy05MC45MjYwMzA1MSAxMDMuOTg4NDc0MDggLTkwLjkyNjAzMDUxIDEwMy45ODg0NzQwOCAtOTYuODEyNSAxMDguMjY5NTMxMjUgQy05Ny45OTIzNjYyOCAxMTIuMzMyNjk1NzYgLTk2LjI2OTg5NTA5IDExNS43NzAwODA1MyAtOTQuNDM3NSAxMTkuNDIxODc1IEMtOTIuMzIyNjYxMTMgMTIyLjM0NDkzMjU0IC05MC4wMTAwNDU5MSAxMjQuMTE2ODQyNTYgLTg2LjM2MzI4MTI1IDEyNC44MjQyMTg3NSBDLTc5LjM2MzA0NDc2IDEyNS4xMjk2MzkxOSAtNzIuOTgzODQ1NTMgMTIzLjM4NDY4MzAxIC02Ny40Mzc1IDExOS4xMDkzNzUgQy02NS4xMDc0NTYzIDExNS45NzgzNzg3OCAtNjQuNTE1MzI0ODggMTE0LjMxMzExODg3IC02NC40Mzc1IDExMC40MjE4NzUgQy02NS41ODUxMTc2NyAxMDQuNjI3NDEyMTcgLTY1LjU4NTExNzY3IDEwNC42Mjc0MTIxNyAtNjkuNDM3NSAxMDAuNDIxODc1IEMtNzMuMjYxNTA2MDUgMTAwLjQyMTg3NSAtNzcuMDE5NDE3NjEgMTAxLjUxNDcwMDg1IC04MC43NSAxMDIuMjk2ODc1IFogTS04OC40Mzc1IDE3Ni40MjE4NzUgQy04Ny40Mzc1IDE3OC40MjE4NzUgLTg3LjQzNzUgMTc4LjQyMTg3NSAtODcuNDM3NSAxNzguNDIxODc1IFogTTM5LjU2MjUgMTgxLjQyMTg3NSBDMzkuNjAzNzUgMTgyLjU3ODE2NDA2IDM5LjY0NSAxODMuNzM0NDUzMTIgMzkuNjg3NSAxODQuOTI1NzgxMjUgQzM5LjY3OTg1MzM5IDE4OS4yNzc2NTcyMyAzOC44MzM0NjA3NiAxOTMuMjExOTc3NDMgMzcuNTYyNSAxOTcuMzU5Mzc1IEMzNy4zNDQ2NDg0NCAxOTguMDgzMDIyNDYgMzcuMTI2Nzk2ODcgMTk4LjgwNjY2OTkyIDM2LjkwMjM0Mzc1IDE5OS41NTIyNDYwOSBDMzUuMTYzMTMxMTcgMjA1LjA2MDk0MDU4IDMzLjAwNTIzNzgxIDIxMC4zMTQ5OTc4NyAzMC41NjI1IDIxNS41NDY4NzUgQzMwLjI0MjgxMjUgMjE2LjIzMjU3NTY4IDI5LjkyMzEyNSAyMTYuOTE4Mjc2MzcgMjkuNTkzNzUgMjE3LjYyNDc1NTg2IEMyNy45MTU1MjEyMSAyMjEuMDc2Mzc1MSAyNi4wODM2MTk2NiAyMjQuMTkxMDYzMzYgMjMuODEyNSAyMjcuMjg5MDYyNSBDMjEuMzY4MDUyMDUgMjMwLjA0OTc3MTIyIDIxLjM2ODA1MjA1IDIzMC4wNDk3NzEyMiAyMS41NjI1IDIzMi40MjE4NzUgQzIwLjkwMjUgMjMyLjQyMTg3NSAyMC4yNDI1IDIzMi40MjE4NzUgMTkuNTYyNSAyMzIuNDIxODc1IEMxOS41NjI1IDIzMy4wODE4NzUgMTkuNTYyNSAyMzMuNzQxODc1IDE5LjU2MjUgMjM0LjQyMTg3NSBDMTguOTAyNSAyMzQuNDIxODc1IDE4LjI0MjUgMjM0LjQyMTg3NSAxNy41NjI1IDIzNC40MjE4NzUgQzE3LjU2MjUgMjM1LjA4MTg3NSAxNy41NjI1IDIzNS43NDE4NzUgMTcuNTYyNSAyMzYuNDIxODc1IEMxNi45MDI1IDIzNi40MjE4NzUgMTYuMjQyNSAyMzYuNDIxODc1IDE1LjU2MjUgMjM2LjQyMTg3NSBDMTUuNTYyNSAyMzcuMDgxODc1IDE1LjU2MjUgMjM3Ljc0MTg3NSAxNS41NjI1IDIzOC40MjE4NzUgQzE0Ljg2MTI1IDIzOC42OSAxNC4xNiAyMzguOTU4MTI1IDEzLjQzNzUgMjM5LjIzNDM3NSBDMTAuNTM3NDA2ODQgMjQwLjM1MTA3NDYxIDEwLjUzNzQwNjg0IDI0MC4zNTEwNzQ2MSA3LjkzNzUgMjQxLjk4NDM3NSBDMC41ODA2NDkwMSAyNDUuMTE3ODQ4NTcgLTcuOTQ0NzA2NTMgMjQ1LjM0MDk0MjQ1IC0xNS40Mzc1IDI0Mi40MjE4NzUgQy0xOC40MTcyODYzMiAyNDAuMTI5NzMxNjcgLTIwLjAzNzcyNDM4IDIzNy44ODAxNDQxOSAtMjEuNDM3NSAyMzQuNDIxODc1IEMtMjIuNTY0MzgyIDIyNC43NjYyNzU1MSAtMjEuMjkxODY5OTYgMjE3LjQyMDE0MDg0IC0xNy40MzM1OTM3NSAyMDguNTQyOTY4NzUgQy0xNi4zMDQ1Mzc5OCAyMDUuMDA1MjYwNjcgLTE2LjQwMjQyNjc2IDIwMi45NjQwMTAwNyAtMTcuNDM3NSAxOTkuNDIxODc1IEMtMjAuMzI4NTA5NSAxOTcuOTc2MzcwMjUgLTIyLjIxMDQ4NDAyIDE5OS4xMDg4Nzg1OSAtMjUuMTQ4OTI1NzggMjAwLjA1OTU3MDMxIEMtMjUuOTI0NzgwMjcgMjAwLjMyMzUwNTg2IC0yNi43MDA2MzQ3NyAyMDAuNTg3NDQxNDEgLTI3LjUgMjAwLjg1OTM3NSBDLTI4LjMwNDIxMzg3IDIwMS4xMzIzMzM5OCAtMjkuMTA4NDI3NzMgMjAxLjQwNTI5Mjk3IC0yOS45MzcwMTE3MiAyMDEuNjg2NTIzNDQgQy01Ny4wMDY3NzUxOSAyMTEuMTQyMTQ1ODggLTc4Ljk1MzA0NzMgMjI3Ljk0MzU5NTQ3IC0xMDAuNjAxMDc0MjIgMjQ2LjMzNTIwNTA4IEMtMTA0Ljg5NDE2NDIxIDI0OS45NzgwMzg3NyAtMTA5LjI0NDgxNjU0IDI1My41NDU0ODg2IC0xMTMuNjEzMjgxMjUgMjU3LjA5NzY1NjI1IEMtMTE3LjM3NjQ3MTcxIDI2MC4xOTQ2MTEwNiAtMTIxLjA3OTAwNDAyIDI2My4zNjA4Njg5NCAtMTI0Ljc4MzkzNTU1IDI2Ni41MjcwOTk2MSBDLTEyOC40NDg1MjM3NCAyNjkuNjM5NzU1MjcgLTEzMi4xOTY3NjM1OCAyNzIuNTU3NjkzMiAtMTM2LjE0NDUzMTI1IDI3NS4zMDA3ODEyNSBDLTEzNi43ODQ1NTA3OCAyNzUuODU1NzIyNjYgLTEzNi43ODQ1NTA3OCAyNzUuODU1NzIyNjYgLTEzNy40Mzc1IDI3Ni40MjE4NzUgQy0xMzcuNDM3NSAyNzcuMDgxODc1IC0xMzcuNDM3NSAyNzcuNzQxODc1IC0xMzcuNDM3NSAyNzguNDIxODc1IEMtMTM3Ljk3Mzc1IDI3OC42NDg3NSAtMTM4LjUxIDI3OC44NzU2MjUgLTEzOS4wNjI1IDI3OS4xMDkzNzUgQy0xNDIuMzgyOTU1OTIgMjgwLjk0NDM2MzggLTE0NC44MzAyMTAyMSAyODIuNjMyNjgxMjcgLTE0Ny40Mzc1IDI4NS40MjE4NzUgQy0xNDcuMTA3NDIyMDMgMjkwLjczNjcyNTQxIC0xNDUuOTk4MTExMzUgMjk1Ljc5Mzc1MjczIC0xNDQuODA4NTkzNzUgMzAwLjk4NDM3NSBDLTE0NC41MjY4NTMwMyAzMDIuMjIzMTY0MDYgLTE0NC4yNDUxMTIzIDMwMy40NjE5NTMxMiAtMTQzLjk1NDgzMzk4IDMwNC43MzgyODEyNSBDLTE0My41OTg0ODg3NyAzMDYuMjgzODY3MTkgLTE0My4yNDIxNDM1NSAzMDcuODI5NDUzMTIgLTE0Mi44NzUgMzA5LjQyMTg3NSBDLTE0MS43NDA2MjUgMzE0LjM3MTg3NSAtMTQwLjYwNjI1IDMxOS4zMjE4NzUgLTEzOS40Mzc1IDMyNC40MjE4NzUgQy0xMjMuOTI3NSAzMjQuNDIxODc1IC0xMDguNDE3NSAzMjQuNDIxODc1IC05Mi40Mzc1IDMyNC40MjE4NzUgQy05NC4wODc1IDMyMy4xMDE4NzUgLTk1LjczNzUgMzIxLjc4MTg3NSAtOTcuNDM3NSAzMjAuNDIxODc1IEMtMTAxLjc2MzEyNjU5IDMxNC44NTA4NDgyMyAtMTAxLjI3NDE2MDU0IDMwOC4zMTA5NjY0NCAtMTAwLjczNDg2MzI4IDMwMS41ODI1MTk1MyBDLTk5LjM2MTc5NTQ2IDI5MS42MDU3OTUyMyAtOTQuMzAwMDMwMzUgMjgxLjczODMyNzk2IC04Ni40Mzc1IDI3NS40MjE4NzUgQy03OS4xOTA3NjY0OCAyNzAuNzM5MzcwMjYgLTcxLjk3Mzg4Njk5IDI2OC4zOTY1MDE4NiAtNjMuNDM3NSAyNjcuNDIxODc1IEMtNjEuOTQzNDU1NDkgMjYyLjkzOTc0MTQ4IC02NC4wMjQ5NDkwNSAyNTkuMzg4OTU0NiAtNjUuNjExMzI4MTIgMjU1LjEzNDc2NTYyIEMtNjcuMDYyMjA4NzEgMjUxLjA3NDczODQ1IC02Ny43MTEzMTY4NyAyNDcuNzI5NDgxODUgLTY3LjQzNzUgMjQzLjQyMTg3NSBDLTY1LjEyNzUgMjQzLjQyMTg3NSAtNjIuODE3NSAyNDMuNDIxODc1IC02MC40Mzc1IDI0My40MjE4NzUgQy02MC4yMDAzOTMwNyAyNDQuMDQ3NTUzNzEgLTU5Ljk2MzI4NjEzIDI0NC42NzMyMzI0MiAtNTkuNzE4OTk0MTQgMjQ1LjMxNzg3MTA5IEMtNTguNjQ3MDc4OCAyNDguMTQ0NjE3NjkgLTU3LjU3MzU1OTUzIDI1MC45NzA3NTI0NiAtNTYuNSAyNTMuNzk2ODc1IEMtNTYuMTI2ODE2NDEgMjU0Ljc4MTcxODc1IC01NS43NTM2MzI4MSAyNTUuNzY2NTYyNSAtNTUuMzY5MTQwNjIgMjU2Ljc4MTI1IEMtNTQuODMyNTY4MzYgMjU4LjE5Mjc3MzQ0IC01NC44MzI1NjgzNiAyNTguMTkyNzczNDQgLTU0LjI4NTE1NjI1IDI1OS42MzI4MTI1IEMtNTMuOTU1MjM2ODIgMjYwLjUwMjEyNDAyIC01My42MjUzMTczOCAyNjEuMzcxNDM1NTUgLTUzLjI4NTQwMDM5IDI2Mi4yNjcwODk4NCBDLTUyLjQ3MzYzMjQ4IDI2NC40MjM0Nzk4MyAtNTIuNDczNjMyNDggMjY0LjQyMzQ3OTgzIC01MS40Mzc1IDI2Ni40MjE4NzUgQy00OC45MDQ0ODcwOCAyNjYuOTM1MzM2NTEgLTQ2LjQ0NjE2MDc2IDI2Ny4zMjE3NTY5OCAtNDMuODg2NzE4NzUgMjY3LjY0MDYyNSBDLTQzLjExNzUzNjE2IDI2Ny43NDQwMzE5OCAtNDIuMzQ4MzUzNTggMjY3Ljg0NzQzODk2IC00MS41NTU4NjI0MyAyNjcuOTUzOTc5NDkgQy0zOS4wNzk5NTg3OSAyNjguMjg1MTk4MiAtMzYuNjAyNjQ0MjMgMjY4LjYwMzk2MzE2IC0zNC4xMjUgMjY4LjkyMTg3NSBDLTMwLjg5OTMwODQ3IDI2OS4zNDU3MjU5MyAtMjcuNjc0MjcyMzggMjY5Ljc3NDQ1MTg0IC0yNC40NDkyMTg3NSAyNzAuMjAzMTI1IEMtMjMuNjY2NDcwNzkgMjcwLjMwNjAwMzI3IC0yMi44ODM3MjI4NCAyNzAuNDA4ODgxNTMgLTIyLjA3NzI1NTI1IDI3MC41MTQ4NzczMiBDLTE2LjY4OTkyMyAyNzEuMjMwMDA3NCAtMTEuMzM0NDQ5MDkgMjcyLjA2NTA3MDYgLTUuOTg1MzUxNTYgMjczLjAyOTU0MTAyIEM2LjkwMjQ2NzgxIDI3NS4wMTQwODczNyAxNy4xNjM3NzIyMyAyNzEuODQ2Mzk5NDQgMjcuNjg3NSAyNjQuMjM0Mzc1IEMyOS4zMTczMDIzNSAyNjIuOTY5NzA2NDEgMzAuOTQzMTMyMzcgMjYxLjY5OTg3NzY4IDMyLjU2MjUgMjYwLjQyMTg3NSBDMzMuNTUyNSAyNTkuNzYxODc1IDM0LjU0MjUgMjU5LjEwMTg3NSAzNS41NjI1IDI1OC40MjE4NzUgQzM1LjU2MjUgMjU3Ljc2MTg3NSAzNS41NjI1IDI1Ny4xMDE4NzUgMzUuNTYyNSAyNTYuNDIxODc1IEMzNi4xMDM5MDYyNSAyNTYuMjA1MzEyNSAzNi42NDUzMTI1IDI1NS45ODg3NSAzNy4yMDMxMjUgMjU1Ljc2NTYyNSBDNDAuMzgwNDAzOTQgMjUzLjk1NjA0ODkxIDQyLjc3MTE1Mzk5IDI1MS41MDkyNjU3NCA0NS4zMTI1IDI0OC45MjE4NzUgQzQ2LjA5OTk1NjA1IDI0OC4xMjY0NDI4NyA0Ni4wOTk5NTYwNSAyNDguMTI2NDQyODcgNDYuOTAzMzIwMzEgMjQ3LjMxNDk0MTQxIEM1NS4yNzUwMzgxMyAyMzkuNzkwNTU4NyA1NS4yNzUwMzgxMyAyMzkuNzkwNTU4NyA1OS41NjI1IDIzMC40MjE4NzUgQzYwLjIyMjUgMjMwLjQyMTg3NSA2MC44ODI1IDIzMC40MjE4NzUgNjEuNTYyNSAyMzAuNDIxODc1IEM2My42NjM0MjcyNSAyMjcuMjQ3ODEyMjQgNjUuNjU5NDI3NjggMjI0LjA0MDU2MzcgNjcuNTc4MTI1IDIyMC43NTM5MDYyNSBDNjguODAzMTYzODcgMjE4Ljc5MzA5NzA4IDY5LjkzNDc1NTYzIDIxNy4wNjU1NTUzMyA3MS41NjI1IDIxNS40MjE4NzUgQzc0LjgyODEyNSAyMTQuODkwNjI1IDc0LjgyODEyNSAyMTQuODkwNjI1IDc3LjU2MjUgMjE1LjQyMTg3NSBDNzguNTYyNSAyMTYuNDIxODc1IDc4LjU2MjUgMjE2LjQyMTg3NSA3OC45MDYyNSAyMTguNTY2NDA2MjUgQzc4LjQzMTgwNjE1IDIyMi41MDc1MjUwNCA3Ni4zODc5OTM4IDIyNS4wMjYxNzUyNiA3NC4wNjI1IDIyOC4xMDkzNzUgQzcwLjg0NzE5MDgyIDIzMS44OTcxMjczMSA3MC44NDcxOTA4MiAyMzEuODk3MTI3MzEgNjkuNTYyNSAyMzYuNDIxODc1IEM2OC45MDI1IDIzNi40MjE4NzUgNjguMjQyNSAyMzYuNDIxODc1IDY3LjU2MjUgMjM2LjQyMTg3NSBDNjUuOTc0MjM3NzggMjM4LjEzNjg1MjcyIDY1Ljk3NDIzNzc4IDIzOC4xMzY4NTI3MiA2NC40Mzc1IDI0MC4yOTY4NzUgQzYzLjg5ODY3MTg3IDI0MS4wMTYxNzE4NyA2My4zNTk4NDM3NSAyNDEuNzM1NDY4NzUgNjIuODA0Njg3NSAyNDIuNDc2NTYyNSBDNjEuMzgzMTAzNjggMjQ0LjMxODEzNTA2IDYxLjM4MzEwMzY4IDI0NC4zMTgxMzUwNiA2MS41NjI1IDI0Ni40MjE4NzUgQzYwLjkwMjUgMjQ2LjQyMTg3NSA2MC4yNDI1IDI0Ni40MjE4NzUgNTkuNTYyNSAyNDYuNDIxODc1IEM1Ny43NTE4MjYyNiAyNDguMTM1MTk0ODkgNTcuNzUxODI2MjYgMjQ4LjEzNTE5NDg5IDU1LjkzNzUgMjUwLjI5Njg3NSBDNTUuMzA1ODU5MzggMjUxLjAxNjE3MTg3IDU0LjY3NDIxODc1IDI1MS43MzU0Njg3NSA1NC4wMjM0Mzc1IDI1Mi40NzY1NjI1IEM1Mi4zNjIzMjg3NyAyNTQuMjgyOTQ0MzMgNTIuMzYyMzI4NzcgMjU0LjI4Mjk0NDMzIDUyLjU2MjUgMjU2LjQyMTg3NSBDNTQuMzI0MDAzOTEgMjU2LjgyNDA2MjUgNTQuMzI0MDAzOTEgMjU2LjgyNDA2MjUgNTYuMTIxMDkzNzUgMjU3LjIzNDM3NSBDNzEuMzY2MjEyNTkgMjYwLjg3ODIxMzU1IDg1LjA3NzEwODU5IDI2Ni4wNTk1OTE3MSA5Ny40NjA5Mzc1IDI3NS44NTU0Njg3NSBDOTkuNTcwNjQ0NTUgMjc3LjU5ODcwMDI0IDk5LjU3MDY0NDU1IDI3Ny41OTg3MDAyNCAxMDIuNTYyNSAyNzguNDIxODc1IEMxMDIuNTYyNSAyNzkuMDgxODc1IDEwMi41NjI1IDI3OS43NDE4NzUgMTAyLjU2MjUgMjgwLjQyMTg3NSBDMTAzLjIyMjUgMjgwLjQyMTg3NSAxMDMuODgyNSAyODAuNDIxODc1IDEwNC41NjI1IDI4MC40MjE4NzUgQzEwNC45NTExNTIzNCAyODEuMjYxMDU0NjkgMTA0Ljk1MTE1MjM0IDI4MS4yNjEwNTQ2OSAxMDUuMzQ3NjU2MjUgMjgyLjExNzE4NzUgQzEwNi43MDMzODQ2OCAyODQuNjg5MTQ4MTkgMTA4LjI5NDgzOTgzIDI4Ni45NDI2NTM4NyAxMTAgMjg5LjI5Njg3NSBDMTEyLjU2NDIxMTI0IDI5Mi45MDgxMzkxNyAxMTQuNzU1OTk1NTUgMjk2LjM4MzgwNjIzIDExNi41NjI1IDMwMC40MjE4NzUgQzEyOS44NjkxMzMxNSAyODcuOTcyNzgwNDMgMTM1Ljc4NDg5NTUgMjY4LjM1NDY3MzYzIDEzNi41MzEyNSAyNTAuNTk3NjU2MjUgQzEzNi44MjM5NTA1NiAyMzAuMjE4Mzc5NzkgMTI4LjYyMTg1ODc0IDIxMC4yNTE4OTI1NiAxMTQuNjc5Njg3NSAxOTUuNTM1MTU2MjUgQzEwMS42OTY3ODU5IDE4Mi41NzYyMDgzNSA4Ny4yMzU3NjQyNiAxNzguMDc5MDUyNjUgNjkuMTg3NSAxNzcuOTg0Mzc1IEM1OS4wNjE5NzUxMiAxNzguMDUyOTE0MiA0OS40MTg5MTQ3NSAxNzkuMTQ0MTg5MDYgMzkuNTYyNSAxODEuNDIxODc1IFogTS0zNDIuNDM3NSAyMDguNDIxODc1IEMtMzQxLjY0MzkwODc5IDIxNS44MTQ3NzczOCAtMzQxLjY0MzkwODc5IDIxNS44MTQ3NzczOCAtMzQwLjI4OTMwNjY0IDIyMi45OTM2NTIzNCBDLTM0MC4wNjEwNDE4NyAyMjMuOTk2ODQ1MDkgLTMzOS44MzI3NzcxIDIyNS4wMDAwMzc4NCAtMzM5LjU5NzU5NTIxIDIyNi4wMzM2MzAzNyBDLTMzOS4zNTAxMTUzNiAyMjcuMDk3NjEwNDcgLTMzOS4xMDI2MzU1IDIyOC4xNjE1OTA1OCAtMzM4Ljg0NzY1NjI1IDIyOS4yNTc4MTI1IEMtMzM4LjQ1NzIyMTM3IDIzMC45NjM1MTQxIC0zMzguNDU3MjIxMzcgMjMwLjk2MzUxNDEgLTMzOC4wNTg4OTg5MyAyMzIuNzAzNjc0MzIgQy0zMzcuMjEwODY3NDYgMjM2LjQwMjU2MTY0IC0zMzYuMzU1NjA1MjMgMjQwLjA5OTczMjk0IC0zMzUuNSAyNDMuNzk2ODc1IEMtMzM0LjkxMTk4ODE0IDI0Ni4zNTMyNjg4NSAtMzM0LjMyNDM0NDY5IDI0OC45MDk3NDc0NyAtMzMzLjczNzA2MDU1IDI1MS40NjYzMDg1OSBDLTMzMi4yNTgyNTQxOCAyNTcuODk3MjU3MDUgLTMzMC43NzMwMTE3MSAyNjQuMzI2Njk4NDggLTMyOS4yODU0MDAzOSAyNzAuNzU1NjE1MjMgQy0zMjguNDgxMTI4NzkgMjc0LjIzMzIyNzI3IC0zMjcuNjc4NjMxMDkgMjc3LjcxMTI0MjM5IC0zMjYuODc2OTUzMTIgMjgxLjE4OTQ1MzEyIEMtMzI1LjUwNDY5MDYyIDI4Ny4xNDI3MTM2OSAtMzI0LjEyODQwMjIgMjkzLjA5NTAzMzMyIC0zMjIuNzUgMjk5LjA0Njg3NSBDLTMyMi41NDIzMDk4OCAyOTkuOTQ1MjUwODUgLTMyMi4zMzQ2MTk3NSAzMDAuODQzNjI2NzEgLTMyMi4xMjA2MzU5OSAzMDEuNzY5MjI2MDcgQy0zMjEuNTM2ODA3NjIgMzA0LjI5MTkyMjQ5IC0zMjAuOTUwNDgyNzUgMzA2LjgxNDAyNDM5IC0zMjAuMzYzMjgxMjUgMzA5LjMzNTkzNzUgQy0zMjAuMTEyNTQ4NTIgMzEwLjQyMTE5NzIgLTMyMC4xMTI1NDg1MiAzMTAuNDIxMTk3MiAtMzE5Ljg1Njc1MDQ5IDMxMS41MjgzODEzNSBDLTMxOC44NDAyMDE4OCAzMTUuODc3OTkwNTMgLTMxNy42NjcyMjcwMyAzMjAuMTE3ODMwNCAtMzE2LjQzNzUgMzI0LjQyMTg3NSBDLTI2MS4zMjc1IDMyNC40MjE4NzUgLTIwNi4yMTc1IDMyNC40MjE4NzUgLTE0OS40Mzc1IDMyNC40MjE4NzUgQy0xNTAuMTk1OTQxMjggMzE3LjIyNzc5ODA0IC0xNTAuMTk1OTQxMjggMzE3LjIyNzc5ODA0IC0xNTEuNDgxNDQ1MzEgMzEwLjIzNTM1MTU2IEMtMTUxLjY4NTQ1OTU5IDMwOS4zMjI3OTYwMiAtMTUxLjg4OTQ3Mzg4IDMwOC40MTAyNDA0OCAtMTUyLjA5OTY3MDQxIDMwNy40NzAwMzE3NCBDLTE1Mi40MjkzMTc5MyAzMDYuMDMwODAzNTMgLTE1Mi40MjkzMTc5MyAzMDYuMDMwODAzNTMgLTE1Mi43NjU2MjUgMzA0LjU2MjUgQy0xNTIuOTk2NTA4MTggMzAzLjUzNzQzMzQ3IC0xNTMuMjI3MzkxMzYgMzAyLjUxMjM2Njk0IC0xNTMuNDY1MjcxIDMwMS40NTYyMzc3OSBDLTE1NC4yMDE0NTg0IDI5OC4xOTM3MzM5MiAtMTU0Ljk0NDUwMjgzIDI5NC45MzI4MzM5MSAtMTU1LjY4NzUgMjkxLjY3MTg3NSBDLTE1Ni4xNzA5OTMxIDI4OS41MzAwNDI3MiAtMTU2LjY1NDA2OTI4IDI4Ny4zODgxMTYyOSAtMTU3LjEzNjcxODc1IDI4NS4yNDYwOTM3NSBDLTE1OS41NzM5ODY2MiAyNzQuNDU2OTY3OSAtMTYyLjA3MjAwOTc2IDI2My42ODQyNzc3OSAtMTY0LjY1MDYzNDc3IDI1Mi45MjgwODUzMyBDLTE2Ni4wMTY0NTczNCAyNDcuMjIxNjU2OTcgLTE2Ny4zNDQxOTg1MiAyNDEuNTA3NzQxMzYgLTE2OC42NDA2MjUgMjM1Ljc4NTE1NjI1IEMtMTY4LjgxMjA5MDQ1IDIzNS4wMjg2ODgwNSAtMTY4Ljk4MzU1NTkxIDIzNC4yNzIyMTk4NSAtMTY5LjE2MDIxNzI5IDIzMy40OTI4MjgzNyBDLTE2OS44NDgyNDg4NiAyMzAuNDUzMjM1NjkgLTE3MC41MzQ3Njk1MiAyMjcuNDEzMzA5NyAtMTcxLjIxODc1IDIyNC4zNzI4MDI3MyBDLTE3MS43MzIxMjAyNyAyMjIuMDkzMDcwNjggLTE3Mi4yNDg2Mzk4NCAyMTkuODE0MDcwODEgLTE3Mi43NjU2MjUgMjE3LjUzNTE1NjI1IEMtMTcyLjkxOTc2ODY4IDIxNi44NDU3NzQ2OSAtMTczLjA3MzkxMjM1IDIxNi4xNTYzOTMxMyAtMTczLjIzMjcyNzA1IDIxNS40NDYxMjEyMiBDLTE3NC4wNDY3MjI2OCAyMTEuODM2MzQ2MjQgLTE3NC4wNDY3MjI2OCAyMTEuODM2MzQ2MjQgLTE3NS40Mzc1IDIwOC40MjE4NzUgQy0yMzAuNTQ3NSAyMDguNDIxODc1IC0yODUuNjU3NSAyMDguNDIxODc1IC0zNDIuNDM3NSAyMDguNDIxODc1IFogTTM3IDI2OC40ODQzNzUgQzIyLjgwMzM3MzU1IDI3OS44MzA5MjExNCA5LjQ4NDQyOTg4IDI4Mi43MzAxNTU2OCAtOC40Mzc1IDI4MS40MjE4NzUgQy0xMy41NDYwNDM3NiAyODAuNzI5MzUzMTYgLTE4LjYxNDU0NTYyIDI3OS44MzQ0MzEzOSAtMjMuNjg3NSAyNzguOTIxODc1IEMtMzMuNjcxODI0OSAyNzcuMTQ0NjI3MzggLTQzLjQ2MTA1OTc2IDI3NS45MDY4ODM5MiAtNTMuNjI1IDI3NS44NTkzNzUgQy01NC42NDQzMjYxNyAyNzUuODQ1MTk1MzEgLTU1LjY2MzY1MjM0IDI3NS44MzEwMTU2MyAtNTYuNzEzODY3MTkgMjc1LjgxNjQwNjI1IEMtNjYuNzc4ODQwNTggMjc1Ljk0OTQ5NjgxIC03Ni40NTk3OTk2NiAyNzguMzQxNjA3NTkgLTgzLjgyNDIxODc1IDI4NS41MDc4MTI1IEMtODYuNDA0MjQ1NDcgMjg4LjU2ODg2MTE1IC04OC4wMTA1MDYxNiAyOTEuNjk5MjgyMzcgLTg5LjQzNzUgMjk1LjQyMTg3NSBDLTg5LjczNTI3MzQ0IDI5Ni4xNzk4NDM3NSAtOTAuMDMzMDQ2ODggMjk2LjkzNzgxMjUgLTkwLjMzOTg0Mzc1IDI5Ny43MTg3NSBDLTkxLjg4Njc0NzIzIDMwMS45NjczODgxMiAtOTMuMjYzNDY2MDQgMzA1Ljg3OTA2MTc2IC05Mi40Mzc1IDMxMC40MjE4NzUgQy05MC4yNjQ4NjUgMzEyLjk5NDczMjI0IC04OC40NTc1NjE2MiAzMTQuOTExODQ0MTkgLTg1LjQzNzUgMzE2LjQyMTg3NSBDLTc0LjQxMjI4OTkgMzE2Ljc0NjgyODU2IC02My42NTI4NDc0NiAzMTEuNzM5Nzc1MzggLTUzLjYyNSAzMDcuNjcxODc1IEMtNDIuNTExNjMxNiAzMDMuNDQxNDQ5NTcgLTQyLjUxMTYzMTYgMzAzLjQ0MTQ0OTU3IC0zNy40Mzc1IDMwNC40MjE4NzUgQy0zNS4wMjg5NTEwOSAzMDYuMDQyODM3NTcgLTMzLjE1MTQ4Mjg5IDMwNy44OTc2ODAxIC0zMS4xMTMyODEyNSAzMDkuOTY0ODQzNzUgQy0yNi4wOTMxODczNyAzMTQuNTc0NTM1OCAtMjAuMDgzNDM3OTcgMzE3LjgyNzc0MjUgLTE0LjI1NzMyNDIyIDMyMS4zMjAzMTI1IEMtMTIuNzYxOTEzMjkgMzIyLjIyNTUwMzU1IC0xMS4yODYxNzQ0IDMyMy4xNjMxMTU5MiAtOS44MTY0MDYyNSAzMjQuMTA5Mzc1IEMxLjUwNTA4NDM2IDMzMS4zMzAwMTM3MiAxNC4zNjYwNDEwMiAzMzYuOTA3Mjc0MTUgMjcuNTYyNSAzMzkuNDIxODc1IEMyOC42NzYwMDgzIDMzOS42NzIyNzUzOSAyOC42NzYwMDgzIDMzOS42NzIyNzUzOSAyOS44MTIwMTE3MiAzMzkuOTI3NzM0MzggQzQ1LjMwMDYxNDc1IDM0Mi43MTAzNDg2NiA2My41MzcxNjYxNyAzNDIuNzQyOTg1MDEgNzYuNzYxNzE4NzUgMzMzLjY0NTUwNzgxIEM3OC43MDM1NzE0MiAzMzIuMzI2MDE2ODIgODAuNjk0MjM5NTkgMzMxLjEzMzczMzY2IDgyLjcxODc1IDMyOS45NDUzMTI1IEM5MC4zNDE3MzExNCAzMjUuNDI0MTU2NiA5OC4yMDk0OTcwNCAzMjAuNjUyNzA0ODIgMTA0LjU2MjUgMzE0LjQyMTg3NSBDMTA0LjU2MjUgMzEzLjc2MTg3NSAxMDQuNTYyNSAzMTMuMTAxODc1IDEwNC41NjI1IDMxMi40MjE4NzUgQzEwNS4yMjI1IDMxMi40MjE4NzUgMTA1Ljg4MjUgMzEyLjQyMTg3NSAxMDYuNTYyNSAzMTIuNDIxODc1IEMxMDYuNTYyNSAzMTEuNzYxODc1IDEwNi41NjI1IDMxMS4xMDE4NzUgMTA2LjU2MjUgMzEwLjQyMTg3NSBDMTA3LjIyMjUgMzEwLjQyMTg3NSAxMDcuODgyNSAzMTAuNDIxODc1IDEwOC41NjI1IDMxMC40MjE4NzUgQzEwNy44MDQ5NDEyOSAyOTguNTUzNDU1MjggOTkuNzE5NTAyNzUgMjg5Ljg5NTg4MjM0IDkxLjE2Nzk2ODc1IDI4Mi4yOTI5Njg3NSBDNzkuMzM2MzQ1MDggMjczLjAwNTc4MDI4IDUwLjQwNTcyOTk3IDI1Ny4wNjE4NTQwMiAzNyAyNjguNDg0Mzc1IFogTTEzNC41NjI1IDI5MC40MjE4NzUgQzEzNC4xNDI5MTAxNiAyOTEuMjM5Nzg1MTYgMTM0LjE0MjkxMDE2IDI5MS4yMzk3ODUxNiAxMzMuNzE0ODQzNzUgMjkyLjA3NDIxODc1IEMxMzAuOTA1MjM3MTYgMjk3LjM1OTE3MDA2IDEyNy43MzI5MjMyMSAzMDEuOTYyMTA5NjMgMTIzLjkxNzk2ODc1IDMwNi41NzQyMTg3NSBDMTIyLjM2NTMyOTUxIDMwOC4zMDg3MTgxNiAxMjIuMzY1MzI5NTEgMzA4LjMwODcxODE2IDEyMi41NjI1IDMxMC40MjE4NzUgQzEyMS45MDI1IDMxMC40MjE4NzUgMTIxLjI0MjUgMzEwLjQyMTg3NSAxMjAuNTYyNSAzMTAuNDIxODc1IEMxMTguODU5NjQyMDUgMzEyLjE0MzUwODk5IDExOC44NTk2NDIwNSAzMTIuMTQzNTA4OTkgMTE3LjEyNSAzMTQuMjk2ODc1IEMxMTQuOTc4NDkxMTYgMzE2Ljg4MzgxMjIyIDExMy4zOTQ3MzQzOCAzMTguNTMzNzE4NzQgMTEwLjU2MjUgMzIwLjQyMTg3NSBDMTEwLjU2MjUgMzIxLjA4MTg3NSAxMTAuNTYyNSAzMjEuNzQxODc1IDExMC41NjI1IDMyMi40MjE4NzUgQzExMC4wMTQ2NDg0NCAzMjIuNjY2Nzk2ODcgMTA5LjQ2Njc5Njg4IDMyMi45MTE3MTg3NSAxMDguOTAyMzQzNzUgMzIzLjE2NDA2MjUgQzEwNi4wNTg4OTc2OSAzMjQuNjkyNTkyNzcgMTAzLjY3MjI4NTY3IDMyNi41NjI5NjQ1OSAxMDEuMTI1IDMyOC41NDY4NzUgQzkyLjQ1NzY1NjY2IDMzNS4xNzQxMjk1OSA4My4zMzUyNjY0OCAzNDAuNTM1NDkxNzYgNzMuNTYyNSAzNDUuNDIxODc1IEM3My4yMzI1IDM1My4zNDE4NzUgNzIuOTAyNSAzNjEuMjYxODc1IDcyLjU2MjUgMzY5LjQyMTg3NSBDNzAuNTYyNSAzNzAuNDIxODc1IDcwLjU2MjUgMzcwLjQyMTg3NSA2MC41NjI1IDM3MS40MjE4NzUgQzYwLjU2MjUgMzg2LjYwMTg3NSA2MC41NjI1IDQwMS43ODE4NzUgNjAuNTYyNSA0MTcuNDIxODc1IEM3My44NTA3MTUyNyA0MTYuNzM3ODE5OTEgNzMuODUwNzE1MjcgNDE2LjczNzgxOTkxIDg3LjEzODY3MTg4IDQxNi4wNDg4MjgxMiBDOTIuNTYzMzE3NjIgNDE1Ljc2NjQ1ODc3IDk3Ljk4Nzk4ODIyIDQxNS40ODQ2NTA1OCAxMDMuNDEyODQxOCA0MTUuMjA2Mjk4ODMgQzEwNy43ODk2MDg0IDQxNC45ODE2ODgzIDExMi4xNjYyMzI0NyA0MTQuNzU0NDY1NTggMTE2LjU0Mjc3MjI5IDQxNC41MjU0ODAyNyBDMTE4LjIwNzE0NjMgNDE0LjQzODg0OTI2IDExOS44NzE1Njg0NCA0MTQuMzUzMTM3NTQgMTIxLjUzNjAzOTM1IDQxNC4yNjgzODg3NSBDMTMzLjU3NDI3NTQ0IDQxMy42NTUxNjE3MyAxMzMuNTc0Mjc1NDQgNDEzLjY1NTE2MTczIDE0NS41NjI1IDQxMi40MjE4NzUgQzE1MC4wMjc4NDA5NyAzNzYuMDMwNTE1MDcgMTQ0LjQ2MTEwOTY2IDMzNi44NzUxMTY3MiAxMzguNDM3NSAzMDAuOTIxODc1IEMxMzguMjc5MTA2NDUgMjk5Ljk2MDA3MzI0IDEzOC4xMjA3MTI4OSAyOTguOTk4MjcxNDggMTM3Ljk1NzUxOTUzIDI5OC4wMDczMjQyMiBDMTM3LjgwMzk1OTk2IDI5Ny4xNDM4MTM0OCAxMzcuNjUwNDAwMzkgMjk2LjI4MDMwMjczIDEzNy40OTIxODc1IDI5NS4zOTA2MjUgQzEzNy4zNjA1NDE5OSAyOTQuNjQyMzI0MjIgMTM3LjIyODg5NjQ4IDI5My44OTQwMjM0NCAxMzcuMDkzMjYxNzIgMjkzLjEyMzA0Njg4IEMxMzYuOTE4MTEwMzUgMjkyLjU2MTY2MDE2IDEzNi43NDI5NTg5OCAyOTIuMDAwMjczNDQgMTM2LjU2MjUgMjkxLjQyMTg3NSBDMTM1LjU3MjUgMjkwLjkyNjg3NSAxMzUuNTcyNSAyOTAuOTI2ODc1IDEzNC41NjI1IDI5MC40MjE4NzUgWiBNLTQ2LjYyODkwNjI1IDMxNC44NDc2NTYyNSBDLTQ3LjQ5MTkzMzU5IDMxNS4xNDk5NDE0MSAtNDguMzU0OTYwOTQgMzE1LjQ1MjIyNjU2IC00OS4yNDQxNDA2MiAzMTUuNzYzNjcxODggQy01MC4xNTM1NzQyMiAzMTYuMDg0MDAzOTEgLTUxLjA2MzAwNzgxIDMxNi40MDQzMzU5NCAtNTIgMzE2LjczNDM3NSBDLTUyLjg4MjM2MzI4IDMxNy4wNDMxMDU0NyAtNTMuNzY0NzI2NTYgMzE3LjM1MTgzNTk0IC01NC42NzM4MjgxMiAzMTcuNjY5OTIxODggQy01OS45NTM3NjE0NiAzMTkuNTIzNTU3MDEgLTY1LjIwNTI0OTkyIDMyMS40Mzc2NDk0OCAtNzAuNDM3NSAzMjMuNDIxODc1IEMtNzAuNDM3NSAzMjMuNzUxODc1IC03MC40Mzc1IDMyNC4wODE4NzUgLTcwLjQzNzUgMzI0LjQyMTg3NSBDLTU2LjU3NzUgMzI0LjQyMTg3NSAtNDIuNzE3NSAzMjQuNDIxODc1IC0yOC40Mzc1IDMyNC40MjE4NzUgQy0zMS4yOTg5NjA3IDMyMS41NjA0MTQzIC0zMy45NTYwMzM4NCAzMTkuMTIzMjQwNTYgLTM3LjEyNSAzMTYuNjcxODc1IEMtMzcuOTEyNjE3MTkgMzE2LjA1ODI4MTI1IC0zOC43MDAyMzQzNyAzMTUuNDQ0Njg3NSAtMzkuNTExNzE4NzUgMzE0LjgxMjUgQy00Mi4zOTE5ODM2NiAzMTIuNzMyNjMzMjUgLTQzLjM0NzQwMDYzIDMxMy42OTY3Nzg4MyAtNDYuNjI4OTA2MjUgMzE0Ljg0NzY1NjI1IFogTS0yOC40Mzc1IDMyNC40MjE4NzUgQy0yOC4xMDc1IDMyNS4wODE4NzUgLTI3Ljc3NzUgMzI1Ljc0MTg3NSAtMjcuNDM3NSAzMjYuNDIxODc1IEMtMjYuOTg0OTE1MDMgMzMxLjA4MTgyMzk3IC0yNi43MzQ4ODM4NyAzMzUuNzQ4Njk5ODggLTI2LjQzNzUgMzQwLjQyMTg3NSBDLTE3Ljg1NzUgMzQwLjQyMTg3NSAtOS4yNzc1IDM0MC40MjE4NzUgLTAuNDM3NSAzNDAuNDIxODc1IEMtMy40OTU1NDUwNCAzMzguMTI4MzQxMjIgLTYuMTYwMDM5NDYgMzM2LjQyMzAxNzc4IC05LjUgMzM0LjY3MTg3NSBDLTE0LjU5MDA4OTEgMzMxLjk0ODk1MDk5IC0xOS40MTI2MzE4NiAzMjguOTMwNDY3NjYgLTI0LjIyMjY1NjI1IDMyNS43NDIxODc1IEMtMjYuMjk0MDY2ODQgMzI0LjI1MTE5Mzk4IC0yNi4yOTQwNjY4NCAzMjQuMjUxMTkzOTggLTI4LjQzNzUgMzI0LjQyMTg3NSBaIE0tMzA3LjQzNzUgMzM0LjQyMTg3NSBDLTMwNy40Mzc1IDMzNi40MDE4NzUgLTMwNy40Mzc1IDMzOC4zODE4NzUgLTMwNy40Mzc1IDM0MC40MjE4NzUgQy0yMTcuNjc3NSAzNDAuNDIxODc1IC0xMjcuOTE3NSAzNDAuNDIxODc1IC0zNS40Mzc1IDM0MC40MjE4NzUgQy0zNS40Mzc1IDMzOC40NDE4NzUgLTM1LjQzNzUgMzM2LjQ2MTg3NSAtMzUuNDM3NSAzMzQuNDIxODc1IEMtMTI1LjE5NzUgMzM0LjQyMTg3NSAtMjE0Ljk1NzUgMzM0LjQyMTg3NSAtMzA3LjQzNzUgMzM0LjQyMTg3NSBaIE0tMzQ5LjQzNzUgMzQ5LjQyMTg3NSBDLTM0OS40Mzc1IDM1My4zODE4NzUgLTM0OS40Mzc1IDM1Ny4zNDE4NzUgLTM0OS40Mzc1IDM2MS40MjE4NzUgQy0yMTIuODE3NSAzNjEuNDIxODc1IC03Ni4xOTc1IDM2MS40MjE4NzUgNjQuNTYyNSAzNjEuNDIxODc1IEM2NC41NjI1IDM1Ny40NjE4NzUgNjQuNTYyNSAzNTMuNTAxODc1IDY0LjU2MjUgMzQ5LjQyMTg3NSBDLTcyLjA1NzUgMzQ5LjQyMTg3NSAtMjA4LjY3NzUgMzQ5LjQyMTg3NSAtMzQ5LjQzNzUgMzQ5LjQyMTg3NSBaIE0tMTY3LjQzNzUgMzcxLjQyMTg3NSBDLTE2Ny40Mzc1IDQwMi40NDE4NzUgLTE2Ny40Mzc1IDQzMy40NjE4NzUgLTE2Ny40Mzc1IDQ2NS40MjE4NzUgQy0xNjQuMDMwMjY1MzkgNDYzLjcxODI1NzY5IC0xNjEuNTQzMjAxODQgNDYyLjA0MDExNTQ4IC0xNTguNTYyNSA0NTkuNzM0Mzc1IEMtMTQ0LjA3NDg1NzQgNDQ5LjEwNDk1OTQ2IC0xMjguOTU1OTYzMzIgNDQ0LjkyNTU2NzY2IC0xMTEuNDM3NSA0NDEuNDIxODc1IEMtMTExLjQzNzUgNDE4LjMyMTg3NSAtMTExLjQzNzUgMzk1LjIyMTg3NSAtMTExLjQzNzUgMzcxLjQyMTg3NSBDLTEyOS45MTc1IDM3MS40MjE4NzUgLTE0OC4zOTc1IDM3MS40MjE4NzUgLTE2Ny40Mzc1IDM3MS40MjE4NzUgWiAiIGZpbGw9IiMxRkRDQUQiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDM1Ny40Mzc1LDYuNTc4MTI1KSIvPgo8cGF0aCBkPSJNMCAwIEMwLjk0ODc1IDAuMDQxMjUgMS44OTc1IDAuMDgyNSAyLjg3NSAwLjEyNSBDMy4xMzAyMzQzNyAwLjk5NTExNzE5IDMuMTMwMjM0MzcgMC45OTUxMTcxOSAzLjM5MDYyNSAxLjg4MjgxMjUgQzUuNjg4OTU3OTUgOS4yOTEyNjg3MSA4LjQ5MDY0MTA0IDE0LjQ3NTIyNTA1IDE0Ljg3NSAxOS4xMjUgQzE3LjgzNDcxMjcgMjAuNjEyMjk2MjUgMTcuODM0NzEyNyAyMC42MTIyOTYyNSAyMC45Mzc1IDIxLjgxMjUgQzIxLjk1OTcyNjU2IDIyLjIyODg2NzE5IDIyLjk4MTk1MzEzIDIyLjY0NTIzNDM4IDI0LjAzNTE1NjI1IDIzLjA3NDIxODc1IEMyNi43NTI1MjQ5OCAyNC4xNTEwNiAyNi43NTI1MjQ5OCAyNC4xNTEwNiAyOS4xODM1OTM3NSAyNC42NDQ1MzEyNSBDMjkuNzQxNzU3ODEgMjQuODAzMDg1OTQgMzAuMjk5OTIxODcgMjQuOTYxNjQwNjMgMzAuODc1IDI1LjEyNSBDMzIuMjQxMjM2NzQgMjcuODU3NDczNDggMzIuMDAzNDI2IDMwLjEwNjk4OTAyIDMxLjg3NSAzMy4xMjUgQzMwLjg3NSAzNC4xMjUgMzAuODc1IDM0LjEyNSAyOCAzNC40Mzc1IEMxOC45Njk5MjE2NyAzNC4yODkxNjE5NiA5LjM4Mzk3OTE1IDI5LjQyNTMxNDEyIDIuOTMzNTkzNzUgMjMuMjczNDM3NSBDLTEuOTI3MDI0MTkgMTguMDE3MDY5ODggLTUuMTk5MDA0MiAxMy4xNjYxMjA2NCAtNS40Mzc1IDUuODEyNSBDLTUuMDQ3ODc2NjkgMS4yMTQ5NDQ5MSAtNC42ODI2MzQ3MiAwLjE4NzMwNTM5IDAgMCBaICIgZmlsbD0iIzFGRENBRCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjc1LjEyNSw2MC44NzUpIi8+CjxwYXRoIGQ9Ik0wIDAgQzIuMTI4OTA2MjUgMC40MTQwNjI1IDIuMTI4OTA2MjUgMC40MTQwNjI1IDQuNjkxNDA2MjUgMS45NzY1NjI1IEM2LjcxODE2MDgzIDUuNDEzMjMzMzEgNi43NDg3NzM4NSA3LjQ4ODIzNDM2IDYuMTI4OTA2MjUgMTEuNDE0MDYyNSBDMy41MzY3NDU0MiAxNS4xMDU5Mjc5MiAyLjA4NzQxNTYxIDE2LjI0MjkwMDExIC0yLjM3MTA5Mzc1IDE3LjAzOTA2MjUgQy02LjgwMDg1Nzk1IDE2LjI0ODAzMzE4IC04LjI2MzE5NTQ3IDE1LjA0OTMxNDY1IC0xMC44NzEwOTM3NSAxMS40MTQwNjI1IEMtMTEuNTc0NDc4OSA3LjY2MjY3NTAyIC0xMS4xMzYzMzI0MyA1Ljk0NDUzOTg2IC05LjQzMzU5Mzc1IDIuNTM5MDYyNSBDLTYuMTcxNzI5MzkgLTAuMTY1ODk4MTkgLTQuMTQxNjMyNyAtMC4yNTkyNzg0OSAwIDAgWiAiIGZpbGw9IiMxRkREQUQiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDMyOC44NzEwOTM3NSwxMDEuNTg1OTM3NSkiLz4KPHBhdGggZD0iTTAgMCBDMy4wMDM0Mjg5NiAyLjA1NDk3NzcxIDMuODMyODczNTYgMy40NzYzMzcxNCA0LjkzNzUgNi45Mzc1IEM1LjAxMjIxODkxIDEwLjU5ODcyNjgxIDQuMjEzNjM5NDQgMTIuMTMwNDY3NCAyIDE1IEMtMS4yMDU4MDQwNiAxNi42MDI5MDIwMyAtNC41MjE4MjMxNCAxNi40ODExNzA3MSAtOCAxNiBDLTEwLjUgMTQuNDM3NSAtMTAuNSAxNC40Mzc1IC0xMiAxMiBDLTEyLjcyMTI1Njk1IDcuNTkyMzE4NjMgLTEyLjUyMDAxMzM4IDUuNzQwNjI1MTIgLTkuOTM3NSAyLjA2MjUgQy02LjI1OTM3NDg4IC0wLjUyMDAxMzM4IC00LjQwNzY4MTM3IC0wLjcyMTI1Njk1IDAgMCBaICIgZmlsbD0iIzFGRENBRCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjgxLDExMikiLz4KPC9zdmc+Cg==",alt:"GG Blocks Logo",width:"24",height:"24",style:{width:24,height:24}}),edit:function({attributes:e,setAttributes:t}){const{images:r,labelBackgroundColor:n="#34d399",overlayBackgroundColor:M="rgba(25, 91, 136, 0.6)"}=e,[a,u]=(0,o.useState)(!1),c=(e,n,M)=>{const i=[...r];i[e][n]=M,t({images:i})},g=(0,i.useBlockProps)({className:"alignwide styled-img-grid"});return(0,RM.jsxs)("div",{...g,children:[(0,RM.jsxs)(i.InspectorControls,{children:[(0,RM.jsx)(N.PanelBody,{title:"Label Background Color",initialOpen:!0,children:(0,RM.jsx)(N.ColorPalette,{value:n,onChange:e=>t({labelBackgroundColor:e})})}),(0,RM.jsx)(N.PanelBody,{title:"Overlay Background (RGBA)",initialOpen:!1,children:(0,RM.jsx)(N.TextControl,{label:"Overlay Background Color",value:M,onChange:e=>t({overlayBackgroundColor:e}),help:"Use RGBA for transparency (e.g., rgba(25, 91, 136, 0.6))"})})]}),(0,RM.jsx)(i.MediaUploadCheck,{children:(0,RM.jsx)(i.MediaUpload,{onSelect:e=>{const r=e.map(e=>({url:e.url,label:"",link:"",id:e.id||e.url}));t({images:r})},allowedTypes:["image"],multiple:!0,gallery:!0,value:r.map(e=>e.id),render:({open:e})=>(0,RM.jsx)(N.Button,{onClick:e,variant:"secondary",children:r.length>0?"Edit Images":"Upload Images"})})}),(0,RM.jsx)(aM,{onDragEnd:e=>{if(!e.destination)return;const n=Array.from(r),[M]=n.splice(e.source.index,1);n.splice(e.destination.index,0,M),t({images:n})},onDragStart:()=>u(!0),onDragUpdate:()=>u(!1),children:(0,RM.jsx)(PM,{droppableId:"image-grid",direction:"vertical",children:e=>(0,RM.jsxs)("div",{className:"grid-wrapper",ref:e.innerRef,...e.droppableProps,children:[r.map((e,t)=>(0,RM.jsx)(kM,{draggableId:`${e.id||`img-${t}`}`,index:t,children:r=>(0,RM.jsxs)("div",{className:"styled-img-wrapper",ref:r.innerRef,...r.draggableProps,...r.dragHandleProps,children:[(0,RM.jsxs)("div",{className:"image-inner",children:[(0,RM.jsx)("img",{src:e.url,alt:""}),(0,RM.jsx)("div",{className:"img-overlay always-visible",style:{backgroundColor:M},children:(0,RM.jsx)("input",{type:"text",value:e.label||"",placeholder:"Overlay label","aria-label":`Overlay label for image ${t+1}`,onChange:e=>c(t,"label",e.target.value)})})]}),(0,RM.jsx)("input",{type:"url",className:"url-input",value:e.link||"",placeholder:"Optional image link (https://...)","aria-label":`Link for image ${t+1}`,onChange:e=>c(t,"link",e.target.value)})]})},e.id||`img-${t}`)),e.placeholder]})})})]})},save:function({attributes:e}){const{images:t,labelBackgroundColor:r="#34d399",overlayBackgroundColor:n="rgba(25, 91, 136, 0.6)"}=e;return(0,RM.jsx)("div",{...i.useBlockProps.save({className:"alignwide styled-img-grid"}),children:(0,RM.jsx)("div",{className:"grid-wrapper",children:t.map(e=>(0,RM.jsx)("figure",{className:"styled-img-wrapper","data-touchable":!0,children:(0,RM.jsx)("div",{className:"image-inner",children:e.link?(0,RM.jsxs)("a",{href:e.link,children:[(0,RM.jsx)("img",{src:e.url,alt:""}),e.label&&(0,RM.jsx)("figcaption",{className:"img-overlay",style:{backgroundColor:n},children:(0,RM.jsx)("span",{className:"img-label",style:{backgroundColor:r},children:e.label})})]}):(0,RM.jsxs)(RM.Fragment,{children:[(0,RM.jsx)("img",{src:e.url,alt:""}),e.label&&(0,RM.jsx)("figcaption",{className:"img-overlay",style:{backgroundColor:n},children:(0,RM.jsx)("span",{className:"img-label",style:{backgroundColor:r},children:e.label})})]})})},e.url))})})}})},737:(e,t,r)=>{e.exports=r(989)},989:(e,t)=>{var r=60103,n=60106,M=60107,i=60108,N=60114,o=60109,a=60110,u=60112,c=60113,g=60120,D=60115,l=60116;if("function"==typeof Symbol&&Symbol.for){var j=Symbol.for;r=j("react.element"),n=j("react.portal"),M=j("react.fragment"),i=j("react.strict_mode"),N=j("react.profiler"),o=j("react.provider"),a=j("react.context"),u=j("react.forward_ref"),c=j("react.suspense"),g=j("react.suspense_list"),D=j("react.memo"),l=j("react.lazy"),j("react.block"),j("react.server.block"),j("react.fundamental"),j("react.debug_trace_mode"),j("react.legacy_hidden")}t.isContextConsumer=function(e){return function(e){if("object"==typeof e&&null!==e){var t=e.$$typeof;switch(t){case r:switch(e=e.type){case M:case N:case i:case c:case g:return e;default:switch(e=e&&e.$$typeof){case a:case u:case l:case D:case o:return e;default:return t}}case n:return t}}}(e)===a}}},r={};function n(e){var M=r[e];if(void 0!==M)return M.exports;var i=r[e]={exports:{}};return t[e](i,i.exports,n),i.exports}n.m=t,e=[],n.O=(t,r,M,i)=>{if(!r){var N=1/0;for(c=0;c<e.length;c++){for(var[r,M,i]=e[c],o=!0,a=0;a<r.length;a++)(!1&i||N>=i)&&Object.keys(n.O).every(e=>n.O[e](r[a]))?r.splice(a--,1):(o=!1,i<N&&(N=i));if(o){e.splice(c--,1);var u=M();void 0!==u&&(t=u)}}return t}i=i||0;for(var c=e.length;c>0&&e[c-1][2]>i;c--)e[c]=e[c-1];e[c]=[r,M,i]},n.n=e=>{var t=e&&e.__esModule?()=>e.default:()=>e;return n.d(t,{a:t}),t},n.d=(e,t)=>{for(var r in t)n.o(t,r)&&!n.o(e,r)&&Object.defineProperty(e,r,{enumerable:!0,get:t[r]})},n.o=(e,t)=>Object.prototype.hasOwnProperty.call(e,t),(()=>{var e={645:0,505:0};n.O.j=t=>0===e[t];var t=(t,r)=>{var M,i,[N,o,a]=r,u=0;if(N.some(t=>0!==e[t])){for(M in o)n.o(o,M)&&(n.m[M]=o[M]);if(a)var c=a(n)}for(t&&t(r);u<N.length;u++)i=N[u],n.o(e,i)&&e[i]&&e[i][0](),e[i]=0;return n.O(c)},r=globalThis.webpackChunkgg_blocks=globalThis.webpackChunkgg_blocks||[];r.forEach(t.bind(null,0)),r.push=t.bind(null,r.push.bind(r))})();var M=n.O(void 0,[505],()=>n(555));M=n.O(M)})();
+/******/ (() => { // webpackBootstrap
+/******/ 	var __webpack_modules__ = ({
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/defineProperty.js ***!
+  \*******************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ _defineProperty)
+/* harmony export */ });
+/* harmony import */ var _toPropertyKey_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./toPropertyKey.js */ "./node_modules/@babel/runtime/helpers/esm/toPropertyKey.js");
+
+function _defineProperty(e, r, t) {
+  return (r = (0,_toPropertyKey_js__WEBPACK_IMPORTED_MODULE_0__["default"])(r)) in e ? Object.defineProperty(e, r, {
+    value: t,
+    enumerable: !0,
+    configurable: !0,
+    writable: !0
+  }) : e[r] = t, e;
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/extends.js":
+/*!************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/extends.js ***!
+  \************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ _extends)
+/* harmony export */ });
+function _extends() {
+  return _extends = Object.assign ? Object.assign.bind() : function (n) {
+    for (var e = 1; e < arguments.length; e++) {
+      var t = arguments[e];
+      for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]);
+    }
+    return n;
+  }, _extends.apply(null, arguments);
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/inheritsLoose.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/inheritsLoose.js ***!
+  \******************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ _inheritsLoose)
+/* harmony export */ });
+/* harmony import */ var _setPrototypeOf_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./setPrototypeOf.js */ "./node_modules/@babel/runtime/helpers/esm/setPrototypeOf.js");
+
+function _inheritsLoose(t, o) {
+  t.prototype = Object.create(o.prototype), t.prototype.constructor = t, (0,_setPrototypeOf_js__WEBPACK_IMPORTED_MODULE_0__["default"])(t, o);
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/objectSpread2.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/objectSpread2.js ***!
+  \******************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ _objectSpread2)
+/* harmony export */ });
+/* harmony import */ var _defineProperty_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./defineProperty.js */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
+
+function ownKeys(e, r) {
+  var t = Object.keys(e);
+  if (Object.getOwnPropertySymbols) {
+    var o = Object.getOwnPropertySymbols(e);
+    r && (o = o.filter(function (r) {
+      return Object.getOwnPropertyDescriptor(e, r).enumerable;
+    })), t.push.apply(t, o);
+  }
+  return t;
+}
+function _objectSpread2(e) {
+  for (var r = 1; r < arguments.length; r++) {
+    var t = null != arguments[r] ? arguments[r] : {};
+    r % 2 ? ownKeys(Object(t), !0).forEach(function (r) {
+      (0,_defineProperty_js__WEBPACK_IMPORTED_MODULE_0__["default"])(e, r, t[r]);
+    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) {
+      Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r));
+    });
+  }
+  return e;
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js":
+/*!*********************************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js ***!
+  \*********************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ _objectWithoutPropertiesLoose)
+/* harmony export */ });
+function _objectWithoutPropertiesLoose(r, e) {
+  if (null == r) return {};
+  var t = {};
+  for (var n in r) if ({}.hasOwnProperty.call(r, n)) {
+    if (e.includes(n)) continue;
+    t[n] = r[n];
+  }
+  return t;
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/setPrototypeOf.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/setPrototypeOf.js ***!
+  \*******************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ _setPrototypeOf)
+/* harmony export */ });
+function _setPrototypeOf(t, e) {
+  return _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function (t, e) {
+    return t.__proto__ = e, t;
+  }, _setPrototypeOf(t, e);
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/toPrimitive.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/toPrimitive.js ***!
+  \****************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ toPrimitive)
+/* harmony export */ });
+/* harmony import */ var _typeof_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./typeof.js */ "./node_modules/@babel/runtime/helpers/esm/typeof.js");
+
+function toPrimitive(t, r) {
+  if ("object" != (0,_typeof_js__WEBPACK_IMPORTED_MODULE_0__["default"])(t) || !t) return t;
+  var e = t[Symbol.toPrimitive];
+  if (void 0 !== e) {
+    var i = e.call(t, r || "default");
+    if ("object" != (0,_typeof_js__WEBPACK_IMPORTED_MODULE_0__["default"])(i)) return i;
+    throw new TypeError("@@toPrimitive must return a primitive value.");
+  }
+  return ("string" === r ? String : Number)(t);
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/toPropertyKey.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/toPropertyKey.js ***!
+  \******************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ toPropertyKey)
+/* harmony export */ });
+/* harmony import */ var _typeof_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./typeof.js */ "./node_modules/@babel/runtime/helpers/esm/typeof.js");
+/* harmony import */ var _toPrimitive_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./toPrimitive.js */ "./node_modules/@babel/runtime/helpers/esm/toPrimitive.js");
+
+
+function toPropertyKey(t) {
+  var i = (0,_toPrimitive_js__WEBPACK_IMPORTED_MODULE_1__["default"])(t, "string");
+  return "symbol" == (0,_typeof_js__WEBPACK_IMPORTED_MODULE_0__["default"])(i) ? i : i + "";
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/typeof.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/typeof.js ***!
+  \***********************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ _typeof)
+/* harmony export */ });
+function _typeof(o) {
+  "@babel/helpers - typeof";
+
+  return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) {
+    return typeof o;
+  } : function (o) {
+    return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o;
+  }, _typeof(o);
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/css-box-model/dist/css-box-model.esm.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/css-box-model/dist/css-box-model.esm.js ***!
+  \**************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   calculateBox: () => (/* binding */ calculateBox),
+/* harmony export */   createBox: () => (/* binding */ createBox),
+/* harmony export */   expand: () => (/* binding */ expand),
+/* harmony export */   getBox: () => (/* binding */ getBox),
+/* harmony export */   getRect: () => (/* binding */ getRect),
+/* harmony export */   offset: () => (/* binding */ offset),
+/* harmony export */   shrink: () => (/* binding */ shrink),
+/* harmony export */   withScroll: () => (/* binding */ withScroll)
+/* harmony export */ });
+/* harmony import */ var tiny_invariant__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tiny-invariant */ "./node_modules/tiny-invariant/dist/esm/tiny-invariant.js");
+
+
+var getRect = function getRect(_ref) {
+  var top = _ref.top,
+      right = _ref.right,
+      bottom = _ref.bottom,
+      left = _ref.left;
+  var width = right - left;
+  var height = bottom - top;
+  var rect = {
+    top: top,
+    right: right,
+    bottom: bottom,
+    left: left,
+    width: width,
+    height: height,
+    x: left,
+    y: top,
+    center: {
+      x: (right + left) / 2,
+      y: (bottom + top) / 2
+    }
+  };
+  return rect;
+};
+var expand = function expand(target, expandBy) {
+  return {
+    top: target.top - expandBy.top,
+    left: target.left - expandBy.left,
+    bottom: target.bottom + expandBy.bottom,
+    right: target.right + expandBy.right
+  };
+};
+var shrink = function shrink(target, shrinkBy) {
+  return {
+    top: target.top + shrinkBy.top,
+    left: target.left + shrinkBy.left,
+    bottom: target.bottom - shrinkBy.bottom,
+    right: target.right - shrinkBy.right
+  };
+};
+
+var shift = function shift(target, shiftBy) {
+  return {
+    top: target.top + shiftBy.y,
+    left: target.left + shiftBy.x,
+    bottom: target.bottom + shiftBy.y,
+    right: target.right + shiftBy.x
+  };
+};
+
+var noSpacing = {
+  top: 0,
+  right: 0,
+  bottom: 0,
+  left: 0
+};
+var createBox = function createBox(_ref2) {
+  var borderBox = _ref2.borderBox,
+      _ref2$margin = _ref2.margin,
+      margin = _ref2$margin === void 0 ? noSpacing : _ref2$margin,
+      _ref2$border = _ref2.border,
+      border = _ref2$border === void 0 ? noSpacing : _ref2$border,
+      _ref2$padding = _ref2.padding,
+      padding = _ref2$padding === void 0 ? noSpacing : _ref2$padding;
+  var marginBox = getRect(expand(borderBox, margin));
+  var paddingBox = getRect(shrink(borderBox, border));
+  var contentBox = getRect(shrink(paddingBox, padding));
+  return {
+    marginBox: marginBox,
+    borderBox: getRect(borderBox),
+    paddingBox: paddingBox,
+    contentBox: contentBox,
+    margin: margin,
+    border: border,
+    padding: padding
+  };
+};
+
+var parse = function parse(raw) {
+  var value = raw.slice(0, -2);
+  var suffix = raw.slice(-2);
+
+  if (suffix !== 'px') {
+    return 0;
+  }
+
+  var result = Number(value);
+  !!isNaN(result) ?  true ? (0,tiny_invariant__WEBPACK_IMPORTED_MODULE_0__["default"])(false, "Could not parse value [raw: " + raw + ", without suffix: " + value + "]") : 0 : void 0;
+  return result;
+};
+
+var getWindowScroll = function getWindowScroll() {
+  return {
+    x: window.pageXOffset,
+    y: window.pageYOffset
+  };
+};
+
+var offset = function offset(original, change) {
+  var borderBox = original.borderBox,
+      border = original.border,
+      margin = original.margin,
+      padding = original.padding;
+  var shifted = shift(borderBox, change);
+  return createBox({
+    borderBox: shifted,
+    border: border,
+    margin: margin,
+    padding: padding
+  });
+};
+var withScroll = function withScroll(original, scroll) {
+  if (scroll === void 0) {
+    scroll = getWindowScroll();
+  }
+
+  return offset(original, scroll);
+};
+var calculateBox = function calculateBox(borderBox, styles) {
+  var margin = {
+    top: parse(styles.marginTop),
+    right: parse(styles.marginRight),
+    bottom: parse(styles.marginBottom),
+    left: parse(styles.marginLeft)
+  };
+  var padding = {
+    top: parse(styles.paddingTop),
+    right: parse(styles.paddingRight),
+    bottom: parse(styles.paddingBottom),
+    left: parse(styles.paddingLeft)
+  };
+  var border = {
+    top: parse(styles.borderTopWidth),
+    right: parse(styles.borderRightWidth),
+    bottom: parse(styles.borderBottomWidth),
+    left: parse(styles.borderLeftWidth)
+  };
+  return createBox({
+    borderBox: borderBox,
+    margin: margin,
+    padding: padding,
+    border: border
+  });
+};
+var getBox = function getBox(el) {
+  var borderBox = el.getBoundingClientRect();
+  var styles = window.getComputedStyle(el);
+  return calculateBox(borderBox, styles);
+};
+
+
+
+
+/***/ }),
+
+/***/ "./node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js":
+/*!**********************************************************************************!*\
+  !*** ./node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js ***!
+  \**********************************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+
+
+var reactIs = __webpack_require__(/*! react-is */ "./node_modules/hoist-non-react-statics/node_modules/react-is/index.js");
+
+/**
+ * Copyright 2015, Yahoo! Inc.
+ * Copyrights licensed under the New BSD License. See the accompanying LICENSE file for terms.
+ */
+var REACT_STATICS = {
+  childContextTypes: true,
+  contextType: true,
+  contextTypes: true,
+  defaultProps: true,
+  displayName: true,
+  getDefaultProps: true,
+  getDerivedStateFromError: true,
+  getDerivedStateFromProps: true,
+  mixins: true,
+  propTypes: true,
+  type: true
+};
+var KNOWN_STATICS = {
+  name: true,
+  length: true,
+  prototype: true,
+  caller: true,
+  callee: true,
+  arguments: true,
+  arity: true
+};
+var FORWARD_REF_STATICS = {
+  '$$typeof': true,
+  render: true,
+  defaultProps: true,
+  displayName: true,
+  propTypes: true
+};
+var MEMO_STATICS = {
+  '$$typeof': true,
+  compare: true,
+  defaultProps: true,
+  displayName: true,
+  propTypes: true,
+  type: true
+};
+var TYPE_STATICS = {};
+TYPE_STATICS[reactIs.ForwardRef] = FORWARD_REF_STATICS;
+TYPE_STATICS[reactIs.Memo] = MEMO_STATICS;
+
+function getStatics(component) {
+  // React v16.11 and below
+  if (reactIs.isMemo(component)) {
+    return MEMO_STATICS;
+  } // React v16.12 and above
+
+
+  return TYPE_STATICS[component['$$typeof']] || REACT_STATICS;
+}
+
+var defineProperty = Object.defineProperty;
+var getOwnPropertyNames = Object.getOwnPropertyNames;
+var getOwnPropertySymbols = Object.getOwnPropertySymbols;
+var getOwnPropertyDescriptor = Object.getOwnPropertyDescriptor;
+var getPrototypeOf = Object.getPrototypeOf;
+var objectPrototype = Object.prototype;
+function hoistNonReactStatics(targetComponent, sourceComponent, blacklist) {
+  if (typeof sourceComponent !== 'string') {
+    // don't hoist over string (html) components
+    if (objectPrototype) {
+      var inheritedComponent = getPrototypeOf(sourceComponent);
+
+      if (inheritedComponent && inheritedComponent !== objectPrototype) {
+        hoistNonReactStatics(targetComponent, inheritedComponent, blacklist);
+      }
+    }
+
+    var keys = getOwnPropertyNames(sourceComponent);
+
+    if (getOwnPropertySymbols) {
+      keys = keys.concat(getOwnPropertySymbols(sourceComponent));
+    }
+
+    var targetStatics = getStatics(targetComponent);
+    var sourceStatics = getStatics(sourceComponent);
+
+    for (var i = 0; i < keys.length; ++i) {
+      var key = keys[i];
+
+      if (!KNOWN_STATICS[key] && !(blacklist && blacklist[key]) && !(sourceStatics && sourceStatics[key]) && !(targetStatics && targetStatics[key])) {
+        var descriptor = getOwnPropertyDescriptor(sourceComponent, key);
+
+        try {
+          // Avoid failures from read-only properties
+          defineProperty(targetComponent, key, descriptor);
+        } catch (e) {}
+      }
+    }
+  }
+
+  return targetComponent;
+}
+
+module.exports = hoistNonReactStatics;
+
+
+/***/ }),
+
+/***/ "./node_modules/hoist-non-react-statics/node_modules/react-is/cjs/react-is.development.js":
+/*!************************************************************************************************!*\
+  !*** ./node_modules/hoist-non-react-statics/node_modules/react-is/cjs/react-is.development.js ***!
+  \************************************************************************************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+/** @license React v16.13.1
+ * react-is.development.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+
+
+
+
+if (true) {
+  (function() {
+'use strict';
+
+// The Symbol used to tag the ReactElement-like types. If there is no native Symbol
+// nor polyfill, then a plain number is used for performance.
+var hasSymbol = typeof Symbol === 'function' && Symbol.for;
+var REACT_ELEMENT_TYPE = hasSymbol ? Symbol.for('react.element') : 0xeac7;
+var REACT_PORTAL_TYPE = hasSymbol ? Symbol.for('react.portal') : 0xeaca;
+var REACT_FRAGMENT_TYPE = hasSymbol ? Symbol.for('react.fragment') : 0xeacb;
+var REACT_STRICT_MODE_TYPE = hasSymbol ? Symbol.for('react.strict_mode') : 0xeacc;
+var REACT_PROFILER_TYPE = hasSymbol ? Symbol.for('react.profiler') : 0xead2;
+var REACT_PROVIDER_TYPE = hasSymbol ? Symbol.for('react.provider') : 0xeacd;
+var REACT_CONTEXT_TYPE = hasSymbol ? Symbol.for('react.context') : 0xeace; // TODO: We don't use AsyncMode or ConcurrentMode anymore. They were temporary
+// (unstable) APIs that have been removed. Can we remove the symbols?
+
+var REACT_ASYNC_MODE_TYPE = hasSymbol ? Symbol.for('react.async_mode') : 0xeacf;
+var REACT_CONCURRENT_MODE_TYPE = hasSymbol ? Symbol.for('react.concurrent_mode') : 0xeacf;
+var REACT_FORWARD_REF_TYPE = hasSymbol ? Symbol.for('react.forward_ref') : 0xead0;
+var REACT_SUSPENSE_TYPE = hasSymbol ? Symbol.for('react.suspense') : 0xead1;
+var REACT_SUSPENSE_LIST_TYPE = hasSymbol ? Symbol.for('react.suspense_list') : 0xead8;
+var REACT_MEMO_TYPE = hasSymbol ? Symbol.for('react.memo') : 0xead3;
+var REACT_LAZY_TYPE = hasSymbol ? Symbol.for('react.lazy') : 0xead4;
+var REACT_BLOCK_TYPE = hasSymbol ? Symbol.for('react.block') : 0xead9;
+var REACT_FUNDAMENTAL_TYPE = hasSymbol ? Symbol.for('react.fundamental') : 0xead5;
+var REACT_RESPONDER_TYPE = hasSymbol ? Symbol.for('react.responder') : 0xead6;
+var REACT_SCOPE_TYPE = hasSymbol ? Symbol.for('react.scope') : 0xead7;
+
+function isValidElementType(type) {
+  return typeof type === 'string' || typeof type === 'function' || // Note: its typeof might be other than 'symbol' or 'number' if it's a polyfill.
+  type === REACT_FRAGMENT_TYPE || type === REACT_CONCURRENT_MODE_TYPE || type === REACT_PROFILER_TYPE || type === REACT_STRICT_MODE_TYPE || type === REACT_SUSPENSE_TYPE || type === REACT_SUSPENSE_LIST_TYPE || typeof type === 'object' && type !== null && (type.$$typeof === REACT_LAZY_TYPE || type.$$typeof === REACT_MEMO_TYPE || type.$$typeof === REACT_PROVIDER_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE || type.$$typeof === REACT_FUNDAMENTAL_TYPE || type.$$typeof === REACT_RESPONDER_TYPE || type.$$typeof === REACT_SCOPE_TYPE || type.$$typeof === REACT_BLOCK_TYPE);
+}
+
+function typeOf(object) {
+  if (typeof object === 'object' && object !== null) {
+    var $$typeof = object.$$typeof;
+
+    switch ($$typeof) {
+      case REACT_ELEMENT_TYPE:
+        var type = object.type;
+
+        switch (type) {
+          case REACT_ASYNC_MODE_TYPE:
+          case REACT_CONCURRENT_MODE_TYPE:
+          case REACT_FRAGMENT_TYPE:
+          case REACT_PROFILER_TYPE:
+          case REACT_STRICT_MODE_TYPE:
+          case REACT_SUSPENSE_TYPE:
+            return type;
+
+          default:
+            var $$typeofType = type && type.$$typeof;
+
+            switch ($$typeofType) {
+              case REACT_CONTEXT_TYPE:
+              case REACT_FORWARD_REF_TYPE:
+              case REACT_LAZY_TYPE:
+              case REACT_MEMO_TYPE:
+              case REACT_PROVIDER_TYPE:
+                return $$typeofType;
+
+              default:
+                return $$typeof;
+            }
+
+        }
+
+      case REACT_PORTAL_TYPE:
+        return $$typeof;
+    }
+  }
+
+  return undefined;
+} // AsyncMode is deprecated along with isAsyncMode
+
+var AsyncMode = REACT_ASYNC_MODE_TYPE;
+var ConcurrentMode = REACT_CONCURRENT_MODE_TYPE;
+var ContextConsumer = REACT_CONTEXT_TYPE;
+var ContextProvider = REACT_PROVIDER_TYPE;
+var Element = REACT_ELEMENT_TYPE;
+var ForwardRef = REACT_FORWARD_REF_TYPE;
+var Fragment = REACT_FRAGMENT_TYPE;
+var Lazy = REACT_LAZY_TYPE;
+var Memo = REACT_MEMO_TYPE;
+var Portal = REACT_PORTAL_TYPE;
+var Profiler = REACT_PROFILER_TYPE;
+var StrictMode = REACT_STRICT_MODE_TYPE;
+var Suspense = REACT_SUSPENSE_TYPE;
+var hasWarnedAboutDeprecatedIsAsyncMode = false; // AsyncMode should be deprecated
+
+function isAsyncMode(object) {
+  {
+    if (!hasWarnedAboutDeprecatedIsAsyncMode) {
+      hasWarnedAboutDeprecatedIsAsyncMode = true; // Using console['warn'] to evade Babel and ESLint
+
+      console['warn']('The ReactIs.isAsyncMode() alias has been deprecated, ' + 'and will be removed in React 17+. Update your code to use ' + 'ReactIs.isConcurrentMode() instead. It has the exact same API.');
+    }
+  }
+
+  return isConcurrentMode(object) || typeOf(object) === REACT_ASYNC_MODE_TYPE;
+}
+function isConcurrentMode(object) {
+  return typeOf(object) === REACT_CONCURRENT_MODE_TYPE;
+}
+function isContextConsumer(object) {
+  return typeOf(object) === REACT_CONTEXT_TYPE;
+}
+function isContextProvider(object) {
+  return typeOf(object) === REACT_PROVIDER_TYPE;
+}
+function isElement(object) {
+  return typeof object === 'object' && object !== null && object.$$typeof === REACT_ELEMENT_TYPE;
+}
+function isForwardRef(object) {
+  return typeOf(object) === REACT_FORWARD_REF_TYPE;
+}
+function isFragment(object) {
+  return typeOf(object) === REACT_FRAGMENT_TYPE;
+}
+function isLazy(object) {
+  return typeOf(object) === REACT_LAZY_TYPE;
+}
+function isMemo(object) {
+  return typeOf(object) === REACT_MEMO_TYPE;
+}
+function isPortal(object) {
+  return typeOf(object) === REACT_PORTAL_TYPE;
+}
+function isProfiler(object) {
+  return typeOf(object) === REACT_PROFILER_TYPE;
+}
+function isStrictMode(object) {
+  return typeOf(object) === REACT_STRICT_MODE_TYPE;
+}
+function isSuspense(object) {
+  return typeOf(object) === REACT_SUSPENSE_TYPE;
+}
+
+exports.AsyncMode = AsyncMode;
+exports.ConcurrentMode = ConcurrentMode;
+exports.ContextConsumer = ContextConsumer;
+exports.ContextProvider = ContextProvider;
+exports.Element = Element;
+exports.ForwardRef = ForwardRef;
+exports.Fragment = Fragment;
+exports.Lazy = Lazy;
+exports.Memo = Memo;
+exports.Portal = Portal;
+exports.Profiler = Profiler;
+exports.StrictMode = StrictMode;
+exports.Suspense = Suspense;
+exports.isAsyncMode = isAsyncMode;
+exports.isConcurrentMode = isConcurrentMode;
+exports.isContextConsumer = isContextConsumer;
+exports.isContextProvider = isContextProvider;
+exports.isElement = isElement;
+exports.isForwardRef = isForwardRef;
+exports.isFragment = isFragment;
+exports.isLazy = isLazy;
+exports.isMemo = isMemo;
+exports.isPortal = isPortal;
+exports.isProfiler = isProfiler;
+exports.isStrictMode = isStrictMode;
+exports.isSuspense = isSuspense;
+exports.isValidElementType = isValidElementType;
+exports.typeOf = typeOf;
+  })();
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/hoist-non-react-statics/node_modules/react-is/index.js":
+/*!*****************************************************************************!*\
+  !*** ./node_modules/hoist-non-react-statics/node_modules/react-is/index.js ***!
+  \*****************************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+
+
+if (false) // removed by dead control flow
+{} else {
+  module.exports = __webpack_require__(/*! ./cjs/react-is.development.js */ "./node_modules/hoist-non-react-statics/node_modules/react-is/cjs/react-is.development.js");
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/memoize-one/dist/memoize-one.esm.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/memoize-one/dist/memoize-one.esm.js ***!
+  \**********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+var safeIsNaN = Number.isNaN ||
+    function ponyfill(value) {
+        return typeof value === 'number' && value !== value;
+    };
+function isEqual(first, second) {
+    if (first === second) {
+        return true;
+    }
+    if (safeIsNaN(first) && safeIsNaN(second)) {
+        return true;
+    }
+    return false;
+}
+function areInputsEqual(newInputs, lastInputs) {
+    if (newInputs.length !== lastInputs.length) {
+        return false;
+    }
+    for (var i = 0; i < newInputs.length; i++) {
+        if (!isEqual(newInputs[i], lastInputs[i])) {
+            return false;
+        }
+    }
+    return true;
+}
+
+function memoizeOne(resultFn, isEqual) {
+    if (isEqual === void 0) { isEqual = areInputsEqual; }
+    var lastThis;
+    var lastArgs = [];
+    var lastResult;
+    var calledOnce = false;
+    function memoized() {
+        var newArgs = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            newArgs[_i] = arguments[_i];
+        }
+        if (calledOnce && lastThis === this && isEqual(newArgs, lastArgs)) {
+            return lastResult;
+        }
+        lastResult = resultFn.apply(this, newArgs);
+        calledOnce = true;
+        lastThis = this;
+        lastArgs = newArgs;
+        return lastResult;
+    }
+    return memoized;
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (memoizeOne);
+
+
+/***/ }),
+
+/***/ "./node_modules/object-assign/index.js":
+/*!*********************************************!*\
+  !*** ./node_modules/object-assign/index.js ***!
+  \*********************************************/
+/***/ ((module) => {
+
+"use strict";
+/*
+object-assign
+(c) Sindre Sorhus
+@license MIT
+*/
+
+
+/* eslint-disable no-unused-vars */
+var getOwnPropertySymbols = Object.getOwnPropertySymbols;
+var hasOwnProperty = Object.prototype.hasOwnProperty;
+var propIsEnumerable = Object.prototype.propertyIsEnumerable;
+
+function toObject(val) {
+	if (val === null || val === undefined) {
+		throw new TypeError('Object.assign cannot be called with null or undefined');
+	}
+
+	return Object(val);
+}
+
+function shouldUseNative() {
+	try {
+		if (!Object.assign) {
+			return false;
+		}
+
+		// Detect buggy property enumeration order in older V8 versions.
+
+		// https://bugs.chromium.org/p/v8/issues/detail?id=4118
+		var test1 = new String('abc');  // eslint-disable-line no-new-wrappers
+		test1[5] = 'de';
+		if (Object.getOwnPropertyNames(test1)[0] === '5') {
+			return false;
+		}
+
+		// https://bugs.chromium.org/p/v8/issues/detail?id=3056
+		var test2 = {};
+		for (var i = 0; i < 10; i++) {
+			test2['_' + String.fromCharCode(i)] = i;
+		}
+		var order2 = Object.getOwnPropertyNames(test2).map(function (n) {
+			return test2[n];
+		});
+		if (order2.join('') !== '0123456789') {
+			return false;
+		}
+
+		// https://bugs.chromium.org/p/v8/issues/detail?id=3056
+		var test3 = {};
+		'abcdefghijklmnopqrst'.split('').forEach(function (letter) {
+			test3[letter] = letter;
+		});
+		if (Object.keys(Object.assign({}, test3)).join('') !==
+				'abcdefghijklmnopqrst') {
+			return false;
+		}
+
+		return true;
+	} catch (err) {
+		// We don't expect any of the above to throw, but better to be safe.
+		return false;
+	}
+}
+
+module.exports = shouldUseNative() ? Object.assign : function (target, source) {
+	var from;
+	var to = toObject(target);
+	var symbols;
+
+	for (var s = 1; s < arguments.length; s++) {
+		from = Object(arguments[s]);
+
+		for (var key in from) {
+			if (hasOwnProperty.call(from, key)) {
+				to[key] = from[key];
+			}
+		}
+
+		if (getOwnPropertySymbols) {
+			symbols = getOwnPropertySymbols(from);
+			for (var i = 0; i < symbols.length; i++) {
+				if (propIsEnumerable.call(from, symbols[i])) {
+					to[symbols[i]] = from[symbols[i]];
+				}
+			}
+		}
+	}
+
+	return to;
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/prop-types/checkPropTypes.js":
+/*!***************************************************!*\
+  !*** ./node_modules/prop-types/checkPropTypes.js ***!
+  \***************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+
+
+var printWarning = function() {};
+
+if (true) {
+  var ReactPropTypesSecret = __webpack_require__(/*! ./lib/ReactPropTypesSecret */ "./node_modules/prop-types/lib/ReactPropTypesSecret.js");
+  var loggedTypeFailures = {};
+  var has = __webpack_require__(/*! ./lib/has */ "./node_modules/prop-types/lib/has.js");
+
+  printWarning = function(text) {
+    var message = 'Warning: ' + text;
+    if (typeof console !== 'undefined') {
+      console.error(message);
+    }
+    try {
+      // --- Welcome to debugging React ---
+      // This error was thrown as a convenience so that you can use this stack
+      // to find the callsite that caused this warning to fire.
+      throw new Error(message);
+    } catch (x) { /**/ }
+  };
+}
+
+/**
+ * Assert that the values match with the type specs.
+ * Error messages are memorized and will only be shown once.
+ *
+ * @param {object} typeSpecs Map of name to a ReactPropType
+ * @param {object} values Runtime values that need to be type-checked
+ * @param {string} location e.g. "prop", "context", "child context"
+ * @param {string} componentName Name of the component for error messages.
+ * @param {?Function} getStack Returns the component stack.
+ * @private
+ */
+function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
+  if (true) {
+    for (var typeSpecName in typeSpecs) {
+      if (has(typeSpecs, typeSpecName)) {
+        var error;
+        // Prop type validation may throw. In case they do, we don't want to
+        // fail the render phase where it didn't fail before. So we log it.
+        // After these have been cleaned up, we'll let them throw.
+        try {
+          // This is intentionally an invariant that gets caught. It's the same
+          // behavior as without this statement except with a better message.
+          if (typeof typeSpecs[typeSpecName] !== 'function') {
+            var err = Error(
+              (componentName || 'React class') + ': ' + location + ' type `' + typeSpecName + '` is invalid; ' +
+              'it must be a function, usually from the `prop-types` package, but received `' + typeof typeSpecs[typeSpecName] + '`.' +
+              'This often happens because of typos such as `PropTypes.function` instead of `PropTypes.func`.'
+            );
+            err.name = 'Invariant Violation';
+            throw err;
+          }
+          error = typeSpecs[typeSpecName](values, typeSpecName, componentName, location, null, ReactPropTypesSecret);
+        } catch (ex) {
+          error = ex;
+        }
+        if (error && !(error instanceof Error)) {
+          printWarning(
+            (componentName || 'React class') + ': type specification of ' +
+            location + ' `' + typeSpecName + '` is invalid; the type checker ' +
+            'function must return `null` or an `Error` but returned a ' + typeof error + '. ' +
+            'You may have forgotten to pass an argument to the type checker ' +
+            'creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and ' +
+            'shape all require an argument).'
+          );
+        }
+        if (error instanceof Error && !(error.message in loggedTypeFailures)) {
+          // Only monitor this failure once because there tends to be a lot of the
+          // same error.
+          loggedTypeFailures[error.message] = true;
+
+          var stack = getStack ? getStack() : '';
+
+          printWarning(
+            'Failed ' + location + ' type: ' + error.message + (stack != null ? stack : '')
+          );
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Resets warning cache when testing.
+ *
+ * @private
+ */
+checkPropTypes.resetWarningCache = function() {
+  if (true) {
+    loggedTypeFailures = {};
+  }
+}
+
+module.exports = checkPropTypes;
+
+
+/***/ }),
+
+/***/ "./node_modules/prop-types/factoryWithTypeCheckers.js":
+/*!************************************************************!*\
+  !*** ./node_modules/prop-types/factoryWithTypeCheckers.js ***!
+  \************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+
+
+var ReactIs = __webpack_require__(/*! react-is */ "./node_modules/prop-types/node_modules/react-is/index.js");
+var assign = __webpack_require__(/*! object-assign */ "./node_modules/object-assign/index.js");
+
+var ReactPropTypesSecret = __webpack_require__(/*! ./lib/ReactPropTypesSecret */ "./node_modules/prop-types/lib/ReactPropTypesSecret.js");
+var has = __webpack_require__(/*! ./lib/has */ "./node_modules/prop-types/lib/has.js");
+var checkPropTypes = __webpack_require__(/*! ./checkPropTypes */ "./node_modules/prop-types/checkPropTypes.js");
+
+var printWarning = function() {};
+
+if (true) {
+  printWarning = function(text) {
+    var message = 'Warning: ' + text;
+    if (typeof console !== 'undefined') {
+      console.error(message);
+    }
+    try {
+      // --- Welcome to debugging React ---
+      // This error was thrown as a convenience so that you can use this stack
+      // to find the callsite that caused this warning to fire.
+      throw new Error(message);
+    } catch (x) {}
+  };
+}
+
+function emptyFunctionThatReturnsNull() {
+  return null;
+}
+
+module.exports = function(isValidElement, throwOnDirectAccess) {
+  /* global Symbol */
+  var ITERATOR_SYMBOL = typeof Symbol === 'function' && Symbol.iterator;
+  var FAUX_ITERATOR_SYMBOL = '@@iterator'; // Before Symbol spec.
+
+  /**
+   * Returns the iterator method function contained on the iterable object.
+   *
+   * Be sure to invoke the function with the iterable as context:
+   *
+   *     var iteratorFn = getIteratorFn(myIterable);
+   *     if (iteratorFn) {
+   *       var iterator = iteratorFn.call(myIterable);
+   *       ...
+   *     }
+   *
+   * @param {?object} maybeIterable
+   * @return {?function}
+   */
+  function getIteratorFn(maybeIterable) {
+    var iteratorFn = maybeIterable && (ITERATOR_SYMBOL && maybeIterable[ITERATOR_SYMBOL] || maybeIterable[FAUX_ITERATOR_SYMBOL]);
+    if (typeof iteratorFn === 'function') {
+      return iteratorFn;
+    }
+  }
+
+  /**
+   * Collection of methods that allow declaration and validation of props that are
+   * supplied to React components. Example usage:
+   *
+   *   var Props = require('ReactPropTypes');
+   *   var MyArticle = React.createClass({
+   *     propTypes: {
+   *       // An optional string prop named "description".
+   *       description: Props.string,
+   *
+   *       // A required enum prop named "category".
+   *       category: Props.oneOf(['News','Photos']).isRequired,
+   *
+   *       // A prop named "dialog" that requires an instance of Dialog.
+   *       dialog: Props.instanceOf(Dialog).isRequired
+   *     },
+   *     render: function() { ... }
+   *   });
+   *
+   * A more formal specification of how these methods are used:
+   *
+   *   type := array|bool|func|object|number|string|oneOf([...])|instanceOf(...)
+   *   decl := ReactPropTypes.{type}(.isRequired)?
+   *
+   * Each and every declaration produces a function with the same signature. This
+   * allows the creation of custom validation functions. For example:
+   *
+   *  var MyLink = React.createClass({
+   *    propTypes: {
+   *      // An optional string or URI prop named "href".
+   *      href: function(props, propName, componentName) {
+   *        var propValue = props[propName];
+   *        if (propValue != null && typeof propValue !== 'string' &&
+   *            !(propValue instanceof URI)) {
+   *          return new Error(
+   *            'Expected a string or an URI for ' + propName + ' in ' +
+   *            componentName
+   *          );
+   *        }
+   *      }
+   *    },
+   *    render: function() {...}
+   *  });
+   *
+   * @internal
+   */
+
+  var ANONYMOUS = '<<anonymous>>';
+
+  // Important!
+  // Keep this list in sync with production version in `./factoryWithThrowingShims.js`.
+  var ReactPropTypes = {
+    array: createPrimitiveTypeChecker('array'),
+    bigint: createPrimitiveTypeChecker('bigint'),
+    bool: createPrimitiveTypeChecker('boolean'),
+    func: createPrimitiveTypeChecker('function'),
+    number: createPrimitiveTypeChecker('number'),
+    object: createPrimitiveTypeChecker('object'),
+    string: createPrimitiveTypeChecker('string'),
+    symbol: createPrimitiveTypeChecker('symbol'),
+
+    any: createAnyTypeChecker(),
+    arrayOf: createArrayOfTypeChecker,
+    element: createElementTypeChecker(),
+    elementType: createElementTypeTypeChecker(),
+    instanceOf: createInstanceTypeChecker,
+    node: createNodeChecker(),
+    objectOf: createObjectOfTypeChecker,
+    oneOf: createEnumTypeChecker,
+    oneOfType: createUnionTypeChecker,
+    shape: createShapeTypeChecker,
+    exact: createStrictShapeTypeChecker,
+  };
+
+  /**
+   * inlined Object.is polyfill to avoid requiring consumers ship their own
+   * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is
+   */
+  /*eslint-disable no-self-compare*/
+  function is(x, y) {
+    // SameValue algorithm
+    if (x === y) {
+      // Steps 1-5, 7-10
+      // Steps 6.b-6.e: +0 != -0
+      return x !== 0 || 1 / x === 1 / y;
+    } else {
+      // Step 6.a: NaN == NaN
+      return x !== x && y !== y;
+    }
+  }
+  /*eslint-enable no-self-compare*/
+
+  /**
+   * We use an Error-like object for backward compatibility as people may call
+   * PropTypes directly and inspect their output. However, we don't use real
+   * Errors anymore. We don't inspect their stack anyway, and creating them
+   * is prohibitively expensive if they are created too often, such as what
+   * happens in oneOfType() for any type before the one that matched.
+   */
+  function PropTypeError(message, data) {
+    this.message = message;
+    this.data = data && typeof data === 'object' ? data: {};
+    this.stack = '';
+  }
+  // Make `instanceof Error` still work for returned errors.
+  PropTypeError.prototype = Error.prototype;
+
+  function createChainableTypeChecker(validate) {
+    if (true) {
+      var manualPropTypeCallCache = {};
+      var manualPropTypeWarningCount = 0;
+    }
+    function checkType(isRequired, props, propName, componentName, location, propFullName, secret) {
+      componentName = componentName || ANONYMOUS;
+      propFullName = propFullName || propName;
+
+      if (secret !== ReactPropTypesSecret) {
+        if (throwOnDirectAccess) {
+          // New behavior only for users of `prop-types` package
+          var err = new Error(
+            'Calling PropTypes validators directly is not supported by the `prop-types` package. ' +
+            'Use `PropTypes.checkPropTypes()` to call them. ' +
+            'Read more at http://fb.me/use-check-prop-types'
+          );
+          err.name = 'Invariant Violation';
+          throw err;
+        } else if ( true && typeof console !== 'undefined') {
+          // Old behavior for people using React.PropTypes
+          var cacheKey = componentName + ':' + propName;
+          if (
+            !manualPropTypeCallCache[cacheKey] &&
+            // Avoid spamming the console because they are often not actionable except for lib authors
+            manualPropTypeWarningCount < 3
+          ) {
+            printWarning(
+              'You are manually calling a React.PropTypes validation ' +
+              'function for the `' + propFullName + '` prop on `' + componentName + '`. This is deprecated ' +
+              'and will throw in the standalone `prop-types` package. ' +
+              'You may be seeing this warning due to a third-party PropTypes ' +
+              'library. See https://fb.me/react-warning-dont-call-proptypes ' + 'for details.'
+            );
+            manualPropTypeCallCache[cacheKey] = true;
+            manualPropTypeWarningCount++;
+          }
+        }
+      }
+      if (props[propName] == null) {
+        if (isRequired) {
+          if (props[propName] === null) {
+            return new PropTypeError('The ' + location + ' `' + propFullName + '` is marked as required ' + ('in `' + componentName + '`, but its value is `null`.'));
+          }
+          return new PropTypeError('The ' + location + ' `' + propFullName + '` is marked as required in ' + ('`' + componentName + '`, but its value is `undefined`.'));
+        }
+        return null;
+      } else {
+        return validate(props, propName, componentName, location, propFullName);
+      }
+    }
+
+    var chainedCheckType = checkType.bind(null, false);
+    chainedCheckType.isRequired = checkType.bind(null, true);
+
+    return chainedCheckType;
+  }
+
+  function createPrimitiveTypeChecker(expectedType) {
+    function validate(props, propName, componentName, location, propFullName, secret) {
+      var propValue = props[propName];
+      var propType = getPropType(propValue);
+      if (propType !== expectedType) {
+        // `propValue` being instance of, say, date/regexp, pass the 'object'
+        // check, but we can offer a more precise error message here rather than
+        // 'of type `object`'.
+        var preciseType = getPreciseType(propValue);
+
+        return new PropTypeError(
+          'Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + preciseType + '` supplied to `' + componentName + '`, expected ') + ('`' + expectedType + '`.'),
+          {expectedType: expectedType}
+        );
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createAnyTypeChecker() {
+    return createChainableTypeChecker(emptyFunctionThatReturnsNull);
+  }
+
+  function createArrayOfTypeChecker(typeChecker) {
+    function validate(props, propName, componentName, location, propFullName) {
+      if (typeof typeChecker !== 'function') {
+        return new PropTypeError('Property `' + propFullName + '` of component `' + componentName + '` has invalid PropType notation inside arrayOf.');
+      }
+      var propValue = props[propName];
+      if (!Array.isArray(propValue)) {
+        var propType = getPropType(propValue);
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected an array.'));
+      }
+      for (var i = 0; i < propValue.length; i++) {
+        var error = typeChecker(propValue, i, componentName, location, propFullName + '[' + i + ']', ReactPropTypesSecret);
+        if (error instanceof Error) {
+          return error;
+        }
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createElementTypeChecker() {
+    function validate(props, propName, componentName, location, propFullName) {
+      var propValue = props[propName];
+      if (!isValidElement(propValue)) {
+        var propType = getPropType(propValue);
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected a single ReactElement.'));
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createElementTypeTypeChecker() {
+    function validate(props, propName, componentName, location, propFullName) {
+      var propValue = props[propName];
+      if (!ReactIs.isValidElementType(propValue)) {
+        var propType = getPropType(propValue);
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected a single ReactElement type.'));
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createInstanceTypeChecker(expectedClass) {
+    function validate(props, propName, componentName, location, propFullName) {
+      if (!(props[propName] instanceof expectedClass)) {
+        var expectedClassName = expectedClass.name || ANONYMOUS;
+        var actualClassName = getClassName(props[propName]);
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + actualClassName + '` supplied to `' + componentName + '`, expected ') + ('instance of `' + expectedClassName + '`.'));
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createEnumTypeChecker(expectedValues) {
+    if (!Array.isArray(expectedValues)) {
+      if (true) {
+        if (arguments.length > 1) {
+          printWarning(
+            'Invalid arguments supplied to oneOf, expected an array, got ' + arguments.length + ' arguments. ' +
+            'A common mistake is to write oneOf(x, y, z) instead of oneOf([x, y, z]).'
+          );
+        } else {
+          printWarning('Invalid argument supplied to oneOf, expected an array.');
+        }
+      }
+      return emptyFunctionThatReturnsNull;
+    }
+
+    function validate(props, propName, componentName, location, propFullName) {
+      var propValue = props[propName];
+      for (var i = 0; i < expectedValues.length; i++) {
+        if (is(propValue, expectedValues[i])) {
+          return null;
+        }
+      }
+
+      var valuesString = JSON.stringify(expectedValues, function replacer(key, value) {
+        var type = getPreciseType(value);
+        if (type === 'symbol') {
+          return String(value);
+        }
+        return value;
+      });
+      return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of value `' + String(propValue) + '` ' + ('supplied to `' + componentName + '`, expected one of ' + valuesString + '.'));
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createObjectOfTypeChecker(typeChecker) {
+    function validate(props, propName, componentName, location, propFullName) {
+      if (typeof typeChecker !== 'function') {
+        return new PropTypeError('Property `' + propFullName + '` of component `' + componentName + '` has invalid PropType notation inside objectOf.');
+      }
+      var propValue = props[propName];
+      var propType = getPropType(propValue);
+      if (propType !== 'object') {
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected an object.'));
+      }
+      for (var key in propValue) {
+        if (has(propValue, key)) {
+          var error = typeChecker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);
+          if (error instanceof Error) {
+            return error;
+          }
+        }
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createUnionTypeChecker(arrayOfTypeCheckers) {
+    if (!Array.isArray(arrayOfTypeCheckers)) {
+       true ? printWarning('Invalid argument supplied to oneOfType, expected an instance of array.') : 0;
+      return emptyFunctionThatReturnsNull;
+    }
+
+    for (var i = 0; i < arrayOfTypeCheckers.length; i++) {
+      var checker = arrayOfTypeCheckers[i];
+      if (typeof checker !== 'function') {
+        printWarning(
+          'Invalid argument supplied to oneOfType. Expected an array of check functions, but ' +
+          'received ' + getPostfixForTypeWarning(checker) + ' at index ' + i + '.'
+        );
+        return emptyFunctionThatReturnsNull;
+      }
+    }
+
+    function validate(props, propName, componentName, location, propFullName) {
+      var expectedTypes = [];
+      for (var i = 0; i < arrayOfTypeCheckers.length; i++) {
+        var checker = arrayOfTypeCheckers[i];
+        var checkerResult = checker(props, propName, componentName, location, propFullName, ReactPropTypesSecret);
+        if (checkerResult == null) {
+          return null;
+        }
+        if (checkerResult.data && has(checkerResult.data, 'expectedType')) {
+          expectedTypes.push(checkerResult.data.expectedType);
+        }
+      }
+      var expectedTypesMessage = (expectedTypes.length > 0) ? ', expected one of type [' + expectedTypes.join(', ') + ']': '';
+      return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` supplied to ' + ('`' + componentName + '`' + expectedTypesMessage + '.'));
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createNodeChecker() {
+    function validate(props, propName, componentName, location, propFullName) {
+      if (!isNode(props[propName])) {
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` supplied to ' + ('`' + componentName + '`, expected a ReactNode.'));
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function invalidValidatorError(componentName, location, propFullName, key, type) {
+    return new PropTypeError(
+      (componentName || 'React class') + ': ' + location + ' type `' + propFullName + '.' + key + '` is invalid; ' +
+      'it must be a function, usually from the `prop-types` package, but received `' + type + '`.'
+    );
+  }
+
+  function createShapeTypeChecker(shapeTypes) {
+    function validate(props, propName, componentName, location, propFullName) {
+      var propValue = props[propName];
+      var propType = getPropType(propValue);
+      if (propType !== 'object') {
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type `' + propType + '` ' + ('supplied to `' + componentName + '`, expected `object`.'));
+      }
+      for (var key in shapeTypes) {
+        var checker = shapeTypes[key];
+        if (typeof checker !== 'function') {
+          return invalidValidatorError(componentName, location, propFullName, key, getPreciseType(checker));
+        }
+        var error = checker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);
+        if (error) {
+          return error;
+        }
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createStrictShapeTypeChecker(shapeTypes) {
+    function validate(props, propName, componentName, location, propFullName) {
+      var propValue = props[propName];
+      var propType = getPropType(propValue);
+      if (propType !== 'object') {
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type `' + propType + '` ' + ('supplied to `' + componentName + '`, expected `object`.'));
+      }
+      // We need to check all keys in case some are required but missing from props.
+      var allKeys = assign({}, props[propName], shapeTypes);
+      for (var key in allKeys) {
+        var checker = shapeTypes[key];
+        if (has(shapeTypes, key) && typeof checker !== 'function') {
+          return invalidValidatorError(componentName, location, propFullName, key, getPreciseType(checker));
+        }
+        if (!checker) {
+          return new PropTypeError(
+            'Invalid ' + location + ' `' + propFullName + '` key `' + key + '` supplied to `' + componentName + '`.' +
+            '\nBad object: ' + JSON.stringify(props[propName], null, '  ') +
+            '\nValid keys: ' + JSON.stringify(Object.keys(shapeTypes), null, '  ')
+          );
+        }
+        var error = checker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);
+        if (error) {
+          return error;
+        }
+      }
+      return null;
+    }
+
+    return createChainableTypeChecker(validate);
+  }
+
+  function isNode(propValue) {
+    switch (typeof propValue) {
+      case 'number':
+      case 'string':
+      case 'undefined':
+        return true;
+      case 'boolean':
+        return !propValue;
+      case 'object':
+        if (Array.isArray(propValue)) {
+          return propValue.every(isNode);
+        }
+        if (propValue === null || isValidElement(propValue)) {
+          return true;
+        }
+
+        var iteratorFn = getIteratorFn(propValue);
+        if (iteratorFn) {
+          var iterator = iteratorFn.call(propValue);
+          var step;
+          if (iteratorFn !== propValue.entries) {
+            while (!(step = iterator.next()).done) {
+              if (!isNode(step.value)) {
+                return false;
+              }
+            }
+          } else {
+            // Iterator will provide entry [k,v] tuples rather than values.
+            while (!(step = iterator.next()).done) {
+              var entry = step.value;
+              if (entry) {
+                if (!isNode(entry[1])) {
+                  return false;
+                }
+              }
+            }
+          }
+        } else {
+          return false;
+        }
+
+        return true;
+      default:
+        return false;
+    }
+  }
+
+  function isSymbol(propType, propValue) {
+    // Native Symbol.
+    if (propType === 'symbol') {
+      return true;
+    }
+
+    // falsy value can't be a Symbol
+    if (!propValue) {
+      return false;
+    }
+
+    // 19.4.3.5 Symbol.prototype[@@toStringTag] === 'Symbol'
+    if (propValue['@@toStringTag'] === 'Symbol') {
+      return true;
+    }
+
+    // Fallback for non-spec compliant Symbols which are polyfilled.
+    if (typeof Symbol === 'function' && propValue instanceof Symbol) {
+      return true;
+    }
+
+    return false;
+  }
+
+  // Equivalent of `typeof` but with special handling for array and regexp.
+  function getPropType(propValue) {
+    var propType = typeof propValue;
+    if (Array.isArray(propValue)) {
+      return 'array';
+    }
+    if (propValue instanceof RegExp) {
+      // Old webkits (at least until Android 4.0) return 'function' rather than
+      // 'object' for typeof a RegExp. We'll normalize this here so that /bla/
+      // passes PropTypes.object.
+      return 'object';
+    }
+    if (isSymbol(propType, propValue)) {
+      return 'symbol';
+    }
+    return propType;
+  }
+
+  // This handles more types than `getPropType`. Only used for error messages.
+  // See `createPrimitiveTypeChecker`.
+  function getPreciseType(propValue) {
+    if (typeof propValue === 'undefined' || propValue === null) {
+      return '' + propValue;
+    }
+    var propType = getPropType(propValue);
+    if (propType === 'object') {
+      if (propValue instanceof Date) {
+        return 'date';
+      } else if (propValue instanceof RegExp) {
+        return 'regexp';
+      }
+    }
+    return propType;
+  }
+
+  // Returns a string that is postfixed to a warning about an invalid type.
+  // For example, "undefined" or "of type array"
+  function getPostfixForTypeWarning(value) {
+    var type = getPreciseType(value);
+    switch (type) {
+      case 'array':
+      case 'object':
+        return 'an ' + type;
+      case 'boolean':
+      case 'date':
+      case 'regexp':
+        return 'a ' + type;
+      default:
+        return type;
+    }
+  }
+
+  // Returns class name of the object, if any.
+  function getClassName(propValue) {
+    if (!propValue.constructor || !propValue.constructor.name) {
+      return ANONYMOUS;
+    }
+    return propValue.constructor.name;
+  }
+
+  ReactPropTypes.checkPropTypes = checkPropTypes;
+  ReactPropTypes.resetWarningCache = checkPropTypes.resetWarningCache;
+  ReactPropTypes.PropTypes = ReactPropTypes;
+
+  return ReactPropTypes;
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/prop-types/index.js":
+/*!******************************************!*\
+  !*** ./node_modules/prop-types/index.js ***!
+  \******************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+if (true) {
+  var ReactIs = __webpack_require__(/*! react-is */ "./node_modules/prop-types/node_modules/react-is/index.js");
+
+  // By explicitly using `prop-types` you are opting into new development behavior.
+  // http://fb.me/prop-types-in-prod
+  var throwOnDirectAccess = true;
+  module.exports = __webpack_require__(/*! ./factoryWithTypeCheckers */ "./node_modules/prop-types/factoryWithTypeCheckers.js")(ReactIs.isElement, throwOnDirectAccess);
+} else // removed by dead control flow
+{}
+
+
+/***/ }),
+
+/***/ "./node_modules/prop-types/lib/ReactPropTypesSecret.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/prop-types/lib/ReactPropTypesSecret.js ***!
+  \*************************************************************/
+/***/ ((module) => {
+
+"use strict";
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+
+
+var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
+
+module.exports = ReactPropTypesSecret;
+
+
+/***/ }),
+
+/***/ "./node_modules/prop-types/lib/has.js":
+/*!********************************************!*\
+  !*** ./node_modules/prop-types/lib/has.js ***!
+  \********************************************/
+/***/ ((module) => {
+
+module.exports = Function.call.bind(Object.prototype.hasOwnProperty);
+
+
+/***/ }),
+
+/***/ "./node_modules/prop-types/node_modules/react-is/cjs/react-is.development.js":
+/*!***********************************************************************************!*\
+  !*** ./node_modules/prop-types/node_modules/react-is/cjs/react-is.development.js ***!
+  \***********************************************************************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+/** @license React v16.13.1
+ * react-is.development.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+
+
+
+
+if (true) {
+  (function() {
+'use strict';
+
+// The Symbol used to tag the ReactElement-like types. If there is no native Symbol
+// nor polyfill, then a plain number is used for performance.
+var hasSymbol = typeof Symbol === 'function' && Symbol.for;
+var REACT_ELEMENT_TYPE = hasSymbol ? Symbol.for('react.element') : 0xeac7;
+var REACT_PORTAL_TYPE = hasSymbol ? Symbol.for('react.portal') : 0xeaca;
+var REACT_FRAGMENT_TYPE = hasSymbol ? Symbol.for('react.fragment') : 0xeacb;
+var REACT_STRICT_MODE_TYPE = hasSymbol ? Symbol.for('react.strict_mode') : 0xeacc;
+var REACT_PROFILER_TYPE = hasSymbol ? Symbol.for('react.profiler') : 0xead2;
+var REACT_PROVIDER_TYPE = hasSymbol ? Symbol.for('react.provider') : 0xeacd;
+var REACT_CONTEXT_TYPE = hasSymbol ? Symbol.for('react.context') : 0xeace; // TODO: We don't use AsyncMode or ConcurrentMode anymore. They were temporary
+// (unstable) APIs that have been removed. Can we remove the symbols?
+
+var REACT_ASYNC_MODE_TYPE = hasSymbol ? Symbol.for('react.async_mode') : 0xeacf;
+var REACT_CONCURRENT_MODE_TYPE = hasSymbol ? Symbol.for('react.concurrent_mode') : 0xeacf;
+var REACT_FORWARD_REF_TYPE = hasSymbol ? Symbol.for('react.forward_ref') : 0xead0;
+var REACT_SUSPENSE_TYPE = hasSymbol ? Symbol.for('react.suspense') : 0xead1;
+var REACT_SUSPENSE_LIST_TYPE = hasSymbol ? Symbol.for('react.suspense_list') : 0xead8;
+var REACT_MEMO_TYPE = hasSymbol ? Symbol.for('react.memo') : 0xead3;
+var REACT_LAZY_TYPE = hasSymbol ? Symbol.for('react.lazy') : 0xead4;
+var REACT_BLOCK_TYPE = hasSymbol ? Symbol.for('react.block') : 0xead9;
+var REACT_FUNDAMENTAL_TYPE = hasSymbol ? Symbol.for('react.fundamental') : 0xead5;
+var REACT_RESPONDER_TYPE = hasSymbol ? Symbol.for('react.responder') : 0xead6;
+var REACT_SCOPE_TYPE = hasSymbol ? Symbol.for('react.scope') : 0xead7;
+
+function isValidElementType(type) {
+  return typeof type === 'string' || typeof type === 'function' || // Note: its typeof might be other than 'symbol' or 'number' if it's a polyfill.
+  type === REACT_FRAGMENT_TYPE || type === REACT_CONCURRENT_MODE_TYPE || type === REACT_PROFILER_TYPE || type === REACT_STRICT_MODE_TYPE || type === REACT_SUSPENSE_TYPE || type === REACT_SUSPENSE_LIST_TYPE || typeof type === 'object' && type !== null && (type.$$typeof === REACT_LAZY_TYPE || type.$$typeof === REACT_MEMO_TYPE || type.$$typeof === REACT_PROVIDER_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE || type.$$typeof === REACT_FUNDAMENTAL_TYPE || type.$$typeof === REACT_RESPONDER_TYPE || type.$$typeof === REACT_SCOPE_TYPE || type.$$typeof === REACT_BLOCK_TYPE);
+}
+
+function typeOf(object) {
+  if (typeof object === 'object' && object !== null) {
+    var $$typeof = object.$$typeof;
+
+    switch ($$typeof) {
+      case REACT_ELEMENT_TYPE:
+        var type = object.type;
+
+        switch (type) {
+          case REACT_ASYNC_MODE_TYPE:
+          case REACT_CONCURRENT_MODE_TYPE:
+          case REACT_FRAGMENT_TYPE:
+          case REACT_PROFILER_TYPE:
+          case REACT_STRICT_MODE_TYPE:
+          case REACT_SUSPENSE_TYPE:
+            return type;
+
+          default:
+            var $$typeofType = type && type.$$typeof;
+
+            switch ($$typeofType) {
+              case REACT_CONTEXT_TYPE:
+              case REACT_FORWARD_REF_TYPE:
+              case REACT_LAZY_TYPE:
+              case REACT_MEMO_TYPE:
+              case REACT_PROVIDER_TYPE:
+                return $$typeofType;
+
+              default:
+                return $$typeof;
+            }
+
+        }
+
+      case REACT_PORTAL_TYPE:
+        return $$typeof;
+    }
+  }
+
+  return undefined;
+} // AsyncMode is deprecated along with isAsyncMode
+
+var AsyncMode = REACT_ASYNC_MODE_TYPE;
+var ConcurrentMode = REACT_CONCURRENT_MODE_TYPE;
+var ContextConsumer = REACT_CONTEXT_TYPE;
+var ContextProvider = REACT_PROVIDER_TYPE;
+var Element = REACT_ELEMENT_TYPE;
+var ForwardRef = REACT_FORWARD_REF_TYPE;
+var Fragment = REACT_FRAGMENT_TYPE;
+var Lazy = REACT_LAZY_TYPE;
+var Memo = REACT_MEMO_TYPE;
+var Portal = REACT_PORTAL_TYPE;
+var Profiler = REACT_PROFILER_TYPE;
+var StrictMode = REACT_STRICT_MODE_TYPE;
+var Suspense = REACT_SUSPENSE_TYPE;
+var hasWarnedAboutDeprecatedIsAsyncMode = false; // AsyncMode should be deprecated
+
+function isAsyncMode(object) {
+  {
+    if (!hasWarnedAboutDeprecatedIsAsyncMode) {
+      hasWarnedAboutDeprecatedIsAsyncMode = true; // Using console['warn'] to evade Babel and ESLint
+
+      console['warn']('The ReactIs.isAsyncMode() alias has been deprecated, ' + 'and will be removed in React 17+. Update your code to use ' + 'ReactIs.isConcurrentMode() instead. It has the exact same API.');
+    }
+  }
+
+  return isConcurrentMode(object) || typeOf(object) === REACT_ASYNC_MODE_TYPE;
+}
+function isConcurrentMode(object) {
+  return typeOf(object) === REACT_CONCURRENT_MODE_TYPE;
+}
+function isContextConsumer(object) {
+  return typeOf(object) === REACT_CONTEXT_TYPE;
+}
+function isContextProvider(object) {
+  return typeOf(object) === REACT_PROVIDER_TYPE;
+}
+function isElement(object) {
+  return typeof object === 'object' && object !== null && object.$$typeof === REACT_ELEMENT_TYPE;
+}
+function isForwardRef(object) {
+  return typeOf(object) === REACT_FORWARD_REF_TYPE;
+}
+function isFragment(object) {
+  return typeOf(object) === REACT_FRAGMENT_TYPE;
+}
+function isLazy(object) {
+  return typeOf(object) === REACT_LAZY_TYPE;
+}
+function isMemo(object) {
+  return typeOf(object) === REACT_MEMO_TYPE;
+}
+function isPortal(object) {
+  return typeOf(object) === REACT_PORTAL_TYPE;
+}
+function isProfiler(object) {
+  return typeOf(object) === REACT_PROFILER_TYPE;
+}
+function isStrictMode(object) {
+  return typeOf(object) === REACT_STRICT_MODE_TYPE;
+}
+function isSuspense(object) {
+  return typeOf(object) === REACT_SUSPENSE_TYPE;
+}
+
+exports.AsyncMode = AsyncMode;
+exports.ConcurrentMode = ConcurrentMode;
+exports.ContextConsumer = ContextConsumer;
+exports.ContextProvider = ContextProvider;
+exports.Element = Element;
+exports.ForwardRef = ForwardRef;
+exports.Fragment = Fragment;
+exports.Lazy = Lazy;
+exports.Memo = Memo;
+exports.Portal = Portal;
+exports.Profiler = Profiler;
+exports.StrictMode = StrictMode;
+exports.Suspense = Suspense;
+exports.isAsyncMode = isAsyncMode;
+exports.isConcurrentMode = isConcurrentMode;
+exports.isContextConsumer = isContextConsumer;
+exports.isContextProvider = isContextProvider;
+exports.isElement = isElement;
+exports.isForwardRef = isForwardRef;
+exports.isFragment = isFragment;
+exports.isLazy = isLazy;
+exports.isMemo = isMemo;
+exports.isPortal = isPortal;
+exports.isProfiler = isProfiler;
+exports.isStrictMode = isStrictMode;
+exports.isSuspense = isSuspense;
+exports.isValidElementType = isValidElementType;
+exports.typeOf = typeOf;
+  })();
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/prop-types/node_modules/react-is/index.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/prop-types/node_modules/react-is/index.js ***!
+  \****************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+
+
+if (false) // removed by dead control flow
+{} else {
+  module.exports = __webpack_require__(/*! ./cjs/react-is.development.js */ "./node_modules/prop-types/node_modules/react-is/cjs/react-is.development.js");
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/raf-schd/dist/raf-schd.esm.js":
+/*!****************************************************!*\
+  !*** ./node_modules/raf-schd/dist/raf-schd.esm.js ***!
+  \****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+var rafSchd = function rafSchd(fn) {
+  var lastArgs = [];
+  var frameId = null;
+
+  var wrapperFn = function wrapperFn() {
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    lastArgs = args;
+
+    if (frameId) {
+      return;
+    }
+
+    frameId = requestAnimationFrame(function () {
+      frameId = null;
+      fn.apply(void 0, lastArgs);
+    });
+  };
+
+  wrapperFn.cancel = function () {
+    if (!frameId) {
+      return;
+    }
+
+    cancelAnimationFrame(frameId);
+    frameId = null;
+  };
+
+  return wrapperFn;
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (rafSchd);
+
+
+/***/ }),
+
+/***/ "./node_modules/react-beautiful-dnd/dist/react-beautiful-dnd.esm.js":
+/*!**************************************************************************!*\
+  !*** ./node_modules/react-beautiful-dnd/dist/react-beautiful-dnd.esm.js ***!
+  \**************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   DragDropContext: () => (/* binding */ DragDropContext),
+/* harmony export */   Draggable: () => (/* binding */ PublicDraggable),
+/* harmony export */   Droppable: () => (/* binding */ ConnectedDroppable),
+/* harmony export */   resetServerContext: () => (/* binding */ resetServerContext),
+/* harmony export */   useKeyboardSensor: () => (/* binding */ useKeyboardSensor),
+/* harmony export */   useMouseSensor: () => (/* binding */ useMouseSensor),
+/* harmony export */   useTouchSensor: () => (/* binding */ useTouchSensor)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/inheritsLoose */ "./node_modules/@babel/runtime/helpers/esm/inheritsLoose.js");
+/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
+/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! redux */ "./node_modules/react-beautiful-dnd/node_modules/redux/es/redux.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var use_memo_one__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! use-memo-one */ "./node_modules/use-memo-one/dist/use-memo-one.esm.js");
+/* harmony import */ var css_box_model__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! css-box-model */ "./node_modules/css-box-model/dist/css-box-model.esm.js");
+/* harmony import */ var memoize_one__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! memoize-one */ "./node_modules/memoize-one/dist/memoize-one.esm.js");
+/* harmony import */ var raf_schd__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! raf-schd */ "./node_modules/raf-schd/dist/raf-schd.esm.js");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-dom */ "react-dom");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_4__);
+
+
+
+
+
+
+
+
+
+
+
+var isProduction = "development" === 'production';
+var spacesAndTabs = /[ \t]{2,}/g;
+var lineStartWithSpaces = /^[ \t]*/gm;
+
+var clean = function clean(value) {
+  return value.replace(spacesAndTabs, ' ').replace(lineStartWithSpaces, '').trim();
+};
+
+var getDevMessage = function getDevMessage(message) {
+  return clean("\n  %creact-beautiful-dnd\n\n  %c" + clean(message) + "\n\n  %c\uD83D\uDC77\u200D This is a development only message. It will be removed in production builds.\n");
+};
+
+var getFormattedMessage = function getFormattedMessage(message) {
+  return [getDevMessage(message), 'color: #00C584; font-size: 1.2em; font-weight: bold;', 'line-height: 1.5', 'color: #723874;'];
+};
+var isDisabledFlag = '__react-beautiful-dnd-disable-dev-warnings';
+function log(type, message) {
+  var _console;
+
+  if (isProduction) {
+    return;
+  }
+
+  if (typeof window !== 'undefined' && window[isDisabledFlag]) {
+    return;
+  }
+
+  (_console = console)[type].apply(_console, getFormattedMessage(message));
+}
+var warning = log.bind(null, 'warn');
+var error = log.bind(null, 'error');
+
+function noop() {}
+
+function getOptions(shared, fromBinding) {
+  return (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, shared, {}, fromBinding);
+}
+
+function bindEvents(el, bindings, sharedOptions) {
+  var unbindings = bindings.map(function (binding) {
+    var options = getOptions(sharedOptions, binding.options);
+    el.addEventListener(binding.eventName, binding.fn, options);
+    return function unbind() {
+      el.removeEventListener(binding.eventName, binding.fn, options);
+    };
+  });
+  return function unbindAll() {
+    unbindings.forEach(function (unbind) {
+      unbind();
+    });
+  };
+}
+
+var isProduction$1 = "development" === 'production';
+var prefix = 'Invariant failed';
+function RbdInvariant(message) {
+  this.message = message;
+}
+
+RbdInvariant.prototype.toString = function toString() {
+  return this.message;
+};
+
+function invariant(condition, message) {
+  if (condition) {
+    return;
+  }
+
+  if (isProduction$1) {
+    throw new RbdInvariant(prefix);
+  } else {
+    throw new RbdInvariant(prefix + ": " + (message || ''));
+  }
+}
+
+var ErrorBoundary = function (_React$Component) {
+  (0,_babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_1__["default"])(ErrorBoundary, _React$Component);
+
+  function ErrorBoundary() {
+    var _this;
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = _React$Component.call.apply(_React$Component, [this].concat(args)) || this;
+    _this.callbacks = null;
+    _this.unbind = noop;
+
+    _this.onWindowError = function (event) {
+      var callbacks = _this.getCallbacks();
+
+      if (callbacks.isDragging()) {
+        callbacks.tryAbort();
+         true ? warning("\n        An error was caught by our window 'error' event listener while a drag was occurring.\n        The active drag has been aborted.\n      ") : 0;
+      }
+
+      var err = event.error;
+
+      if (err instanceof RbdInvariant) {
+        event.preventDefault();
+
+        if (true) {
+          error(err.message);
+        }
+      }
+    };
+
+    _this.getCallbacks = function () {
+      if (!_this.callbacks) {
+        throw new Error('Unable to find AppCallbacks in <ErrorBoundary/>');
+      }
+
+      return _this.callbacks;
+    };
+
+    _this.setCallbacks = function (callbacks) {
+      _this.callbacks = callbacks;
+    };
+
+    return _this;
+  }
+
+  var _proto = ErrorBoundary.prototype;
+
+  _proto.componentDidMount = function componentDidMount() {
+    this.unbind = bindEvents(window, [{
+      eventName: 'error',
+      fn: this.onWindowError
+    }]);
+  };
+
+  _proto.componentDidCatch = function componentDidCatch(err) {
+    if (err instanceof RbdInvariant) {
+      if (true) {
+        error(err.message);
+      }
+
+      this.setState({});
+      return;
+    }
+
+    throw err;
+  };
+
+  _proto.componentWillUnmount = function componentWillUnmount() {
+    this.unbind();
+  };
+
+  _proto.render = function render() {
+    return this.props.children(this.setCallbacks);
+  };
+
+  return ErrorBoundary;
+}((react__WEBPACK_IMPORTED_MODULE_0___default().Component));
+
+var dragHandleUsageInstructions = "\n  Press space bar to start a drag.\n  When dragging you can use the arrow keys to move the item around and escape to cancel.\n  Some screen readers may require you to be in focus mode or to use your pass through key\n";
+
+var position = function position(index) {
+  return index + 1;
+};
+
+var onDragStart = function onDragStart(start) {
+  return "\n  You have lifted an item in position " + position(start.source.index) + "\n";
+};
+
+var withLocation = function withLocation(source, destination) {
+  var isInHomeList = source.droppableId === destination.droppableId;
+  var startPosition = position(source.index);
+  var endPosition = position(destination.index);
+
+  if (isInHomeList) {
+    return "\n      You have moved the item from position " + startPosition + "\n      to position " + endPosition + "\n    ";
+  }
+
+  return "\n    You have moved the item from position " + startPosition + "\n    in list " + source.droppableId + "\n    to list " + destination.droppableId + "\n    in position " + endPosition + "\n  ";
+};
+
+var withCombine = function withCombine(id, source, combine) {
+  var inHomeList = source.droppableId === combine.droppableId;
+
+  if (inHomeList) {
+    return "\n      The item " + id + "\n      has been combined with " + combine.draggableId;
+  }
+
+  return "\n      The item " + id + "\n      in list " + source.droppableId + "\n      has been combined with " + combine.draggableId + "\n      in list " + combine.droppableId + "\n    ";
+};
+
+var onDragUpdate = function onDragUpdate(update) {
+  var location = update.destination;
+
+  if (location) {
+    return withLocation(update.source, location);
+  }
+
+  var combine = update.combine;
+
+  if (combine) {
+    return withCombine(update.draggableId, update.source, combine);
+  }
+
+  return 'You are over an area that cannot be dropped on';
+};
+
+var returnedToStart = function returnedToStart(source) {
+  return "\n  The item has returned to its starting position\n  of " + position(source.index) + "\n";
+};
+
+var onDragEnd = function onDragEnd(result) {
+  if (result.reason === 'CANCEL') {
+    return "\n      Movement cancelled.\n      " + returnedToStart(result.source) + "\n    ";
+  }
+
+  var location = result.destination;
+  var combine = result.combine;
+
+  if (location) {
+    return "\n      You have dropped the item.\n      " + withLocation(result.source, location) + "\n    ";
+  }
+
+  if (combine) {
+    return "\n      You have dropped the item.\n      " + withCombine(result.draggableId, result.source, combine) + "\n    ";
+  }
+
+  return "\n    The item has been dropped while not over a drop area.\n    " + returnedToStart(result.source) + "\n  ";
+};
+
+var preset = {
+  dragHandleUsageInstructions: dragHandleUsageInstructions,
+  onDragStart: onDragStart,
+  onDragUpdate: onDragUpdate,
+  onDragEnd: onDragEnd
+};
+
+var origin = {
+  x: 0,
+  y: 0
+};
+var add = function add(point1, point2) {
+  return {
+    x: point1.x + point2.x,
+    y: point1.y + point2.y
+  };
+};
+var subtract = function subtract(point1, point2) {
+  return {
+    x: point1.x - point2.x,
+    y: point1.y - point2.y
+  };
+};
+var isEqual = function isEqual(point1, point2) {
+  return point1.x === point2.x && point1.y === point2.y;
+};
+var negate = function negate(point) {
+  return {
+    x: point.x !== 0 ? -point.x : 0,
+    y: point.y !== 0 ? -point.y : 0
+  };
+};
+var patch = function patch(line, value, otherValue) {
+  var _ref;
+
+  if (otherValue === void 0) {
+    otherValue = 0;
+  }
+
+  return _ref = {}, _ref[line] = value, _ref[line === 'x' ? 'y' : 'x'] = otherValue, _ref;
+};
+var distance = function distance(point1, point2) {
+  return Math.sqrt(Math.pow(point2.x - point1.x, 2) + Math.pow(point2.y - point1.y, 2));
+};
+var closest = function closest(target, points) {
+  return Math.min.apply(Math, points.map(function (point) {
+    return distance(target, point);
+  }));
+};
+var apply = function apply(fn) {
+  return function (point) {
+    return {
+      x: fn(point.x),
+      y: fn(point.y)
+    };
+  };
+};
+
+var executeClip = (function (frame, subject) {
+  var result = (0,css_box_model__WEBPACK_IMPORTED_MODULE_5__.getRect)({
+    top: Math.max(subject.top, frame.top),
+    right: Math.min(subject.right, frame.right),
+    bottom: Math.min(subject.bottom, frame.bottom),
+    left: Math.max(subject.left, frame.left)
+  });
+
+  if (result.width <= 0 || result.height <= 0) {
+    return null;
+  }
+
+  return result;
+});
+
+var offsetByPosition = function offsetByPosition(spacing, point) {
+  return {
+    top: spacing.top + point.y,
+    left: spacing.left + point.x,
+    bottom: spacing.bottom + point.y,
+    right: spacing.right + point.x
+  };
+};
+var getCorners = function getCorners(spacing) {
+  return [{
+    x: spacing.left,
+    y: spacing.top
+  }, {
+    x: spacing.right,
+    y: spacing.top
+  }, {
+    x: spacing.left,
+    y: spacing.bottom
+  }, {
+    x: spacing.right,
+    y: spacing.bottom
+  }];
+};
+var noSpacing = {
+  top: 0,
+  right: 0,
+  bottom: 0,
+  left: 0
+};
+
+var scroll = function scroll(target, frame) {
+  if (!frame) {
+    return target;
+  }
+
+  return offsetByPosition(target, frame.scroll.diff.displacement);
+};
+
+var increase = function increase(target, axis, withPlaceholder) {
+  if (withPlaceholder && withPlaceholder.increasedBy) {
+    var _extends2;
+
+    return (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, target, (_extends2 = {}, _extends2[axis.end] = target[axis.end] + withPlaceholder.increasedBy[axis.line], _extends2));
+  }
+
+  return target;
+};
+
+var clip = function clip(target, frame) {
+  if (frame && frame.shouldClipSubject) {
+    return executeClip(frame.pageMarginBox, target);
+  }
+
+  return (0,css_box_model__WEBPACK_IMPORTED_MODULE_5__.getRect)(target);
+};
+
+var getSubject = (function (_ref) {
+  var page = _ref.page,
+      withPlaceholder = _ref.withPlaceholder,
+      axis = _ref.axis,
+      frame = _ref.frame;
+  var scrolled = scroll(page.marginBox, frame);
+  var increased = increase(scrolled, axis, withPlaceholder);
+  var clipped = clip(increased, frame);
+  return {
+    page: page,
+    withPlaceholder: withPlaceholder,
+    active: clipped
+  };
+});
+
+var scrollDroppable = (function (droppable, newScroll) {
+  !droppable.frame ?  true ? invariant(false) : 0 : void 0;
+  var scrollable = droppable.frame;
+  var scrollDiff = subtract(newScroll, scrollable.scroll.initial);
+  var scrollDisplacement = negate(scrollDiff);
+
+  var frame = (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, scrollable, {
+    scroll: {
+      initial: scrollable.scroll.initial,
+      current: newScroll,
+      diff: {
+        value: scrollDiff,
+        displacement: scrollDisplacement
+      },
+      max: scrollable.scroll.max
+    }
+  });
+
+  var subject = getSubject({
+    page: droppable.subject.page,
+    withPlaceholder: droppable.subject.withPlaceholder,
+    axis: droppable.axis,
+    frame: frame
+  });
+
+  var result = (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, droppable, {
+    frame: frame,
+    subject: subject
+  });
+
+  return result;
+});
+
+function isInteger(value) {
+  if (Number.isInteger) {
+    return Number.isInteger(value);
+  }
+
+  return typeof value === 'number' && isFinite(value) && Math.floor(value) === value;
+}
+function values(map) {
+  if (Object.values) {
+    return Object.values(map);
+  }
+
+  return Object.keys(map).map(function (key) {
+    return map[key];
+  });
+}
+function findIndex(list, predicate) {
+  if (list.findIndex) {
+    return list.findIndex(predicate);
+  }
+
+  for (var i = 0; i < list.length; i++) {
+    if (predicate(list[i])) {
+      return i;
+    }
+  }
+
+  return -1;
+}
+function find(list, predicate) {
+  if (list.find) {
+    return list.find(predicate);
+  }
+
+  var index = findIndex(list, predicate);
+
+  if (index !== -1) {
+    return list[index];
+  }
+
+  return undefined;
+}
+function toArray(list) {
+  return Array.prototype.slice.call(list);
+}
+
+var toDroppableMap = (0,memoize_one__WEBPACK_IMPORTED_MODULE_6__["default"])(function (droppables) {
+  return droppables.reduce(function (previous, current) {
+    previous[current.descriptor.id] = current;
+    return previous;
+  }, {});
+});
+var toDraggableMap = (0,memoize_one__WEBPACK_IMPORTED_MODULE_6__["default"])(function (draggables) {
+  return draggables.reduce(function (previous, current) {
+    previous[current.descriptor.id] = current;
+    return previous;
+  }, {});
+});
+var toDroppableList = (0,memoize_one__WEBPACK_IMPORTED_MODULE_6__["default"])(function (droppables) {
+  return values(droppables);
+});
+var toDraggableList = (0,memoize_one__WEBPACK_IMPORTED_MODULE_6__["default"])(function (draggables) {
+  return values(draggables);
+});
+
+var getDraggablesInsideDroppable = (0,memoize_one__WEBPACK_IMPORTED_MODULE_6__["default"])(function (droppableId, draggables) {
+  var result = toDraggableList(draggables).filter(function (draggable) {
+    return droppableId === draggable.descriptor.droppableId;
+  }).sort(function (a, b) {
+    return a.descriptor.index - b.descriptor.index;
+  });
+  return result;
+});
+
+function tryGetDestination(impact) {
+  if (impact.at && impact.at.type === 'REORDER') {
+    return impact.at.destination;
+  }
+
+  return null;
+}
+function tryGetCombine(impact) {
+  if (impact.at && impact.at.type === 'COMBINE') {
+    return impact.at.combine;
+  }
+
+  return null;
+}
+
+var removeDraggableFromList = (0,memoize_one__WEBPACK_IMPORTED_MODULE_6__["default"])(function (remove, list) {
+  return list.filter(function (item) {
+    return item.descriptor.id !== remove.descriptor.id;
+  });
+});
+
+var moveToNextCombine = (function (_ref) {
+  var isMovingForward = _ref.isMovingForward,
+      draggable = _ref.draggable,
+      destination = _ref.destination,
+      insideDestination = _ref.insideDestination,
+      previousImpact = _ref.previousImpact;
+
+  if (!destination.isCombineEnabled) {
+    return null;
+  }
+
+  var location = tryGetDestination(previousImpact);
+
+  if (!location) {
+    return null;
+  }
+
+  function getImpact(target) {
+    var at = {
+      type: 'COMBINE',
+      combine: {
+        draggableId: target,
+        droppableId: destination.descriptor.id
+      }
+    };
+    return (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, previousImpact, {
+      at: at
+    });
+  }
+
+  var all = previousImpact.displaced.all;
+  var closestId = all.length ? all[0] : null;
+
+  if (isMovingForward) {
+    return closestId ? getImpact(closestId) : null;
+  }
+
+  var withoutDraggable = removeDraggableFromList(draggable, insideDestination);
+
+  if (!closestId) {
+    if (!withoutDraggable.length) {
+      return null;
+    }
+
+    var last = withoutDraggable[withoutDraggable.length - 1];
+    return getImpact(last.descriptor.id);
+  }
+
+  var indexOfClosest = findIndex(withoutDraggable, function (d) {
+    return d.descriptor.id === closestId;
+  });
+  !(indexOfClosest !== -1) ?  true ? invariant(false, 'Could not find displaced item in set') : 0 : void 0;
+  var proposedIndex = indexOfClosest - 1;
+
+  if (proposedIndex < 0) {
+    return null;
+  }
+
+  var before = withoutDraggable[proposedIndex];
+  return getImpact(before.descriptor.id);
+});
+
+var isHomeOf = (function (draggable, destination) {
+  return draggable.descriptor.droppableId === destination.descriptor.id;
+});
+
+var noDisplacedBy = {
+  point: origin,
+  value: 0
+};
+var emptyGroups = {
+  invisible: {},
+  visible: {},
+  all: []
+};
+var noImpact = {
+  displaced: emptyGroups,
+  displacedBy: noDisplacedBy,
+  at: null
+};
+
+var isWithin = (function (lowerBound, upperBound) {
+  return function (value) {
+    return lowerBound <= value && value <= upperBound;
+  };
+});
+
+var isPartiallyVisibleThroughFrame = (function (frame) {
+  var isWithinVertical = isWithin(frame.top, frame.bottom);
+  var isWithinHorizontal = isWithin(frame.left, frame.right);
+  return function (subject) {
+    var isContained = isWithinVertical(subject.top) && isWithinVertical(subject.bottom) && isWithinHorizontal(subject.left) && isWithinHorizontal(subject.right);
+
+    if (isContained) {
+      return true;
+    }
+
+    var isPartiallyVisibleVertically = isWithinVertical(subject.top) || isWithinVertical(subject.bottom);
+    var isPartiallyVisibleHorizontally = isWithinHorizontal(subject.left) || isWithinHorizontal(subject.right);
+    var isPartiallyContained = isPartiallyVisibleVertically && isPartiallyVisibleHorizontally;
+
+    if (isPartiallyContained) {
+      return true;
+    }
+
+    var isBiggerVertically = subject.top < frame.top && subject.bottom > frame.bottom;
+    var isBiggerHorizontally = subject.left < frame.left && subject.right > frame.right;
+    var isTargetBiggerThanFrame = isBiggerVertically && isBiggerHorizontally;
+
+    if (isTargetBiggerThanFrame) {
+      return true;
+    }
+
+    var isTargetBiggerOnOneAxis = isBiggerVertically && isPartiallyVisibleHorizontally || isBiggerHorizontally && isPartiallyVisibleVertically;
+    return isTargetBiggerOnOneAxis;
+  };
+});
+
+var isTotallyVisibleThroughFrame = (function (frame) {
+  var isWithinVertical = isWithin(frame.top, frame.bottom);
+  var isWithinHorizontal = isWithin(frame.left, frame.right);
+  return function (subject) {
+    var isContained = isWithinVertical(subject.top) && isWithinVertical(subject.bottom) && isWithinHorizontal(subject.left) && isWithinHorizontal(subject.right);
+    return isContained;
+  };
+});
+
+var vertical = {
+  direction: 'vertical',
+  line: 'y',
+  crossAxisLine: 'x',
+  start: 'top',
+  end: 'bottom',
+  size: 'height',
+  crossAxisStart: 'left',
+  crossAxisEnd: 'right',
+  crossAxisSize: 'width'
+};
+var horizontal = {
+  direction: 'horizontal',
+  line: 'x',
+  crossAxisLine: 'y',
+  start: 'left',
+  end: 'right',
+  size: 'width',
+  crossAxisStart: 'top',
+  crossAxisEnd: 'bottom',
+  crossAxisSize: 'height'
+};
+
+var isTotallyVisibleThroughFrameOnAxis = (function (axis) {
+  return function (frame) {
+    var isWithinVertical = isWithin(frame.top, frame.bottom);
+    var isWithinHorizontal = isWithin(frame.left, frame.right);
+    return function (subject) {
+      if (axis === vertical) {
+        return isWithinVertical(subject.top) && isWithinVertical(subject.bottom);
+      }
+
+      return isWithinHorizontal(subject.left) && isWithinHorizontal(subject.right);
+    };
+  };
+});
+
+var getDroppableDisplaced = function getDroppableDisplaced(target, destination) {
+  var displacement = destination.frame ? destination.frame.scroll.diff.displacement : origin;
+  return offsetByPosition(target, displacement);
+};
+
+var isVisibleInDroppable = function isVisibleInDroppable(target, destination, isVisibleThroughFrameFn) {
+  if (!destination.subject.active) {
+    return false;
+  }
+
+  return isVisibleThroughFrameFn(destination.subject.active)(target);
+};
+
+var isVisibleInViewport = function isVisibleInViewport(target, viewport, isVisibleThroughFrameFn) {
+  return isVisibleThroughFrameFn(viewport)(target);
+};
+
+var isVisible = function isVisible(_ref) {
+  var toBeDisplaced = _ref.target,
+      destination = _ref.destination,
+      viewport = _ref.viewport,
+      withDroppableDisplacement = _ref.withDroppableDisplacement,
+      isVisibleThroughFrameFn = _ref.isVisibleThroughFrameFn;
+  var displacedTarget = withDroppableDisplacement ? getDroppableDisplaced(toBeDisplaced, destination) : toBeDisplaced;
+  return isVisibleInDroppable(displacedTarget, destination, isVisibleThroughFrameFn) && isVisibleInViewport(displacedTarget, viewport, isVisibleThroughFrameFn);
+};
+
+var isPartiallyVisible = function isPartiallyVisible(args) {
+  return isVisible((0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, args, {
+    isVisibleThroughFrameFn: isPartiallyVisibleThroughFrame
+  }));
+};
+var isTotallyVisible = function isTotallyVisible(args) {
+  return isVisible((0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, args, {
+    isVisibleThroughFrameFn: isTotallyVisibleThroughFrame
+  }));
+};
+var isTotallyVisibleOnAxis = function isTotallyVisibleOnAxis(args) {
+  return isVisible((0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, args, {
+    isVisibleThroughFrameFn: isTotallyVisibleThroughFrameOnAxis(args.destination.axis)
+  }));
+};
+
+var getShouldAnimate = function getShouldAnimate(id, last, forceShouldAnimate) {
+  if (typeof forceShouldAnimate === 'boolean') {
+    return forceShouldAnimate;
+  }
+
+  if (!last) {
+    return true;
+  }
+
+  var invisible = last.invisible,
+      visible = last.visible;
+
+  if (invisible[id]) {
+    return false;
+  }
+
+  var previous = visible[id];
+  return previous ? previous.shouldAnimate : true;
+};
+
+function getTarget(draggable, displacedBy) {
+  var marginBox = draggable.page.marginBox;
+  var expandBy = {
+    top: displacedBy.point.y,
+    right: 0,
+    bottom: 0,
+    left: displacedBy.point.x
+  };
+  return (0,css_box_model__WEBPACK_IMPORTED_MODULE_5__.getRect)((0,css_box_model__WEBPACK_IMPORTED_MODULE_5__.expand)(marginBox, expandBy));
+}
+
+function getDisplacementGroups(_ref) {
+  var afterDragging = _ref.afterDragging,
+      destination = _ref.destination,
+      displacedBy = _ref.displacedBy,
+      viewport = _ref.viewport,
+      forceShouldAnimate = _ref.forceShouldAnimate,
+      last = _ref.last;
+  return afterDragging.reduce(function process(groups, draggable) {
+    var target = getTarget(draggable, displacedBy);
+    var id = draggable.descriptor.id;
+    groups.all.push(id);
+    var isVisible = isPartiallyVisible({
+      target: target,
+      destination: destination,
+      viewport: viewport,
+      withDroppableDisplacement: true
+    });
+
+    if (!isVisible) {
+      groups.invisible[draggable.descriptor.id] = true;
+      return groups;
+    }
+
+    var shouldAnimate = getShouldAnimate(id, last, forceShouldAnimate);
+    var displacement = {
+      draggableId: id,
+      shouldAnimate: shouldAnimate
+    };
+    groups.visible[id] = displacement;
+    return groups;
+  }, {
+    all: [],
+    visible: {},
+    invisible: {}
+  });
+}
+
+function getIndexOfLastItem(draggables, options) {
+  if (!draggables.length) {
+    return 0;
+  }
+
+  var indexOfLastItem = draggables[draggables.length - 1].descriptor.index;
+  return options.inHomeList ? indexOfLastItem : indexOfLastItem + 1;
+}
+
+function goAtEnd(_ref) {
+  var insideDestination = _ref.insideDestination,
+      inHomeList = _ref.inHomeList,
+      displacedBy = _ref.displacedBy,
+      destination = _ref.destination;
+  var newIndex = getIndexOfLastItem(insideDestination, {
+    inHomeList: inHomeList
+  });
+  return {
+    displaced: emptyGroups,
+    displacedBy: displacedBy,
+    at: {
+      type: 'REORDER',
+      destination: {
+        droppableId: destination.descriptor.id,
+        index: newIndex
+      }
+    }
+  };
+}
+
+function calculateReorderImpact(_ref2) {
+  var draggable = _ref2.draggable,
+      insideDestination = _ref2.insideDestination,
+      destination = _ref2.destination,
+      viewport = _ref2.viewport,
+      displacedBy = _ref2.displacedBy,
+      last = _ref2.last,
+      index = _ref2.index,
+      forceShouldAnimate = _ref2.forceShouldAnimate;
+  var inHomeList = isHomeOf(draggable, destination);
+
+  if (index == null) {
+    return goAtEnd({
+      insideDestination: insideDestination,
+      inHomeList: inHomeList,
+      displacedBy: displacedBy,
+      destination: destination
+    });
+  }
+
+  var match = find(insideDestination, function (item) {
+    return item.descriptor.index === index;
+  });
+
+  if (!match) {
+    return goAtEnd({
+      insideDestination: insideDestination,
+      inHomeList: inHomeList,
+      displacedBy: displacedBy,
+      destination: destination
+    });
+  }
+
+  var withoutDragging = removeDraggableFromList(draggable, insideDestination);
+  var sliceFrom = insideDestination.indexOf(match);
+  var impacted = withoutDragging.slice(sliceFrom);
+  var displaced = getDisplacementGroups({
+    afterDragging: impacted,
+    destination: destination,
+    displacedBy: displacedBy,
+    last: last,
+    viewport: viewport.frame,
+    forceShouldAnimate: forceShouldAnimate
+  });
+  return {
+    displaced: displaced,
+    displacedBy: displacedBy,
+    at: {
+      type: 'REORDER',
+      destination: {
+        droppableId: destination.descriptor.id,
+        index: index
+      }
+    }
+  };
+}
+
+function didStartAfterCritical(draggableId, afterCritical) {
+  return Boolean(afterCritical.effected[draggableId]);
+}
+
+var fromCombine = (function (_ref) {
+  var isMovingForward = _ref.isMovingForward,
+      destination = _ref.destination,
+      draggables = _ref.draggables,
+      combine = _ref.combine,
+      afterCritical = _ref.afterCritical;
+
+  if (!destination.isCombineEnabled) {
+    return null;
+  }
+
+  var combineId = combine.draggableId;
+  var combineWith = draggables[combineId];
+  var combineWithIndex = combineWith.descriptor.index;
+  var didCombineWithStartAfterCritical = didStartAfterCritical(combineId, afterCritical);
+
+  if (didCombineWithStartAfterCritical) {
+    if (isMovingForward) {
+      return combineWithIndex;
+    }
+
+    return combineWithIndex - 1;
+  }
+
+  if (isMovingForward) {
+    return combineWithIndex + 1;
+  }
+
+  return combineWithIndex;
+});
+
+var fromReorder = (function (_ref) {
+  var isMovingForward = _ref.isMovingForward,
+      isInHomeList = _ref.isInHomeList,
+      insideDestination = _ref.insideDestination,
+      location = _ref.location;
+
+  if (!insideDestination.length) {
+    return null;
+  }
+
+  var currentIndex = location.index;
+  var proposedIndex = isMovingForward ? currentIndex + 1 : currentIndex - 1;
+  var firstIndex = insideDestination[0].descriptor.index;
+  var lastIndex = insideDestination[insideDestination.length - 1].descriptor.index;
+  var upperBound = isInHomeList ? lastIndex : lastIndex + 1;
+
+  if (proposedIndex < firstIndex) {
+    return null;
+  }
+
+  if (proposedIndex > upperBound) {
+    return null;
+  }
+
+  return proposedIndex;
+});
+
+var moveToNextIndex = (function (_ref) {
+  var isMovingForward = _ref.isMovingForward,
+      isInHomeList = _ref.isInHomeList,
+      draggable = _ref.draggable,
+      draggables = _ref.draggables,
+      destination = _ref.destination,
+      insideDestination = _ref.insideDestination,
+      previousImpact = _ref.previousImpact,
+      viewport = _ref.viewport,
+      afterCritical = _ref.afterCritical;
+  var wasAt = previousImpact.at;
+  !wasAt ?  true ? invariant(false, 'Cannot move in direction without previous impact location') : 0 : void 0;
+
+  if (wasAt.type === 'REORDER') {
+    var _newIndex = fromReorder({
+      isMovingForward: isMovingForward,
+      isInHomeList: isInHomeList,
+      location: wasAt.destination,
+      insideDestination: insideDestination
+    });
+
+    if (_newIndex == null) {
+      return null;
+    }
+
+    return calculateReorderImpact({
+      draggable: draggable,
+      insideDestination: insideDestination,
+      destination: destination,
+      viewport: viewport,
+      last: previousImpact.displaced,
+      displacedBy: previousImpact.displacedBy,
+      index: _newIndex
+    });
+  }
+
+  var newIndex = fromCombine({
+    isMovingForward: isMovingForward,
+    destination: destination,
+    displaced: previousImpact.displaced,
+    draggables: draggables,
+    combine: wasAt.combine,
+    afterCritical: afterCritical
+  });
+
+  if (newIndex == null) {
+    return null;
+  }
+
+  return calculateReorderImpact({
+    draggable: draggable,
+    insideDestination: insideDestination,
+    destination: destination,
+    viewport: viewport,
+    last: previousImpact.displaced,
+    displacedBy: previousImpact.displacedBy,
+    index: newIndex
+  });
+});
+
+var getCombinedItemDisplacement = (function (_ref) {
+  var displaced = _ref.displaced,
+      afterCritical = _ref.afterCritical,
+      combineWith = _ref.combineWith,
+      displacedBy = _ref.displacedBy;
+  var isDisplaced = Boolean(displaced.visible[combineWith] || displaced.invisible[combineWith]);
+
+  if (didStartAfterCritical(combineWith, afterCritical)) {
+    return isDisplaced ? origin : negate(displacedBy.point);
+  }
+
+  return isDisplaced ? displacedBy.point : origin;
+});
+
+var whenCombining = (function (_ref) {
+  var afterCritical = _ref.afterCritical,
+      impact = _ref.impact,
+      draggables = _ref.draggables;
+  var combine = tryGetCombine(impact);
+  !combine ?  true ? invariant(false) : 0 : void 0;
+  var combineWith = combine.draggableId;
+  var center = draggables[combineWith].page.borderBox.center;
+  var displaceBy = getCombinedItemDisplacement({
+    displaced: impact.displaced,
+    afterCritical: afterCritical,
+    combineWith: combineWith,
+    displacedBy: impact.displacedBy
+  });
+  return add(center, displaceBy);
+});
+
+var distanceFromStartToBorderBoxCenter = function distanceFromStartToBorderBoxCenter(axis, box) {
+  return box.margin[axis.start] + box.borderBox[axis.size] / 2;
+};
+
+var distanceFromEndToBorderBoxCenter = function distanceFromEndToBorderBoxCenter(axis, box) {
+  return box.margin[axis.end] + box.borderBox[axis.size] / 2;
+};
+
+var getCrossAxisBorderBoxCenter = function getCrossAxisBorderBoxCenter(axis, target, isMoving) {
+  return target[axis.crossAxisStart] + isMoving.margin[axis.crossAxisStart] + isMoving.borderBox[axis.crossAxisSize] / 2;
+};
+
+var goAfter = function goAfter(_ref) {
+  var axis = _ref.axis,
+      moveRelativeTo = _ref.moveRelativeTo,
+      isMoving = _ref.isMoving;
+  return patch(axis.line, moveRelativeTo.marginBox[axis.end] + distanceFromStartToBorderBoxCenter(axis, isMoving), getCrossAxisBorderBoxCenter(axis, moveRelativeTo.marginBox, isMoving));
+};
+var goBefore = function goBefore(_ref2) {
+  var axis = _ref2.axis,
+      moveRelativeTo = _ref2.moveRelativeTo,
+      isMoving = _ref2.isMoving;
+  return patch(axis.line, moveRelativeTo.marginBox[axis.start] - distanceFromEndToBorderBoxCenter(axis, isMoving), getCrossAxisBorderBoxCenter(axis, moveRelativeTo.marginBox, isMoving));
+};
+var goIntoStart = function goIntoStart(_ref3) {
+  var axis = _ref3.axis,
+      moveInto = _ref3.moveInto,
+      isMoving = _ref3.isMoving;
+  return patch(axis.line, moveInto.contentBox[axis.start] + distanceFromStartToBorderBoxCenter(axis, isMoving), getCrossAxisBorderBoxCenter(axis, moveInto.contentBox, isMoving));
+};
+
+var whenReordering = (function (_ref) {
+  var impact = _ref.impact,
+      draggable = _ref.draggable,
+      draggables = _ref.draggables,
+      droppable = _ref.droppable,
+      afterCritical = _ref.afterCritical;
+  var insideDestination = getDraggablesInsideDroppable(droppable.descriptor.id, draggables);
+  var draggablePage = draggable.page;
+  var axis = droppable.axis;
+
+  if (!insideDestination.length) {
+    return goIntoStart({
+      axis: axis,
+      moveInto: droppable.page,
+      isMoving: draggablePage
+    });
+  }
+
+  var displaced = impact.displaced,
+      displacedBy = impact.displacedBy;
+  var closestAfter = displaced.all[0];
+
+  if (closestAfter) {
+    var closest = draggables[closestAfter];
+
+    if (didStartAfterCritical(closestAfter, afterCritical)) {
+      return goBefore({
+        axis: axis,
+        moveRelativeTo: closest.page,
+        isMoving: draggablePage
+      });
+    }
+
+    var withDisplacement = (0,css_box_model__WEBPACK_IMPORTED_MODULE_5__.offset)(closest.page, displacedBy.point);
+    return goBefore({
+      axis: axis,
+      moveRelativeTo: withDisplacement,
+      isMoving: draggablePage
+    });
+  }
+
+  var last = insideDestination[insideDestination.length - 1];
+
+  if (last.descriptor.id === draggable.descriptor.id) {
+    return draggablePage.borderBox.center;
+  }
+
+  if (didStartAfterCritical(last.descriptor.id, afterCritical)) {
+    var page = (0,css_box_model__WEBPACK_IMPORTED_MODULE_5__.offset)(last.page, negate(afterCritical.displacedBy.point));
+    return goAfter({
+      axis: axis,
+      moveRelativeTo: page,
+      isMoving: draggablePage
+    });
+  }
+
+  return goAfter({
+    axis: axis,
+    moveRelativeTo: last.page,
+    isMoving: draggablePage
+  });
+});
+
+var withDroppableDisplacement = (function (droppable, point) {
+  var frame = droppable.frame;
+
+  if (!frame) {
+    return point;
+  }
+
+  return add(point, frame.scroll.diff.displacement);
+});
+
+var getResultWithoutDroppableDisplacement = function getResultWithoutDroppableDisplacement(_ref) {
+  var impact = _ref.impact,
+      draggable = _ref.draggable,
+      droppable = _ref.droppable,
+      draggables = _ref.draggables,
+      afterCritical = _ref.afterCritical;
+  var original = draggable.page.borderBox.center;
+  var at = impact.at;
+
+  if (!droppable) {
+    return original;
+  }
+
+  if (!at) {
+    return original;
+  }
+
+  if (at.type === 'REORDER') {
+    return whenReordering({
+      impact: impact,
+      draggable: draggable,
+      draggables: draggables,
+      droppable: droppable,
+      afterCritical: afterCritical
+    });
+  }
+
+  return whenCombining({
+    impact: impact,
+    draggables: draggables,
+    afterCritical: afterCritical
+  });
+};
+
+var getPageBorderBoxCenterFromImpact = (function (args) {
+  var withoutDisplacement = getResultWithoutDroppableDisplacement(args);
+  var droppable = args.droppable;
+  var withDisplacement = droppable ? withDroppableDisplacement(droppable, withoutDisplacement) : withoutDisplacement;
+  return withDisplacement;
+});
+
+var scrollViewport = (function (viewport, newScroll) {
+  var diff = subtract(newScroll, viewport.scroll.initial);
+  var displacement = negate(diff);
+  var frame = (0,css_box_model__WEBPACK_IMPORTED_MODULE_5__.getRect)({
+    top: newScroll.y,
+    bottom: newScroll.y + viewport.frame.height,
+    left: newScroll.x,
+    right: newScroll.x + viewport.frame.width
+  });
+  var updated = {
+    frame: frame,
+    scroll: {
+      initial: viewport.scroll.initial,
+      max: viewport.scroll.max,
+      current: newScroll,
+      diff: {
+        value: diff,
+        displacement: displacement
+      }
+    }
+  };
+  return updated;
+});
+
+function getDraggables(ids, draggables) {
+  return ids.map(function (id) {
+    return draggables[id];
+  });
+}
+
+function tryGetVisible(id, groups) {
+  for (var i = 0; i < groups.length; i++) {
+    var displacement = groups[i].visible[id];
+
+    if (displacement) {
+      return displacement;
+    }
+  }
+
+  return null;
+}
+
+var speculativelyIncrease = (function (_ref) {
+  var impact = _ref.impact,
+      viewport = _ref.viewport,
+      destination = _ref.destination,
+      draggables = _ref.draggables,
+      maxScrollChange = _ref.maxScrollChange;
+  var scrolledViewport = scrollViewport(viewport, add(viewport.scroll.current, maxScrollChange));
+  var scrolledDroppable = destination.frame ? scrollDroppable(destination, add(destination.frame.scroll.current, maxScrollChange)) : destination;
+  var last = impact.displaced;
+  var withViewportScroll = getDisplacementGroups({
+    afterDragging: getDraggables(last.all, draggables),
+    destination: destination,
+    displacedBy: impact.displacedBy,
+    viewport: scrolledViewport.frame,
+    last: last,
+    forceShouldAnimate: false
+  });
+  var withDroppableScroll = getDisplacementGroups({
+    afterDragging: getDraggables(last.all, draggables),
+    destination: scrolledDroppable,
+    displacedBy: impact.displacedBy,
+    viewport: viewport.frame,
+    last: last,
+    forceShouldAnimate: false
+  });
+  var invisible = {};
+  var visible = {};
+  var groups = [last, withViewportScroll, withDroppableScroll];
+  last.all.forEach(function (id) {
+    var displacement = tryGetVisible(id, groups);
+
+    if (displacement) {
+      visible[id] = displacement;
+      return;
+    }
+
+    invisible[id] = true;
+  });
+
+  var newImpact = (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, impact, {
+    displaced: {
+      all: last.all,
+      invisible: invisible,
+      visible: visible
+    }
+  });
+
+  return newImpact;
+});
+
+var withViewportDisplacement = (function (viewport, point) {
+  return add(viewport.scroll.diff.displacement, point);
+});
+
+var getClientFromPageBorderBoxCenter = (function (_ref) {
+  var pageBorderBoxCenter = _ref.pageBorderBoxCenter,
+      draggable = _ref.draggable,
+      viewport = _ref.viewport;
+  var withoutPageScrollChange = withViewportDisplacement(viewport, pageBorderBoxCenter);
+  var offset = subtract(withoutPageScrollChange, draggable.page.borderBox.center);
+  return add(draggable.client.borderBox.center, offset);
+});
+
+var isTotallyVisibleInNewLocation = (function (_ref) {
+  var draggable = _ref.draggable,
+      destination = _ref.destination,
+      newPageBorderBoxCenter = _ref.newPageBorderBoxCenter,
+      viewport = _ref.viewport,
+      withDroppableDisplacement = _ref.withDroppableDisplacement,
+      _ref$onlyOnMainAxis = _ref.onlyOnMainAxis,
+      onlyOnMainAxis = _ref$onlyOnMainAxis === void 0 ? false : _ref$onlyOnMainAxis;
+  var changeNeeded = subtract(newPageBorderBoxCenter, draggable.page.borderBox.center);
+  var shifted = offsetByPosition(draggable.page.borderBox, changeNeeded);
+  var args = {
+    target: shifted,
+    destination: destination,
+    withDroppableDisplacement: withDroppableDisplacement,
+    viewport: viewport
+  };
+  return onlyOnMainAxis ? isTotallyVisibleOnAxis(args) : isTotallyVisible(args);
+});
+
+var moveToNextPlace = (function (_ref) {
+  var isMovingForward = _ref.isMovingForward,
+      draggable = _ref.draggable,
+      destination = _ref.destination,
+      draggables = _ref.draggables,
+      previousImpact = _ref.previousImpact,
+      viewport = _ref.viewport,
+      previousPageBorderBoxCenter = _ref.previousPageBorderBoxCenter,
+      previousClientSelection = _ref.previousClientSelection,
+      afterCritical = _ref.afterCritical;
+
+  if (!destination.isEnabled) {
+    return null;
+  }
+
+  var insideDestination = getDraggablesInsideDroppable(destination.descriptor.id, draggables);
+  var isInHomeList = isHomeOf(draggable, destination);
+  var impact = moveToNextCombine({
+    isMovingForward: isMovingForward,
+    draggable: draggable,
+    destination: destination,
+    insideDestination: insideDestination,
+    previousImpact: previousImpact
+  }) || moveToNextIndex({
+    isMovingForward: isMovingForward,
+    isInHomeList: isInHomeList,
+    draggable: draggable,
+    draggables: draggables,
+    destination: destination,
+    insideDestination: insideDestination,
+    previousImpact: previousImpact,
+    viewport: viewport,
+    afterCritical: afterCritical
+  });
+
+  if (!impact) {
+    return null;
+  }
+
+  var pageBorderBoxCenter = getPageBorderBoxCenterFromImpact({
+    impact: impact,
+    draggable: draggable,
+    droppable: destination,
+    draggables: draggables,
+    afterCritical: afterCritical
+  });
+  var isVisibleInNewLocation = isTotallyVisibleInNewLocation({
+    draggable: draggable,
+    destination: destination,
+    newPageBorderBoxCenter: pageBorderBoxCenter,
+    viewport: viewport.frame,
+    withDroppableDisplacement: false,
+    onlyOnMainAxis: true
+  });
+
+  if (isVisibleInNewLocation) {
+    var clientSelection = getClientFromPageBorderBoxCenter({
+      pageBorderBoxCenter: pageBorderBoxCenter,
+      draggable: draggable,
+      viewport: viewport
+    });
+    return {
+      clientSelection: clientSelection,
+      impact: impact,
+      scrollJumpRequest: null
+    };
+  }
+
+  var distance = subtract(pageBorderBoxCenter, previousPageBorderBoxCenter);
+  var cautious = speculativelyIncrease({
+    impact: impact,
+    viewport: viewport,
+    destination: destination,
+    draggables: draggables,
+    maxScrollChange: distance
+  });
+  return {
+    clientSelection: previousClientSelection,
+    impact: cautious,
+    scrollJumpRequest: distance
+  };
+});
+
+var getKnownActive = function getKnownActive(droppable) {
+  var rect = droppable.subject.active;
+  !rect ?  true ? invariant(false, 'Cannot get clipped area from droppable') : 0 : void 0;
+  return rect;
+};
+
+var getBestCrossAxisDroppable = (function (_ref) {
+  var isMovingForward = _ref.isMovingForward,
+      pageBorderBoxCenter = _ref.pageBorderBoxCenter,
+      source = _ref.source,
+      droppables = _ref.droppables,
+      viewport = _ref.viewport;
+  var active = source.subject.active;
+
+  if (!active) {
+    return null;
+  }
+
+  var axis = source.axis;
+  var isBetweenSourceClipped = isWithin(active[axis.start], active[axis.end]);
+  var candidates = toDroppableList(droppables).filter(function (droppable) {
+    return droppable !== source;
+  }).filter(function (droppable) {
+    return droppable.isEnabled;
+  }).filter(function (droppable) {
+    return Boolean(droppable.subject.active);
+  }).filter(function (droppable) {
+    return isPartiallyVisibleThroughFrame(viewport.frame)(getKnownActive(droppable));
+  }).filter(function (droppable) {
+    var activeOfTarget = getKnownActive(droppable);
+
+    if (isMovingForward) {
+      return active[axis.crossAxisEnd] < activeOfTarget[axis.crossAxisEnd];
+    }
+
+    return activeOfTarget[axis.crossAxisStart] < active[axis.crossAxisStart];
+  }).filter(function (droppable) {
+    var activeOfTarget = getKnownActive(droppable);
+    var isBetweenDestinationClipped = isWithin(activeOfTarget[axis.start], activeOfTarget[axis.end]);
+    return isBetweenSourceClipped(activeOfTarget[axis.start]) || isBetweenSourceClipped(activeOfTarget[axis.end]) || isBetweenDestinationClipped(active[axis.start]) || isBetweenDestinationClipped(active[axis.end]);
+  }).sort(function (a, b) {
+    var first = getKnownActive(a)[axis.crossAxisStart];
+    var second = getKnownActive(b)[axis.crossAxisStart];
+
+    if (isMovingForward) {
+      return first - second;
+    }
+
+    return second - first;
+  }).filter(function (droppable, index, array) {
+    return getKnownActive(droppable)[axis.crossAxisStart] === getKnownActive(array[0])[axis.crossAxisStart];
+  });
+
+  if (!candidates.length) {
+    return null;
+  }
+
+  if (candidates.length === 1) {
+    return candidates[0];
+  }
+
+  var contains = candidates.filter(function (droppable) {
+    var isWithinDroppable = isWithin(getKnownActive(droppable)[axis.start], getKnownActive(droppable)[axis.end]);
+    return isWithinDroppable(pageBorderBoxCenter[axis.line]);
+  });
+
+  if (contains.length === 1) {
+    return contains[0];
+  }
+
+  if (contains.length > 1) {
+    return contains.sort(function (a, b) {
+      return getKnownActive(a)[axis.start] - getKnownActive(b)[axis.start];
+    })[0];
+  }
+
+  return candidates.sort(function (a, b) {
+    var first = closest(pageBorderBoxCenter, getCorners(getKnownActive(a)));
+    var second = closest(pageBorderBoxCenter, getCorners(getKnownActive(b)));
+
+    if (first !== second) {
+      return first - second;
+    }
+
+    return getKnownActive(a)[axis.start] - getKnownActive(b)[axis.start];
+  })[0];
+});
+
+var getCurrentPageBorderBoxCenter = function getCurrentPageBorderBoxCenter(draggable, afterCritical) {
+  var original = draggable.page.borderBox.center;
+  return didStartAfterCritical(draggable.descriptor.id, afterCritical) ? subtract(original, afterCritical.displacedBy.point) : original;
+};
+var getCurrentPageBorderBox = function getCurrentPageBorderBox(draggable, afterCritical) {
+  var original = draggable.page.borderBox;
+  return didStartAfterCritical(draggable.descriptor.id, afterCritical) ? offsetByPosition(original, negate(afterCritical.displacedBy.point)) : original;
+};
+
+var getClosestDraggable = (function (_ref) {
+  var pageBorderBoxCenter = _ref.pageBorderBoxCenter,
+      viewport = _ref.viewport,
+      destination = _ref.destination,
+      insideDestination = _ref.insideDestination,
+      afterCritical = _ref.afterCritical;
+  var sorted = insideDestination.filter(function (draggable) {
+    return isTotallyVisible({
+      target: getCurrentPageBorderBox(draggable, afterCritical),
+      destination: destination,
+      viewport: viewport.frame,
+      withDroppableDisplacement: true
+    });
+  }).sort(function (a, b) {
+    var distanceToA = distance(pageBorderBoxCenter, withDroppableDisplacement(destination, getCurrentPageBorderBoxCenter(a, afterCritical)));
+    var distanceToB = distance(pageBorderBoxCenter, withDroppableDisplacement(destination, getCurrentPageBorderBoxCenter(b, afterCritical)));
+
+    if (distanceToA < distanceToB) {
+      return -1;
+    }
+
+    if (distanceToB < distanceToA) {
+      return 1;
+    }
+
+    return a.descriptor.index - b.descriptor.index;
+  });
+  return sorted[0] || null;
+});
+
+var getDisplacedBy = (0,memoize_one__WEBPACK_IMPORTED_MODULE_6__["default"])(function getDisplacedBy(axis, displaceBy) {
+  var displacement = displaceBy[axis.line];
+  return {
+    value: displacement,
+    point: patch(axis.line, displacement)
+  };
+});
+
+var getRequiredGrowthForPlaceholder = function getRequiredGrowthForPlaceholder(droppable, placeholderSize, draggables) {
+  var axis = droppable.axis;
+
+  if (droppable.descriptor.mode === 'virtual') {
+    return patch(axis.line, placeholderSize[axis.line]);
+  }
+
+  var availableSpace = droppable.subject.page.contentBox[axis.size];
+  var insideDroppable = getDraggablesInsideDroppable(droppable.descriptor.id, draggables);
+  var spaceUsed = insideDroppable.reduce(function (sum, dimension) {
+    return sum + dimension.client.marginBox[axis.size];
+  }, 0);
+  var requiredSpace = spaceUsed + placeholderSize[axis.line];
+  var needsToGrowBy = requiredSpace - availableSpace;
+
+  if (needsToGrowBy <= 0) {
+    return null;
+  }
+
+  return patch(axis.line, needsToGrowBy);
+};
+
+var withMaxScroll = function withMaxScroll(frame, max) {
+  return (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, frame, {
+    scroll: (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, frame.scroll, {
+      max: max
+    })
+  });
+};
+
+var addPlaceholder = function addPlaceholder(droppable, draggable, draggables) {
+  var frame = droppable.frame;
+  !!isHomeOf(draggable, droppable) ?  true ? invariant(false, 'Should not add placeholder space to home list') : 0 : void 0;
+  !!droppable.subject.withPlaceholder ?  true ? invariant(false, 'Cannot add placeholder size to a subject when it already has one') : 0 : void 0;
+  var placeholderSize = getDisplacedBy(droppable.axis, draggable.displaceBy).point;
+  var requiredGrowth = getRequiredGrowthForPlaceholder(droppable, placeholderSize, draggables);
+  var added = {
+    placeholderSize: placeholderSize,
+    increasedBy: requiredGrowth,
+    oldFrameMaxScroll: droppable.frame ? droppable.frame.scroll.max : null
+  };
+
+  if (!frame) {
+    var _subject = getSubject({
+      page: droppable.subject.page,
+      withPlaceholder: added,
+      axis: droppable.axis,
+      frame: droppable.frame
+    });
+
+    return (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, droppable, {
+      subject: _subject
+    });
+  }
+
+  var maxScroll = requiredGrowth ? add(frame.scroll.max, requiredGrowth) : frame.scroll.max;
+  var newFrame = withMaxScroll(frame, maxScroll);
+  var subject = getSubject({
+    page: droppable.subject.page,
+    withPlaceholder: added,
+    axis: droppable.axis,
+    frame: newFrame
+  });
+  return (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, droppable, {
+    subject: subject,
+    frame: newFrame
+  });
+};
+var removePlaceholder = function removePlaceholder(droppable) {
+  var added = droppable.subject.withPlaceholder;
+  !added ?  true ? invariant(false, 'Cannot remove placeholder form subject when there was none') : 0 : void 0;
+  var frame = droppable.frame;
+
+  if (!frame) {
+    var _subject2 = getSubject({
+      page: droppable.subject.page,
+      axis: droppable.axis,
+      frame: null,
+      withPlaceholder: null
+    });
+
+    return (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, droppable, {
+      subject: _subject2
+    });
+  }
+
+  var oldMaxScroll = added.oldFrameMaxScroll;
+  !oldMaxScroll ?  true ? invariant(false, 'Expected droppable with frame to have old max frame scroll when removing placeholder') : 0 : void 0;
+  var newFrame = withMaxScroll(frame, oldMaxScroll);
+  var subject = getSubject({
+    page: droppable.subject.page,
+    axis: droppable.axis,
+    frame: newFrame,
+    withPlaceholder: null
+  });
+  return (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, droppable, {
+    subject: subject,
+    frame: newFrame
+  });
+};
+
+var moveToNewDroppable = (function (_ref) {
+  var previousPageBorderBoxCenter = _ref.previousPageBorderBoxCenter,
+      moveRelativeTo = _ref.moveRelativeTo,
+      insideDestination = _ref.insideDestination,
+      draggable = _ref.draggable,
+      draggables = _ref.draggables,
+      destination = _ref.destination,
+      viewport = _ref.viewport,
+      afterCritical = _ref.afterCritical;
+
+  if (!moveRelativeTo) {
+    if (insideDestination.length) {
+      return null;
+    }
+
+    var proposed = {
+      displaced: emptyGroups,
+      displacedBy: noDisplacedBy,
+      at: {
+        type: 'REORDER',
+        destination: {
+          droppableId: destination.descriptor.id,
+          index: 0
+        }
+      }
+    };
+    var proposedPageBorderBoxCenter = getPageBorderBoxCenterFromImpact({
+      impact: proposed,
+      draggable: draggable,
+      droppable: destination,
+      draggables: draggables,
+      afterCritical: afterCritical
+    });
+    var withPlaceholder = isHomeOf(draggable, destination) ? destination : addPlaceholder(destination, draggable, draggables);
+    var isVisibleInNewLocation = isTotallyVisibleInNewLocation({
+      draggable: draggable,
+      destination: withPlaceholder,
+      newPageBorderBoxCenter: proposedPageBorderBoxCenter,
+      viewport: viewport.frame,
+      withDroppableDisplacement: false,
+      onlyOnMainAxis: true
+    });
+    return isVisibleInNewLocation ? proposed : null;
+  }
+
+  var isGoingBeforeTarget = Boolean(previousPageBorderBoxCenter[destination.axis.line] <= moveRelativeTo.page.borderBox.center[destination.axis.line]);
+
+  var proposedIndex = function () {
+    var relativeTo = moveRelativeTo.descriptor.index;
+
+    if (moveRelativeTo.descriptor.id === draggable.descriptor.id) {
+      return relativeTo;
+    }
+
+    if (isGoingBeforeTarget) {
+      return relativeTo;
+    }
+
+    return relativeTo + 1;
+  }();
+
+  var displacedBy = getDisplacedBy(destination.axis, draggable.displaceBy);
+  return calculateReorderImpact({
+    draggable: draggable,
+    insideDestination: insideDestination,
+    destination: destination,
+    viewport: viewport,
+    displacedBy: displacedBy,
+    last: emptyGroups,
+    index: proposedIndex
+  });
+});
+
+var moveCrossAxis = (function (_ref) {
+  var isMovingForward = _ref.isMovingForward,
+      previousPageBorderBoxCenter = _ref.previousPageBorderBoxCenter,
+      draggable = _ref.draggable,
+      isOver = _ref.isOver,
+      draggables = _ref.draggables,
+      droppables = _ref.droppables,
+      viewport = _ref.viewport,
+      afterCritical = _ref.afterCritical;
+  var destination = getBestCrossAxisDroppable({
+    isMovingForward: isMovingForward,
+    pageBorderBoxCenter: previousPageBorderBoxCenter,
+    source: isOver,
+    droppables: droppables,
+    viewport: viewport
+  });
+
+  if (!destination) {
+    return null;
+  }
+
+  var insideDestination = getDraggablesInsideDroppable(destination.descriptor.id, draggables);
+  var moveRelativeTo = getClosestDraggable({
+    pageBorderBoxCenter: previousPageBorderBoxCenter,
+    viewport: viewport,
+    destination: destination,
+    insideDestination: insideDestination,
+    afterCritical: afterCritical
+  });
+  var impact = moveToNewDroppable({
+    previousPageBorderBoxCenter: previousPageBorderBoxCenter,
+    destination: destination,
+    draggable: draggable,
+    draggables: draggables,
+    moveRelativeTo: moveRelativeTo,
+    insideDestination: insideDestination,
+    viewport: viewport,
+    afterCritical: afterCritical
+  });
+
+  if (!impact) {
+    return null;
+  }
+
+  var pageBorderBoxCenter = getPageBorderBoxCenterFromImpact({
+    impact: impact,
+    draggable: draggable,
+    droppable: destination,
+    draggables: draggables,
+    afterCritical: afterCritical
+  });
+  var clientSelection = getClientFromPageBorderBoxCenter({
+    pageBorderBoxCenter: pageBorderBoxCenter,
+    draggable: draggable,
+    viewport: viewport
+  });
+  return {
+    clientSelection: clientSelection,
+    impact: impact,
+    scrollJumpRequest: null
+  };
+});
+
+var whatIsDraggedOver = (function (impact) {
+  var at = impact.at;
+
+  if (!at) {
+    return null;
+  }
+
+  if (at.type === 'REORDER') {
+    return at.destination.droppableId;
+  }
+
+  return at.combine.droppableId;
+});
+
+var getDroppableOver = function getDroppableOver(impact, droppables) {
+  var id = whatIsDraggedOver(impact);
+  return id ? droppables[id] : null;
+};
+
+var moveInDirection = (function (_ref) {
+  var state = _ref.state,
+      type = _ref.type;
+  var isActuallyOver = getDroppableOver(state.impact, state.dimensions.droppables);
+  var isMainAxisMovementAllowed = Boolean(isActuallyOver);
+  var home = state.dimensions.droppables[state.critical.droppable.id];
+  var isOver = isActuallyOver || home;
+  var direction = isOver.axis.direction;
+  var isMovingOnMainAxis = direction === 'vertical' && (type === 'MOVE_UP' || type === 'MOVE_DOWN') || direction === 'horizontal' && (type === 'MOVE_LEFT' || type === 'MOVE_RIGHT');
+
+  if (isMovingOnMainAxis && !isMainAxisMovementAllowed) {
+    return null;
+  }
+
+  var isMovingForward = type === 'MOVE_DOWN' || type === 'MOVE_RIGHT';
+  var draggable = state.dimensions.draggables[state.critical.draggable.id];
+  var previousPageBorderBoxCenter = state.current.page.borderBoxCenter;
+  var _state$dimensions = state.dimensions,
+      draggables = _state$dimensions.draggables,
+      droppables = _state$dimensions.droppables;
+  return isMovingOnMainAxis ? moveToNextPlace({
+    isMovingForward: isMovingForward,
+    previousPageBorderBoxCenter: previousPageBorderBoxCenter,
+    draggable: draggable,
+    destination: isOver,
+    draggables: draggables,
+    viewport: state.viewport,
+    previousClientSelection: state.current.client.selection,
+    previousImpact: state.impact,
+    afterCritical: state.afterCritical
+  }) : moveCrossAxis({
+    isMovingForward: isMovingForward,
+    previousPageBorderBoxCenter: previousPageBorderBoxCenter,
+    draggable: draggable,
+    isOver: isOver,
+    draggables: draggables,
+    droppables: droppables,
+    viewport: state.viewport,
+    afterCritical: state.afterCritical
+  });
+});
+
+function isMovementAllowed(state) {
+  return state.phase === 'DRAGGING' || state.phase === 'COLLECTING';
+}
+
+function isPositionInFrame(frame) {
+  var isWithinVertical = isWithin(frame.top, frame.bottom);
+  var isWithinHorizontal = isWithin(frame.left, frame.right);
+  return function run(point) {
+    return isWithinVertical(point.y) && isWithinHorizontal(point.x);
+  };
+}
+
+function getHasOverlap(first, second) {
+  return first.left < second.right && first.right > second.left && first.top < second.bottom && first.bottom > second.top;
+}
+
+function getFurthestAway(_ref) {
+  var pageBorderBox = _ref.pageBorderBox,
+      draggable = _ref.draggable,
+      candidates = _ref.candidates;
+  var startCenter = draggable.page.borderBox.center;
+  var sorted = candidates.map(function (candidate) {
+    var axis = candidate.axis;
+    var target = patch(candidate.axis.line, pageBorderBox.center[axis.line], candidate.page.borderBox.center[axis.crossAxisLine]);
+    return {
+      id: candidate.descriptor.id,
+      distance: distance(startCenter, target)
+    };
+  }).sort(function (a, b) {
+    return b.distance - a.distance;
+  });
+  return sorted[0] ? sorted[0].id : null;
+}
+
+function getDroppableOver$1(_ref2) {
+  var pageBorderBox = _ref2.pageBorderBox,
+      draggable = _ref2.draggable,
+      droppables = _ref2.droppables;
+  var candidates = toDroppableList(droppables).filter(function (item) {
+    if (!item.isEnabled) {
+      return false;
+    }
+
+    var active = item.subject.active;
+
+    if (!active) {
+      return false;
+    }
+
+    if (!getHasOverlap(pageBorderBox, active)) {
+      return false;
+    }
+
+    if (isPositionInFrame(active)(pageBorderBox.center)) {
+      return true;
+    }
+
+    var axis = item.axis;
+    var childCenter = active.center[axis.crossAxisLine];
+    var crossAxisStart = pageBorderBox[axis.crossAxisStart];
+    var crossAxisEnd = pageBorderBox[axis.crossAxisEnd];
+    var isContained = isWithin(active[axis.crossAxisStart], active[axis.crossAxisEnd]);
+    var isStartContained = isContained(crossAxisStart);
+    var isEndContained = isContained(crossAxisEnd);
+
+    if (!isStartContained && !isEndContained) {
+      return true;
+    }
+
+    if (isStartContained) {
+      return crossAxisStart < childCenter;
+    }
+
+    return crossAxisEnd > childCenter;
+  });
+
+  if (!candidates.length) {
+    return null;
+  }
+
+  if (candidates.length === 1) {
+    return candidates[0].descriptor.id;
+  }
+
+  return getFurthestAway({
+    pageBorderBox: pageBorderBox,
+    draggable: draggable,
+    candidates: candidates
+  });
+}
+
+var offsetRectByPosition = function offsetRectByPosition(rect, point) {
+  return (0,css_box_model__WEBPACK_IMPORTED_MODULE_5__.getRect)(offsetByPosition(rect, point));
+};
+
+var withDroppableScroll = (function (droppable, area) {
+  var frame = droppable.frame;
+
+  if (!frame) {
+    return area;
+  }
+
+  return offsetRectByPosition(area, frame.scroll.diff.value);
+});
+
+function getIsDisplaced(_ref) {
+  var displaced = _ref.displaced,
+      id = _ref.id;
+  return Boolean(displaced.visible[id] || displaced.invisible[id]);
+}
+
+function atIndex(_ref) {
+  var draggable = _ref.draggable,
+      closest = _ref.closest,
+      inHomeList = _ref.inHomeList;
+
+  if (!closest) {
+    return null;
+  }
+
+  if (!inHomeList) {
+    return closest.descriptor.index;
+  }
+
+  if (closest.descriptor.index > draggable.descriptor.index) {
+    return closest.descriptor.index - 1;
+  }
+
+  return closest.descriptor.index;
+}
+
+var getReorderImpact = (function (_ref2) {
+  var targetRect = _ref2.pageBorderBoxWithDroppableScroll,
+      draggable = _ref2.draggable,
+      destination = _ref2.destination,
+      insideDestination = _ref2.insideDestination,
+      last = _ref2.last,
+      viewport = _ref2.viewport,
+      afterCritical = _ref2.afterCritical;
+  var axis = destination.axis;
+  var displacedBy = getDisplacedBy(destination.axis, draggable.displaceBy);
+  var displacement = displacedBy.value;
+  var targetStart = targetRect[axis.start];
+  var targetEnd = targetRect[axis.end];
+  var withoutDragging = removeDraggableFromList(draggable, insideDestination);
+  var closest = find(withoutDragging, function (child) {
+    var id = child.descriptor.id;
+    var childCenter = child.page.borderBox.center[axis.line];
+    var didStartAfterCritical$1 = didStartAfterCritical(id, afterCritical);
+    var isDisplaced = getIsDisplaced({
+      displaced: last,
+      id: id
+    });
+
+    if (didStartAfterCritical$1) {
+      if (isDisplaced) {
+        return targetEnd <= childCenter;
+      }
+
+      return targetStart < childCenter - displacement;
+    }
+
+    if (isDisplaced) {
+      return targetEnd <= childCenter + displacement;
+    }
+
+    return targetStart < childCenter;
+  });
+  var newIndex = atIndex({
+    draggable: draggable,
+    closest: closest,
+    inHomeList: isHomeOf(draggable, destination)
+  });
+  return calculateReorderImpact({
+    draggable: draggable,
+    insideDestination: insideDestination,
+    destination: destination,
+    viewport: viewport,
+    last: last,
+    displacedBy: displacedBy,
+    index: newIndex
+  });
+});
+
+var combineThresholdDivisor = 4;
+var getCombineImpact = (function (_ref) {
+  var draggable = _ref.draggable,
+      targetRect = _ref.pageBorderBoxWithDroppableScroll,
+      previousImpact = _ref.previousImpact,
+      destination = _ref.destination,
+      insideDestination = _ref.insideDestination,
+      afterCritical = _ref.afterCritical;
+
+  if (!destination.isCombineEnabled) {
+    return null;
+  }
+
+  var axis = destination.axis;
+  var displacedBy = getDisplacedBy(destination.axis, draggable.displaceBy);
+  var displacement = displacedBy.value;
+  var targetStart = targetRect[axis.start];
+  var targetEnd = targetRect[axis.end];
+  var withoutDragging = removeDraggableFromList(draggable, insideDestination);
+  var combineWith = find(withoutDragging, function (child) {
+    var id = child.descriptor.id;
+    var childRect = child.page.borderBox;
+    var childSize = childRect[axis.size];
+    var threshold = childSize / combineThresholdDivisor;
+    var didStartAfterCritical$1 = didStartAfterCritical(id, afterCritical);
+    var isDisplaced = getIsDisplaced({
+      displaced: previousImpact.displaced,
+      id: id
+    });
+
+    if (didStartAfterCritical$1) {
+      if (isDisplaced) {
+        return targetEnd > childRect[axis.start] + threshold && targetEnd < childRect[axis.end] - threshold;
+      }
+
+      return targetStart > childRect[axis.start] - displacement + threshold && targetStart < childRect[axis.end] - displacement - threshold;
+    }
+
+    if (isDisplaced) {
+      return targetEnd > childRect[axis.start] + displacement + threshold && targetEnd < childRect[axis.end] + displacement - threshold;
+    }
+
+    return targetStart > childRect[axis.start] + threshold && targetStart < childRect[axis.end] - threshold;
+  });
+
+  if (!combineWith) {
+    return null;
+  }
+
+  var impact = {
+    displacedBy: displacedBy,
+    displaced: previousImpact.displaced,
+    at: {
+      type: 'COMBINE',
+      combine: {
+        draggableId: combineWith.descriptor.id,
+        droppableId: destination.descriptor.id
+      }
+    }
+  };
+  return impact;
+});
+
+var getDragImpact = (function (_ref) {
+  var pageOffset = _ref.pageOffset,
+      draggable = _ref.draggable,
+      draggables = _ref.draggables,
+      droppables = _ref.droppables,
+      previousImpact = _ref.previousImpact,
+      viewport = _ref.viewport,
+      afterCritical = _ref.afterCritical;
+  var pageBorderBox = offsetRectByPosition(draggable.page.borderBox, pageOffset);
+  var destinationId = getDroppableOver$1({
+    pageBorderBox: pageBorderBox,
+    draggable: draggable,
+    droppables: droppables
+  });
+
+  if (!destinationId) {
+    return noImpact;
+  }
+
+  var destination = droppables[destinationId];
+  var insideDestination = getDraggablesInsideDroppable(destination.descriptor.id, draggables);
+  var pageBorderBoxWithDroppableScroll = withDroppableScroll(destination, pageBorderBox);
+  return getCombineImpact({
+    pageBorderBoxWithDroppableScroll: pageBorderBoxWithDroppableScroll,
+    draggable: draggable,
+    previousImpact: previousImpact,
+    destination: destination,
+    insideDestination: insideDestination,
+    afterCritical: afterCritical
+  }) || getReorderImpact({
+    pageBorderBoxWithDroppableScroll: pageBorderBoxWithDroppableScroll,
+    draggable: draggable,
+    destination: destination,
+    insideDestination: insideDestination,
+    last: previousImpact.displaced,
+    viewport: viewport,
+    afterCritical: afterCritical
+  });
+});
+
+var patchDroppableMap = (function (droppables, updated) {
+  var _extends2;
+
+  return (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, droppables, (_extends2 = {}, _extends2[updated.descriptor.id] = updated, _extends2));
+});
+
+var clearUnusedPlaceholder = function clearUnusedPlaceholder(_ref) {
+  var previousImpact = _ref.previousImpact,
+      impact = _ref.impact,
+      droppables = _ref.droppables;
+  var last = whatIsDraggedOver(previousImpact);
+  var now = whatIsDraggedOver(impact);
+
+  if (!last) {
+    return droppables;
+  }
+
+  if (last === now) {
+    return droppables;
+  }
+
+  var lastDroppable = droppables[last];
+
+  if (!lastDroppable.subject.withPlaceholder) {
+    return droppables;
+  }
+
+  var updated = removePlaceholder(lastDroppable);
+  return patchDroppableMap(droppables, updated);
+};
+
+var recomputePlaceholders = (function (_ref2) {
+  var draggable = _ref2.draggable,
+      draggables = _ref2.draggables,
+      droppables = _ref2.droppables,
+      previousImpact = _ref2.previousImpact,
+      impact = _ref2.impact;
+  var cleaned = clearUnusedPlaceholder({
+    previousImpact: previousImpact,
+    impact: impact,
+    droppables: droppables
+  });
+  var isOver = whatIsDraggedOver(impact);
+
+  if (!isOver) {
+    return cleaned;
+  }
+
+  var droppable = droppables[isOver];
+
+  if (isHomeOf(draggable, droppable)) {
+    return cleaned;
+  }
+
+  if (droppable.subject.withPlaceholder) {
+    return cleaned;
+  }
+
+  var patched = addPlaceholder(droppable, draggable, draggables);
+  return patchDroppableMap(cleaned, patched);
+});
+
+var update = (function (_ref) {
+  var state = _ref.state,
+      forcedClientSelection = _ref.clientSelection,
+      forcedDimensions = _ref.dimensions,
+      forcedViewport = _ref.viewport,
+      forcedImpact = _ref.impact,
+      scrollJumpRequest = _ref.scrollJumpRequest;
+  var viewport = forcedViewport || state.viewport;
+  var dimensions = forcedDimensions || state.dimensions;
+  var clientSelection = forcedClientSelection || state.current.client.selection;
+  var offset = subtract(clientSelection, state.initial.client.selection);
+  var client = {
+    offset: offset,
+    selection: clientSelection,
+    borderBoxCenter: add(state.initial.client.borderBoxCenter, offset)
+  };
+  var page = {
+    selection: add(client.selection, viewport.scroll.current),
+    borderBoxCenter: add(client.borderBoxCenter, viewport.scroll.current),
+    offset: add(client.offset, viewport.scroll.diff.value)
+  };
+  var current = {
+    client: client,
+    page: page
+  };
+
+  if (state.phase === 'COLLECTING') {
+    return (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({
+      phase: 'COLLECTING'
+    }, state, {
+      dimensions: dimensions,
+      viewport: viewport,
+      current: current
+    });
+  }
+
+  var draggable = dimensions.draggables[state.critical.draggable.id];
+  var newImpact = forcedImpact || getDragImpact({
+    pageOffset: page.offset,
+    draggable: draggable,
+    draggables: dimensions.draggables,
+    droppables: dimensions.droppables,
+    previousImpact: state.impact,
+    viewport: viewport,
+    afterCritical: state.afterCritical
+  });
+  var withUpdatedPlaceholders = recomputePlaceholders({
+    draggable: draggable,
+    impact: newImpact,
+    previousImpact: state.impact,
+    draggables: dimensions.draggables,
+    droppables: dimensions.droppables
+  });
+
+  var result = (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, state, {
+    current: current,
+    dimensions: {
+      draggables: dimensions.draggables,
+      droppables: withUpdatedPlaceholders
+    },
+    impact: newImpact,
+    viewport: viewport,
+    scrollJumpRequest: scrollJumpRequest || null,
+    forceShouldAnimate: scrollJumpRequest ? false : null
+  });
+
+  return result;
+});
+
+function getDraggables$1(ids, draggables) {
+  return ids.map(function (id) {
+    return draggables[id];
+  });
+}
+
+var recompute = (function (_ref) {
+  var impact = _ref.impact,
+      viewport = _ref.viewport,
+      draggables = _ref.draggables,
+      destination = _ref.destination,
+      forceShouldAnimate = _ref.forceShouldAnimate;
+  var last = impact.displaced;
+  var afterDragging = getDraggables$1(last.all, draggables);
+  var displaced = getDisplacementGroups({
+    afterDragging: afterDragging,
+    destination: destination,
+    displacedBy: impact.displacedBy,
+    viewport: viewport.frame,
+    forceShouldAnimate: forceShouldAnimate,
+    last: last
+  });
+  return (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, impact, {
+    displaced: displaced
+  });
+});
+
+var getClientBorderBoxCenter = (function (_ref) {
+  var impact = _ref.impact,
+      draggable = _ref.draggable,
+      droppable = _ref.droppable,
+      draggables = _ref.draggables,
+      viewport = _ref.viewport,
+      afterCritical = _ref.afterCritical;
+  var pageBorderBoxCenter = getPageBorderBoxCenterFromImpact({
+    impact: impact,
+    draggable: draggable,
+    draggables: draggables,
+    droppable: droppable,
+    afterCritical: afterCritical
+  });
+  return getClientFromPageBorderBoxCenter({
+    pageBorderBoxCenter: pageBorderBoxCenter,
+    draggable: draggable,
+    viewport: viewport
+  });
+});
+
+var refreshSnap = (function (_ref) {
+  var state = _ref.state,
+      forcedDimensions = _ref.dimensions,
+      forcedViewport = _ref.viewport;
+  !(state.movementMode === 'SNAP') ?  true ? invariant(false) : 0 : void 0;
+  var needsVisibilityCheck = state.impact;
+  var viewport = forcedViewport || state.viewport;
+  var dimensions = forcedDimensions || state.dimensions;
+  var draggables = dimensions.draggables,
+      droppables = dimensions.droppables;
+  var draggable = draggables[state.critical.draggable.id];
+  var isOver = whatIsDraggedOver(needsVisibilityCheck);
+  !isOver ?  true ? invariant(false, 'Must be over a destination in SNAP movement mode') : 0 : void 0;
+  var destination = droppables[isOver];
+  var impact = recompute({
+    impact: needsVisibilityCheck,
+    viewport: viewport,
+    destination: destination,
+    draggables: draggables
+  });
+  var clientSelection = getClientBorderBoxCenter({
+    impact: impact,
+    draggable: draggable,
+    droppable: destination,
+    draggables: draggables,
+    viewport: viewport,
+    afterCritical: state.afterCritical
+  });
+  return update({
+    impact: impact,
+    clientSelection: clientSelection,
+    state: state,
+    dimensions: dimensions,
+    viewport: viewport
+  });
+});
+
+var getHomeLocation = (function (descriptor) {
+  return {
+    index: descriptor.index,
+    droppableId: descriptor.droppableId
+  };
+});
+
+var getLiftEffect = (function (_ref) {
+  var draggable = _ref.draggable,
+      home = _ref.home,
+      draggables = _ref.draggables,
+      viewport = _ref.viewport;
+  var displacedBy = getDisplacedBy(home.axis, draggable.displaceBy);
+  var insideHome = getDraggablesInsideDroppable(home.descriptor.id, draggables);
+  var rawIndex = insideHome.indexOf(draggable);
+  !(rawIndex !== -1) ?  true ? invariant(false, 'Expected draggable to be inside home list') : 0 : void 0;
+  var afterDragging = insideHome.slice(rawIndex + 1);
+  var effected = afterDragging.reduce(function (previous, item) {
+    previous[item.descriptor.id] = true;
+    return previous;
+  }, {});
+  var afterCritical = {
+    inVirtualList: home.descriptor.mode === 'virtual',
+    displacedBy: displacedBy,
+    effected: effected
+  };
+  var displaced = getDisplacementGroups({
+    afterDragging: afterDragging,
+    destination: home,
+    displacedBy: displacedBy,
+    last: null,
+    viewport: viewport.frame,
+    forceShouldAnimate: false
+  });
+  var impact = {
+    displaced: displaced,
+    displacedBy: displacedBy,
+    at: {
+      type: 'REORDER',
+      destination: getHomeLocation(draggable.descriptor)
+    }
+  };
+  return {
+    impact: impact,
+    afterCritical: afterCritical
+  };
+});
+
+var patchDimensionMap = (function (dimensions, updated) {
+  return {
+    draggables: dimensions.draggables,
+    droppables: patchDroppableMap(dimensions.droppables, updated)
+  };
+});
+
+var start = function start(key) {
+  if (true) {
+    {
+      return;
+    }
+  }
+};
+var finish = function finish(key) {
+  if (true) {
+    {
+      return;
+    }
+  }
+};
+
+var offsetDraggable = (function (_ref) {
+  var draggable = _ref.draggable,
+      offset$1 = _ref.offset,
+      initialWindowScroll = _ref.initialWindowScroll;
+  var client = (0,css_box_model__WEBPACK_IMPORTED_MODULE_5__.offset)(draggable.client, offset$1);
+  var page = (0,css_box_model__WEBPACK_IMPORTED_MODULE_5__.withScroll)(client, initialWindowScroll);
+
+  var moved = (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, draggable, {
+    placeholder: (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, draggable.placeholder, {
+      client: client
+    }),
+    client: client,
+    page: page
+  });
+
+  return moved;
+});
+
+var getFrame = (function (droppable) {
+  var frame = droppable.frame;
+  !frame ?  true ? invariant(false, 'Expected Droppable to have a frame') : 0 : void 0;
+  return frame;
+});
+
+var adjustAdditionsForScrollChanges = (function (_ref) {
+  var additions = _ref.additions,
+      updatedDroppables = _ref.updatedDroppables,
+      viewport = _ref.viewport;
+  var windowScrollChange = viewport.scroll.diff.value;
+  return additions.map(function (draggable) {
+    var droppableId = draggable.descriptor.droppableId;
+    var modified = updatedDroppables[droppableId];
+    var frame = getFrame(modified);
+    var droppableScrollChange = frame.scroll.diff.value;
+    var totalChange = add(windowScrollChange, droppableScrollChange);
+    var moved = offsetDraggable({
+      draggable: draggable,
+      offset: totalChange,
+      initialWindowScroll: viewport.scroll.initial
+    });
+    return moved;
+  });
+});
+
+var publishWhileDraggingInVirtual = (function (_ref) {
+  var state = _ref.state,
+      published = _ref.published;
+  start();
+  var withScrollChange = published.modified.map(function (update) {
+    var existing = state.dimensions.droppables[update.droppableId];
+    var scrolled = scrollDroppable(existing, update.scroll);
+    return scrolled;
+  });
+
+  var droppables = (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, state.dimensions.droppables, {}, toDroppableMap(withScrollChange));
+
+  var updatedAdditions = toDraggableMap(adjustAdditionsForScrollChanges({
+    additions: published.additions,
+    updatedDroppables: droppables,
+    viewport: state.viewport
+  }));
+
+  var draggables = (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, state.dimensions.draggables, {}, updatedAdditions);
+
+  published.removals.forEach(function (id) {
+    delete draggables[id];
+  });
+  var dimensions = {
+    droppables: droppables,
+    draggables: draggables
+  };
+  var wasOverId = whatIsDraggedOver(state.impact);
+  var wasOver = wasOverId ? dimensions.droppables[wasOverId] : null;
+  var draggable = dimensions.draggables[state.critical.draggable.id];
+  var home = dimensions.droppables[state.critical.droppable.id];
+
+  var _getLiftEffect = getLiftEffect({
+    draggable: draggable,
+    home: home,
+    draggables: draggables,
+    viewport: state.viewport
+  }),
+      onLiftImpact = _getLiftEffect.impact,
+      afterCritical = _getLiftEffect.afterCritical;
+
+  var previousImpact = wasOver && wasOver.isCombineEnabled ? state.impact : onLiftImpact;
+  var impact = getDragImpact({
+    pageOffset: state.current.page.offset,
+    draggable: dimensions.draggables[state.critical.draggable.id],
+    draggables: dimensions.draggables,
+    droppables: dimensions.droppables,
+    previousImpact: previousImpact,
+    viewport: state.viewport,
+    afterCritical: afterCritical
+  });
+  finish();
+
+  var draggingState = (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({
+    phase: 'DRAGGING'
+  }, state, {
+    phase: 'DRAGGING',
+    impact: impact,
+    onLiftImpact: onLiftImpact,
+    dimensions: dimensions,
+    afterCritical: afterCritical,
+    forceShouldAnimate: false
+  });
+
+  if (state.phase === 'COLLECTING') {
+    return draggingState;
+  }
+
+  var dropPending = (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({
+    phase: 'DROP_PENDING'
+  }, draggingState, {
+    phase: 'DROP_PENDING',
+    reason: state.reason,
+    isWaiting: false
+  });
+
+  return dropPending;
+});
+
+var isSnapping = function isSnapping(state) {
+  return state.movementMode === 'SNAP';
+};
+
+var postDroppableChange = function postDroppableChange(state, updated, isEnabledChanging) {
+  var dimensions = patchDimensionMap(state.dimensions, updated);
+
+  if (!isSnapping(state) || isEnabledChanging) {
+    return update({
+      state: state,
+      dimensions: dimensions
+    });
+  }
+
+  return refreshSnap({
+    state: state,
+    dimensions: dimensions
+  });
+};
+
+function removeScrollJumpRequest(state) {
+  if (state.isDragging && state.movementMode === 'SNAP') {
+    return (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({
+      phase: 'DRAGGING'
+    }, state, {
+      scrollJumpRequest: null
+    });
+  }
+
+  return state;
+}
+
+var idle = {
+  phase: 'IDLE',
+  completed: null,
+  shouldFlush: false
+};
+var reducer = (function (state, action) {
+  if (state === void 0) {
+    state = idle;
+  }
+
+  if (action.type === 'FLUSH') {
+    return (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, idle, {
+      shouldFlush: true
+    });
+  }
+
+  if (action.type === 'INITIAL_PUBLISH') {
+    !(state.phase === 'IDLE') ?  true ? invariant(false, 'INITIAL_PUBLISH must come after a IDLE phase') : 0 : void 0;
+    var _action$payload = action.payload,
+        critical = _action$payload.critical,
+        clientSelection = _action$payload.clientSelection,
+        viewport = _action$payload.viewport,
+        dimensions = _action$payload.dimensions,
+        movementMode = _action$payload.movementMode;
+    var draggable = dimensions.draggables[critical.draggable.id];
+    var home = dimensions.droppables[critical.droppable.id];
+    var client = {
+      selection: clientSelection,
+      borderBoxCenter: draggable.client.borderBox.center,
+      offset: origin
+    };
+    var initial = {
+      client: client,
+      page: {
+        selection: add(client.selection, viewport.scroll.initial),
+        borderBoxCenter: add(client.selection, viewport.scroll.initial),
+        offset: add(client.selection, viewport.scroll.diff.value)
+      }
+    };
+    var isWindowScrollAllowed = toDroppableList(dimensions.droppables).every(function (item) {
+      return !item.isFixedOnPage;
+    });
+
+    var _getLiftEffect = getLiftEffect({
+      draggable: draggable,
+      home: home,
+      draggables: dimensions.draggables,
+      viewport: viewport
+    }),
+        impact = _getLiftEffect.impact,
+        afterCritical = _getLiftEffect.afterCritical;
+
+    var result = {
+      phase: 'DRAGGING',
+      isDragging: true,
+      critical: critical,
+      movementMode: movementMode,
+      dimensions: dimensions,
+      initial: initial,
+      current: initial,
+      isWindowScrollAllowed: isWindowScrollAllowed,
+      impact: impact,
+      afterCritical: afterCritical,
+      onLiftImpact: impact,
+      viewport: viewport,
+      scrollJumpRequest: null,
+      forceShouldAnimate: null
+    };
+    return result;
+  }
+
+  if (action.type === 'COLLECTION_STARTING') {
+    if (state.phase === 'COLLECTING' || state.phase === 'DROP_PENDING') {
+      return state;
+    }
+
+    !(state.phase === 'DRAGGING') ?  true ? invariant(false, "Collection cannot start from phase " + state.phase) : 0 : void 0;
+
+    var _result = (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({
+      phase: 'COLLECTING'
+    }, state, {
+      phase: 'COLLECTING'
+    });
+
+    return _result;
+  }
+
+  if (action.type === 'PUBLISH_WHILE_DRAGGING') {
+    !(state.phase === 'COLLECTING' || state.phase === 'DROP_PENDING') ?  true ? invariant(false, "Unexpected " + action.type + " received in phase " + state.phase) : 0 : void 0;
+    return publishWhileDraggingInVirtual({
+      state: state,
+      published: action.payload
+    });
+  }
+
+  if (action.type === 'MOVE') {
+    if (state.phase === 'DROP_PENDING') {
+      return state;
+    }
+
+    !isMovementAllowed(state) ?  true ? invariant(false, action.type + " not permitted in phase " + state.phase) : 0 : void 0;
+    var _clientSelection = action.payload.client;
+
+    if (isEqual(_clientSelection, state.current.client.selection)) {
+      return state;
+    }
+
+    return update({
+      state: state,
+      clientSelection: _clientSelection,
+      impact: isSnapping(state) ? state.impact : null
+    });
+  }
+
+  if (action.type === 'UPDATE_DROPPABLE_SCROLL') {
+    if (state.phase === 'DROP_PENDING') {
+      return removeScrollJumpRequest(state);
+    }
+
+    if (state.phase === 'COLLECTING') {
+      return removeScrollJumpRequest(state);
+    }
+
+    !isMovementAllowed(state) ?  true ? invariant(false, action.type + " not permitted in phase " + state.phase) : 0 : void 0;
+    var _action$payload2 = action.payload,
+        id = _action$payload2.id,
+        newScroll = _action$payload2.newScroll;
+    var target = state.dimensions.droppables[id];
+
+    if (!target) {
+      return state;
+    }
+
+    var scrolled = scrollDroppable(target, newScroll);
+    return postDroppableChange(state, scrolled, false);
+  }
+
+  if (action.type === 'UPDATE_DROPPABLE_IS_ENABLED') {
+    if (state.phase === 'DROP_PENDING') {
+      return state;
+    }
+
+    !isMovementAllowed(state) ?  true ? invariant(false, "Attempting to move in an unsupported phase " + state.phase) : 0 : void 0;
+    var _action$payload3 = action.payload,
+        _id = _action$payload3.id,
+        isEnabled = _action$payload3.isEnabled;
+    var _target = state.dimensions.droppables[_id];
+    !_target ?  true ? invariant(false, "Cannot find Droppable[id: " + _id + "] to toggle its enabled state") : 0 : void 0;
+    !(_target.isEnabled !== isEnabled) ?  true ? invariant(false, "Trying to set droppable isEnabled to " + String(isEnabled) + "\n      but it is already " + String(_target.isEnabled)) : 0 : void 0;
+
+    var updated = (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, _target, {
+      isEnabled: isEnabled
+    });
+
+    return postDroppableChange(state, updated, true);
+  }
+
+  if (action.type === 'UPDATE_DROPPABLE_IS_COMBINE_ENABLED') {
+    if (state.phase === 'DROP_PENDING') {
+      return state;
+    }
+
+    !isMovementAllowed(state) ?  true ? invariant(false, "Attempting to move in an unsupported phase " + state.phase) : 0 : void 0;
+    var _action$payload4 = action.payload,
+        _id2 = _action$payload4.id,
+        isCombineEnabled = _action$payload4.isCombineEnabled;
+    var _target2 = state.dimensions.droppables[_id2];
+    !_target2 ?  true ? invariant(false, "Cannot find Droppable[id: " + _id2 + "] to toggle its isCombineEnabled state") : 0 : void 0;
+    !(_target2.isCombineEnabled !== isCombineEnabled) ?  true ? invariant(false, "Trying to set droppable isCombineEnabled to " + String(isCombineEnabled) + "\n      but it is already " + String(_target2.isCombineEnabled)) : 0 : void 0;
+
+    var _updated = (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, _target2, {
+      isCombineEnabled: isCombineEnabled
+    });
+
+    return postDroppableChange(state, _updated, true);
+  }
+
+  if (action.type === 'MOVE_BY_WINDOW_SCROLL') {
+    if (state.phase === 'DROP_PENDING' || state.phase === 'DROP_ANIMATING') {
+      return state;
+    }
+
+    !isMovementAllowed(state) ?  true ? invariant(false, "Cannot move by window in phase " + state.phase) : 0 : void 0;
+    !state.isWindowScrollAllowed ?  true ? invariant(false, 'Window scrolling is currently not supported for fixed lists') : 0 : void 0;
+    var _newScroll = action.payload.newScroll;
+
+    if (isEqual(state.viewport.scroll.current, _newScroll)) {
+      return removeScrollJumpRequest(state);
+    }
+
+    var _viewport = scrollViewport(state.viewport, _newScroll);
+
+    if (isSnapping(state)) {
+      return refreshSnap({
+        state: state,
+        viewport: _viewport
+      });
+    }
+
+    return update({
+      state: state,
+      viewport: _viewport
+    });
+  }
+
+  if (action.type === 'UPDATE_VIEWPORT_MAX_SCROLL') {
+    if (!isMovementAllowed(state)) {
+      return state;
+    }
+
+    var maxScroll = action.payload.maxScroll;
+
+    if (isEqual(maxScroll, state.viewport.scroll.max)) {
+      return state;
+    }
+
+    var withMaxScroll = (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, state.viewport, {
+      scroll: (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, state.viewport.scroll, {
+        max: maxScroll
+      })
+    });
+
+    return (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({
+      phase: 'DRAGGING'
+    }, state, {
+      viewport: withMaxScroll
+    });
+  }
+
+  if (action.type === 'MOVE_UP' || action.type === 'MOVE_DOWN' || action.type === 'MOVE_LEFT' || action.type === 'MOVE_RIGHT') {
+    if (state.phase === 'COLLECTING' || state.phase === 'DROP_PENDING') {
+      return state;
+    }
+
+    !(state.phase === 'DRAGGING') ?  true ? invariant(false, action.type + " received while not in DRAGGING phase") : 0 : void 0;
+
+    var _result2 = moveInDirection({
+      state: state,
+      type: action.type
+    });
+
+    if (!_result2) {
+      return state;
+    }
+
+    return update({
+      state: state,
+      impact: _result2.impact,
+      clientSelection: _result2.clientSelection,
+      scrollJumpRequest: _result2.scrollJumpRequest
+    });
+  }
+
+  if (action.type === 'DROP_PENDING') {
+    var reason = action.payload.reason;
+    !(state.phase === 'COLLECTING') ?  true ? invariant(false, 'Can only move into the DROP_PENDING phase from the COLLECTING phase') : 0 : void 0;
+
+    var newState = (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({
+      phase: 'DROP_PENDING'
+    }, state, {
+      phase: 'DROP_PENDING',
+      isWaiting: true,
+      reason: reason
+    });
+
+    return newState;
+  }
+
+  if (action.type === 'DROP_ANIMATE') {
+    var _action$payload5 = action.payload,
+        completed = _action$payload5.completed,
+        dropDuration = _action$payload5.dropDuration,
+        newHomeClientOffset = _action$payload5.newHomeClientOffset;
+    !(state.phase === 'DRAGGING' || state.phase === 'DROP_PENDING') ?  true ? invariant(false, "Cannot animate drop from phase " + state.phase) : 0 : void 0;
+    var _result3 = {
+      phase: 'DROP_ANIMATING',
+      completed: completed,
+      dropDuration: dropDuration,
+      newHomeClientOffset: newHomeClientOffset,
+      dimensions: state.dimensions
+    };
+    return _result3;
+  }
+
+  if (action.type === 'DROP_COMPLETE') {
+    var _completed = action.payload.completed;
+    return {
+      phase: 'IDLE',
+      completed: _completed,
+      shouldFlush: false
+    };
+  }
+
+  return state;
+});
+
+var beforeInitialCapture = function beforeInitialCapture(args) {
+  return {
+    type: 'BEFORE_INITIAL_CAPTURE',
+    payload: args
+  };
+};
+var lift = function lift(args) {
+  return {
+    type: 'LIFT',
+    payload: args
+  };
+};
+var initialPublish = function initialPublish(args) {
+  return {
+    type: 'INITIAL_PUBLISH',
+    payload: args
+  };
+};
+var publishWhileDragging = function publishWhileDragging(args) {
+  return {
+    type: 'PUBLISH_WHILE_DRAGGING',
+    payload: args
+  };
+};
+var collectionStarting = function collectionStarting() {
+  return {
+    type: 'COLLECTION_STARTING',
+    payload: null
+  };
+};
+var updateDroppableScroll = function updateDroppableScroll(args) {
+  return {
+    type: 'UPDATE_DROPPABLE_SCROLL',
+    payload: args
+  };
+};
+var updateDroppableIsEnabled = function updateDroppableIsEnabled(args) {
+  return {
+    type: 'UPDATE_DROPPABLE_IS_ENABLED',
+    payload: args
+  };
+};
+var updateDroppableIsCombineEnabled = function updateDroppableIsCombineEnabled(args) {
+  return {
+    type: 'UPDATE_DROPPABLE_IS_COMBINE_ENABLED',
+    payload: args
+  };
+};
+var move = function move(args) {
+  return {
+    type: 'MOVE',
+    payload: args
+  };
+};
+var moveByWindowScroll = function moveByWindowScroll(args) {
+  return {
+    type: 'MOVE_BY_WINDOW_SCROLL',
+    payload: args
+  };
+};
+var updateViewportMaxScroll = function updateViewportMaxScroll(args) {
+  return {
+    type: 'UPDATE_VIEWPORT_MAX_SCROLL',
+    payload: args
+  };
+};
+var moveUp = function moveUp() {
+  return {
+    type: 'MOVE_UP',
+    payload: null
+  };
+};
+var moveDown = function moveDown() {
+  return {
+    type: 'MOVE_DOWN',
+    payload: null
+  };
+};
+var moveRight = function moveRight() {
+  return {
+    type: 'MOVE_RIGHT',
+    payload: null
+  };
+};
+var moveLeft = function moveLeft() {
+  return {
+    type: 'MOVE_LEFT',
+    payload: null
+  };
+};
+var flush = function flush() {
+  return {
+    type: 'FLUSH',
+    payload: null
+  };
+};
+var animateDrop = function animateDrop(args) {
+  return {
+    type: 'DROP_ANIMATE',
+    payload: args
+  };
+};
+var completeDrop = function completeDrop(args) {
+  return {
+    type: 'DROP_COMPLETE',
+    payload: args
+  };
+};
+var drop = function drop(args) {
+  return {
+    type: 'DROP',
+    payload: args
+  };
+};
+var dropPending = function dropPending(args) {
+  return {
+    type: 'DROP_PENDING',
+    payload: args
+  };
+};
+var dropAnimationFinished = function dropAnimationFinished() {
+  return {
+    type: 'DROP_ANIMATION_FINISHED',
+    payload: null
+  };
+};
+
+function checkIndexes(insideDestination) {
+  if (insideDestination.length <= 1) {
+    return;
+  }
+
+  var indexes = insideDestination.map(function (d) {
+    return d.descriptor.index;
+  });
+  var errors = {};
+
+  for (var i = 1; i < indexes.length; i++) {
+    var current = indexes[i];
+    var previous = indexes[i - 1];
+
+    if (current !== previous + 1) {
+      errors[current] = true;
+    }
+  }
+
+  if (!Object.keys(errors).length) {
+    return;
+  }
+
+  var formatted = indexes.map(function (index) {
+    var hasError = Boolean(errors[index]);
+    return hasError ? "[\uD83D\uDD25" + index + "]" : "" + index;
+  }).join(', ');
+   true ? warning("\n    Detected non-consecutive <Draggable /> indexes.\n\n    (This can cause unexpected bugs)\n\n    " + formatted + "\n  ") : 0;
+}
+
+function validateDimensions(critical, dimensions) {
+  if (true) {
+    var insideDestination = getDraggablesInsideDroppable(critical.droppable.id, dimensions.draggables);
+    checkIndexes(insideDestination);
+  }
+}
+
+var lift$1 = (function (marshal) {
+  return function (_ref) {
+    var getState = _ref.getState,
+        dispatch = _ref.dispatch;
+    return function (next) {
+      return function (action) {
+        if (action.type !== 'LIFT') {
+          next(action);
+          return;
+        }
+
+        var _action$payload = action.payload,
+            id = _action$payload.id,
+            clientSelection = _action$payload.clientSelection,
+            movementMode = _action$payload.movementMode;
+        var initial = getState();
+
+        if (initial.phase === 'DROP_ANIMATING') {
+          dispatch(completeDrop({
+            completed: initial.completed
+          }));
+        }
+
+        !(getState().phase === 'IDLE') ?  true ? invariant(false, 'Unexpected phase to start a drag') : 0 : void 0;
+        dispatch(flush());
+        dispatch(beforeInitialCapture({
+          draggableId: id,
+          movementMode: movementMode
+        }));
+        var scrollOptions = {
+          shouldPublishImmediately: movementMode === 'SNAP'
+        };
+        var request = {
+          draggableId: id,
+          scrollOptions: scrollOptions
+        };
+
+        var _marshal$startPublish = marshal.startPublishing(request),
+            critical = _marshal$startPublish.critical,
+            dimensions = _marshal$startPublish.dimensions,
+            viewport = _marshal$startPublish.viewport;
+
+        validateDimensions(critical, dimensions);
+        dispatch(initialPublish({
+          critical: critical,
+          dimensions: dimensions,
+          clientSelection: clientSelection,
+          movementMode: movementMode,
+          viewport: viewport
+        }));
+      };
+    };
+  };
+});
+
+var style = (function (marshal) {
+  return function () {
+    return function (next) {
+      return function (action) {
+        if (action.type === 'INITIAL_PUBLISH') {
+          marshal.dragging();
+        }
+
+        if (action.type === 'DROP_ANIMATE') {
+          marshal.dropping(action.payload.completed.result.reason);
+        }
+
+        if (action.type === 'FLUSH' || action.type === 'DROP_COMPLETE') {
+          marshal.resting();
+        }
+
+        next(action);
+      };
+    };
+  };
+});
+
+var curves = {
+  outOfTheWay: 'cubic-bezier(0.2, 0, 0, 1)',
+  drop: 'cubic-bezier(.2,1,.1,1)'
+};
+var combine = {
+  opacity: {
+    drop: 0,
+    combining: 0.7
+  },
+  scale: {
+    drop: 0.75
+  }
+};
+var timings = {
+  outOfTheWay: 0.2,
+  minDropTime: 0.33,
+  maxDropTime: 0.55
+};
+var outOfTheWayTiming = timings.outOfTheWay + "s " + curves.outOfTheWay;
+var transitions = {
+  fluid: "opacity " + outOfTheWayTiming,
+  snap: "transform " + outOfTheWayTiming + ", opacity " + outOfTheWayTiming,
+  drop: function drop(duration) {
+    var timing = duration + "s " + curves.drop;
+    return "transform " + timing + ", opacity " + timing;
+  },
+  outOfTheWay: "transform " + outOfTheWayTiming,
+  placeholder: "height " + outOfTheWayTiming + ", width " + outOfTheWayTiming + ", margin " + outOfTheWayTiming
+};
+
+var moveTo = function moveTo(offset) {
+  return isEqual(offset, origin) ? null : "translate(" + offset.x + "px, " + offset.y + "px)";
+};
+
+var transforms = {
+  moveTo: moveTo,
+  drop: function drop(offset, isCombining) {
+    var translate = moveTo(offset);
+
+    if (!translate) {
+      return null;
+    }
+
+    if (!isCombining) {
+      return translate;
+    }
+
+    return translate + " scale(" + combine.scale.drop + ")";
+  }
+};
+
+var minDropTime = timings.minDropTime,
+    maxDropTime = timings.maxDropTime;
+var dropTimeRange = maxDropTime - minDropTime;
+var maxDropTimeAtDistance = 1500;
+var cancelDropModifier = 0.6;
+var getDropDuration = (function (_ref) {
+  var current = _ref.current,
+      destination = _ref.destination,
+      reason = _ref.reason;
+  var distance$1 = distance(current, destination);
+
+  if (distance$1 <= 0) {
+    return minDropTime;
+  }
+
+  if (distance$1 >= maxDropTimeAtDistance) {
+    return maxDropTime;
+  }
+
+  var percentage = distance$1 / maxDropTimeAtDistance;
+  var duration = minDropTime + dropTimeRange * percentage;
+  var withDuration = reason === 'CANCEL' ? duration * cancelDropModifier : duration;
+  return Number(withDuration.toFixed(2));
+});
+
+var getNewHomeClientOffset = (function (_ref) {
+  var impact = _ref.impact,
+      draggable = _ref.draggable,
+      dimensions = _ref.dimensions,
+      viewport = _ref.viewport,
+      afterCritical = _ref.afterCritical;
+  var draggables = dimensions.draggables,
+      droppables = dimensions.droppables;
+  var droppableId = whatIsDraggedOver(impact);
+  var destination = droppableId ? droppables[droppableId] : null;
+  var home = droppables[draggable.descriptor.droppableId];
+  var newClientCenter = getClientBorderBoxCenter({
+    impact: impact,
+    draggable: draggable,
+    draggables: draggables,
+    afterCritical: afterCritical,
+    droppable: destination || home,
+    viewport: viewport
+  });
+  var offset = subtract(newClientCenter, draggable.client.borderBox.center);
+  return offset;
+});
+
+var getDropImpact = (function (_ref) {
+  var draggables = _ref.draggables,
+      reason = _ref.reason,
+      lastImpact = _ref.lastImpact,
+      home = _ref.home,
+      viewport = _ref.viewport,
+      onLiftImpact = _ref.onLiftImpact;
+
+  if (!lastImpact.at || reason !== 'DROP') {
+    var recomputedHomeImpact = recompute({
+      draggables: draggables,
+      impact: onLiftImpact,
+      destination: home,
+      viewport: viewport,
+      forceShouldAnimate: true
+    });
+    return {
+      impact: recomputedHomeImpact,
+      didDropInsideDroppable: false
+    };
+  }
+
+  if (lastImpact.at.type === 'REORDER') {
+    return {
+      impact: lastImpact,
+      didDropInsideDroppable: true
+    };
+  }
+
+  var withoutMovement = (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, lastImpact, {
+    displaced: emptyGroups
+  });
+
+  return {
+    impact: withoutMovement,
+    didDropInsideDroppable: true
+  };
+});
+
+var drop$1 = (function (_ref) {
+  var getState = _ref.getState,
+      dispatch = _ref.dispatch;
+  return function (next) {
+    return function (action) {
+      if (action.type !== 'DROP') {
+        next(action);
+        return;
+      }
+
+      var state = getState();
+      var reason = action.payload.reason;
+
+      if (state.phase === 'COLLECTING') {
+        dispatch(dropPending({
+          reason: reason
+        }));
+        return;
+      }
+
+      if (state.phase === 'IDLE') {
+        return;
+      }
+
+      var isWaitingForDrop = state.phase === 'DROP_PENDING' && state.isWaiting;
+      !!isWaitingForDrop ?  true ? invariant(false, 'A DROP action occurred while DROP_PENDING and still waiting') : 0 : void 0;
+      !(state.phase === 'DRAGGING' || state.phase === 'DROP_PENDING') ?  true ? invariant(false, "Cannot drop in phase: " + state.phase) : 0 : void 0;
+      var critical = state.critical;
+      var dimensions = state.dimensions;
+      var draggable = dimensions.draggables[state.critical.draggable.id];
+
+      var _getDropImpact = getDropImpact({
+        reason: reason,
+        lastImpact: state.impact,
+        afterCritical: state.afterCritical,
+        onLiftImpact: state.onLiftImpact,
+        home: state.dimensions.droppables[state.critical.droppable.id],
+        viewport: state.viewport,
+        draggables: state.dimensions.draggables
+      }),
+          impact = _getDropImpact.impact,
+          didDropInsideDroppable = _getDropImpact.didDropInsideDroppable;
+
+      var destination = didDropInsideDroppable ? tryGetDestination(impact) : null;
+      var combine = didDropInsideDroppable ? tryGetCombine(impact) : null;
+      var source = {
+        index: critical.draggable.index,
+        droppableId: critical.droppable.id
+      };
+      var result = {
+        draggableId: draggable.descriptor.id,
+        type: draggable.descriptor.type,
+        source: source,
+        reason: reason,
+        mode: state.movementMode,
+        destination: destination,
+        combine: combine
+      };
+      var newHomeClientOffset = getNewHomeClientOffset({
+        impact: impact,
+        draggable: draggable,
+        dimensions: dimensions,
+        viewport: state.viewport,
+        afterCritical: state.afterCritical
+      });
+      var completed = {
+        critical: state.critical,
+        afterCritical: state.afterCritical,
+        result: result,
+        impact: impact
+      };
+      var isAnimationRequired = !isEqual(state.current.client.offset, newHomeClientOffset) || Boolean(result.combine);
+
+      if (!isAnimationRequired) {
+        dispatch(completeDrop({
+          completed: completed
+        }));
+        return;
+      }
+
+      var dropDuration = getDropDuration({
+        current: state.current.client.offset,
+        destination: newHomeClientOffset,
+        reason: reason
+      });
+      var args = {
+        newHomeClientOffset: newHomeClientOffset,
+        dropDuration: dropDuration,
+        completed: completed
+      };
+      dispatch(animateDrop(args));
+    };
+  };
+});
+
+var getWindowScroll = (function () {
+  return {
+    x: window.pageXOffset,
+    y: window.pageYOffset
+  };
+});
+
+function getWindowScrollBinding(update) {
+  return {
+    eventName: 'scroll',
+    options: {
+      passive: true,
+      capture: false
+    },
+    fn: function fn(event) {
+      if (event.target !== window && event.target !== window.document) {
+        return;
+      }
+
+      update();
+    }
+  };
+}
+
+function getScrollListener(_ref) {
+  var onWindowScroll = _ref.onWindowScroll;
+
+  function updateScroll() {
+    onWindowScroll(getWindowScroll());
+  }
+
+  var scheduled = (0,raf_schd__WEBPACK_IMPORTED_MODULE_7__["default"])(updateScroll);
+  var binding = getWindowScrollBinding(scheduled);
+  var unbind = noop;
+
+  function isActive() {
+    return unbind !== noop;
+  }
+
+  function start() {
+    !!isActive() ?  true ? invariant(false, 'Cannot start scroll listener when already active') : 0 : void 0;
+    unbind = bindEvents(window, [binding]);
+  }
+
+  function stop() {
+    !isActive() ?  true ? invariant(false, 'Cannot stop scroll listener when not active') : 0 : void 0;
+    scheduled.cancel();
+    unbind();
+    unbind = noop;
+  }
+
+  return {
+    start: start,
+    stop: stop,
+    isActive: isActive
+  };
+}
+
+var shouldEnd = function shouldEnd(action) {
+  return action.type === 'DROP_COMPLETE' || action.type === 'DROP_ANIMATE' || action.type === 'FLUSH';
+};
+
+var scrollListener = (function (store) {
+  var listener = getScrollListener({
+    onWindowScroll: function onWindowScroll(newScroll) {
+      store.dispatch(moveByWindowScroll({
+        newScroll: newScroll
+      }));
+    }
+  });
+  return function (next) {
+    return function (action) {
+      if (!listener.isActive() && action.type === 'INITIAL_PUBLISH') {
+        listener.start();
+      }
+
+      if (listener.isActive() && shouldEnd(action)) {
+        listener.stop();
+      }
+
+      next(action);
+    };
+  };
+});
+
+var getExpiringAnnounce = (function (announce) {
+  var wasCalled = false;
+  var isExpired = false;
+  var timeoutId = setTimeout(function () {
+    isExpired = true;
+  });
+
+  var result = function result(message) {
+    if (wasCalled) {
+       true ? warning('Announcement already made. Not making a second announcement') : 0;
+      return;
+    }
+
+    if (isExpired) {
+       true ? warning("\n        Announcements cannot be made asynchronously.\n        Default message has already been announced.\n      ") : 0;
+      return;
+    }
+
+    wasCalled = true;
+    announce(message);
+    clearTimeout(timeoutId);
+  };
+
+  result.wasCalled = function () {
+    return wasCalled;
+  };
+
+  return result;
+});
+
+var getAsyncMarshal = (function () {
+  var entries = [];
+
+  var execute = function execute(timerId) {
+    var index = findIndex(entries, function (item) {
+      return item.timerId === timerId;
+    });
+    !(index !== -1) ?  true ? invariant(false, 'Could not find timer') : 0 : void 0;
+
+    var _entries$splice = entries.splice(index, 1),
+        entry = _entries$splice[0];
+
+    entry.callback();
+  };
+
+  var add = function add(fn) {
+    var timerId = setTimeout(function () {
+      return execute(timerId);
+    });
+    var entry = {
+      timerId: timerId,
+      callback: fn
+    };
+    entries.push(entry);
+  };
+
+  var flush = function flush() {
+    if (!entries.length) {
+      return;
+    }
+
+    var shallow = [].concat(entries);
+    entries.length = 0;
+    shallow.forEach(function (entry) {
+      clearTimeout(entry.timerId);
+      entry.callback();
+    });
+  };
+
+  return {
+    add: add,
+    flush: flush
+  };
+});
+
+var areLocationsEqual = function areLocationsEqual(first, second) {
+  if (first == null && second == null) {
+    return true;
+  }
+
+  if (first == null || second == null) {
+    return false;
+  }
+
+  return first.droppableId === second.droppableId && first.index === second.index;
+};
+var isCombineEqual = function isCombineEqual(first, second) {
+  if (first == null && second == null) {
+    return true;
+  }
+
+  if (first == null || second == null) {
+    return false;
+  }
+
+  return first.draggableId === second.draggableId && first.droppableId === second.droppableId;
+};
+var isCriticalEqual = function isCriticalEqual(first, second) {
+  if (first === second) {
+    return true;
+  }
+
+  var isDraggableEqual = first.draggable.id === second.draggable.id && first.draggable.droppableId === second.draggable.droppableId && first.draggable.type === second.draggable.type && first.draggable.index === second.draggable.index;
+  var isDroppableEqual = first.droppable.id === second.droppable.id && first.droppable.type === second.droppable.type;
+  return isDraggableEqual && isDroppableEqual;
+};
+
+var withTimings = function withTimings(key, fn) {
+  start();
+  fn();
+  finish();
+};
+
+var getDragStart = function getDragStart(critical, mode) {
+  return {
+    draggableId: critical.draggable.id,
+    type: critical.droppable.type,
+    source: {
+      droppableId: critical.droppable.id,
+      index: critical.draggable.index
+    },
+    mode: mode
+  };
+};
+
+var execute = function execute(responder, data, announce, getDefaultMessage) {
+  if (!responder) {
+    announce(getDefaultMessage(data));
+    return;
+  }
+
+  var willExpire = getExpiringAnnounce(announce);
+  var provided = {
+    announce: willExpire
+  };
+  responder(data, provided);
+
+  if (!willExpire.wasCalled()) {
+    announce(getDefaultMessage(data));
+  }
+};
+
+var getPublisher = (function (getResponders, announce) {
+  var asyncMarshal = getAsyncMarshal();
+  var dragging = null;
+
+  var beforeCapture = function beforeCapture(draggableId, mode) {
+    !!dragging ?  true ? invariant(false, 'Cannot fire onBeforeCapture as a drag start has already been published') : 0 : void 0;
+    withTimings('onBeforeCapture', function () {
+      var fn = getResponders().onBeforeCapture;
+
+      if (fn) {
+        var before = {
+          draggableId: draggableId,
+          mode: mode
+        };
+        fn(before);
+      }
+    });
+  };
+
+  var beforeStart = function beforeStart(critical, mode) {
+    !!dragging ?  true ? invariant(false, 'Cannot fire onBeforeDragStart as a drag start has already been published') : 0 : void 0;
+    withTimings('onBeforeDragStart', function () {
+      var fn = getResponders().onBeforeDragStart;
+
+      if (fn) {
+        fn(getDragStart(critical, mode));
+      }
+    });
+  };
+
+  var start = function start(critical, mode) {
+    !!dragging ?  true ? invariant(false, 'Cannot fire onBeforeDragStart as a drag start has already been published') : 0 : void 0;
+    var data = getDragStart(critical, mode);
+    dragging = {
+      mode: mode,
+      lastCritical: critical,
+      lastLocation: data.source,
+      lastCombine: null
+    };
+    asyncMarshal.add(function () {
+      withTimings('onDragStart', function () {
+        return execute(getResponders().onDragStart, data, announce, preset.onDragStart);
+      });
+    });
+  };
+
+  var update = function update(critical, impact) {
+    var location = tryGetDestination(impact);
+    var combine = tryGetCombine(impact);
+    !dragging ?  true ? invariant(false, 'Cannot fire onDragMove when onDragStart has not been called') : 0 : void 0;
+    var hasCriticalChanged = !isCriticalEqual(critical, dragging.lastCritical);
+
+    if (hasCriticalChanged) {
+      dragging.lastCritical = critical;
+    }
+
+    var hasLocationChanged = !areLocationsEqual(dragging.lastLocation, location);
+
+    if (hasLocationChanged) {
+      dragging.lastLocation = location;
+    }
+
+    var hasGroupingChanged = !isCombineEqual(dragging.lastCombine, combine);
+
+    if (hasGroupingChanged) {
+      dragging.lastCombine = combine;
+    }
+
+    if (!hasCriticalChanged && !hasLocationChanged && !hasGroupingChanged) {
+      return;
+    }
+
+    var data = (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, getDragStart(critical, dragging.mode), {
+      combine: combine,
+      destination: location
+    });
+
+    asyncMarshal.add(function () {
+      withTimings('onDragUpdate', function () {
+        return execute(getResponders().onDragUpdate, data, announce, preset.onDragUpdate);
+      });
+    });
+  };
+
+  var flush = function flush() {
+    !dragging ?  true ? invariant(false, 'Can only flush responders while dragging') : 0 : void 0;
+    asyncMarshal.flush();
+  };
+
+  var drop = function drop(result) {
+    !dragging ?  true ? invariant(false, 'Cannot fire onDragEnd when there is no matching onDragStart') : 0 : void 0;
+    dragging = null;
+    withTimings('onDragEnd', function () {
+      return execute(getResponders().onDragEnd, result, announce, preset.onDragEnd);
+    });
+  };
+
+  var abort = function abort() {
+    if (!dragging) {
+      return;
+    }
+
+    var result = (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, getDragStart(dragging.lastCritical, dragging.mode), {
+      combine: null,
+      destination: null,
+      reason: 'CANCEL'
+    });
+
+    drop(result);
+  };
+
+  return {
+    beforeCapture: beforeCapture,
+    beforeStart: beforeStart,
+    start: start,
+    update: update,
+    flush: flush,
+    drop: drop,
+    abort: abort
+  };
+});
+
+var responders = (function (getResponders, announce) {
+  var publisher = getPublisher(getResponders, announce);
+  return function (store) {
+    return function (next) {
+      return function (action) {
+        if (action.type === 'BEFORE_INITIAL_CAPTURE') {
+          publisher.beforeCapture(action.payload.draggableId, action.payload.movementMode);
+          return;
+        }
+
+        if (action.type === 'INITIAL_PUBLISH') {
+          var critical = action.payload.critical;
+          publisher.beforeStart(critical, action.payload.movementMode);
+          next(action);
+          publisher.start(critical, action.payload.movementMode);
+          return;
+        }
+
+        if (action.type === 'DROP_COMPLETE') {
+          var result = action.payload.completed.result;
+          publisher.flush();
+          next(action);
+          publisher.drop(result);
+          return;
+        }
+
+        next(action);
+
+        if (action.type === 'FLUSH') {
+          publisher.abort();
+          return;
+        }
+
+        var state = store.getState();
+
+        if (state.phase === 'DRAGGING') {
+          publisher.update(state.critical, state.impact);
+        }
+      };
+    };
+  };
+});
+
+var dropAnimationFinish = (function (store) {
+  return function (next) {
+    return function (action) {
+      if (action.type !== 'DROP_ANIMATION_FINISHED') {
+        next(action);
+        return;
+      }
+
+      var state = store.getState();
+      !(state.phase === 'DROP_ANIMATING') ?  true ? invariant(false, 'Cannot finish a drop animating when no drop is occurring') : 0 : void 0;
+      store.dispatch(completeDrop({
+        completed: state.completed
+      }));
+    };
+  };
+});
+
+var dropAnimationFlushOnScroll = (function (store) {
+  var unbind = null;
+  var frameId = null;
+
+  function clear() {
+    if (frameId) {
+      cancelAnimationFrame(frameId);
+      frameId = null;
+    }
+
+    if (unbind) {
+      unbind();
+      unbind = null;
+    }
+  }
+
+  return function (next) {
+    return function (action) {
+      if (action.type === 'FLUSH' || action.type === 'DROP_COMPLETE' || action.type === 'DROP_ANIMATION_FINISHED') {
+        clear();
+      }
+
+      next(action);
+
+      if (action.type !== 'DROP_ANIMATE') {
+        return;
+      }
+
+      var binding = {
+        eventName: 'scroll',
+        options: {
+          capture: true,
+          passive: false,
+          once: true
+        },
+        fn: function flushDropAnimation() {
+          var state = store.getState();
+
+          if (state.phase === 'DROP_ANIMATING') {
+            store.dispatch(dropAnimationFinished());
+          }
+        }
+      };
+      frameId = requestAnimationFrame(function () {
+        frameId = null;
+        unbind = bindEvents(window, [binding]);
+      });
+    };
+  };
+});
+
+var dimensionMarshalStopper = (function (marshal) {
+  return function () {
+    return function (next) {
+      return function (action) {
+        if (action.type === 'DROP_COMPLETE' || action.type === 'FLUSH' || action.type === 'DROP_ANIMATE') {
+          marshal.stopPublishing();
+        }
+
+        next(action);
+      };
+    };
+  };
+});
+
+var focus = (function (marshal) {
+  var isWatching = false;
+  return function () {
+    return function (next) {
+      return function (action) {
+        if (action.type === 'INITIAL_PUBLISH') {
+          isWatching = true;
+          marshal.tryRecordFocus(action.payload.critical.draggable.id);
+          next(action);
+          marshal.tryRestoreFocusRecorded();
+          return;
+        }
+
+        next(action);
+
+        if (!isWatching) {
+          return;
+        }
+
+        if (action.type === 'FLUSH') {
+          isWatching = false;
+          marshal.tryRestoreFocusRecorded();
+          return;
+        }
+
+        if (action.type === 'DROP_COMPLETE') {
+          isWatching = false;
+          var result = action.payload.completed.result;
+
+          if (result.combine) {
+            marshal.tryShiftRecord(result.draggableId, result.combine.draggableId);
+          }
+
+          marshal.tryRestoreFocusRecorded();
+        }
+      };
+    };
+  };
+});
+
+var shouldStop = function shouldStop(action) {
+  return action.type === 'DROP_COMPLETE' || action.type === 'DROP_ANIMATE' || action.type === 'FLUSH';
+};
+
+var autoScroll = (function (autoScroller) {
+  return function (store) {
+    return function (next) {
+      return function (action) {
+        if (shouldStop(action)) {
+          autoScroller.stop();
+          next(action);
+          return;
+        }
+
+        if (action.type === 'INITIAL_PUBLISH') {
+          next(action);
+          var state = store.getState();
+          !(state.phase === 'DRAGGING') ?  true ? invariant(false, 'Expected phase to be DRAGGING after INITIAL_PUBLISH') : 0 : void 0;
+          autoScroller.start(state);
+          return;
+        }
+
+        next(action);
+        autoScroller.scroll(store.getState());
+      };
+    };
+  };
+});
+
+var pendingDrop = (function (store) {
+  return function (next) {
+    return function (action) {
+      next(action);
+
+      if (action.type !== 'PUBLISH_WHILE_DRAGGING') {
+        return;
+      }
+
+      var postActionState = store.getState();
+
+      if (postActionState.phase !== 'DROP_PENDING') {
+        return;
+      }
+
+      if (postActionState.isWaiting) {
+        return;
+      }
+
+      store.dispatch(drop({
+        reason: postActionState.reason
+      }));
+    };
+  };
+});
+
+var composeEnhancers =  true && typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
+  name: 'react-beautiful-dnd'
+}) : redux__WEBPACK_IMPORTED_MODULE_8__.compose;
+var createStore = (function (_ref) {
+  var dimensionMarshal = _ref.dimensionMarshal,
+      focusMarshal = _ref.focusMarshal,
+      styleMarshal = _ref.styleMarshal,
+      getResponders = _ref.getResponders,
+      announce = _ref.announce,
+      autoScroller = _ref.autoScroller;
+  return (0,redux__WEBPACK_IMPORTED_MODULE_8__.createStore)(reducer, composeEnhancers((0,redux__WEBPACK_IMPORTED_MODULE_8__.applyMiddleware)(style(styleMarshal), dimensionMarshalStopper(dimensionMarshal), lift$1(dimensionMarshal), drop$1, dropAnimationFinish, dropAnimationFlushOnScroll, pendingDrop, autoScroll(autoScroller), scrollListener, focus(focusMarshal), responders(getResponders, announce))));
+});
+
+var clean$1 = function clean() {
+  return {
+    additions: {},
+    removals: {},
+    modified: {}
+  };
+};
+function createPublisher(_ref) {
+  var registry = _ref.registry,
+      callbacks = _ref.callbacks;
+  var staging = clean$1();
+  var frameId = null;
+
+  var collect = function collect() {
+    if (frameId) {
+      return;
+    }
+
+    callbacks.collectionStarting();
+    frameId = requestAnimationFrame(function () {
+      frameId = null;
+      start();
+      var _staging = staging,
+          additions = _staging.additions,
+          removals = _staging.removals,
+          modified = _staging.modified;
+      var added = Object.keys(additions).map(function (id) {
+        return registry.draggable.getById(id).getDimension(origin);
+      }).sort(function (a, b) {
+        return a.descriptor.index - b.descriptor.index;
+      });
+      var updated = Object.keys(modified).map(function (id) {
+        var entry = registry.droppable.getById(id);
+        var scroll = entry.callbacks.getScrollWhileDragging();
+        return {
+          droppableId: id,
+          scroll: scroll
+        };
+      });
+      var result = {
+        additions: added,
+        removals: Object.keys(removals),
+        modified: updated
+      };
+      staging = clean$1();
+      finish();
+      callbacks.publish(result);
+    });
+  };
+
+  var add = function add(entry) {
+    var id = entry.descriptor.id;
+    staging.additions[id] = entry;
+    staging.modified[entry.descriptor.droppableId] = true;
+
+    if (staging.removals[id]) {
+      delete staging.removals[id];
+    }
+
+    collect();
+  };
+
+  var remove = function remove(entry) {
+    var descriptor = entry.descriptor;
+    staging.removals[descriptor.id] = true;
+    staging.modified[descriptor.droppableId] = true;
+
+    if (staging.additions[descriptor.id]) {
+      delete staging.additions[descriptor.id];
+    }
+
+    collect();
+  };
+
+  var stop = function stop() {
+    if (!frameId) {
+      return;
+    }
+
+    cancelAnimationFrame(frameId);
+    frameId = null;
+    staging = clean$1();
+  };
+
+  return {
+    add: add,
+    remove: remove,
+    stop: stop
+  };
+}
+
+var getMaxScroll = (function (_ref) {
+  var scrollHeight = _ref.scrollHeight,
+      scrollWidth = _ref.scrollWidth,
+      height = _ref.height,
+      width = _ref.width;
+  var maxScroll = subtract({
+    x: scrollWidth,
+    y: scrollHeight
+  }, {
+    x: width,
+    y: height
+  });
+  var adjustedMaxScroll = {
+    x: Math.max(0, maxScroll.x),
+    y: Math.max(0, maxScroll.y)
+  };
+  return adjustedMaxScroll;
+});
+
+var getDocumentElement = (function () {
+  var doc = document.documentElement;
+  !doc ?  true ? invariant(false, 'Cannot find document.documentElement') : 0 : void 0;
+  return doc;
+});
+
+var getMaxWindowScroll = (function () {
+  var doc = getDocumentElement();
+  var maxScroll = getMaxScroll({
+    scrollHeight: doc.scrollHeight,
+    scrollWidth: doc.scrollWidth,
+    width: doc.clientWidth,
+    height: doc.clientHeight
+  });
+  return maxScroll;
+});
+
+var getViewport = (function () {
+  var scroll = getWindowScroll();
+  var maxScroll = getMaxWindowScroll();
+  var top = scroll.y;
+  var left = scroll.x;
+  var doc = getDocumentElement();
+  var width = doc.clientWidth;
+  var height = doc.clientHeight;
+  var right = left + width;
+  var bottom = top + height;
+  var frame = (0,css_box_model__WEBPACK_IMPORTED_MODULE_5__.getRect)({
+    top: top,
+    left: left,
+    right: right,
+    bottom: bottom
+  });
+  var viewport = {
+    frame: frame,
+    scroll: {
+      initial: scroll,
+      current: scroll,
+      max: maxScroll,
+      diff: {
+        value: origin,
+        displacement: origin
+      }
+    }
+  };
+  return viewport;
+});
+
+var getInitialPublish = (function (_ref) {
+  var critical = _ref.critical,
+      scrollOptions = _ref.scrollOptions,
+      registry = _ref.registry;
+  start();
+  var viewport = getViewport();
+  var windowScroll = viewport.scroll.current;
+  var home = critical.droppable;
+  var droppables = registry.droppable.getAllByType(home.type).map(function (entry) {
+    return entry.callbacks.getDimensionAndWatchScroll(windowScroll, scrollOptions);
+  });
+  var draggables = registry.draggable.getAllByType(critical.draggable.type).map(function (entry) {
+    return entry.getDimension(windowScroll);
+  });
+  var dimensions = {
+    draggables: toDraggableMap(draggables),
+    droppables: toDroppableMap(droppables)
+  };
+  finish();
+  var result = {
+    dimensions: dimensions,
+    critical: critical,
+    viewport: viewport
+  };
+  return result;
+});
+
+function shouldPublishUpdate(registry, dragging, entry) {
+  if (entry.descriptor.id === dragging.id) {
+    return false;
+  }
+
+  if (entry.descriptor.type !== dragging.type) {
+    return false;
+  }
+
+  var home = registry.droppable.getById(entry.descriptor.droppableId);
+
+  if (home.descriptor.mode !== 'virtual') {
+     true ? warning("\n      You are attempting to add or remove a Draggable [id: " + entry.descriptor.id + "]\n      while a drag is occurring. This is only supported for virtual lists.\n\n      See https://github.com/atlassian/react-beautiful-dnd/blob/master/docs/patterns/virtual-lists.md\n    ") : 0;
+    return false;
+  }
+
+  return true;
+}
+
+var createDimensionMarshal = (function (registry, callbacks) {
+  var collection = null;
+  var publisher = createPublisher({
+    callbacks: {
+      publish: callbacks.publishWhileDragging,
+      collectionStarting: callbacks.collectionStarting
+    },
+    registry: registry
+  });
+
+  var updateDroppableIsEnabled = function updateDroppableIsEnabled(id, isEnabled) {
+    !registry.droppable.exists(id) ?  true ? invariant(false, "Cannot update is enabled flag of Droppable " + id + " as it is not registered") : 0 : void 0;
+
+    if (!collection) {
+      return;
+    }
+
+    callbacks.updateDroppableIsEnabled({
+      id: id,
+      isEnabled: isEnabled
+    });
+  };
+
+  var updateDroppableIsCombineEnabled = function updateDroppableIsCombineEnabled(id, isCombineEnabled) {
+    if (!collection) {
+      return;
+    }
+
+    !registry.droppable.exists(id) ?  true ? invariant(false, "Cannot update isCombineEnabled flag of Droppable " + id + " as it is not registered") : 0 : void 0;
+    callbacks.updateDroppableIsCombineEnabled({
+      id: id,
+      isCombineEnabled: isCombineEnabled
+    });
+  };
+
+  var updateDroppableScroll = function updateDroppableScroll(id, newScroll) {
+    if (!collection) {
+      return;
+    }
+
+    !registry.droppable.exists(id) ?  true ? invariant(false, "Cannot update the scroll on Droppable " + id + " as it is not registered") : 0 : void 0;
+    callbacks.updateDroppableScroll({
+      id: id,
+      newScroll: newScroll
+    });
+  };
+
+  var scrollDroppable = function scrollDroppable(id, change) {
+    if (!collection) {
+      return;
+    }
+
+    registry.droppable.getById(id).callbacks.scroll(change);
+  };
+
+  var stopPublishing = function stopPublishing() {
+    if (!collection) {
+      return;
+    }
+
+    publisher.stop();
+    var home = collection.critical.droppable;
+    registry.droppable.getAllByType(home.type).forEach(function (entry) {
+      return entry.callbacks.dragStopped();
+    });
+    collection.unsubscribe();
+    collection = null;
+  };
+
+  var subscriber = function subscriber(event) {
+    !collection ?  true ? invariant(false, 'Should only be subscribed when a collection is occurring') : 0 : void 0;
+    var dragging = collection.critical.draggable;
+
+    if (event.type === 'ADDITION') {
+      if (shouldPublishUpdate(registry, dragging, event.value)) {
+        publisher.add(event.value);
+      }
+    }
+
+    if (event.type === 'REMOVAL') {
+      if (shouldPublishUpdate(registry, dragging, event.value)) {
+        publisher.remove(event.value);
+      }
+    }
+  };
+
+  var startPublishing = function startPublishing(request) {
+    !!collection ?  true ? invariant(false, 'Cannot start capturing critical dimensions as there is already a collection') : 0 : void 0;
+    var entry = registry.draggable.getById(request.draggableId);
+    var home = registry.droppable.getById(entry.descriptor.droppableId);
+    var critical = {
+      draggable: entry.descriptor,
+      droppable: home.descriptor
+    };
+    var unsubscribe = registry.subscribe(subscriber);
+    collection = {
+      critical: critical,
+      unsubscribe: unsubscribe
+    };
+    return getInitialPublish({
+      critical: critical,
+      registry: registry,
+      scrollOptions: request.scrollOptions
+    });
+  };
+
+  var marshal = {
+    updateDroppableIsEnabled: updateDroppableIsEnabled,
+    updateDroppableIsCombineEnabled: updateDroppableIsCombineEnabled,
+    scrollDroppable: scrollDroppable,
+    updateDroppableScroll: updateDroppableScroll,
+    startPublishing: startPublishing,
+    stopPublishing: stopPublishing
+  };
+  return marshal;
+});
+
+var canStartDrag = (function (state, id) {
+  if (state.phase === 'IDLE') {
+    return true;
+  }
+
+  if (state.phase !== 'DROP_ANIMATING') {
+    return false;
+  }
+
+  if (state.completed.result.draggableId === id) {
+    return false;
+  }
+
+  return state.completed.result.reason === 'DROP';
+});
+
+var scrollWindow = (function (change) {
+  window.scrollBy(change.x, change.y);
+});
+
+var getScrollableDroppables = (0,memoize_one__WEBPACK_IMPORTED_MODULE_6__["default"])(function (droppables) {
+  return toDroppableList(droppables).filter(function (droppable) {
+    if (!droppable.isEnabled) {
+      return false;
+    }
+
+    if (!droppable.frame) {
+      return false;
+    }
+
+    return true;
+  });
+});
+
+var getScrollableDroppableOver = function getScrollableDroppableOver(target, droppables) {
+  var maybe = find(getScrollableDroppables(droppables), function (droppable) {
+    !droppable.frame ?  true ? invariant(false, 'Invalid result') : 0 : void 0;
+    return isPositionInFrame(droppable.frame.pageMarginBox)(target);
+  });
+  return maybe;
+};
+
+var getBestScrollableDroppable = (function (_ref) {
+  var center = _ref.center,
+      destination = _ref.destination,
+      droppables = _ref.droppables;
+
+  if (destination) {
+    var _dimension = droppables[destination];
+
+    if (!_dimension.frame) {
+      return null;
+    }
+
+    return _dimension;
+  }
+
+  var dimension = getScrollableDroppableOver(center, droppables);
+  return dimension;
+});
+
+var config = {
+  startFromPercentage: 0.25,
+  maxScrollAtPercentage: 0.05,
+  maxPixelScroll: 28,
+  ease: function ease(percentage) {
+    return Math.pow(percentage, 2);
+  },
+  durationDampening: {
+    stopDampeningAt: 1200,
+    accelerateAt: 360
+  }
+};
+
+var getDistanceThresholds = (function (container, axis) {
+  var startScrollingFrom = container[axis.size] * config.startFromPercentage;
+  var maxScrollValueAt = container[axis.size] * config.maxScrollAtPercentage;
+  var thresholds = {
+    startScrollingFrom: startScrollingFrom,
+    maxScrollValueAt: maxScrollValueAt
+  };
+  return thresholds;
+});
+
+var getPercentage = (function (_ref) {
+  var startOfRange = _ref.startOfRange,
+      endOfRange = _ref.endOfRange,
+      current = _ref.current;
+  var range = endOfRange - startOfRange;
+
+  if (range === 0) {
+     true ? warning("\n      Detected distance range of 0 in the fluid auto scroller\n      This is unexpected and would cause a divide by 0 issue.\n      Not allowing an auto scroll\n    ") : 0;
+    return 0;
+  }
+
+  var currentInRange = current - startOfRange;
+  var percentage = currentInRange / range;
+  return percentage;
+});
+
+var minScroll = 1;
+
+var getValueFromDistance = (function (distanceToEdge, thresholds) {
+  if (distanceToEdge > thresholds.startScrollingFrom) {
+    return 0;
+  }
+
+  if (distanceToEdge <= thresholds.maxScrollValueAt) {
+    return config.maxPixelScroll;
+  }
+
+  if (distanceToEdge === thresholds.startScrollingFrom) {
+    return minScroll;
+  }
+
+  var percentageFromMaxScrollValueAt = getPercentage({
+    startOfRange: thresholds.maxScrollValueAt,
+    endOfRange: thresholds.startScrollingFrom,
+    current: distanceToEdge
+  });
+  var percentageFromStartScrollingFrom = 1 - percentageFromMaxScrollValueAt;
+  var scroll = config.maxPixelScroll * config.ease(percentageFromStartScrollingFrom);
+  return Math.ceil(scroll);
+});
+
+var accelerateAt = config.durationDampening.accelerateAt;
+var stopAt = config.durationDampening.stopDampeningAt;
+var dampenValueByTime = (function (proposedScroll, dragStartTime) {
+  var startOfRange = dragStartTime;
+  var endOfRange = stopAt;
+  var now = Date.now();
+  var runTime = now - startOfRange;
+
+  if (runTime >= stopAt) {
+    return proposedScroll;
+  }
+
+  if (runTime < accelerateAt) {
+    return minScroll;
+  }
+
+  var betweenAccelerateAtAndStopAtPercentage = getPercentage({
+    startOfRange: accelerateAt,
+    endOfRange: endOfRange,
+    current: runTime
+  });
+  var scroll = proposedScroll * config.ease(betweenAccelerateAtAndStopAtPercentage);
+  return Math.ceil(scroll);
+});
+
+var getValue = (function (_ref) {
+  var distanceToEdge = _ref.distanceToEdge,
+      thresholds = _ref.thresholds,
+      dragStartTime = _ref.dragStartTime,
+      shouldUseTimeDampening = _ref.shouldUseTimeDampening;
+  var scroll = getValueFromDistance(distanceToEdge, thresholds);
+
+  if (scroll === 0) {
+    return 0;
+  }
+
+  if (!shouldUseTimeDampening) {
+    return scroll;
+  }
+
+  return Math.max(dampenValueByTime(scroll, dragStartTime), minScroll);
+});
+
+var getScrollOnAxis = (function (_ref) {
+  var container = _ref.container,
+      distanceToEdges = _ref.distanceToEdges,
+      dragStartTime = _ref.dragStartTime,
+      axis = _ref.axis,
+      shouldUseTimeDampening = _ref.shouldUseTimeDampening;
+  var thresholds = getDistanceThresholds(container, axis);
+  var isCloserToEnd = distanceToEdges[axis.end] < distanceToEdges[axis.start];
+
+  if (isCloserToEnd) {
+    return getValue({
+      distanceToEdge: distanceToEdges[axis.end],
+      thresholds: thresholds,
+      dragStartTime: dragStartTime,
+      shouldUseTimeDampening: shouldUseTimeDampening
+    });
+  }
+
+  return -1 * getValue({
+    distanceToEdge: distanceToEdges[axis.start],
+    thresholds: thresholds,
+    dragStartTime: dragStartTime,
+    shouldUseTimeDampening: shouldUseTimeDampening
+  });
+});
+
+var adjustForSizeLimits = (function (_ref) {
+  var container = _ref.container,
+      subject = _ref.subject,
+      proposedScroll = _ref.proposedScroll;
+  var isTooBigVertically = subject.height > container.height;
+  var isTooBigHorizontally = subject.width > container.width;
+
+  if (!isTooBigHorizontally && !isTooBigVertically) {
+    return proposedScroll;
+  }
+
+  if (isTooBigHorizontally && isTooBigVertically) {
+    return null;
+  }
+
+  return {
+    x: isTooBigHorizontally ? 0 : proposedScroll.x,
+    y: isTooBigVertically ? 0 : proposedScroll.y
+  };
+});
+
+var clean$2 = apply(function (value) {
+  return value === 0 ? 0 : value;
+});
+var getScroll = (function (_ref) {
+  var dragStartTime = _ref.dragStartTime,
+      container = _ref.container,
+      subject = _ref.subject,
+      center = _ref.center,
+      shouldUseTimeDampening = _ref.shouldUseTimeDampening;
+  var distanceToEdges = {
+    top: center.y - container.top,
+    right: container.right - center.x,
+    bottom: container.bottom - center.y,
+    left: center.x - container.left
+  };
+  var y = getScrollOnAxis({
+    container: container,
+    distanceToEdges: distanceToEdges,
+    dragStartTime: dragStartTime,
+    axis: vertical,
+    shouldUseTimeDampening: shouldUseTimeDampening
+  });
+  var x = getScrollOnAxis({
+    container: container,
+    distanceToEdges: distanceToEdges,
+    dragStartTime: dragStartTime,
+    axis: horizontal,
+    shouldUseTimeDampening: shouldUseTimeDampening
+  });
+  var required = clean$2({
+    x: x,
+    y: y
+  });
+
+  if (isEqual(required, origin)) {
+    return null;
+  }
+
+  var limited = adjustForSizeLimits({
+    container: container,
+    subject: subject,
+    proposedScroll: required
+  });
+
+  if (!limited) {
+    return null;
+  }
+
+  return isEqual(limited, origin) ? null : limited;
+});
+
+var smallestSigned = apply(function (value) {
+  if (value === 0) {
+    return 0;
+  }
+
+  return value > 0 ? 1 : -1;
+});
+var getOverlap = function () {
+  var getRemainder = function getRemainder(target, max) {
+    if (target < 0) {
+      return target;
+    }
+
+    if (target > max) {
+      return target - max;
+    }
+
+    return 0;
+  };
+
+  return function (_ref) {
+    var current = _ref.current,
+        max = _ref.max,
+        change = _ref.change;
+    var targetScroll = add(current, change);
+    var overlap = {
+      x: getRemainder(targetScroll.x, max.x),
+      y: getRemainder(targetScroll.y, max.y)
+    };
+
+    if (isEqual(overlap, origin)) {
+      return null;
+    }
+
+    return overlap;
+  };
+}();
+var canPartiallyScroll = function canPartiallyScroll(_ref2) {
+  var rawMax = _ref2.max,
+      current = _ref2.current,
+      change = _ref2.change;
+  var max = {
+    x: Math.max(current.x, rawMax.x),
+    y: Math.max(current.y, rawMax.y)
+  };
+  var smallestChange = smallestSigned(change);
+  var overlap = getOverlap({
+    max: max,
+    current: current,
+    change: smallestChange
+  });
+
+  if (!overlap) {
+    return true;
+  }
+
+  if (smallestChange.x !== 0 && overlap.x === 0) {
+    return true;
+  }
+
+  if (smallestChange.y !== 0 && overlap.y === 0) {
+    return true;
+  }
+
+  return false;
+};
+var canScrollWindow = function canScrollWindow(viewport, change) {
+  return canPartiallyScroll({
+    current: viewport.scroll.current,
+    max: viewport.scroll.max,
+    change: change
+  });
+};
+var getWindowOverlap = function getWindowOverlap(viewport, change) {
+  if (!canScrollWindow(viewport, change)) {
+    return null;
+  }
+
+  var max = viewport.scroll.max;
+  var current = viewport.scroll.current;
+  return getOverlap({
+    current: current,
+    max: max,
+    change: change
+  });
+};
+var canScrollDroppable = function canScrollDroppable(droppable, change) {
+  var frame = droppable.frame;
+
+  if (!frame) {
+    return false;
+  }
+
+  return canPartiallyScroll({
+    current: frame.scroll.current,
+    max: frame.scroll.max,
+    change: change
+  });
+};
+var getDroppableOverlap = function getDroppableOverlap(droppable, change) {
+  var frame = droppable.frame;
+
+  if (!frame) {
+    return null;
+  }
+
+  if (!canScrollDroppable(droppable, change)) {
+    return null;
+  }
+
+  return getOverlap({
+    current: frame.scroll.current,
+    max: frame.scroll.max,
+    change: change
+  });
+};
+
+var getWindowScrollChange = (function (_ref) {
+  var viewport = _ref.viewport,
+      subject = _ref.subject,
+      center = _ref.center,
+      dragStartTime = _ref.dragStartTime,
+      shouldUseTimeDampening = _ref.shouldUseTimeDampening;
+  var scroll = getScroll({
+    dragStartTime: dragStartTime,
+    container: viewport.frame,
+    subject: subject,
+    center: center,
+    shouldUseTimeDampening: shouldUseTimeDampening
+  });
+  return scroll && canScrollWindow(viewport, scroll) ? scroll : null;
+});
+
+var getDroppableScrollChange = (function (_ref) {
+  var droppable = _ref.droppable,
+      subject = _ref.subject,
+      center = _ref.center,
+      dragStartTime = _ref.dragStartTime,
+      shouldUseTimeDampening = _ref.shouldUseTimeDampening;
+  var frame = droppable.frame;
+
+  if (!frame) {
+    return null;
+  }
+
+  var scroll = getScroll({
+    dragStartTime: dragStartTime,
+    container: frame.pageMarginBox,
+    subject: subject,
+    center: center,
+    shouldUseTimeDampening: shouldUseTimeDampening
+  });
+  return scroll && canScrollDroppable(droppable, scroll) ? scroll : null;
+});
+
+var scroll$1 = (function (_ref) {
+  var state = _ref.state,
+      dragStartTime = _ref.dragStartTime,
+      shouldUseTimeDampening = _ref.shouldUseTimeDampening,
+      scrollWindow = _ref.scrollWindow,
+      scrollDroppable = _ref.scrollDroppable;
+  var center = state.current.page.borderBoxCenter;
+  var draggable = state.dimensions.draggables[state.critical.draggable.id];
+  var subject = draggable.page.marginBox;
+
+  if (state.isWindowScrollAllowed) {
+    var viewport = state.viewport;
+
+    var _change = getWindowScrollChange({
+      dragStartTime: dragStartTime,
+      viewport: viewport,
+      subject: subject,
+      center: center,
+      shouldUseTimeDampening: shouldUseTimeDampening
+    });
+
+    if (_change) {
+      scrollWindow(_change);
+      return;
+    }
+  }
+
+  var droppable = getBestScrollableDroppable({
+    center: center,
+    destination: whatIsDraggedOver(state.impact),
+    droppables: state.dimensions.droppables
+  });
+
+  if (!droppable) {
+    return;
+  }
+
+  var change = getDroppableScrollChange({
+    dragStartTime: dragStartTime,
+    droppable: droppable,
+    subject: subject,
+    center: center,
+    shouldUseTimeDampening: shouldUseTimeDampening
+  });
+
+  if (change) {
+    scrollDroppable(droppable.descriptor.id, change);
+  }
+});
+
+var createFluidScroller = (function (_ref) {
+  var scrollWindow = _ref.scrollWindow,
+      scrollDroppable = _ref.scrollDroppable;
+  var scheduleWindowScroll = (0,raf_schd__WEBPACK_IMPORTED_MODULE_7__["default"])(scrollWindow);
+  var scheduleDroppableScroll = (0,raf_schd__WEBPACK_IMPORTED_MODULE_7__["default"])(scrollDroppable);
+  var dragging = null;
+
+  var tryScroll = function tryScroll(state) {
+    !dragging ?  true ? invariant(false, 'Cannot fluid scroll if not dragging') : 0 : void 0;
+    var _dragging = dragging,
+        shouldUseTimeDampening = _dragging.shouldUseTimeDampening,
+        dragStartTime = _dragging.dragStartTime;
+    scroll$1({
+      state: state,
+      scrollWindow: scheduleWindowScroll,
+      scrollDroppable: scheduleDroppableScroll,
+      dragStartTime: dragStartTime,
+      shouldUseTimeDampening: shouldUseTimeDampening
+    });
+  };
+
+  var start$1 = function start$1(state) {
+    start();
+    !!dragging ?  true ? invariant(false, 'Cannot start auto scrolling when already started') : 0 : void 0;
+    var dragStartTime = Date.now();
+    var wasScrollNeeded = false;
+
+    var fakeScrollCallback = function fakeScrollCallback() {
+      wasScrollNeeded = true;
+    };
+
+    scroll$1({
+      state: state,
+      dragStartTime: 0,
+      shouldUseTimeDampening: false,
+      scrollWindow: fakeScrollCallback,
+      scrollDroppable: fakeScrollCallback
+    });
+    dragging = {
+      dragStartTime: dragStartTime,
+      shouldUseTimeDampening: wasScrollNeeded
+    };
+    finish();
+
+    if (wasScrollNeeded) {
+      tryScroll(state);
+    }
+  };
+
+  var stop = function stop() {
+    if (!dragging) {
+      return;
+    }
+
+    scheduleWindowScroll.cancel();
+    scheduleDroppableScroll.cancel();
+    dragging = null;
+  };
+
+  return {
+    start: start$1,
+    stop: stop,
+    scroll: tryScroll
+  };
+});
+
+var createJumpScroller = (function (_ref) {
+  var move = _ref.move,
+      scrollDroppable = _ref.scrollDroppable,
+      scrollWindow = _ref.scrollWindow;
+
+  var moveByOffset = function moveByOffset(state, offset) {
+    var client = add(state.current.client.selection, offset);
+    move({
+      client: client
+    });
+  };
+
+  var scrollDroppableAsMuchAsItCan = function scrollDroppableAsMuchAsItCan(droppable, change) {
+    if (!canScrollDroppable(droppable, change)) {
+      return change;
+    }
+
+    var overlap = getDroppableOverlap(droppable, change);
+
+    if (!overlap) {
+      scrollDroppable(droppable.descriptor.id, change);
+      return null;
+    }
+
+    var whatTheDroppableCanScroll = subtract(change, overlap);
+    scrollDroppable(droppable.descriptor.id, whatTheDroppableCanScroll);
+    var remainder = subtract(change, whatTheDroppableCanScroll);
+    return remainder;
+  };
+
+  var scrollWindowAsMuchAsItCan = function scrollWindowAsMuchAsItCan(isWindowScrollAllowed, viewport, change) {
+    if (!isWindowScrollAllowed) {
+      return change;
+    }
+
+    if (!canScrollWindow(viewport, change)) {
+      return change;
+    }
+
+    var overlap = getWindowOverlap(viewport, change);
+
+    if (!overlap) {
+      scrollWindow(change);
+      return null;
+    }
+
+    var whatTheWindowCanScroll = subtract(change, overlap);
+    scrollWindow(whatTheWindowCanScroll);
+    var remainder = subtract(change, whatTheWindowCanScroll);
+    return remainder;
+  };
+
+  var jumpScroller = function jumpScroller(state) {
+    var request = state.scrollJumpRequest;
+
+    if (!request) {
+      return;
+    }
+
+    var destination = whatIsDraggedOver(state.impact);
+    !destination ?  true ? invariant(false, 'Cannot perform a jump scroll when there is no destination') : 0 : void 0;
+    var droppableRemainder = scrollDroppableAsMuchAsItCan(state.dimensions.droppables[destination], request);
+
+    if (!droppableRemainder) {
+      return;
+    }
+
+    var viewport = state.viewport;
+    var windowRemainder = scrollWindowAsMuchAsItCan(state.isWindowScrollAllowed, viewport, droppableRemainder);
+
+    if (!windowRemainder) {
+      return;
+    }
+
+    moveByOffset(state, windowRemainder);
+  };
+
+  return jumpScroller;
+});
+
+var createAutoScroller = (function (_ref) {
+  var scrollDroppable = _ref.scrollDroppable,
+      scrollWindow = _ref.scrollWindow,
+      move = _ref.move;
+  var fluidScroller = createFluidScroller({
+    scrollWindow: scrollWindow,
+    scrollDroppable: scrollDroppable
+  });
+  var jumpScroll = createJumpScroller({
+    move: move,
+    scrollWindow: scrollWindow,
+    scrollDroppable: scrollDroppable
+  });
+
+  var scroll = function scroll(state) {
+    if (state.phase !== 'DRAGGING') {
+      return;
+    }
+
+    if (state.movementMode === 'FLUID') {
+      fluidScroller.scroll(state);
+      return;
+    }
+
+    if (!state.scrollJumpRequest) {
+      return;
+    }
+
+    jumpScroll(state);
+  };
+
+  var scroller = {
+    scroll: scroll,
+    start: fluidScroller.start,
+    stop: fluidScroller.stop
+  };
+  return scroller;
+});
+
+var prefix$1 = 'data-rbd';
+var dragHandle = function () {
+  var base = prefix$1 + "-drag-handle";
+  return {
+    base: base,
+    draggableId: base + "-draggable-id",
+    contextId: base + "-context-id"
+  };
+}();
+var draggable = function () {
+  var base = prefix$1 + "-draggable";
+  return {
+    base: base,
+    contextId: base + "-context-id",
+    id: base + "-id"
+  };
+}();
+var droppable = function () {
+  var base = prefix$1 + "-droppable";
+  return {
+    base: base,
+    contextId: base + "-context-id",
+    id: base + "-id"
+  };
+}();
+var scrollContainer = {
+  contextId: prefix$1 + "-scroll-container-context-id"
+};
+
+var makeGetSelector = function makeGetSelector(context) {
+  return function (attribute) {
+    return "[" + attribute + "=\"" + context + "\"]";
+  };
+};
+
+var getStyles = function getStyles(rules, property) {
+  return rules.map(function (rule) {
+    var value = rule.styles[property];
+
+    if (!value) {
+      return '';
+    }
+
+    return rule.selector + " { " + value + " }";
+  }).join(' ');
+};
+
+var noPointerEvents = 'pointer-events: none;';
+var getStyles$1 = (function (contextId) {
+  var getSelector = makeGetSelector(contextId);
+
+  var dragHandle$1 = function () {
+    var grabCursor = "\n      cursor: -webkit-grab;\n      cursor: grab;\n    ";
+    return {
+      selector: getSelector(dragHandle.contextId),
+      styles: {
+        always: "\n          -webkit-touch-callout: none;\n          -webkit-tap-highlight-color: rgba(0,0,0,0);\n          touch-action: manipulation;\n        ",
+        resting: grabCursor,
+        dragging: noPointerEvents,
+        dropAnimating: grabCursor
+      }
+    };
+  }();
+
+  var draggable$1 = function () {
+    var transition = "\n      transition: " + transitions.outOfTheWay + ";\n    ";
+    return {
+      selector: getSelector(draggable.contextId),
+      styles: {
+        dragging: transition,
+        dropAnimating: transition,
+        userCancel: transition
+      }
+    };
+  }();
+
+  var droppable$1 = {
+    selector: getSelector(droppable.contextId),
+    styles: {
+      always: "overflow-anchor: none;"
+    }
+  };
+  var body = {
+    selector: 'body',
+    styles: {
+      dragging: "\n        cursor: grabbing;\n        cursor: -webkit-grabbing;\n        user-select: none;\n        -webkit-user-select: none;\n        -moz-user-select: none;\n        -ms-user-select: none;\n        overflow-anchor: none;\n      "
+    }
+  };
+  var rules = [draggable$1, dragHandle$1, droppable$1, body];
+  return {
+    always: getStyles(rules, 'always'),
+    resting: getStyles(rules, 'resting'),
+    dragging: getStyles(rules, 'dragging'),
+    dropAnimating: getStyles(rules, 'dropAnimating'),
+    userCancel: getStyles(rules, 'userCancel')
+  };
+});
+
+var useIsomorphicLayoutEffect = typeof window !== 'undefined' && typeof window.document !== 'undefined' && typeof window.document.createElement !== 'undefined' ? react__WEBPACK_IMPORTED_MODULE_0__.useLayoutEffect : react__WEBPACK_IMPORTED_MODULE_0__.useEffect;
+
+var getHead = function getHead() {
+  var head = document.querySelector('head');
+  !head ?  true ? invariant(false, 'Cannot find the head to append a style to') : 0 : void 0;
+  return head;
+};
+
+var createStyleEl = function createStyleEl(nonce) {
+  var el = document.createElement('style');
+
+  if (nonce) {
+    el.setAttribute('nonce', nonce);
+  }
+
+  el.type = 'text/css';
+  return el;
+};
+
+function useStyleMarshal(contextId, nonce) {
+  var styles = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useMemo)(function () {
+    return getStyles$1(contextId);
+  }, [contextId]);
+  var alwaysRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+  var dynamicRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+  var setDynamicStyle = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useCallback)((0,memoize_one__WEBPACK_IMPORTED_MODULE_6__["default"])(function (proposed) {
+    var el = dynamicRef.current;
+    !el ?  true ? invariant(false, 'Cannot set dynamic style element if it is not set') : 0 : void 0;
+    el.textContent = proposed;
+  }), []);
+  var setAlwaysStyle = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useCallback)(function (proposed) {
+    var el = alwaysRef.current;
+    !el ?  true ? invariant(false, 'Cannot set dynamic style element if it is not set') : 0 : void 0;
+    el.textContent = proposed;
+  }, []);
+  useIsomorphicLayoutEffect(function () {
+    !(!alwaysRef.current && !dynamicRef.current) ?  true ? invariant(false, 'style elements already mounted') : 0 : void 0;
+    var always = createStyleEl(nonce);
+    var dynamic = createStyleEl(nonce);
+    alwaysRef.current = always;
+    dynamicRef.current = dynamic;
+    always.setAttribute(prefix$1 + "-always", contextId);
+    dynamic.setAttribute(prefix$1 + "-dynamic", contextId);
+    getHead().appendChild(always);
+    getHead().appendChild(dynamic);
+    setAlwaysStyle(styles.always);
+    setDynamicStyle(styles.resting);
+    return function () {
+      var remove = function remove(ref) {
+        var current = ref.current;
+        !current ?  true ? invariant(false, 'Cannot unmount ref as it is not set') : 0 : void 0;
+        getHead().removeChild(current);
+        ref.current = null;
+      };
+
+      remove(alwaysRef);
+      remove(dynamicRef);
+    };
+  }, [nonce, setAlwaysStyle, setDynamicStyle, styles.always, styles.resting, contextId]);
+  var dragging = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useCallback)(function () {
+    return setDynamicStyle(styles.dragging);
+  }, [setDynamicStyle, styles.dragging]);
+  var dropping = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useCallback)(function (reason) {
+    if (reason === 'DROP') {
+      setDynamicStyle(styles.dropAnimating);
+      return;
+    }
+
+    setDynamicStyle(styles.userCancel);
+  }, [setDynamicStyle, styles.dropAnimating, styles.userCancel]);
+  var resting = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useCallback)(function () {
+    if (!dynamicRef.current) {
+      return;
+    }
+
+    setDynamicStyle(styles.resting);
+  }, [setDynamicStyle, styles.resting]);
+  var marshal = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useMemo)(function () {
+    return {
+      dragging: dragging,
+      dropping: dropping,
+      resting: resting
+    };
+  }, [dragging, dropping, resting]);
+  return marshal;
+}
+
+var getWindowFromEl = (function (el) {
+  return el && el.ownerDocument ? el.ownerDocument.defaultView : window;
+});
+
+function isHtmlElement(el) {
+  return el instanceof getWindowFromEl(el).HTMLElement;
+}
+
+function findDragHandle(contextId, draggableId) {
+  var selector = "[" + dragHandle.contextId + "=\"" + contextId + "\"]";
+  var possible = toArray(document.querySelectorAll(selector));
+
+  if (!possible.length) {
+     true ? warning("Unable to find any drag handles in the context \"" + contextId + "\"") : 0;
+    return null;
+  }
+
+  var handle = find(possible, function (el) {
+    return el.getAttribute(dragHandle.draggableId) === draggableId;
+  });
+
+  if (!handle) {
+     true ? warning("Unable to find drag handle with id \"" + draggableId + "\" as no handle with a matching id was found") : 0;
+    return null;
+  }
+
+  if (!isHtmlElement(handle)) {
+     true ? warning('drag handle needs to be a HTMLElement') : 0;
+    return null;
+  }
+
+  return handle;
+}
+
+function useFocusMarshal(contextId) {
+  var entriesRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)({});
+  var recordRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+  var restoreFocusFrameRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+  var isMountedRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(false);
+  var register = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useCallback)(function register(id, focus) {
+    var entry = {
+      id: id,
+      focus: focus
+    };
+    entriesRef.current[id] = entry;
+    return function unregister() {
+      var entries = entriesRef.current;
+      var current = entries[id];
+
+      if (current !== entry) {
+        delete entries[id];
+      }
+    };
+  }, []);
+  var tryGiveFocus = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useCallback)(function tryGiveFocus(tryGiveFocusTo) {
+    var handle = findDragHandle(contextId, tryGiveFocusTo);
+
+    if (handle && handle !== document.activeElement) {
+      handle.focus();
+    }
+  }, [contextId]);
+  var tryShiftRecord = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useCallback)(function tryShiftRecord(previous, redirectTo) {
+    if (recordRef.current === previous) {
+      recordRef.current = redirectTo;
+    }
+  }, []);
+  var tryRestoreFocusRecorded = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useCallback)(function tryRestoreFocusRecorded() {
+    if (restoreFocusFrameRef.current) {
+      return;
+    }
+
+    if (!isMountedRef.current) {
+      return;
+    }
+
+    restoreFocusFrameRef.current = requestAnimationFrame(function () {
+      restoreFocusFrameRef.current = null;
+      var record = recordRef.current;
+
+      if (record) {
+        tryGiveFocus(record);
+      }
+    });
+  }, [tryGiveFocus]);
+  var tryRecordFocus = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useCallback)(function tryRecordFocus(id) {
+    recordRef.current = null;
+    var focused = document.activeElement;
+
+    if (!focused) {
+      return;
+    }
+
+    if (focused.getAttribute(dragHandle.draggableId) !== id) {
+      return;
+    }
+
+    recordRef.current = id;
+  }, []);
+  useIsomorphicLayoutEffect(function () {
+    isMountedRef.current = true;
+    return function clearFrameOnUnmount() {
+      isMountedRef.current = false;
+      var frameId = restoreFocusFrameRef.current;
+
+      if (frameId) {
+        cancelAnimationFrame(frameId);
+      }
+    };
+  }, []);
+  var marshal = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useMemo)(function () {
+    return {
+      register: register,
+      tryRecordFocus: tryRecordFocus,
+      tryRestoreFocusRecorded: tryRestoreFocusRecorded,
+      tryShiftRecord: tryShiftRecord
+    };
+  }, [register, tryRecordFocus, tryRestoreFocusRecorded, tryShiftRecord]);
+  return marshal;
+}
+
+function createRegistry() {
+  var entries = {
+    draggables: {},
+    droppables: {}
+  };
+  var subscribers = [];
+
+  function subscribe(cb) {
+    subscribers.push(cb);
+    return function unsubscribe() {
+      var index = subscribers.indexOf(cb);
+
+      if (index === -1) {
+        return;
+      }
+
+      subscribers.splice(index, 1);
+    };
+  }
+
+  function notify(event) {
+    if (subscribers.length) {
+      subscribers.forEach(function (cb) {
+        return cb(event);
+      });
+    }
+  }
+
+  function findDraggableById(id) {
+    return entries.draggables[id] || null;
+  }
+
+  function getDraggableById(id) {
+    var entry = findDraggableById(id);
+    !entry ?  true ? invariant(false, "Cannot find draggable entry with id [" + id + "]") : 0 : void 0;
+    return entry;
+  }
+
+  var draggableAPI = {
+    register: function register(entry) {
+      entries.draggables[entry.descriptor.id] = entry;
+      notify({
+        type: 'ADDITION',
+        value: entry
+      });
+    },
+    update: function update(entry, last) {
+      var current = entries.draggables[last.descriptor.id];
+
+      if (!current) {
+        return;
+      }
+
+      if (current.uniqueId !== entry.uniqueId) {
+        return;
+      }
+
+      delete entries.draggables[last.descriptor.id];
+      entries.draggables[entry.descriptor.id] = entry;
+    },
+    unregister: function unregister(entry) {
+      var draggableId = entry.descriptor.id;
+      var current = findDraggableById(draggableId);
+
+      if (!current) {
+        return;
+      }
+
+      if (entry.uniqueId !== current.uniqueId) {
+        return;
+      }
+
+      delete entries.draggables[draggableId];
+      notify({
+        type: 'REMOVAL',
+        value: entry
+      });
+    },
+    getById: getDraggableById,
+    findById: findDraggableById,
+    exists: function exists(id) {
+      return Boolean(findDraggableById(id));
+    },
+    getAllByType: function getAllByType(type) {
+      return values(entries.draggables).filter(function (entry) {
+        return entry.descriptor.type === type;
+      });
+    }
+  };
+
+  function findDroppableById(id) {
+    return entries.droppables[id] || null;
+  }
+
+  function getDroppableById(id) {
+    var entry = findDroppableById(id);
+    !entry ?  true ? invariant(false, "Cannot find droppable entry with id [" + id + "]") : 0 : void 0;
+    return entry;
+  }
+
+  var droppableAPI = {
+    register: function register(entry) {
+      entries.droppables[entry.descriptor.id] = entry;
+    },
+    unregister: function unregister(entry) {
+      var current = findDroppableById(entry.descriptor.id);
+
+      if (!current) {
+        return;
+      }
+
+      if (entry.uniqueId !== current.uniqueId) {
+        return;
+      }
+
+      delete entries.droppables[entry.descriptor.id];
+    },
+    getById: getDroppableById,
+    findById: findDroppableById,
+    exists: function exists(id) {
+      return Boolean(findDroppableById(id));
+    },
+    getAllByType: function getAllByType(type) {
+      return values(entries.droppables).filter(function (entry) {
+        return entry.descriptor.type === type;
+      });
+    }
+  };
+
+  function clean() {
+    entries.draggables = {};
+    entries.droppables = {};
+    subscribers.length = 0;
+  }
+
+  return {
+    draggable: draggableAPI,
+    droppable: droppableAPI,
+    subscribe: subscribe,
+    clean: clean
+  };
+}
+
+function useRegistry() {
+  var registry = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useMemo)(createRegistry, []);
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    return function unmount() {
+      requestAnimationFrame(registry.clean);
+    };
+  }, [registry]);
+  return registry;
+}
+
+var StoreContext = react__WEBPACK_IMPORTED_MODULE_0___default().createContext(null);
+
+var getBodyElement = (function () {
+  var body = document.body;
+  !body ?  true ? invariant(false, 'Cannot find document.body') : 0 : void 0;
+  return body;
+});
+
+var visuallyHidden = {
+  position: 'absolute',
+  width: '1px',
+  height: '1px',
+  margin: '-1px',
+  border: '0',
+  padding: '0',
+  overflow: 'hidden',
+  clip: 'rect(0 0 0 0)',
+  'clip-path': 'inset(100%)'
+};
+
+var getId = function getId(contextId) {
+  return "rbd-announcement-" + contextId;
+};
+function useAnnouncer(contextId) {
+  var id = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useMemo)(function () {
+    return getId(contextId);
+  }, [contextId]);
+  var ref = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function setup() {
+    var el = document.createElement('div');
+    ref.current = el;
+    el.id = id;
+    el.setAttribute('aria-live', 'assertive');
+    el.setAttribute('aria-atomic', 'true');
+
+    (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])(el.style, visuallyHidden);
+
+    getBodyElement().appendChild(el);
+    return function cleanup() {
+      setTimeout(function remove() {
+        var body = getBodyElement();
+
+        if (body.contains(el)) {
+          body.removeChild(el);
+        }
+
+        if (el === ref.current) {
+          ref.current = null;
+        }
+      });
+    };
+  }, [id]);
+  var announce = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useCallback)(function (message) {
+    var el = ref.current;
+
+    if (el) {
+      el.textContent = message;
+      return;
+    }
+
+     true ? warning("\n      A screen reader message was trying to be announced but it was unable to do so.\n      This can occur if you unmount your <DragDropContext /> in your onDragEnd.\n      Consider calling provided.announce() before the unmount so that the instruction will\n      not be lost for users relying on a screen reader.\n\n      Message not passed to screen reader:\n\n      \"" + message + "\"\n    ") : 0;
+  }, []);
+  return announce;
+}
+
+var count = 0;
+var defaults = {
+  separator: '::'
+};
+function reset() {
+  count = 0;
+}
+function useUniqueId(prefix, options) {
+  if (options === void 0) {
+    options = defaults;
+  }
+
+  return (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useMemo)(function () {
+    return "" + prefix + options.separator + count++;
+  }, [options.separator, prefix]);
+}
+
+function getElementId(_ref) {
+  var contextId = _ref.contextId,
+      uniqueId = _ref.uniqueId;
+  return "rbd-hidden-text-" + contextId + "-" + uniqueId;
+}
+function useHiddenTextElement(_ref2) {
+  var contextId = _ref2.contextId,
+      text = _ref2.text;
+  var uniqueId = useUniqueId('hidden-text', {
+    separator: '-'
+  });
+  var id = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useMemo)(function () {
+    return getElementId({
+      contextId: contextId,
+      uniqueId: uniqueId
+    });
+  }, [uniqueId, contextId]);
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function mount() {
+    var el = document.createElement('div');
+    el.id = id;
+    el.textContent = text;
+    el.style.display = 'none';
+    getBodyElement().appendChild(el);
+    return function unmount() {
+      var body = getBodyElement();
+
+      if (body.contains(el)) {
+        body.removeChild(el);
+      }
+    };
+  }, [id, text]);
+  return id;
+}
+
+var AppContext = react__WEBPACK_IMPORTED_MODULE_0___default().createContext(null);
+
+var peerDependencies = {
+	react: "^16.8.5 || ^17.0.0 || ^18.0.0",
+	"react-dom": "^16.8.5 || ^17.0.0 || ^18.0.0"
+};
+
+var semver = /(\d+)\.(\d+)\.(\d+)/;
+
+var getVersion = function getVersion(value) {
+  var result = semver.exec(value);
+  !(result != null) ?  true ? invariant(false, "Unable to parse React version " + value) : 0 : void 0;
+  var major = Number(result[1]);
+  var minor = Number(result[2]);
+  var patch = Number(result[3]);
+  return {
+    major: major,
+    minor: minor,
+    patch: patch,
+    raw: value
+  };
+};
+
+var isSatisfied = function isSatisfied(expected, actual) {
+  if (actual.major > expected.major) {
+    return true;
+  }
+
+  if (actual.major < expected.major) {
+    return false;
+  }
+
+  if (actual.minor > expected.minor) {
+    return true;
+  }
+
+  if (actual.minor < expected.minor) {
+    return false;
+  }
+
+  return actual.patch >= expected.patch;
+};
+
+var checkReactVersion = (function (peerDepValue, actualValue) {
+  var peerDep = getVersion(peerDepValue);
+  var actual = getVersion(actualValue);
+
+  if (isSatisfied(peerDep, actual)) {
+    return;
+  }
+
+   true ? warning("\n    React version: [" + actual.raw + "]\n    does not satisfy expected peer dependency version: [" + peerDep.raw + "]\n\n    This can result in run time bugs, and even fatal crashes\n  ") : 0;
+});
+
+var suffix = "\n  We expect a html5 doctype: <!doctype html>\n  This is to ensure consistent browser layout and measurement\n\n  More information: https://github.com/atlassian/react-beautiful-dnd/blob/master/docs/guides/doctype.md\n";
+var checkDoctype = (function (doc) {
+  var doctype = doc.doctype;
+
+  if (!doctype) {
+     true ? warning("\n      No <!doctype html> found.\n\n      " + suffix + "\n    ") : 0;
+    return;
+  }
+
+  if (doctype.name.toLowerCase() !== 'html') {
+     true ? warning("\n      Unexpected <!doctype> found: (" + doctype.name + ")\n\n      " + suffix + "\n    ") : 0;
+  }
+
+  if (doctype.publicId !== '') {
+     true ? warning("\n      Unexpected <!doctype> publicId found: (" + doctype.publicId + ")\n      A html5 doctype does not have a publicId\n\n      " + suffix + "\n    ") : 0;
+  }
+});
+
+function useDev(useHook) {
+  if (true) {
+    useHook();
+  }
+}
+
+function useDevSetupWarning(fn, inputs) {
+  useDev(function () {
+    (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+      try {
+        fn();
+      } catch (e) {
+        error("\n          A setup problem was encountered.\n\n          > " + e.message + "\n        ");
+      }
+    }, inputs);
+  });
+}
+
+function useStartupValidation() {
+  useDevSetupWarning(function () {
+    checkReactVersion(peerDependencies.react, (react__WEBPACK_IMPORTED_MODULE_0___default().version));
+    checkDoctype(document);
+  }, []);
+}
+
+function usePrevious(current) {
+  var ref = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(current);
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    ref.current = current;
+  });
+  return ref;
+}
+
+function create() {
+  var lock = null;
+
+  function isClaimed() {
+    return Boolean(lock);
+  }
+
+  function isActive(value) {
+    return value === lock;
+  }
+
+  function claim(abandon) {
+    !!lock ?  true ? invariant(false, 'Cannot claim lock as it is already claimed') : 0 : void 0;
+    var newLock = {
+      abandon: abandon
+    };
+    lock = newLock;
+    return newLock;
+  }
+
+  function release() {
+    !lock ?  true ? invariant(false, 'Cannot release lock when there is no lock') : 0 : void 0;
+    lock = null;
+  }
+
+  function tryAbandon() {
+    if (lock) {
+      lock.abandon();
+      release();
+    }
+  }
+
+  return {
+    isClaimed: isClaimed,
+    isActive: isActive,
+    claim: claim,
+    release: release,
+    tryAbandon: tryAbandon
+  };
+}
+
+var tab = 9;
+var enter = 13;
+var escape = 27;
+var space = 32;
+var pageUp = 33;
+var pageDown = 34;
+var end = 35;
+var home = 36;
+var arrowLeft = 37;
+var arrowUp = 38;
+var arrowRight = 39;
+var arrowDown = 40;
+
+var _preventedKeys;
+var preventedKeys = (_preventedKeys = {}, _preventedKeys[enter] = true, _preventedKeys[tab] = true, _preventedKeys);
+var preventStandardKeyEvents = (function (event) {
+  if (preventedKeys[event.keyCode]) {
+    event.preventDefault();
+  }
+});
+
+var supportedEventName = function () {
+  var base = 'visibilitychange';
+
+  if (typeof document === 'undefined') {
+    return base;
+  }
+
+  var candidates = [base, "ms" + base, "webkit" + base, "moz" + base, "o" + base];
+  var supported = find(candidates, function (eventName) {
+    return "on" + eventName in document;
+  });
+  return supported || base;
+}();
+
+var primaryButton = 0;
+var sloppyClickThreshold = 5;
+
+function isSloppyClickThresholdExceeded(original, current) {
+  return Math.abs(current.x - original.x) >= sloppyClickThreshold || Math.abs(current.y - original.y) >= sloppyClickThreshold;
+}
+
+var idle$1 = {
+  type: 'IDLE'
+};
+
+function getCaptureBindings(_ref) {
+  var cancel = _ref.cancel,
+      completed = _ref.completed,
+      getPhase = _ref.getPhase,
+      setPhase = _ref.setPhase;
+  return [{
+    eventName: 'mousemove',
+    fn: function fn(event) {
+      var button = event.button,
+          clientX = event.clientX,
+          clientY = event.clientY;
+
+      if (button !== primaryButton) {
+        return;
+      }
+
+      var point = {
+        x: clientX,
+        y: clientY
+      };
+      var phase = getPhase();
+
+      if (phase.type === 'DRAGGING') {
+        event.preventDefault();
+        phase.actions.move(point);
+        return;
+      }
+
+      !(phase.type === 'PENDING') ?  true ? invariant(false, 'Cannot be IDLE') : 0 : void 0;
+      var pending = phase.point;
+
+      if (!isSloppyClickThresholdExceeded(pending, point)) {
+        return;
+      }
+
+      event.preventDefault();
+      var actions = phase.actions.fluidLift(point);
+      setPhase({
+        type: 'DRAGGING',
+        actions: actions
+      });
+    }
+  }, {
+    eventName: 'mouseup',
+    fn: function fn(event) {
+      var phase = getPhase();
+
+      if (phase.type !== 'DRAGGING') {
+        cancel();
+        return;
+      }
+
+      event.preventDefault();
+      phase.actions.drop({
+        shouldBlockNextClick: true
+      });
+      completed();
+    }
+  }, {
+    eventName: 'mousedown',
+    fn: function fn(event) {
+      if (getPhase().type === 'DRAGGING') {
+        event.preventDefault();
+      }
+
+      cancel();
+    }
+  }, {
+    eventName: 'keydown',
+    fn: function fn(event) {
+      var phase = getPhase();
+
+      if (phase.type === 'PENDING') {
+        cancel();
+        return;
+      }
+
+      if (event.keyCode === escape) {
+        event.preventDefault();
+        cancel();
+        return;
+      }
+
+      preventStandardKeyEvents(event);
+    }
+  }, {
+    eventName: 'resize',
+    fn: cancel
+  }, {
+    eventName: 'scroll',
+    options: {
+      passive: true,
+      capture: false
+    },
+    fn: function fn() {
+      if (getPhase().type === 'PENDING') {
+        cancel();
+      }
+    }
+  }, {
+    eventName: 'webkitmouseforcedown',
+    fn: function fn(event) {
+      var phase = getPhase();
+      !(phase.type !== 'IDLE') ?  true ? invariant(false, 'Unexpected phase') : 0 : void 0;
+
+      if (phase.actions.shouldRespectForcePress()) {
+        cancel();
+        return;
+      }
+
+      event.preventDefault();
+    }
+  }, {
+    eventName: supportedEventName,
+    fn: cancel
+  }];
+}
+
+function useMouseSensor(api) {
+  var phaseRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(idle$1);
+  var unbindEventsRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(noop);
+  var startCaptureBinding = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useMemo)(function () {
+    return {
+      eventName: 'mousedown',
+      fn: function onMouseDown(event) {
+        if (event.defaultPrevented) {
+          return;
+        }
+
+        if (event.button !== primaryButton) {
+          return;
+        }
+
+        if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) {
+          return;
+        }
+
+        var draggableId = api.findClosestDraggableId(event);
+
+        if (!draggableId) {
+          return;
+        }
+
+        var actions = api.tryGetLock(draggableId, stop, {
+          sourceEvent: event
+        });
+
+        if (!actions) {
+          return;
+        }
+
+        event.preventDefault();
+        var point = {
+          x: event.clientX,
+          y: event.clientY
+        };
+        unbindEventsRef.current();
+        startPendingDrag(actions, point);
+      }
+    };
+  }, [api]);
+  var preventForcePressBinding = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useMemo)(function () {
+    return {
+      eventName: 'webkitmouseforcewillbegin',
+      fn: function fn(event) {
+        if (event.defaultPrevented) {
+          return;
+        }
+
+        var id = api.findClosestDraggableId(event);
+
+        if (!id) {
+          return;
+        }
+
+        var options = api.findOptionsForDraggable(id);
+
+        if (!options) {
+          return;
+        }
+
+        if (options.shouldRespectForcePress) {
+          return;
+        }
+
+        if (!api.canGetLock(id)) {
+          return;
+        }
+
+        event.preventDefault();
+      }
+    };
+  }, [api]);
+  var listenForCapture = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useCallback)(function listenForCapture() {
+    var options = {
+      passive: false,
+      capture: true
+    };
+    unbindEventsRef.current = bindEvents(window, [preventForcePressBinding, startCaptureBinding], options);
+  }, [preventForcePressBinding, startCaptureBinding]);
+  var stop = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useCallback)(function () {
+    var current = phaseRef.current;
+
+    if (current.type === 'IDLE') {
+      return;
+    }
+
+    phaseRef.current = idle$1;
+    unbindEventsRef.current();
+    listenForCapture();
+  }, [listenForCapture]);
+  var cancel = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useCallback)(function () {
+    var phase = phaseRef.current;
+    stop();
+
+    if (phase.type === 'DRAGGING') {
+      phase.actions.cancel({
+        shouldBlockNextClick: true
+      });
+    }
+
+    if (phase.type === 'PENDING') {
+      phase.actions.abort();
+    }
+  }, [stop]);
+  var bindCapturingEvents = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useCallback)(function bindCapturingEvents() {
+    var options = {
+      capture: true,
+      passive: false
+    };
+    var bindings = getCaptureBindings({
+      cancel: cancel,
+      completed: stop,
+      getPhase: function getPhase() {
+        return phaseRef.current;
+      },
+      setPhase: function setPhase(phase) {
+        phaseRef.current = phase;
+      }
+    });
+    unbindEventsRef.current = bindEvents(window, bindings, options);
+  }, [cancel, stop]);
+  var startPendingDrag = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useCallback)(function startPendingDrag(actions, point) {
+    !(phaseRef.current.type === 'IDLE') ?  true ? invariant(false, 'Expected to move from IDLE to PENDING drag') : 0 : void 0;
+    phaseRef.current = {
+      type: 'PENDING',
+      point: point,
+      actions: actions
+    };
+    bindCapturingEvents();
+  }, [bindCapturingEvents]);
+  useIsomorphicLayoutEffect(function mount() {
+    listenForCapture();
+    return function unmount() {
+      unbindEventsRef.current();
+    };
+  }, [listenForCapture]);
+}
+
+var _scrollJumpKeys;
+
+function noop$1() {}
+
+var scrollJumpKeys = (_scrollJumpKeys = {}, _scrollJumpKeys[pageDown] = true, _scrollJumpKeys[pageUp] = true, _scrollJumpKeys[home] = true, _scrollJumpKeys[end] = true, _scrollJumpKeys);
+
+function getDraggingBindings(actions, stop) {
+  function cancel() {
+    stop();
+    actions.cancel();
+  }
+
+  function drop() {
+    stop();
+    actions.drop();
+  }
+
+  return [{
+    eventName: 'keydown',
+    fn: function fn(event) {
+      if (event.keyCode === escape) {
+        event.preventDefault();
+        cancel();
+        return;
+      }
+
+      if (event.keyCode === space) {
+        event.preventDefault();
+        drop();
+        return;
+      }
+
+      if (event.keyCode === arrowDown) {
+        event.preventDefault();
+        actions.moveDown();
+        return;
+      }
+
+      if (event.keyCode === arrowUp) {
+        event.preventDefault();
+        actions.moveUp();
+        return;
+      }
+
+      if (event.keyCode === arrowRight) {
+        event.preventDefault();
+        actions.moveRight();
+        return;
+      }
+
+      if (event.keyCode === arrowLeft) {
+        event.preventDefault();
+        actions.moveLeft();
+        return;
+      }
+
+      if (scrollJumpKeys[event.keyCode]) {
+        event.preventDefault();
+        return;
+      }
+
+      preventStandardKeyEvents(event);
+    }
+  }, {
+    eventName: 'mousedown',
+    fn: cancel
+  }, {
+    eventName: 'mouseup',
+    fn: cancel
+  }, {
+    eventName: 'click',
+    fn: cancel
+  }, {
+    eventName: 'touchstart',
+    fn: cancel
+  }, {
+    eventName: 'resize',
+    fn: cancel
+  }, {
+    eventName: 'wheel',
+    fn: cancel,
+    options: {
+      passive: true
+    }
+  }, {
+    eventName: supportedEventName,
+    fn: cancel
+  }];
+}
+
+function useKeyboardSensor(api) {
+  var unbindEventsRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(noop$1);
+  var startCaptureBinding = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useMemo)(function () {
+    return {
+      eventName: 'keydown',
+      fn: function onKeyDown(event) {
+        if (event.defaultPrevented) {
+          return;
+        }
+
+        if (event.keyCode !== space) {
+          return;
+        }
+
+        var draggableId = api.findClosestDraggableId(event);
+
+        if (!draggableId) {
+          return;
+        }
+
+        var preDrag = api.tryGetLock(draggableId, stop, {
+          sourceEvent: event
+        });
+
+        if (!preDrag) {
+          return;
+        }
+
+        event.preventDefault();
+        var isCapturing = true;
+        var actions = preDrag.snapLift();
+        unbindEventsRef.current();
+
+        function stop() {
+          !isCapturing ?  true ? invariant(false, 'Cannot stop capturing a keyboard drag when not capturing') : 0 : void 0;
+          isCapturing = false;
+          unbindEventsRef.current();
+          listenForCapture();
+        }
+
+        unbindEventsRef.current = bindEvents(window, getDraggingBindings(actions, stop), {
+          capture: true,
+          passive: false
+        });
+      }
+    };
+  }, [api]);
+  var listenForCapture = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useCallback)(function tryStartCapture() {
+    var options = {
+      passive: false,
+      capture: true
+    };
+    unbindEventsRef.current = bindEvents(window, [startCaptureBinding], options);
+  }, [startCaptureBinding]);
+  useIsomorphicLayoutEffect(function mount() {
+    listenForCapture();
+    return function unmount() {
+      unbindEventsRef.current();
+    };
+  }, [listenForCapture]);
+}
+
+var idle$2 = {
+  type: 'IDLE'
+};
+var timeForLongPress = 120;
+var forcePressThreshold = 0.15;
+
+function getWindowBindings(_ref) {
+  var cancel = _ref.cancel,
+      getPhase = _ref.getPhase;
+  return [{
+    eventName: 'orientationchange',
+    fn: cancel
+  }, {
+    eventName: 'resize',
+    fn: cancel
+  }, {
+    eventName: 'contextmenu',
+    fn: function fn(event) {
+      event.preventDefault();
+    }
+  }, {
+    eventName: 'keydown',
+    fn: function fn(event) {
+      if (getPhase().type !== 'DRAGGING') {
+        cancel();
+        return;
+      }
+
+      if (event.keyCode === escape) {
+        event.preventDefault();
+      }
+
+      cancel();
+    }
+  }, {
+    eventName: supportedEventName,
+    fn: cancel
+  }];
+}
+
+function getHandleBindings(_ref2) {
+  var cancel = _ref2.cancel,
+      completed = _ref2.completed,
+      getPhase = _ref2.getPhase;
+  return [{
+    eventName: 'touchmove',
+    options: {
+      capture: false
+    },
+    fn: function fn(event) {
+      var phase = getPhase();
+
+      if (phase.type !== 'DRAGGING') {
+        cancel();
+        return;
+      }
+
+      phase.hasMoved = true;
+      var _event$touches$ = event.touches[0],
+          clientX = _event$touches$.clientX,
+          clientY = _event$touches$.clientY;
+      var point = {
+        x: clientX,
+        y: clientY
+      };
+      event.preventDefault();
+      phase.actions.move(point);
+    }
+  }, {
+    eventName: 'touchend',
+    fn: function fn(event) {
+      var phase = getPhase();
+
+      if (phase.type !== 'DRAGGING') {
+        cancel();
+        return;
+      }
+
+      event.preventDefault();
+      phase.actions.drop({
+        shouldBlockNextClick: true
+      });
+      completed();
+    }
+  }, {
+    eventName: 'touchcancel',
+    fn: function fn(event) {
+      if (getPhase().type !== 'DRAGGING') {
+        cancel();
+        return;
+      }
+
+      event.preventDefault();
+      cancel();
+    }
+  }, {
+    eventName: 'touchforcechange',
+    fn: function fn(event) {
+      var phase = getPhase();
+      !(phase.type !== 'IDLE') ?  true ? invariant(false) : 0 : void 0;
+      var touch = event.touches[0];
+
+      if (!touch) {
+        return;
+      }
+
+      var isForcePress = touch.force >= forcePressThreshold;
+
+      if (!isForcePress) {
+        return;
+      }
+
+      var shouldRespect = phase.actions.shouldRespectForcePress();
+
+      if (phase.type === 'PENDING') {
+        if (shouldRespect) {
+          cancel();
+        }
+
+        return;
+      }
+
+      if (shouldRespect) {
+        if (phase.hasMoved) {
+          event.preventDefault();
+          return;
+        }
+
+        cancel();
+        return;
+      }
+
+      event.preventDefault();
+    }
+  }, {
+    eventName: supportedEventName,
+    fn: cancel
+  }];
+}
+
+function useTouchSensor(api) {
+  var phaseRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(idle$2);
+  var unbindEventsRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(noop);
+  var getPhase = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useCallback)(function getPhase() {
+    return phaseRef.current;
+  }, []);
+  var setPhase = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useCallback)(function setPhase(phase) {
+    phaseRef.current = phase;
+  }, []);
+  var startCaptureBinding = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useMemo)(function () {
+    return {
+      eventName: 'touchstart',
+      fn: function onTouchStart(event) {
+        if (event.defaultPrevented) {
+          return;
+        }
+
+        var draggableId = api.findClosestDraggableId(event);
+
+        if (!draggableId) {
+          return;
+        }
+
+        var actions = api.tryGetLock(draggableId, stop, {
+          sourceEvent: event
+        });
+
+        if (!actions) {
+          return;
+        }
+
+        var touch = event.touches[0];
+        var clientX = touch.clientX,
+            clientY = touch.clientY;
+        var point = {
+          x: clientX,
+          y: clientY
+        };
+        unbindEventsRef.current();
+        startPendingDrag(actions, point);
+      }
+    };
+  }, [api]);
+  var listenForCapture = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useCallback)(function listenForCapture() {
+    var options = {
+      capture: true,
+      passive: false
+    };
+    unbindEventsRef.current = bindEvents(window, [startCaptureBinding], options);
+  }, [startCaptureBinding]);
+  var stop = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useCallback)(function () {
+    var current = phaseRef.current;
+
+    if (current.type === 'IDLE') {
+      return;
+    }
+
+    if (current.type === 'PENDING') {
+      clearTimeout(current.longPressTimerId);
+    }
+
+    setPhase(idle$2);
+    unbindEventsRef.current();
+    listenForCapture();
+  }, [listenForCapture, setPhase]);
+  var cancel = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useCallback)(function () {
+    var phase = phaseRef.current;
+    stop();
+
+    if (phase.type === 'DRAGGING') {
+      phase.actions.cancel({
+        shouldBlockNextClick: true
+      });
+    }
+
+    if (phase.type === 'PENDING') {
+      phase.actions.abort();
+    }
+  }, [stop]);
+  var bindCapturingEvents = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useCallback)(function bindCapturingEvents() {
+    var options = {
+      capture: true,
+      passive: false
+    };
+    var args = {
+      cancel: cancel,
+      completed: stop,
+      getPhase: getPhase
+    };
+    var unbindTarget = bindEvents(window, getHandleBindings(args), options);
+    var unbindWindow = bindEvents(window, getWindowBindings(args), options);
+
+    unbindEventsRef.current = function unbindAll() {
+      unbindTarget();
+      unbindWindow();
+    };
+  }, [cancel, getPhase, stop]);
+  var startDragging = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useCallback)(function startDragging() {
+    var phase = getPhase();
+    !(phase.type === 'PENDING') ?  true ? invariant(false, "Cannot start dragging from phase " + phase.type) : 0 : void 0;
+    var actions = phase.actions.fluidLift(phase.point);
+    setPhase({
+      type: 'DRAGGING',
+      actions: actions,
+      hasMoved: false
+    });
+  }, [getPhase, setPhase]);
+  var startPendingDrag = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useCallback)(function startPendingDrag(actions, point) {
+    !(getPhase().type === 'IDLE') ?  true ? invariant(false, 'Expected to move from IDLE to PENDING drag') : 0 : void 0;
+    var longPressTimerId = setTimeout(startDragging, timeForLongPress);
+    setPhase({
+      type: 'PENDING',
+      point: point,
+      actions: actions,
+      longPressTimerId: longPressTimerId
+    });
+    bindCapturingEvents();
+  }, [bindCapturingEvents, getPhase, setPhase, startDragging]);
+  useIsomorphicLayoutEffect(function mount() {
+    listenForCapture();
+    return function unmount() {
+      unbindEventsRef.current();
+      var phase = getPhase();
+
+      if (phase.type === 'PENDING') {
+        clearTimeout(phase.longPressTimerId);
+        setPhase(idle$2);
+      }
+    };
+  }, [getPhase, listenForCapture, setPhase]);
+  useIsomorphicLayoutEffect(function webkitHack() {
+    var unbind = bindEvents(window, [{
+      eventName: 'touchmove',
+      fn: function fn() {},
+      options: {
+        capture: false,
+        passive: false
+      }
+    }]);
+    return unbind;
+  }, []);
+}
+
+function useValidateSensorHooks(sensorHooks) {
+  useDev(function () {
+    var previousRef = usePrevious(sensorHooks);
+    useDevSetupWarning(function () {
+      !(previousRef.current.length === sensorHooks.length) ?  true ? invariant(false, 'Cannot change the amount of sensor hooks after mounting') : 0 : void 0;
+    });
+  });
+}
+
+var interactiveTagNames = {
+  input: true,
+  button: true,
+  textarea: true,
+  select: true,
+  option: true,
+  optgroup: true,
+  video: true,
+  audio: true
+};
+
+function isAnInteractiveElement(parent, current) {
+  if (current == null) {
+    return false;
+  }
+
+  var hasAnInteractiveTag = Boolean(interactiveTagNames[current.tagName.toLowerCase()]);
+
+  if (hasAnInteractiveTag) {
+    return true;
+  }
+
+  var attribute = current.getAttribute('contenteditable');
+
+  if (attribute === 'true' || attribute === '') {
+    return true;
+  }
+
+  if (current === parent) {
+    return false;
+  }
+
+  return isAnInteractiveElement(parent, current.parentElement);
+}
+
+function isEventInInteractiveElement(draggable, event) {
+  var target = event.target;
+
+  if (!isHtmlElement(target)) {
+    return false;
+  }
+
+  return isAnInteractiveElement(draggable, target);
+}
+
+var getBorderBoxCenterPosition = (function (el) {
+  return (0,css_box_model__WEBPACK_IMPORTED_MODULE_5__.getRect)(el.getBoundingClientRect()).center;
+});
+
+function isElement(el) {
+  return el instanceof getWindowFromEl(el).Element;
+}
+
+var supportedMatchesName = function () {
+  var base = 'matches';
+
+  if (typeof document === 'undefined') {
+    return base;
+  }
+
+  var candidates = [base, 'msMatchesSelector', 'webkitMatchesSelector'];
+  var value = find(candidates, function (name) {
+    return name in Element.prototype;
+  });
+  return value || base;
+}();
+
+function closestPonyfill(el, selector) {
+  if (el == null) {
+    return null;
+  }
+
+  if (el[supportedMatchesName](selector)) {
+    return el;
+  }
+
+  return closestPonyfill(el.parentElement, selector);
+}
+
+function closest$1(el, selector) {
+  if (el.closest) {
+    return el.closest(selector);
+  }
+
+  return closestPonyfill(el, selector);
+}
+
+function getSelector(contextId) {
+  return "[" + dragHandle.contextId + "=\"" + contextId + "\"]";
+}
+
+function findClosestDragHandleFromEvent(contextId, event) {
+  var target = event.target;
+
+  if (!isElement(target)) {
+     true ? warning('event.target must be a Element') : 0;
+    return null;
+  }
+
+  var selector = getSelector(contextId);
+  var handle = closest$1(target, selector);
+
+  if (!handle) {
+    return null;
+  }
+
+  if (!isHtmlElement(handle)) {
+     true ? warning('drag handle must be a HTMLElement') : 0;
+    return null;
+  }
+
+  return handle;
+}
+
+function tryGetClosestDraggableIdFromEvent(contextId, event) {
+  var handle = findClosestDragHandleFromEvent(contextId, event);
+
+  if (!handle) {
+    return null;
+  }
+
+  return handle.getAttribute(dragHandle.draggableId);
+}
+
+function findDraggable(contextId, draggableId) {
+  var selector = "[" + draggable.contextId + "=\"" + contextId + "\"]";
+  var possible = toArray(document.querySelectorAll(selector));
+  var draggable$1 = find(possible, function (el) {
+    return el.getAttribute(draggable.id) === draggableId;
+  });
+
+  if (!draggable$1) {
+    return null;
+  }
+
+  if (!isHtmlElement(draggable$1)) {
+     true ? warning('Draggable element is not a HTMLElement') : 0;
+    return null;
+  }
+
+  return draggable$1;
+}
+
+function preventDefault(event) {
+  event.preventDefault();
+}
+
+function _isActive(_ref) {
+  var expected = _ref.expected,
+      phase = _ref.phase,
+      isLockActive = _ref.isLockActive,
+      shouldWarn = _ref.shouldWarn;
+
+  if (!isLockActive()) {
+    if (shouldWarn) {
+       true ? warning("\n        Cannot perform action.\n        The sensor no longer has an action lock.\n\n        Tips:\n\n        - Throw away your action handlers when forceStop() is called\n        - Check actions.isActive() if you really need to\n      ") : 0;
+    }
+
+    return false;
+  }
+
+  if (expected !== phase) {
+    if (shouldWarn) {
+       true ? warning("\n        Cannot perform action.\n        The actions you used belong to an outdated phase\n\n        Current phase: " + expected + "\n        You called an action from outdated phase: " + phase + "\n\n        Tips:\n\n        - Do not use preDragActions actions after calling preDragActions.lift()\n      ") : 0;
+    }
+
+    return false;
+  }
+
+  return true;
+}
+
+function canStart(_ref2) {
+  var lockAPI = _ref2.lockAPI,
+      store = _ref2.store,
+      registry = _ref2.registry,
+      draggableId = _ref2.draggableId;
+
+  if (lockAPI.isClaimed()) {
+    return false;
+  }
+
+  var entry = registry.draggable.findById(draggableId);
+
+  if (!entry) {
+     true ? warning("Unable to find draggable with id: " + draggableId) : 0;
+    return false;
+  }
+
+  if (!entry.options.isEnabled) {
+    return false;
+  }
+
+  if (!canStartDrag(store.getState(), draggableId)) {
+    return false;
+  }
+
+  return true;
+}
+
+function tryStart(_ref3) {
+  var lockAPI = _ref3.lockAPI,
+      contextId = _ref3.contextId,
+      store = _ref3.store,
+      registry = _ref3.registry,
+      draggableId = _ref3.draggableId,
+      forceSensorStop = _ref3.forceSensorStop,
+      sourceEvent = _ref3.sourceEvent;
+  var shouldStart = canStart({
+    lockAPI: lockAPI,
+    store: store,
+    registry: registry,
+    draggableId: draggableId
+  });
+
+  if (!shouldStart) {
+    return null;
+  }
+
+  var entry = registry.draggable.getById(draggableId);
+  var el = findDraggable(contextId, entry.descriptor.id);
+
+  if (!el) {
+     true ? warning("Unable to find draggable element with id: " + draggableId) : 0;
+    return null;
+  }
+
+  if (sourceEvent && !entry.options.canDragInteractiveElements && isEventInInteractiveElement(el, sourceEvent)) {
+    return null;
+  }
+
+  var lock = lockAPI.claim(forceSensorStop || noop);
+  var phase = 'PRE_DRAG';
+
+  function getShouldRespectForcePress() {
+    return entry.options.shouldRespectForcePress;
+  }
+
+  function isLockActive() {
+    return lockAPI.isActive(lock);
+  }
+
+  function tryDispatch(expected, getAction) {
+    if (_isActive({
+      expected: expected,
+      phase: phase,
+      isLockActive: isLockActive,
+      shouldWarn: true
+    })) {
+      store.dispatch(getAction());
+    }
+  }
+
+  var tryDispatchWhenDragging = tryDispatch.bind(null, 'DRAGGING');
+
+  function lift$1(args) {
+    function completed() {
+      lockAPI.release();
+      phase = 'COMPLETED';
+    }
+
+    if (phase !== 'PRE_DRAG') {
+      completed();
+      !(phase === 'PRE_DRAG') ?  true ? invariant(false, "Cannot lift in phase " + phase) : 0 : void 0;
+    }
+
+    store.dispatch(lift(args.liftActionArgs));
+    phase = 'DRAGGING';
+
+    function finish(reason, options) {
+      if (options === void 0) {
+        options = {
+          shouldBlockNextClick: false
+        };
+      }
+
+      args.cleanup();
+
+      if (options.shouldBlockNextClick) {
+        var unbind = bindEvents(window, [{
+          eventName: 'click',
+          fn: preventDefault,
+          options: {
+            once: true,
+            passive: false,
+            capture: true
+          }
+        }]);
+        setTimeout(unbind);
+      }
+
+      completed();
+      store.dispatch(drop({
+        reason: reason
+      }));
+    }
+
+    return (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({
+      isActive: function isActive() {
+        return _isActive({
+          expected: 'DRAGGING',
+          phase: phase,
+          isLockActive: isLockActive,
+          shouldWarn: false
+        });
+      },
+      shouldRespectForcePress: getShouldRespectForcePress,
+      drop: function drop(options) {
+        return finish('DROP', options);
+      },
+      cancel: function cancel(options) {
+        return finish('CANCEL', options);
+      }
+    }, args.actions);
+  }
+
+  function fluidLift(clientSelection) {
+    var move$1 = (0,raf_schd__WEBPACK_IMPORTED_MODULE_7__["default"])(function (client) {
+      tryDispatchWhenDragging(function () {
+        return move({
+          client: client
+        });
+      });
+    });
+    var api = lift$1({
+      liftActionArgs: {
+        id: draggableId,
+        clientSelection: clientSelection,
+        movementMode: 'FLUID'
+      },
+      cleanup: function cleanup() {
+        return move$1.cancel();
+      },
+      actions: {
+        move: move$1
+      }
+    });
+    return (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, api, {
+      move: move$1
+    });
+  }
+
+  function snapLift() {
+    var actions = {
+      moveUp: function moveUp$1() {
+        return tryDispatchWhenDragging(moveUp);
+      },
+      moveRight: function moveRight$1() {
+        return tryDispatchWhenDragging(moveRight);
+      },
+      moveDown: function moveDown$1() {
+        return tryDispatchWhenDragging(moveDown);
+      },
+      moveLeft: function moveLeft$1() {
+        return tryDispatchWhenDragging(moveLeft);
+      }
+    };
+    return lift$1({
+      liftActionArgs: {
+        id: draggableId,
+        clientSelection: getBorderBoxCenterPosition(el),
+        movementMode: 'SNAP'
+      },
+      cleanup: noop,
+      actions: actions
+    });
+  }
+
+  function abortPreDrag() {
+    var shouldRelease = _isActive({
+      expected: 'PRE_DRAG',
+      phase: phase,
+      isLockActive: isLockActive,
+      shouldWarn: true
+    });
+
+    if (shouldRelease) {
+      lockAPI.release();
+    }
+  }
+
+  var preDrag = {
+    isActive: function isActive() {
+      return _isActive({
+        expected: 'PRE_DRAG',
+        phase: phase,
+        isLockActive: isLockActive,
+        shouldWarn: false
+      });
+    },
+    shouldRespectForcePress: getShouldRespectForcePress,
+    fluidLift: fluidLift,
+    snapLift: snapLift,
+    abort: abortPreDrag
+  };
+  return preDrag;
+}
+
+var defaultSensors = [useMouseSensor, useKeyboardSensor, useTouchSensor];
+function useSensorMarshal(_ref4) {
+  var contextId = _ref4.contextId,
+      store = _ref4.store,
+      registry = _ref4.registry,
+      customSensors = _ref4.customSensors,
+      enableDefaultSensors = _ref4.enableDefaultSensors;
+  var useSensors = [].concat(enableDefaultSensors ? defaultSensors : [], customSensors || []);
+  var lockAPI = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(function () {
+    return create();
+  })[0];
+  var tryAbandonLock = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useCallback)(function tryAbandonLock(previous, current) {
+    if (previous.isDragging && !current.isDragging) {
+      lockAPI.tryAbandon();
+    }
+  }, [lockAPI]);
+  useIsomorphicLayoutEffect(function listenToStore() {
+    var previous = store.getState();
+    var unsubscribe = store.subscribe(function () {
+      var current = store.getState();
+      tryAbandonLock(previous, current);
+      previous = current;
+    });
+    return unsubscribe;
+  }, [lockAPI, store, tryAbandonLock]);
+  useIsomorphicLayoutEffect(function () {
+    return lockAPI.tryAbandon;
+  }, [lockAPI.tryAbandon]);
+  var canGetLock = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useCallback)(function (draggableId) {
+    return canStart({
+      lockAPI: lockAPI,
+      registry: registry,
+      store: store,
+      draggableId: draggableId
+    });
+  }, [lockAPI, registry, store]);
+  var tryGetLock = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useCallback)(function (draggableId, forceStop, options) {
+    return tryStart({
+      lockAPI: lockAPI,
+      registry: registry,
+      contextId: contextId,
+      store: store,
+      draggableId: draggableId,
+      forceSensorStop: forceStop,
+      sourceEvent: options && options.sourceEvent ? options.sourceEvent : null
+    });
+  }, [contextId, lockAPI, registry, store]);
+  var findClosestDraggableId = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useCallback)(function (event) {
+    return tryGetClosestDraggableIdFromEvent(contextId, event);
+  }, [contextId]);
+  var findOptionsForDraggable = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useCallback)(function (id) {
+    var entry = registry.draggable.findById(id);
+    return entry ? entry.options : null;
+  }, [registry.draggable]);
+  var tryReleaseLock = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useCallback)(function tryReleaseLock() {
+    if (!lockAPI.isClaimed()) {
+      return;
+    }
+
+    lockAPI.tryAbandon();
+
+    if (store.getState().phase !== 'IDLE') {
+      store.dispatch(flush());
+    }
+  }, [lockAPI, store]);
+  var isLockClaimed = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useCallback)(lockAPI.isClaimed, [lockAPI]);
+  var api = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useMemo)(function () {
+    return {
+      canGetLock: canGetLock,
+      tryGetLock: tryGetLock,
+      findClosestDraggableId: findClosestDraggableId,
+      findOptionsForDraggable: findOptionsForDraggable,
+      tryReleaseLock: tryReleaseLock,
+      isLockClaimed: isLockClaimed
+    };
+  }, [canGetLock, tryGetLock, findClosestDraggableId, findOptionsForDraggable, tryReleaseLock, isLockClaimed]);
+  useValidateSensorHooks(useSensors);
+
+  for (var i = 0; i < useSensors.length; i++) {
+    useSensors[i](api);
+  }
+}
+
+var createResponders = function createResponders(props) {
+  return {
+    onBeforeCapture: props.onBeforeCapture,
+    onBeforeDragStart: props.onBeforeDragStart,
+    onDragStart: props.onDragStart,
+    onDragEnd: props.onDragEnd,
+    onDragUpdate: props.onDragUpdate
+  };
+};
+
+function getStore(lazyRef) {
+  !lazyRef.current ?  true ? invariant(false, 'Could not find store from lazy ref') : 0 : void 0;
+  return lazyRef.current;
+}
+
+function App(props) {
+  var contextId = props.contextId,
+      setCallbacks = props.setCallbacks,
+      sensors = props.sensors,
+      nonce = props.nonce,
+      dragHandleUsageInstructions = props.dragHandleUsageInstructions;
+  var lazyStoreRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+  useStartupValidation();
+  var lastPropsRef = usePrevious(props);
+  var getResponders = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useCallback)(function () {
+    return createResponders(lastPropsRef.current);
+  }, [lastPropsRef]);
+  var announce = useAnnouncer(contextId);
+  var dragHandleUsageInstructionsId = useHiddenTextElement({
+    contextId: contextId,
+    text: dragHandleUsageInstructions
+  });
+  var styleMarshal = useStyleMarshal(contextId, nonce);
+  var lazyDispatch = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useCallback)(function (action) {
+    getStore(lazyStoreRef).dispatch(action);
+  }, []);
+  var marshalCallbacks = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useMemo)(function () {
+    return (0,redux__WEBPACK_IMPORTED_MODULE_8__.bindActionCreators)({
+      publishWhileDragging: publishWhileDragging,
+      updateDroppableScroll: updateDroppableScroll,
+      updateDroppableIsEnabled: updateDroppableIsEnabled,
+      updateDroppableIsCombineEnabled: updateDroppableIsCombineEnabled,
+      collectionStarting: collectionStarting
+    }, lazyDispatch);
+  }, [lazyDispatch]);
+  var registry = useRegistry();
+  var dimensionMarshal = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useMemo)(function () {
+    return createDimensionMarshal(registry, marshalCallbacks);
+  }, [registry, marshalCallbacks]);
+  var autoScroller = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useMemo)(function () {
+    return createAutoScroller((0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({
+      scrollWindow: scrollWindow,
+      scrollDroppable: dimensionMarshal.scrollDroppable
+    }, (0,redux__WEBPACK_IMPORTED_MODULE_8__.bindActionCreators)({
+      move: move
+    }, lazyDispatch)));
+  }, [dimensionMarshal.scrollDroppable, lazyDispatch]);
+  var focusMarshal = useFocusMarshal(contextId);
+  var store = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useMemo)(function () {
+    return createStore({
+      announce: announce,
+      autoScroller: autoScroller,
+      dimensionMarshal: dimensionMarshal,
+      focusMarshal: focusMarshal,
+      getResponders: getResponders,
+      styleMarshal: styleMarshal
+    });
+  }, [announce, autoScroller, dimensionMarshal, focusMarshal, getResponders, styleMarshal]);
+
+  if (true) {
+    if (lazyStoreRef.current && lazyStoreRef.current !== store) {
+       true ? warning('unexpected store change') : 0;
+    }
+  }
+
+  lazyStoreRef.current = store;
+  var tryResetStore = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useCallback)(function () {
+    var current = getStore(lazyStoreRef);
+    var state = current.getState();
+
+    if (state.phase !== 'IDLE') {
+      current.dispatch(flush());
+    }
+  }, []);
+  var isDragging = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useCallback)(function () {
+    var state = getStore(lazyStoreRef).getState();
+    return state.isDragging || state.phase === 'DROP_ANIMATING';
+  }, []);
+  var appCallbacks = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useMemo)(function () {
+    return {
+      isDragging: isDragging,
+      tryAbort: tryResetStore
+    };
+  }, [isDragging, tryResetStore]);
+  setCallbacks(appCallbacks);
+  var getCanLift = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useCallback)(function (id) {
+    return canStartDrag(getStore(lazyStoreRef).getState(), id);
+  }, []);
+  var getIsMovementAllowed = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useCallback)(function () {
+    return isMovementAllowed(getStore(lazyStoreRef).getState());
+  }, []);
+  var appContext = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useMemo)(function () {
+    return {
+      marshal: dimensionMarshal,
+      focus: focusMarshal,
+      contextId: contextId,
+      canLift: getCanLift,
+      isMovementAllowed: getIsMovementAllowed,
+      dragHandleUsageInstructionsId: dragHandleUsageInstructionsId,
+      registry: registry
+    };
+  }, [contextId, dimensionMarshal, dragHandleUsageInstructionsId, focusMarshal, getCanLift, getIsMovementAllowed, registry]);
+  useSensorMarshal({
+    contextId: contextId,
+    store: store,
+    registry: registry,
+    customSensors: sensors,
+    enableDefaultSensors: props.enableDefaultSensors !== false
+  });
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    return tryResetStore;
+  }, [tryResetStore]);
+  return react__WEBPACK_IMPORTED_MODULE_0___default().createElement(AppContext.Provider, {
+    value: appContext
+  }, react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_redux__WEBPACK_IMPORTED_MODULE_3__.Provider, {
+    context: StoreContext,
+    store: store
+  }, props.children));
+}
+
+var count$1 = 0;
+function reset$1() {
+  count$1 = 0;
+}
+function useInstanceCount() {
+  return (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useMemo)(function () {
+    return "" + count$1++;
+  }, []);
+}
+
+function resetServerContext() {
+  reset$1();
+  reset();
+}
+function DragDropContext(props) {
+  var contextId = useInstanceCount();
+  var dragHandleUsageInstructions = props.dragHandleUsageInstructions || preset.dragHandleUsageInstructions;
+  return react__WEBPACK_IMPORTED_MODULE_0___default().createElement(ErrorBoundary, null, function (setCallbacks) {
+    return react__WEBPACK_IMPORTED_MODULE_0___default().createElement(App, {
+      nonce: props.nonce,
+      contextId: contextId,
+      setCallbacks: setCallbacks,
+      dragHandleUsageInstructions: dragHandleUsageInstructions,
+      enableDefaultSensors: props.enableDefaultSensors,
+      sensors: props.sensors,
+      onBeforeCapture: props.onBeforeCapture,
+      onBeforeDragStart: props.onBeforeDragStart,
+      onDragStart: props.onDragStart,
+      onDragUpdate: props.onDragUpdate,
+      onDragEnd: props.onDragEnd
+    }, props.children);
+  });
+}
+
+var isEqual$1 = function isEqual(base) {
+  return function (value) {
+    return base === value;
+  };
+};
+
+var isScroll = isEqual$1('scroll');
+var isAuto = isEqual$1('auto');
+var isVisible$1 = isEqual$1('visible');
+
+var isEither = function isEither(overflow, fn) {
+  return fn(overflow.overflowX) || fn(overflow.overflowY);
+};
+
+var isBoth = function isBoth(overflow, fn) {
+  return fn(overflow.overflowX) && fn(overflow.overflowY);
+};
+
+var isElementScrollable = function isElementScrollable(el) {
+  var style = window.getComputedStyle(el);
+  var overflow = {
+    overflowX: style.overflowX,
+    overflowY: style.overflowY
+  };
+  return isEither(overflow, isScroll) || isEither(overflow, isAuto);
+};
+
+var isBodyScrollable = function isBodyScrollable() {
+  if (false) // removed by dead control flow
+{}
+
+  var body = getBodyElement();
+  var html = document.documentElement;
+  !html ?  true ? invariant(false) : 0 : void 0;
+
+  if (!isElementScrollable(body)) {
+    return false;
+  }
+
+  var htmlStyle = window.getComputedStyle(html);
+  var htmlOverflow = {
+    overflowX: htmlStyle.overflowX,
+    overflowY: htmlStyle.overflowY
+  };
+
+  if (isBoth(htmlOverflow, isVisible$1)) {
+    return false;
+  }
+
+   true ? warning("\n    We have detected that your <body> element might be a scroll container.\n    We have found no reliable way of detecting whether the <body> element is a scroll container.\n    Under most circumstances a <body> scroll bar will be on the <html> element (document.documentElement)\n\n    Because we cannot determine if the <body> is a scroll container, and generally it is not one,\n    we will be treating the <body> as *not* a scroll container\n\n    More information: https://github.com/atlassian/react-beautiful-dnd/blob/master/docs/guides/how-we-detect-scroll-containers.md\n  ") : 0;
+  return false;
+};
+
+var getClosestScrollable = function getClosestScrollable(el) {
+  if (el == null) {
+    return null;
+  }
+
+  if (el === document.body) {
+    return isBodyScrollable() ? el : null;
+  }
+
+  if (el === document.documentElement) {
+    return null;
+  }
+
+  if (!isElementScrollable(el)) {
+    return getClosestScrollable(el.parentElement);
+  }
+
+  return el;
+};
+
+var checkForNestedScrollContainers = (function (scrollable) {
+  if (!scrollable) {
+    return;
+  }
+
+  var anotherScrollParent = getClosestScrollable(scrollable.parentElement);
+
+  if (!anotherScrollParent) {
+    return;
+  }
+
+   true ? warning("\n    Droppable: unsupported nested scroll container detected.\n    A Droppable can only have one scroll parent (which can be itself)\n    Nested scroll containers are currently not supported.\n\n    We hope to support nested scroll containers soon: https://github.com/atlassian/react-beautiful-dnd/issues/131\n  ") : 0;
+});
+
+var getScroll$1 = (function (el) {
+  return {
+    x: el.scrollLeft,
+    y: el.scrollTop
+  };
+});
+
+var getIsFixed = function getIsFixed(el) {
+  if (!el) {
+    return false;
+  }
+
+  var style = window.getComputedStyle(el);
+
+  if (style.position === 'fixed') {
+    return true;
+  }
+
+  return getIsFixed(el.parentElement);
+};
+
+var getEnv = (function (start) {
+  var closestScrollable = getClosestScrollable(start);
+  var isFixedOnPage = getIsFixed(start);
+  return {
+    closestScrollable: closestScrollable,
+    isFixedOnPage: isFixedOnPage
+  };
+});
+
+var getDroppableDimension = (function (_ref) {
+  var descriptor = _ref.descriptor,
+      isEnabled = _ref.isEnabled,
+      isCombineEnabled = _ref.isCombineEnabled,
+      isFixedOnPage = _ref.isFixedOnPage,
+      direction = _ref.direction,
+      client = _ref.client,
+      page = _ref.page,
+      closest = _ref.closest;
+
+  var frame = function () {
+    if (!closest) {
+      return null;
+    }
+
+    var scrollSize = closest.scrollSize,
+        frameClient = closest.client;
+    var maxScroll = getMaxScroll({
+      scrollHeight: scrollSize.scrollHeight,
+      scrollWidth: scrollSize.scrollWidth,
+      height: frameClient.paddingBox.height,
+      width: frameClient.paddingBox.width
+    });
+    return {
+      pageMarginBox: closest.page.marginBox,
+      frameClient: frameClient,
+      scrollSize: scrollSize,
+      shouldClipSubject: closest.shouldClipSubject,
+      scroll: {
+        initial: closest.scroll,
+        current: closest.scroll,
+        max: maxScroll,
+        diff: {
+          value: origin,
+          displacement: origin
+        }
+      }
+    };
+  }();
+
+  var axis = direction === 'vertical' ? vertical : horizontal;
+  var subject = getSubject({
+    page: page,
+    withPlaceholder: null,
+    axis: axis,
+    frame: frame
+  });
+  var dimension = {
+    descriptor: descriptor,
+    isCombineEnabled: isCombineEnabled,
+    isFixedOnPage: isFixedOnPage,
+    axis: axis,
+    isEnabled: isEnabled,
+    client: client,
+    page: page,
+    frame: frame,
+    subject: subject
+  };
+  return dimension;
+});
+
+var getClient = function getClient(targetRef, closestScrollable) {
+  var base = (0,css_box_model__WEBPACK_IMPORTED_MODULE_5__.getBox)(targetRef);
+
+  if (!closestScrollable) {
+    return base;
+  }
+
+  if (targetRef !== closestScrollable) {
+    return base;
+  }
+
+  var top = base.paddingBox.top - closestScrollable.scrollTop;
+  var left = base.paddingBox.left - closestScrollable.scrollLeft;
+  var bottom = top + closestScrollable.scrollHeight;
+  var right = left + closestScrollable.scrollWidth;
+  var paddingBox = {
+    top: top,
+    right: right,
+    bottom: bottom,
+    left: left
+  };
+  var borderBox = (0,css_box_model__WEBPACK_IMPORTED_MODULE_5__.expand)(paddingBox, base.border);
+  var client = (0,css_box_model__WEBPACK_IMPORTED_MODULE_5__.createBox)({
+    borderBox: borderBox,
+    margin: base.margin,
+    border: base.border,
+    padding: base.padding
+  });
+  return client;
+};
+
+var getDimension = (function (_ref) {
+  var ref = _ref.ref,
+      descriptor = _ref.descriptor,
+      env = _ref.env,
+      windowScroll = _ref.windowScroll,
+      direction = _ref.direction,
+      isDropDisabled = _ref.isDropDisabled,
+      isCombineEnabled = _ref.isCombineEnabled,
+      shouldClipSubject = _ref.shouldClipSubject;
+  var closestScrollable = env.closestScrollable;
+  var client = getClient(ref, closestScrollable);
+  var page = (0,css_box_model__WEBPACK_IMPORTED_MODULE_5__.withScroll)(client, windowScroll);
+
+  var closest = function () {
+    if (!closestScrollable) {
+      return null;
+    }
+
+    var frameClient = (0,css_box_model__WEBPACK_IMPORTED_MODULE_5__.getBox)(closestScrollable);
+    var scrollSize = {
+      scrollHeight: closestScrollable.scrollHeight,
+      scrollWidth: closestScrollable.scrollWidth
+    };
+    return {
+      client: frameClient,
+      page: (0,css_box_model__WEBPACK_IMPORTED_MODULE_5__.withScroll)(frameClient, windowScroll),
+      scroll: getScroll$1(closestScrollable),
+      scrollSize: scrollSize,
+      shouldClipSubject: shouldClipSubject
+    };
+  }();
+
+  var dimension = getDroppableDimension({
+    descriptor: descriptor,
+    isEnabled: !isDropDisabled,
+    isCombineEnabled: isCombineEnabled,
+    isFixedOnPage: env.isFixedOnPage,
+    direction: direction,
+    client: client,
+    page: page,
+    closest: closest
+  });
+  return dimension;
+});
+
+var immediate = {
+  passive: false
+};
+var delayed = {
+  passive: true
+};
+var getListenerOptions = (function (options) {
+  return options.shouldPublishImmediately ? immediate : delayed;
+});
+
+function useRequiredContext(Context) {
+  var result = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(Context);
+  !result ?  true ? invariant(false, 'Could not find required context') : 0 : void 0;
+  return result;
+}
+
+var getClosestScrollableFromDrag = function getClosestScrollableFromDrag(dragging) {
+  return dragging && dragging.env.closestScrollable || null;
+};
+
+function useDroppablePublisher(args) {
+  var whileDraggingRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+  var appContext = useRequiredContext(AppContext);
+  var uniqueId = useUniqueId('droppable');
+  var registry = appContext.registry,
+      marshal = appContext.marshal;
+  var previousRef = usePrevious(args);
+  var descriptor = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useMemo)(function () {
+    return {
+      id: args.droppableId,
+      type: args.type,
+      mode: args.mode
+    };
+  }, [args.droppableId, args.mode, args.type]);
+  var publishedDescriptorRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(descriptor);
+  var memoizedUpdateScroll = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useMemo)(function () {
+    return (0,memoize_one__WEBPACK_IMPORTED_MODULE_6__["default"])(function (x, y) {
+      !whileDraggingRef.current ?  true ? invariant(false, 'Can only update scroll when dragging') : 0 : void 0;
+      var scroll = {
+        x: x,
+        y: y
+      };
+      marshal.updateDroppableScroll(descriptor.id, scroll);
+    });
+  }, [descriptor.id, marshal]);
+  var getClosestScroll = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useCallback)(function () {
+    var dragging = whileDraggingRef.current;
+
+    if (!dragging || !dragging.env.closestScrollable) {
+      return origin;
+    }
+
+    return getScroll$1(dragging.env.closestScrollable);
+  }, []);
+  var updateScroll = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useCallback)(function () {
+    var scroll = getClosestScroll();
+    memoizedUpdateScroll(scroll.x, scroll.y);
+  }, [getClosestScroll, memoizedUpdateScroll]);
+  var scheduleScrollUpdate = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useMemo)(function () {
+    return (0,raf_schd__WEBPACK_IMPORTED_MODULE_7__["default"])(updateScroll);
+  }, [updateScroll]);
+  var onClosestScroll = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useCallback)(function () {
+    var dragging = whileDraggingRef.current;
+    var closest = getClosestScrollableFromDrag(dragging);
+    !(dragging && closest) ?  true ? invariant(false, 'Could not find scroll options while scrolling') : 0 : void 0;
+    var options = dragging.scrollOptions;
+
+    if (options.shouldPublishImmediately) {
+      updateScroll();
+      return;
+    }
+
+    scheduleScrollUpdate();
+  }, [scheduleScrollUpdate, updateScroll]);
+  var getDimensionAndWatchScroll = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useCallback)(function (windowScroll, options) {
+    !!whileDraggingRef.current ?  true ? invariant(false, 'Cannot collect a droppable while a drag is occurring') : 0 : void 0;
+    var previous = previousRef.current;
+    var ref = previous.getDroppableRef();
+    !ref ?  true ? invariant(false, 'Cannot collect without a droppable ref') : 0 : void 0;
+    var env = getEnv(ref);
+    var dragging = {
+      ref: ref,
+      descriptor: descriptor,
+      env: env,
+      scrollOptions: options
+    };
+    whileDraggingRef.current = dragging;
+    var dimension = getDimension({
+      ref: ref,
+      descriptor: descriptor,
+      env: env,
+      windowScroll: windowScroll,
+      direction: previous.direction,
+      isDropDisabled: previous.isDropDisabled,
+      isCombineEnabled: previous.isCombineEnabled,
+      shouldClipSubject: !previous.ignoreContainerClipping
+    });
+    var scrollable = env.closestScrollable;
+
+    if (scrollable) {
+      scrollable.setAttribute(scrollContainer.contextId, appContext.contextId);
+      scrollable.addEventListener('scroll', onClosestScroll, getListenerOptions(dragging.scrollOptions));
+
+      if (true) {
+        checkForNestedScrollContainers(scrollable);
+      }
+    }
+
+    return dimension;
+  }, [appContext.contextId, descriptor, onClosestScroll, previousRef]);
+  var getScrollWhileDragging = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useCallback)(function () {
+    var dragging = whileDraggingRef.current;
+    var closest = getClosestScrollableFromDrag(dragging);
+    !(dragging && closest) ?  true ? invariant(false, 'Can only recollect Droppable client for Droppables that have a scroll container') : 0 : void 0;
+    return getScroll$1(closest);
+  }, []);
+  var dragStopped = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useCallback)(function () {
+    var dragging = whileDraggingRef.current;
+    !dragging ?  true ? invariant(false, 'Cannot stop drag when no active drag') : 0 : void 0;
+    var closest = getClosestScrollableFromDrag(dragging);
+    whileDraggingRef.current = null;
+
+    if (!closest) {
+      return;
+    }
+
+    scheduleScrollUpdate.cancel();
+    closest.removeAttribute(scrollContainer.contextId);
+    closest.removeEventListener('scroll', onClosestScroll, getListenerOptions(dragging.scrollOptions));
+  }, [onClosestScroll, scheduleScrollUpdate]);
+  var scroll = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useCallback)(function (change) {
+    var dragging = whileDraggingRef.current;
+    !dragging ?  true ? invariant(false, 'Cannot scroll when there is no drag') : 0 : void 0;
+    var closest = getClosestScrollableFromDrag(dragging);
+    !closest ?  true ? invariant(false, 'Cannot scroll a droppable with no closest scrollable') : 0 : void 0;
+    closest.scrollTop += change.y;
+    closest.scrollLeft += change.x;
+  }, []);
+  var callbacks = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useMemo)(function () {
+    return {
+      getDimensionAndWatchScroll: getDimensionAndWatchScroll,
+      getScrollWhileDragging: getScrollWhileDragging,
+      dragStopped: dragStopped,
+      scroll: scroll
+    };
+  }, [dragStopped, getDimensionAndWatchScroll, getScrollWhileDragging, scroll]);
+  var entry = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useMemo)(function () {
+    return {
+      uniqueId: uniqueId,
+      descriptor: descriptor,
+      callbacks: callbacks
+    };
+  }, [callbacks, descriptor, uniqueId]);
+  useIsomorphicLayoutEffect(function () {
+    publishedDescriptorRef.current = entry.descriptor;
+    registry.droppable.register(entry);
+    return function () {
+      if (whileDraggingRef.current) {
+         true ? warning('Unsupported: changing the droppableId or type of a Droppable during a drag') : 0;
+        dragStopped();
+      }
+
+      registry.droppable.unregister(entry);
+    };
+  }, [callbacks, descriptor, dragStopped, entry, marshal, registry.droppable]);
+  useIsomorphicLayoutEffect(function () {
+    if (!whileDraggingRef.current) {
+      return;
+    }
+
+    marshal.updateDroppableIsEnabled(publishedDescriptorRef.current.id, !args.isDropDisabled);
+  }, [args.isDropDisabled, marshal]);
+  useIsomorphicLayoutEffect(function () {
+    if (!whileDraggingRef.current) {
+      return;
+    }
+
+    marshal.updateDroppableIsCombineEnabled(publishedDescriptorRef.current.id, args.isCombineEnabled);
+  }, [args.isCombineEnabled, marshal]);
+}
+
+function noop$2() {}
+
+var empty = {
+  width: 0,
+  height: 0,
+  margin: noSpacing
+};
+
+var getSize = function getSize(_ref) {
+  var isAnimatingOpenOnMount = _ref.isAnimatingOpenOnMount,
+      placeholder = _ref.placeholder,
+      animate = _ref.animate;
+
+  if (isAnimatingOpenOnMount) {
+    return empty;
+  }
+
+  if (animate === 'close') {
+    return empty;
+  }
+
+  return {
+    height: placeholder.client.borderBox.height,
+    width: placeholder.client.borderBox.width,
+    margin: placeholder.client.margin
+  };
+};
+
+var getStyle = function getStyle(_ref2) {
+  var isAnimatingOpenOnMount = _ref2.isAnimatingOpenOnMount,
+      placeholder = _ref2.placeholder,
+      animate = _ref2.animate;
+  var size = getSize({
+    isAnimatingOpenOnMount: isAnimatingOpenOnMount,
+    placeholder: placeholder,
+    animate: animate
+  });
+  return {
+    display: placeholder.display,
+    boxSizing: 'border-box',
+    width: size.width,
+    height: size.height,
+    marginTop: size.margin.top,
+    marginRight: size.margin.right,
+    marginBottom: size.margin.bottom,
+    marginLeft: size.margin.left,
+    flexShrink: '0',
+    flexGrow: '0',
+    pointerEvents: 'none',
+    transition: animate !== 'none' ? transitions.placeholder : null
+  };
+};
+
+function Placeholder(props) {
+  var animateOpenTimerRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+  var tryClearAnimateOpenTimer = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useCallback)(function () {
+    if (!animateOpenTimerRef.current) {
+      return;
+    }
+
+    clearTimeout(animateOpenTimerRef.current);
+    animateOpenTimerRef.current = null;
+  }, []);
+  var animate = props.animate,
+      onTransitionEnd = props.onTransitionEnd,
+      onClose = props.onClose,
+      contextId = props.contextId;
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(props.animate === 'open'),
+      isAnimatingOpenOnMount = _useState[0],
+      setIsAnimatingOpenOnMount = _useState[1];
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    if (!isAnimatingOpenOnMount) {
+      return noop$2;
+    }
+
+    if (animate !== 'open') {
+      tryClearAnimateOpenTimer();
+      setIsAnimatingOpenOnMount(false);
+      return noop$2;
+    }
+
+    if (animateOpenTimerRef.current) {
+      return noop$2;
+    }
+
+    animateOpenTimerRef.current = setTimeout(function () {
+      animateOpenTimerRef.current = null;
+      setIsAnimatingOpenOnMount(false);
+    });
+    return tryClearAnimateOpenTimer;
+  }, [animate, isAnimatingOpenOnMount, tryClearAnimateOpenTimer]);
+  var onSizeChangeEnd = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useCallback)(function (event) {
+    if (event.propertyName !== 'height') {
+      return;
+    }
+
+    onTransitionEnd();
+
+    if (animate === 'close') {
+      onClose();
+    }
+  }, [animate, onClose, onTransitionEnd]);
+  var style = getStyle({
+    isAnimatingOpenOnMount: isAnimatingOpenOnMount,
+    animate: props.animate,
+    placeholder: props.placeholder
+  });
+  return react__WEBPACK_IMPORTED_MODULE_0___default().createElement(props.placeholder.tagName, {
+    style: style,
+    'data-rbd-placeholder-context-id': contextId,
+    onTransitionEnd: onSizeChangeEnd,
+    ref: props.innerRef
+  });
+}
+
+var Placeholder$1 = react__WEBPACK_IMPORTED_MODULE_0___default().memo(Placeholder);
+
+var DroppableContext = react__WEBPACK_IMPORTED_MODULE_0___default().createContext(null);
+
+function checkIsValidInnerRef(el) {
+  !(el && isHtmlElement(el)) ?  true ? invariant(false, "\n    provided.innerRef has not been provided with a HTMLElement.\n\n    You can find a guide on using the innerRef callback functions at:\n    https://github.com/atlassian/react-beautiful-dnd/blob/master/docs/guides/using-inner-ref.md\n  ") : 0 : void 0;
+}
+
+function isBoolean(value) {
+  return typeof value === 'boolean';
+}
+
+function runChecks(args, checks) {
+  checks.forEach(function (check) {
+    return check(args);
+  });
+}
+
+var shared = [function required(_ref) {
+  var props = _ref.props;
+  !props.droppableId ?  true ? invariant(false, 'A Droppable requires a droppableId prop') : 0 : void 0;
+  !(typeof props.droppableId === 'string') ?  true ? invariant(false, "A Droppable requires a [string] droppableId. Provided: [" + typeof props.droppableId + "]") : 0 : void 0;
+}, function _boolean(_ref2) {
+  var props = _ref2.props;
+  !isBoolean(props.isDropDisabled) ?  true ? invariant(false, 'isDropDisabled must be a boolean') : 0 : void 0;
+  !isBoolean(props.isCombineEnabled) ?  true ? invariant(false, 'isCombineEnabled must be a boolean') : 0 : void 0;
+  !isBoolean(props.ignoreContainerClipping) ?  true ? invariant(false, 'ignoreContainerClipping must be a boolean') : 0 : void 0;
+}, function ref(_ref3) {
+  var getDroppableRef = _ref3.getDroppableRef;
+  checkIsValidInnerRef(getDroppableRef());
+}];
+var standard = [function placeholder(_ref4) {
+  var props = _ref4.props,
+      getPlaceholderRef = _ref4.getPlaceholderRef;
+
+  if (!props.placeholder) {
+    return;
+  }
+
+  var ref = getPlaceholderRef();
+
+  if (ref) {
+    return;
+  }
+
+   true ? warning("\n      Droppable setup issue [droppableId: \"" + props.droppableId + "\"]:\n      DroppableProvided > placeholder could not be found.\n\n      Please be sure to add the {provided.placeholder} React Node as a child of your Droppable.\n      More information: https://github.com/atlassian/react-beautiful-dnd/blob/master/docs/api/droppable.md\n    ") : 0;
+}];
+var virtual = [function hasClone(_ref5) {
+  var props = _ref5.props;
+  !props.renderClone ?  true ? invariant(false, 'Must provide a clone render function (renderClone) for virtual lists') : 0 : void 0;
+}, function hasNoPlaceholder(_ref6) {
+  var getPlaceholderRef = _ref6.getPlaceholderRef;
+  !!getPlaceholderRef() ?  true ? invariant(false, 'Expected virtual list to not have a placeholder') : 0 : void 0;
+}];
+function useValidation(args) {
+  useDevSetupWarning(function () {
+    runChecks(args, shared);
+
+    if (args.props.mode === 'standard') {
+      runChecks(args, standard);
+    }
+
+    if (args.props.mode === 'virtual') {
+      runChecks(args, virtual);
+    }
+  });
+}
+
+var AnimateInOut = function (_React$PureComponent) {
+  (0,_babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_1__["default"])(AnimateInOut, _React$PureComponent);
+
+  function AnimateInOut() {
+    var _this;
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = _React$PureComponent.call.apply(_React$PureComponent, [this].concat(args)) || this;
+    _this.state = {
+      isVisible: Boolean(_this.props.on),
+      data: _this.props.on,
+      animate: _this.props.shouldAnimate && _this.props.on ? 'open' : 'none'
+    };
+
+    _this.onClose = function () {
+      if (_this.state.animate !== 'close') {
+        return;
+      }
+
+      _this.setState({
+        isVisible: false
+      });
+    };
+
+    return _this;
+  }
+
+  AnimateInOut.getDerivedStateFromProps = function getDerivedStateFromProps(props, state) {
+    if (!props.shouldAnimate) {
+      return {
+        isVisible: Boolean(props.on),
+        data: props.on,
+        animate: 'none'
+      };
+    }
+
+    if (props.on) {
+      return {
+        isVisible: true,
+        data: props.on,
+        animate: 'open'
+      };
+    }
+
+    if (state.isVisible) {
+      return {
+        isVisible: true,
+        data: state.data,
+        animate: 'close'
+      };
+    }
+
+    return {
+      isVisible: false,
+      animate: 'close',
+      data: null
+    };
+  };
+
+  var _proto = AnimateInOut.prototype;
+
+  _proto.render = function render() {
+    if (!this.state.isVisible) {
+      return null;
+    }
+
+    var provided = {
+      onClose: this.onClose,
+      data: this.state.data,
+      animate: this.state.animate
+    };
+    return this.props.children(provided);
+  };
+
+  return AnimateInOut;
+}((react__WEBPACK_IMPORTED_MODULE_0___default().PureComponent));
+
+var zIndexOptions = {
+  dragging: 5000,
+  dropAnimating: 4500
+};
+
+var getDraggingTransition = function getDraggingTransition(shouldAnimateDragMovement, dropping) {
+  if (dropping) {
+    return transitions.drop(dropping.duration);
+  }
+
+  if (shouldAnimateDragMovement) {
+    return transitions.snap;
+  }
+
+  return transitions.fluid;
+};
+
+var getDraggingOpacity = function getDraggingOpacity(isCombining, isDropAnimating) {
+  if (!isCombining) {
+    return null;
+  }
+
+  return isDropAnimating ? combine.opacity.drop : combine.opacity.combining;
+};
+
+var getShouldDraggingAnimate = function getShouldDraggingAnimate(dragging) {
+  if (dragging.forceShouldAnimate != null) {
+    return dragging.forceShouldAnimate;
+  }
+
+  return dragging.mode === 'SNAP';
+};
+
+function getDraggingStyle(dragging) {
+  var dimension = dragging.dimension;
+  var box = dimension.client;
+  var offset = dragging.offset,
+      combineWith = dragging.combineWith,
+      dropping = dragging.dropping;
+  var isCombining = Boolean(combineWith);
+  var shouldAnimate = getShouldDraggingAnimate(dragging);
+  var isDropAnimating = Boolean(dropping);
+  var transform = isDropAnimating ? transforms.drop(offset, isCombining) : transforms.moveTo(offset);
+  var style = {
+    position: 'fixed',
+    top: box.marginBox.top,
+    left: box.marginBox.left,
+    boxSizing: 'border-box',
+    width: box.borderBox.width,
+    height: box.borderBox.height,
+    transition: getDraggingTransition(shouldAnimate, dropping),
+    transform: transform,
+    opacity: getDraggingOpacity(isCombining, isDropAnimating),
+    zIndex: isDropAnimating ? zIndexOptions.dropAnimating : zIndexOptions.dragging,
+    pointerEvents: 'none'
+  };
+  return style;
+}
+
+function getSecondaryStyle(secondary) {
+  return {
+    transform: transforms.moveTo(secondary.offset),
+    transition: secondary.shouldAnimateDisplacement ? null : 'none'
+  };
+}
+
+function getStyle$1(mapped) {
+  return mapped.type === 'DRAGGING' ? getDraggingStyle(mapped) : getSecondaryStyle(mapped);
+}
+
+function getDimension$1(descriptor, el, windowScroll) {
+  if (windowScroll === void 0) {
+    windowScroll = origin;
+  }
+
+  var computedStyles = window.getComputedStyle(el);
+  var borderBox = el.getBoundingClientRect();
+  var client = (0,css_box_model__WEBPACK_IMPORTED_MODULE_5__.calculateBox)(borderBox, computedStyles);
+  var page = (0,css_box_model__WEBPACK_IMPORTED_MODULE_5__.withScroll)(client, windowScroll);
+  var placeholder = {
+    client: client,
+    tagName: el.tagName.toLowerCase(),
+    display: computedStyles.display
+  };
+  var displaceBy = {
+    x: client.marginBox.width,
+    y: client.marginBox.height
+  };
+  var dimension = {
+    descriptor: descriptor,
+    placeholder: placeholder,
+    displaceBy: displaceBy,
+    client: client,
+    page: page
+  };
+  return dimension;
+}
+
+function useDraggablePublisher(args) {
+  var uniqueId = useUniqueId('draggable');
+  var descriptor = args.descriptor,
+      registry = args.registry,
+      getDraggableRef = args.getDraggableRef,
+      canDragInteractiveElements = args.canDragInteractiveElements,
+      shouldRespectForcePress = args.shouldRespectForcePress,
+      isEnabled = args.isEnabled;
+  var options = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useMemo)(function () {
+    return {
+      canDragInteractiveElements: canDragInteractiveElements,
+      shouldRespectForcePress: shouldRespectForcePress,
+      isEnabled: isEnabled
+    };
+  }, [canDragInteractiveElements, isEnabled, shouldRespectForcePress]);
+  var getDimension = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useCallback)(function (windowScroll) {
+    var el = getDraggableRef();
+    !el ?  true ? invariant(false, 'Cannot get dimension when no ref is set') : 0 : void 0;
+    return getDimension$1(descriptor, el, windowScroll);
+  }, [descriptor, getDraggableRef]);
+  var entry = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useMemo)(function () {
+    return {
+      uniqueId: uniqueId,
+      descriptor: descriptor,
+      options: options,
+      getDimension: getDimension
+    };
+  }, [descriptor, getDimension, options, uniqueId]);
+  var publishedRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(entry);
+  var isFirstPublishRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(true);
+  useIsomorphicLayoutEffect(function () {
+    registry.draggable.register(publishedRef.current);
+    return function () {
+      return registry.draggable.unregister(publishedRef.current);
+    };
+  }, [registry.draggable]);
+  useIsomorphicLayoutEffect(function () {
+    if (isFirstPublishRef.current) {
+      isFirstPublishRef.current = false;
+      return;
+    }
+
+    var last = publishedRef.current;
+    publishedRef.current = entry;
+    registry.draggable.update(entry, last);
+  }, [entry, registry.draggable]);
+}
+
+function useValidation$1(props, contextId, getRef) {
+  useDevSetupWarning(function () {
+    function prefix(id) {
+      return "Draggable[id: " + id + "]: ";
+    }
+
+    var id = props.draggableId;
+    !id ?  true ? invariant(false, 'Draggable requires a draggableId') : 0 : void 0;
+    !(typeof id === 'string') ?  true ? invariant(false, "Draggable requires a [string] draggableId.\n      Provided: [type: " + typeof id + "] (value: " + id + ")") : 0 : void 0;
+    !isInteger(props.index) ?  true ? invariant(false, prefix(id) + " requires an integer index prop") : 0 : void 0;
+
+    if (props.mapped.type === 'DRAGGING') {
+      return;
+    }
+
+    checkIsValidInnerRef(getRef());
+
+    if (props.isEnabled) {
+      !findDragHandle(contextId, id) ?  true ? invariant(false, prefix(id) + " Unable to find drag handle") : 0 : void 0;
+    }
+  });
+}
+function useClonePropValidation(isClone) {
+  useDev(function () {
+    var initialRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(isClone);
+    useDevSetupWarning(function () {
+      !(isClone === initialRef.current) ?  true ? invariant(false, 'Draggable isClone prop value changed during component life') : 0 : void 0;
+    }, [isClone]);
+  });
+}
+
+function preventHtml5Dnd(event) {
+  event.preventDefault();
+}
+
+function Draggable(props) {
+  var ref = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+  var setRef = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useCallback)(function (el) {
+    ref.current = el;
+  }, []);
+  var getRef = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useCallback)(function () {
+    return ref.current;
+  }, []);
+
+  var _useRequiredContext = useRequiredContext(AppContext),
+      contextId = _useRequiredContext.contextId,
+      dragHandleUsageInstructionsId = _useRequiredContext.dragHandleUsageInstructionsId,
+      registry = _useRequiredContext.registry;
+
+  var _useRequiredContext2 = useRequiredContext(DroppableContext),
+      type = _useRequiredContext2.type,
+      droppableId = _useRequiredContext2.droppableId;
+
+  var descriptor = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useMemo)(function () {
+    return {
+      id: props.draggableId,
+      index: props.index,
+      type: type,
+      droppableId: droppableId
+    };
+  }, [props.draggableId, props.index, type, droppableId]);
+  var children = props.children,
+      draggableId = props.draggableId,
+      isEnabled = props.isEnabled,
+      shouldRespectForcePress = props.shouldRespectForcePress,
+      canDragInteractiveElements = props.canDragInteractiveElements,
+      isClone = props.isClone,
+      mapped = props.mapped,
+      dropAnimationFinishedAction = props.dropAnimationFinished;
+  useValidation$1(props, contextId, getRef);
+  useClonePropValidation(isClone);
+
+  if (!isClone) {
+    var forPublisher = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useMemo)(function () {
+      return {
+        descriptor: descriptor,
+        registry: registry,
+        getDraggableRef: getRef,
+        canDragInteractiveElements: canDragInteractiveElements,
+        shouldRespectForcePress: shouldRespectForcePress,
+        isEnabled: isEnabled
+      };
+    }, [descriptor, registry, getRef, canDragInteractiveElements, shouldRespectForcePress, isEnabled]);
+    useDraggablePublisher(forPublisher);
+  }
+
+  var dragHandleProps = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useMemo)(function () {
+    return isEnabled ? {
+      tabIndex: 0,
+      role: 'button',
+      'aria-describedby': dragHandleUsageInstructionsId,
+      'data-rbd-drag-handle-draggable-id': draggableId,
+      'data-rbd-drag-handle-context-id': contextId,
+      draggable: false,
+      onDragStart: preventHtml5Dnd
+    } : null;
+  }, [contextId, dragHandleUsageInstructionsId, draggableId, isEnabled]);
+  var onMoveEnd = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useCallback)(function (event) {
+    if (mapped.type !== 'DRAGGING') {
+      return;
+    }
+
+    if (!mapped.dropping) {
+      return;
+    }
+
+    if (event.propertyName !== 'transform') {
+      return;
+    }
+
+    dropAnimationFinishedAction();
+  }, [dropAnimationFinishedAction, mapped]);
+  var provided = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useMemo)(function () {
+    var style = getStyle$1(mapped);
+    var onTransitionEnd = mapped.type === 'DRAGGING' && mapped.dropping ? onMoveEnd : null;
+    var result = {
+      innerRef: setRef,
+      draggableProps: {
+        'data-rbd-draggable-context-id': contextId,
+        'data-rbd-draggable-id': draggableId,
+        style: style,
+        onTransitionEnd: onTransitionEnd
+      },
+      dragHandleProps: dragHandleProps
+    };
+    return result;
+  }, [contextId, dragHandleProps, draggableId, mapped, onMoveEnd, setRef]);
+  var rubric = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useMemo)(function () {
+    return {
+      draggableId: descriptor.id,
+      type: descriptor.type,
+      source: {
+        index: descriptor.index,
+        droppableId: descriptor.droppableId
+      }
+    };
+  }, [descriptor.droppableId, descriptor.id, descriptor.index, descriptor.type]);
+  return children(provided, mapped.snapshot, rubric);
+}
+
+var isStrictEqual = (function (a, b) {
+  return a === b;
+});
+
+var whatIsDraggedOverFromResult = (function (result) {
+  var combine = result.combine,
+      destination = result.destination;
+
+  if (destination) {
+    return destination.droppableId;
+  }
+
+  if (combine) {
+    return combine.droppableId;
+  }
+
+  return null;
+});
+
+var getCombineWithFromResult = function getCombineWithFromResult(result) {
+  return result.combine ? result.combine.draggableId : null;
+};
+
+var getCombineWithFromImpact = function getCombineWithFromImpact(impact) {
+  return impact.at && impact.at.type === 'COMBINE' ? impact.at.combine.draggableId : null;
+};
+
+function getDraggableSelector() {
+  var memoizedOffset = (0,memoize_one__WEBPACK_IMPORTED_MODULE_6__["default"])(function (x, y) {
+    return {
+      x: x,
+      y: y
+    };
+  });
+  var getMemoizedSnapshot = (0,memoize_one__WEBPACK_IMPORTED_MODULE_6__["default"])(function (mode, isClone, draggingOver, combineWith, dropping) {
+    return {
+      isDragging: true,
+      isClone: isClone,
+      isDropAnimating: Boolean(dropping),
+      dropAnimation: dropping,
+      mode: mode,
+      draggingOver: draggingOver,
+      combineWith: combineWith,
+      combineTargetFor: null
+    };
+  });
+  var getMemoizedProps = (0,memoize_one__WEBPACK_IMPORTED_MODULE_6__["default"])(function (offset, mode, dimension, isClone, draggingOver, combineWith, forceShouldAnimate) {
+    return {
+      mapped: {
+        type: 'DRAGGING',
+        dropping: null,
+        draggingOver: draggingOver,
+        combineWith: combineWith,
+        mode: mode,
+        offset: offset,
+        dimension: dimension,
+        forceShouldAnimate: forceShouldAnimate,
+        snapshot: getMemoizedSnapshot(mode, isClone, draggingOver, combineWith, null)
+      }
+    };
+  });
+
+  var selector = function selector(state, ownProps) {
+    if (state.isDragging) {
+      if (state.critical.draggable.id !== ownProps.draggableId) {
+        return null;
+      }
+
+      var offset = state.current.client.offset;
+      var dimension = state.dimensions.draggables[ownProps.draggableId];
+      var draggingOver = whatIsDraggedOver(state.impact);
+      var combineWith = getCombineWithFromImpact(state.impact);
+      var forceShouldAnimate = state.forceShouldAnimate;
+      return getMemoizedProps(memoizedOffset(offset.x, offset.y), state.movementMode, dimension, ownProps.isClone, draggingOver, combineWith, forceShouldAnimate);
+    }
+
+    if (state.phase === 'DROP_ANIMATING') {
+      var completed = state.completed;
+
+      if (completed.result.draggableId !== ownProps.draggableId) {
+        return null;
+      }
+
+      var isClone = ownProps.isClone;
+      var _dimension = state.dimensions.draggables[ownProps.draggableId];
+      var result = completed.result;
+      var mode = result.mode;
+
+      var _draggingOver = whatIsDraggedOverFromResult(result);
+
+      var _combineWith = getCombineWithFromResult(result);
+
+      var duration = state.dropDuration;
+      var dropping = {
+        duration: duration,
+        curve: curves.drop,
+        moveTo: state.newHomeClientOffset,
+        opacity: _combineWith ? combine.opacity.drop : null,
+        scale: _combineWith ? combine.scale.drop : null
+      };
+      return {
+        mapped: {
+          type: 'DRAGGING',
+          offset: state.newHomeClientOffset,
+          dimension: _dimension,
+          dropping: dropping,
+          draggingOver: _draggingOver,
+          combineWith: _combineWith,
+          mode: mode,
+          forceShouldAnimate: null,
+          snapshot: getMemoizedSnapshot(mode, isClone, _draggingOver, _combineWith, dropping)
+        }
+      };
+    }
+
+    return null;
+  };
+
+  return selector;
+}
+
+function getSecondarySnapshot(combineTargetFor) {
+  return {
+    isDragging: false,
+    isDropAnimating: false,
+    isClone: false,
+    dropAnimation: null,
+    mode: null,
+    draggingOver: null,
+    combineTargetFor: combineTargetFor,
+    combineWith: null
+  };
+}
+
+var atRest = {
+  mapped: {
+    type: 'SECONDARY',
+    offset: origin,
+    combineTargetFor: null,
+    shouldAnimateDisplacement: true,
+    snapshot: getSecondarySnapshot(null)
+  }
+};
+
+function getSecondarySelector() {
+  var memoizedOffset = (0,memoize_one__WEBPACK_IMPORTED_MODULE_6__["default"])(function (x, y) {
+    return {
+      x: x,
+      y: y
+    };
+  });
+  var getMemoizedSnapshot = (0,memoize_one__WEBPACK_IMPORTED_MODULE_6__["default"])(getSecondarySnapshot);
+  var getMemoizedProps = (0,memoize_one__WEBPACK_IMPORTED_MODULE_6__["default"])(function (offset, combineTargetFor, shouldAnimateDisplacement) {
+    if (combineTargetFor === void 0) {
+      combineTargetFor = null;
+    }
+
+    return {
+      mapped: {
+        type: 'SECONDARY',
+        offset: offset,
+        combineTargetFor: combineTargetFor,
+        shouldAnimateDisplacement: shouldAnimateDisplacement,
+        snapshot: getMemoizedSnapshot(combineTargetFor)
+      }
+    };
+  });
+
+  var getFallback = function getFallback(combineTargetFor) {
+    return combineTargetFor ? getMemoizedProps(origin, combineTargetFor, true) : null;
+  };
+
+  var getProps = function getProps(ownId, draggingId, impact, afterCritical) {
+    var visualDisplacement = impact.displaced.visible[ownId];
+    var isAfterCriticalInVirtualList = Boolean(afterCritical.inVirtualList && afterCritical.effected[ownId]);
+    var combine = tryGetCombine(impact);
+    var combineTargetFor = combine && combine.draggableId === ownId ? draggingId : null;
+
+    if (!visualDisplacement) {
+      if (!isAfterCriticalInVirtualList) {
+        return getFallback(combineTargetFor);
+      }
+
+      if (impact.displaced.invisible[ownId]) {
+        return null;
+      }
+
+      var change = negate(afterCritical.displacedBy.point);
+
+      var _offset = memoizedOffset(change.x, change.y);
+
+      return getMemoizedProps(_offset, combineTargetFor, true);
+    }
+
+    if (isAfterCriticalInVirtualList) {
+      return getFallback(combineTargetFor);
+    }
+
+    var displaceBy = impact.displacedBy.point;
+    var offset = memoizedOffset(displaceBy.x, displaceBy.y);
+    return getMemoizedProps(offset, combineTargetFor, visualDisplacement.shouldAnimate);
+  };
+
+  var selector = function selector(state, ownProps) {
+    if (state.isDragging) {
+      if (state.critical.draggable.id === ownProps.draggableId) {
+        return null;
+      }
+
+      return getProps(ownProps.draggableId, state.critical.draggable.id, state.impact, state.afterCritical);
+    }
+
+    if (state.phase === 'DROP_ANIMATING') {
+      var completed = state.completed;
+
+      if (completed.result.draggableId === ownProps.draggableId) {
+        return null;
+      }
+
+      return getProps(ownProps.draggableId, completed.result.draggableId, completed.impact, completed.afterCritical);
+    }
+
+    return null;
+  };
+
+  return selector;
+}
+
+var makeMapStateToProps = function makeMapStateToProps() {
+  var draggingSelector = getDraggableSelector();
+  var secondarySelector = getSecondarySelector();
+
+  var selector = function selector(state, ownProps) {
+    return draggingSelector(state, ownProps) || secondarySelector(state, ownProps) || atRest;
+  };
+
+  return selector;
+};
+var mapDispatchToProps = {
+  dropAnimationFinished: dropAnimationFinished
+};
+var ConnectedDraggable = (0,react_redux__WEBPACK_IMPORTED_MODULE_3__.connect)(makeMapStateToProps, mapDispatchToProps, null, {
+  context: StoreContext,
+  pure: true,
+  areStatePropsEqual: isStrictEqual
+})(Draggable);
+
+function PrivateDraggable(props) {
+  var droppableContext = useRequiredContext(DroppableContext);
+  var isUsingCloneFor = droppableContext.isUsingCloneFor;
+
+  if (isUsingCloneFor === props.draggableId && !props.isClone) {
+    return null;
+  }
+
+  return react__WEBPACK_IMPORTED_MODULE_0___default().createElement(ConnectedDraggable, props);
+}
+function PublicDraggable(props) {
+  var isEnabled = typeof props.isDragDisabled === 'boolean' ? !props.isDragDisabled : true;
+  var canDragInteractiveElements = Boolean(props.disableInteractiveElementBlocking);
+  var shouldRespectForcePress = Boolean(props.shouldRespectForcePress);
+  return react__WEBPACK_IMPORTED_MODULE_0___default().createElement(PrivateDraggable, (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, props, {
+    isClone: false,
+    isEnabled: isEnabled,
+    canDragInteractiveElements: canDragInteractiveElements,
+    shouldRespectForcePress: shouldRespectForcePress
+  }));
+}
+
+function Droppable(props) {
+  var appContext = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(AppContext);
+  !appContext ?  true ? invariant(false, 'Could not find app context') : 0 : void 0;
+  var contextId = appContext.contextId,
+      isMovementAllowed = appContext.isMovementAllowed;
+  var droppableRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+  var placeholderRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+  var children = props.children,
+      droppableId = props.droppableId,
+      type = props.type,
+      mode = props.mode,
+      direction = props.direction,
+      ignoreContainerClipping = props.ignoreContainerClipping,
+      isDropDisabled = props.isDropDisabled,
+      isCombineEnabled = props.isCombineEnabled,
+      snapshot = props.snapshot,
+      useClone = props.useClone,
+      updateViewportMaxScroll = props.updateViewportMaxScroll,
+      getContainerForClone = props.getContainerForClone;
+  var getDroppableRef = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useCallback)(function () {
+    return droppableRef.current;
+  }, []);
+  var setDroppableRef = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useCallback)(function (value) {
+    droppableRef.current = value;
+  }, []);
+  var getPlaceholderRef = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useCallback)(function () {
+    return placeholderRef.current;
+  }, []);
+  var setPlaceholderRef = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useCallback)(function (value) {
+    placeholderRef.current = value;
+  }, []);
+  useValidation({
+    props: props,
+    getDroppableRef: getDroppableRef,
+    getPlaceholderRef: getPlaceholderRef
+  });
+  var onPlaceholderTransitionEnd = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useCallback)(function () {
+    if (isMovementAllowed()) {
+      updateViewportMaxScroll({
+        maxScroll: getMaxWindowScroll()
+      });
+    }
+  }, [isMovementAllowed, updateViewportMaxScroll]);
+  useDroppablePublisher({
+    droppableId: droppableId,
+    type: type,
+    mode: mode,
+    direction: direction,
+    isDropDisabled: isDropDisabled,
+    isCombineEnabled: isCombineEnabled,
+    ignoreContainerClipping: ignoreContainerClipping,
+    getDroppableRef: getDroppableRef
+  });
+  var placeholder = react__WEBPACK_IMPORTED_MODULE_0___default().createElement(AnimateInOut, {
+    on: props.placeholder,
+    shouldAnimate: props.shouldAnimatePlaceholder
+  }, function (_ref) {
+    var onClose = _ref.onClose,
+        data = _ref.data,
+        animate = _ref.animate;
+    return react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Placeholder$1, {
+      placeholder: data,
+      onClose: onClose,
+      innerRef: setPlaceholderRef,
+      animate: animate,
+      contextId: contextId,
+      onTransitionEnd: onPlaceholderTransitionEnd
+    });
+  });
+  var provided = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useMemo)(function () {
+    return {
+      innerRef: setDroppableRef,
+      placeholder: placeholder,
+      droppableProps: {
+        'data-rbd-droppable-id': droppableId,
+        'data-rbd-droppable-context-id': contextId
+      }
+    };
+  }, [contextId, droppableId, placeholder, setDroppableRef]);
+  var isUsingCloneFor = useClone ? useClone.dragging.draggableId : null;
+  var droppableContext = (0,use_memo_one__WEBPACK_IMPORTED_MODULE_9__.useMemo)(function () {
+    return {
+      droppableId: droppableId,
+      type: type,
+      isUsingCloneFor: isUsingCloneFor
+    };
+  }, [droppableId, isUsingCloneFor, type]);
+
+  function getClone() {
+    if (!useClone) {
+      return null;
+    }
+
+    var dragging = useClone.dragging,
+        render = useClone.render;
+    var node = react__WEBPACK_IMPORTED_MODULE_0___default().createElement(PrivateDraggable, {
+      draggableId: dragging.draggableId,
+      index: dragging.source.index,
+      isClone: true,
+      isEnabled: true,
+      shouldRespectForcePress: false,
+      canDragInteractiveElements: true
+    }, function (draggableProvided, draggableSnapshot) {
+      return render(draggableProvided, draggableSnapshot, dragging);
+    });
+    return react_dom__WEBPACK_IMPORTED_MODULE_4___default().createPortal(node, getContainerForClone());
+  }
+
+  return react__WEBPACK_IMPORTED_MODULE_0___default().createElement(DroppableContext.Provider, {
+    value: droppableContext
+  }, children(provided, snapshot), getClone());
+}
+
+var isMatchingType = function isMatchingType(type, critical) {
+  return type === critical.droppable.type;
+};
+
+var getDraggable = function getDraggable(critical, dimensions) {
+  return dimensions.draggables[critical.draggable.id];
+};
+
+var makeMapStateToProps$1 = function makeMapStateToProps() {
+  var idleWithAnimation = {
+    placeholder: null,
+    shouldAnimatePlaceholder: true,
+    snapshot: {
+      isDraggingOver: false,
+      draggingOverWith: null,
+      draggingFromThisWith: null,
+      isUsingPlaceholder: false
+    },
+    useClone: null
+  };
+
+  var idleWithoutAnimation = (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, idleWithAnimation, {
+    shouldAnimatePlaceholder: false
+  });
+
+  var getDraggableRubric = (0,memoize_one__WEBPACK_IMPORTED_MODULE_6__["default"])(function (descriptor) {
+    return {
+      draggableId: descriptor.id,
+      type: descriptor.type,
+      source: {
+        index: descriptor.index,
+        droppableId: descriptor.droppableId
+      }
+    };
+  });
+  var getMapProps = (0,memoize_one__WEBPACK_IMPORTED_MODULE_6__["default"])(function (id, isEnabled, isDraggingOverForConsumer, isDraggingOverForImpact, dragging, renderClone) {
+    var draggableId = dragging.descriptor.id;
+    var isHome = dragging.descriptor.droppableId === id;
+
+    if (isHome) {
+      var useClone = renderClone ? {
+        render: renderClone,
+        dragging: getDraggableRubric(dragging.descriptor)
+      } : null;
+      var _snapshot = {
+        isDraggingOver: isDraggingOverForConsumer,
+        draggingOverWith: isDraggingOverForConsumer ? draggableId : null,
+        draggingFromThisWith: draggableId,
+        isUsingPlaceholder: true
+      };
+      return {
+        placeholder: dragging.placeholder,
+        shouldAnimatePlaceholder: false,
+        snapshot: _snapshot,
+        useClone: useClone
+      };
+    }
+
+    if (!isEnabled) {
+      return idleWithoutAnimation;
+    }
+
+    if (!isDraggingOverForImpact) {
+      return idleWithAnimation;
+    }
+
+    var snapshot = {
+      isDraggingOver: isDraggingOverForConsumer,
+      draggingOverWith: draggableId,
+      draggingFromThisWith: null,
+      isUsingPlaceholder: true
+    };
+    return {
+      placeholder: dragging.placeholder,
+      shouldAnimatePlaceholder: true,
+      snapshot: snapshot,
+      useClone: null
+    };
+  });
+
+  var selector = function selector(state, ownProps) {
+    var id = ownProps.droppableId;
+    var type = ownProps.type;
+    var isEnabled = !ownProps.isDropDisabled;
+    var renderClone = ownProps.renderClone;
+
+    if (state.isDragging) {
+      var critical = state.critical;
+
+      if (!isMatchingType(type, critical)) {
+        return idleWithoutAnimation;
+      }
+
+      var dragging = getDraggable(critical, state.dimensions);
+      var isDraggingOver = whatIsDraggedOver(state.impact) === id;
+      return getMapProps(id, isEnabled, isDraggingOver, isDraggingOver, dragging, renderClone);
+    }
+
+    if (state.phase === 'DROP_ANIMATING') {
+      var completed = state.completed;
+
+      if (!isMatchingType(type, completed.critical)) {
+        return idleWithoutAnimation;
+      }
+
+      var _dragging = getDraggable(completed.critical, state.dimensions);
+
+      return getMapProps(id, isEnabled, whatIsDraggedOverFromResult(completed.result) === id, whatIsDraggedOver(completed.impact) === id, _dragging, renderClone);
+    }
+
+    if (state.phase === 'IDLE' && state.completed && !state.shouldFlush) {
+      var _completed = state.completed;
+
+      if (!isMatchingType(type, _completed.critical)) {
+        return idleWithoutAnimation;
+      }
+
+      var wasOver = whatIsDraggedOver(_completed.impact) === id;
+      var wasCombining = Boolean(_completed.impact.at && _completed.impact.at.type === 'COMBINE');
+      var isHome = _completed.critical.droppable.id === id;
+
+      if (wasOver) {
+        return wasCombining ? idleWithAnimation : idleWithoutAnimation;
+      }
+
+      if (isHome) {
+        return idleWithAnimation;
+      }
+
+      return idleWithoutAnimation;
+    }
+
+    return idleWithoutAnimation;
+  };
+
+  return selector;
+};
+var mapDispatchToProps$1 = {
+  updateViewportMaxScroll: updateViewportMaxScroll
+};
+
+function getBody() {
+  !document.body ?  true ? invariant(false, 'document.body is not ready') : 0 : void 0;
+  return document.body;
+}
+
+var defaultProps = {
+  mode: 'standard',
+  type: 'DEFAULT',
+  direction: 'vertical',
+  isDropDisabled: false,
+  isCombineEnabled: false,
+  ignoreContainerClipping: false,
+  renderClone: null,
+  getContainerForClone: getBody
+};
+var ConnectedDroppable = (0,react_redux__WEBPACK_IMPORTED_MODULE_3__.connect)(makeMapStateToProps$1, mapDispatchToProps$1, null, {
+  context: StoreContext,
+  pure: true,
+  areStatePropsEqual: isStrictEqual
+})(Droppable);
+ConnectedDroppable.defaultProps = defaultProps;
+
+
+
+
+/***/ }),
+
+/***/ "./node_modules/react-beautiful-dnd/node_modules/redux/es/redux.js":
+/*!*************************************************************************!*\
+  !*** ./node_modules/react-beautiful-dnd/node_modules/redux/es/redux.js ***!
+  \*************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   __DO_NOT_USE__ActionTypes: () => (/* binding */ ActionTypes),
+/* harmony export */   applyMiddleware: () => (/* binding */ applyMiddleware),
+/* harmony export */   bindActionCreators: () => (/* binding */ bindActionCreators),
+/* harmony export */   combineReducers: () => (/* binding */ combineReducers),
+/* harmony export */   compose: () => (/* binding */ compose),
+/* harmony export */   createStore: () => (/* binding */ createStore),
+/* harmony export */   legacy_createStore: () => (/* binding */ legacy_createStore)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/objectSpread2 */ "./node_modules/@babel/runtime/helpers/esm/objectSpread2.js");
+
+
+/**
+ * Adapted from React: https://github.com/facebook/react/blob/master/packages/shared/formatProdErrorMessage.js
+ *
+ * Do not require this module directly! Use normal throw error calls. These messages will be replaced with error codes
+ * during build.
+ * @param {number} code
+ */
+function formatProdErrorMessage(code) {
+  return "Minified Redux error #" + code + "; visit https://redux.js.org/Errors?code=" + code + " for the full message or " + 'use the non-minified dev environment for full errors. ';
+}
+
+// Inlined version of the `symbol-observable` polyfill
+var $$observable = (function () {
+  return typeof Symbol === 'function' && Symbol.observable || '@@observable';
+})();
+
+/**
+ * These are private action types reserved by Redux.
+ * For any unknown actions, you must return the current state.
+ * If the current state is undefined, you must return the initial state.
+ * Do not reference these action types directly in your code.
+ */
+var randomString = function randomString() {
+  return Math.random().toString(36).substring(7).split('').join('.');
+};
+
+var ActionTypes = {
+  INIT: "@@redux/INIT" + randomString(),
+  REPLACE: "@@redux/REPLACE" + randomString(),
+  PROBE_UNKNOWN_ACTION: function PROBE_UNKNOWN_ACTION() {
+    return "@@redux/PROBE_UNKNOWN_ACTION" + randomString();
+  }
+};
+
+/**
+ * @param {any} obj The object to inspect.
+ * @returns {boolean} True if the argument appears to be a plain object.
+ */
+function isPlainObject(obj) {
+  if (typeof obj !== 'object' || obj === null) return false;
+  var proto = obj;
+
+  while (Object.getPrototypeOf(proto) !== null) {
+    proto = Object.getPrototypeOf(proto);
+  }
+
+  return Object.getPrototypeOf(obj) === proto;
+}
+
+// Inlined / shortened version of `kindOf` from https://github.com/jonschlinkert/kind-of
+function miniKindOf(val) {
+  if (val === void 0) return 'undefined';
+  if (val === null) return 'null';
+  var type = typeof val;
+
+  switch (type) {
+    case 'boolean':
+    case 'string':
+    case 'number':
+    case 'symbol':
+    case 'function':
+      {
+        return type;
+      }
+  }
+
+  if (Array.isArray(val)) return 'array';
+  if (isDate(val)) return 'date';
+  if (isError(val)) return 'error';
+  var constructorName = ctorName(val);
+
+  switch (constructorName) {
+    case 'Symbol':
+    case 'Promise':
+    case 'WeakMap':
+    case 'WeakSet':
+    case 'Map':
+    case 'Set':
+      return constructorName;
+  } // other
+
+
+  return type.slice(8, -1).toLowerCase().replace(/\s/g, '');
+}
+
+function ctorName(val) {
+  return typeof val.constructor === 'function' ? val.constructor.name : null;
+}
+
+function isError(val) {
+  return val instanceof Error || typeof val.message === 'string' && val.constructor && typeof val.constructor.stackTraceLimit === 'number';
+}
+
+function isDate(val) {
+  if (val instanceof Date) return true;
+  return typeof val.toDateString === 'function' && typeof val.getDate === 'function' && typeof val.setDate === 'function';
+}
+
+function kindOf(val) {
+  var typeOfVal = typeof val;
+
+  if (true) {
+    typeOfVal = miniKindOf(val);
+  }
+
+  return typeOfVal;
+}
+
+/**
+ * @deprecated
+ *
+ * **We recommend using the `configureStore` method
+ * of the `@reduxjs/toolkit` package**, which replaces `createStore`.
+ *
+ * Redux Toolkit is our recommended approach for writing Redux logic today,
+ * including store setup, reducers, data fetching, and more.
+ *
+ * **For more details, please read this Redux docs page:**
+ * **https://redux.js.org/introduction/why-rtk-is-redux-today**
+ *
+ * `configureStore` from Redux Toolkit is an improved version of `createStore` that
+ * simplifies setup and helps avoid common bugs.
+ *
+ * You should not be using the `redux` core package by itself today, except for learning purposes.
+ * The `createStore` method from the core `redux` package will not be removed, but we encourage
+ * all users to migrate to using Redux Toolkit for all Redux code.
+ *
+ * If you want to use `createStore` without this visual deprecation warning, use
+ * the `legacy_createStore` import instead:
+ *
+ * `import { legacy_createStore as createStore} from 'redux'`
+ *
+ */
+
+function createStore(reducer, preloadedState, enhancer) {
+  var _ref2;
+
+  if (typeof preloadedState === 'function' && typeof enhancer === 'function' || typeof enhancer === 'function' && typeof arguments[3] === 'function') {
+    throw new Error( false ? 0 : 'It looks like you are passing several store enhancers to ' + 'createStore(). This is not supported. Instead, compose them ' + 'together to a single function. See https://redux.js.org/tutorials/fundamentals/part-4-store#creating-a-store-with-enhancers for an example.');
+  }
+
+  if (typeof preloadedState === 'function' && typeof enhancer === 'undefined') {
+    enhancer = preloadedState;
+    preloadedState = undefined;
+  }
+
+  if (typeof enhancer !== 'undefined') {
+    if (typeof enhancer !== 'function') {
+      throw new Error( false ? 0 : "Expected the enhancer to be a function. Instead, received: '" + kindOf(enhancer) + "'");
+    }
+
+    return enhancer(createStore)(reducer, preloadedState);
+  }
+
+  if (typeof reducer !== 'function') {
+    throw new Error( false ? 0 : "Expected the root reducer to be a function. Instead, received: '" + kindOf(reducer) + "'");
+  }
+
+  var currentReducer = reducer;
+  var currentState = preloadedState;
+  var currentListeners = [];
+  var nextListeners = currentListeners;
+  var isDispatching = false;
+  /**
+   * This makes a shallow copy of currentListeners so we can use
+   * nextListeners as a temporary list while dispatching.
+   *
+   * This prevents any bugs around consumers calling
+   * subscribe/unsubscribe in the middle of a dispatch.
+   */
+
+  function ensureCanMutateNextListeners() {
+    if (nextListeners === currentListeners) {
+      nextListeners = currentListeners.slice();
+    }
+  }
+  /**
+   * Reads the state tree managed by the store.
+   *
+   * @returns {any} The current state tree of your application.
+   */
+
+
+  function getState() {
+    if (isDispatching) {
+      throw new Error( false ? 0 : 'You may not call store.getState() while the reducer is executing. ' + 'The reducer has already received the state as an argument. ' + 'Pass it down from the top reducer instead of reading it from the store.');
+    }
+
+    return currentState;
+  }
+  /**
+   * Adds a change listener. It will be called any time an action is dispatched,
+   * and some part of the state tree may potentially have changed. You may then
+   * call `getState()` to read the current state tree inside the callback.
+   *
+   * You may call `dispatch()` from a change listener, with the following
+   * caveats:
+   *
+   * 1. The subscriptions are snapshotted just before every `dispatch()` call.
+   * If you subscribe or unsubscribe while the listeners are being invoked, this
+   * will not have any effect on the `dispatch()` that is currently in progress.
+   * However, the next `dispatch()` call, whether nested or not, will use a more
+   * recent snapshot of the subscription list.
+   *
+   * 2. The listener should not expect to see all state changes, as the state
+   * might have been updated multiple times during a nested `dispatch()` before
+   * the listener is called. It is, however, guaranteed that all subscribers
+   * registered before the `dispatch()` started will be called with the latest
+   * state by the time it exits.
+   *
+   * @param {Function} listener A callback to be invoked on every dispatch.
+   * @returns {Function} A function to remove this change listener.
+   */
+
+
+  function subscribe(listener) {
+    if (typeof listener !== 'function') {
+      throw new Error( false ? 0 : "Expected the listener to be a function. Instead, received: '" + kindOf(listener) + "'");
+    }
+
+    if (isDispatching) {
+      throw new Error( false ? 0 : 'You may not call store.subscribe() while the reducer is executing. ' + 'If you would like to be notified after the store has been updated, subscribe from a ' + 'component and invoke store.getState() in the callback to access the latest state. ' + 'See https://redux.js.org/api/store#subscribelistener for more details.');
+    }
+
+    var isSubscribed = true;
+    ensureCanMutateNextListeners();
+    nextListeners.push(listener);
+    return function unsubscribe() {
+      if (!isSubscribed) {
+        return;
+      }
+
+      if (isDispatching) {
+        throw new Error( false ? 0 : 'You may not unsubscribe from a store listener while the reducer is executing. ' + 'See https://redux.js.org/api/store#subscribelistener for more details.');
+      }
+
+      isSubscribed = false;
+      ensureCanMutateNextListeners();
+      var index = nextListeners.indexOf(listener);
+      nextListeners.splice(index, 1);
+      currentListeners = null;
+    };
+  }
+  /**
+   * Dispatches an action. It is the only way to trigger a state change.
+   *
+   * The `reducer` function, used to create the store, will be called with the
+   * current state tree and the given `action`. Its return value will
+   * be considered the **next** state of the tree, and the change listeners
+   * will be notified.
+   *
+   * The base implementation only supports plain object actions. If you want to
+   * dispatch a Promise, an Observable, a thunk, or something else, you need to
+   * wrap your store creating function into the corresponding middleware. For
+   * example, see the documentation for the `redux-thunk` package. Even the
+   * middleware will eventually dispatch plain object actions using this method.
+   *
+   * @param {Object} action A plain object representing “what changed”. It is
+   * a good idea to keep actions serializable so you can record and replay user
+   * sessions, or use the time travelling `redux-devtools`. An action must have
+   * a `type` property which may not be `undefined`. It is a good idea to use
+   * string constants for action types.
+   *
+   * @returns {Object} For convenience, the same action object you dispatched.
+   *
+   * Note that, if you use a custom middleware, it may wrap `dispatch()` to
+   * return something else (for example, a Promise you can await).
+   */
+
+
+  function dispatch(action) {
+    if (!isPlainObject(action)) {
+      throw new Error( false ? 0 : "Actions must be plain objects. Instead, the actual type was: '" + kindOf(action) + "'. You may need to add middleware to your store setup to handle dispatching other values, such as 'redux-thunk' to handle dispatching functions. See https://redux.js.org/tutorials/fundamentals/part-4-store#middleware and https://redux.js.org/tutorials/fundamentals/part-6-async-logic#using-the-redux-thunk-middleware for examples.");
+    }
+
+    if (typeof action.type === 'undefined') {
+      throw new Error( false ? 0 : 'Actions may not have an undefined "type" property. You may have misspelled an action type string constant.');
+    }
+
+    if (isDispatching) {
+      throw new Error( false ? 0 : 'Reducers may not dispatch actions.');
+    }
+
+    try {
+      isDispatching = true;
+      currentState = currentReducer(currentState, action);
+    } finally {
+      isDispatching = false;
+    }
+
+    var listeners = currentListeners = nextListeners;
+
+    for (var i = 0; i < listeners.length; i++) {
+      var listener = listeners[i];
+      listener();
+    }
+
+    return action;
+  }
+  /**
+   * Replaces the reducer currently used by the store to calculate the state.
+   *
+   * You might need this if your app implements code splitting and you want to
+   * load some of the reducers dynamically. You might also need this if you
+   * implement a hot reloading mechanism for Redux.
+   *
+   * @param {Function} nextReducer The reducer for the store to use instead.
+   * @returns {void}
+   */
+
+
+  function replaceReducer(nextReducer) {
+    if (typeof nextReducer !== 'function') {
+      throw new Error( false ? 0 : "Expected the nextReducer to be a function. Instead, received: '" + kindOf(nextReducer));
+    }
+
+    currentReducer = nextReducer; // This action has a similiar effect to ActionTypes.INIT.
+    // Any reducers that existed in both the new and old rootReducer
+    // will receive the previous state. This effectively populates
+    // the new state tree with any relevant data from the old one.
+
+    dispatch({
+      type: ActionTypes.REPLACE
+    });
+  }
+  /**
+   * Interoperability point for observable/reactive libraries.
+   * @returns {observable} A minimal observable of state changes.
+   * For more information, see the observable proposal:
+   * https://github.com/tc39/proposal-observable
+   */
+
+
+  function observable() {
+    var _ref;
+
+    var outerSubscribe = subscribe;
+    return _ref = {
+      /**
+       * The minimal observable subscription method.
+       * @param {Object} observer Any object that can be used as an observer.
+       * The observer object should have a `next` method.
+       * @returns {subscription} An object with an `unsubscribe` method that can
+       * be used to unsubscribe the observable from the store, and prevent further
+       * emission of values from the observable.
+       */
+      subscribe: function subscribe(observer) {
+        if (typeof observer !== 'object' || observer === null) {
+          throw new Error( false ? 0 : "Expected the observer to be an object. Instead, received: '" + kindOf(observer) + "'");
+        }
+
+        function observeState() {
+          if (observer.next) {
+            observer.next(getState());
+          }
+        }
+
+        observeState();
+        var unsubscribe = outerSubscribe(observeState);
+        return {
+          unsubscribe: unsubscribe
+        };
+      }
+    }, _ref[$$observable] = function () {
+      return this;
+    }, _ref;
+  } // When a store is created, an "INIT" action is dispatched so that every
+  // reducer returns their initial state. This effectively populates
+  // the initial state tree.
+
+
+  dispatch({
+    type: ActionTypes.INIT
+  });
+  return _ref2 = {
+    dispatch: dispatch,
+    subscribe: subscribe,
+    getState: getState,
+    replaceReducer: replaceReducer
+  }, _ref2[$$observable] = observable, _ref2;
+}
+/**
+ * Creates a Redux store that holds the state tree.
+ *
+ * **We recommend using `configureStore` from the
+ * `@reduxjs/toolkit` package**, which replaces `createStore`:
+ * **https://redux.js.org/introduction/why-rtk-is-redux-today**
+ *
+ * The only way to change the data in the store is to call `dispatch()` on it.
+ *
+ * There should only be a single store in your app. To specify how different
+ * parts of the state tree respond to actions, you may combine several reducers
+ * into a single reducer function by using `combineReducers`.
+ *
+ * @param {Function} reducer A function that returns the next state tree, given
+ * the current state tree and the action to handle.
+ *
+ * @param {any} [preloadedState] The initial state. You may optionally specify it
+ * to hydrate the state from the server in universal apps, or to restore a
+ * previously serialized user session.
+ * If you use `combineReducers` to produce the root reducer function, this must be
+ * an object with the same shape as `combineReducers` keys.
+ *
+ * @param {Function} [enhancer] The store enhancer. You may optionally specify it
+ * to enhance the store with third-party capabilities such as middleware,
+ * time travel, persistence, etc. The only store enhancer that ships with Redux
+ * is `applyMiddleware()`.
+ *
+ * @returns {Store} A Redux store that lets you read the state, dispatch actions
+ * and subscribe to changes.
+ */
+
+var legacy_createStore = createStore;
+
+/**
+ * Prints a warning in the console if it exists.
+ *
+ * @param {String} message The warning message.
+ * @returns {void}
+ */
+function warning(message) {
+  /* eslint-disable no-console */
+  if (typeof console !== 'undefined' && typeof console.error === 'function') {
+    console.error(message);
+  }
+  /* eslint-enable no-console */
+
+
+  try {
+    // This error was thrown as a convenience so that if you enable
+    // "break on all exceptions" in your console,
+    // it would pause the execution at this line.
+    throw new Error(message);
+  } catch (e) {} // eslint-disable-line no-empty
+
+}
+
+function getUnexpectedStateShapeWarningMessage(inputState, reducers, action, unexpectedKeyCache) {
+  var reducerKeys = Object.keys(reducers);
+  var argumentName = action && action.type === ActionTypes.INIT ? 'preloadedState argument passed to createStore' : 'previous state received by the reducer';
+
+  if (reducerKeys.length === 0) {
+    return 'Store does not have a valid reducer. Make sure the argument passed ' + 'to combineReducers is an object whose values are reducers.';
+  }
+
+  if (!isPlainObject(inputState)) {
+    return "The " + argumentName + " has unexpected type of \"" + kindOf(inputState) + "\". Expected argument to be an object with the following " + ("keys: \"" + reducerKeys.join('", "') + "\"");
+  }
+
+  var unexpectedKeys = Object.keys(inputState).filter(function (key) {
+    return !reducers.hasOwnProperty(key) && !unexpectedKeyCache[key];
+  });
+  unexpectedKeys.forEach(function (key) {
+    unexpectedKeyCache[key] = true;
+  });
+  if (action && action.type === ActionTypes.REPLACE) return;
+
+  if (unexpectedKeys.length > 0) {
+    return "Unexpected " + (unexpectedKeys.length > 1 ? 'keys' : 'key') + " " + ("\"" + unexpectedKeys.join('", "') + "\" found in " + argumentName + ". ") + "Expected to find one of the known reducer keys instead: " + ("\"" + reducerKeys.join('", "') + "\". Unexpected keys will be ignored.");
+  }
+}
+
+function assertReducerShape(reducers) {
+  Object.keys(reducers).forEach(function (key) {
+    var reducer = reducers[key];
+    var initialState = reducer(undefined, {
+      type: ActionTypes.INIT
+    });
+
+    if (typeof initialState === 'undefined') {
+      throw new Error( false ? 0 : "The slice reducer for key \"" + key + "\" returned undefined during initialization. " + "If the state passed to the reducer is undefined, you must " + "explicitly return the initial state. The initial state may " + "not be undefined. If you don't want to set a value for this reducer, " + "you can use null instead of undefined.");
+    }
+
+    if (typeof reducer(undefined, {
+      type: ActionTypes.PROBE_UNKNOWN_ACTION()
+    }) === 'undefined') {
+      throw new Error( false ? 0 : "The slice reducer for key \"" + key + "\" returned undefined when probed with a random type. " + ("Don't try to handle '" + ActionTypes.INIT + "' or other actions in \"redux/*\" ") + "namespace. They are considered private. Instead, you must return the " + "current state for any unknown actions, unless it is undefined, " + "in which case you must return the initial state, regardless of the " + "action type. The initial state may not be undefined, but can be null.");
+    }
+  });
+}
+/**
+ * Turns an object whose values are different reducer functions, into a single
+ * reducer function. It will call every child reducer, and gather their results
+ * into a single state object, whose keys correspond to the keys of the passed
+ * reducer functions.
+ *
+ * @param {Object} reducers An object whose values correspond to different
+ * reducer functions that need to be combined into one. One handy way to obtain
+ * it is to use ES6 `import * as reducers` syntax. The reducers may never return
+ * undefined for any action. Instead, they should return their initial state
+ * if the state passed to them was undefined, and the current state for any
+ * unrecognized action.
+ *
+ * @returns {Function} A reducer function that invokes every reducer inside the
+ * passed object, and builds a state object with the same shape.
+ */
+
+
+function combineReducers(reducers) {
+  var reducerKeys = Object.keys(reducers);
+  var finalReducers = {};
+
+  for (var i = 0; i < reducerKeys.length; i++) {
+    var key = reducerKeys[i];
+
+    if (true) {
+      if (typeof reducers[key] === 'undefined') {
+        warning("No reducer provided for key \"" + key + "\"");
+      }
+    }
+
+    if (typeof reducers[key] === 'function') {
+      finalReducers[key] = reducers[key];
+    }
+  }
+
+  var finalReducerKeys = Object.keys(finalReducers); // This is used to make sure we don't warn about the same
+  // keys multiple times.
+
+  var unexpectedKeyCache;
+
+  if (true) {
+    unexpectedKeyCache = {};
+  }
+
+  var shapeAssertionError;
+
+  try {
+    assertReducerShape(finalReducers);
+  } catch (e) {
+    shapeAssertionError = e;
+  }
+
+  return function combination(state, action) {
+    if (state === void 0) {
+      state = {};
+    }
+
+    if (shapeAssertionError) {
+      throw shapeAssertionError;
+    }
+
+    if (true) {
+      var warningMessage = getUnexpectedStateShapeWarningMessage(state, finalReducers, action, unexpectedKeyCache);
+
+      if (warningMessage) {
+        warning(warningMessage);
+      }
+    }
+
+    var hasChanged = false;
+    var nextState = {};
+
+    for (var _i = 0; _i < finalReducerKeys.length; _i++) {
+      var _key = finalReducerKeys[_i];
+      var reducer = finalReducers[_key];
+      var previousStateForKey = state[_key];
+      var nextStateForKey = reducer(previousStateForKey, action);
+
+      if (typeof nextStateForKey === 'undefined') {
+        var actionType = action && action.type;
+        throw new Error( false ? 0 : "When called with an action of type " + (actionType ? "\"" + String(actionType) + "\"" : '(unknown type)') + ", the slice reducer for key \"" + _key + "\" returned undefined. " + "To ignore an action, you must explicitly return the previous state. " + "If you want this reducer to hold no value, you can return null instead of undefined.");
+      }
+
+      nextState[_key] = nextStateForKey;
+      hasChanged = hasChanged || nextStateForKey !== previousStateForKey;
+    }
+
+    hasChanged = hasChanged || finalReducerKeys.length !== Object.keys(state).length;
+    return hasChanged ? nextState : state;
+  };
+}
+
+function bindActionCreator(actionCreator, dispatch) {
+  return function () {
+    return dispatch(actionCreator.apply(this, arguments));
+  };
+}
+/**
+ * Turns an object whose values are action creators, into an object with the
+ * same keys, but with every function wrapped into a `dispatch` call so they
+ * may be invoked directly. This is just a convenience method, as you can call
+ * `store.dispatch(MyActionCreators.doSomething())` yourself just fine.
+ *
+ * For convenience, you can also pass an action creator as the first argument,
+ * and get a dispatch wrapped function in return.
+ *
+ * @param {Function|Object} actionCreators An object whose values are action
+ * creator functions. One handy way to obtain it is to use ES6 `import * as`
+ * syntax. You may also pass a single function.
+ *
+ * @param {Function} dispatch The `dispatch` function available on your Redux
+ * store.
+ *
+ * @returns {Function|Object} The object mimicking the original object, but with
+ * every action creator wrapped into the `dispatch` call. If you passed a
+ * function as `actionCreators`, the return value will also be a single
+ * function.
+ */
+
+
+function bindActionCreators(actionCreators, dispatch) {
+  if (typeof actionCreators === 'function') {
+    return bindActionCreator(actionCreators, dispatch);
+  }
+
+  if (typeof actionCreators !== 'object' || actionCreators === null) {
+    throw new Error( false ? 0 : "bindActionCreators expected an object or a function, but instead received: '" + kindOf(actionCreators) + "'. " + "Did you write \"import ActionCreators from\" instead of \"import * as ActionCreators from\"?");
+  }
+
+  var boundActionCreators = {};
+
+  for (var key in actionCreators) {
+    var actionCreator = actionCreators[key];
+
+    if (typeof actionCreator === 'function') {
+      boundActionCreators[key] = bindActionCreator(actionCreator, dispatch);
+    }
+  }
+
+  return boundActionCreators;
+}
+
+/**
+ * Composes single-argument functions from right to left. The rightmost
+ * function can take multiple arguments as it provides the signature for
+ * the resulting composite function.
+ *
+ * @param {...Function} funcs The functions to compose.
+ * @returns {Function} A function obtained by composing the argument functions
+ * from right to left. For example, compose(f, g, h) is identical to doing
+ * (...args) => f(g(h(...args))).
+ */
+function compose() {
+  for (var _len = arguments.length, funcs = new Array(_len), _key = 0; _key < _len; _key++) {
+    funcs[_key] = arguments[_key];
+  }
+
+  if (funcs.length === 0) {
+    return function (arg) {
+      return arg;
+    };
+  }
+
+  if (funcs.length === 1) {
+    return funcs[0];
+  }
+
+  return funcs.reduce(function (a, b) {
+    return function () {
+      return a(b.apply(void 0, arguments));
+    };
+  });
+}
+
+/**
+ * Creates a store enhancer that applies middleware to the dispatch method
+ * of the Redux store. This is handy for a variety of tasks, such as expressing
+ * asynchronous actions in a concise manner, or logging every action payload.
+ *
+ * See `redux-thunk` package as an example of the Redux middleware.
+ *
+ * Because middleware is potentially asynchronous, this should be the first
+ * store enhancer in the composition chain.
+ *
+ * Note that each middleware will be given the `dispatch` and `getState` functions
+ * as named arguments.
+ *
+ * @param {...Function} middlewares The middleware chain to be applied.
+ * @returns {Function} A store enhancer applying the middleware.
+ */
+
+function applyMiddleware() {
+  for (var _len = arguments.length, middlewares = new Array(_len), _key = 0; _key < _len; _key++) {
+    middlewares[_key] = arguments[_key];
+  }
+
+  return function (createStore) {
+    return function () {
+      var store = createStore.apply(void 0, arguments);
+
+      var _dispatch = function dispatch() {
+        throw new Error( false ? 0 : 'Dispatching while constructing your middleware is not allowed. ' + 'Other middleware would not be applied to this dispatch.');
+      };
+
+      var middlewareAPI = {
+        getState: store.getState,
+        dispatch: function dispatch() {
+          return _dispatch.apply(void 0, arguments);
+        }
+      };
+      var chain = middlewares.map(function (middleware) {
+        return middleware(middlewareAPI);
+      });
+      _dispatch = compose.apply(void 0, chain)(store.dispatch);
+      return (0,_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__["default"])((0,_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__["default"])({}, store), {}, {
+        dispatch: _dispatch
+      });
+    };
+  };
+}
+
+
+
+
+/***/ }),
+
+/***/ "./node_modules/react-redux/es/components/Context.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/react-redux/es/components/Context.js ***!
+  \***********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ReactReduxContext: () => (/* binding */ ReactReduxContext),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+var ReactReduxContext = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createContext(null);
+
+if (true) {
+  ReactReduxContext.displayName = 'ReactRedux';
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ReactReduxContext);
+
+/***/ }),
+
+/***/ "./node_modules/react-redux/es/components/Provider.js":
+/*!************************************************************!*\
+  !*** ./node_modules/react-redux/es/components/Provider.js ***!
+  \************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _Context__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Context */ "./node_modules/react-redux/es/components/Context.js");
+/* harmony import */ var _utils_Subscription__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../utils/Subscription */ "./node_modules/react-redux/es/utils/Subscription.js");
+/* harmony import */ var _utils_useIsomorphicLayoutEffect__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utils/useIsomorphicLayoutEffect */ "./node_modules/react-redux/es/utils/useIsomorphicLayoutEffect.js");
+
+
+
+
+
+
+function Provider(_ref) {
+  var store = _ref.store,
+      context = _ref.context,
+      children = _ref.children;
+  var contextValue = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
+    var subscription = (0,_utils_Subscription__WEBPACK_IMPORTED_MODULE_2__.createSubscription)(store);
+    return {
+      store: store,
+      subscription: subscription
+    };
+  }, [store]);
+  var previousState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
+    return store.getState();
+  }, [store]);
+  (0,_utils_useIsomorphicLayoutEffect__WEBPACK_IMPORTED_MODULE_3__.useIsomorphicLayoutEffect)(function () {
+    var subscription = contextValue.subscription;
+    subscription.onStateChange = subscription.notifyNestedSubs;
+    subscription.trySubscribe();
+
+    if (previousState !== store.getState()) {
+      subscription.notifyNestedSubs();
+    }
+
+    return function () {
+      subscription.tryUnsubscribe();
+      subscription.onStateChange = null;
+    };
+  }, [contextValue, previousState]);
+  var Context = context || _Context__WEBPACK_IMPORTED_MODULE_1__.ReactReduxContext;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Context.Provider, {
+    value: contextValue
+  }, children);
+}
+
+if (true) {
+  Provider.propTypes = {
+    store: prop_types__WEBPACK_IMPORTED_MODULE_4___default().shape({
+      subscribe: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().func).isRequired,
+      dispatch: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().func).isRequired,
+      getState: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().func).isRequired
+    }),
+    context: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().object),
+    children: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().any)
+  };
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Provider);
+
+/***/ }),
+
+/***/ "./node_modules/react-redux/es/components/connectAdvanced.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/react-redux/es/components/connectAdvanced.js ***!
+  \*******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ connectAdvanced)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
+/* harmony import */ var _babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/objectWithoutPropertiesLoose */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js");
+/* harmony import */ var hoist_non_react_statics__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! hoist-non-react-statics */ "./node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js");
+/* harmony import */ var hoist_non_react_statics__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(hoist_non_react_statics__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var react_is__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-is */ "./node_modules/react-redux/node_modules/react-is/index.js");
+/* harmony import */ var _utils_Subscription__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../utils/Subscription */ "./node_modules/react-redux/es/utils/Subscription.js");
+/* harmony import */ var _utils_useIsomorphicLayoutEffect__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../utils/useIsomorphicLayoutEffect */ "./node_modules/react-redux/es/utils/useIsomorphicLayoutEffect.js");
+/* harmony import */ var _Context__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Context */ "./node_modules/react-redux/es/components/Context.js");
+
+
+var _excluded = ["getDisplayName", "methodName", "renderCountProp", "shouldHandleStateChanges", "storeKey", "withRef", "forwardRef", "context"],
+    _excluded2 = ["reactReduxForwardedRef"];
+
+
+
+
+
+ // Define some constant arrays just to avoid re-creating these
+
+var EMPTY_ARRAY = [];
+var NO_SUBSCRIPTION_ARRAY = [null, null];
+
+var stringifyComponent = function stringifyComponent(Comp) {
+  try {
+    return JSON.stringify(Comp);
+  } catch (err) {
+    return String(Comp);
+  }
+};
+
+function storeStateUpdatesReducer(state, action) {
+  var updateCount = state[1];
+  return [action.payload, updateCount + 1];
+}
+
+function useIsomorphicLayoutEffectWithArgs(effectFunc, effectArgs, dependencies) {
+  (0,_utils_useIsomorphicLayoutEffect__WEBPACK_IMPORTED_MODULE_6__.useIsomorphicLayoutEffect)(function () {
+    return effectFunc.apply(void 0, effectArgs);
+  }, dependencies);
+}
+
+function captureWrapperProps(lastWrapperProps, lastChildProps, renderIsScheduled, wrapperProps, actualChildProps, childPropsFromStoreUpdate, notifyNestedSubs) {
+  // We want to capture the wrapper props and child props we used for later comparisons
+  lastWrapperProps.current = wrapperProps;
+  lastChildProps.current = actualChildProps;
+  renderIsScheduled.current = false; // If the render was from a store update, clear out that reference and cascade the subscriber update
+
+  if (childPropsFromStoreUpdate.current) {
+    childPropsFromStoreUpdate.current = null;
+    notifyNestedSubs();
+  }
+}
+
+function subscribeUpdates(shouldHandleStateChanges, store, subscription, childPropsSelector, lastWrapperProps, lastChildProps, renderIsScheduled, childPropsFromStoreUpdate, notifyNestedSubs, forceComponentUpdateDispatch) {
+  // If we're not subscribed to the store, nothing to do here
+  if (!shouldHandleStateChanges) return; // Capture values for checking if and when this component unmounts
+
+  var didUnsubscribe = false;
+  var lastThrownError = null; // We'll run this callback every time a store subscription update propagates to this component
+
+  var checkForUpdates = function checkForUpdates() {
+    if (didUnsubscribe) {
+      // Don't run stale listeners.
+      // Redux doesn't guarantee unsubscriptions happen until next dispatch.
+      return;
+    }
+
+    var latestStoreState = store.getState();
+    var newChildProps, error;
+
+    try {
+      // Actually run the selector with the most recent store state and wrapper props
+      // to determine what the child props should be
+      newChildProps = childPropsSelector(latestStoreState, lastWrapperProps.current);
+    } catch (e) {
+      error = e;
+      lastThrownError = e;
+    }
+
+    if (!error) {
+      lastThrownError = null;
+    } // If the child props haven't changed, nothing to do here - cascade the subscription update
+
+
+    if (newChildProps === lastChildProps.current) {
+      if (!renderIsScheduled.current) {
+        notifyNestedSubs();
+      }
+    } else {
+      // Save references to the new child props.  Note that we track the "child props from store update"
+      // as a ref instead of a useState/useReducer because we need a way to determine if that value has
+      // been processed.  If this went into useState/useReducer, we couldn't clear out the value without
+      // forcing another re-render, which we don't want.
+      lastChildProps.current = newChildProps;
+      childPropsFromStoreUpdate.current = newChildProps;
+      renderIsScheduled.current = true; // If the child props _did_ change (or we caught an error), this wrapper component needs to re-render
+
+      forceComponentUpdateDispatch({
+        type: 'STORE_UPDATED',
+        payload: {
+          error: error
+        }
+      });
+    }
+  }; // Actually subscribe to the nearest connected ancestor (or store)
+
+
+  subscription.onStateChange = checkForUpdates;
+  subscription.trySubscribe(); // Pull data from the store after first render in case the store has
+  // changed since we began.
+
+  checkForUpdates();
+
+  var unsubscribeWrapper = function unsubscribeWrapper() {
+    didUnsubscribe = true;
+    subscription.tryUnsubscribe();
+    subscription.onStateChange = null;
+
+    if (lastThrownError) {
+      // It's possible that we caught an error due to a bad mapState function, but the
+      // parent re-rendered without this component and we're about to unmount.
+      // This shouldn't happen as long as we do top-down subscriptions correctly, but
+      // if we ever do those wrong, this throw will surface the error in our tests.
+      // In that case, throw the error from here so it doesn't get lost.
+      throw lastThrownError;
+    }
+  };
+
+  return unsubscribeWrapper;
+}
+
+var initStateUpdates = function initStateUpdates() {
+  return [null, 0];
+};
+
+function connectAdvanced(
+/*
+  selectorFactory is a func that is responsible for returning the selector function used to
+  compute new props from state, props, and dispatch. For example:
+      export default connectAdvanced((dispatch, options) => (state, props) => ({
+      thing: state.things[props.thingId],
+      saveThing: fields => dispatch(actionCreators.saveThing(props.thingId, fields)),
+    }))(YourComponent)
+    Access to dispatch is provided to the factory so selectorFactories can bind actionCreators
+  outside of their selector as an optimization. Options passed to connectAdvanced are passed to
+  the selectorFactory, along with displayName and WrappedComponent, as the second argument.
+    Note that selectorFactory is responsible for all caching/memoization of inbound and outbound
+  props. Do not use connectAdvanced directly without memoizing results between calls to your
+  selector, otherwise the Connect component will re-render on every state or props change.
+*/
+selectorFactory, // options object:
+_ref) {
+  if (_ref === void 0) {
+    _ref = {};
+  }
+
+  var _ref2 = _ref,
+      _ref2$getDisplayName = _ref2.getDisplayName,
+      getDisplayName = _ref2$getDisplayName === void 0 ? function (name) {
+    return "ConnectAdvanced(" + name + ")";
+  } : _ref2$getDisplayName,
+      _ref2$methodName = _ref2.methodName,
+      methodName = _ref2$methodName === void 0 ? 'connectAdvanced' : _ref2$methodName,
+      _ref2$renderCountProp = _ref2.renderCountProp,
+      renderCountProp = _ref2$renderCountProp === void 0 ? undefined : _ref2$renderCountProp,
+      _ref2$shouldHandleSta = _ref2.shouldHandleStateChanges,
+      shouldHandleStateChanges = _ref2$shouldHandleSta === void 0 ? true : _ref2$shouldHandleSta,
+      _ref2$storeKey = _ref2.storeKey,
+      storeKey = _ref2$storeKey === void 0 ? 'store' : _ref2$storeKey,
+      _ref2$withRef = _ref2.withRef,
+      withRef = _ref2$withRef === void 0 ? false : _ref2$withRef,
+      _ref2$forwardRef = _ref2.forwardRef,
+      forwardRef = _ref2$forwardRef === void 0 ? false : _ref2$forwardRef,
+      _ref2$context = _ref2.context,
+      context = _ref2$context === void 0 ? _Context__WEBPACK_IMPORTED_MODULE_7__.ReactReduxContext : _ref2$context,
+      connectOptions = (0,_babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__["default"])(_ref2, _excluded);
+
+  if (true) {
+    if (renderCountProp !== undefined) {
+      throw new Error("renderCountProp is removed. render counting is built into the latest React Dev Tools profiling extension");
+    }
+
+    if (withRef) {
+      throw new Error('withRef is removed. To access the wrapped instance, use a ref on the connected component');
+    }
+
+    var customStoreWarningMessage = 'To use a custom Redux store for specific components, create a custom React context with ' + "React.createContext(), and pass the context object to React Redux's Provider and specific components" + ' like: <Provider context={MyContext}><ConnectedComponent context={MyContext} /></Provider>. ' + 'You may also pass a {context : MyContext} option to connect';
+
+    if (storeKey !== 'store') {
+      throw new Error('storeKey has been removed and does not do anything. ' + customStoreWarningMessage);
+    }
+  }
+
+  var Context = context;
+  return function wrapWithConnect(WrappedComponent) {
+    if ( true && !(0,react_is__WEBPACK_IMPORTED_MODULE_4__.isValidElementType)(WrappedComponent)) {
+      throw new Error("You must pass a component to the function returned by " + (methodName + ". Instead received " + stringifyComponent(WrappedComponent)));
+    }
+
+    var wrappedComponentName = WrappedComponent.displayName || WrappedComponent.name || 'Component';
+    var displayName = getDisplayName(wrappedComponentName);
+
+    var selectorFactoryOptions = (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, connectOptions, {
+      getDisplayName: getDisplayName,
+      methodName: methodName,
+      renderCountProp: renderCountProp,
+      shouldHandleStateChanges: shouldHandleStateChanges,
+      storeKey: storeKey,
+      displayName: displayName,
+      wrappedComponentName: wrappedComponentName,
+      WrappedComponent: WrappedComponent
+    });
+
+    var pure = connectOptions.pure;
+
+    function createChildSelector(store) {
+      return selectorFactory(store.dispatch, selectorFactoryOptions);
+    } // If we aren't running in "pure" mode, we don't want to memoize values.
+    // To avoid conditionally calling hooks, we fall back to a tiny wrapper
+    // that just executes the given callback immediately.
+
+
+    var usePureOnlyMemo = pure ? react__WEBPACK_IMPORTED_MODULE_3__.useMemo : function (callback) {
+      return callback();
+    };
+
+    function ConnectFunction(props) {
+      var _useMemo = (0,react__WEBPACK_IMPORTED_MODULE_3__.useMemo)(function () {
+        // Distinguish between actual "data" props that were passed to the wrapper component,
+        // and values needed to control behavior (forwarded refs, alternate context instances).
+        // To maintain the wrapperProps object reference, memoize this destructuring.
+        var reactReduxForwardedRef = props.reactReduxForwardedRef,
+            wrapperProps = (0,_babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__["default"])(props, _excluded2);
+
+        return [props.context, reactReduxForwardedRef, wrapperProps];
+      }, [props]),
+          propsContext = _useMemo[0],
+          reactReduxForwardedRef = _useMemo[1],
+          wrapperProps = _useMemo[2];
+
+      var ContextToUse = (0,react__WEBPACK_IMPORTED_MODULE_3__.useMemo)(function () {
+        // Users may optionally pass in a custom context instance to use instead of our ReactReduxContext.
+        // Memoize the check that determines which context instance we should use.
+        return propsContext && propsContext.Consumer && (0,react_is__WEBPACK_IMPORTED_MODULE_4__.isContextConsumer)( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default().createElement(propsContext.Consumer, null)) ? propsContext : Context;
+      }, [propsContext, Context]); // Retrieve the store and ancestor subscription via context, if available
+
+      var contextValue = (0,react__WEBPACK_IMPORTED_MODULE_3__.useContext)(ContextToUse); // The store _must_ exist as either a prop or in context.
+      // We'll check to see if it _looks_ like a Redux store first.
+      // This allows us to pass through a `store` prop that is just a plain value.
+
+      var didStoreComeFromProps = Boolean(props.store) && Boolean(props.store.getState) && Boolean(props.store.dispatch);
+      var didStoreComeFromContext = Boolean(contextValue) && Boolean(contextValue.store);
+
+      if ( true && !didStoreComeFromProps && !didStoreComeFromContext) {
+        throw new Error("Could not find \"store\" in the context of " + ("\"" + displayName + "\". Either wrap the root component in a <Provider>, ") + "or pass a custom React context provider to <Provider> and the corresponding " + ("React context consumer to " + displayName + " in connect options."));
+      } // Based on the previous check, one of these must be true
+
+
+      var store = didStoreComeFromProps ? props.store : contextValue.store;
+      var childPropsSelector = (0,react__WEBPACK_IMPORTED_MODULE_3__.useMemo)(function () {
+        // The child props selector needs the store reference as an input.
+        // Re-create this selector whenever the store changes.
+        return createChildSelector(store);
+      }, [store]);
+
+      var _useMemo2 = (0,react__WEBPACK_IMPORTED_MODULE_3__.useMemo)(function () {
+        if (!shouldHandleStateChanges) return NO_SUBSCRIPTION_ARRAY; // This Subscription's source should match where store came from: props vs. context. A component
+        // connected to the store via props shouldn't use subscription from context, or vice versa.
+
+        // This Subscription's source should match where store came from: props vs. context. A component
+        // connected to the store via props shouldn't use subscription from context, or vice versa.
+        var subscription = (0,_utils_Subscription__WEBPACK_IMPORTED_MODULE_5__.createSubscription)(store, didStoreComeFromProps ? null : contextValue.subscription); // `notifyNestedSubs` is duplicated to handle the case where the component is unmounted in
+        // the middle of the notification loop, where `subscription` will then be null. This can
+        // probably be avoided if Subscription's listeners logic is changed to not call listeners
+        // that have been unsubscribed in the  middle of the notification loop.
+
+        // `notifyNestedSubs` is duplicated to handle the case where the component is unmounted in
+        // the middle of the notification loop, where `subscription` will then be null. This can
+        // probably be avoided if Subscription's listeners logic is changed to not call listeners
+        // that have been unsubscribed in the  middle of the notification loop.
+        var notifyNestedSubs = subscription.notifyNestedSubs.bind(subscription);
+        return [subscription, notifyNestedSubs];
+      }, [store, didStoreComeFromProps, contextValue]),
+          subscription = _useMemo2[0],
+          notifyNestedSubs = _useMemo2[1]; // Determine what {store, subscription} value should be put into nested context, if necessary,
+      // and memoize that value to avoid unnecessary context updates.
+
+
+      var overriddenContextValue = (0,react__WEBPACK_IMPORTED_MODULE_3__.useMemo)(function () {
+        if (didStoreComeFromProps) {
+          // This component is directly subscribed to a store from props.
+          // We don't want descendants reading from this store - pass down whatever
+          // the existing context value is from the nearest connected ancestor.
+          return contextValue;
+        } // Otherwise, put this component's subscription instance into context, so that
+        // connected descendants won't update until after this component is done
+
+
+        return (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, contextValue, {
+          subscription: subscription
+        });
+      }, [didStoreComeFromProps, contextValue, subscription]); // We need to force this wrapper component to re-render whenever a Redux store update
+      // causes a change to the calculated child component props (or we caught an error in mapState)
+
+      var _useReducer = (0,react__WEBPACK_IMPORTED_MODULE_3__.useReducer)(storeStateUpdatesReducer, EMPTY_ARRAY, initStateUpdates),
+          _useReducer$ = _useReducer[0],
+          previousStateUpdateResult = _useReducer$[0],
+          forceComponentUpdateDispatch = _useReducer[1]; // Propagate any mapState/mapDispatch errors upwards
+
+
+      if (previousStateUpdateResult && previousStateUpdateResult.error) {
+        throw previousStateUpdateResult.error;
+      } // Set up refs to coordinate values between the subscription effect and the render logic
+
+
+      var lastChildProps = (0,react__WEBPACK_IMPORTED_MODULE_3__.useRef)();
+      var lastWrapperProps = (0,react__WEBPACK_IMPORTED_MODULE_3__.useRef)(wrapperProps);
+      var childPropsFromStoreUpdate = (0,react__WEBPACK_IMPORTED_MODULE_3__.useRef)();
+      var renderIsScheduled = (0,react__WEBPACK_IMPORTED_MODULE_3__.useRef)(false);
+      var actualChildProps = usePureOnlyMemo(function () {
+        // Tricky logic here:
+        // - This render may have been triggered by a Redux store update that produced new child props
+        // - However, we may have gotten new wrapper props after that
+        // If we have new child props, and the same wrapper props, we know we should use the new child props as-is.
+        // But, if we have new wrapper props, those might change the child props, so we have to recalculate things.
+        // So, we'll use the child props from store update only if the wrapper props are the same as last time.
+        if (childPropsFromStoreUpdate.current && wrapperProps === lastWrapperProps.current) {
+          return childPropsFromStoreUpdate.current;
+        } // TODO We're reading the store directly in render() here. Bad idea?
+        // This will likely cause Bad Things (TM) to happen in Concurrent Mode.
+        // Note that we do this because on renders _not_ caused by store updates, we need the latest store state
+        // to determine what the child props should be.
+
+
+        return childPropsSelector(store.getState(), wrapperProps);
+      }, [store, previousStateUpdateResult, wrapperProps]); // We need this to execute synchronously every time we re-render. However, React warns
+      // about useLayoutEffect in SSR, so we try to detect environment and fall back to
+      // just useEffect instead to avoid the warning, since neither will run anyway.
+
+      useIsomorphicLayoutEffectWithArgs(captureWrapperProps, [lastWrapperProps, lastChildProps, renderIsScheduled, wrapperProps, actualChildProps, childPropsFromStoreUpdate, notifyNestedSubs]); // Our re-subscribe logic only runs when the store/subscription setup changes
+
+      useIsomorphicLayoutEffectWithArgs(subscribeUpdates, [shouldHandleStateChanges, store, subscription, childPropsSelector, lastWrapperProps, lastChildProps, renderIsScheduled, childPropsFromStoreUpdate, notifyNestedSubs, forceComponentUpdateDispatch], [store, subscription, childPropsSelector]); // Now that all that's done, we can finally try to actually render the child component.
+      // We memoize the elements for the rendered child component as an optimization.
+
+      var renderedWrappedComponent = (0,react__WEBPACK_IMPORTED_MODULE_3__.useMemo)(function () {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default().createElement(WrappedComponent, (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, actualChildProps, {
+          ref: reactReduxForwardedRef
+        }));
+      }, [reactReduxForwardedRef, WrappedComponent, actualChildProps]); // If React sees the exact same element reference as last time, it bails out of re-rendering
+      // that child, same as if it was wrapped in React.memo() or returned false from shouldComponentUpdate.
+
+      var renderedChild = (0,react__WEBPACK_IMPORTED_MODULE_3__.useMemo)(function () {
+        if (shouldHandleStateChanges) {
+          // If this component is subscribed to store updates, we need to pass its own
+          // subscription instance down to our descendants. That means rendering the same
+          // Context instance, and putting a different value into the context.
+          return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default().createElement(ContextToUse.Provider, {
+            value: overriddenContextValue
+          }, renderedWrappedComponent);
+        }
+
+        return renderedWrappedComponent;
+      }, [ContextToUse, renderedWrappedComponent, overriddenContextValue]);
+      return renderedChild;
+    } // If we're in "pure" mode, ensure our wrapper component only re-renders when incoming props have changed.
+
+
+    var Connect = pure ? react__WEBPACK_IMPORTED_MODULE_3___default().memo(ConnectFunction) : ConnectFunction;
+    Connect.WrappedComponent = WrappedComponent;
+    Connect.displayName = ConnectFunction.displayName = displayName;
+
+    if (forwardRef) {
+      var forwarded = react__WEBPACK_IMPORTED_MODULE_3___default().forwardRef(function forwardConnectRef(props, ref) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default().createElement(Connect, (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, props, {
+          reactReduxForwardedRef: ref
+        }));
+      });
+      forwarded.displayName = displayName;
+      forwarded.WrappedComponent = WrappedComponent;
+      return hoist_non_react_statics__WEBPACK_IMPORTED_MODULE_2___default()(forwarded, WrappedComponent);
+    }
+
+    return hoist_non_react_statics__WEBPACK_IMPORTED_MODULE_2___default()(Connect, WrappedComponent);
+  };
+}
+
+/***/ }),
+
+/***/ "./node_modules/react-redux/es/connect/connect.js":
+/*!********************************************************!*\
+  !*** ./node_modules/react-redux/es/connect/connect.js ***!
+  \********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   createConnect: () => (/* binding */ createConnect),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
+/* harmony import */ var _babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/objectWithoutPropertiesLoose */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js");
+/* harmony import */ var _components_connectAdvanced__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/connectAdvanced */ "./node_modules/react-redux/es/components/connectAdvanced.js");
+/* harmony import */ var _utils_shallowEqual__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utils/shallowEqual */ "./node_modules/react-redux/es/utils/shallowEqual.js");
+/* harmony import */ var _mapDispatchToProps__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./mapDispatchToProps */ "./node_modules/react-redux/es/connect/mapDispatchToProps.js");
+/* harmony import */ var _mapStateToProps__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./mapStateToProps */ "./node_modules/react-redux/es/connect/mapStateToProps.js");
+/* harmony import */ var _mergeProps__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./mergeProps */ "./node_modules/react-redux/es/connect/mergeProps.js");
+/* harmony import */ var _selectorFactory__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./selectorFactory */ "./node_modules/react-redux/es/connect/selectorFactory.js");
+
+
+var _excluded = ["pure", "areStatesEqual", "areOwnPropsEqual", "areStatePropsEqual", "areMergedPropsEqual"];
+
+
+
+
+
+
+/*
+  connect is a facade over connectAdvanced. It turns its args into a compatible
+  selectorFactory, which has the signature:
+
+    (dispatch, options) => (nextState, nextOwnProps) => nextFinalProps
+  
+  connect passes its args to connectAdvanced as options, which will in turn pass them to
+  selectorFactory each time a Connect component instance is instantiated or hot reloaded.
+
+  selectorFactory returns a final props selector from its mapStateToProps,
+  mapStateToPropsFactories, mapDispatchToProps, mapDispatchToPropsFactories, mergeProps,
+  mergePropsFactories, and pure args.
+
+  The resulting final props selector is called by the Connect component instance whenever
+  it receives new props or store state.
+ */
+
+function match(arg, factories, name) {
+  for (var i = factories.length - 1; i >= 0; i--) {
+    var result = factories[i](arg);
+    if (result) return result;
+  }
+
+  return function (dispatch, options) {
+    throw new Error("Invalid value of type " + typeof arg + " for " + name + " argument when connecting component " + options.wrappedComponentName + ".");
+  };
+}
+
+function strictEqual(a, b) {
+  return a === b;
+} // createConnect with default args builds the 'official' connect behavior. Calling it with
+// different options opens up some testing and extensibility scenarios
+
+
+function createConnect(_temp) {
+  var _ref = _temp === void 0 ? {} : _temp,
+      _ref$connectHOC = _ref.connectHOC,
+      connectHOC = _ref$connectHOC === void 0 ? _components_connectAdvanced__WEBPACK_IMPORTED_MODULE_2__["default"] : _ref$connectHOC,
+      _ref$mapStateToPropsF = _ref.mapStateToPropsFactories,
+      mapStateToPropsFactories = _ref$mapStateToPropsF === void 0 ? _mapStateToProps__WEBPACK_IMPORTED_MODULE_5__["default"] : _ref$mapStateToPropsF,
+      _ref$mapDispatchToPro = _ref.mapDispatchToPropsFactories,
+      mapDispatchToPropsFactories = _ref$mapDispatchToPro === void 0 ? _mapDispatchToProps__WEBPACK_IMPORTED_MODULE_4__["default"] : _ref$mapDispatchToPro,
+      _ref$mergePropsFactor = _ref.mergePropsFactories,
+      mergePropsFactories = _ref$mergePropsFactor === void 0 ? _mergeProps__WEBPACK_IMPORTED_MODULE_6__["default"] : _ref$mergePropsFactor,
+      _ref$selectorFactory = _ref.selectorFactory,
+      selectorFactory = _ref$selectorFactory === void 0 ? _selectorFactory__WEBPACK_IMPORTED_MODULE_7__["default"] : _ref$selectorFactory;
+
+  return function connect(mapStateToProps, mapDispatchToProps, mergeProps, _ref2) {
+    if (_ref2 === void 0) {
+      _ref2 = {};
+    }
+
+    var _ref3 = _ref2,
+        _ref3$pure = _ref3.pure,
+        pure = _ref3$pure === void 0 ? true : _ref3$pure,
+        _ref3$areStatesEqual = _ref3.areStatesEqual,
+        areStatesEqual = _ref3$areStatesEqual === void 0 ? strictEqual : _ref3$areStatesEqual,
+        _ref3$areOwnPropsEqua = _ref3.areOwnPropsEqual,
+        areOwnPropsEqual = _ref3$areOwnPropsEqua === void 0 ? _utils_shallowEqual__WEBPACK_IMPORTED_MODULE_3__["default"] : _ref3$areOwnPropsEqua,
+        _ref3$areStatePropsEq = _ref3.areStatePropsEqual,
+        areStatePropsEqual = _ref3$areStatePropsEq === void 0 ? _utils_shallowEqual__WEBPACK_IMPORTED_MODULE_3__["default"] : _ref3$areStatePropsEq,
+        _ref3$areMergedPropsE = _ref3.areMergedPropsEqual,
+        areMergedPropsEqual = _ref3$areMergedPropsE === void 0 ? _utils_shallowEqual__WEBPACK_IMPORTED_MODULE_3__["default"] : _ref3$areMergedPropsE,
+        extraOptions = (0,_babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__["default"])(_ref3, _excluded);
+
+    var initMapStateToProps = match(mapStateToProps, mapStateToPropsFactories, 'mapStateToProps');
+    var initMapDispatchToProps = match(mapDispatchToProps, mapDispatchToPropsFactories, 'mapDispatchToProps');
+    var initMergeProps = match(mergeProps, mergePropsFactories, 'mergeProps');
+    return connectHOC(selectorFactory, (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
+      // used in error messages
+      methodName: 'connect',
+      // used to compute Connect's displayName from the wrapped component's displayName.
+      getDisplayName: function getDisplayName(name) {
+        return "Connect(" + name + ")";
+      },
+      // if mapStateToProps is falsy, the Connect component doesn't subscribe to store state changes
+      shouldHandleStateChanges: Boolean(mapStateToProps),
+      // passed through to selectorFactory
+      initMapStateToProps: initMapStateToProps,
+      initMapDispatchToProps: initMapDispatchToProps,
+      initMergeProps: initMergeProps,
+      pure: pure,
+      areStatesEqual: areStatesEqual,
+      areOwnPropsEqual: areOwnPropsEqual,
+      areStatePropsEqual: areStatePropsEqual,
+      areMergedPropsEqual: areMergedPropsEqual
+    }, extraOptions));
+  };
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (/*#__PURE__*/createConnect());
+
+/***/ }),
+
+/***/ "./node_modules/react-redux/es/connect/mapDispatchToProps.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/react-redux/es/connect/mapDispatchToProps.js ***!
+  \*******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
+/* harmony export */   whenMapDispatchToPropsIsFunction: () => (/* binding */ whenMapDispatchToPropsIsFunction),
+/* harmony export */   whenMapDispatchToPropsIsMissing: () => (/* binding */ whenMapDispatchToPropsIsMissing),
+/* harmony export */   whenMapDispatchToPropsIsObject: () => (/* binding */ whenMapDispatchToPropsIsObject)
+/* harmony export */ });
+/* harmony import */ var _utils_bindActionCreators__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/bindActionCreators */ "./node_modules/react-redux/es/utils/bindActionCreators.js");
+/* harmony import */ var _wrapMapToProps__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./wrapMapToProps */ "./node_modules/react-redux/es/connect/wrapMapToProps.js");
+
+
+function whenMapDispatchToPropsIsFunction(mapDispatchToProps) {
+  return typeof mapDispatchToProps === 'function' ? (0,_wrapMapToProps__WEBPACK_IMPORTED_MODULE_1__.wrapMapToPropsFunc)(mapDispatchToProps, 'mapDispatchToProps') : undefined;
+}
+function whenMapDispatchToPropsIsMissing(mapDispatchToProps) {
+  return !mapDispatchToProps ? (0,_wrapMapToProps__WEBPACK_IMPORTED_MODULE_1__.wrapMapToPropsConstant)(function (dispatch) {
+    return {
+      dispatch: dispatch
+    };
+  }) : undefined;
+}
+function whenMapDispatchToPropsIsObject(mapDispatchToProps) {
+  return mapDispatchToProps && typeof mapDispatchToProps === 'object' ? (0,_wrapMapToProps__WEBPACK_IMPORTED_MODULE_1__.wrapMapToPropsConstant)(function (dispatch) {
+    return (0,_utils_bindActionCreators__WEBPACK_IMPORTED_MODULE_0__["default"])(mapDispatchToProps, dispatch);
+  }) : undefined;
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ([whenMapDispatchToPropsIsFunction, whenMapDispatchToPropsIsMissing, whenMapDispatchToPropsIsObject]);
+
+/***/ }),
+
+/***/ "./node_modules/react-redux/es/connect/mapStateToProps.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/react-redux/es/connect/mapStateToProps.js ***!
+  \****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
+/* harmony export */   whenMapStateToPropsIsFunction: () => (/* binding */ whenMapStateToPropsIsFunction),
+/* harmony export */   whenMapStateToPropsIsMissing: () => (/* binding */ whenMapStateToPropsIsMissing)
+/* harmony export */ });
+/* harmony import */ var _wrapMapToProps__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./wrapMapToProps */ "./node_modules/react-redux/es/connect/wrapMapToProps.js");
+
+function whenMapStateToPropsIsFunction(mapStateToProps) {
+  return typeof mapStateToProps === 'function' ? (0,_wrapMapToProps__WEBPACK_IMPORTED_MODULE_0__.wrapMapToPropsFunc)(mapStateToProps, 'mapStateToProps') : undefined;
+}
+function whenMapStateToPropsIsMissing(mapStateToProps) {
+  return !mapStateToProps ? (0,_wrapMapToProps__WEBPACK_IMPORTED_MODULE_0__.wrapMapToPropsConstant)(function () {
+    return {};
+  }) : undefined;
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ([whenMapStateToPropsIsFunction, whenMapStateToPropsIsMissing]);
+
+/***/ }),
+
+/***/ "./node_modules/react-redux/es/connect/mergeProps.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/react-redux/es/connect/mergeProps.js ***!
+  \***********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
+/* harmony export */   defaultMergeProps: () => (/* binding */ defaultMergeProps),
+/* harmony export */   whenMergePropsIsFunction: () => (/* binding */ whenMergePropsIsFunction),
+/* harmony export */   whenMergePropsIsOmitted: () => (/* binding */ whenMergePropsIsOmitted),
+/* harmony export */   wrapMergePropsFunc: () => (/* binding */ wrapMergePropsFunc)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
+/* harmony import */ var _utils_verifyPlainObject__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../utils/verifyPlainObject */ "./node_modules/react-redux/es/utils/verifyPlainObject.js");
+
+
+function defaultMergeProps(stateProps, dispatchProps, ownProps) {
+  return (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, ownProps, stateProps, dispatchProps);
+}
+function wrapMergePropsFunc(mergeProps) {
+  return function initMergePropsProxy(dispatch, _ref) {
+    var displayName = _ref.displayName,
+        pure = _ref.pure,
+        areMergedPropsEqual = _ref.areMergedPropsEqual;
+    var hasRunOnce = false;
+    var mergedProps;
+    return function mergePropsProxy(stateProps, dispatchProps, ownProps) {
+      var nextMergedProps = mergeProps(stateProps, dispatchProps, ownProps);
+
+      if (hasRunOnce) {
+        if (!pure || !areMergedPropsEqual(nextMergedProps, mergedProps)) mergedProps = nextMergedProps;
+      } else {
+        hasRunOnce = true;
+        mergedProps = nextMergedProps;
+        if (true) (0,_utils_verifyPlainObject__WEBPACK_IMPORTED_MODULE_1__["default"])(mergedProps, displayName, 'mergeProps');
+      }
+
+      return mergedProps;
+    };
+  };
+}
+function whenMergePropsIsFunction(mergeProps) {
+  return typeof mergeProps === 'function' ? wrapMergePropsFunc(mergeProps) : undefined;
+}
+function whenMergePropsIsOmitted(mergeProps) {
+  return !mergeProps ? function () {
+    return defaultMergeProps;
+  } : undefined;
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ([whenMergePropsIsFunction, whenMergePropsIsOmitted]);
+
+/***/ }),
+
+/***/ "./node_modules/react-redux/es/connect/selectorFactory.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/react-redux/es/connect/selectorFactory.js ***!
+  \****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ finalPropsSelectorFactory),
+/* harmony export */   impureFinalPropsSelectorFactory: () => (/* binding */ impureFinalPropsSelectorFactory),
+/* harmony export */   pureFinalPropsSelectorFactory: () => (/* binding */ pureFinalPropsSelectorFactory)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/objectWithoutPropertiesLoose */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js");
+/* harmony import */ var _verifySubselectors__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./verifySubselectors */ "./node_modules/react-redux/es/connect/verifySubselectors.js");
+
+var _excluded = ["initMapStateToProps", "initMapDispatchToProps", "initMergeProps"];
+
+function impureFinalPropsSelectorFactory(mapStateToProps, mapDispatchToProps, mergeProps, dispatch) {
+  return function impureFinalPropsSelector(state, ownProps) {
+    return mergeProps(mapStateToProps(state, ownProps), mapDispatchToProps(dispatch, ownProps), ownProps);
+  };
+}
+function pureFinalPropsSelectorFactory(mapStateToProps, mapDispatchToProps, mergeProps, dispatch, _ref) {
+  var areStatesEqual = _ref.areStatesEqual,
+      areOwnPropsEqual = _ref.areOwnPropsEqual,
+      areStatePropsEqual = _ref.areStatePropsEqual;
+  var hasRunAtLeastOnce = false;
+  var state;
+  var ownProps;
+  var stateProps;
+  var dispatchProps;
+  var mergedProps;
+
+  function handleFirstCall(firstState, firstOwnProps) {
+    state = firstState;
+    ownProps = firstOwnProps;
+    stateProps = mapStateToProps(state, ownProps);
+    dispatchProps = mapDispatchToProps(dispatch, ownProps);
+    mergedProps = mergeProps(stateProps, dispatchProps, ownProps);
+    hasRunAtLeastOnce = true;
+    return mergedProps;
+  }
+
+  function handleNewPropsAndNewState() {
+    stateProps = mapStateToProps(state, ownProps);
+    if (mapDispatchToProps.dependsOnOwnProps) dispatchProps = mapDispatchToProps(dispatch, ownProps);
+    mergedProps = mergeProps(stateProps, dispatchProps, ownProps);
+    return mergedProps;
+  }
+
+  function handleNewProps() {
+    if (mapStateToProps.dependsOnOwnProps) stateProps = mapStateToProps(state, ownProps);
+    if (mapDispatchToProps.dependsOnOwnProps) dispatchProps = mapDispatchToProps(dispatch, ownProps);
+    mergedProps = mergeProps(stateProps, dispatchProps, ownProps);
+    return mergedProps;
+  }
+
+  function handleNewState() {
+    var nextStateProps = mapStateToProps(state, ownProps);
+    var statePropsChanged = !areStatePropsEqual(nextStateProps, stateProps);
+    stateProps = nextStateProps;
+    if (statePropsChanged) mergedProps = mergeProps(stateProps, dispatchProps, ownProps);
+    return mergedProps;
+  }
+
+  function handleSubsequentCalls(nextState, nextOwnProps) {
+    var propsChanged = !areOwnPropsEqual(nextOwnProps, ownProps);
+    var stateChanged = !areStatesEqual(nextState, state, nextOwnProps, ownProps);
+    state = nextState;
+    ownProps = nextOwnProps;
+    if (propsChanged && stateChanged) return handleNewPropsAndNewState();
+    if (propsChanged) return handleNewProps();
+    if (stateChanged) return handleNewState();
+    return mergedProps;
+  }
+
+  return function pureFinalPropsSelector(nextState, nextOwnProps) {
+    return hasRunAtLeastOnce ? handleSubsequentCalls(nextState, nextOwnProps) : handleFirstCall(nextState, nextOwnProps);
+  };
+} // TODO: Add more comments
+// If pure is true, the selector returned by selectorFactory will memoize its results,
+// allowing connectAdvanced's shouldComponentUpdate to return false if final
+// props have not changed. If false, the selector will always return a new
+// object and shouldComponentUpdate will always return true.
+
+function finalPropsSelectorFactory(dispatch, _ref2) {
+  var initMapStateToProps = _ref2.initMapStateToProps,
+      initMapDispatchToProps = _ref2.initMapDispatchToProps,
+      initMergeProps = _ref2.initMergeProps,
+      options = (0,_babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_0__["default"])(_ref2, _excluded);
+
+  var mapStateToProps = initMapStateToProps(dispatch, options);
+  var mapDispatchToProps = initMapDispatchToProps(dispatch, options);
+  var mergeProps = initMergeProps(dispatch, options);
+
+  if (true) {
+    (0,_verifySubselectors__WEBPACK_IMPORTED_MODULE_1__["default"])(mapStateToProps, mapDispatchToProps, mergeProps, options.displayName);
+  }
+
+  var selectorFactory = options.pure ? pureFinalPropsSelectorFactory : impureFinalPropsSelectorFactory;
+  return selectorFactory(mapStateToProps, mapDispatchToProps, mergeProps, dispatch, options);
+}
+
+/***/ }),
+
+/***/ "./node_modules/react-redux/es/connect/verifySubselectors.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/react-redux/es/connect/verifySubselectors.js ***!
+  \*******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ verifySubselectors)
+/* harmony export */ });
+/* harmony import */ var _utils_warning__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/warning */ "./node_modules/react-redux/es/utils/warning.js");
+
+
+function verify(selector, methodName, displayName) {
+  if (!selector) {
+    throw new Error("Unexpected value for " + methodName + " in " + displayName + ".");
+  } else if (methodName === 'mapStateToProps' || methodName === 'mapDispatchToProps') {
+    if (!Object.prototype.hasOwnProperty.call(selector, 'dependsOnOwnProps')) {
+      (0,_utils_warning__WEBPACK_IMPORTED_MODULE_0__["default"])("The selector for " + methodName + " of " + displayName + " did not specify a value for dependsOnOwnProps.");
+    }
+  }
+}
+
+function verifySubselectors(mapStateToProps, mapDispatchToProps, mergeProps, displayName) {
+  verify(mapStateToProps, 'mapStateToProps', displayName);
+  verify(mapDispatchToProps, 'mapDispatchToProps', displayName);
+  verify(mergeProps, 'mergeProps', displayName);
+}
+
+/***/ }),
+
+/***/ "./node_modules/react-redux/es/connect/wrapMapToProps.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/react-redux/es/connect/wrapMapToProps.js ***!
+  \***************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getDependsOnOwnProps: () => (/* binding */ getDependsOnOwnProps),
+/* harmony export */   wrapMapToPropsConstant: () => (/* binding */ wrapMapToPropsConstant),
+/* harmony export */   wrapMapToPropsFunc: () => (/* binding */ wrapMapToPropsFunc)
+/* harmony export */ });
+/* harmony import */ var _utils_verifyPlainObject__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/verifyPlainObject */ "./node_modules/react-redux/es/utils/verifyPlainObject.js");
+
+function wrapMapToPropsConstant(getConstant) {
+  return function initConstantSelector(dispatch, options) {
+    var constant = getConstant(dispatch, options);
+
+    function constantSelector() {
+      return constant;
+    }
+
+    constantSelector.dependsOnOwnProps = false;
+    return constantSelector;
+  };
+} // dependsOnOwnProps is used by createMapToPropsProxy to determine whether to pass props as args
+// to the mapToProps function being wrapped. It is also used by makePurePropsSelector to determine
+// whether mapToProps needs to be invoked when props have changed.
+//
+// A length of one signals that mapToProps does not depend on props from the parent component.
+// A length of zero is assumed to mean mapToProps is getting args via arguments or ...args and
+// therefore not reporting its length accurately..
+
+function getDependsOnOwnProps(mapToProps) {
+  return mapToProps.dependsOnOwnProps !== null && mapToProps.dependsOnOwnProps !== undefined ? Boolean(mapToProps.dependsOnOwnProps) : mapToProps.length !== 1;
+} // Used by whenMapStateToPropsIsFunction and whenMapDispatchToPropsIsFunction,
+// this function wraps mapToProps in a proxy function which does several things:
+//
+//  * Detects whether the mapToProps function being called depends on props, which
+//    is used by selectorFactory to decide if it should reinvoke on props changes.
+//
+//  * On first call, handles mapToProps if returns another function, and treats that
+//    new function as the true mapToProps for subsequent calls.
+//
+//  * On first call, verifies the first result is a plain object, in order to warn
+//    the developer that their mapToProps function is not returning a valid result.
+//
+
+function wrapMapToPropsFunc(mapToProps, methodName) {
+  return function initProxySelector(dispatch, _ref) {
+    var displayName = _ref.displayName;
+
+    var proxy = function mapToPropsProxy(stateOrDispatch, ownProps) {
+      return proxy.dependsOnOwnProps ? proxy.mapToProps(stateOrDispatch, ownProps) : proxy.mapToProps(stateOrDispatch);
+    }; // allow detectFactoryAndVerify to get ownProps
+
+
+    proxy.dependsOnOwnProps = true;
+
+    proxy.mapToProps = function detectFactoryAndVerify(stateOrDispatch, ownProps) {
+      proxy.mapToProps = mapToProps;
+      proxy.dependsOnOwnProps = getDependsOnOwnProps(mapToProps);
+      var props = proxy(stateOrDispatch, ownProps);
+
+      if (typeof props === 'function') {
+        proxy.mapToProps = props;
+        proxy.dependsOnOwnProps = getDependsOnOwnProps(props);
+        props = proxy(stateOrDispatch, ownProps);
+      }
+
+      if (true) (0,_utils_verifyPlainObject__WEBPACK_IMPORTED_MODULE_0__["default"])(props, displayName, methodName);
+      return props;
+    };
+
+    return proxy;
+  };
+}
+
+/***/ }),
+
+/***/ "./node_modules/react-redux/es/exports.js":
+/*!************************************************!*\
+  !*** ./node_modules/react-redux/es/exports.js ***!
+  \************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Provider: () => (/* reexport safe */ _components_Provider__WEBPACK_IMPORTED_MODULE_0__["default"]),
+/* harmony export */   ReactReduxContext: () => (/* reexport safe */ _components_Context__WEBPACK_IMPORTED_MODULE_2__.ReactReduxContext),
+/* harmony export */   connect: () => (/* reexport safe */ _connect_connect__WEBPACK_IMPORTED_MODULE_3__["default"]),
+/* harmony export */   connectAdvanced: () => (/* reexport safe */ _components_connectAdvanced__WEBPACK_IMPORTED_MODULE_1__["default"]),
+/* harmony export */   createDispatchHook: () => (/* reexport safe */ _hooks_useDispatch__WEBPACK_IMPORTED_MODULE_4__.createDispatchHook),
+/* harmony export */   createSelectorHook: () => (/* reexport safe */ _hooks_useSelector__WEBPACK_IMPORTED_MODULE_5__.createSelectorHook),
+/* harmony export */   createStoreHook: () => (/* reexport safe */ _hooks_useStore__WEBPACK_IMPORTED_MODULE_6__.createStoreHook),
+/* harmony export */   shallowEqual: () => (/* reexport safe */ _utils_shallowEqual__WEBPACK_IMPORTED_MODULE_7__["default"]),
+/* harmony export */   useDispatch: () => (/* reexport safe */ _hooks_useDispatch__WEBPACK_IMPORTED_MODULE_4__.useDispatch),
+/* harmony export */   useSelector: () => (/* reexport safe */ _hooks_useSelector__WEBPACK_IMPORTED_MODULE_5__.useSelector),
+/* harmony export */   useStore: () => (/* reexport safe */ _hooks_useStore__WEBPACK_IMPORTED_MODULE_6__.useStore)
+/* harmony export */ });
+/* harmony import */ var _components_Provider__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/Provider */ "./node_modules/react-redux/es/components/Provider.js");
+/* harmony import */ var _components_connectAdvanced__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/connectAdvanced */ "./node_modules/react-redux/es/components/connectAdvanced.js");
+/* harmony import */ var _components_Context__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/Context */ "./node_modules/react-redux/es/components/Context.js");
+/* harmony import */ var _connect_connect__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./connect/connect */ "./node_modules/react-redux/es/connect/connect.js");
+/* harmony import */ var _hooks_useDispatch__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./hooks/useDispatch */ "./node_modules/react-redux/es/hooks/useDispatch.js");
+/* harmony import */ var _hooks_useSelector__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./hooks/useSelector */ "./node_modules/react-redux/es/hooks/useSelector.js");
+/* harmony import */ var _hooks_useStore__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./hooks/useStore */ "./node_modules/react-redux/es/hooks/useStore.js");
+/* harmony import */ var _utils_shallowEqual__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./utils/shallowEqual */ "./node_modules/react-redux/es/utils/shallowEqual.js");
+
+
+
+
+
+
+
+
+
+
+/***/ }),
+
+/***/ "./node_modules/react-redux/es/hooks/useDispatch.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/react-redux/es/hooks/useDispatch.js ***!
+  \**********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   createDispatchHook: () => (/* binding */ createDispatchHook),
+/* harmony export */   useDispatch: () => (/* binding */ useDispatch)
+/* harmony export */ });
+/* harmony import */ var _components_Context__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/Context */ "./node_modules/react-redux/es/components/Context.js");
+/* harmony import */ var _useStore__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./useStore */ "./node_modules/react-redux/es/hooks/useStore.js");
+
+
+/**
+ * Hook factory, which creates a `useDispatch` hook bound to a given context.
+ *
+ * @param {React.Context} [context=ReactReduxContext] Context passed to your `<Provider>`.
+ * @returns {Function} A `useDispatch` hook bound to the specified context.
+ */
+
+function createDispatchHook(context) {
+  if (context === void 0) {
+    context = _components_Context__WEBPACK_IMPORTED_MODULE_0__.ReactReduxContext;
+  }
+
+  var useStore = context === _components_Context__WEBPACK_IMPORTED_MODULE_0__.ReactReduxContext ? _useStore__WEBPACK_IMPORTED_MODULE_1__.useStore : (0,_useStore__WEBPACK_IMPORTED_MODULE_1__.createStoreHook)(context);
+  return function useDispatch() {
+    var store = useStore();
+    return store.dispatch;
+  };
+}
+/**
+ * A hook to access the redux `dispatch` function.
+ *
+ * @returns {any|function} redux store's `dispatch` function
+ *
+ * @example
+ *
+ * import React, { useCallback } from 'react'
+ * import { useDispatch } from 'react-redux'
+ *
+ * export const CounterComponent = ({ value }) => {
+ *   const dispatch = useDispatch()
+ *   const increaseCounter = useCallback(() => dispatch({ type: 'increase-counter' }), [])
+ *   return (
+ *     <div>
+ *       <span>{value}</span>
+ *       <button onClick={increaseCounter}>Increase counter</button>
+ *     </div>
+ *   )
+ * }
+ */
+
+var useDispatch = /*#__PURE__*/createDispatchHook();
+
+/***/ }),
+
+/***/ "./node_modules/react-redux/es/hooks/useReduxContext.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/react-redux/es/hooks/useReduxContext.js ***!
+  \**************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   useReduxContext: () => (/* binding */ useReduxContext)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _components_Context__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Context */ "./node_modules/react-redux/es/components/Context.js");
+
+
+/**
+ * A hook to access the value of the `ReactReduxContext`. This is a low-level
+ * hook that you should usually not need to call directly.
+ *
+ * @returns {any} the value of the `ReactReduxContext`
+ *
+ * @example
+ *
+ * import React from 'react'
+ * import { useReduxContext } from 'react-redux'
+ *
+ * export const CounterComponent = ({ value }) => {
+ *   const { store } = useReduxContext()
+ *   return <div>{store.getState()}</div>
+ * }
+ */
+
+function useReduxContext() {
+  var contextValue = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_components_Context__WEBPACK_IMPORTED_MODULE_1__.ReactReduxContext);
+
+  if ( true && !contextValue) {
+    throw new Error('could not find react-redux context value; please ensure the component is wrapped in a <Provider>');
+  }
+
+  return contextValue;
+}
+
+/***/ }),
+
+/***/ "./node_modules/react-redux/es/hooks/useSelector.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/react-redux/es/hooks/useSelector.js ***!
+  \**********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   createSelectorHook: () => (/* binding */ createSelectorHook),
+/* harmony export */   useSelector: () => (/* binding */ useSelector)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _useReduxContext__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./useReduxContext */ "./node_modules/react-redux/es/hooks/useReduxContext.js");
+/* harmony import */ var _utils_Subscription__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../utils/Subscription */ "./node_modules/react-redux/es/utils/Subscription.js");
+/* harmony import */ var _utils_useIsomorphicLayoutEffect__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utils/useIsomorphicLayoutEffect */ "./node_modules/react-redux/es/utils/useIsomorphicLayoutEffect.js");
+/* harmony import */ var _components_Context__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Context */ "./node_modules/react-redux/es/components/Context.js");
+
+
+
+
+
+
+var refEquality = function refEquality(a, b) {
+  return a === b;
+};
+
+function useSelectorWithStoreAndSubscription(selector, equalityFn, store, contextSub) {
+  var _useReducer = (0,react__WEBPACK_IMPORTED_MODULE_0__.useReducer)(function (s) {
+    return s + 1;
+  }, 0),
+      forceRender = _useReducer[1];
+
+  var subscription = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
+    return (0,_utils_Subscription__WEBPACK_IMPORTED_MODULE_2__.createSubscription)(store, contextSub);
+  }, [store, contextSub]);
+  var latestSubscriptionCallbackError = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
+  var latestSelector = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
+  var latestStoreState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
+  var latestSelectedState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
+  var storeState = store.getState();
+  var selectedState;
+
+  try {
+    if (selector !== latestSelector.current || storeState !== latestStoreState.current || latestSubscriptionCallbackError.current) {
+      var newSelectedState = selector(storeState); // ensure latest selected state is reused so that a custom equality function can result in identical references
+
+      if (latestSelectedState.current === undefined || !equalityFn(newSelectedState, latestSelectedState.current)) {
+        selectedState = newSelectedState;
+      } else {
+        selectedState = latestSelectedState.current;
+      }
+    } else {
+      selectedState = latestSelectedState.current;
+    }
+  } catch (err) {
+    if (latestSubscriptionCallbackError.current) {
+      err.message += "\nThe error may be correlated with this previous error:\n" + latestSubscriptionCallbackError.current.stack + "\n\n";
+    }
+
+    throw err;
+  }
+
+  (0,_utils_useIsomorphicLayoutEffect__WEBPACK_IMPORTED_MODULE_3__.useIsomorphicLayoutEffect)(function () {
+    latestSelector.current = selector;
+    latestStoreState.current = storeState;
+    latestSelectedState.current = selectedState;
+    latestSubscriptionCallbackError.current = undefined;
+  });
+  (0,_utils_useIsomorphicLayoutEffect__WEBPACK_IMPORTED_MODULE_3__.useIsomorphicLayoutEffect)(function () {
+    function checkForUpdates() {
+      try {
+        var newStoreState = store.getState(); // Avoid calling selector multiple times if the store's state has not changed
+
+        if (newStoreState === latestStoreState.current) {
+          return;
+        }
+
+        var _newSelectedState = latestSelector.current(newStoreState);
+
+        if (equalityFn(_newSelectedState, latestSelectedState.current)) {
+          return;
+        }
+
+        latestSelectedState.current = _newSelectedState;
+        latestStoreState.current = newStoreState;
+      } catch (err) {
+        // we ignore all errors here, since when the component
+        // is re-rendered, the selectors are called again, and
+        // will throw again, if neither props nor store state
+        // changed
+        latestSubscriptionCallbackError.current = err;
+      }
+
+      forceRender();
+    }
+
+    subscription.onStateChange = checkForUpdates;
+    subscription.trySubscribe();
+    checkForUpdates();
+    return function () {
+      return subscription.tryUnsubscribe();
+    };
+  }, [store, subscription]);
+  return selectedState;
+}
+/**
+ * Hook factory, which creates a `useSelector` hook bound to a given context.
+ *
+ * @param {React.Context} [context=ReactReduxContext] Context passed to your `<Provider>`.
+ * @returns {Function} A `useSelector` hook bound to the specified context.
+ */
+
+
+function createSelectorHook(context) {
+  if (context === void 0) {
+    context = _components_Context__WEBPACK_IMPORTED_MODULE_4__.ReactReduxContext;
+  }
+
+  var useReduxContext = context === _components_Context__WEBPACK_IMPORTED_MODULE_4__.ReactReduxContext ? _useReduxContext__WEBPACK_IMPORTED_MODULE_1__.useReduxContext : function () {
+    return (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(context);
+  };
+  return function useSelector(selector, equalityFn) {
+    if (equalityFn === void 0) {
+      equalityFn = refEquality;
+    }
+
+    if (true) {
+      if (!selector) {
+        throw new Error("You must pass a selector to useSelector");
+      }
+
+      if (typeof selector !== 'function') {
+        throw new Error("You must pass a function as a selector to useSelector");
+      }
+
+      if (typeof equalityFn !== 'function') {
+        throw new Error("You must pass a function as an equality function to useSelector");
+      }
+    }
+
+    var _useReduxContext = useReduxContext(),
+        store = _useReduxContext.store,
+        contextSub = _useReduxContext.subscription;
+
+    var selectedState = useSelectorWithStoreAndSubscription(selector, equalityFn, store, contextSub);
+    (0,react__WEBPACK_IMPORTED_MODULE_0__.useDebugValue)(selectedState);
+    return selectedState;
+  };
+}
+/**
+ * A hook to access the redux store's state. This hook takes a selector function
+ * as an argument. The selector is called with the store state.
+ *
+ * This hook takes an optional equality comparison function as the second parameter
+ * that allows you to customize the way the selected state is compared to determine
+ * whether the component needs to be re-rendered.
+ *
+ * @param {Function} selector the selector function
+ * @param {Function=} equalityFn the function that will be used to determine equality
+ *
+ * @returns {any} the selected state
+ *
+ * @example
+ *
+ * import React from 'react'
+ * import { useSelector } from 'react-redux'
+ *
+ * export const CounterComponent = () => {
+ *   const counter = useSelector(state => state.counter)
+ *   return <div>{counter}</div>
+ * }
+ */
+
+var useSelector = /*#__PURE__*/createSelectorHook();
+
+/***/ }),
+
+/***/ "./node_modules/react-redux/es/hooks/useStore.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/react-redux/es/hooks/useStore.js ***!
+  \*******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   createStoreHook: () => (/* binding */ createStoreHook),
+/* harmony export */   useStore: () => (/* binding */ useStore)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _components_Context__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Context */ "./node_modules/react-redux/es/components/Context.js");
+/* harmony import */ var _useReduxContext__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./useReduxContext */ "./node_modules/react-redux/es/hooks/useReduxContext.js");
+
+
+
+/**
+ * Hook factory, which creates a `useStore` hook bound to a given context.
+ *
+ * @param {React.Context} [context=ReactReduxContext] Context passed to your `<Provider>`.
+ * @returns {Function} A `useStore` hook bound to the specified context.
+ */
+
+function createStoreHook(context) {
+  if (context === void 0) {
+    context = _components_Context__WEBPACK_IMPORTED_MODULE_1__.ReactReduxContext;
+  }
+
+  var useReduxContext = context === _components_Context__WEBPACK_IMPORTED_MODULE_1__.ReactReduxContext ? _useReduxContext__WEBPACK_IMPORTED_MODULE_2__.useReduxContext : function () {
+    return (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(context);
+  };
+  return function useStore() {
+    var _useReduxContext = useReduxContext(),
+        store = _useReduxContext.store;
+
+    return store;
+  };
+}
+/**
+ * A hook to access the redux store.
+ *
+ * @returns {any} the redux store
+ *
+ * @example
+ *
+ * import React from 'react'
+ * import { useStore } from 'react-redux'
+ *
+ * export const ExampleComponent = () => {
+ *   const store = useStore()
+ *   return <div>{store.getState()}</div>
+ * }
+ */
+
+var useStore = /*#__PURE__*/createStoreHook();
+
+/***/ }),
+
+/***/ "./node_modules/react-redux/es/index.js":
+/*!**********************************************!*\
+  !*** ./node_modules/react-redux/es/index.js ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Provider: () => (/* reexport safe */ _exports__WEBPACK_IMPORTED_MODULE_0__.Provider),
+/* harmony export */   ReactReduxContext: () => (/* reexport safe */ _exports__WEBPACK_IMPORTED_MODULE_0__.ReactReduxContext),
+/* harmony export */   batch: () => (/* reexport safe */ _utils_reactBatchedUpdates__WEBPACK_IMPORTED_MODULE_1__.unstable_batchedUpdates),
+/* harmony export */   connect: () => (/* reexport safe */ _exports__WEBPACK_IMPORTED_MODULE_0__.connect),
+/* harmony export */   connectAdvanced: () => (/* reexport safe */ _exports__WEBPACK_IMPORTED_MODULE_0__.connectAdvanced),
+/* harmony export */   createDispatchHook: () => (/* reexport safe */ _exports__WEBPACK_IMPORTED_MODULE_0__.createDispatchHook),
+/* harmony export */   createSelectorHook: () => (/* reexport safe */ _exports__WEBPACK_IMPORTED_MODULE_0__.createSelectorHook),
+/* harmony export */   createStoreHook: () => (/* reexport safe */ _exports__WEBPACK_IMPORTED_MODULE_0__.createStoreHook),
+/* harmony export */   shallowEqual: () => (/* reexport safe */ _exports__WEBPACK_IMPORTED_MODULE_0__.shallowEqual),
+/* harmony export */   useDispatch: () => (/* reexport safe */ _exports__WEBPACK_IMPORTED_MODULE_0__.useDispatch),
+/* harmony export */   useSelector: () => (/* reexport safe */ _exports__WEBPACK_IMPORTED_MODULE_0__.useSelector),
+/* harmony export */   useStore: () => (/* reexport safe */ _exports__WEBPACK_IMPORTED_MODULE_0__.useStore)
+/* harmony export */ });
+/* harmony import */ var _exports__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./exports */ "./node_modules/react-redux/es/exports.js");
+/* harmony import */ var _utils_reactBatchedUpdates__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils/reactBatchedUpdates */ "./node_modules/react-redux/es/utils/reactBatchedUpdates.js");
+/* harmony import */ var _utils_batch__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./utils/batch */ "./node_modules/react-redux/es/utils/batch.js");
+
+
+ // Enable batched updates in our subscriptions for use
+// with standard React renderers (ReactDOM, React Native)
+
+(0,_utils_batch__WEBPACK_IMPORTED_MODULE_2__.setBatch)(_utils_reactBatchedUpdates__WEBPACK_IMPORTED_MODULE_1__.unstable_batchedUpdates);
+
+
+/***/ }),
+
+/***/ "./node_modules/react-redux/es/utils/Subscription.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/react-redux/es/utils/Subscription.js ***!
+  \***********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   createSubscription: () => (/* binding */ createSubscription)
+/* harmony export */ });
+/* harmony import */ var _batch__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./batch */ "./node_modules/react-redux/es/utils/batch.js");
+ // encapsulates the subscription logic for connecting a component to the redux store, as
+// well as nesting subscriptions of descendant components, so that we can ensure the
+// ancestor components re-render before descendants
+
+function createListenerCollection() {
+  var batch = (0,_batch__WEBPACK_IMPORTED_MODULE_0__.getBatch)();
+  var first = null;
+  var last = null;
+  return {
+    clear: function clear() {
+      first = null;
+      last = null;
+    },
+    notify: function notify() {
+      batch(function () {
+        var listener = first;
+
+        while (listener) {
+          listener.callback();
+          listener = listener.next;
+        }
+      });
+    },
+    get: function get() {
+      var listeners = [];
+      var listener = first;
+
+      while (listener) {
+        listeners.push(listener);
+        listener = listener.next;
+      }
+
+      return listeners;
+    },
+    subscribe: function subscribe(callback) {
+      var isSubscribed = true;
+      var listener = last = {
+        callback: callback,
+        next: null,
+        prev: last
+      };
+
+      if (listener.prev) {
+        listener.prev.next = listener;
+      } else {
+        first = listener;
+      }
+
+      return function unsubscribe() {
+        if (!isSubscribed || first === null) return;
+        isSubscribed = false;
+
+        if (listener.next) {
+          listener.next.prev = listener.prev;
+        } else {
+          last = listener.prev;
+        }
+
+        if (listener.prev) {
+          listener.prev.next = listener.next;
+        } else {
+          first = listener.next;
+        }
+      };
+    }
+  };
+}
+
+var nullListeners = {
+  notify: function notify() {},
+  get: function get() {
+    return [];
+  }
+};
+function createSubscription(store, parentSub) {
+  var unsubscribe;
+  var listeners = nullListeners;
+
+  function addNestedSub(listener) {
+    trySubscribe();
+    return listeners.subscribe(listener);
+  }
+
+  function notifyNestedSubs() {
+    listeners.notify();
+  }
+
+  function handleChangeWrapper() {
+    if (subscription.onStateChange) {
+      subscription.onStateChange();
+    }
+  }
+
+  function isSubscribed() {
+    return Boolean(unsubscribe);
+  }
+
+  function trySubscribe() {
+    if (!unsubscribe) {
+      unsubscribe = parentSub ? parentSub.addNestedSub(handleChangeWrapper) : store.subscribe(handleChangeWrapper);
+      listeners = createListenerCollection();
+    }
+  }
+
+  function tryUnsubscribe() {
+    if (unsubscribe) {
+      unsubscribe();
+      unsubscribe = undefined;
+      listeners.clear();
+      listeners = nullListeners;
+    }
+  }
+
+  var subscription = {
+    addNestedSub: addNestedSub,
+    notifyNestedSubs: notifyNestedSubs,
+    handleChangeWrapper: handleChangeWrapper,
+    isSubscribed: isSubscribed,
+    trySubscribe: trySubscribe,
+    tryUnsubscribe: tryUnsubscribe,
+    getListeners: function getListeners() {
+      return listeners;
+    }
+  };
+  return subscription;
+}
+
+/***/ }),
+
+/***/ "./node_modules/react-redux/es/utils/batch.js":
+/*!****************************************************!*\
+  !*** ./node_modules/react-redux/es/utils/batch.js ***!
+  \****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getBatch: () => (/* binding */ getBatch),
+/* harmony export */   setBatch: () => (/* binding */ setBatch)
+/* harmony export */ });
+// Default to a dummy "batch" implementation that just runs the callback
+function defaultNoopBatch(callback) {
+  callback();
+}
+
+var batch = defaultNoopBatch; // Allow injecting another batching function later
+
+var setBatch = function setBatch(newBatch) {
+  return batch = newBatch;
+}; // Supply a getter just to skip dealing with ESM bindings
+
+var getBatch = function getBatch() {
+  return batch;
+};
+
+/***/ }),
+
+/***/ "./node_modules/react-redux/es/utils/bindActionCreators.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/react-redux/es/utils/bindActionCreators.js ***!
+  \*****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ bindActionCreators)
+/* harmony export */ });
+function bindActionCreators(actionCreators, dispatch) {
+  var boundActionCreators = {};
+
+  var _loop = function _loop(key) {
+    var actionCreator = actionCreators[key];
+
+    if (typeof actionCreator === 'function') {
+      boundActionCreators[key] = function () {
+        return dispatch(actionCreator.apply(void 0, arguments));
+      };
+    }
+  };
+
+  for (var key in actionCreators) {
+    _loop(key);
+  }
+
+  return boundActionCreators;
+}
+
+/***/ }),
+
+/***/ "./node_modules/react-redux/es/utils/isPlainObject.js":
+/*!************************************************************!*\
+  !*** ./node_modules/react-redux/es/utils/isPlainObject.js ***!
+  \************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ isPlainObject)
+/* harmony export */ });
+/**
+ * @param {any} obj The object to inspect.
+ * @returns {boolean} True if the argument appears to be a plain object.
+ */
+function isPlainObject(obj) {
+  if (typeof obj !== 'object' || obj === null) return false;
+  var proto = Object.getPrototypeOf(obj);
+  if (proto === null) return true;
+  var baseProto = proto;
+
+  while (Object.getPrototypeOf(baseProto) !== null) {
+    baseProto = Object.getPrototypeOf(baseProto);
+  }
+
+  return proto === baseProto;
+}
+
+/***/ }),
+
+/***/ "./node_modules/react-redux/es/utils/reactBatchedUpdates.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/react-redux/es/utils/reactBatchedUpdates.js ***!
+  \******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   unstable_batchedUpdates: () => (/* reexport safe */ react_dom__WEBPACK_IMPORTED_MODULE_0__.unstable_batchedUpdates)
+/* harmony export */ });
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-dom */ "react-dom");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_0__);
+/* eslint-disable import/no-unresolved */
+
+
+/***/ }),
+
+/***/ "./node_modules/react-redux/es/utils/shallowEqual.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/react-redux/es/utils/shallowEqual.js ***!
+  \***********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ shallowEqual)
+/* harmony export */ });
+function is(x, y) {
+  if (x === y) {
+    return x !== 0 || y !== 0 || 1 / x === 1 / y;
+  } else {
+    return x !== x && y !== y;
+  }
+}
+
+function shallowEqual(objA, objB) {
+  if (is(objA, objB)) return true;
+
+  if (typeof objA !== 'object' || objA === null || typeof objB !== 'object' || objB === null) {
+    return false;
+  }
+
+  var keysA = Object.keys(objA);
+  var keysB = Object.keys(objB);
+  if (keysA.length !== keysB.length) return false;
+
+  for (var i = 0; i < keysA.length; i++) {
+    if (!Object.prototype.hasOwnProperty.call(objB, keysA[i]) || !is(objA[keysA[i]], objB[keysA[i]])) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+/***/ }),
+
+/***/ "./node_modules/react-redux/es/utils/useIsomorphicLayoutEffect.js":
+/*!************************************************************************!*\
+  !*** ./node_modules/react-redux/es/utils/useIsomorphicLayoutEffect.js ***!
+  \************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   useIsomorphicLayoutEffect: () => (/* binding */ useIsomorphicLayoutEffect)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+ // React currently throws a warning when using useLayoutEffect on the server.
+// To get around it, we can conditionally useEffect on the server (no-op) and
+// useLayoutEffect in the browser. We need useLayoutEffect to ensure the store
+// subscription callback always has the selector from the latest render commit
+// available, otherwise a store update may happen between render and the effect,
+// which may cause missed updates; we also must ensure the store subscription
+// is created synchronously, otherwise a store update may occur before the
+// subscription is created and an inconsistent state may be observed
+
+var useIsomorphicLayoutEffect = typeof window !== 'undefined' && typeof window.document !== 'undefined' && typeof window.document.createElement !== 'undefined' ? react__WEBPACK_IMPORTED_MODULE_0__.useLayoutEffect : react__WEBPACK_IMPORTED_MODULE_0__.useEffect;
+
+/***/ }),
+
+/***/ "./node_modules/react-redux/es/utils/verifyPlainObject.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/react-redux/es/utils/verifyPlainObject.js ***!
+  \****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ verifyPlainObject)
+/* harmony export */ });
+/* harmony import */ var _isPlainObject__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./isPlainObject */ "./node_modules/react-redux/es/utils/isPlainObject.js");
+/* harmony import */ var _warning__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./warning */ "./node_modules/react-redux/es/utils/warning.js");
+
+
+function verifyPlainObject(value, displayName, methodName) {
+  if (!(0,_isPlainObject__WEBPACK_IMPORTED_MODULE_0__["default"])(value)) {
+    (0,_warning__WEBPACK_IMPORTED_MODULE_1__["default"])(methodName + "() in " + displayName + " must return a plain object. Instead received " + value + ".");
+  }
+}
+
+/***/ }),
+
+/***/ "./node_modules/react-redux/es/utils/warning.js":
+/*!******************************************************!*\
+  !*** ./node_modules/react-redux/es/utils/warning.js ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ warning)
+/* harmony export */ });
+/**
+ * Prints a warning in the console if it exists.
+ *
+ * @param {String} message The warning message.
+ * @returns {void}
+ */
+function warning(message) {
+  /* eslint-disable no-console */
+  if (typeof console !== 'undefined' && typeof console.error === 'function') {
+    console.error(message);
+  }
+  /* eslint-enable no-console */
+
+
+  try {
+    // This error was thrown as a convenience so that if you enable
+    // "break on all exceptions" in your console,
+    // it would pause the execution at this line.
+    throw new Error(message);
+    /* eslint-disable no-empty */
+  } catch (e) {}
+  /* eslint-enable no-empty */
+
+}
+
+/***/ }),
+
+/***/ "./node_modules/react-redux/node_modules/react-is/cjs/react-is.development.js":
+/*!************************************************************************************!*\
+  !*** ./node_modules/react-redux/node_modules/react-is/cjs/react-is.development.js ***!
+  \************************************************************************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+/** @license React v17.0.2
+ * react-is.development.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+
+
+if (true) {
+  (function() {
+'use strict';
+
+// ATTENTION
+// When adding new symbols to this file,
+// Please consider also adding to 'react-devtools-shared/src/backend/ReactSymbols'
+// The Symbol used to tag the ReactElement-like types. If there is no native Symbol
+// nor polyfill, then a plain number is used for performance.
+var REACT_ELEMENT_TYPE = 0xeac7;
+var REACT_PORTAL_TYPE = 0xeaca;
+var REACT_FRAGMENT_TYPE = 0xeacb;
+var REACT_STRICT_MODE_TYPE = 0xeacc;
+var REACT_PROFILER_TYPE = 0xead2;
+var REACT_PROVIDER_TYPE = 0xeacd;
+var REACT_CONTEXT_TYPE = 0xeace;
+var REACT_FORWARD_REF_TYPE = 0xead0;
+var REACT_SUSPENSE_TYPE = 0xead1;
+var REACT_SUSPENSE_LIST_TYPE = 0xead8;
+var REACT_MEMO_TYPE = 0xead3;
+var REACT_LAZY_TYPE = 0xead4;
+var REACT_BLOCK_TYPE = 0xead9;
+var REACT_SERVER_BLOCK_TYPE = 0xeada;
+var REACT_FUNDAMENTAL_TYPE = 0xead5;
+var REACT_SCOPE_TYPE = 0xead7;
+var REACT_OPAQUE_ID_TYPE = 0xeae0;
+var REACT_DEBUG_TRACING_MODE_TYPE = 0xeae1;
+var REACT_OFFSCREEN_TYPE = 0xeae2;
+var REACT_LEGACY_HIDDEN_TYPE = 0xeae3;
+
+if (typeof Symbol === 'function' && Symbol.for) {
+  var symbolFor = Symbol.for;
+  REACT_ELEMENT_TYPE = symbolFor('react.element');
+  REACT_PORTAL_TYPE = symbolFor('react.portal');
+  REACT_FRAGMENT_TYPE = symbolFor('react.fragment');
+  REACT_STRICT_MODE_TYPE = symbolFor('react.strict_mode');
+  REACT_PROFILER_TYPE = symbolFor('react.profiler');
+  REACT_PROVIDER_TYPE = symbolFor('react.provider');
+  REACT_CONTEXT_TYPE = symbolFor('react.context');
+  REACT_FORWARD_REF_TYPE = symbolFor('react.forward_ref');
+  REACT_SUSPENSE_TYPE = symbolFor('react.suspense');
+  REACT_SUSPENSE_LIST_TYPE = symbolFor('react.suspense_list');
+  REACT_MEMO_TYPE = symbolFor('react.memo');
+  REACT_LAZY_TYPE = symbolFor('react.lazy');
+  REACT_BLOCK_TYPE = symbolFor('react.block');
+  REACT_SERVER_BLOCK_TYPE = symbolFor('react.server.block');
+  REACT_FUNDAMENTAL_TYPE = symbolFor('react.fundamental');
+  REACT_SCOPE_TYPE = symbolFor('react.scope');
+  REACT_OPAQUE_ID_TYPE = symbolFor('react.opaque.id');
+  REACT_DEBUG_TRACING_MODE_TYPE = symbolFor('react.debug_trace_mode');
+  REACT_OFFSCREEN_TYPE = symbolFor('react.offscreen');
+  REACT_LEGACY_HIDDEN_TYPE = symbolFor('react.legacy_hidden');
+}
+
+// Filter certain DOM attributes (e.g. src, href) if their values are empty strings.
+
+var enableScopeAPI = false; // Experimental Create Event Handle API.
+
+function isValidElementType(type) {
+  if (typeof type === 'string' || typeof type === 'function') {
+    return true;
+  } // Note: typeof might be other than 'symbol' or 'number' (e.g. if it's a polyfill).
+
+
+  if (type === REACT_FRAGMENT_TYPE || type === REACT_PROFILER_TYPE || type === REACT_DEBUG_TRACING_MODE_TYPE || type === REACT_STRICT_MODE_TYPE || type === REACT_SUSPENSE_TYPE || type === REACT_SUSPENSE_LIST_TYPE || type === REACT_LEGACY_HIDDEN_TYPE || enableScopeAPI ) {
+    return true;
+  }
+
+  if (typeof type === 'object' && type !== null) {
+    if (type.$$typeof === REACT_LAZY_TYPE || type.$$typeof === REACT_MEMO_TYPE || type.$$typeof === REACT_PROVIDER_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE || type.$$typeof === REACT_FUNDAMENTAL_TYPE || type.$$typeof === REACT_BLOCK_TYPE || type[0] === REACT_SERVER_BLOCK_TYPE) {
+      return true;
+    }
+  }
+
+  return false;
+}
+
+function typeOf(object) {
+  if (typeof object === 'object' && object !== null) {
+    var $$typeof = object.$$typeof;
+
+    switch ($$typeof) {
+      case REACT_ELEMENT_TYPE:
+        var type = object.type;
+
+        switch (type) {
+          case REACT_FRAGMENT_TYPE:
+          case REACT_PROFILER_TYPE:
+          case REACT_STRICT_MODE_TYPE:
+          case REACT_SUSPENSE_TYPE:
+          case REACT_SUSPENSE_LIST_TYPE:
+            return type;
+
+          default:
+            var $$typeofType = type && type.$$typeof;
+
+            switch ($$typeofType) {
+              case REACT_CONTEXT_TYPE:
+              case REACT_FORWARD_REF_TYPE:
+              case REACT_LAZY_TYPE:
+              case REACT_MEMO_TYPE:
+              case REACT_PROVIDER_TYPE:
+                return $$typeofType;
+
+              default:
+                return $$typeof;
+            }
+
+        }
+
+      case REACT_PORTAL_TYPE:
+        return $$typeof;
+    }
+  }
+
+  return undefined;
+}
+var ContextConsumer = REACT_CONTEXT_TYPE;
+var ContextProvider = REACT_PROVIDER_TYPE;
+var Element = REACT_ELEMENT_TYPE;
+var ForwardRef = REACT_FORWARD_REF_TYPE;
+var Fragment = REACT_FRAGMENT_TYPE;
+var Lazy = REACT_LAZY_TYPE;
+var Memo = REACT_MEMO_TYPE;
+var Portal = REACT_PORTAL_TYPE;
+var Profiler = REACT_PROFILER_TYPE;
+var StrictMode = REACT_STRICT_MODE_TYPE;
+var Suspense = REACT_SUSPENSE_TYPE;
+var hasWarnedAboutDeprecatedIsAsyncMode = false;
+var hasWarnedAboutDeprecatedIsConcurrentMode = false; // AsyncMode should be deprecated
+
+function isAsyncMode(object) {
+  {
+    if (!hasWarnedAboutDeprecatedIsAsyncMode) {
+      hasWarnedAboutDeprecatedIsAsyncMode = true; // Using console['warn'] to evade Babel and ESLint
+
+      console['warn']('The ReactIs.isAsyncMode() alias has been deprecated, ' + 'and will be removed in React 18+.');
+    }
+  }
+
+  return false;
+}
+function isConcurrentMode(object) {
+  {
+    if (!hasWarnedAboutDeprecatedIsConcurrentMode) {
+      hasWarnedAboutDeprecatedIsConcurrentMode = true; // Using console['warn'] to evade Babel and ESLint
+
+      console['warn']('The ReactIs.isConcurrentMode() alias has been deprecated, ' + 'and will be removed in React 18+.');
+    }
+  }
+
+  return false;
+}
+function isContextConsumer(object) {
+  return typeOf(object) === REACT_CONTEXT_TYPE;
+}
+function isContextProvider(object) {
+  return typeOf(object) === REACT_PROVIDER_TYPE;
+}
+function isElement(object) {
+  return typeof object === 'object' && object !== null && object.$$typeof === REACT_ELEMENT_TYPE;
+}
+function isForwardRef(object) {
+  return typeOf(object) === REACT_FORWARD_REF_TYPE;
+}
+function isFragment(object) {
+  return typeOf(object) === REACT_FRAGMENT_TYPE;
+}
+function isLazy(object) {
+  return typeOf(object) === REACT_LAZY_TYPE;
+}
+function isMemo(object) {
+  return typeOf(object) === REACT_MEMO_TYPE;
+}
+function isPortal(object) {
+  return typeOf(object) === REACT_PORTAL_TYPE;
+}
+function isProfiler(object) {
+  return typeOf(object) === REACT_PROFILER_TYPE;
+}
+function isStrictMode(object) {
+  return typeOf(object) === REACT_STRICT_MODE_TYPE;
+}
+function isSuspense(object) {
+  return typeOf(object) === REACT_SUSPENSE_TYPE;
+}
+
+exports.ContextConsumer = ContextConsumer;
+exports.ContextProvider = ContextProvider;
+exports.Element = Element;
+exports.ForwardRef = ForwardRef;
+exports.Fragment = Fragment;
+exports.Lazy = Lazy;
+exports.Memo = Memo;
+exports.Portal = Portal;
+exports.Profiler = Profiler;
+exports.StrictMode = StrictMode;
+exports.Suspense = Suspense;
+exports.isAsyncMode = isAsyncMode;
+exports.isConcurrentMode = isConcurrentMode;
+exports.isContextConsumer = isContextConsumer;
+exports.isContextProvider = isContextProvider;
+exports.isElement = isElement;
+exports.isForwardRef = isForwardRef;
+exports.isFragment = isFragment;
+exports.isLazy = isLazy;
+exports.isMemo = isMemo;
+exports.isPortal = isPortal;
+exports.isProfiler = isProfiler;
+exports.isStrictMode = isStrictMode;
+exports.isSuspense = isSuspense;
+exports.isValidElementType = isValidElementType;
+exports.typeOf = typeOf;
+  })();
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/react-redux/node_modules/react-is/index.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/react-redux/node_modules/react-is/index.js ***!
+  \*****************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+
+
+if (false) // removed by dead control flow
+{} else {
+  module.exports = __webpack_require__(/*! ./cjs/react-is.development.js */ "./node_modules/react-redux/node_modules/react-is/cjs/react-is.development.js");
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/tiny-invariant/dist/esm/tiny-invariant.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/tiny-invariant/dist/esm/tiny-invariant.js ***!
+  \****************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ invariant)
+/* harmony export */ });
+var isProduction = "development" === 'production';
+var prefix = 'Invariant failed';
+function invariant(condition, message) {
+    if (condition) {
+        return;
+    }
+    if (isProduction) {
+        throw new Error(prefix);
+    }
+    var provided = typeof message === 'function' ? message() : message;
+    var value = provided ? "".concat(prefix, ": ").concat(provided) : prefix;
+    throw new Error(value);
+}
+
+
+
+
+/***/ }),
+
+/***/ "./node_modules/use-memo-one/dist/use-memo-one.esm.js":
+/*!************************************************************!*\
+  !*** ./node_modules/use-memo-one/dist/use-memo-one.esm.js ***!
+  \************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   useCallback: () => (/* binding */ useCallback),
+/* harmony export */   useCallbackOne: () => (/* binding */ useCallbackOne),
+/* harmony export */   useMemo: () => (/* binding */ useMemo),
+/* harmony export */   useMemoOne: () => (/* binding */ useMemoOne)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+function areInputsEqual(newInputs, lastInputs) {
+  if (newInputs.length !== lastInputs.length) {
+    return false;
+  }
+
+  for (var i = 0; i < newInputs.length; i++) {
+    if (newInputs[i] !== lastInputs[i]) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+function useMemoOne(getResult, inputs) {
+  var initial = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(function () {
+    return {
+      inputs: inputs,
+      result: getResult()
+    };
+  })[0];
+  var isFirstRun = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(true);
+  var committed = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(initial);
+  var useCache = isFirstRun.current || Boolean(inputs && committed.current.inputs && areInputsEqual(inputs, committed.current.inputs));
+  var cache = useCache ? committed.current : {
+    inputs: inputs,
+    result: getResult()
+  };
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    isFirstRun.current = false;
+    committed.current = cache;
+  }, [cache]);
+  return cache.result;
+}
+function useCallbackOne(callback, inputs) {
+  return useMemoOne(function () {
+    return callback;
+  }, inputs);
+}
+var useMemo = useMemoOne;
+var useCallback = useCallbackOne;
+
+
+
+
+/***/ }),
+
+/***/ "./src/blocks/image-grid/block.json":
+/*!******************************************!*\
+  !*** ./src/blocks/image-grid/block.json ***!
+  \******************************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"ggb/image-grid","title":"Image Grid","category":"gg-blocks","description":"Responsive three-column image grid with styled images and optional overlay labels.","supports":{"align":false,"html":false},"attributes":{"images":{"type":"array","default":[],"items":{"type":"object","properties":{"url":{"type":"string"},"label":{"type":"string"},"alt":{"type":"string"},"link":{"type":"string"}}}},"imageIds":{"type":"array","default":[]},"labelBackgroundColor":{"type":"string","default":"#34d399"},"overlayBackgroundColor":{"type":"string","default":"rgba(25, 91, 136, 0.6)"}},"editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","script":"file:./image-label-toggle.js"}');
+
+/***/ }),
+
+/***/ "./src/blocks/image-grid/edit.js":
+/*!***************************************!*\
+  !*** ./src/blocks/image-grid/edit.js ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Edit)
+/* harmony export */ });
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_beautiful_dnd__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-beautiful-dnd */ "./node_modules/react-beautiful-dnd/dist/react-beautiful-dnd.esm.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__);
+
+
+
+
+
+function Edit({
+  attributes,
+  setAttributes
+}) {
+  const {
+    images,
+    labelBackgroundColor = '#34d399',
+    overlayBackgroundColor = 'rgba(25, 91, 136, 0.6)'
+  } = attributes;
+  const [dragging, setDragging] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.useState)(false);
+  const onSelectImages = media => {
+    const newImages = media.map(img => ({
+      url: img.url,
+      label: '',
+      link: '',
+      id: img.id || img.url
+    }));
+    setAttributes({
+      images: newImages
+    });
+  };
+  const updateImageField = (index, field, value) => {
+    const updated = [...images];
+    updated[index][field] = value;
+    setAttributes({
+      images: updated
+    });
+  };
+  const onDragEnd = result => {
+    if (!result.destination) return;
+    const reordered = Array.from(images);
+    const [moved] = reordered.splice(result.source.index, 1);
+    reordered.splice(result.destination.index, 0, moved);
+    setAttributes({
+      images: reordered
+    });
+  };
+  const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps)({
+    className: 'alignwide styled-img-grid'
+  });
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+    ...blockProps,
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InspectorControls, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+        title: "Label Background Color",
+        initialOpen: true,
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ColorPalette, {
+          value: labelBackgroundColor,
+          onChange: color => setAttributes({
+            labelBackgroundColor: color
+          })
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+        title: "Overlay Background (RGBA)",
+        initialOpen: false,
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
+          label: "Overlay Background Color",
+          value: overlayBackgroundColor,
+          onChange: val => setAttributes({
+            overlayBackgroundColor: val
+          }),
+          help: "Use RGBA for transparency (e.g., rgba(25, 91, 136, 0.6))"
+        })
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.MediaUploadCheck, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.MediaUpload, {
+        onSelect: onSelectImages,
+        allowedTypes: ['image'],
+        multiple: true,
+        gallery: true,
+        value: images.map(img => img.id),
+        render: ({
+          open
+        }) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+          onClick: open,
+          variant: "secondary",
+          children: images.length > 0 ? 'Edit Images' : 'Upload Images'
+        })
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_beautiful_dnd__WEBPACK_IMPORTED_MODULE_4__.DragDropContext, {
+      onDragEnd: onDragEnd,
+      onDragStart: () => setDragging(true),
+      onDragUpdate: () => setDragging(false),
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_beautiful_dnd__WEBPACK_IMPORTED_MODULE_4__.Droppable, {
+        droppableId: "image-grid",
+        direction: "vertical",
+        children: provided => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+          className: "grid-wrapper",
+          ref: provided.innerRef,
+          ...provided.droppableProps,
+          children: [images.map((img, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_beautiful_dnd__WEBPACK_IMPORTED_MODULE_4__.Draggable, {
+            draggableId: `${img.id || `img-${index}`}`,
+            index: index,
+            children: provided => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+              className: "styled-img-wrapper",
+              ref: provided.innerRef,
+              ...provided.draggableProps,
+              ...provided.dragHandleProps,
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                className: "image-inner",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
+                  src: img.url,
+                  alt: ""
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+                  className: "img-overlay always-visible",
+                  style: {
+                    backgroundColor: overlayBackgroundColor
+                  },
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+                    type: "text",
+                    value: img.label || '',
+                    placeholder: "Overlay label",
+                    "aria-label": `Overlay label for image ${index + 1}`,
+                    onChange: e => updateImageField(index, 'label', e.target.value)
+                  })
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+                type: "url",
+                className: "url-input",
+                value: img.link || '',
+                placeholder: "Optional image link (https://...)",
+                "aria-label": `Link for image ${index + 1}`,
+                onChange: e => updateImageField(index, 'link', e.target.value)
+              })]
+            })
+          }, img.id || `img-${index}`)), provided.placeholder]
+        })
+      })
+    })]
+  });
+}
+
+/***/ }),
+
+/***/ "./src/blocks/image-grid/editor.scss":
+/*!*******************************************!*\
+  !*** ./src/blocks/image-grid/editor.scss ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./src/blocks/image-grid/index.js":
+/*!****************************************!*\
+  !*** ./src/blocks/image-grid/index.js ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./block.json */ "./src/blocks/image-grid/block.json");
+/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./edit */ "./src/blocks/image-grid/edit.js");
+/* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./save */ "./src/blocks/image-grid/save.js");
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./style.scss */ "./src/blocks/image-grid/style.scss");
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./editor.scss */ "./src/blocks/image-grid/editor.scss");
+/* harmony import */ var _ggb_icon__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../ggb-icon */ "./src/ggb-icon.js");
+
+
+
+
+ // Shared styles (frontend + editor)
+ // Editor-only styles
+
+(0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.registerBlockType)(_block_json__WEBPACK_IMPORTED_MODULE_1__.name, {
+  ..._block_json__WEBPACK_IMPORTED_MODULE_1__,
+  icon: _ggb_icon__WEBPACK_IMPORTED_MODULE_6__["default"],
+  edit: _edit__WEBPACK_IMPORTED_MODULE_2__["default"],
+  save: _save__WEBPACK_IMPORTED_MODULE_3__["default"]
+});
+
+/***/ }),
+
+/***/ "./src/blocks/image-grid/save.js":
+/*!***************************************!*\
+  !*** ./src/blocks/image-grid/save.js ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Save)
+/* harmony export */ });
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
+
+
+function Save({
+  attributes
+}) {
+  const {
+    images,
+    labelBackgroundColor = '#34d399',
+    overlayBackgroundColor = 'rgba(25, 91, 136, 0.6)'
+  } = attributes;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+    ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps.save({
+      className: 'alignwide styled-img-grid'
+    }),
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      className: "grid-wrapper",
+      children: images.map(img => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("figure", {
+        className: "styled-img-wrapper",
+        "data-touchable": true,
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+          className: "image-inner",
+          children: img.link ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("a", {
+            href: img.link,
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+              src: img.url,
+              alt: ""
+            }), img.label && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("figcaption", {
+              className: "img-overlay",
+              style: {
+                backgroundColor: overlayBackgroundColor
+              },
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+                className: "img-label",
+                style: {
+                  backgroundColor: labelBackgroundColor
+                },
+                children: img.label
+              })
+            })]
+          }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+              src: img.url,
+              alt: ""
+            }), img.label && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("figcaption", {
+              className: "img-overlay",
+              style: {
+                backgroundColor: overlayBackgroundColor
+              },
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+                className: "img-label",
+                style: {
+                  backgroundColor: labelBackgroundColor
+                },
+                children: img.label
+              })
+            })]
+          })
+        })
+      }, img.url))
+    })
+  });
+}
+
+/***/ }),
+
+/***/ "./src/blocks/image-grid/style.scss":
+/*!******************************************!*\
+  !*** ./src/blocks/image-grid/style.scss ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./src/gg-dev.svg":
+/*!************************!*\
+  !*** ./src/gg-dev.svg ***!
+  \************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ReactComponent: () => (/* binding */ SvgGgDev),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _path, _path2, _path3, _path4;
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+
+var SvgGgDev = function SvgGgDev(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", _extends({
+    xmlns: "http://www.w3.org/2000/svg",
+    width: 512,
+    height: 512
+  }, props), _path || (_path = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    fill: "#1FDCAD",
+    d: "M357.438 6.578c3.764 1.503 7.397 2.245 11.375 2.86C379.565 11.31 388.596 14.74 397 22v2h2v2h2c8.204 9.005 13.46 21.601 15.375 33.5 1.152 6.358 3.351 8.797 8.402 12.64 5.213 4.361 8.04 11.296 9.223 17.86.767 11.202 0 20.88-7 30l-1.625 2.5c-4.825 5.079-11.253 9.125-18.375 9.5l-.25 3.875c-.987 8.733-4.96 19.046-11.8 24.871-2.342 2.05-3.735 3.368-4.95 6.254.931 5.354 2.79 10.054 5 15l1.11-1.398c2.565-2.174 4.864-2.534 8.14-3.227l3.328-.727c20.736-3.929 43.514-2.386 61.547 9.54q1.947 1.391 3.875 2.812l3 2v2h2v2h2v2h2c14.654 16.475 21.59 40.575 21.203 62.184-.322 4.461-1.019 8.853-1.765 13.261-1.05 8.526.046 15.996 1.812 24.368 1.91 9.489 3.572 18.979 4.938 28.562l.467 3.23c.483 3.461.917 6.926 1.345 10.395l.266 1.964c2.193 16.355 2.109 32.782 2.105 49.25q0 4.83.04 9.659c.326 38.976-3.9 77.524-25.411 111.127-1 1-1 1-3.723 1.098l-3.34-.035-3.347-.028L474 512c1.282-3.566 2.796-6.214 5.125-9.187C493.07 483.185 497.643 458.31 501 435l.326-2.251q.34-2.375.674-4.749l-1.54.47c-3.26.702-6.506.848-9.827 1.01l-2.229.12q-3.639.19-7.279.373l-5.066.264q-5.305.277-10.612.547-6.8.347-13.598.703-6.488.339-12.974.673l-2.5.13-7.008.359-2.09.108c-3.1.156-6.171.243-9.277.243v79h-10V378H255v134h-9l-1-9-.926 1.969c-1.5 2.737-2.828 4.852-5.074 7.031-3.777.793-7.198.548-11 0 2.58-6.42 5.56-12.634 10-18h2v-2h2v-2l3-2c.512-3.102.512-3.102.512-6.758l.054-2.01c.054-2.118.088-4.237.121-6.357q.05-2.154.104-4.309c.085-3.522.152-7.044.209-10.566-27.365 5.866-48.982 17.525-64.657 41.42-2.647 4.112-5.152 8.198-7.343 12.58h-11c3.198-9.175 8.066-19.166 15.105-26.062 2.779-4.308 2.467-8.117 2.44-13.144l.032-3.156c.03-3.365.031-6.73.032-10.095q.021-3.12.048-6.24c.052-7.705.07-15.41.093-23.115L181 378H27v134h-9V378H1c-1-1-1-1-1.114-3.867l.016-3.793.008-3.684.027-4.719L0 347h41v-6l-2.812.188C35 341 35 341 33.388 339.804c-1.735-2.255-2.175-4.071-2.78-6.85l-.7-3.14-.728-3.423-.788-3.57q-1.053-4.79-2.087-9.584c-.719-3.32-1.45-6.637-2.182-9.954q-1.321-5.991-2.636-11.984a2469 2469 0 0 0-6.874-30.43q-.819-3.522-1.63-7.046a2575 2575 0 0 0-4.866-20.694l-.867-3.652a897 897 0 0 0-1.576-6.52C4.38 217.494 3.642 212.619 4 207c1.67-1.67 3.705-1.13 5.936-1.143l2.156.003 2.275-.01q3.803-.01 7.605-.011l5.43-.015q7.395-.019 14.788-.024l9.228-.012q14.42-.02 28.84-.027 16.676-.007 33.352-.05 12.87-.033 25.74-.034 7.696 0 15.393-.025 7.236-.023 14.471-.01 2.663.002 5.324-.013c2.415-.013 4.828-.007 7.243.004l2.15-.025c1.952.02 1.952.02 5.069.392 2.264 3.395 3.019 6.573 3.918 10.48l.54 2.283c.583 2.474 1.156 4.949 1.73 7.424l1.2 5.123c2.96 12.659 5.782 25.347 8.492 38.062l.808 3.769.699 3.297c.503 2.532.503 2.532 1.613 4.562l1.875-2c2.125-2 2.125-2 4.125-2v-2c1.508-1.375 3.085-2.674 4.688-3.937 3.331-2.657 6.638-5.32 9.867-8.102l1.77-1.524q1.722-1.485 3.434-2.982C237.779 255 237.779 255 240 255v-2c2.117-1.945 2.117-1.945 4.875-4.125l2.742-2.195C250 245 250 245 252 245v-2c2.046-1.771 4.1-3.426 6.25-5.062l1.932-1.49c1.935-1.49 3.876-2.969 5.818-4.448l3.074-2.375c19.196-14.665 39.686-26.688 63.168-33.082 1.766-.396 1.766-.396 2.758-1.543-.327-1.921-.327-1.921-.937-4.062l-.59-2.223L333 187l-3.191.14c-17.959.55-33.078-3.63-46.497-16.015A397 397 0 0 1 278 166c-2.319 2.802-2.319 2.802-1.75 5.875.632 3.058.632 3.058 1.813 5.5 1.789 5.01 1.553 9.649-.438 14.5C276 195 276 195 274 197c-3.217.858-5.432 1.132-8.687.375-2.97-1.766-3.815-3.264-5.313-6.375-.363-3.41-.363-3.41-.312-7.062l.011-3.66c.28-3.046.603-4.775 2.301-7.278l2-1a114 114 0 0 0 2.563-6.75l1.316-3.734c2.387-7.487 1.74-11.093-1.219-18.43-2.043-3.798-4.17-5.44-7.726-7.727-4.504-3.166-6.503-7.195-7.563-12.515-.692-6.352-1.117-11.51 2.629-16.844 5.28-3.52 11.161-5.039 17.313-6.25l2.522-.506c14.775-2.818 14.775-2.818 21.665.381 4.458 4.235 6.215 9.1 6.738 15.11.191 7.75-.415 13.23-5.863 18.98-5.42 4.618-11.498 5.978-18.375 7.285 0 8.091 6.723 16.283 12 22 8.587 7.871 19.64 12.97 31.25 13.625l3.969.242c3.973.14 7.869.03 11.828-.32C339 177 339 177 340.48 179.17c2.61 4.858 4.337 10.027 6.207 15.204.415 1.111.83 2.222 1.26 3.367 4.472 12.339 4.472 12.339 1.993 19.18l-1.378 2.828c-2.505 5.696-4.076 10.976-3.563 17.25 1.212 2.88 1.212 2.88 4 4 6.003.689 9.639-.372 15-3l3-1v-2h2v-2h2l.832-2.238c1.087-2.57 2.316-4.634 3.856-6.95 2.924-4.79 5.073-9.731 7.125-14.937l.914-2.278c3.913-10.208 3.273-16.077-.664-26.16-4.879-12.664-4.879-12.664-4.063-18.437 2.563-2.312 2.563-2.312 4.215-3.508 7.477-6.25 11.622-16.204 13.785-25.492l-3.875.25c-9.504-.074-16.183-4.384-22.922-10.805-4.105-4.556-6.895-9.444-8.203-15.445l-.586 2.082-.789 2.73-.773 2.708C359 117 359 117 357 120h-2v2h-2v2c-11.351 4.603-25.175 8.805-37.312 4.813-5.473-2.35-9.146-6.488-11.688-11.813-2.24-6.906-2.768-13.023.25-19.812 3.741-4.677 8.355-5.755 14.063-6.876 1.254-.25 2.508-.502 3.8-.761L325 89l-1.95-.262C310.26 86.75 299.753 82.868 291 73c-2.683-3.92-3.333-6.228-3-11 3.024-1.512 4.639-1.582 8-1 1.759 1.865 3.134 3.855 4.582 5.969 5.955 8.53 17.277 10.423 26.828 12.418C330 80 330 80 331 81q.062 3.5 0 7l3.25-1c6.802-1.67 13.854-2.321 20.313.625 2.664 2.597 3.86 5.036 5.437 8.375l.734-2.816C363.145 84.292 365.665 76.968 372 70h2c-8.406-18.515-19.802-31.297-39-39-18.464-6.782-39.488-5.865-57.437 2.188C268.718 38.123 262.149 44.785 258 54l-1.687 3.5c-3.034 8.09-3.606 15.652-3.5 24.25l.001 3.074c.027 4.563.254 8.704 1.186 13.176.188 3.688.188 3.688 0 7l-2 2c-3.625-.375-3.625-.375-7-1-5.231-23.87-3.887-46.547 9.195-67.578L256 36h2v-2h2v-2c5.964-5.152 12.594-8.463 20-11l-7-2v-7c27.93-10.87 55.85-18.547 84.438-5.422m-51.313 5.235-3.684 1.08A1854 1854 0 0 0 292 16l-3.11.931Q285.444 17.963 282 19c3.344 1.104 5.575.85 8.984.082 6.127-1.206 12.034-1.428 18.266-1.395l3.315.015c12.788.185 24.057 2.18 35.435 8.298l2.512 1.305C365.984 35.903 374.519 48.998 383 64l4-2c-.552-5.394-1.862-9.807-4.062-14.75l-.925-2.096C379.146 38.9 375.689 33.088 371 28h-2v-2h-2v-2c-18.426-14.254-38.627-18.88-60.875-12.187M379 23l1.102 1.582C388.024 36.182 392.86 47.655 397 61l10 1c-2.61-11.02-6.774-21.168-14-30h-2v-2c-2.175-1.821-2.175-1.821-4.875-3.625l-2.742-1.914c-2.201-1.635-2.201-1.635-4.383-1.461m-2.34 56.813c-5.018 6.611-6.396 12.673-6.105 20.968.927 6.703 3.784 12.02 8.757 16.594A82 82 0 0 0 383 120l1.77 1.25c5.999 3.638 12.41 3.684 19.23 2.75 6.817-2.14 12.852-6.136 17-12 3.543-7.034 5.631-13.907 3.164-21.61-1.444-3.755-2.927-7.034-5.164-10.39h-2v-2h-2v-2a956 956 0 0 0-4.75-2.437l-2.672-1.372c-11.09-5.125-23.019-1.202-30.918 7.621m-44.63 17.586c-1.955.41-3.913.808-5.872 1.205l-3.748.79-3.433.715c-2.943.881-4.684 1.885-6.977 3.891.521 6.153 1.23 10.23 5.75 14.75 7.57 4.205 16.41 1.314 24.25-.75 3.687-1.183 6.153-2.511 8.145-6.012 1.603-4.019 1.927-6.54 1.23-10.863C349.819 97.52 349.819 97.52 347 95c-5.091 0-10.003 1.347-14.97 2.399m-55.342 11.476-2.592.527c-7.585 1.165-7.585 1.165-13.471 5.446-1.18 4.063.543 7.5 2.375 11.152 2.115 2.923 4.427 4.695 8.074 5.402 7 .306 13.38-1.44 18.926-5.714 2.33-3.131 2.922-4.797 3-8.688-1.148-5.794-1.148-5.794-5-10-3.824 0-7.582 1.093-11.312 1.875M269 183l1 2Zm128 5 .125 3.504c-.008 4.352-.854 8.286-2.125 12.434l-.66 2.192c-1.74 5.51-3.897 10.763-6.34 15.995l-.969 2.078c-1.678 3.452-3.51 6.566-5.781 9.664-2.444 2.76-2.444 2.76-2.25 5.133h-2v2h-2v2h-2v2l-2.125.813c-2.9 1.116-2.9 1.116-5.5 2.75-7.357 3.133-15.882 3.356-23.375.437-2.98-2.292-4.6-4.542-6-8-1.127-9.656.146-17.002 4.004-25.879 1.129-3.538 1.031-5.579-.004-9.121-2.891-1.446-4.773-.313-7.711.638l-2.351.8c-.805.272-1.609.545-2.438.827-27.07 9.455-49.016 26.257-70.664 44.648-4.293 3.643-8.643 7.21-13.012 10.763-3.763 3.097-7.466 6.263-11.17 9.43-3.665 3.112-7.413 6.03-11.361 8.773L220 283v2l-1.625.688c-3.32 1.834-5.768 3.523-8.375 6.312.33 5.315 1.44 10.372 2.629 15.563l.854 3.753 1.08 4.684L218 331h47l-5-4c-4.326-5.571-3.837-12.11-3.297-18.84 1.373-9.976 6.434-19.844 14.297-26.16 7.247-4.683 14.464-7.025 23-8 1.494-4.482-.587-8.033-2.174-12.287-1.45-4.06-2.1-7.405-1.826-11.713h7l.719 1.896q1.607 4.24 3.219 8.479l1.13 2.984 1.084 2.852 1 2.634c.812 2.157.812 2.157 1.848 4.155 2.533.513 4.991.9 7.55 1.219l2.332.313c2.476.331 4.953.65 7.43.968q4.839.637 9.676 1.281l2.372.312c5.388.715 10.743 1.55 16.092 2.515 12.888 1.984 23.15-1.183 33.673-8.796A754 754 0 0 0 390 267l3-2v-2l1.64-.656c3.178-1.81 5.569-4.257 8.11-6.844l1.59-1.607c8.373-7.524 8.373-7.524 12.66-16.893h2c2.1-3.174 4.097-6.381 6.016-9.668 1.225-1.96 2.356-3.688 3.984-5.332 3.266-.531 3.266-.531 6 0 1 1 1 1 1.344 3.145-.475 3.94-2.519 6.46-4.844 9.542-3.215 3.788-3.215 3.788-4.5 8.313h-2c-1.588 1.715-1.588 1.715-3.125 3.875l-1.633 2.18c-1.421 1.841-1.421 1.841-1.242 3.945h-2c-1.81 1.713-1.81 1.713-3.625 3.875l-1.914 2.18C409.8 260.86 409.8 260.86 410 263l3.559.813c15.245 3.643 28.956 8.825 41.34 18.62 2.11 1.744 2.11 1.744 5.101 2.567v2h2l.785 1.695c1.356 2.572 2.947 4.826 4.652 7.18 2.565 3.611 4.756 7.087 6.563 11.125 13.307-12.45 19.222-32.067 19.969-49.824.292-20.38-7.91-40.346-21.852-55.063-12.983-12.959-27.444-17.456-45.492-17.55-10.126.068-19.769 1.16-29.625 3.437M15 215c.794 7.393.794 7.393 2.148 14.572l.692 3.04.75 3.224.789 3.446q1.274 5.548 2.558 11.093.883 3.834 1.763 7.67 2.22 9.645 4.452 19.289 1.206 5.215 2.409 10.434 2.058 8.93 4.127 17.857l.629 2.722q.876 3.784 1.757 7.567l.507 2.193c1.016 4.35 2.19 8.589 3.419 12.893h167c-.758-7.194-.758-7.194-2.044-14.187l-.618-2.765-.666-2.907-.7-3.107q-1.106-4.893-2.222-9.784l-1.45-6.426a2528 2528 0 0 0-7.513-32.318 1449 1449 0 0 1-3.99-17.143l-.52-2.292q-1.032-4.56-2.058-9.12-.771-3.42-1.547-6.838l-.467-2.089c-.814-3.61-.814-3.61-2.205-7.024zm379.438 60.063C380.24 286.409 366.922 289.308 349 288c-5.109-.693-10.177-1.587-15.25-2.5-9.984-1.777-19.774-3.015-29.937-3.062l-3.09-.043c-10.064.133-19.745 2.525-27.11 9.69-2.58 3.062-4.186 6.192-5.613 9.915l-.902 2.297c-1.547 4.249-2.924 8.16-2.098 12.703 2.173 2.573 3.98 4.49 7 6 11.025.325 21.785-4.682 31.813-8.75 11.113-4.23 11.113-4.23 16.187-3.25 2.409 1.621 4.286 3.476 6.324 5.543 5.02 4.61 11.03 7.863 16.856 11.355 1.496.906 2.971 1.843 4.441 2.79 11.322 7.22 24.183 12.797 37.379 15.312l2.25.506c15.488 2.782 33.725 2.815 46.95-6.282 1.941-1.32 3.932-2.512 5.956-3.7C447.78 332.001 455.647 327.23 462 321v-2h2v-2h2c-.758-11.868-8.843-20.526-17.395-28.129-11.831-9.287-40.762-25.231-54.168-13.808M492 297l-.848 1.652c-2.81 5.285-5.982 9.888-9.797 14.5-1.552 1.735-1.552 1.735-1.355 3.848h-2c-1.703 1.722-1.703 1.722-3.437 3.875-2.147 2.587-3.73 4.237-6.563 6.125v2l-1.66.742c-2.844 1.529-5.23 3.4-7.777 5.383-8.668 6.627-17.79 11.989-27.563 16.875l-1 24c-2 1-2 1-12 2v46c13.288-.684 13.288-.684 26.576-1.373q8.138-.424 16.274-.843 6.566-.336 13.13-.68 2.498-.13 4.994-.257c12.038-.614 12.038-.614 24.026-1.847 4.465-36.391-1.101-75.547-7.125-111.5l-.48-2.915-.465-2.616-.4-2.268L494 298zm-181.191 24.426-2.616.916-2.755.97-2.674.936A675 675 0 0 0 287 330v1h42c-2.861-2.861-5.519-5.299-8.687-7.75l-2.387-1.86c-2.88-2.08-3.836-1.115-7.117.036M329 331l1 2c.453 4.66.703 9.327 1 14h26c-3.058-2.294-5.723-3.999-9.062-5.75-5.09-2.723-9.913-5.741-14.723-8.93-2.072-1.49-2.072-1.49-4.215-1.32M50 341v6h272v-6zM8 356v12h414v-12zm182 22v94c3.407-1.704 5.894-3.382 8.875-5.687 14.488-10.63 29.607-14.81 47.125-18.313v-70z"
+  })), _path2 || (_path2 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    fill: "#1FDCAD",
+    d: "M275.125 60.875 278 61l.516 1.758C280.814 70.166 283.616 75.35 290 80c2.96 1.487 2.96 1.487 6.063 2.688l3.097 1.261c2.718 1.077 2.718 1.077 5.149 1.57.558.16 1.116.318 1.691.481 1.366 2.732 1.128 4.982 1 8-1 1-1 1-3.875 1.313-9.03-.149-18.616-5.013-25.066-11.165-4.861-5.256-8.133-10.107-8.372-17.46.39-4.598.755-5.626 5.438-5.813"
+  })), _path3 || (_path3 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    fill: "#1FDDAD",
+    d: "M328.871 101.586c2.129.414 2.129.414 4.692 1.977 2.026 3.436 2.057 5.511 1.437 9.437-2.592 3.692-4.041 4.829-8.5 5.625-4.43-.791-5.892-1.99-8.5-5.625-.703-3.751-.265-5.47 1.438-8.875 3.261-2.705 5.291-2.798 9.433-2.54"
+  })), _path4 || (_path4 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    fill: "#1FDCAD",
+    d: "M281 112c3.003 2.055 3.833 3.476 4.938 6.938.074 3.66-.724 5.192-2.938 8.062-3.206 1.603-6.522 1.481-10 1-2.5-1.562-2.5-1.562-4-4-.721-4.408-.52-6.26 2.063-9.937 3.678-2.583 5.53-2.784 9.937-2.063"
+  })));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiPgo8cGF0aCBkPSJNMCAwIEMzLjc2NDg3NzYgMS41MDI2NDg1MSA3LjM5NzQ0NjgzIDIuMjQ0Nzc2MDggMTEuMzc1IDIuODU5Mzc1IEMyMi4xMjc0OTUxMSA0LjczMTczNjg5IDMxLjE1ODkyMTk4IDguMTYyNjEzOTkgMzkuNTYyNSAxNS40MjE4NzUgQzM5LjU2MjUgMTYuMDgxODc1IDM5LjU2MjUgMTYuNzQxODc1IDM5LjU2MjUgMTcuNDIxODc1IEM0MC4yMjI1IDE3LjQyMTg3NSA0MC44ODI1IDE3LjQyMTg3NSA0MS41NjI1IDE3LjQyMTg3NSBDNDEuNTYyNSAxOC4wODE4NzUgNDEuNTYyNSAxOC43NDE4NzUgNDEuNTYyNSAxOS40MjE4NzUgQzQyLjIyMjUgMTkuNDIxODc1IDQyLjg4MjUgMTkuNDIxODc1IDQzLjU2MjUgMTkuNDIxODc1IEM1MS43NjY1MTg2NyAyOC40MjY4MTM2OSA1Ny4wMjI0OTg2MyA0MS4wMjMzMzMxNiA1OC45Mzc1IDUyLjkyMTg3NSBDNjAuMDg5NjQ0MjUgNTkuMjgwMjcxMDkgNjIuMjg4ODA5NiA2MS43MTg3ODYyMSA2Ny4zMzk4NDM3NSA2NS41NjI1IEM3Mi41NTI0NzQ1NyA2OS45MjMxNTQyNSA3NS4zNzg3ODc4MSA3Ni44NTc2NTI4OCA3Ni41NjI1IDgzLjQyMTg3NSBDNzcuMzI5Mzc2OCA5NC42MjM3NTQwNCA3Ni41NjE4OTgxNSAxMDQuMzAxNDQ3MSA2OS41NjI1IDExMy40MjE4NzUgQzY5LjAyNjI1IDExNC4yNDY4NzUgNjguNDkgMTE1LjA3MTg3NSA2Ny45Mzc1IDExNS45MjE4NzUgQzYzLjExMjgwNzQ1IDEyMS4wMDA0OTg3NCA1Ni42ODQ0ODg4NyAxMjUuMDQ3MDMzNDggNDkuNTYyNSAxMjUuNDIxODc1IEM0OS40OCAxMjYuNzAwNjI1IDQ5LjM5NzUgMTI3Ljk3OTM3NSA0OS4zMTI1IDEyOS4yOTY4NzUgQzQ4LjMyNTQxNzI4IDEzOC4wMjk4MTUxNSA0NC4zNTMxNzI5NSAxNDguMzQyOTU5MTggMzcuNTExNzE4NzUgMTU0LjE2Nzk2ODc1IEMzNS4xNzAxODAxNiAxNTYuMjE4NDY4NjUgMzMuNzc3NTk4MDggMTU3LjUzNTQ1MjQzIDMyLjU2MjUgMTYwLjQyMTg3NSBDMzMuNDkzOTE1MiAxNjUuNzc2MTUwNzEgMzUuMzUzNDQ5NzggMTcwLjQ3NTY2MzQzIDM3LjU2MjUgMTc1LjQyMTg3NSBDMzguMTExNjQwNjMgMTc0LjcyOTY0ODQ0IDM4LjExMTY0MDYzIDE3NC43Mjk2NDg0NCAzOC42NzE4NzUgMTc0LjAyMzQzNzUgQzQxLjIzNzc5MjExIDE3MS44NDk4MzAwMyA0My41MzY0NjczIDE3MS40OTAxNzQ5NCA0Ni44MTI1IDE3MC43OTY4NzUgQzQ3LjkxMDc4MTI1IDE3MC41NTcxMDkzOCA0OS4wMDkwNjI1IDE3MC4zMTczNDM3NSA1MC4xNDA2MjUgMTcwLjA3MDMxMjUgQzcwLjg3NjgyMzQ4IDE2Ni4xNDA4NTAyMyA5My42NTQxMjc3NyAxNjcuNjg0MDgwNDYgMTExLjY4NzUgMTc5LjYwOTM3NSBDMTEyLjk4NTc0NTYyIDE4MC41Mzc3NDMxIDExNC4yNzgzNzYzMiAxODEuNDc0MDY5NDMgMTE1LjU2MjUgMTgyLjQyMTg3NSBDMTE2LjU1MjUgMTgzLjA4MTg3NSAxMTcuNTQyNSAxODMuNzQxODc1IDExOC41NjI1IDE4NC40MjE4NzUgQzExOC41NjI1IDE4NS4wODE4NzUgMTE4LjU2MjUgMTg1Ljc0MTg3NSAxMTguNTYyNSAxODYuNDIxODc1IEMxMTkuMjIyNSAxODYuNDIxODc1IDExOS44ODI1IDE4Ni40MjE4NzUgMTIwLjU2MjUgMTg2LjQyMTg3NSBDMTIwLjU2MjUgMTg3LjA4MTg3NSAxMjAuNTYyNSAxODcuNzQxODc1IDEyMC41NjI1IDE4OC40MjE4NzUgQzEyMS4yMjI1IDE4OC40MjE4NzUgMTIxLjg4MjUgMTg4LjQyMTg3NSAxMjIuNTYyNSAxODguNDIxODc1IEMxMjIuNTYyNSAxODkuMDgxODc1IDEyMi41NjI1IDE4OS43NDE4NzUgMTIyLjU2MjUgMTkwLjQyMTg3NSBDMTIzLjIyMjUgMTkwLjQyMTg3NSAxMjMuODgyNSAxOTAuNDIxODc1IDEyNC41NjI1IDE5MC40MjE4NzUgQzEzOS4yMTYwNTQ5OCAyMDYuODk3MjIzMzEgMTQ2LjE1MjA2NTY4IDIzMC45OTY5OTQxMyAxNDUuNzY1NjI1IDI1Mi42MDU0Njg3NSBDMTQ1LjQ0Mzg0NDkyIDI1Ny4wNjcwNzMyNiAxNDQuNzQ2ODE3MTYgMjYxLjQ1ODg5MTc2IDE0NCAyNjUuODY3MTg3NSBDMTQyLjk1MDY3OTIyIDI3NC4zOTI5MTg4MiAxNDQuMDQ2Mjg5MDIgMjgxLjg2MjU5ODg1IDE0NS44MTI1IDI5MC4yMzQzNzUgQzE0Ny43MjIyNDMwMSAyOTkuNzIzODU3MzggMTQ5LjM4NDA4NzAxIDMwOS4yMTM2MDI5NiAxNTAuNzUgMzE4Ljc5Njg3NSBDMTUwLjk4MTU0Nzg1IDMyMC4zOTU1OTQ0OCAxNTAuOTgxNTQ3ODUgMzIwLjM5NTU5NDQ4IDE1MS4yMTc3NzM0NCAzMjIuMDI2NjExMzMgQzE1MS43MDAwNDc3MyAzMjUuNDg4MDUzOTggMTUyLjEzNDkzNCAzMjguOTUzMjU3MiAxNTIuNTYyNSAzMzIuNDIxODc1IEMxNTIuNjUwNDM4MjMgMzMzLjA2OTk4MTM4IDE1Mi43MzgzNzY0NiAzMzMuNzE4MDg3NzcgMTUyLjgyODk3OTQ5IDMzNC4zODU4MzM3NCBDMTU1LjAyMTIwNzE5IDM1MC43NDA0OTg1MyAxNTQuOTM3NDYyIDM2Ny4xNjgzNjMxOCAxNTQuOTMzMTA1NDcgMzgzLjYzNjQ3NDYxIEMxNTQuOTMyOTQzMzkgMzg2Ljg1NjEwNTMyIDE1NC45NDY3ODU3NiAzOTAuMDc1MTY0MTMgMTU0Ljk3NDEyMTA5IDM5My4yOTQ2Nzc3MyBDMTU1LjI5OTU2MzQ0IDQzMi4yNzA5NzM5MiAxNTEuMDczNTUxNjMgNDcwLjgxODQ1MjU0IDEyOS41NjI1IDUwNC40MjE4NzUgQzEyOC41NjI1IDUwNS40MjE4NzUgMTI4LjU2MjUgNTA1LjQyMTg3NSAxMjUuODM5ODQzNzUgNTA1LjUxOTUzMTI1IEMxMjQuMTg2NjIxMDkgNTA1LjUwMjEyODkxIDEyNC4xODY2MjEwOSA1MDUuNTAyMTI4OTEgMTIyLjUgNTA1LjQ4NDM3NSBDMTIxLjM5NTI3MzQ0IDUwNS40NzUzNTE1NiAxMjAuMjkwNTQ2ODggNTA1LjQ2NjMyODEzIDExOS4xNTIzNDM3NSA1MDUuNDU3MDMxMjUgQzExNy44NzAzNzEwOSA1MDUuNDM5NjI4OTEgMTE3Ljg3MDM3MTA5IDUwNS40Mzk2Mjg5MSAxMTYuNTYyNSA1MDUuNDIxODc1IEMxMTcuODQ0NTgzNDcgNTAxLjg1NTY5MTM3IDExOS4zNTgzOTg3MSA0OTkuMjA4MDQxNTMgMTIxLjY4NzUgNDk2LjIzNDM3NSBDMTM1LjYzMjY1ODQ0IDQ3Ni42MDY3ODE5MyAxNDAuMjA1MTIyNTcgNDUxLjczMjcwNTMzIDE0My41NjI1IDQyOC40MjE4NzUgQzE0My42Njk5NzU1OSA0MjcuNjc4ODkxNiAxNDMuNzc3NDUxMTcgNDI2LjkzNTkwODIgMTQzLjg4ODE4MzU5IDQyNi4xNzA0MTAxNiBDMTQ0LjExNTQ5OTIzIDQyNC41ODc5MjgzOCAxNDQuMzM5NDk3NzIgNDIzLjAwNDk3MDM3IDE0NC41NjI1IDQyMS40MjE4NzUgQzE0NC4wNTQ0NDgyNCA0MjEuNTc2OTYwMyAxNDMuNTQ2Mzk2NDggNDIxLjczMjA0NTU5IDE0My4wMjI5NDkyMiA0MjEuODkxODMwNDQgQzEzOS43NjI5NDcxIDQyMi41OTQxMTk0MiAxMzYuNTE2MDY4NDMgNDIyLjczOTg3OTg3IDEzMy4xOTUzMTI1IDQyMi45MDI1ODc4OSBDMTMyLjQ1OTg4MjIgNDIyLjk0MTc0ODIgMTMxLjcyNDQ1MTkgNDIyLjk4MDkwODUxIDEzMC45NjY3MzU4NCA0MjMuMDIxMjU1NDkgQzEyOC41NDA1MDU3MyA0MjMuMTQ5NDc0MjUgMTI2LjExNDAyNjk0IDQyMy4yNzIwNjkwNyAxMjMuNjg3NSA0MjMuMzk0NTMxMjUgQzEyMS45OTg4NDQzMSA0MjMuNDgyNDY5MjYgMTIwLjMxMDIwNTE3IDQyMy41NzA3MjU1NCAxMTguNjIxNTgyMDMgNDIzLjY1OTI4NjUgQzExNS4wODQ0MjgzMSA0MjMuODQ0MDA0NDcgMTExLjU0NzE1NjEyIDQyNC4wMjYxNzI3NSAxMDguMDA5NzY1NjIgNDI0LjIwNjI5ODgzIEMxMDMuNDc2NzU3MzUgNDI0LjQzNzE0MDgyIDk4Ljk0Mzk4NjE1IDQyNC42NzIyODQ5NiA5NC40MTEyODU0IDQyNC45MDkwODE0NiBDOTAuMDg2NzY0NzcgNDI1LjEzNDg0MDczIDg1Ljc2MjEzODc1IDQyNS4zNTg1NDc4OSA4MS40Mzc1IDQyNS41ODIwMzEyNSBDODAuMjAwMjcxOTEgNDI1LjY0NjE5NTc4IDgwLjIwMDI3MTkxIDQyNS42NDYxOTU3OCA3OC45MzgwNDkzMiA0MjUuNzExNjU2NTcgQzc2LjYwMTk4NDY5IDQyNS44MzI0MTUwOCA3NC4yNjU4NTA5MyA0MjUuOTUxNzI2NjUgNzEuOTI5Njg3NSA0MjYuMDcwNTU2NjQgQzcxLjIzOTY5NjY2IDQyNi4xMDYzODg1NSA3MC41NDk3MDU4MSA0MjYuMTQyMjIwNDYgNjkuODM4ODA2MTUgNDI2LjE3OTEzODE4IEM2Ni43Mzg5MTQ3MiA0MjYuMzM1MzUzNzYgNjMuNjY4MDIwMTIgNDI2LjQyMTg3NSA2MC41NjI1IDQyNi40MjE4NzUgQzYwLjU2MjUgNDUyLjQ5MTg3NSA2MC41NjI1IDQ3OC41NjE4NzUgNjAuNTYyNSA1MDUuNDIxODc1IEM1Ny4yNjI1IDUwNS40MjE4NzUgNTMuOTYyNSA1MDUuNDIxODc1IDUwLjU2MjUgNTA1LjQyMTg3NSBDNTAuNTYyNSA0NjEuMjAxODc1IDUwLjU2MjUgNDE2Ljk4MTg3NSA1MC41NjI1IDM3MS40MjE4NzUgQzAuMDcyNSAzNzEuNDIxODc1IC01MC40MTc1IDM3MS40MjE4NzUgLTEwMi40Mzc1IDM3MS40MjE4NzUgQy0xMDIuNDM3NSA0MTUuNjQxODc1IC0xMDIuNDM3NSA0NTkuODYxODc1IC0xMDIuNDM3NSA1MDUuNDIxODc1IEMtMTA1LjQwNzUgNTA1LjQyMTg3NSAtMTA4LjM3NzUgNTA1LjQyMTg3NSAtMTExLjQzNzUgNTA1LjQyMTg3NSBDLTExMS43Njc1IDUwMi40NTE4NzUgLTExMi4wOTc1IDQ5OS40ODE4NzUgLTExMi40Mzc1IDQ5Ni40MjE4NzUgQy0xMTIuNzQzMDA3ODEgNDk3LjA3MTU2MjUgLTExMy4wNDg1MTU2MiA0OTcuNzIxMjUgLTExMy4zNjMyODEyNSA0OTguMzkwNjI1IEMtMTE0Ljg2MjU5NDkxIDUwMS4xMjc0MDAzNSAtMTE2LjE5MTAxNDI2IDUwMy4yNDMzMzU5IC0xMTguNDM3NSA1MDUuNDIxODc1IEMtMTIyLjIxNDIyMDA0IDUwNi4yMTQ1MTk5NSAtMTI1LjYzNTQ5MzM5IDUwNS45Njk4NTEwNCAtMTI5LjQzNzUgNTA1LjQyMTg3NSBDLTEyNi44NTcwODE3NCA0OTkuMDAxMTg3MjEgLTEyMy44NzcxMjY3IDQ5Mi43ODc0ODA5OCAtMTE5LjQzNzUgNDg3LjQyMTg3NSBDLTExOC43Nzc1IDQ4Ny40MjE4NzUgLTExOC4xMTc1IDQ4Ny40MjE4NzUgLTExNy40Mzc1IDQ4Ny40MjE4NzUgQy0xMTcuNDM3NSA0ODYuNzYxODc1IC0xMTcuNDM3NSA0ODYuMTAxODc1IC0xMTcuNDM3NSA0ODUuNDIxODc1IEMtMTE2Ljc3NzUgNDg1LjQyMTg3NSAtMTE2LjExNzUgNDg1LjQyMTg3NSAtMTE1LjQzNzUgNDg1LjQyMTg3NSBDLTExNS40Mzc1IDQ4NC43NjE4NzUgLTExNS40Mzc1IDQ4NC4xMDE4NzUgLTExNS40Mzc1IDQ4My40MjE4NzUgQy0xMTQuNDQ3NSA0ODIuNzYxODc1IC0xMTMuNDU3NSA0ODIuMTAxODc1IC0xMTIuNDM3NSA0ODEuNDIxODc1IEMtMTExLjkyNTI5NDU5IDQ3OC4zMTk3Mzc3NSAtMTExLjkyNTI5NDU5IDQ3OC4zMTk3Mzc3NSAtMTExLjkyNTc4MTI1IDQ3NC42NjQwNjI1IEMtMTExLjkwNzgzMDA1IDQ3NC4wMDEwMTEwNSAtMTExLjg4OTg3ODg1IDQ3My4zMzc5NTk1OSAtMTExLjg3MTM4MzY3IDQ3Mi42NTQ4MTU2NyBDLTExMS44MTcxNzA3NiA0NzAuNTM1NTY2OTcgLTExMS43ODMzNTIyOSA0NjguNDE2NTQ0NzUgLTExMS43NSA0NjYuMjk2ODc1IEMtMTExLjcxNjgzNjMzIDQ2NC44NjA2NDU0OCAtMTExLjY4MjM0NzU1IDQ2My40MjQ0NDU5IC0xMTEuNjQ2NDg0MzggNDYxLjk4ODI4MTI1IEMtMTExLjU2MTQ0MDM2IDQ1OC40NjYzNjM3MSAtMTExLjQ5NDY4MTI3IDQ1NC45NDQzNjc0MSAtMTExLjQzNzUgNDUxLjQyMTg3NSBDLTEzOC44MDIxMzQ5NyA0NTcuMjg4MDY2MjEgLTE2MC40MTkwNTg3NiA0NjguOTQ3MzM4NzMgLTE3Ni4wOTQ5NzA3IDQ5Mi44NDI1MjkzIEMtMTc4Ljc0MTE3ODE0IDQ5Ni45NTQzMTIyMiAtMTgxLjI0NjY0MzIxIDUwMS4wNDAxNjE0MiAtMTgzLjQzNzUgNTA1LjQyMTg3NSBDLTE4Ny4wNjc1IDUwNS40MjE4NzUgLTE5MC42OTc1IDUwNS40MjE4NzUgLTE5NC40Mzc1IDUwNS40MjE4NzUgQy0xOTEuMjM5OTk2NzggNDk2LjI0NjQzMDk2IC0xODYuMzcxNTkxMjcgNDg2LjI1NjMzNTcyIC0xNzkuMzMyOTQ2NzggNDc5LjM1OTgxNzUgQy0xNzYuNTUzNzY2NiA0NzUuMDUyMDg4MjMgLTE3Ni44NjU0NDczOSA0NzEuMjQyNzI1NCAtMTc2Ljg5MTYwMTU2IDQ2Ni4yMTU1NzYxNyBDLTE3Ni44ODEyMDcyNCA0NjUuMTc0MTk0IC0xNzYuODcwODEyOTEgNDY0LjEzMjgxMTgzIC0xNzYuODYwMTAzNjEgNDYzLjA1OTg3MjYzIEMtMTc2LjgzMTAwMDI5IDQ1OS42OTQ2OTcyMSAtMTc2LjgyOTAzNTgzIDQ1Ni4zMzAxMzI1NCAtMTc2LjgyODEyNSA0NTIuOTY0ODQzNzUgQy0xNzYuODE0MTI4OTMgNDUwLjg4NDk1NjI1IC0xNzYuNzk4MzUxOTQgNDQ4LjgwNTA3OTk0IC0xNzYuNzgwNzYxNzIgNDQ2LjcyNTIxOTczIEMtMTc2LjcyODA4NjUyIDQzOS4wMjAwNTU0OSAtMTc2LjcwOTg4MjIzIDQzMS4zMTQ2ODY3OCAtMTc2LjY4NzUgNDIzLjYwOTM3NSBDLTE3Ni42MDUgNDA2LjM4NzUgLTE3Ni41MjI1IDM4OS4xNjU2MjUgLTE3Ni40Mzc1IDM3MS40MjE4NzUgQy0yMjcuMjU3NSAzNzEuNDIxODc1IC0yNzguMDc3NSAzNzEuNDIxODc1IC0zMzAuNDM3NSAzNzEuNDIxODc1IEMtMzMwLjQzNzUgNDE1LjY0MTg3NSAtMzMwLjQzNzUgNDU5Ljg2MTg3NSAtMzMwLjQzNzUgNTA1LjQyMTg3NSBDLTMzMy40MDc1IDUwNS40MjE4NzUgLTMzNi4zNzc1IDUwNS40MjE4NzUgLTMzOS40Mzc1IDUwNS40MjE4NzUgQy0zMzkuNDM3NSA0NjEuMjAxODc1IC0zMzkuNDM3NSA0MTYuOTgxODc1IC0zMzkuNDM3NSAzNzEuNDIxODc1IEMtMzQ1LjA0NzUgMzcxLjQyMTg3NSAtMzUwLjY1NzUgMzcxLjQyMTg3NSAtMzU2LjQzNzUgMzcxLjQyMTg3NSBDLTM1Ny40Mzc1IDM3MC40MjE4NzUgLTM1Ny40Mzc1IDM3MC40MjE4NzUgLTM1Ny41NTEwMjUzOSAzNjcuNTU0NDQzMzYgQy0zNTcuNTQ1Nzg4NTcgMzY2LjMwMjg0NDI0IC0zNTcuNTQwNTUxNzYgMzY1LjA1MTI0NTEyIC0zNTcuNTM1MTU2MjUgMzYzLjc2MTcxODc1IEMtMzU3LjUzMjY1ODY5IDM2Mi41NDYwNTIyNSAtMzU3LjUzMDE2MTEzIDM2MS4zMzAzODU3NCAtMzU3LjUyNzU4Nzg5IDM2MC4wNzc4ODA4NiBDLTM1Ny41MTM5MzE4OCAzNTcuNzQyMjIwNDYgLTM1Ny41MTM5MzE4OCAzNTcuNzQyMjIwNDYgLTM1Ny41IDM1NS4zNTkzNzUgQy0zNTcuNDc5Mzc1IDM1MC40MyAtMzU3LjQ1ODc1IDM0NS41MDA2MjUgLTM1Ny40Mzc1IDM0MC40MjE4NzUgQy0zNDMuOTA3NSAzNDAuNDIxODc1IC0zMzAuMzc3NSAzNDAuNDIxODc1IC0zMTYuNDM3NSAzNDAuNDIxODc1IEMtMzE2LjQzNzUgMzM4LjQ0MTg3NSAtMzE2LjQzNzUgMzM2LjQ2MTg3NSAtMzE2LjQzNzUgMzM0LjQyMTg3NSBDLTMxNy44Mjk2ODc1IDMzNC41MTQ2ODc1IC0zMTcuODI5Njg3NSAzMzQuNTE0Njg3NSAtMzE5LjI1IDMzNC42MDkzNzUgQy0zMjIuNDM3NSAzMzQuNDIxODc1IC0zMjIuNDM3NSAzMzQuNDIxODc1IC0zMjQuMDQ5Nzc0MTcgMzMzLjIyNTUyNDkgQy0zMjUuNzg0NDg3NTIgMzMwLjk3MDg4OTY2IC0zMjYuMjI0MDc5MjggMzI5LjE1NDUxNjc0IC0zMjYuODI4NjEzMjggMzI2LjM3NTk3NjU2IEMtMzI3LjA1OTkzNDU0IDMyNS4zMzk0Njk2IC0zMjcuMjkxMjU1OCAzMjQuMzAyOTYyNjUgLTMyNy41Mjk1ODY3OSAzMjMuMjM1MDQ2MzkgQy0zMjcuNzY5OTAxMjggMzIyLjEwNTYwNjA4IC0zMjguMDEwMjE1NzYgMzIwLjk3NjE2NTc3IC0zMjguMjU3ODEyNSAzMTkuODEyNSBDLTMyOC41MTc4MjU0NyAzMTguNjM0NTU4NzIgLTMyOC43Nzc4Mzg0NCAzMTcuNDU2NjE3NDMgLTMyOS4wNDU3MzA1OSAzMTYuMjQyOTgwOTYgQy0zMjkuNzQ4ODQ1OCAzMTMuMDQ5OTc5MDQgLTMzMC40NDIzODcyIDMwOS44NTUwNzUzNiAtMzMxLjEzMjA2MSAzMDYuNjU5MTQ5MTcgQy0zMzEuODUxMTQwODcgMzAzLjMzOTI2MjEyIC0zMzIuNTgzMDU5MzYgMzAwLjAyMjIxNjI5IC0zMzMuMzE0Njk3MjcgMjk2LjcwNTA3ODEyIEMtMzM0LjE5NTIwOTAyIDI5Mi43MTA3MTA2NSAtMzM1LjA3NTI3NzQ4IDI4OC43MTYyNTY3NSAtMzM1Ljk1MDM5MzY4IDI4NC43MjA3MDMxMiBDLTMzOC4xNzYyMjY2IDI3NC41NjIyNDI5MSAtMzQwLjQ3MDQyODI2IDI2NC40MjExMzUxMiAtMzQyLjgyNDQzMjM3IDI1NC4yOTE2NTY0OSBDLTM0My4zNzAwNDkzNyAyNTEuOTQzMTgzNzYgLTM0My45MTMwMTQyNiAyNDkuNTk0MTExODcgLTM0NC40NTUzMjIyNyAyNDcuMjQ0ODczMDUgQy0zNDYuMDUxMTA1MzIgMjQwLjM0MDQ2NTAxIC0zNDcuNjY3NTg2ODEgMjMzLjQ0MTc5MjIyIC0zNDkuMzIwMzEyNSAyMjYuNTUwNzgxMjUgQy0zNDkuNjA2NTY0OTQgMjI1LjM0NTUwNzgxIC0zNDkuODkyODE3MzggMjI0LjE0MDIzNDM4IC0zNTAuMTg3NzQ0MTQgMjIyLjg5ODQzNzUgQy0zNTAuNzA1MjE3NDYgMjIwLjcyMzQwMDg4IC0zNTEuMjI5Njk3ODQgMjE4LjU1MDAxMDg5IC0zNTEuNzYzNDI3NzMgMjE2LjM3ODkwNjI1IEMtMzUzLjA1ODcwNzE1IDIxMC45MTYwNjQxMyAtMzUzLjc5NTYwNDIzIDIwNi4wNDA4NTYgLTM1My40Mzc1IDIwMC40MjE4NzUgQy0zNTEuNzY3NzY4OTUgMTk4Ljc1MjE0Mzk1IC0zNDkuNzMyMzU4NzcgMTk5LjI5MjE1ODY5IC0zNDcuNTAxODg5NzcgMTk5LjI3ODgwNzQgQy0zNDYuNzkwMjMyMzYgMTk5LjI3OTY3Mzg4IC0zNDYuMDc4NTc0OTUgMTk5LjI4MDU0MDM3IC0zNDUuMzQ1MzUyMTcgMTk5LjI4MTQzMzExIEMtMzQ0LjIxOTEyNjc4IDE5OS4yNzY5NzY0MiAtMzQ0LjIxOTEyNjc4IDE5OS4yNzY5NzY0MiAtMzQzLjA3MDE0OTM2IDE5OS4yNzI0Mjk3IEMtMzQwLjUzNTExNzgyIDE5OS4yNjM3MDUzIC0zMzguMDAwMTMzMjkgMTk5LjI2MjIzMTMzIC0zMzUuNDY1MDg3ODkgMTk5LjI2MDc0MjE5IEMtMzMzLjY1NTM5OTU2IDE5OS4yNTYxMTY3IC0zMzEuODQ1NzEyMiAxOTkuMjUxMDkyNDEgLTMzMC4wMzYwMjYgMTk5LjI0NTY5NzAyIEMtMzI1LjEwNjM1NjQ2IDE5OS4yMzI1NDYxMyAtMzIwLjE3NjcwMDU1IDE5OS4yMjYxMjI5OSAtMzE1LjI0NzAxNjE5IDE5OS4yMjE2ODYzNiBDLTMxMi4xNzEwMTI0MiAxOTkuMjE4NzYwMzMgLTMwOS4wOTUwMTI0MiAxOTkuMjE0NjU2NDYgLTMwNi4wMTkwMTA1NCAxOTkuMjEwMTgyMTkgQy0yOTYuNDA2MDI2NzEgMTk5LjE5NjUwMDk4IC0yODYuNzkzMDUxNDQgMTk5LjE4NjgzNzA0IC0yNzcuMTgwMDU4NTQgMTk5LjE4Mjk4MDMgQy0yNjYuMDYyMzY1MzIgMTk5LjE3ODQ5NjA0IC0yNTQuOTQ0Nzk0ODQgMTk5LjE2MDkzMzcxIC0yNDMuODI3MTM4OTYgMTk5LjEzMTk3OTcgQy0yMzUuMjQ3MTEzNTEgMTk5LjExMDQwNTc3IC0yMjYuNjY3MTIyNzEgMTk5LjEwMDI3ODM0IC0yMTguMDg3MDcwNDEgMTk5LjA5ODkzOTE4IEMtMjEyLjk1NjE0NzI2IDE5OS4wOTc4ODgxOCAtMjA3LjgyNTMzOTM4IDE5OS4wOTE5MTgwMiAtMjAyLjY5NDQ0NDY2IDE5OS4wNzQxMTk1NyBDLTE5Ny44NzA2NjM5NyAxOTkuMDU3NzEyNTMgLTE5My4wNDcwODYxMiAxOTkuMDU1NDQ3MjYgLTE4OC4yMjMyODc1OCAxOTkuMDY0MjU4NTggQy0xODYuNDQ4Njk1NzIgMTk5LjA2NTAzMjg5IC0xODQuNjc0MDkzMjggMTk5LjA2MDYzNDc3IC0xODIuODk5NTI4NSAxOTkuMDUwODAwMzIgQy0xODAuNDg0OTgzNTMgMTk5LjAzODE5OTUyIC0xNzguMDcxMTY5OTUgMTk5LjA0Mzg5MTkyIC0xNzUuNjU2NjMxNDcgMTk5LjA1NDM4MjMyIEMtMTc0LjU5MjQ5MTQ0IDE5OS4wNDIyOTc3MiAtMTc0LjU5MjQ5MTQ0IDE5OS4wNDIyOTc3MiAtMTczLjUwNjg1MzY0IDE5OS4wMjk5Njg5OCBDLTE3MS41NTQzOTg1NCAxOTkuMDQ5OTM4MiAtMTcxLjU1NDM5ODU0IDE5OS4wNDk5MzgyIC0xNjguNDM3NSAxOTkuNDIxODc1IEMtMTY2LjE3Mzg1MDU1IDIwMi44MTczNDkxNyAtMTY1LjQxODcxNiAyMDUuOTk0NDcwMzMgLTE2NC41MTk1MzEyNSAyMDkuOTAyMzQzNzUgQy0xNjQuMjUyMjk1IDIxMS4wMzIzNTU1OCAtMTY0LjI1MjI5NSAyMTEuMDMyMzU1NTggLTE2My45Nzk2NjAwMyAyMTIuMTg1MTk1OTIgQy0xNjMuMzk2ODQ1ODMgMjE0LjY1ODQ5OTc4IC0xNjIuODIzMjQyNTMgMjE3LjEzMzgzNjc0IC0xNjIuMjUgMjE5LjYwOTM3NSBDLTE2MS44NDk4OTc3OCAyMjEuMzE2Nzk5MzggLTE2MS40NDk1MDQ1MiAyMjMuMDI0MTU1NTggLTE2MS4wNDg4MjgxMiAyMjQuNzMxNDQ1MzEgQy0xNTguMDg5NzU1NjQgMjM3LjM5MDU2NzAxIC0xNTUuMjY3ODA2OTMgMjUwLjA3ODk3Nzg5IC0xNTIuNTU3ODYxMzMgMjYyLjc5MzcwMTE3IEMtMTUyLjE1Nzk2OTk3IDI2NC42NTkyNTY1OSAtMTUyLjE1Nzk2OTk3IDI2NC42NTkyNTY1OSAtMTUxLjc1IDI2Ni41NjI1IEMtMTUxLjUxOTI1NzgxIDI2Ny42NTA3OTEwMiAtMTUxLjI4ODUxNTYzIDI2OC43MzkwODIwMyAtMTUxLjA1MDc4MTI1IDI2OS44NjAzNTE1NiBDLTE1MC41NDcwNDYxOCAyNzIuMzkxNjY4ODcgLTE1MC41NDcwNDYxOCAyNzIuMzkxNjY4ODcgLTE0OS40Mzc1IDI3NC40MjE4NzUgQy0xNDguODE4NzUgMjczLjc2MTg3NSAtMTQ4LjIgMjczLjEwMTg3NSAtMTQ3LjU2MjUgMjcyLjQyMTg3NSBDLTE0NS40Mzc1IDI3MC40MjE4NzUgLTE0NS40Mzc1IDI3MC40MjE4NzUgLTE0My40Mzc1IDI3MC40MjE4NzUgQy0xNDMuNDM3NSAyNjkuNzYxODc1IC0xNDMuNDM3NSAyNjkuMTAxODc1IC0xNDMuNDM3NSAyNjguNDIxODc1IEMtMTQxLjkyOTYyODM5IDI2Ny4wNDY5NjIwMSAtMTQwLjM1MjEwMjM5IDI2NS43NDgyMzAzOCAtMTM4Ljc1IDI2NC40ODQzNzUgQy0xMzUuNDE4MjA2MDIgMjYxLjgyNzU5MzgyIC0xMzIuMTExNTQwODMgMjU5LjE2NDEzMzg1IC0xMjguODgyODEyNSAyNTYuMzgyODEyNSBDLTEyOC4yOTg0NjQzNiAyNTUuODc5OTk3NTYgLTEyNy43MTQxMTYyMSAyNTUuMzc3MTgyNjIgLTEyNy4xMTIwNjA1NSAyNTQuODU5MTMwODYgQy0xMjUuOTY0NzQ2NDEgMjUzLjg2ODU1NDUxIC0xMjQuODIwMzExOTggMjUyLjg3NDYzMTggLTEyMy42Nzg5NTUwOCAyNTEuODc3MTk3MjcgQy0xMTkuNjU3NzMzNDQgMjQ4LjQyMTg3NSAtMTE5LjY1NzczMzQ0IDI0OC40MjE4NzUgLTExNy40Mzc1IDI0OC40MjE4NzUgQy0xMTcuNDM3NSAyNDcuNzYxODc1IC0xMTcuNDM3NSAyNDcuMTAxODc1IC0xMTcuNDM3NSAyNDYuNDIxODc1IEMtMTE1LjMyMDMxMjUgMjQ0LjQ3NjU2MjUgLTExNS4zMjAzMTI1IDI0NC40NzY1NjI1IC0xMTIuNTYyNSAyNDIuMjk2ODc1IEMtMTExLjY1NzU3ODEyIDI0MS41NzI0MjE4OCAtMTEwLjc1MjY1NjI1IDI0MC44NDc5Njg3NSAtMTA5LjgyMDMxMjUgMjQwLjEwMTU2MjUgQy0xMDcuNDM3NSAyMzguNDIxODc1IC0xMDcuNDM3NSAyMzguNDIxODc1IC0xMDUuNDM3NSAyMzguNDIxODc1IEMtMTA1LjQzNzUgMjM3Ljc2MTg3NSAtMTA1LjQzNzUgMjM3LjEwMTg3NSAtMTA1LjQzNzUgMjM2LjQyMTg3NSBDLTEwMy4zOTEwMTU0NCAyMzQuNjUwODc4NzUgLTEwMS4zMzc4MjM5NSAyMzIuOTk2MTYzNzggLTk5LjE4NzUgMjMxLjM1OTM3NSBDLTk4LjIzMTIxNzA0IDIzMC42MjE4Mjk4MyAtOTguMjMxMjE3MDQgMjMwLjYyMTgyOTgzIC05Ny4yNTU2MTUyMyAyMjkuODY5Mzg0NzcgQy05NS4zMjA4MTkwOSAyMjguMzgwODAyMzMgLTkzLjM3OTI4MSAyMjYuOTAxMzI3MTkgLTkxLjQzNzUgMjI1LjQyMTg3NSBDLTkwLjQyMzAwNzgxIDIyNC42MzgxMjUgLTg5LjQwODUxNTYzIDIyMy44NTQzNzUgLTg4LjM2MzI4MTI1IDIyMy4wNDY4NzUgQy02OS4xNjcyMTIxNCAyMDguMzgxMzkyNDYgLTQ4LjY3Nzc4NjU2IDE5Ni4zNTg1ODY2OSAtMjUuMTk1MzEyNSAxODkuOTY0ODQzNzUgQy0yMy40MjkxMTQ1IDE4OS41NjkxMzAwNiAtMjMuNDI5MTE0NSAxODkuNTY5MTMwMDYgLTIyLjQzNzUgMTg4LjQyMTg3NSBDLTIyLjc2NDkzNjk3IDE4Ni41MDA0Nzg4NyAtMjIuNzY0OTM2OTcgMTg2LjUwMDQ3ODg3IC0yMy4zNzUgMTg0LjM1OTM3NSBDLTIzLjU2OTY0ODQ0IDE4My42MjU4OTg0NCAtMjMuNzY0Mjk2ODggMTgyLjg5MjQyMTg3IC0yMy45NjQ4NDM3NSAxODIuMTM2NzE4NzUgQy0yNC4xMjA4MjAzMSAxODEuNTcwODIwMzEgLTI0LjI3Njc5Njg4IDE4MS4wMDQ5MjE4OCAtMjQuNDM3NSAxODAuNDIxODc1IEMtMjUuNDkwNjY0MDYgMTgwLjQ2ODI4MTI1IC0yNi41NDM4MjgxMyAxODAuNTE0Njg3NSAtMjcuNjI4OTA2MjUgMTgwLjU2MjUgQy00NS41ODc0MjAzNCAxODEuMTExNzc5NzkgLTYwLjcwNjc5NzY0IDE3Ni45MzE4NDIxMyAtNzQuMTI1IDE2NC41NDY4NzUgQy03NS45MTQzOTUwOCAxNjIuODU1OTM4ODEgLTc3LjY3OTcxMTE3IDE2MS4xNDU5MTkyIC03OS40Mzc1IDE1OS40MjE4NzUgQy04MS43NTYzNTQ3NiAxNjIuMjIzNDA0MTggLTgxLjc1NjM1NDc2IDE2Mi4yMjM0MDQxOCAtODEuMTg3NSAxNjUuMjk2ODc1IEMtODAuNTU1MDMwODUgMTY4LjM1NDYxMzAyIC04MC41NTUwMzA4NSAxNjguMzU0NjEzMDIgLTc5LjM3NSAxNzAuNzk2ODc1IEMtNzcuNTg1NDYyNzUgMTc1LjgwNzU3OTMxIC03Ny44MjE1MTQ0NCAxODAuNDQ1NzQyNjggLTc5LjgxMjUgMTg1LjI5Njg3NSBDLTgxLjQzNzUgMTg4LjQyMTg3NSAtODEuNDM3NSAxODguNDIxODc1IC04My40Mzc1IDE5MC40MjE4NzUgQy04Ni42NTQxNjg3NCAxOTEuMjc5NjUzMzMgLTg4Ljg2OTQ5NTQgMTkxLjU1Mzk2OTA5IC05Mi4xMjUgMTkwLjc5Njg3NSBDLTk1LjA5NDk0NzMyIDE4OS4wMzA5NjAzOCAtOTUuOTM5NDk1OTYgMTg3LjUzMjc4Njc5IC05Ny40Mzc1IDE4NC40MjE4NzUgQy05Ny44MDA3ODEyNSAxODEuMDExNzE4NzUgLTk3LjgwMDc4MTI1IDE4MS4wMTE3MTg3NSAtOTcuNzUgMTc3LjM1OTM3NSBDLTk3Ljc0NjEzMjgxIDE3Ni4xNTE1MjM0NCAtOTcuNzQyMjY1NjMgMTc0Ljk0MzY3MTg4IC05Ny43MzgyODEyNSAxNzMuNjk5MjE4NzUgQy05Ny40NTg4MjY5NCAxNzAuNjU0MjU1NTkgLTk3LjEzNTg3NzYxIDE2OC45MjQ0MzE0MSAtOTUuNDM3NSAxNjYuNDIxODc1IEMtOTQuNzc3NSAxNjYuMDkxODc1IC05NC4xMTc1IDE2NS43NjE4NzUgLTkzLjQzNzUgMTY1LjQyMTg3NSBDLTkyLjUwNTI1OTczIDE2My4yMDMwODUwNyAtOTEuNjY1MDAzMTkgMTYwLjk0NTE5NzYgLTkwLjg3NSAxNTguNjcxODc1IEMtOTAuNDQwNTg1OTQgMTU3LjQzOTUzMTI1IC05MC4wMDYxNzE4OCAxNTYuMjA3MTg3NSAtODkuNTU4NTkzNzUgMTU0LjkzNzUgQy04Ny4xNzEzMzc0MSAxNDcuNDUxMzMwMjkgLTg3LjgxNzU4NjQ5IDE0My44NDUzNzIyNyAtOTAuNzc3MzQzNzUgMTM2LjUwNzgxMjUgQy05Mi44MjA2NjczIDEzMi43MDk2MzQ2MSAtOTQuOTQ2NjY2NjcgMTMxLjA2NzU2NjU2IC05OC41MDM5MDYyNSAxMjguNzgxMjUgQy0xMDMuMDA3ODU4NzQgMTI1LjYxNDgzNDkxIC0xMDUuMDA2MjY2OCAxMjEuNTg2MDc2NDEgLTEwNi4wNjY0MDYyNSAxMTYuMjY1NjI1IEMtMTA2Ljc1ODQzNjU4IDEwOS45MTM1MTUwMSAtMTA3LjE4MzIwMzU3IDEwNC43NTY2NjQ5MyAtMTAzLjQzNzUgOTkuNDIxODc1IEMtOTguMTU3MDAwNzMgOTUuOTAxMjc3NTQgLTkyLjI3NjUzMTUyIDk0LjM4Mjg3MDE3IC04Ni4xMjUgOTMuMTcxODc1IEMtODUuMjkyNjY4NDYgOTMuMDA0OTQxNDEgLTg0LjQ2MDMzNjkxIDkyLjgzODAwNzgxIC04My42MDI3ODMyIDkyLjY2NjAxNTYyIEMtNjguODI3MjQxMjEgODkuODQ4MDY2NTggLTY4LjgyNzI0MTIxIDg5Ljg0ODA2NjU4IC02MS45Mzc1IDkzLjA0Njg3NSBDLTU3LjQ3OTkxNjY1IDk3LjI4MTU3OTE4IC01NS43MjI4NDcyOCAxMDIuMTQ3Mzk4MDIgLTU1LjE5OTIxODc1IDEwOC4xNTYyNSBDLTU1LjAwODQ0OTg3IDExNS45MDc0OTA2NiAtNTUuNjE0NjE0MiAxMjEuMzg3NjI3NzMgLTYxLjA2MjUgMTI3LjEzNjcxODc1IEMtNjYuNDgxOTI0OTQgMTMxLjc1NDUyMDQyIC03Mi41NjAxNTI0NyAxMzMuMTE1MTc4OTcgLTc5LjQzNzUgMTM0LjQyMTg3NSBDLTc5LjQzNzUgMTQyLjUxMzA3NTggLTcyLjcxNDYyMTQzIDE1MC43MDQ5OTM0NSAtNjcuNDM3NSAxNTYuNDIxODc1IEMtNTguODUwODM5MDUgMTY0LjI5Mjk4MDg3IC00Ny43OTY3NTg2MSAxNjkuMzkxMTIxOSAtMzYuMTg3NSAxNzAuMDQ2ODc1IEMtMzQuODc3ODEyNSAxNzAuMTI2Nzk2ODcgLTMzLjU2ODEyNSAxNzAuMjA2NzE4NzUgLTMyLjIxODc1IDE3MC4yODkwNjI1IEMtMjguMjQ1MzU4NTggMTcwLjQyODYyMzc3IC0yNC4zNDk2ODk4OCAxNzAuMzE4ODcxMzggLTIwLjM5MDYyNSAxNjkuOTY4NzUgQy0xOC40Mzc1IDE3MC40MjE4NzUgLTE4LjQzNzUgMTcwLjQyMTg3NSAtMTYuOTU2Nzg3MTEgMTcyLjU5MzI2MTcyIEMtMTQuMzQ3NDQ2IDE3Ny40NTEzNDA3OSAtMTIuNjE5OTgzNTYgMTgyLjYxOTM3NjY1IC0xMC43NSAxODcuNzk2ODc1IEMtMTAuMzM0Mjc3MzQgMTg4LjkwODA0Njg3IC05LjkxODU1NDY5IDE5MC4wMTkyMTg3NSAtOS40OTAyMzQzOCAxOTEuMTY0MDYyNSBDLTUuMDE3NTMxNjUgMjAzLjUwMjU1Mjc3IC01LjAxNzUzMTY1IDIwMy41MDI1NTI3NyAtNy40OTYwOTM3NSAyMTAuMzQzNzUgQy03Ljk1MTEzMjgxIDIxMS4yNzcwMzEyNSAtOC40MDYxNzE4NyAyMTIuMjEwMzEyNSAtOC44NzUgMjEzLjE3MTg3NSBDLTExLjM3OTczOTgyIDIxOC44NjgzNjg5OSAtMTIuOTUwNTE1NjkgMjI0LjE0ODEyMDY1IC0xMi40Mzc1IDIzMC40MjE4NzUgQy0xMS4yMjU3OTE1OSAyMzMuMzAwOTI1OTUgLTExLjIyNTc5MTU5IDIzMy4zMDA5MjU5NSAtOC40Mzc1IDIzNC40MjE4NzUgQy0yLjQzNDM5ODYyIDIzNS4xMTA3NTU0OSAxLjIwMTEwMzUyIDIzNC4wNTAwMTA1MyA2LjU2MjUgMjMxLjQyMTg3NSBDNy41NTI1IDIzMS4wOTE4NzUgOC41NDI1IDIzMC43NjE4NzUgOS41NjI1IDIzMC40MjE4NzUgQzkuNTYyNSAyMjkuNzYxODc1IDkuNTYyNSAyMjkuMTAxODc1IDkuNTYyNSAyMjguNDIxODc1IEMxMC4yMjI1IDIyOC40MjE4NzUgMTAuODgyNSAyMjguNDIxODc1IDExLjU2MjUgMjI4LjQyMTg3NSBDMTEuNTYyNSAyMjcuNzYxODc1IDExLjU2MjUgMjI3LjEwMTg3NSAxMS41NjI1IDIyNi40MjE4NzUgQzEyLjIyMjUgMjI2LjQyMTg3NSAxMi44ODI1IDIyNi40MjE4NzUgMTMuNTYyNSAyMjYuNDIxODc1IEMxMy44MzcwNzAzMSAyMjUuNjgzMjQyMTkgMTQuMTExNjQwNjMgMjI0Ljk0NDYwOTM3IDE0LjM5NDUzMTI1IDIyNC4xODM1OTM3NSBDMTUuNDgxNTIyNDQgMjIxLjYxMzM1MDM3IDE2LjcxMDM4NDg1IDIxOS41NTAxMjQ5IDE4LjI1IDIxNy4yMzQzNzUgQzIxLjE3NDQyMTc1IDIxMi40NDQzNzM4NiAyMy4zMjMxODU2NyAyMDcuNTAyODY3NjkgMjUuMzc1IDIwMi4yOTY4NzUgQzI1LjgyNzgyMzQ5IDIwMS4xNjkyMjcyOSAyNS44Mjc4MjM0OSAyMDEuMTY5MjI3MjkgMjYuMjg5Nzk0OTIgMjAwLjAxODc5ODgzIEMzMC4yMDI3MzUyMSAxODkuODExMTc3MTEgMjkuNTYyODE4OTEgMTgzLjk0MTQ5MzE3IDI1LjYyNSAxNzMuODU5Mzc1IEMyMC43NDY1NjYgMTYxLjE5NDk5MjkyIDIwLjc0NjU2NiAxNjEuMTk0OTkyOTIgMjEuNTYyNSAxNTUuNDIxODc1IEMyNC4xMjUgMTUzLjEwOTM3NSAyNC4xMjUgMTUzLjEwOTM3NSAyNS43NzczNDM3NSAxNTEuOTE0MDYyNSBDMzMuMjU0MTc2NTcgMTQ1LjY2NDI4MTAyIDM3LjM5OTU3MTk0IDEzNS43MDk3NDI1NSAzOS41NjI1IDEyNi40MjE4NzUgQzM4LjI4Mzc1IDEyNi41MDQzNzUgMzcuMDA1IDEyNi41ODY4NzUgMzUuNjg3NSAxMjYuNjcxODc1IEMyNi4xODM4MTUyNCAxMjYuNTk3NTExMjcgMTkuNTA0MTk0NTcgMTIyLjI4NzkwMDAyIDEyLjc2NTYyNSAxMTUuODY3MTg3NSBDOC42NjA3Mzc1MiAxMTEuMzExMDUzNTMgNS44NzA2NTczOSAxMDYuNDIzMjE1NiA0LjU2MjUgMTAwLjQyMTg3NSBDNC4yNzI0NjA5NCAxMDEuNDUyNDgwNDcgNC4yNzI0NjA5NCAxMDEuNDUyNDgwNDcgMy45NzY1NjI1IDEwMi41MDM5MDYyNSBDMy43MTYxNzE4NyAxMDMuNDA0OTYwOTQgMy40NTU3ODEyNSAxMDQuMzA2MDE1NjMgMy4xODc1IDEwNS4yMzQzNzUgQzIuODA0NjQ4NDQgMTA2LjU3NDM1NTQ3IDIuODA0NjQ4NDQgMTA2LjU3NDM1NTQ3IDIuNDE0MDYyNSAxMDcuOTQxNDA2MjUgQzEuNTYyNSAxMTAuNDIxODc1IDEuNTYyNSAxMTAuNDIxODc1IC0wLjQzNzUgMTEzLjQyMTg3NSBDLTEuMDk3NSAxMTMuNDIxODc1IC0xLjc1NzUgMTEzLjQyMTg3NSAtMi40Mzc1IDExMy40MjE4NzUgQy0yLjQzNzUgMTE0LjA4MTg3NSAtMi40Mzc1IDExNC43NDE4NzUgLTIuNDM3NSAxMTUuNDIxODc1IEMtMy4wOTc1IDExNS40MjE4NzUgLTMuNzU3NSAxMTUuNDIxODc1IC00LjQzNzUgMTE1LjQyMTg3NSBDLTQuNDM3NSAxMTYuMDgxODc1IC00LjQzNzUgMTE2Ljc0MTg3NSAtNC40Mzc1IDExNy40MjE4NzUgQy0xNS43ODg3OTMxNyAxMjIuMDI0OTU4NDUgLTI5LjYxMjg1MDA1IDEyNi4yMjcxNTcwNCAtNDEuNzUgMTIyLjIzNDM3NSBDLTQ3LjIyMjE3Mjg2IDExOS44ODQ0Mjk4IC01MC44OTU5OTYzOSAxMTUuNzQ2OTMwMTggLTUzLjQzNzUgMTEwLjQyMTg3NSBDLTU1LjY3NzYxMjA3IDEwMy41MTU5NjczOCAtNTYuMjA1MDc3MzcgOTcuMzk4OTI0MDggLTUzLjE4NzUgOTAuNjA5Mzc1IEMtNDkuNDQ2NTEyMTIgODUuOTMzMTQwMTUgLTQ0LjgzMjA1NzYgODQuODU0NDUxNzIgLTM5LjEyNSA4My43MzQzNzUgQy0zNy44NzA3NDIxOSA4My40ODMwMDc4MSAtMzYuNjE2NDg0MzggODMuMjMxNjQwNjIgLTM1LjMyNDIxODc1IDgyLjk3MjY1NjI1IEMtMzQuMzcxNjAxNTYgODIuNzkwODk4NDQgLTMzLjQxODk4NDM3IDgyLjYwOTE0MDYyIC0zMi40Mzc1IDgyLjQyMTg3NSBDLTMzLjQwMjM2MzI4IDgyLjI5MjMyNDIyIC0zMy40MDIzNjMyOCA4Mi4yOTIzMjQyMiAtMzQuMzg2NzE4NzUgODIuMTYwMTU2MjUgQy00Ny4xNzc2OTM1NCA4MC4xNzEyNjAwMyAtNTcuNjg1Mzc5NjYgNzYuMjg5MTMwMzYgLTY2LjQzNzUgNjYuNDIxODc1IEMtNjkuMTIwMjYzNCA2Mi41MDE4MjgyNiAtNjkuNzcwMzk4NjkgNjAuMTkzNDIyODQgLTY5LjQzNzUgNTUuNDIxODc1IEMtNjYuNDEzNDk4NzYgNTMuOTA5ODc0MzggLTY0Ljc5ODQ2MTY2IDUzLjg0MDE3MDEgLTYxLjQzNzUgNTQuNDIxODc1IEMtNTkuNjc4OTA2NzcgNTYuMjg2NzgxMTcgLTU4LjMwMzEzMzA0IDU4LjI3NjgxMTg0IC01Ni44NTU0Njg3NSA2MC4zOTA2MjUgQy01MC45MDAwMzc5NyA2OC45MjE4MjA2MSAtMzkuNTc4NzIyNDggNzAuODEzNjE1IC0zMC4wMjczNDM3NSA3Mi44MDg1OTM3NSBDLTI3LjQzNzUgNzMuNDIxODc1IC0yNy40Mzc1IDczLjQyMTg3NSAtMjYuNDM3NSA3NC40MjE4NzUgQy0yNi4zOTY1NzA2MyA3Ni43NTQ4NDkzMyAtMjYuMzk1MDgyNzcgNzkuMDg4OTI3MjUgLTI2LjQzNzUgODEuNDIxODc1IEMtMjUuMzY1IDgxLjA5MTg3NSAtMjQuMjkyNSA4MC43NjE4NzUgLTIzLjE4NzUgODAuNDIxODc1IEMtMTYuMzg1ODQ2NTggNzguNzUxNzE4MTEgLTkuMzMzNzg1ODkgNzguMTAwNzYyMTQgLTIuODc1IDgxLjA0Njg3NSBDLTAuMjEwMTEwNDUgODMuNjQzNDM0MDUgMC45ODQ2NDgyIDg2LjA4MzIzMjA1IDIuNTYyNSA4OS40MjE4NzUgQzIuODA0ODQzNzUgODguNDkyNDYwOTQgMy4wNDcxODc1IDg3LjU2MzA0Njg3IDMuMjk2ODc1IDg2LjYwNTQ2ODc1IEM1LjcwNzU5OTgzIDc3LjcxMzYwMjkzIDguMjI3NTE2OTEgNzAuMzkwMzU2NCAxNC41NjI1IDYzLjQyMTg3NSBDMTUuMjIyNSA2My40MjE4NzUgMTUuODgyNSA2My40MjE4NzUgMTYuNTYyNSA2My40MjE4NzUgQzguMTU2NjIxNTIgNDQuOTA3MzE5NSAtMy4yMzkyNjYzMSAzMi4xMjQ4MDkyIC0yMi40Mzc1IDI0LjQyMTg3NSBDLTQwLjkwMTQ2ODMzIDE3LjYzOTk3MjUxIC02MS45MjU2NjYwNSAxOC41NTczMzczNCAtNzkuODc1IDI2LjYwOTM3NSBDLTg4LjcxOTQwNzk0IDMxLjU0NDczNTc1IC05NS4yODg5MjMzNSAzOC4yMDY1OTQwOCAtOTkuNDM3NSA0Ny40MjE4NzUgQy05OS45OTQzNzUgNDguNTc2ODc1IC0xMDAuNTUxMjUgNDkuNzMxODc1IC0xMDEuMTI1IDUwLjkyMTg3NSBDLTEwNC4xNTg1MDcxMyA1OS4wMTEyMjczNSAtMTA0LjczMDM5MjAyIDY2LjU3NDEwNDcyIC0xMDQuNjI1IDc1LjE3MTg3NSBDLTEwNC42MjQzNTU0NyA3Ni4xODYzNjcxOSAtMTA0LjYyMzcxMDk0IDc3LjIwMDg1OTM3IC0xMDQuNjIzMDQ2ODggNzguMjQ2MDkzNzUgQy0xMDQuNTk2MDY1NyA4Mi44MDg5MTAxNyAtMTA0LjM2OTM5NzM0IDg2Ljk0OTg1NzE2IC0xMDMuNDM3NSA5MS40MjE4NzUgQy0xMDMuMjUgOTUuMTA5Mzc1IC0xMDMuMjUgOTUuMTA5Mzc1IC0xMDMuNDM3NSA5OC40MjE4NzUgQy0xMDQuMDk3NSA5OS4wODE4NzUgLTEwNC43NTc1IDk5Ljc0MTg3NSAtMTA1LjQzNzUgMTAwLjQyMTg3NSBDLTEwOS4wNjI1IDEwMC4wNDY4NzUgLTEwOS4wNjI1IDEwMC4wNDY4NzUgLTExMi40Mzc1IDk5LjQyMTg3NSBDLTExNy42Njg2NTUzNSA3NS41NTE1NTQ0NSAtMTE2LjMyNDk5MDc1IDUyLjg3NDk3MzM0IC0xMDMuMjQyMTg3NSAzMS44NDM3NSBDLTEwMi42NDY2NDA2MyAzMS4wNDQ1MzEyNSAtMTAyLjA1MTA5Mzc1IDMwLjI0NTMxMjUgLTEwMS40Mzc1IDI5LjQyMTg3NSBDLTEwMC43Nzc1IDI5LjQyMTg3NSAtMTAwLjExNzUgMjkuNDIxODc1IC05OS40Mzc1IDI5LjQyMTg3NSBDLTk5LjQzNzUgMjguNzYxODc1IC05OS40Mzc1IDI4LjEwMTg3NSAtOTkuNDM3NSAyNy40MjE4NzUgQy05OC43Nzc1IDI3LjQyMTg3NSAtOTguMTE3NSAyNy40MjE4NzUgLTk3LjQzNzUgMjcuNDIxODc1IEMtOTcuNDM3NSAyNi43NjE4NzUgLTk3LjQzNzUgMjYuMTAxODc1IC05Ny40Mzc1IDI1LjQyMTg3NSBDLTkxLjQ3MzM2MTY5IDIwLjI2OTg3NDY4IC04NC44NDM3NjI1MSAxNi45NTg5MTM4NiAtNzcuNDM3NSAxNC40MjE4NzUgQy03OS43NDc1IDEzLjc2MTg3NSAtODIuMDU3NSAxMy4xMDE4NzUgLTg0LjQzNzUgMTIuNDIxODc1IEMtODQuNDM3NSAxMC4xMTE4NzUgLTg0LjQzNzUgNy44MDE4NzUgLTg0LjQzNzUgNS40MjE4NzUgQy01Ni41MDcwMTk1IC01LjQ0Nzc5NTYyIC0yOC41ODgzODIxOSAtMTMuMTI0NjY2MzcgMCAwIFogTS01MS4zMTI1IDUuMjM0Mzc1IEMtNTIuNTI4MDg1OTQgNS41OTA4MDA3OCAtNTMuNzQzNjcxODggNS45NDcyMjY1NiAtNTQuOTk2MDkzNzUgNi4zMTQ0NTMxMiBDLTU4LjQ4MDE1NTcgNy4zMzg2MjQ1MiAtNjEuOTU5NTIxMzYgOC4zNzcyNTQyNSAtNjUuNDM3NSA5LjQyMTg3NSBDLTY2LjQ2MzkxNjAyIDkuNzI5MTU1MjcgLTY3LjQ5MDMzMjAzIDEwLjAzNjQzNTU1IC02OC41NDc4NTE1NiAxMC4zNTMwMjczNCBDLTcwLjg0NDg1MjA0IDExLjA0MTE1NjU4IC03My4xNDE0MjQ5NCAxMS43MzA2NjU1NyAtNzUuNDM3NSAxMi40MjE4NzUgQy03Mi4wOTM3MjAxOSAxMy41MjU2NzA0NSAtNjkuODYyNTI3NzcgMTMuMjcxMDUzNjcgLTY2LjQ1MzEyNSAxMi41MDM5MDYyNSBDLTYwLjMyNjM4OTEzIDExLjI5NzQ2Mzc0IC01NC40MTk2MTgwMiAxMS4wNzYwOTcxNyAtNDguMTg3NSAxMS4xMDkzNzUgQy00Ni41NDY2MDQgMTEuMTE2NzQ2ODMgLTQ2LjU0NjYwNCAxMS4xMTY3NDY4MyAtNDQuODcyNTU4NTkgMTEuMTI0MjY3NTggQy0zMi4wODQ2MzUzNSAxMS4zMDg2MjY5NiAtMjAuODE1NTMzMDUgMTMuMzA0NjUyOTMgLTkuNDM3NSAxOS40MjE4NzUgQy04LjYwODYzMjgxIDE5Ljg1MjQyMTg4IC03Ljc3OTc2NTYyIDIwLjI4Mjk2ODc1IC02LjkyNTc4MTI1IDIwLjcyNjU2MjUgQzguNTQ2MjIyNiAyOS4zMjQ4MTg5NiAxNy4wODE3ODY5MiA0Mi40MTk1MTkzMyAyNS41NjI1IDU3LjQyMTg3NSBDMjYuODgyNSA1Ni43NjE4NzUgMjguMjAyNSA1Ni4xMDE4NzUgMjkuNTYyNSA1NS40MjE4NzUgQzI5LjAxMDQ4OTcyIDUwLjAyNzU0Njc0IDI3LjcwMDkzNzY3IDQ1LjYxNTA5Mjk5IDI1LjUgNDAuNjcxODc1IEMyNS4xOTQ4OTUwMiAzOS45ODAyOTI5NyAyNC44ODk3OTAwNCAzOS4yODg3MTA5NCAyNC41NzU0Mzk0NSAzOC41NzYxNzE4OCBDMjEuNzA4MDc5MTkgMzIuMzIxMTY3MTMgMTguMjUxNjEzNjkgMjYuNTA5ODMyODQgMTMuNTYyNSAyMS40MjE4NzUgQzEyLjkwMjUgMjEuNDIxODc1IDEyLjI0MjUgMjEuNDIxODc1IDExLjU2MjUgMjEuNDIxODc1IEMxMS41NjI1IDIwLjc2MTg3NSAxMS41NjI1IDIwLjEwMTg3NSAxMS41NjI1IDE5LjQyMTg3NSBDMTAuOTAyNSAxOS40MjE4NzUgMTAuMjQyNSAxOS40MjE4NzUgOS41NjI1IDE5LjQyMTg3NSBDOS41NjI1IDE4Ljc2MTg3NSA5LjU2MjUgMTguMTAxODc1IDkuNTYyNSAxNy40MjE4NzUgQy04Ljg2MzYyNDc2IDMuMTY4MjMxMzggLTI5LjA2NDIyOTUyIC0xLjQ1ODg2MTI3IC01MS4zMTI1IDUuMjM0Mzc1IFogTTIxLjU2MjUgMTYuNDIxODc1IEMyMS45MjYwMTU2MiAxNi45NDM5NDUzMSAyMi4yODk1MzEyNSAxNy40NjYwMTU2MyAyMi42NjQwNjI1IDE4LjAwMzkwNjI1IEMzMC41ODYzNzgyMiAyOS42MDI5ODkwMSAzNS40MjI0NzYzMiA0MS4wNzY5MDUwNCAzOS41NjI1IDU0LjQyMTg3NSBDNDIuODYyNSA1NC43NTE4NzUgNDYuMTYyNSA1NS4wODE4NzUgNDkuNTYyNSA1NS40MjE4NzUgQzQ2Ljk1MjU0ODYyIDQ0LjQwMjA4MDI4IDQyLjc4ODk3NjIzIDM0LjI1NDIzNDg0IDM1LjU2MjUgMjUuNDIxODc1IEMzNC45MDI1IDI1LjQyMTg3NSAzNC4yNDI1IDI1LjQyMTg3NSAzMy41NjI1IDI1LjQyMTg3NSBDMzMuNTYyNSAyNC43NjE4NzUgMzMuNTYyNSAyNC4xMDE4NzUgMzMuNTYyNSAyMy40MjE4NzUgQzMxLjM4NzkxNzIyIDIxLjYwMDgzMyAzMS4zODc5MTcyMiAyMS42MDA4MzMgMjguNjg3NSAxOS43OTY4NzUgQzI3Ljc4MjU3ODEyIDE5LjE2NTIzNDM4IDI2Ljg3NzY1NjI1IDE4LjUzMzU5Mzc1IDI1Ljk0NTMxMjUgMTcuODgyODEyNSBDMjMuNzQ0MTYyOTQgMTYuMjQ3NjQzOTUgMjMuNzQ0MTYyOTQgMTYuMjQ3NjQzOTUgMjEuNTYyNSAxNi40MjE4NzUgWiBNMTkuMjIyNjU2MjUgNzMuMjM0Mzc1IEMxNC4yMDQ5NjE0MiA3OS44NDU5MjU4NCAxMi44MjY0NTY1NiA4NS45MDc2MDIyIDEzLjExNzE4NzUgOTQuMjAzMTI1IEMxNC4wNDQ1MjQ1NyAxMDAuOTA1OTgyNDUgMTYuOTAxNzYxODIgMTA2LjIyMjg2NDY1IDIxLjg3NSAxMTAuNzk2ODc1IEMyMy4wNzk4Njg4NiAxMTEuNzA1MDQxNjggMjQuMzA5NTMyOTcgMTEyLjU4MTMxMDEyIDI1LjU2MjUgMTEzLjQyMTg3NSBDMjYuMTQ2NDQ1MzEgMTEzLjgzNDM3NSAyNi43MzAzOTA2MiAxMTQuMjQ2ODc1IDI3LjMzMjAzMTI1IDExNC42NzE4NzUgQzMzLjMzMTQyMDcgMTE4LjMwOTM5OTU1IDM5Ljc0MzQzNTQgMTE4LjM1NjIxNzk5IDQ2LjU2MjUgMTE3LjQyMTg3NSBDNTMuMzc5MzI2MjYgMTE1LjI4MjE0ODk4IDU5LjQxNDcwNzg5IDExMS4yODU5OTQ4OCA2My41NjI1IDEwNS40MjE4NzUgQzY3LjEwNTU1MzQ3IDk4LjM4ODMzNTYxIDY5LjE5Mzk3MjE2IDkxLjUxNDUwNzczIDY2LjcyNjU2MjUgODMuODEyNSBDNjUuMjgyOTk4NzUgODAuMDU3MDYzNDkgNjMuNzk5NTkxNTMgNzYuNzc3NTEyMyA2MS41NjI1IDczLjQyMTg3NSBDNjAuOTAyNSA3My40MjE4NzUgNjAuMjQyNSA3My40MjE4NzUgNTkuNTYyNSA3My40MjE4NzUgQzU5LjU2MjUgNzIuNzYxODc1IDU5LjU2MjUgNzIuMTAxODc1IDU5LjU2MjUgNzEuNDIxODc1IEM1OC45MDI1IDcxLjQyMTg3NSA1OC4yNDI1IDcxLjQyMTg3NSA1Ny41NjI1IDcxLjQyMTg3NSBDNTcuNTYyNSA3MC43NjE4NzUgNTcuNTYyNSA3MC4xMDE4NzUgNTcuNTYyNSA2OS40MjE4NzUgQzU1Ljk4MTc1NDM2IDY4LjYwNDM1MTk3IDU0LjM5Nzc4Nzc3IDY3Ljc5MzA1NTAzIDUyLjgxMjUgNjYuOTg0Mzc1IEM1MS45MzA3ODEyNSA2Ni41MzE5MTQwNiA1MS4wNDkwNjI1IDY2LjA3OTQ1MzEzIDUwLjE0MDYyNSA2NS42MTMyODEyNSBDMzkuMDQ5ODk2ODUgNjAuNDg4MDIwNTEgMjcuMTIxOTUyODggNjQuNDEwNTIwMDQgMTkuMjIyNjU2MjUgNzMuMjM0Mzc1IFogTS0yNS40MDY5ODI0MiA5MC44MjA1NTY2NCBDLTI3LjM2MjQzMzc5IDkxLjIzMTczMjY4IC0yOS4zMjA4NzM1IDkxLjYyODYxMTUgLTMxLjI3OTI5Njg4IDkyLjAyNTM5MDYyIEMtMzIuNTE2MTUyMzQgOTIuMjg2NDI1NzggLTMzLjc1MzAwNzgxIDkyLjU0NzQ2MDk0IC0zNS4wMjczNDM3NSA5Mi44MTY0MDYyNSBDLTM2LjcyNjg1MTgxIDkzLjE2OTg5MTM2IC0zNi43MjY4NTE4MSA5My4xNjk4OTEzNiAtMzguNDYwNjkzMzYgOTMuNTMwNTE3NTggQy00MS40MDM5ODc3NSA5NC40MTE4NDAyOSAtNDMuMTQ0NzM3NjQgOTUuNDE1NDAxNjkgLTQ1LjQzNzUgOTcuNDIxODc1IEMtNDQuOTE2MDQyNTcgMTAzLjU3NTA3MjYyIC00NC4yMDc0NzQzMiAxMDcuNjUxOTAwNjggLTM5LjY4NzUgMTEyLjE3MTg3NSBDLTMyLjExNzk2NjgxIDExNi4zNzcxNzEyMSAtMjMuMjc3ODUwNTggMTEzLjQ4NTU3OTYxIC0xNS40Mzc1IDExMS40MjE4NzUgQy0xMS43NTA1NDM4MSAxMTAuMjM4NDgxIC05LjI4NDQzMjIyIDEwOC45MTA1MTAxMyAtNy4yOTI5Njg3NSAxMDUuNDEwMTU2MjUgQy01LjY4OTM1MTc3IDEwMS4zOTA4Nzc5NCAtNS4zNjUyODgyOSA5OC44Njk1ODc2MSAtNi4wNjI1IDk0LjU0Njg3NSBDLTcuNjE4MDQ3MzcgOTAuOTQxOTM4IC03LjYxODA0NzM3IDkwLjk0MTkzOCAtMTAuNDM3NSA4OC40MjE4NzUgQy0xNS41Mjg2OTEwOSA4OC40MjE4NzUgLTIwLjQ0MDI4MTc3IDg5Ljc2OTIwMjE2IC0yNS40MDY5ODI0MiA5MC44MjA1NTY2NCBaIE0tODAuNzUgMTAyLjI5Njg3NSBDLTgxLjYwNTI5Mjk3IDEwMi40NzA4OTg0NCAtODIuNDYwNTg1OTQgMTAyLjY0NDkyMTg3IC04My4zNDE3OTY4OCAxMDIuODI0MjE4NzUgQy05MC45MjYwMzA1MSAxMDMuOTg4NDc0MDggLTkwLjkyNjAzMDUxIDEwMy45ODg0NzQwOCAtOTYuODEyNSAxMDguMjY5NTMxMjUgQy05Ny45OTIzNjYyOCAxMTIuMzMyNjk1NzYgLTk2LjI2OTg5NTA5IDExNS43NzAwODA1MyAtOTQuNDM3NSAxMTkuNDIxODc1IEMtOTIuMzIyNjYxMTMgMTIyLjM0NDkzMjU0IC05MC4wMTAwNDU5MSAxMjQuMTE2ODQyNTYgLTg2LjM2MzI4MTI1IDEyNC44MjQyMTg3NSBDLTc5LjM2MzA0NDc2IDEyNS4xMjk2MzkxOSAtNzIuOTgzODQ1NTMgMTIzLjM4NDY4MzAxIC02Ny40Mzc1IDExOS4xMDkzNzUgQy02NS4xMDc0NTYzIDExNS45NzgzNzg3OCAtNjQuNTE1MzI0ODggMTE0LjMxMzExODg3IC02NC40Mzc1IDExMC40MjE4NzUgQy02NS41ODUxMTc2NyAxMDQuNjI3NDEyMTcgLTY1LjU4NTExNzY3IDEwNC42Mjc0MTIxNyAtNjkuNDM3NSAxMDAuNDIxODc1IEMtNzMuMjYxNTA2MDUgMTAwLjQyMTg3NSAtNzcuMDE5NDE3NjEgMTAxLjUxNDcwMDg1IC04MC43NSAxMDIuMjk2ODc1IFogTS04OC40Mzc1IDE3Ni40MjE4NzUgQy04Ny40Mzc1IDE3OC40MjE4NzUgLTg3LjQzNzUgMTc4LjQyMTg3NSAtODcuNDM3NSAxNzguNDIxODc1IFogTTM5LjU2MjUgMTgxLjQyMTg3NSBDMzkuNjAzNzUgMTgyLjU3ODE2NDA2IDM5LjY0NSAxODMuNzM0NDUzMTIgMzkuNjg3NSAxODQuOTI1NzgxMjUgQzM5LjY3OTg1MzM5IDE4OS4yNzc2NTcyMyAzOC44MzM0NjA3NiAxOTMuMjExOTc3NDMgMzcuNTYyNSAxOTcuMzU5Mzc1IEMzNy4zNDQ2NDg0NCAxOTguMDgzMDIyNDYgMzcuMTI2Nzk2ODcgMTk4LjgwNjY2OTkyIDM2LjkwMjM0Mzc1IDE5OS41NTIyNDYwOSBDMzUuMTYzMTMxMTcgMjA1LjA2MDk0MDU4IDMzLjAwNTIzNzgxIDIxMC4zMTQ5OTc4NyAzMC41NjI1IDIxNS41NDY4NzUgQzMwLjI0MjgxMjUgMjE2LjIzMjU3NTY4IDI5LjkyMzEyNSAyMTYuOTE4Mjc2MzcgMjkuNTkzNzUgMjE3LjYyNDc1NTg2IEMyNy45MTU1MjEyMSAyMjEuMDc2Mzc1MSAyNi4wODM2MTk2NiAyMjQuMTkxMDYzMzYgMjMuODEyNSAyMjcuMjg5MDYyNSBDMjEuMzY4MDUyMDUgMjMwLjA0OTc3MTIyIDIxLjM2ODA1MjA1IDIzMC4wNDk3NzEyMiAyMS41NjI1IDIzMi40MjE4NzUgQzIwLjkwMjUgMjMyLjQyMTg3NSAyMC4yNDI1IDIzMi40MjE4NzUgMTkuNTYyNSAyMzIuNDIxODc1IEMxOS41NjI1IDIzMy4wODE4NzUgMTkuNTYyNSAyMzMuNzQxODc1IDE5LjU2MjUgMjM0LjQyMTg3NSBDMTguOTAyNSAyMzQuNDIxODc1IDE4LjI0MjUgMjM0LjQyMTg3NSAxNy41NjI1IDIzNC40MjE4NzUgQzE3LjU2MjUgMjM1LjA4MTg3NSAxNy41NjI1IDIzNS43NDE4NzUgMTcuNTYyNSAyMzYuNDIxODc1IEMxNi45MDI1IDIzNi40MjE4NzUgMTYuMjQyNSAyMzYuNDIxODc1IDE1LjU2MjUgMjM2LjQyMTg3NSBDMTUuNTYyNSAyMzcuMDgxODc1IDE1LjU2MjUgMjM3Ljc0MTg3NSAxNS41NjI1IDIzOC40MjE4NzUgQzE0Ljg2MTI1IDIzOC42OSAxNC4xNiAyMzguOTU4MTI1IDEzLjQzNzUgMjM5LjIzNDM3NSBDMTAuNTM3NDA2ODQgMjQwLjM1MTA3NDYxIDEwLjUzNzQwNjg0IDI0MC4zNTEwNzQ2MSA3LjkzNzUgMjQxLjk4NDM3NSBDMC41ODA2NDkwMSAyNDUuMTE3ODQ4NTcgLTcuOTQ0NzA2NTMgMjQ1LjM0MDk0MjQ1IC0xNS40Mzc1IDI0Mi40MjE4NzUgQy0xOC40MTcyODYzMiAyNDAuMTI5NzMxNjcgLTIwLjAzNzcyNDM4IDIzNy44ODAxNDQxOSAtMjEuNDM3NSAyMzQuNDIxODc1IEMtMjIuNTY0MzgyIDIyNC43NjYyNzU1MSAtMjEuMjkxODY5OTYgMjE3LjQyMDE0MDg0IC0xNy40MzM1OTM3NSAyMDguNTQyOTY4NzUgQy0xNi4zMDQ1Mzc5OCAyMDUuMDA1MjYwNjcgLTE2LjQwMjQyNjc2IDIwMi45NjQwMTAwNyAtMTcuNDM3NSAxOTkuNDIxODc1IEMtMjAuMzI4NTA5NSAxOTcuOTc2MzcwMjUgLTIyLjIxMDQ4NDAyIDE5OS4xMDg4Nzg1OSAtMjUuMTQ4OTI1NzggMjAwLjA1OTU3MDMxIEMtMjUuOTI0NzgwMjcgMjAwLjMyMzUwNTg2IC0yNi43MDA2MzQ3NyAyMDAuNTg3NDQxNDEgLTI3LjUgMjAwLjg1OTM3NSBDLTI4LjMwNDIxMzg3IDIwMS4xMzIzMzM5OCAtMjkuMTA4NDI3NzMgMjAxLjQwNTI5Mjk3IC0yOS45MzcwMTE3MiAyMDEuNjg2NTIzNDQgQy01Ny4wMDY3NzUxOSAyMTEuMTQyMTQ1ODggLTc4Ljk1MzA0NzMgMjI3Ljk0MzU5NTQ3IC0xMDAuNjAxMDc0MjIgMjQ2LjMzNTIwNTA4IEMtMTA0Ljg5NDE2NDIxIDI0OS45NzgwMzg3NyAtMTA5LjI0NDgxNjU0IDI1My41NDU0ODg2IC0xMTMuNjEzMjgxMjUgMjU3LjA5NzY1NjI1IEMtMTE3LjM3NjQ3MTcxIDI2MC4xOTQ2MTEwNiAtMTIxLjA3OTAwNDAyIDI2My4zNjA4Njg5NCAtMTI0Ljc4MzkzNTU1IDI2Ni41MjcwOTk2MSBDLTEyOC40NDg1MjM3NCAyNjkuNjM5NzU1MjcgLTEzMi4xOTY3NjM1OCAyNzIuNTU3NjkzMiAtMTM2LjE0NDUzMTI1IDI3NS4zMDA3ODEyNSBDLTEzNi43ODQ1NTA3OCAyNzUuODU1NzIyNjYgLTEzNi43ODQ1NTA3OCAyNzUuODU1NzIyNjYgLTEzNy40Mzc1IDI3Ni40MjE4NzUgQy0xMzcuNDM3NSAyNzcuMDgxODc1IC0xMzcuNDM3NSAyNzcuNzQxODc1IC0xMzcuNDM3NSAyNzguNDIxODc1IEMtMTM3Ljk3Mzc1IDI3OC42NDg3NSAtMTM4LjUxIDI3OC44NzU2MjUgLTEzOS4wNjI1IDI3OS4xMDkzNzUgQy0xNDIuMzgyOTU1OTIgMjgwLjk0NDM2MzggLTE0NC44MzAyMTAyMSAyODIuNjMyNjgxMjcgLTE0Ny40Mzc1IDI4NS40MjE4NzUgQy0xNDcuMTA3NDIyMDMgMjkwLjczNjcyNTQxIC0xNDUuOTk4MTExMzUgMjk1Ljc5Mzc1MjczIC0xNDQuODA4NTkzNzUgMzAwLjk4NDM3NSBDLTE0NC41MjY4NTMwMyAzMDIuMjIzMTY0MDYgLTE0NC4yNDUxMTIzIDMwMy40NjE5NTMxMiAtMTQzLjk1NDgzMzk4IDMwNC43MzgyODEyNSBDLTE0My41OTg0ODg3NyAzMDYuMjgzODY3MTkgLTE0My4yNDIxNDM1NSAzMDcuODI5NDUzMTIgLTE0Mi44NzUgMzA5LjQyMTg3NSBDLTE0MS43NDA2MjUgMzE0LjM3MTg3NSAtMTQwLjYwNjI1IDMxOS4zMjE4NzUgLTEzOS40Mzc1IDMyNC40MjE4NzUgQy0xMjMuOTI3NSAzMjQuNDIxODc1IC0xMDguNDE3NSAzMjQuNDIxODc1IC05Mi40Mzc1IDMyNC40MjE4NzUgQy05NC4wODc1IDMyMy4xMDE4NzUgLTk1LjczNzUgMzIxLjc4MTg3NSAtOTcuNDM3NSAzMjAuNDIxODc1IEMtMTAxLjc2MzEyNjU5IDMxNC44NTA4NDgyMyAtMTAxLjI3NDE2MDU0IDMwOC4zMTA5NjY0NCAtMTAwLjczNDg2MzI4IDMwMS41ODI1MTk1MyBDLTk5LjM2MTc5NTQ2IDI5MS42MDU3OTUyMyAtOTQuMzAwMDMwMzUgMjgxLjczODMyNzk2IC04Ni40Mzc1IDI3NS40MjE4NzUgQy03OS4xOTA3NjY0OCAyNzAuNzM5MzcwMjYgLTcxLjk3Mzg4Njk5IDI2OC4zOTY1MDE4NiAtNjMuNDM3NSAyNjcuNDIxODc1IEMtNjEuOTQzNDU1NDkgMjYyLjkzOTc0MTQ4IC02NC4wMjQ5NDkwNSAyNTkuMzg4OTU0NiAtNjUuNjExMzI4MTIgMjU1LjEzNDc2NTYyIEMtNjcuMDYyMjA4NzEgMjUxLjA3NDczODQ1IC02Ny43MTEzMTY4NyAyNDcuNzI5NDgxODUgLTY3LjQzNzUgMjQzLjQyMTg3NSBDLTY1LjEyNzUgMjQzLjQyMTg3NSAtNjIuODE3NSAyNDMuNDIxODc1IC02MC40Mzc1IDI0My40MjE4NzUgQy02MC4yMDAzOTMwNyAyNDQuMDQ3NTUzNzEgLTU5Ljk2MzI4NjEzIDI0NC42NzMyMzI0MiAtNTkuNzE4OTk0MTQgMjQ1LjMxNzg3MTA5IEMtNTguNjQ3MDc4OCAyNDguMTQ0NjE3NjkgLTU3LjU3MzU1OTUzIDI1MC45NzA3NTI0NiAtNTYuNSAyNTMuNzk2ODc1IEMtNTYuMTI2ODE2NDEgMjU0Ljc4MTcxODc1IC01NS43NTM2MzI4MSAyNTUuNzY2NTYyNSAtNTUuMzY5MTQwNjIgMjU2Ljc4MTI1IEMtNTQuODMyNTY4MzYgMjU4LjE5Mjc3MzQ0IC01NC44MzI1NjgzNiAyNTguMTkyNzczNDQgLTU0LjI4NTE1NjI1IDI1OS42MzI4MTI1IEMtNTMuOTU1MjM2ODIgMjYwLjUwMjEyNDAyIC01My42MjUzMTczOCAyNjEuMzcxNDM1NTUgLTUzLjI4NTQwMDM5IDI2Mi4yNjcwODk4NCBDLTUyLjQ3MzYzMjQ4IDI2NC40MjM0Nzk4MyAtNTIuNDczNjMyNDggMjY0LjQyMzQ3OTgzIC01MS40Mzc1IDI2Ni40MjE4NzUgQy00OC45MDQ0ODcwOCAyNjYuOTM1MzM2NTEgLTQ2LjQ0NjE2MDc2IDI2Ny4zMjE3NTY5OCAtNDMuODg2NzE4NzUgMjY3LjY0MDYyNSBDLTQzLjExNzUzNjE2IDI2Ny43NDQwMzE5OCAtNDIuMzQ4MzUzNTggMjY3Ljg0NzQzODk2IC00MS41NTU4NjI0MyAyNjcuOTUzOTc5NDkgQy0zOS4wNzk5NTg3OSAyNjguMjg1MTk4MiAtMzYuNjAyNjQ0MjMgMjY4LjYwMzk2MzE2IC0zNC4xMjUgMjY4LjkyMTg3NSBDLTMwLjg5OTMwODQ3IDI2OS4zNDU3MjU5MyAtMjcuNjc0MjcyMzggMjY5Ljc3NDQ1MTg0IC0yNC40NDkyMTg3NSAyNzAuMjAzMTI1IEMtMjMuNjY2NDcwNzkgMjcwLjMwNjAwMzI3IC0yMi44ODM3MjI4NCAyNzAuNDA4ODgxNTMgLTIyLjA3NzI1NTI1IDI3MC41MTQ4NzczMiBDLTE2LjY4OTkyMyAyNzEuMjMwMDA3NCAtMTEuMzM0NDQ5MDkgMjcyLjA2NTA3MDYgLTUuOTg1MzUxNTYgMjczLjAyOTU0MTAyIEM2LjkwMjQ2NzgxIDI3NS4wMTQwODczNyAxNy4xNjM3NzIyMyAyNzEuODQ2Mzk5NDQgMjcuNjg3NSAyNjQuMjM0Mzc1IEMyOS4zMTczMDIzNSAyNjIuOTY5NzA2NDEgMzAuOTQzMTMyMzcgMjYxLjY5OTg3NzY4IDMyLjU2MjUgMjYwLjQyMTg3NSBDMzMuNTUyNSAyNTkuNzYxODc1IDM0LjU0MjUgMjU5LjEwMTg3NSAzNS41NjI1IDI1OC40MjE4NzUgQzM1LjU2MjUgMjU3Ljc2MTg3NSAzNS41NjI1IDI1Ny4xMDE4NzUgMzUuNTYyNSAyNTYuNDIxODc1IEMzNi4xMDM5MDYyNSAyNTYuMjA1MzEyNSAzNi42NDUzMTI1IDI1NS45ODg3NSAzNy4yMDMxMjUgMjU1Ljc2NTYyNSBDNDAuMzgwNDAzOTQgMjUzLjk1NjA0ODkxIDQyLjc3MTE1Mzk5IDI1MS41MDkyNjU3NCA0NS4zMTI1IDI0OC45MjE4NzUgQzQ2LjA5OTk1NjA1IDI0OC4xMjY0NDI4NyA0Ni4wOTk5NTYwNSAyNDguMTI2NDQyODcgNDYuOTAzMzIwMzEgMjQ3LjMxNDk0MTQxIEM1NS4yNzUwMzgxMyAyMzkuNzkwNTU4NyA1NS4yNzUwMzgxMyAyMzkuNzkwNTU4NyA1OS41NjI1IDIzMC40MjE4NzUgQzYwLjIyMjUgMjMwLjQyMTg3NSA2MC44ODI1IDIzMC40MjE4NzUgNjEuNTYyNSAyMzAuNDIxODc1IEM2My42NjM0MjcyNSAyMjcuMjQ3ODEyMjQgNjUuNjU5NDI3NjggMjI0LjA0MDU2MzcgNjcuNTc4MTI1IDIyMC43NTM5MDYyNSBDNjguODAzMTYzODcgMjE4Ljc5MzA5NzA4IDY5LjkzNDc1NTYzIDIxNy4wNjU1NTUzMyA3MS41NjI1IDIxNS40MjE4NzUgQzc0LjgyODEyNSAyMTQuODkwNjI1IDc0LjgyODEyNSAyMTQuODkwNjI1IDc3LjU2MjUgMjE1LjQyMTg3NSBDNzguNTYyNSAyMTYuNDIxODc1IDc4LjU2MjUgMjE2LjQyMTg3NSA3OC45MDYyNSAyMTguNTY2NDA2MjUgQzc4LjQzMTgwNjE1IDIyMi41MDc1MjUwNCA3Ni4zODc5OTM4IDIyNS4wMjYxNzUyNiA3NC4wNjI1IDIyOC4xMDkzNzUgQzcwLjg0NzE5MDgyIDIzMS44OTcxMjczMSA3MC44NDcxOTA4MiAyMzEuODk3MTI3MzEgNjkuNTYyNSAyMzYuNDIxODc1IEM2OC45MDI1IDIzNi40MjE4NzUgNjguMjQyNSAyMzYuNDIxODc1IDY3LjU2MjUgMjM2LjQyMTg3NSBDNjUuOTc0MjM3NzggMjM4LjEzNjg1MjcyIDY1Ljk3NDIzNzc4IDIzOC4xMzY4NTI3MiA2NC40Mzc1IDI0MC4yOTY4NzUgQzYzLjg5ODY3MTg3IDI0MS4wMTYxNzE4NyA2My4zNTk4NDM3NSAyNDEuNzM1NDY4NzUgNjIuODA0Njg3NSAyNDIuNDc2NTYyNSBDNjEuMzgzMTAzNjggMjQ0LjMxODEzNTA2IDYxLjM4MzEwMzY4IDI0NC4zMTgxMzUwNiA2MS41NjI1IDI0Ni40MjE4NzUgQzYwLjkwMjUgMjQ2LjQyMTg3NSA2MC4yNDI1IDI0Ni40MjE4NzUgNTkuNTYyNSAyNDYuNDIxODc1IEM1Ny43NTE4MjYyNiAyNDguMTM1MTk0ODkgNTcuNzUxODI2MjYgMjQ4LjEzNTE5NDg5IDU1LjkzNzUgMjUwLjI5Njg3NSBDNTUuMzA1ODU5MzggMjUxLjAxNjE3MTg3IDU0LjY3NDIxODc1IDI1MS43MzU0Njg3NSA1NC4wMjM0Mzc1IDI1Mi40NzY1NjI1IEM1Mi4zNjIzMjg3NyAyNTQuMjgyOTQ0MzMgNTIuMzYyMzI4NzcgMjU0LjI4Mjk0NDMzIDUyLjU2MjUgMjU2LjQyMTg3NSBDNTQuMzI0MDAzOTEgMjU2LjgyNDA2MjUgNTQuMzI0MDAzOTEgMjU2LjgyNDA2MjUgNTYuMTIxMDkzNzUgMjU3LjIzNDM3NSBDNzEuMzY2MjEyNTkgMjYwLjg3ODIxMzU1IDg1LjA3NzEwODU5IDI2Ni4wNTk1OTE3MSA5Ny40NjA5Mzc1IDI3NS44NTU0Njg3NSBDOTkuNTcwNjQ0NTUgMjc3LjU5ODcwMDI0IDk5LjU3MDY0NDU1IDI3Ny41OTg3MDAyNCAxMDIuNTYyNSAyNzguNDIxODc1IEMxMDIuNTYyNSAyNzkuMDgxODc1IDEwMi41NjI1IDI3OS43NDE4NzUgMTAyLjU2MjUgMjgwLjQyMTg3NSBDMTAzLjIyMjUgMjgwLjQyMTg3NSAxMDMuODgyNSAyODAuNDIxODc1IDEwNC41NjI1IDI4MC40MjE4NzUgQzEwNC45NTExNTIzNCAyODEuMjYxMDU0NjkgMTA0Ljk1MTE1MjM0IDI4MS4yNjEwNTQ2OSAxMDUuMzQ3NjU2MjUgMjgyLjExNzE4NzUgQzEwNi43MDMzODQ2OCAyODQuNjg5MTQ4MTkgMTA4LjI5NDgzOTgzIDI4Ni45NDI2NTM4NyAxMTAgMjg5LjI5Njg3NSBDMTEyLjU2NDIxMTI0IDI5Mi45MDgxMzkxNyAxMTQuNzU1OTk1NTUgMjk2LjM4MzgwNjIzIDExNi41NjI1IDMwMC40MjE4NzUgQzEyOS44NjkxMzMxNSAyODcuOTcyNzgwNDMgMTM1Ljc4NDg5NTUgMjY4LjM1NDY3MzYzIDEzNi41MzEyNSAyNTAuNTk3NjU2MjUgQzEzNi44MjM5NTA1NiAyMzAuMjE4Mzc5NzkgMTI4LjYyMTg1ODc0IDIxMC4yNTE4OTI1NiAxMTQuNjc5Njg3NSAxOTUuNTM1MTU2MjUgQzEwMS42OTY3ODU5IDE4Mi41NzYyMDgzNSA4Ny4yMzU3NjQyNiAxNzguMDc5MDUyNjUgNjkuMTg3NSAxNzcuOTg0Mzc1IEM1OS4wNjE5NzUxMiAxNzguMDUyOTE0MiA0OS40MTg5MTQ3NSAxNzkuMTQ0MTg5MDYgMzkuNTYyNSAxODEuNDIxODc1IFogTS0zNDIuNDM3NSAyMDguNDIxODc1IEMtMzQxLjY0MzkwODc5IDIxNS44MTQ3NzczOCAtMzQxLjY0MzkwODc5IDIxNS44MTQ3NzczOCAtMzQwLjI4OTMwNjY0IDIyMi45OTM2NTIzNCBDLTM0MC4wNjEwNDE4NyAyMjMuOTk2ODQ1MDkgLTMzOS44MzI3NzcxIDIyNS4wMDAwMzc4NCAtMzM5LjU5NzU5NTIxIDIyNi4wMzM2MzAzNyBDLTMzOS4zNTAxMTUzNiAyMjcuMDk3NjEwNDcgLTMzOS4xMDI2MzU1IDIyOC4xNjE1OTA1OCAtMzM4Ljg0NzY1NjI1IDIyOS4yNTc4MTI1IEMtMzM4LjQ1NzIyMTM3IDIzMC45NjM1MTQxIC0zMzguNDU3MjIxMzcgMjMwLjk2MzUxNDEgLTMzOC4wNTg4OTg5MyAyMzIuNzAzNjc0MzIgQy0zMzcuMjEwODY3NDYgMjM2LjQwMjU2MTY0IC0zMzYuMzU1NjA1MjMgMjQwLjA5OTczMjk0IC0zMzUuNSAyNDMuNzk2ODc1IEMtMzM0LjkxMTk4ODE0IDI0Ni4zNTMyNjg4NSAtMzM0LjMyNDM0NDY5IDI0OC45MDk3NDc0NyAtMzMzLjczNzA2MDU1IDI1MS40NjYzMDg1OSBDLTMzMi4yNTgyNTQxOCAyNTcuODk3MjU3MDUgLTMzMC43NzMwMTE3MSAyNjQuMzI2Njk4NDggLTMyOS4yODU0MDAzOSAyNzAuNzU1NjE1MjMgQy0zMjguNDgxMTI4NzkgMjc0LjIzMzIyNzI3IC0zMjcuNjc4NjMxMDkgMjc3LjcxMTI0MjM5IC0zMjYuODc2OTUzMTIgMjgxLjE4OTQ1MzEyIEMtMzI1LjUwNDY5MDYyIDI4Ny4xNDI3MTM2OSAtMzI0LjEyODQwMjIgMjkzLjA5NTAzMzMyIC0zMjIuNzUgMjk5LjA0Njg3NSBDLTMyMi41NDIzMDk4OCAyOTkuOTQ1MjUwODUgLTMyMi4zMzQ2MTk3NSAzMDAuODQzNjI2NzEgLTMyMi4xMjA2MzU5OSAzMDEuNzY5MjI2MDcgQy0zMjEuNTM2ODA3NjIgMzA0LjI5MTkyMjQ5IC0zMjAuOTUwNDgyNzUgMzA2LjgxNDAyNDM5IC0zMjAuMzYzMjgxMjUgMzA5LjMzNTkzNzUgQy0zMjAuMTEyNTQ4NTIgMzEwLjQyMTE5NzIgLTMyMC4xMTI1NDg1MiAzMTAuNDIxMTk3MiAtMzE5Ljg1Njc1MDQ5IDMxMS41MjgzODEzNSBDLTMxOC44NDAyMDE4OCAzMTUuODc3OTkwNTMgLTMxNy42NjcyMjcwMyAzMjAuMTE3ODMwNCAtMzE2LjQzNzUgMzI0LjQyMTg3NSBDLTI2MS4zMjc1IDMyNC40MjE4NzUgLTIwNi4yMTc1IDMyNC40MjE4NzUgLTE0OS40Mzc1IDMyNC40MjE4NzUgQy0xNTAuMTk1OTQxMjggMzE3LjIyNzc5ODA0IC0xNTAuMTk1OTQxMjggMzE3LjIyNzc5ODA0IC0xNTEuNDgxNDQ1MzEgMzEwLjIzNTM1MTU2IEMtMTUxLjY4NTQ1OTU5IDMwOS4zMjI3OTYwMiAtMTUxLjg4OTQ3Mzg4IDMwOC40MTAyNDA0OCAtMTUyLjA5OTY3MDQxIDMwNy40NzAwMzE3NCBDLTE1Mi40MjkzMTc5MyAzMDYuMDMwODAzNTMgLTE1Mi40MjkzMTc5MyAzMDYuMDMwODAzNTMgLTE1Mi43NjU2MjUgMzA0LjU2MjUgQy0xNTIuOTk2NTA4MTggMzAzLjUzNzQzMzQ3IC0xNTMuMjI3MzkxMzYgMzAyLjUxMjM2Njk0IC0xNTMuNDY1MjcxIDMwMS40NTYyMzc3OSBDLTE1NC4yMDE0NTg0IDI5OC4xOTM3MzM5MiAtMTU0Ljk0NDUwMjgzIDI5NC45MzI4MzM5MSAtMTU1LjY4NzUgMjkxLjY3MTg3NSBDLTE1Ni4xNzA5OTMxIDI4OS41MzAwNDI3MiAtMTU2LjY1NDA2OTI4IDI4Ny4zODgxMTYyOSAtMTU3LjEzNjcxODc1IDI4NS4yNDYwOTM3NSBDLTE1OS41NzM5ODY2MiAyNzQuNDU2OTY3OSAtMTYyLjA3MjAwOTc2IDI2My42ODQyNzc3OSAtMTY0LjY1MDYzNDc3IDI1Mi45MjgwODUzMyBDLTE2Ni4wMTY0NTczNCAyNDcuMjIxNjU2OTcgLTE2Ny4zNDQxOTg1MiAyNDEuNTA3NzQxMzYgLTE2OC42NDA2MjUgMjM1Ljc4NTE1NjI1IEMtMTY4LjgxMjA5MDQ1IDIzNS4wMjg2ODgwNSAtMTY4Ljk4MzU1NTkxIDIzNC4yNzIyMTk4NSAtMTY5LjE2MDIxNzI5IDIzMy40OTI4MjgzNyBDLTE2OS44NDgyNDg4NiAyMzAuNDUzMjM1NjkgLTE3MC41MzQ3Njk1MiAyMjcuNDEzMzA5NyAtMTcxLjIxODc1IDIyNC4zNzI4MDI3MyBDLTE3MS43MzIxMjAyNyAyMjIuMDkzMDcwNjggLTE3Mi4yNDg2Mzk4NCAyMTkuODE0MDcwODEgLTE3Mi43NjU2MjUgMjE3LjUzNTE1NjI1IEMtMTcyLjkxOTc2ODY4IDIxNi44NDU3NzQ2OSAtMTczLjA3MzkxMjM1IDIxNi4xNTYzOTMxMyAtMTczLjIzMjcyNzA1IDIxNS40NDYxMjEyMiBDLTE3NC4wNDY3MjI2OCAyMTEuODM2MzQ2MjQgLTE3NC4wNDY3MjI2OCAyMTEuODM2MzQ2MjQgLTE3NS40Mzc1IDIwOC40MjE4NzUgQy0yMzAuNTQ3NSAyMDguNDIxODc1IC0yODUuNjU3NSAyMDguNDIxODc1IC0zNDIuNDM3NSAyMDguNDIxODc1IFogTTM3IDI2OC40ODQzNzUgQzIyLjgwMzM3MzU1IDI3OS44MzA5MjExNCA5LjQ4NDQyOTg4IDI4Mi43MzAxNTU2OCAtOC40Mzc1IDI4MS40MjE4NzUgQy0xMy41NDYwNDM3NiAyODAuNzI5MzUzMTYgLTE4LjYxNDU0NTYyIDI3OS44MzQ0MzEzOSAtMjMuNjg3NSAyNzguOTIxODc1IEMtMzMuNjcxODI0OSAyNzcuMTQ0NjI3MzggLTQzLjQ2MTA1OTc2IDI3NS45MDY4ODM5MiAtNTMuNjI1IDI3NS44NTkzNzUgQy01NC42NDQzMjYxNyAyNzUuODQ1MTk1MzEgLTU1LjY2MzY1MjM0IDI3NS44MzEwMTU2MyAtNTYuNzEzODY3MTkgMjc1LjgxNjQwNjI1IEMtNjYuNzc4ODQwNTggMjc1Ljk0OTQ5NjgxIC03Ni40NTk3OTk2NiAyNzguMzQxNjA3NTkgLTgzLjgyNDIxODc1IDI4NS41MDc4MTI1IEMtODYuNDA0MjQ1NDcgMjg4LjU2ODg2MTE1IC04OC4wMTA1MDYxNiAyOTEuNjk5MjgyMzcgLTg5LjQzNzUgMjk1LjQyMTg3NSBDLTg5LjczNTI3MzQ0IDI5Ni4xNzk4NDM3NSAtOTAuMDMzMDQ2ODggMjk2LjkzNzgxMjUgLTkwLjMzOTg0Mzc1IDI5Ny43MTg3NSBDLTkxLjg4Njc0NzIzIDMwMS45NjczODgxMiAtOTMuMjYzNDY2MDQgMzA1Ljg3OTA2MTc2IC05Mi40Mzc1IDMxMC40MjE4NzUgQy05MC4yNjQ4NjUgMzEyLjk5NDczMjI0IC04OC40NTc1NjE2MiAzMTQuOTExODQ0MTkgLTg1LjQzNzUgMzE2LjQyMTg3NSBDLTc0LjQxMjI4OTkgMzE2Ljc0NjgyODU2IC02My42NTI4NDc0NiAzMTEuNzM5Nzc1MzggLTUzLjYyNSAzMDcuNjcxODc1IEMtNDIuNTExNjMxNiAzMDMuNDQxNDQ5NTcgLTQyLjUxMTYzMTYgMzAzLjQ0MTQ0OTU3IC0zNy40Mzc1IDMwNC40MjE4NzUgQy0zNS4wMjg5NTEwOSAzMDYuMDQyODM3NTcgLTMzLjE1MTQ4Mjg5IDMwNy44OTc2ODAxIC0zMS4xMTMyODEyNSAzMDkuOTY0ODQzNzUgQy0yNi4wOTMxODczNyAzMTQuNTc0NTM1OCAtMjAuMDgzNDM3OTcgMzE3LjgyNzc0MjUgLTE0LjI1NzMyNDIyIDMyMS4zMjAzMTI1IEMtMTIuNzYxOTEzMjkgMzIyLjIyNTUwMzU1IC0xMS4yODYxNzQ0IDMyMy4xNjMxMTU5MiAtOS44MTY0MDYyNSAzMjQuMTA5Mzc1IEMxLjUwNTA4NDM2IDMzMS4zMzAwMTM3MiAxNC4zNjYwNDEwMiAzMzYuOTA3Mjc0MTUgMjcuNTYyNSAzMzkuNDIxODc1IEMyOC42NzYwMDgzIDMzOS42NzIyNzUzOSAyOC42NzYwMDgzIDMzOS42NzIyNzUzOSAyOS44MTIwMTE3MiAzMzkuOTI3NzM0MzggQzQ1LjMwMDYxNDc1IDM0Mi43MTAzNDg2NiA2My41MzcxNjYxNyAzNDIuNzQyOTg1MDEgNzYuNzYxNzE4NzUgMzMzLjY0NTUwNzgxIEM3OC43MDM1NzE0MiAzMzIuMzI2MDE2ODIgODAuNjk0MjM5NTkgMzMxLjEzMzczMzY2IDgyLjcxODc1IDMyOS45NDUzMTI1IEM5MC4zNDE3MzExNCAzMjUuNDI0MTU2NiA5OC4yMDk0OTcwNCAzMjAuNjUyNzA0ODIgMTA0LjU2MjUgMzE0LjQyMTg3NSBDMTA0LjU2MjUgMzEzLjc2MTg3NSAxMDQuNTYyNSAzMTMuMTAxODc1IDEwNC41NjI1IDMxMi40MjE4NzUgQzEwNS4yMjI1IDMxMi40MjE4NzUgMTA1Ljg4MjUgMzEyLjQyMTg3NSAxMDYuNTYyNSAzMTIuNDIxODc1IEMxMDYuNTYyNSAzMTEuNzYxODc1IDEwNi41NjI1IDMxMS4xMDE4NzUgMTA2LjU2MjUgMzEwLjQyMTg3NSBDMTA3LjIyMjUgMzEwLjQyMTg3NSAxMDcuODgyNSAzMTAuNDIxODc1IDEwOC41NjI1IDMxMC40MjE4NzUgQzEwNy44MDQ5NDEyOSAyOTguNTUzNDU1MjggOTkuNzE5NTAyNzUgMjg5Ljg5NTg4MjM0IDkxLjE2Nzk2ODc1IDI4Mi4yOTI5Njg3NSBDNzkuMzM2MzQ1MDggMjczLjAwNTc4MDI4IDUwLjQwNTcyOTk3IDI1Ny4wNjE4NTQwMiAzNyAyNjguNDg0Mzc1IFogTTEzNC41NjI1IDI5MC40MjE4NzUgQzEzNC4xNDI5MTAxNiAyOTEuMjM5Nzg1MTYgMTM0LjE0MjkxMDE2IDI5MS4yMzk3ODUxNiAxMzMuNzE0ODQzNzUgMjkyLjA3NDIxODc1IEMxMzAuOTA1MjM3MTYgMjk3LjM1OTE3MDA2IDEyNy43MzI5MjMyMSAzMDEuOTYyMTA5NjMgMTIzLjkxNzk2ODc1IDMwNi41NzQyMTg3NSBDMTIyLjM2NTMyOTUxIDMwOC4zMDg3MTgxNiAxMjIuMzY1MzI5NTEgMzA4LjMwODcxODE2IDEyMi41NjI1IDMxMC40MjE4NzUgQzEyMS45MDI1IDMxMC40MjE4NzUgMTIxLjI0MjUgMzEwLjQyMTg3NSAxMjAuNTYyNSAzMTAuNDIxODc1IEMxMTguODU5NjQyMDUgMzEyLjE0MzUwODk5IDExOC44NTk2NDIwNSAzMTIuMTQzNTA4OTkgMTE3LjEyNSAzMTQuMjk2ODc1IEMxMTQuOTc4NDkxMTYgMzE2Ljg4MzgxMjIyIDExMy4zOTQ3MzQzOCAzMTguNTMzNzE4NzQgMTEwLjU2MjUgMzIwLjQyMTg3NSBDMTEwLjU2MjUgMzIxLjA4MTg3NSAxMTAuNTYyNSAzMjEuNzQxODc1IDExMC41NjI1IDMyMi40MjE4NzUgQzExMC4wMTQ2NDg0NCAzMjIuNjY2Nzk2ODcgMTA5LjQ2Njc5Njg4IDMyMi45MTE3MTg3NSAxMDguOTAyMzQzNzUgMzIzLjE2NDA2MjUgQzEwNi4wNTg4OTc2OSAzMjQuNjkyNTkyNzcgMTAzLjY3MjI4NTY3IDMyNi41NjI5NjQ1OSAxMDEuMTI1IDMyOC41NDY4NzUgQzkyLjQ1NzY1NjY2IDMzNS4xNzQxMjk1OSA4My4zMzUyNjY0OCAzNDAuNTM1NDkxNzYgNzMuNTYyNSAzNDUuNDIxODc1IEM3My4yMzI1IDM1My4zNDE4NzUgNzIuOTAyNSAzNjEuMjYxODc1IDcyLjU2MjUgMzY5LjQyMTg3NSBDNzAuNTYyNSAzNzAuNDIxODc1IDcwLjU2MjUgMzcwLjQyMTg3NSA2MC41NjI1IDM3MS40MjE4NzUgQzYwLjU2MjUgMzg2LjYwMTg3NSA2MC41NjI1IDQwMS43ODE4NzUgNjAuNTYyNSA0MTcuNDIxODc1IEM3My44NTA3MTUyNyA0MTYuNzM3ODE5OTEgNzMuODUwNzE1MjcgNDE2LjczNzgxOTkxIDg3LjEzODY3MTg4IDQxNi4wNDg4MjgxMiBDOTIuNTYzMzE3NjIgNDE1Ljc2NjQ1ODc3IDk3Ljk4Nzk4ODIyIDQxNS40ODQ2NTA1OCAxMDMuNDEyODQxOCA0MTUuMjA2Mjk4ODMgQzEwNy43ODk2MDg0IDQxNC45ODE2ODgzIDExMi4xNjYyMzI0NyA0MTQuNzU0NDY1NTggMTE2LjU0Mjc3MjI5IDQxNC41MjU0ODAyNyBDMTE4LjIwNzE0NjMgNDE0LjQzODg0OTI2IDExOS44NzE1Njg0NCA0MTQuMzUzMTM3NTQgMTIxLjUzNjAzOTM1IDQxNC4yNjgzODg3NSBDMTMzLjU3NDI3NTQ0IDQxMy42NTUxNjE3MyAxMzMuNTc0Mjc1NDQgNDEzLjY1NTE2MTczIDE0NS41NjI1IDQxMi40MjE4NzUgQzE1MC4wMjc4NDA5NyAzNzYuMDMwNTE1MDcgMTQ0LjQ2MTEwOTY2IDMzNi44NzUxMTY3MiAxMzguNDM3NSAzMDAuOTIxODc1IEMxMzguMjc5MTA2NDUgMjk5Ljk2MDA3MzI0IDEzOC4xMjA3MTI4OSAyOTguOTk4MjcxNDggMTM3Ljk1NzUxOTUzIDI5OC4wMDczMjQyMiBDMTM3LjgwMzk1OTk2IDI5Ny4xNDM4MTM0OCAxMzcuNjUwNDAwMzkgMjk2LjI4MDMwMjczIDEzNy40OTIxODc1IDI5NS4zOTA2MjUgQzEzNy4zNjA1NDE5OSAyOTQuNjQyMzI0MjIgMTM3LjIyODg5NjQ4IDI5My44OTQwMjM0NCAxMzcuMDkzMjYxNzIgMjkzLjEyMzA0Njg4IEMxMzYuOTE4MTEwMzUgMjkyLjU2MTY2MDE2IDEzNi43NDI5NTg5OCAyOTIuMDAwMjczNDQgMTM2LjU2MjUgMjkxLjQyMTg3NSBDMTM1LjU3MjUgMjkwLjkyNjg3NSAxMzUuNTcyNSAyOTAuOTI2ODc1IDEzNC41NjI1IDI5MC40MjE4NzUgWiBNLTQ2LjYyODkwNjI1IDMxNC44NDc2NTYyNSBDLTQ3LjQ5MTkzMzU5IDMxNS4xNDk5NDE0MSAtNDguMzU0OTYwOTQgMzE1LjQ1MjIyNjU2IC00OS4yNDQxNDA2MiAzMTUuNzYzNjcxODggQy01MC4xNTM1NzQyMiAzMTYuMDg0MDAzOTEgLTUxLjA2MzAwNzgxIDMxNi40MDQzMzU5NCAtNTIgMzE2LjczNDM3NSBDLTUyLjg4MjM2MzI4IDMxNy4wNDMxMDU0NyAtNTMuNzY0NzI2NTYgMzE3LjM1MTgzNTk0IC01NC42NzM4MjgxMiAzMTcuNjY5OTIxODggQy01OS45NTM3NjE0NiAzMTkuNTIzNTU3MDEgLTY1LjIwNTI0OTkyIDMyMS40Mzc2NDk0OCAtNzAuNDM3NSAzMjMuNDIxODc1IEMtNzAuNDM3NSAzMjMuNzUxODc1IC03MC40Mzc1IDMyNC4wODE4NzUgLTcwLjQzNzUgMzI0LjQyMTg3NSBDLTU2LjU3NzUgMzI0LjQyMTg3NSAtNDIuNzE3NSAzMjQuNDIxODc1IC0yOC40Mzc1IDMyNC40MjE4NzUgQy0zMS4yOTg5NjA3IDMyMS41NjA0MTQzIC0zMy45NTYwMzM4NCAzMTkuMTIzMjQwNTYgLTM3LjEyNSAzMTYuNjcxODc1IEMtMzcuOTEyNjE3MTkgMzE2LjA1ODI4MTI1IC0zOC43MDAyMzQzNyAzMTUuNDQ0Njg3NSAtMzkuNTExNzE4NzUgMzE0LjgxMjUgQy00Mi4zOTE5ODM2NiAzMTIuNzMyNjMzMjUgLTQzLjM0NzQwMDYzIDMxMy42OTY3Nzg4MyAtNDYuNjI4OTA2MjUgMzE0Ljg0NzY1NjI1IFogTS0yOC40Mzc1IDMyNC40MjE4NzUgQy0yOC4xMDc1IDMyNS4wODE4NzUgLTI3Ljc3NzUgMzI1Ljc0MTg3NSAtMjcuNDM3NSAzMjYuNDIxODc1IEMtMjYuOTg0OTE1MDMgMzMxLjA4MTgyMzk3IC0yNi43MzQ4ODM4NyAzMzUuNzQ4Njk5ODggLTI2LjQzNzUgMzQwLjQyMTg3NSBDLTE3Ljg1NzUgMzQwLjQyMTg3NSAtOS4yNzc1IDM0MC40MjE4NzUgLTAuNDM3NSAzNDAuNDIxODc1IEMtMy40OTU1NDUwNCAzMzguMTI4MzQxMjIgLTYuMTYwMDM5NDYgMzM2LjQyMzAxNzc4IC05LjUgMzM0LjY3MTg3NSBDLTE0LjU5MDA4OTEgMzMxLjk0ODk1MDk5IC0xOS40MTI2MzE4NiAzMjguOTMwNDY3NjYgLTI0LjIyMjY1NjI1IDMyNS43NDIxODc1IEMtMjYuMjk0MDY2ODQgMzI0LjI1MTE5Mzk4IC0yNi4yOTQwNjY4NCAzMjQuMjUxMTkzOTggLTI4LjQzNzUgMzI0LjQyMTg3NSBaIE0tMzA3LjQzNzUgMzM0LjQyMTg3NSBDLTMwNy40Mzc1IDMzNi40MDE4NzUgLTMwNy40Mzc1IDMzOC4zODE4NzUgLTMwNy40Mzc1IDM0MC40MjE4NzUgQy0yMTcuNjc3NSAzNDAuNDIxODc1IC0xMjcuOTE3NSAzNDAuNDIxODc1IC0zNS40Mzc1IDM0MC40MjE4NzUgQy0zNS40Mzc1IDMzOC40NDE4NzUgLTM1LjQzNzUgMzM2LjQ2MTg3NSAtMzUuNDM3NSAzMzQuNDIxODc1IEMtMTI1LjE5NzUgMzM0LjQyMTg3NSAtMjE0Ljk1NzUgMzM0LjQyMTg3NSAtMzA3LjQzNzUgMzM0LjQyMTg3NSBaIE0tMzQ5LjQzNzUgMzQ5LjQyMTg3NSBDLTM0OS40Mzc1IDM1My4zODE4NzUgLTM0OS40Mzc1IDM1Ny4zNDE4NzUgLTM0OS40Mzc1IDM2MS40MjE4NzUgQy0yMTIuODE3NSAzNjEuNDIxODc1IC03Ni4xOTc1IDM2MS40MjE4NzUgNjQuNTYyNSAzNjEuNDIxODc1IEM2NC41NjI1IDM1Ny40NjE4NzUgNjQuNTYyNSAzNTMuNTAxODc1IDY0LjU2MjUgMzQ5LjQyMTg3NSBDLTcyLjA1NzUgMzQ5LjQyMTg3NSAtMjA4LjY3NzUgMzQ5LjQyMTg3NSAtMzQ5LjQzNzUgMzQ5LjQyMTg3NSBaIE0tMTY3LjQzNzUgMzcxLjQyMTg3NSBDLTE2Ny40Mzc1IDQwMi40NDE4NzUgLTE2Ny40Mzc1IDQzMy40NjE4NzUgLTE2Ny40Mzc1IDQ2NS40MjE4NzUgQy0xNjQuMDMwMjY1MzkgNDYzLjcxODI1NzY5IC0xNjEuNTQzMjAxODQgNDYyLjA0MDExNTQ4IC0xNTguNTYyNSA0NTkuNzM0Mzc1IEMtMTQ0LjA3NDg1NzQgNDQ5LjEwNDk1OTQ2IC0xMjguOTU1OTYzMzIgNDQ0LjkyNTU2NzY2IC0xMTEuNDM3NSA0NDEuNDIxODc1IEMtMTExLjQzNzUgNDE4LjMyMTg3NSAtMTExLjQzNzUgMzk1LjIyMTg3NSAtMTExLjQzNzUgMzcxLjQyMTg3NSBDLTEyOS45MTc1IDM3MS40MjE4NzUgLTE0OC4zOTc1IDM3MS40MjE4NzUgLTE2Ny40Mzc1IDM3MS40MjE4NzUgWiAiIGZpbGw9IiMxRkRDQUQiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDM1Ny40Mzc1LDYuNTc4MTI1KSIvPgo8cGF0aCBkPSJNMCAwIEMwLjk0ODc1IDAuMDQxMjUgMS44OTc1IDAuMDgyNSAyLjg3NSAwLjEyNSBDMy4xMzAyMzQzNyAwLjk5NTExNzE5IDMuMTMwMjM0MzcgMC45OTUxMTcxOSAzLjM5MDYyNSAxLjg4MjgxMjUgQzUuNjg4OTU3OTUgOS4yOTEyNjg3MSA4LjQ5MDY0MTA0IDE0LjQ3NTIyNTA1IDE0Ljg3NSAxOS4xMjUgQzE3LjgzNDcxMjcgMjAuNjEyMjk2MjUgMTcuODM0NzEyNyAyMC42MTIyOTYyNSAyMC45Mzc1IDIxLjgxMjUgQzIxLjk1OTcyNjU2IDIyLjIyODg2NzE5IDIyLjk4MTk1MzEzIDIyLjY0NTIzNDM4IDI0LjAzNTE1NjI1IDIzLjA3NDIxODc1IEMyNi43NTI1MjQ5OCAyNC4xNTEwNiAyNi43NTI1MjQ5OCAyNC4xNTEwNiAyOS4xODM1OTM3NSAyNC42NDQ1MzEyNSBDMjkuNzQxNzU3ODEgMjQuODAzMDg1OTQgMzAuMjk5OTIxODcgMjQuOTYxNjQwNjMgMzAuODc1IDI1LjEyNSBDMzIuMjQxMjM2NzQgMjcuODU3NDczNDggMzIuMDAzNDI2IDMwLjEwNjk4OTAyIDMxLjg3NSAzMy4xMjUgQzMwLjg3NSAzNC4xMjUgMzAuODc1IDM0LjEyNSAyOCAzNC40Mzc1IEMxOC45Njk5MjE2NyAzNC4yODkxNjE5NiA5LjM4Mzk3OTE1IDI5LjQyNTMxNDEyIDIuOTMzNTkzNzUgMjMuMjczNDM3NSBDLTEuOTI3MDI0MTkgMTguMDE3MDY5ODggLTUuMTk5MDA0MiAxMy4xNjYxMjA2NCAtNS40Mzc1IDUuODEyNSBDLTUuMDQ3ODc2NjkgMS4yMTQ5NDQ5MSAtNC42ODI2MzQ3MiAwLjE4NzMwNTM5IDAgMCBaICIgZmlsbD0iIzFGRENBRCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjc1LjEyNSw2MC44NzUpIi8+CjxwYXRoIGQ9Ik0wIDAgQzIuMTI4OTA2MjUgMC40MTQwNjI1IDIuMTI4OTA2MjUgMC40MTQwNjI1IDQuNjkxNDA2MjUgMS45NzY1NjI1IEM2LjcxODE2MDgzIDUuNDEzMjMzMzEgNi43NDg3NzM4NSA3LjQ4ODIzNDM2IDYuMTI4OTA2MjUgMTEuNDE0MDYyNSBDMy41MzY3NDU0MiAxNS4xMDU5Mjc5MiAyLjA4NzQxNTYxIDE2LjI0MjkwMDExIC0yLjM3MTA5Mzc1IDE3LjAzOTA2MjUgQy02LjgwMDg1Nzk1IDE2LjI0ODAzMzE4IC04LjI2MzE5NTQ3IDE1LjA0OTMxNDY1IC0xMC44NzEwOTM3NSAxMS40MTQwNjI1IEMtMTEuNTc0NDc4OSA3LjY2MjY3NTAyIC0xMS4xMzYzMzI0MyA1Ljk0NDUzOTg2IC05LjQzMzU5Mzc1IDIuNTM5MDYyNSBDLTYuMTcxNzI5MzkgLTAuMTY1ODk4MTkgLTQuMTQxNjMyNyAtMC4yNTkyNzg0OSAwIDAgWiAiIGZpbGw9IiMxRkREQUQiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDMyOC44NzEwOTM3NSwxMDEuNTg1OTM3NSkiLz4KPHBhdGggZD0iTTAgMCBDMy4wMDM0Mjg5NiAyLjA1NDk3NzcxIDMuODMyODczNTYgMy40NzYzMzcxNCA0LjkzNzUgNi45Mzc1IEM1LjAxMjIxODkxIDEwLjU5ODcyNjgxIDQuMjEzNjM5NDQgMTIuMTMwNDY3NCAyIDE1IEMtMS4yMDU4MDQwNiAxNi42MDI5MDIwMyAtNC41MjE4MjMxNCAxNi40ODExNzA3MSAtOCAxNiBDLTEwLjUgMTQuNDM3NSAtMTAuNSAxNC40Mzc1IC0xMiAxMiBDLTEyLjcyMTI1Njk1IDcuNTkyMzE4NjMgLTEyLjUyMDAxMzM4IDUuNzQwNjI1MTIgLTkuOTM3NSAyLjA2MjUgQy02LjI1OTM3NDg4IC0wLjUyMDAxMzM4IC00LjQwNzY4MTM3IC0wLjcyMTI1Njk1IDAgMCBaICIgZmlsbD0iIzFGRENBRCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjgxLDExMikiLz4KPC9zdmc+Cg==");
+
+/***/ }),
+
+/***/ "./src/ggb-icon.js":
+/*!*************************!*\
+  !*** ./src/ggb-icon.js ***!
+  \*************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _gg_dev_svg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./gg-dev.svg */ "./src/gg-dev.svg");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
+
+
+const GGBIcon = () => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+  src: _gg_dev_svg__WEBPACK_IMPORTED_MODULE_0__["default"],
+  alt: "GG Blocks Logo",
+  width: "24",
+  height: "24",
+  style: {
+    width: 24,
+    height: 24
+  }
+});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (GGBIcon);
+
+/***/ }),
+
+/***/ "@wordpress/block-editor":
+/*!*************************************!*\
+  !*** external ["wp","blockEditor"] ***!
+  \*************************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = window["wp"]["blockEditor"];
+
+/***/ }),
+
+/***/ "@wordpress/blocks":
+/*!********************************!*\
+  !*** external ["wp","blocks"] ***!
+  \********************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = window["wp"]["blocks"];
+
+/***/ }),
+
+/***/ "@wordpress/components":
+/*!************************************!*\
+  !*** external ["wp","components"] ***!
+  \************************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = window["wp"]["components"];
+
+/***/ }),
+
+/***/ "@wordpress/element":
+/*!*********************************!*\
+  !*** external ["wp","element"] ***!
+  \*********************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = window["wp"]["element"];
+
+/***/ }),
+
+/***/ "react":
+/*!************************!*\
+  !*** external "React" ***!
+  \************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = window["React"];
+
+/***/ }),
+
+/***/ "react-dom":
+/*!***************************!*\
+  !*** external "ReactDOM" ***!
+  \***************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = window["ReactDOM"];
+
+/***/ }),
+
+/***/ "react/jsx-runtime":
+/*!**********************************!*\
+  !*** external "ReactJSXRuntime" ***!
+  \**********************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = window["ReactJSXRuntime"];
+
+/***/ })
+
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = __webpack_modules__;
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/chunk loaded */
+/******/ 	(() => {
+/******/ 		var deferred = [];
+/******/ 		__webpack_require__.O = (result, chunkIds, fn, priority) => {
+/******/ 			if(chunkIds) {
+/******/ 				priority = priority || 0;
+/******/ 				for(var i = deferred.length; i > 0 && deferred[i - 1][2] > priority; i--) deferred[i] = deferred[i - 1];
+/******/ 				deferred[i] = [chunkIds, fn, priority];
+/******/ 				return;
+/******/ 			}
+/******/ 			var notFulfilled = Infinity;
+/******/ 			for (var i = 0; i < deferred.length; i++) {
+/******/ 				var [chunkIds, fn, priority] = deferred[i];
+/******/ 				var fulfilled = true;
+/******/ 				for (var j = 0; j < chunkIds.length; j++) {
+/******/ 					if ((priority & 1 === 0 || notFulfilled >= priority) && Object.keys(__webpack_require__.O).every((key) => (__webpack_require__.O[key](chunkIds[j])))) {
+/******/ 						chunkIds.splice(j--, 1);
+/******/ 					} else {
+/******/ 						fulfilled = false;
+/******/ 						if(priority < notFulfilled) notFulfilled = priority;
+/******/ 					}
+/******/ 				}
+/******/ 				if(fulfilled) {
+/******/ 					deferred.splice(i--, 1)
+/******/ 					var r = fn();
+/******/ 					if (r !== undefined) result = r;
+/******/ 				}
+/******/ 			}
+/******/ 			return result;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/jsonp chunk loading */
+/******/ 	(() => {
+/******/ 		// no baseURI
+/******/ 		
+/******/ 		// object to store loaded and loading chunks
+/******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
+/******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
+/******/ 		var installedChunks = {
+/******/ 			"blocks/image-grid/index": 0,
+/******/ 			"blocks/image-grid/style-index": 0
+/******/ 		};
+/******/ 		
+/******/ 		// no chunk on demand loading
+/******/ 		
+/******/ 		// no prefetching
+/******/ 		
+/******/ 		// no preloaded
+/******/ 		
+/******/ 		// no HMR
+/******/ 		
+/******/ 		// no HMR manifest
+/******/ 		
+/******/ 		__webpack_require__.O.j = (chunkId) => (installedChunks[chunkId] === 0);
+/******/ 		
+/******/ 		// install a JSONP callback for chunk loading
+/******/ 		var webpackJsonpCallback = (parentChunkLoadingFunction, data) => {
+/******/ 			var [chunkIds, moreModules, runtime] = data;
+/******/ 			// add "moreModules" to the modules object,
+/******/ 			// then flag all "chunkIds" as loaded and fire callback
+/******/ 			var moduleId, chunkId, i = 0;
+/******/ 			if(chunkIds.some((id) => (installedChunks[id] !== 0))) {
+/******/ 				for(moduleId in moreModules) {
+/******/ 					if(__webpack_require__.o(moreModules, moduleId)) {
+/******/ 						__webpack_require__.m[moduleId] = moreModules[moduleId];
+/******/ 					}
+/******/ 				}
+/******/ 				if(runtime) var result = runtime(__webpack_require__);
+/******/ 			}
+/******/ 			if(parentChunkLoadingFunction) parentChunkLoadingFunction(data);
+/******/ 			for(;i < chunkIds.length; i++) {
+/******/ 				chunkId = chunkIds[i];
+/******/ 				if(__webpack_require__.o(installedChunks, chunkId) && installedChunks[chunkId]) {
+/******/ 					installedChunks[chunkId][0]();
+/******/ 				}
+/******/ 				installedChunks[chunkId] = 0;
+/******/ 			}
+/******/ 			return __webpack_require__.O(result);
+/******/ 		}
+/******/ 		
+/******/ 		var chunkLoadingGlobal = globalThis["webpackChunkgg_blocks"] = globalThis["webpackChunkgg_blocks"] || [];
+/******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
+/******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
+/******/ 	})();
+/******/ 	
+/************************************************************************/
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["blocks/image-grid/style-index"], () => (__webpack_require__("./src/blocks/image-grid/index.js")))
+/******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
+/******/ 	
+/******/ })()
+;
+//# sourceMappingURL=index.js.map

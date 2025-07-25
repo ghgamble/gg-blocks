@@ -1,1 +1,38 @@
-.heading-with-hzline{align-items:center;display:flex;gap:1.5rem}.heading-with-hzline h1,.heading-with-hzline h2,.heading-with-hzline h3,.heading-with-hzline h4,.heading-with-hzline h5,.heading-with-hzline h6{margin:0;overflow-wrap:anywhere;white-space:normal}.heading-with-hzline .horz-line{background-color:#20ddae;flex-grow:1;height:2.5px}.heading-with-hzline.half-width .horz-line{max-width:50%}.heading-with-hzline.full-width .horz-line{max-width:100%}@media(max-width:768px){.heading-with-hzline{align-items:flex-start;flex-direction:column;margin-top:1.5rem}.heading-with-hzline .horz-line{margin-top:.5rem;max-width:100%;width:100%}}
+/*!******************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/heading-with-hzline/style.scss ***!
+  \******************************************************************************************************************************************************************************************************************************************************************/
+.heading-with-hzline {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.heading-with-hzline h1, .heading-with-hzline h2, .heading-with-hzline h3, .heading-with-hzline h4, .heading-with-hzline h5, .heading-with-hzline h6 {
+  margin: 0;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+.heading-with-hzline .horz-line {
+  flex-grow: 1;
+  height: 2.5px;
+  background-color: #20ddae;
+}
+.heading-with-hzline.half-width .horz-line {
+  max-width: 50%;
+}
+.heading-with-hzline.full-width .horz-line {
+  max-width: 100%;
+}
+@media (max-width: 768px) {
+  .heading-with-hzline {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 1.5rem;
+  }
+  .heading-with-hzline .horz-line {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 0.5rem;
+  }
+}
+
+/*# sourceMappingURL=style-index.css.map*/
