@@ -134,10 +134,10 @@
 
 @media (max-width: 768px) {
 	.gg-hero-parallax {
-	  .inner-content {
-		p:last-of-type {
+	  .left-ctas {
+		.wp-block-paragraph:last-child {
 		  margin-bottom: 3rem;
 		}
 	  }
 	}
-}
+  }
