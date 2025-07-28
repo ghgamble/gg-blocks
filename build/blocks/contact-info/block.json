@@ -1,0 +1,44 @@
+{
+  "apiVersion": 2,
+  "name": "ggb/contact-info",
+  "title": "Contact Info",
+  "category": "gg-blocks",
+  "icon": "location-alt",
+  "description": "Displays a styled address, phone, email, and an optional Google Map based on the address.",
+  "supports": {
+    "align": [
+      "full",
+      "wide"
+    ],
+    "html": false
+  },
+  "attributes": {
+    "address": {
+      "type": "string",
+      "default": ""
+    },
+    "phone": {
+      "type": "string",
+      "default": ""
+    },
+    "email": {
+      "type": "string",
+      "default": ""
+    },
+    "hours": {
+      "type": "string",
+      "default": ""
+    },
+    "backgroundColor": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "showMap": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

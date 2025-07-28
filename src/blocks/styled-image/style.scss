@@ -9,7 +9,7 @@
 		.styled-image-aspect {
 			position: relative;
 			height: 0;
-			box-shadow: none !important;
+			box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
 			aspect-ratio: 3 / 3.5;
 
 			img {
