@@ -25,6 +25,18 @@
       "type": "string",
       "default": ""
     },
+    "emailAddress": {
+      "type": "string",
+      "default": ""
+    },
+    "emailSubject": {
+      "type": "string",
+      "default": ""
+    },
+    "emailDisplayText": {
+      "type": "string",
+      "default": ""
+    },
     "hours": {
       "type": "string",
       "default": ""

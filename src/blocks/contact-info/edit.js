@@ -7,6 +7,7 @@ import {
 } from '@wordpress/block-editor';
 import {
 	PanelBody,
+	TextControl,
 	ToggleControl
 } from '@wordpress/components';
 
@@ -15,6 +16,9 @@ export default function Edit({ attributes, setAttributes }) {
 		address,
 		phone,
 		email,
+		emailAddress,
+		emailSubject,
+		emailDisplayText,
 		hours,
 		showMap,
 		backgroundColor,
@@ -40,6 +44,20 @@ export default function Edit({ attributes, setAttributes }) {
 						checked={showMap}
 						onChange={(value) => setAttributes({ showMap: value })}
 					/>
+
+					<TextControl
+						label={__('Email Address (for mailto:)', 'gg-blocks')}
+						value={emailAddress}
+						onChange={(value) => setAttributes({ emailAddress: value })}
+						placeholder="example@email.com"
+					/>
+
+					<TextControl
+						label={__('Email Subject (optional)', 'gg-blocks')}
+						value={emailSubject}
+						onChange={(value) => setAttributes({ emailSubject: value })}
+						placeholder="I'd like to get in touch"
+					/>
 				</PanelBody>
 
 				<PanelColorSettings
@@ -61,7 +79,7 @@ export default function Edit({ attributes, setAttributes }) {
 						{
 							value: iconColor,
 							onChange: (color) => setAttributes({ iconColor: color }),
-							label: __('Contact Info Icon Color', 'gg-blocks'),
+							label: __('Font Awesome Icon Color', 'gg-blocks'),
 						}
 					]}
 				/>
@@ -70,11 +88,7 @@ export default function Edit({ attributes, setAttributes }) {
 			<div {...blockProps}>
 				<div className="contact-text-fields">
 					<p className="contact-field address">
-						<i
-							className="fa-solid fa-location-dot"
-							aria-hidden="true"
-							style={{ color: iconColor }}
-						></i>
+						<i className="fa-solid fa-location-dot" aria-hidden="true" style={{ color: iconColor }}></i>
 						&nbsp;
 						<RichText
 							tagName="span"
@@ -85,11 +99,7 @@ export default function Edit({ attributes, setAttributes }) {
 					</p>
 
 					<p className="contact-field phone">
-						<i
-							className="fa-solid fa-phone"
-							aria-hidden="true"
-							style={{ color: iconColor }}
-						></i>
+						<i className="fa-solid fa-phone" aria-hidden="true" style={{ color: iconColor }}></i>
 						&nbsp;
 						<RichText
 							tagName="span"
@@ -100,26 +110,18 @@ export default function Edit({ attributes, setAttributes }) {
 					</p>
 
 					<p className="contact-field email">
-						<i
-							className="fa-solid fa-envelope"
-							aria-hidden="true"
-							style={{ color: iconColor }}
-						></i>
+						<i className="fa-solid fa-envelope" aria-hidden="true" style={{ color: iconColor }}></i>
 						&nbsp;
 						<RichText
 							tagName="span"
-							value={email}
-							onChange={(value) => setAttributes({ email: value })}
-							placeholder={__('info@yourdomain.com', 'gg-blocks')}
+							value={emailDisplayText}
+							onChange={(value) => setAttributes({ emailDisplayText: value })}
+							placeholder={__('Email Us', 'gg-blocks')}
 						/>
 					</p>
 
 					<p className="contact-field hours">
-						<i
-							className="fa-solid fa-clock"
-							aria-hidden="true"
-							style={{ color: iconColor }}
-						></i>
+						<i className="fa-solid fa-clock" aria-hidden="true" style={{ color: iconColor }}></i>
 						&nbsp;
 						<RichText
 							tagName="span"

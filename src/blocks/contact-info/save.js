@@ -5,6 +5,9 @@ export default function save({ attributes }) {
 		address,
 		phone,
 		email,
+		emailAddress,
+		emailSubject,
+		emailDisplayText,
 		hours,
 		showMap,
 		backgroundColor,
@@ -19,6 +22,11 @@ export default function save({ attributes }) {
 	const encodedAddress = encodeURIComponent(address.trim());
 	const mapSrc = showMap && address
 		? `https://maps.google.com/maps?q=${encodedAddress}&output=embed`
+		: null;
+
+	// Generate mailto href
+	const emailHref = emailAddress
+		? `mailto:${emailAddress}${emailSubject ? `?subject=${encodeURIComponent(emailSubject)}` : ''}`
 		: null;
 
 	return (
@@ -44,11 +52,13 @@ export default function save({ attributes }) {
 							style={{ color: iconColor }}
 						></i>
 						&nbsp;
-						<RichText.Content tagName="span" value={phone} />
+						<a href={`tel:${phone.replace(/[^+\d]/g, '')}`}>
+							<RichText.Content tagName="span" value={phone} />
+						</a>
 					</p>
 				)}
 
-				{email && (
+				{emailDisplayText && emailHref && (
 					<p className="contact-field email">
 						<i
 							className="fa-solid fa-envelope"
@@ -56,7 +66,9 @@ export default function save({ attributes }) {
 							style={{ color: iconColor }}
 						></i>
 						&nbsp;
-						<RichText.Content tagName="span" value={email} />
+						<a href={emailHref}>
+							<RichText.Content tagName="span" value={emailDisplayText} />
+						</a>
 					</p>
 				)}
 
