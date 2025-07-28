@@ -2,7 +2,7 @@
 /**
  * Plugin Name: GG Blocks
  * Description: Custom Gutenberg blocks by GG Dev.
- * Version: 1.0.1
+ * Version: 1.0.2
  * Author: Grace Gamble
  * Text Domain: gg-blocks
  */
