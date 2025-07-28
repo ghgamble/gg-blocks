@@ -7,7 +7,8 @@ export default function save({ attributes }) {
 		email,
 		hours,
 		showMap,
-		backgroundColor
+		backgroundColor,
+		iconColor
 	} = attributes;
 
 	const blockProps = useBlockProps.save({
@@ -22,39 +23,56 @@ export default function save({ attributes }) {
 
 	return (
 		<div {...blockProps} itemScope itemType="https://schema.org/LocalBusiness">
-            <div className="contact-text-fields">
-                {address && (
-                    <RichText.Content
-                        tagName="p"
-                        className="contact-field address"
-                        value={address}
-                        itemProp="address"
-                    />
-                )}
-                {phone && (
-                    <RichText.Content
-                        tagName="p"
-                        className="contact-field phone"
-                        value={phone}
-                        itemProp="telephone"
-                    />
-                )}
-                {email && (
-                    <RichText.Content
-                        tagName="p"
-                        className="contact-field email"
-                        value={email}
-                        itemProp="email"
-                    />
-                )}
-                {hours && (
-                    <RichText.Content
-                        tagName="p"
-                        className="contact-field hours"
-                        value={hours}
-                    />
-                )}
-            </div>
+			<div className="contact-text-fields">
+				{address && (
+					<p className="contact-field address">
+						<i
+							className="fa-solid fa-location-dot"
+							aria-hidden="true"
+							style={{ color: iconColor }}
+						></i>
+						&nbsp;
+						<RichText.Content tagName="span" value={address} />
+					</p>
+				)}
+
+				{phone && (
+					<p className="contact-field phone">
+						<i
+							className="fa-solid fa-phone"
+							aria-hidden="true"
+							style={{ color: iconColor }}
+						></i>
+						&nbsp;
+						<RichText.Content tagName="span" value={phone} />
+					</p>
+				)}
+
+				{email && (
+					<p className="contact-field email">
+						<i
+							className="fa-solid fa-envelope"
+							aria-hidden="true"
+							style={{ color: iconColor }}
+						></i>
+						&nbsp;
+						<RichText.Content tagName="span" value={email} />
+					</p>
+				)}
+
+				{hours && (
+					<p className="contact-field hours">
+						<i
+							className="fa-solid fa-clock"
+							aria-hidden="true"
+							style={{ color: iconColor }}
+						></i>
+						&nbsp;
+						<RichText.Content tagName="span" value={hours} />
+					</p>
+				)}
+			</div>
+
 			{mapSrc && (
 				<div className="contact-map">
 					<iframe

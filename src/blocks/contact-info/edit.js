@@ -17,7 +17,8 @@ export default function Edit({ attributes, setAttributes }) {
 		email,
 		hours,
 		showMap,
-		backgroundColor
+		backgroundColor,
+		iconColor
 	} = attributes;
 
 	const blockProps = useBlockProps({
@@ -52,39 +53,83 @@ export default function Edit({ attributes, setAttributes }) {
 						}
 					]}
 				/>
+
+				<PanelColorSettings
+					title={__('Icon Color', 'gg-blocks')}
+					initialOpen={false}
+					colorSettings={[
+						{
+							value: iconColor,
+							onChange: (color) => setAttributes({ iconColor: color }),
+							label: __('Contact Info Icon Color', 'gg-blocks'),
+						}
+					]}
+				/>
 			</InspectorControls>
 
 			<div {...blockProps}>
-                <div className="contact-text-fields">
-                    <RichText
-                        tagName="p"
-                        className="contact-field address"
-                        value={address}
-                        onChange={(value) => setAttributes({ address: value })}
-                        placeholder={__('123 Main St, Longmont, CO', 'gg-blocks')}
-                    />
-                    <RichText
-                        tagName="p"
-                        className="contact-field phone"
-                        value={phone}
-                        onChange={(value) => setAttributes({ phone: value })}
-                        placeholder={__('(555) 123-4567', 'gg-blocks')}
-                    />
-                    <RichText
-                        tagName="p"
-                        className="contact-field email"
-                        value={email}
-                        onChange={(value) => setAttributes({ email: value })}
-                        placeholder={__('info@yourdomain.com', 'gg-blocks')}
-                    />
-                    <RichText
-                        tagName="p"
-                        className="contact-field hours"
-                        value={hours}
-                        onChange={(value) => setAttributes({ hours: value })}
-                        placeholder={__('Mon–Fri: 9am–5pm', 'gg-blocks')}
-                    />
-                </div>
+				<div className="contact-text-fields">
+					<p className="contact-field address">
+						<i
+							className="fa-solid fa-location-dot"
+							aria-hidden="true"
+							style={{ color: iconColor }}
+						></i>
+						&nbsp;
+						<RichText
+							tagName="span"
+							value={address}
+							onChange={(value) => setAttributes({ address: value })}
+							placeholder={__('123 Main St, Longmont, CO', 'gg-blocks')}
+						/>
+					</p>
+
+					<p className="contact-field phone">
+						<i
+							className="fa-solid fa-phone"
+							aria-hidden="true"
+							style={{ color: iconColor }}
+						></i>
+						&nbsp;
+						<RichText
+							tagName="span"
+							value={phone}
+							onChange={(value) => setAttributes({ phone: value })}
+							placeholder={__('(555) 123-4567', 'gg-blocks')}
+						/>
+					</p>
+
+					<p className="contact-field email">
+						<i
+							className="fa-solid fa-envelope"
+							aria-hidden="true"
+							style={{ color: iconColor }}
+						></i>
+						&nbsp;
+						<RichText
+							tagName="span"
+							value={email}
+							onChange={(value) => setAttributes({ email: value })}
+							placeholder={__('info@yourdomain.com', 'gg-blocks')}
+						/>
+					</p>
+
+					<p className="contact-field hours">
+						<i
+							className="fa-solid fa-clock"
+							aria-hidden="true"
+							style={{ color: iconColor }}
+						></i>
+						&nbsp;
+						<RichText
+							tagName="span"
+							value={hours}
+							onChange={(value) => setAttributes({ hours: value })}
+							placeholder={__('Mon–Fri: 9am–5pm', 'gg-blocks')}
+						/>
+					</p>
+				</div>
+
 				{mapSrc && (
 					<div className="contact-map">
 						<iframe

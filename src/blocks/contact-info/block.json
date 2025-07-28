@@ -33,6 +33,10 @@
         "showMap": {
             "type": "boolean",
             "default": true
+        },
+        "iconColor": {
+            "type": "string",
+            "default": "#000000"
         }
     },
     "editorScript": "file:./index.js",
