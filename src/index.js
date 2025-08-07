@@ -7,3 +7,4 @@ import './blocks/image-grid';
 import './blocks/cta-fw';
 import './blocks/single-testimonial';
 import './blocks/contact-info';
+import './blocks/team-members';
