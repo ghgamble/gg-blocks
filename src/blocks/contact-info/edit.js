@@ -15,7 +15,6 @@ export default function Edit({ attributes, setAttributes }) {
 	const {
 		address,
 		phone,
-		email,
 		emailAddress,
 		emailSubject,
 		emailDisplayText,
@@ -94,7 +93,8 @@ export default function Edit({ attributes, setAttributes }) {
 							tagName="span"
 							value={address}
 							onChange={(value) => setAttributes({ address: value })}
-							placeholder={__('123 Main St, Longmont, CO', 'gg-blocks')}
+							placeholder={__('Street Address, City, State ZIP (comma after street required***)', 'gg-blocks')}
+							className={!address ? 'address empty-field' : ''}
 						/>
 					</p>
 
@@ -135,7 +135,7 @@ export default function Edit({ attributes, setAttributes }) {
 				{mapSrc && (
 					<div className="contact-map">
 						<iframe
-							title="Map"
+							title="Map Preview"
 							width="100%"
 							height="300"
 							style={{ border: 0, borderRadius: '0.5rem' }}

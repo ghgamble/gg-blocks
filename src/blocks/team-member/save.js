@@ -1,0 +1,33 @@
+import { useBlockProps, RichText } from '@wordpress/block-editor';
+
+export default function save({ attributes }) {
+    const { photoUrl, name, title, bio, phone, email, linkedInUrl } = attributes;
+
+    return (
+        <div {...useBlockProps.save({ className: 'team-member-card' })}>
+            {photoUrl && (
+                <div className="styled-image-tm-block">
+                    <div className="styled-image-wrapper styled-image-1-1">
+                        <div className="styled-image-aspect">
+                            <img src={photoUrl} alt={name} />
+                        </div>
+                    </div>
+                </div>
+            )}
+            {name && <RichText.Content tagName="h3" value={name} />}
+            {title && <RichText.Content tagName="p" className="title" value={title} />}
+            {bio && <RichText.Content tagName="p" className="bio" value={bio} />}
+            {phone && <p className="phone">
+                <a href={`tel:${phone}`}>{phone}</a>
+            </p>}
+            {email && <p className="email">
+                <a href={`mailto:${email}`}>{email}</a>
+            </p>}
+            {linkedInUrl && <p className="linkedin">
+                <a href={`https://www.linkedin.com/in/${linkedInUrl}`} target="_blank" ref="noopener noreferrer">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+            </p>}
+        </div>
+    );
+}

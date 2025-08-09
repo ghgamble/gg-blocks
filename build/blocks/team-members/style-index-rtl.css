@@ -1,1 +1,1 @@
-.team-members-grid{display:grid;gap:2rem;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));padding:2rem}@media(max-width:768px){.team-members-grid{grid-template-columns:1fr}}
+.team-members-grid{display:grid;gap:2rem;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));padding:2rem}@media(max-width:768px){.team-members-grid{gap:0;grid-template-columns:1fr;padding:2rem 0}}

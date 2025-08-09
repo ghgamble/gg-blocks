@@ -1,0 +1,45 @@
+{
+    "apiVersion": 2,
+    "name": "ggb/team-member",
+    "title": "Team Member",
+    "parent": ["ggb/team-members"],
+    "category": "gg-blocks",
+    "icon": "id",
+    "description": "Single team member card with photo, name, title, and contact info.",
+    "supports": {
+        "html": false
+    },
+    "attributes": {
+        "photoUrl": { 
+            "type": "string", 
+            "default": "" 
+        },
+        "name": { 
+            "type": "string", 
+            "default": "" 
+        },
+        "title": { 
+            "type": "string", 
+            "default": "" 
+        },
+        "bio": { 
+            "type": "string", 
+            "default": "" 
+        },
+        "phone": { 
+            "type": "string", 
+            "default": "" 
+        },
+        "email": { 
+            "type": "string", 
+            "default": "" 
+        },
+        "linkedInUrl": {
+            "type": "string",
+            "default": ""
+        }
+    },
+    "editorScript": "file:./index.js",
+    "editorStyle": "file:./index.css",
+    "style": "file:./style-index.css"
+}

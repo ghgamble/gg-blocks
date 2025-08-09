@@ -4,7 +4,6 @@ export default function save({ attributes }) {
 	const {
 		address,
 		phone,
-		email,
 		emailAddress,
 		emailSubject,
 		emailDisplayText,
@@ -24,15 +23,17 @@ export default function save({ attributes }) {
 		? `https://maps.google.com/maps?q=${encodedAddress}&output=embed`
 		: null;
 
-	// Generate mailto href
 	const emailHref = emailAddress
 		? `mailto:${emailAddress}${emailSubject ? `?subject=${encodeURIComponent(emailSubject)}` : ''}`
 		: null;
 
+	// Strip address to only first line (street address)
+	const streetAddress = address.split(',')[0];
+
 	return (
 		<div {...blockProps} itemScope itemType="https://schema.org/LocalBusiness">
 			<div className="contact-text-fields">
-				{address && (
+				{streetAddress && (
 					<p className="contact-field address">
 						<i
 							className="fa-solid fa-location-dot"
@@ -40,7 +41,7 @@ export default function save({ attributes }) {
 							style={{ color: iconColor }}
 						></i>
 						&nbsp;
-						<RichText.Content tagName="span" value={address} />
+						<span>{streetAddress}</span>
 					</p>
 				)}
 

@@ -18,10 +18,6 @@
             "type": "string", 
             "default": "" 
         },
-        "email": { 
-            "type": "string", 
-            "default": "" 
-        },
         "emailAddress": {
             "type": "string",
             "default": ""
