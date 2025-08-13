@@ -23,11 +23,14 @@ export default function save({ attributes }) {
             {email && <p className="email">
                 <a href={`mailto:${email}`}>{email}</a>
             </p>}
-            {linkedInUrl && <p className="linkedin">
-                <a href={`https://www.linkedin.com/in/${linkedInUrl}`} target="_blank" ref="noopener noreferrer">
-                    <i class="fa-brands fa-linkedin"></i>
-                </a>
-            </p>}
+            {linkedInUrl && (
+                <p className="linkedin">
+                    <a href={linkedInUrl} target="_blank" rel="noopener noreferrer">
+                        <i className="fa-brands fa-linkedin" aria-hidden="true"></i>
+                        <span className="screen-reader-text">LinkedIn</span>
+                    </a>
+                </p>
+            )}
         </div>
     );
 }

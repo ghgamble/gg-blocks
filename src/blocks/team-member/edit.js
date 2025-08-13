@@ -72,8 +72,13 @@ export default function Edit({ attributes, setAttributes }) {
                 tagName="p"
                 className="linkedin"
                 value={linkedInUrl}
-                onChange={(value) => setAttributes({ linkedInUrl: value })}
-                placeholder={__('LinkedIn: public profile, no full url, no slashes, ex gracegamble', 'gg-blocks')}
+                onChange={(value) => {
+                    // Strip any accidental <a> tags or HTML
+                    const plainUrl = value.replace(/<\/?[^>]+(>|$)/g, '');
+                    setAttributes({ linkedInUrl: plainUrl });
+                }}
+                placeholder={__('Full LinkedIn URL (e.g., https://linkedin.com/in/username)', 'gg-blocks')}
+                allowedFormats={[]} // Prevent link pasting
             />
         </div>
     );
