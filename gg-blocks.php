@@ -9,6 +9,11 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
+$api_key_file = plugin_dir_path( __FILE__ ) . 'map-api-key.php';
+if ( file_exists( $api_key_file ) ) {
+	require_once $api_key_file;
+}
+
 // ✅ Register all blocks from /build/blocks/*
 add_action( 'init', function () {
 	foreach ( glob( plugin_dir_path( __FILE__ ) . 'build/blocks/*' ) as $block_dir ) {
@@ -44,22 +49,27 @@ add_action( 'enqueue_block_editor_assets', function () {
 
 	wp_enqueue_script( 'gg-block-globals' );
 
-	// Inject API key for editor
+	$google_maps_key = defined('GG_MAPS_API_KEY') ? GG_MAPS_API_KEY : '';
+
 	wp_add_inline_script(
 		'wp-block-editor',
-		'window.ggBlocks = window.ggBlocks || {}; window.ggBlocks.googleMapsApiKey = "' . esc_js('AIzaSyCKkZ6lT0zEZHUkaDUUTFpSEqhUgtXGG3w') . '";',
+		'window.ggBlocks = window.ggBlocks || {}; window.ggBlocks.googleMapsApiKey = "' . esc_js($google_maps_key) . '";',
 		'before'
 	);
 });
+
 
 // ✅ Inject Google Maps API key into frontend for view.js
 add_action( 'wp_enqueue_scripts', function () {
 	wp_register_script( 'gg-block-globals', '', [], null, true );
 
+	$google_maps_key = defined('GG_MAPS_API_KEY') ? GG_MAPS_API_KEY : '';
+
 	wp_add_inline_script( 'gg-block-globals',
-		'window.ggBlocks = window.ggBlocks || {}; window.ggBlocks.googleMapsApiKey = "' . esc_js('AIzaSyCKkZ6lT0zEZHUkaDUUTFpSEqhUgtXGG3w') . '";',
+		'window.ggBlocks = window.ggBlocks || {}; window.ggBlocks.googleMapsApiKey = "' . esc_js($google_maps_key) . '";',
 		'before'
 	);
 
 	wp_enqueue_script( 'gg-block-globals' );
 });
+
