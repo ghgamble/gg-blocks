@@ -1,0 +1,77 @@
+{
+  "apiVersion": 2,
+  "name": "ggb/faq",
+  "title": "FAQ",
+  "category": "gg-blocks",
+  "icon": "editor-help",
+  "description": "Accordion-style FAQ section with editable styles and branding options.",
+  "supports": {
+    "align": [
+      "wide"
+    ],
+    "html": false
+  },
+  "attributes": {
+    "items": {
+      "type": "array",
+      "default": [
+        {
+          "question": "What services do you offer?",
+          "answer": "We provide fully custom WordPress websites built with performance and accessibility in mind."
+        }
+      ]
+    },
+    "questionFontSize": {
+      "type": "number",
+      "default": 18
+    },
+    "answerFontSize": {
+      "type": "number",
+      "default": 16
+    },
+    "questionTextColor": {
+      "type": "string",
+      "default": "#292b35"
+    },
+    "answerTextColor": {
+      "type": "string",
+      "default": "#292b35"
+    },
+    "tabBackgroundColor": {
+      "type": "string",
+      "default": "#f0f0f0"
+    },
+    "tabBorderColor": {
+      "type": "string",
+      "default": "#ccc"
+    },
+    "contentBackgroundColor": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "contentBorderColor": {
+      "type": "string",
+      "default": "#ddd"
+    },
+    "borderRadius": {
+      "type": "number",
+      "default": 8
+    },
+    "blockVertMargin": {
+      "type": "string",
+      "default": "2rem"
+    },
+    "blockPadding": {
+      "type": "string",
+      "default": "2rem"
+    },
+    "contentPadding": {
+      "type": "string",
+      "default": "1rem"
+    }
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style.css",
+  "script": "file:./faq-toggle.js"
+}
