@@ -15,10 +15,14 @@
   "attributes": {
     "address": {
       "type": "string",
+      "source": "html",
+      "selector": ".contact-field.address span",
       "default": ""
     },
     "phone": {
       "type": "string",
+      "source": "html",
+      "selector": ".contact-field.phone span",
       "default": ""
     },
     "emailAddress": {
@@ -31,26 +35,51 @@
     },
     "emailDisplayText": {
       "type": "string",
+      "source": "html",
+      "selector": ".contact-field.email span",
       "default": ""
     },
     "hours": {
       "type": "string",
+      "source": "html",
+      "selector": ".contact-field.hours span",
       "default": ""
-    },
-    "backgroundColor": {
-      "type": "string",
-      "default": "#ffffff"
     },
     "showMap": {
       "type": "boolean",
       "default": true
     },
+    "backgroundColor": {
+      "type": "string",
+      "default": ""
+    },
     "iconColor": {
       "type": "string",
-      "default": "#000000"
+      "default": ""
+    },
+    "lat": {
+      "type": "number",
+      "default": null
+    },
+    "lng": {
+      "type": "number",
+      "default": null
+    },
+    "zoom": {
+      "type": "number",
+      "default": 14
+    },
+    "mapTypeId": {
+      "type": "string",
+      "default": "roadmap"
+    },
+    "mapAccentColor": {
+      "type": "string",
+      "default": "#2c944b"
     }
   },
   "editorScript": "file:./index.js",
   "editorStyle": "file:./index.css",
-  "style": "file:./style-index.css"
+  "style": "file:./style-index.css",
+  "script": "file:./view.js"
 }
