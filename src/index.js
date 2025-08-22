@@ -9,3 +9,4 @@ import './blocks/single-testimonial';
 import './blocks/contact-info';
 import './blocks/team-members';
 import './blocks/faq';
+import './blocks/home-page-hero';

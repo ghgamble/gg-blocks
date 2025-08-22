@@ -1,0 +1,71 @@
+{
+	"apiVersion": 2,
+	"name": "gg-blocks/home-page-hero",
+	"title": "Homepage Hero",
+	"category": "gg-blocks",
+	"icon": "slides",
+	"description": "Full-width hero with image/video background and flexible overlay content.",
+	"supports": {
+		"align": ["full", "wide"],
+		"html": false
+	},
+	"attributes": {
+		"mediaUrl": {
+			"type": "string",
+			"default": ""
+		},
+		"mediaType": {
+			"type": "string",
+			"default": "image"
+		},
+		"hAlign": {
+			"type": "string",
+			"default": "center"
+		},
+		"vAlign": {
+			"type": "string",
+			"default": "center"
+		},
+		"contentMaxWidth": {
+			"type": "number",
+			"default": 1100
+		},
+		"padding": {
+			"type": "object",
+			"default": {
+				"top": "4rem",
+				"right": "1rem",
+				"bottom": "4rem",
+				"left": "1rem"
+			}
+		},
+		"margin": {
+			"type": "object",
+			"default": {
+				"top": "0",
+				"right": "0",
+				"bottom": "0",
+				"left": "0"
+			}
+		},
+		"overlayColor": {
+			"type": "string",
+			"default": "#000000"
+		},
+		"overlayOpacity": {
+			"type": "number",
+			"default": 0.35
+		},
+		"contentTextColor": {
+			"type": "string",
+			"default": "#ffffff"
+		},
+        "heroHeight": {
+            "type": "string",
+            "default": "70vh"
+        }
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}
