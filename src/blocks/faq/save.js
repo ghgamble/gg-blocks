@@ -11,7 +11,6 @@ export default function save({ attributes }) {
 		tabBorderColor,
 		contentBackgroundColor,
 		contentBorderColor,
-		borderRadius,
         blockVertMargin,
 		blockPadding,
 		contentPadding
@@ -22,7 +21,6 @@ export default function save({ attributes }) {
 			{...useBlockProps.save({
 				className: 'faq-outer-wrapper alignwide',
 				style: {
-					borderRadius: `${borderRadius}px`,
 					overflow: 'hidden',
 					backgroundColor: tabBackgroundColor,
 					margin: `${blockVertMargin} auto`

@@ -24,7 +24,6 @@ export default function Edit({ attributes, setAttributes }) {
 		tabBorderColor,
 		contentBackgroundColor,
 		contentBorderColor,
-		borderRadius,
         blockVertMargin,
 		blockPadding,
 		contentPadding
@@ -33,7 +32,6 @@ export default function Edit({ attributes, setAttributes }) {
 	const outerProps = useBlockProps({
 		className: 'faq-outer-wrapper alignwide',
 		style: {
-			borderRadius: `${borderRadius}px`,
 			overflow: 'hidden',
 			backgroundColor: tabBackgroundColor,
 			margin: `${blockVertMargin} auto`
@@ -114,13 +112,6 @@ export default function Edit({ attributes, setAttributes }) {
 				/>
 
 				<PanelBody title={__('Layout', 'gg-blocks')} initialOpen={false}>
-					<RangeControl
-						label={__('Block Border Radius (px)', 'gg-blocks')}
-						value={borderRadius}
-						onChange={(value) => setAttributes({ borderRadius: value })}
-						min={0}
-						max={50}
-					/>
 					<TextControl
 						label={__('Block Padding (e.g., 2rem)', 'gg-blocks')}
 						value={blockPadding}

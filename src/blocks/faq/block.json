@@ -51,10 +51,6 @@
 			"type": "string",
 			"default": "#ddd"
 		},
-		"borderRadius": {
-			"type": "number",
-			"default": 8
-		},
 		"blockVertMargin": {
 			"type": "string",
 			"default": "2rem"
