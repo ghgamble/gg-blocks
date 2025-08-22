@@ -69,3 +69,13 @@
 		padding-right: 4rem;
 	}
 }
+
+.wp-block-columns .wp-block-column .contact-info {
+	padding-top: 0;
+}
+
+.wp-block-columns .wp-block-column .contact-info .contact-text-fields {
+	display: flex !important;
+	flex-direction: column;
+	gap: 0;
+}
