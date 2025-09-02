@@ -16,6 +16,15 @@
 		&:last-child {
 			border-bottom: none;
 		}
+
+		// Closed by default (scoped)
+		.faq-answer {
+			display: none;
+		}
+
+		&.open .faq-answer {
+			display: block;
+		}
 	}
 
 	.faq-question {
@@ -28,25 +37,28 @@
 		font-size: var(--faq-tab-font-size, 1rem);
 		padding: var(--faq-tab-padding, 1rem);
 		cursor: pointer;
-		border: none;
+		border: none !important; // avoid default button borders
+		border-width: 0;
 		text-align: left;
 		transition: background-color 0.3s ease;
 
 		&:hover,
 		&[aria-expanded="true"] {
-			background-color: rgba(0, 0, 0, 0.1); // Optional hover style
+			background-color: rgba(0, 0, 0, 0.1); // Optional hover/active style
 		}
 	}
 
 	.faq-answer {
-		display: none;
 		background: transparent;
 		padding: var(--faq-content-padding, 1rem);
-		color: var(--faq-content-color, #fff); // Keep readable if you're using dark backgrounds
+		color: var(--faq-content-color, #fff);
 		font-size: var(--faq-content-font-size, 1rem);
 	}
-
-	.faq-item.open .faq-answer {
-		display: block;
-	}
 }
+
+/* Global fallback */
+.faq-item .faq-answer { display: none; }
+.faq-item.open .faq-answer { display: block; }
+
+body:not(.block-editor-page) .faq-item .faq-answer { display: none; }
+body:not(.block-editor-page) .faq-item.open .faq-answer { display: block; }

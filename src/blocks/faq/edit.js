@@ -24,7 +24,7 @@ export default function Edit({ attributes, setAttributes }) {
 		tabBorderColor,
 		contentBackgroundColor,
 		contentBorderColor,
-        blockVertMargin,
+		blockVertMargin,
 		blockPadding,
 		contentPadding
 	} = attributes;
@@ -34,7 +34,8 @@ export default function Edit({ attributes, setAttributes }) {
 		style: {
 			overflow: 'hidden',
 			backgroundColor: tabBackgroundColor,
-			margin: `${blockVertMargin} auto`
+			margin: `${blockVertMargin} auto`,
+			'--faq-tab-color': questionTextColor, 
 		}
 	});
 
@@ -122,7 +123,7 @@ export default function Edit({ attributes, setAttributes }) {
 						value={contentPadding}
 						onChange={(value) => setAttributes({ contentPadding: value })}
 					/>
-                    <TextControl
+					<TextControl
 						label={__('Block Top and Bottom Spacing (e.g., 2rem)', 'gg-blocks')}
 						value={blockVertMargin}
 						onChange={(value) => setAttributes({ blockVertMargin: value })}
@@ -135,26 +136,30 @@ export default function Edit({ attributes, setAttributes }) {
 					{items.map((item, index) => (
 						<div
 							key={index}
-							className={`faq-item ${index === 0 ? 'open' : ''}`}
+							className="faq-item"
 							style={{
 								backgroundColor: tabBackgroundColor,
 								border: `1px solid ${tabBorderColor}`
 							}}
 						>
-							<RichText
-								tagName="button"
+							{/* Non-interactive in editor to keep typing smooth */}
+							<div
 								className="faq-question"
-								value={item.question}
-								onChange={(value) => updateItem(index, 'question', value)}
-								placeholder={__('Question', 'gg-blocks')}
 								style={{
-									fontSize: `${questionFontSize}px`,
-									color: questionTextColor,
 									padding: contentPadding,
 									backgroundColor: tabBackgroundColor,
-									border: contentBackgroundColor
+									border: `1px solid ${contentBorderColor}`
 								}}
-							/>
+							>
+								<RichText
+									tagName="span"
+									value={item.question}
+									onChange={(value) => updateItem(index, 'question', value)}
+									placeholder={__('Question', 'gg-blocks')}
+									style={{ fontSize: `${questionFontSize}px`, color: questionTextColor }}
+									allowedFormats={['core/bold','core/italic','core/strikethrough','core/link']}
+								/>
+							</div>
 
 							<RichText
 								tagName="div"
@@ -163,11 +168,13 @@ export default function Edit({ attributes, setAttributes }) {
 								onChange={(value) => updateItem(index, 'answer', value)}
 								placeholder={__('Answer', 'gg-blocks')}
 								style={{
+									display: 'block', // <- keep visible in editor
 									fontSize: `${answerFontSize}px`,
 									color: answerTextColor,
 									backgroundColor: contentBackgroundColor,
 									padding: contentPadding
 								}}
+								allowedFormats={['core/bold','core/italic','core/strikethrough','core/link','core/code']}
 							/>
 
 							<Button
