@@ -1,7 +1,7 @@
 import { useBlockProps, RichText } from '@wordpress/block-editor';
 
 export default function save({ attributes }) {
-    const { photoUrl, name, title, bio, phone, email, linkedInUrl } = attributes;
+    const { photoUrl, name, title, bio, phone, email, linkedInUrl, linkText, linkUrl } = attributes;
 
     return (
         <div {...useBlockProps.save({ className: 'team-member-card' })}>
@@ -31,6 +31,17 @@ export default function save({ attributes }) {
                     </a>
                 </p>
             )}
+            <div className="link-section">
+                {linkText && <RichText.Content tagName="p" className="linkText" value={linkText} />}
+                {linkUrl && (
+                    <p className="linkUrl">
+                        <a href={linkUrl} target="_blank" rel="noopener noreferrer">
+                            <i className="fa-solid fa-link" aria-hidden="true"></i>
+                            <span className="screen-reader-text">Link</span>
+                        </a>
+                    </p>
+                )}
+            </div>
         </div>
     );
 }

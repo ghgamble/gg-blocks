@@ -3,7 +3,7 @@ import { useBlockProps, RichText, MediaUpload } from '@wordpress/block-editor';
 import { Button } from '@wordpress/components';
 
 export default function Edit({ attributes, setAttributes }) {
-    const { photoUrl, name, title, bio, phone, email, linkedInUrl } = attributes;
+    const { photoUrl, name, title, bio, phone, email, linkedInUrl, linkText, linkUrl } = attributes;
 
     const blockProps = useBlockProps({
         className: 'team-member-card'
@@ -79,6 +79,20 @@ export default function Edit({ attributes, setAttributes }) {
                 }}
                 placeholder={__('Full LinkedIn URL (e.g., https://linkedin.com/in/username)', 'gg-blocks')}
                 allowedFormats={[]} // Prevent link pasting
+            />
+            <RichText
+                tagName="p"
+                className="linkText"
+                value={linkText}
+                onChange={(value) => setAttributes({ linkText: value })}
+                placeholder={__('Link Text', 'gg-blocks')}
+            />
+            <RichText
+                tagName="p"
+                className="linkUrl"
+                value={linkUrl}
+                onChange={(value) => setAttributes({ linkUrl: value })}
+                placeholder={__('Link URL', 'gg-blocks')}
             />
         </div>
     );

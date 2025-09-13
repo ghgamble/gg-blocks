@@ -1,6 +1,5 @@
 .team-member-card {
     text-align: center;
-    padding: 1rem;
 
     h3 {
         margin-top: 0.75rem;
@@ -27,8 +26,22 @@
     }
 
     .linkedin {
-        margin-top: 0.5rem;
+        margin-top: 0.25rem;
         margin-bottom: 0;
+    }
+    .link-section {
+        display: flex;
+        justify-content: center;
+
+        .linkText {
+            padding-right: 1rem;
+            margin-block-start: 0.25rem;
+            margin-block-end: 0em;
+        }
+        .linkUrl {
+            margin-block-start: 0.25rem;
+            margin-block-end: 0em;
+        }
     }
     @media (max-width: 768px) {
         padding: 1rem 0;
