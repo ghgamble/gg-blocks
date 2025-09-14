@@ -10,3 +10,4 @@ import './blocks/contact-info';
 import './blocks/team-members';
 import './blocks/faq';
 import './blocks/home-page-hero';
+import './blocks/multi-image';
