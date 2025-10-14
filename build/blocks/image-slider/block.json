@@ -1,0 +1,37 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "ggb/image-slider",
+  "title": "Image Slider",
+  "category": "gg-blocks",
+  "icon": "format-gallery",
+  "description": "A flexible full-width or alignwide image slider with autoplay.",
+  "supports": {
+    "html": false,
+    "align": [
+      "full",
+      "wide"
+    ]
+  },
+  "attributes": {
+    "images": {
+      "type": "array",
+      "default": [],
+      "items": {
+        "type": "object"
+      }
+    },
+    "slideDuration": {
+      "type": "number",
+      "default": 4000
+    },
+    "layout": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "script": "file:./frontend.js"
+}
