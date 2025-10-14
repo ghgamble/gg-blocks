@@ -42,11 +42,13 @@ export default function Edit({ attributes, setAttributes }) {
 
 			<div {...blockProps} data-transition-time={slideDuration}>
 				<div className="ggb-image-slider-track">
-					{images.map((img, index) => (
+				{images.map((img, index) => (
+					img?.url ? (
 						<div key={index} className="slider-image-wrapper">
 							<img src={img.url} alt={img.alt || ''} />
 						</div>
-					))}
+					) : null
+				))}
 				</div>
 				<MediaUpload
 					onSelect={(imgs) =>

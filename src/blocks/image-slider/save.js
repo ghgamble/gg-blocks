@@ -11,11 +11,13 @@ export default function save({ attributes }) {
 	return (
 		<div {...blockProps}>
 			<div className="ggb-image-slider-track">
-				{images.map((img, index) => (
+			{images.map((img, index) => (
+				img?.url ? (
 					<div key={index} className="slider-image-wrapper">
 						<img src={img.url} alt={img.alt || ''} />
 					</div>
-				))}
+				) : null
+			))}
 			</div>
 		</div>
 	);
