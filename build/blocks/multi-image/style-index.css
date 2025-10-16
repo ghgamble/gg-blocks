@@ -1,1 +1,52 @@
-.multi-img-grid{margin-bottom:0;margin-top:3rem;padding-block:1.5rem;width:100%}.multi-img-grid .grid-wrapper{-moz-column-count:3;column-count:3;-moz-column-gap:2rem;column-gap:2rem}.multi-img-grid .styled-img-wrapper{background-color:#fff;border-radius:1rem;box-shadow:0 8px 30px rgba(0,0,0,.15);display:inline-block;line-height:0;margin-bottom:1.5rem;overflow:hidden;width:100%;-moz-column-break-inside:avoid;break-inside:avoid}.multi-img-grid .styled-img-wrapper .image-inner{display:block;height:100%;position:relative;width:100%}.multi-img-grid .styled-img-wrapper .image-inner img{display:block;height:auto;width:100%}@media(max-width:1024px){.multi-img-grid .grid-wrapper{-moz-column-count:2;column-count:2}}@media(max-width:640px){.multi-img-grid .grid-wrapper{-moz-column-count:1;column-count:1}}
+/*!**********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/multi-image/style.scss ***!
+  \**********************************************************************************************************************************************************************************************************************************************************/
+.multi-img-grid {
+  width: 100%;
+  padding-block: 1.5rem;
+  margin-bottom: 0;
+  margin-top: 3rem;
+}
+.multi-img-grid .grid-wrapper {
+  -moz-column-count: 3;
+       column-count: 3;
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
+}
+.multi-img-grid .styled-img-wrapper {
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 1.5rem;
+  line-height: 0;
+  -moz-column-break-inside: avoid;
+       break-inside: avoid;
+}
+.multi-img-grid .styled-img-wrapper .image-inner {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.multi-img-grid .styled-img-wrapper .image-inner img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+@media (max-width: 1024px) {
+  .multi-img-grid .grid-wrapper {
+    -moz-column-count: 2;
+         column-count: 2;
+  }
+}
+@media (max-width: 640px) {
+  .multi-img-grid .grid-wrapper {
+    -moz-column-count: 1;
+         column-count: 1;
+  }
+}
+
+/*# sourceMappingURL=style-index.css.map*/
