@@ -1,10 +1,10 @@
 import { useBlockProps } from '@wordpress/block-editor';
 
 export default function save({ attributes }) {
-	const { images, slideDuration, layout } = attributes;
+	const { images, slideDuration } = attributes;
 
 	const blockProps = useBlockProps.save({
-		className: `ggb-image-slider ${layout}`,
+		className: 'ggb-image-slider',
 		'data-transition-time': slideDuration,
 	});
 

@@ -24,10 +24,6 @@
     "slideDuration": {
       "type": "number",
       "default": 4000
-    },
-    "layout": {
-      "type": "string",
-      "default": ""
     }
   },
   "editorScript": "file:./index.js",

@@ -4,17 +4,11 @@ import { PanelBody, RangeControl, Button, SelectControl } from '@wordpress/compo
 import { useEffect } from '@wordpress/element';
 
 export default function Edit({ attributes, setAttributes }) {
-	const { images, slideDuration, layout } = attributes;
+	const { images, slideDuration } = attributes;
 
 	const blockProps = useBlockProps({
-		className: `ggb-image-slider ${layout}`,
+		className: 'ggb-image-slider',
 	});
-
-	useEffect(() => {
-		if (!layout) {
-			setAttributes({ layout: 'alignfull' });
-		}
-	}, []);
 
 	return (
 		<>
@@ -27,15 +21,6 @@ export default function Edit({ attributes, setAttributes }) {
 						min={1000}
 						max={10000}
 						step={500}
-					/>
-					<SelectControl
-						label={__('Layout Width', 'gg-blocks')}
-						value={layout}
-						options={[
-							{ label: __('Full Width', 'gg-blocks'), value: 'alignfull' },
-							{ label: __('Align Wide', 'gg-blocks'), value: 'alignwide' },
-						]}
-						onChange={(value) => setAttributes({ layout: value })}
 					/>
 				</PanelBody>
 			</InspectorControls>
