@@ -1,0 +1,194 @@
+/* =========================================
+   TEAM MEMBER PRO CARD – LAYOUT & TYPOGRAPHY
+   ========================================= */
+
+.team-member-pro-card {
+    display: grid;
+    grid-template-columns: 260px minmax(0, 1fr); // desktop: image | text
+    column-gap: 2.5rem;
+    align-items: flex-start;
+    width: 100%;
+    margin: 0 0 3rem;  /* bottom spacing only */
+    padding: 0;        /* ensures absolutely no inset */
+    text-align: left;
+
+    /* NAME + TITLE ON ONE LINE */
+    .name-title {
+        display: flex;
+        align-items: baseline;
+        gap: 0.5rem;
+    }
+
+    .name-title .title::before {
+        content: "—";              // the dash
+        margin: 0 0.3rem 0 0;      // spacing after the dash
+        color: #666;
+    }
+
+    /* CONTACT INFO ROW: phone | email */
+    .contact-info {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin: 0.5rem 0;
+    }
+
+    .contact-info p {
+        margin: 0;
+    }
+
+    /* Add the | separator before every item EXCEPT the first */
+    .contact-info p + p::before {
+        content: "|";
+        color: #999;
+        margin-right: 0.75rem;
+    }
+
+    h3 {
+        margin: 0;               // no extra top/bottom margin
+        font-size: 1.6rem;
+    }
+
+    .title {
+        font-style: italic;
+        color: #666;
+        margin: 0;               // sits on same baseline as h3
+        font-size: 1.3rem;
+    }
+
+    .bio {
+        font-size: 0.95rem;
+        color: #444;
+        margin: 0 0 0.75rem;
+        line-height: 1.6;
+    }
+
+    .phone,
+    .email {
+        margin: 0.25rem 0;
+    }
+
+    .phone a,
+    .email a {
+        color: #2c944b;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .linkedin {
+        margin-top: 0.25rem;
+        margin-bottom: 0.75rem;
+
+        a {
+            color: #2c944b;
+        }
+    }
+
+    .link-section {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-top: 0.5rem;
+
+        .linkText {
+            margin: 0;
+        }
+
+        .linkUrl {
+            margin: 0;
+
+            a {
+                color: #2c944b;
+            }
+        }
+    }
+}
+
+/* Desktop: put all non-photo content in the text column */
+.team-member-pro-card > *:not(.team-member-pro-photo) {
+    grid-column: 2;
+}
+
+/* =========================================
+   PHOTO STYLING – CIRCULAR PORTRAIT
+   (Scoped to pro card so it doesn't affect other blocks)
+   ========================================= */
+
+.team-member-pro-card .team-member-pro-photo.styled-image-tm-block {
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    overflow: hidden;
+    grid-row: 1 / -1;     // span all text rows
+    justify-self: center;
+}
+
+.team-member-pro-card .styled-image-wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+.team-member-pro-card .styled-image-aspect {
+    width: 100%;
+    height: 100%;
+}
+
+.team-member-pro-card .styled-image-aspect img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* =========================================
+   MOBILE LAYOUT – STACKED, FULL CONTENT WIDTH
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    .team-member-pro-card {
+        grid-template-columns: 1fr;     // stack everything
+        row-gap: 1.5rem;
+        text-align: left;
+    }
+
+    /* All children stack in one column */
+    .team-member-pro-card > * {
+        grid-column: 1 / -1 !important;
+    }
+
+    /* PHOTO: larger + aligned left */
+    .team-member-pro-photo {
+        order: -1;
+        width: 200px;        // increase the size (adjust if needed)
+        height: 200px;
+        margin: 0 0 1.5rem 0;  // LEFT aligned
+        justify-self: flex-start !important;
+    }
+
+    .team-member-pro-photo .styled-image-wrapper,
+    .team-member-pro-photo .styled-image-aspect,
+    .team-member-pro-photo .styled-image-aspect img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* TEXT FULL WIDTH */
+    .team-member-pro-content {
+        max-width: none;
+        margin: 0;
+    }
+
+    /* keep contact info left aligned */
+    .contact-info,
+    .link-section {
+        justify-content: flex-start;
+    }
+}
+
+
+
