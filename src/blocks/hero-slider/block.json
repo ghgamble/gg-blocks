@@ -1,0 +1,28 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 2,
+    "name": "ggb/hero-slider",
+    "title": "Hero Slider",
+    "category": "gg-blocks",
+    "description": "Full-width hero with a timed image slider and content column.",
+    "supports": {
+        "align": ["full"],
+        "html": false
+    },
+    "attributes": {
+        "images": {
+            "type": "array",
+            "default": []
+        },
+        "backgroundColor": {
+            "type": "string",
+            "default": "#007399"
+        },
+        "gradientStopColor": {
+            "type": "string",
+            "default": "#007399"
+        }
+    },
+    "editorScript": "file:./index.js",
+    "style": "file:./style-index.css"
+}

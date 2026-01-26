@@ -13,3 +13,4 @@ import './blocks/home-page-hero';
 import './blocks/multi-image';
 import './blocks/image-slider';
 import './blocks/team-members-pro';
+import './blocks/hero-slider';

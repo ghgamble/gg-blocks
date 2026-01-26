@@ -1,0 +1,246 @@
+.hero-slider {
+    background-color: #282b35;
+    color: #fff;
+    width: 100%;
+
+    &__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: stretch;
+        width: 100%;
+        position: relative;
+        background-color: var(--base-color, #007399);
+    }
+
+    &__overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+            to right,
+            rgba(0, 115, 153, 0) 0%,
+            rgba(0, 115, 153, 0) 59.99%,
+            rgba(0, 115, 153, 0.3) 65%,
+            rgba(0, 115, 153, 0.6) 72%,
+            var(--gradient-stop, #007399) 100%
+        );
+        z-index: 2;
+        pointer-events: none;
+    }
+
+    /* TEXT COLUMN – mirrors .page-banner-text */
+    &__content {
+        flex: 1 1 50%;
+        display: flex;
+        align-items: center;
+        position: relative;
+        z-index: 3;
+        min-height: 100%;
+        max-height: 500px; // same as page-banner-text
+
+        > .alignwide {
+            width: 100%;
+            padding-block: 3rem;
+
+            @media (max-width: 768px) {
+                padding-block: 0;
+                padding-top: 1rem;
+                padding-bottom: 1.5rem;
+            }
+
+            .inner-content {
+                padding-left: 0;
+                padding-right: 1rem;
+                margin-left: 1rem;
+
+                h2 {
+                    font-size: 2.5rem;
+                    font-weight: 700;
+                    margin-bottom: 1rem;
+
+                    @media (max-width: 768px) {
+                        font-size: 2rem !important;
+                    }
+
+                    @media (max-width: 520px) {
+                        font-size: 1.5rem !important;
+                    }
+                }
+
+                .wp-block-buttons {
+                    margin-top: 2rem;
+
+                    .wp-block-button__link {
+                        background-color: #fff;
+                        font-weight: bold;
+                        border-radius: 999px;
+                        color: #282b35;
+                    }
+                }
+            }
+        }
+    }
+
+    /* IMAGE COLUMN – mirrors .page-banner-image */
+    &__media {
+        flex: 1 1 50%;
+        min-height: 100%;
+        max-height: 400px; // same as page-banner-image
+        display: flex;
+        align-items: stretch;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: relative;
+            z-index: 1;
+            max-height: 500px; // matches page-banner image
+        }
+    }
+
+    &__placeholder {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #444;
+        color: #fff;
+        min-height: 300px;
+    }
+
+    /* SLIDER TRACK / SLIDES – same size as image column */
+    &__track {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__slide {
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        transition: opacity 0.8s ease-in-out;
+        animation-name: heroSliderFade;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        animation-duration: 30s; // 6 slides * 5s each
+
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            max-height: 500px; // keep in sync with page-banner
+        }
+    }
+
+    /* Up to 6 slides – staggered animation delays */
+    &__slide:nth-child(1) {
+        animation-delay: 0s;
+    }
+
+    &__slide:nth-child(2) {
+        animation-delay: 5s;
+    }
+
+    &__slide:nth-child(3) {
+        animation-delay: 10s;
+    }
+
+    &__slide:nth-child(4) {
+        animation-delay: 15s;
+    }
+
+    &__slide:nth-child(5) {
+        animation-delay: 20s;
+    }
+
+    &__slide:nth-child(6) {
+        animation-delay: 25s;
+    }
+
+    /* MOBILE – mirrors page-banner media queries */
+    @media (max-width: 768px) {
+        &__wrapper {
+            flex-direction: column;
+        }
+
+        &__content,
+        &__media {
+            flex: 1 1 100%;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        &__media {
+            min-height: 250px;
+            max-height: none;
+
+            img {
+                max-height: none;
+            }
+        }
+    }
+}
+
+/* Same fade sequence behavior as pageBannerFade */
+@keyframes heroSliderFade {
+    0% {
+        opacity: 0;
+    }
+
+    5% {
+        opacity: 1;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    25% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Editor-only list styling for the image controls */
+.hero-slider__image-list {
+    margin-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    padding-top: 1rem;
+
+    .hero-slider__image-row {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .hero-slider__image-thumb img {
+        width: 60px;
+        height: 40px;
+        object-fit: cover;
+        border-radius: 4px;
+    }
+
+    .hero-slider__image-fields {
+        flex: 1;
+    }
+
+    .hero-slider__image-actions {
+        display: flex;
+        gap: 0.5rem;
+        margin-top: 0.5rem;
+    }
+}
