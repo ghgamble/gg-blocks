@@ -30,7 +30,6 @@
         pointer-events: none;
     }
 
-    /* TEXT COLUMN – mirrors .page-banner-text */
     &__content {
         flex: 1 1 50%;
         display: flex;
@@ -38,7 +37,7 @@
         position: relative;
         z-index: 3;
         min-height: 100%;
-        max-height: 500px; // same as page-banner-text
+        max-height: 500px; 
 
         > .alignwide {
             width: 100%;
@@ -83,11 +82,10 @@
         }
     }
 
-    /* IMAGE COLUMN – mirrors .page-banner-image */
     &__media {
         flex: 1 1 50%;
         min-height: 100%;
-        max-height: 400px; // same as page-banner-image
+        max-height: 400px; 
         display: flex;
         align-items: stretch;
         justify-content: center;
@@ -102,7 +100,7 @@
             object-fit: cover;
             position: relative;
             z-index: 1;
-            max-height: 500px; // matches page-banner image
+            max-height: 500px; 
         }
     }
 
@@ -116,7 +114,6 @@
         min-height: 300px;
     }
 
-    /* SLIDER TRACK / SLIDES – same size as image column */
     &__track {
         position: relative;
         width: 100%;
@@ -128,46 +125,20 @@
         inset: 0;
         opacity: 0;
         transition: opacity 0.8s ease-in-out;
-        animation-name: heroSliderFade;
-        animation-timing-function: ease-in-out;
-        animation-iteration-count: infinite;
-        animation-duration: 30s; // 6 slides * 5s each
 
         img {
             display: block;
             width: 100%;
             height: 100%;
             object-fit: cover;
-            max-height: 500px; // keep in sync with page-banner
+            max-height: 500px; 
+        }
+
+        &.is-active {
+            opacity: 1;
         }
     }
 
-    /* Up to 6 slides – staggered animation delays */
-    &__slide:nth-child(1) {
-        animation-delay: 0s;
-    }
-
-    &__slide:nth-child(2) {
-        animation-delay: 5s;
-    }
-
-    &__slide:nth-child(3) {
-        animation-delay: 10s;
-    }
-
-    &__slide:nth-child(4) {
-        animation-delay: 15s;
-    }
-
-    &__slide:nth-child(5) {
-        animation-delay: 20s;
-    }
-
-    &__slide:nth-child(6) {
-        animation-delay: 25s;
-    }
-
-    /* MOBILE – mirrors page-banner media queries */
     @media (max-width: 768px) {
         &__wrapper {
             flex-direction: column;
@@ -191,30 +162,6 @@
     }
 }
 
-/* Same fade sequence behavior as pageBannerFade */
-@keyframes heroSliderFade {
-    0% {
-        opacity: 0;
-    }
-
-    5% {
-        opacity: 1;
-    }
-
-    20% {
-        opacity: 1;
-    }
-
-    25% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 0;
-    }
-}
-
-/* Editor-only list styling for the image controls */
 .hero-slider__image-list {
     margin-top: 1.5rem;
     border-top: 1px solid rgba(255, 255, 255, 0.15);

@@ -14,7 +14,6 @@ import {
 import { __ } from '@wordpress/i18n';
 
 const DEFAULT_COLOR = '#007399';
-const MAX_IMAGES = 6;
 
 export default function Edit({ attributes, setAttributes }) {
     const {
@@ -39,7 +38,7 @@ export default function Edit({ attributes, setAttributes }) {
             return;
         }
 
-        const prepared = mediaItems.slice(0, MAX_IMAGES).map((media) => ({
+        const prepared = mediaItems.map((media) => ({
             id: media.id,
             url: media.url,
             alt: media.alt || '',
@@ -91,7 +90,7 @@ export default function Edit({ attributes, setAttributes }) {
                 >
                     <p>
                         {__(
-                            'Upload up to 6 images for the hero slider. Reorder and edit alt text below.',
+                            'Upload images for the hero slider. Reorder and edit alt text below.',
                             'gg-blocks'
                         )}
                     </p>

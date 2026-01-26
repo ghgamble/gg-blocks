@@ -3,22 +3,15 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "wp-scripts start",
     "build": "wp-scripts build"
   },
   "author": "",
   "license": "ISC",
-  "description": "",
   "devDependencies": {
     "@wordpress/scripts": "^31.3.0"
   },
   "dependencies": {
-    "@wordpress/block-editor": "^15.11.0",
-    "@wordpress/blocks": "^15.11.0",
-    "@wordpress/components": "^32.0.0",
-    "@wordpress/element": "^6.26.0",
-    "@wordpress/i18n": "^6.11.0",
     "react-beautiful-dnd": "^13.1.1"
   }
 }
