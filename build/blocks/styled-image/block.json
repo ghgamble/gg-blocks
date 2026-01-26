@@ -1,0 +1,43 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "ggb/styled-image",
+  "title": "Styled Image",
+  "category": "gg-blocks",
+  "description": "Styled image with drop shadow, rounded corners, and aspect ratio control.",
+  "supports": {
+    "align": false,
+    "html": false
+  },
+  "attributes": {
+    "mediaUrl": {
+      "type": "string"
+    },
+    "mediaAlt": {
+      "type": "string"
+    },
+    "borderRadius": {
+      "type": "number",
+      "default": 8
+    },
+    "objectFit": {
+      "type": "string",
+      "default": "cover"
+    },
+    "applyShadow": {
+      "type": "boolean",
+      "default": true
+    },
+    "width": {
+      "type": "number",
+      "default": 100
+    },
+    "aspectRatio": {
+      "type": "string",
+      "default": "original"
+    }
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

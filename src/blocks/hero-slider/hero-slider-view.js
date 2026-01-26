@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Durations (in ms)
         const NORMAL_DURATION = 5000; // ~5 seconds for all slides except last
-        const LAST_DURATION   = 5000; // ~5 seconds for the last slide
+        const LAST_DURATION   = 5000; // ~5 seconds for the last slides
 
         let index = 0;
         let timerId = null;
