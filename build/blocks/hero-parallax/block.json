@@ -1,0 +1,24 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "ggb/hero-parallax",
+  "title": "Hero Parallax",
+  "category": "gg-blocks",
+  "description": "Full-width hero section with a parallax image and flexible native block content",
+  "supports": {
+    "align": false,
+    "html": false
+  },
+  "attributes": {
+    "mediaUrl": {
+      "type": "string"
+    },
+    "mediaType": {
+      "type": "string",
+      "default": "image"
+    }
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

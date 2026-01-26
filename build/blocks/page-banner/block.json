@@ -1,0 +1,35 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "ggb/page-banner",
+  "title": "Page Banner",
+  "category": "gg-blocks",
+  "description": "Two column banner with full-width image",
+  "supports": {
+    "align": [
+      "full"
+    ],
+    "html": false
+  },
+  "attributes": {
+    "mediaUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "mediaAlt": {
+      "type": "string",
+      "default": ""
+    },
+    "backgroundColor": {
+      "type": "string",
+      "default": "#007399"
+    },
+    "gradientStopColor": {
+      "type": "string",
+      "default": "#007399"
+    }
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}
