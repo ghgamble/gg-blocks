@@ -1,0 +1,63 @@
+.wp-block-ggb-folding-page-banner {
+
+	.folding-page-banner-wrap {
+		width: 100%;
+	}
+
+	.folding-page-banner-wrap.is-hidden {
+		display: none;
+	}
+
+	.folding-page-banner.alignfull {
+		width: 100vw;
+		max-width: 100vw;
+		margin-left:  calc(50% - 50vw);
+		margin-right: calc(50% - 50vw);
+		position: relative;
+	}
+
+	.folding-page-banner {
+		position: relative;
+		width: 100%;
+		overflow: hidden;
+		/* JS will animate these: */
+		transform: translateY(0);
+		opacity: 1;
+		transition: transform 0.1s linear, opacity 0.1s linear;
+		will-change: transform, opacity;
+	}
+
+	.folding-page-banner-preview {
+		position: relative;
+		width: 100%;
+		height: 100%;
+	}
+
+	.folding-page-banner-image {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	.folding-page-banner-overlay {
+		position: absolute;
+		inset: 0;
+		display: flex;
+		pointer-events: none;
+	}
+
+	.folding-page-banner-inner {
+		pointer-events: auto;
+		margin-inline: auto;
+		box-sizing: border-box;
+	}
+
+	.folding-page-banner-media-actions {
+		position: absolute;
+		right: 1rem;
+		bottom: 1rem;
+		z-index: 2;
+	}
+}

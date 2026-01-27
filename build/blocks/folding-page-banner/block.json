@@ -1,0 +1,79 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "ggb/folding-page-banner",
+  "title": "Folding Page Banner",
+  "category": "gg-blocks",
+  "icon": "slides",
+  "description": "Full-width page banner matching the Homepage Hero layout with a scroll folding effect.",
+  "supports": {
+    "align": [
+      "full"
+    ],
+    "html": false
+  },
+  "attributes": {
+    "mediaUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "mediaAlt": {
+      "type": "string",
+      "default": ""
+    },
+    "hAlign": {
+      "type": "string",
+      "default": "center"
+    },
+    "vAlign": {
+      "type": "string",
+      "default": "center"
+    },
+    "contentMaxWidth": {
+      "type": "number",
+      "default": 1100
+    },
+    "padding": {
+      "type": "object",
+      "default": {
+        "top": "3rem",
+        "right": "1rem",
+        "bottom": "3rem",
+        "left": "1rem"
+      }
+    },
+    "margin": {
+      "type": "object",
+      "default": {
+        "top": "0",
+        "right": "0",
+        "bottom": "0",
+        "left": "0"
+      }
+    },
+    "overlayColor": {
+      "type": "string",
+      "default": "#000000"
+    },
+    "overlayOpacity": {
+      "type": "number",
+      "default": 0.35
+    },
+    "contentTextColor": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "bannerHeight": {
+      "type": "string",
+      "default": "45vh"
+    },
+    "foldThreshold": {
+      "type": "number",
+      "default": 150
+    }
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js"
+}
