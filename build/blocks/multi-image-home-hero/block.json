@@ -1,0 +1,76 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "ggb/multi-image-home-hero",
+  "title": "Multi Image Home Hero",
+  "category": "gg-blocks",
+  "icon": "slides",
+  "description": "Full-width hero with a background image slider and flexible overlay content.",
+  "supports": {
+    "align": [
+      "full",
+      "wide"
+    ],
+    "html": false
+  },
+  "attributes": {
+    "images": {
+      "type": "array",
+      "default": []
+    },
+    "hAlign": {
+      "type": "string",
+      "default": "center"
+    },
+    "vAlign": {
+      "type": "string",
+      "default": "center"
+    },
+    "contentMaxWidth": {
+      "type": "number",
+      "default": 1100
+    },
+    "padding": {
+      "type": "object",
+      "default": {
+        "top": "4rem",
+        "right": "1rem",
+        "bottom": "4rem",
+        "left": "1rem"
+      }
+    },
+    "margin": {
+      "type": "object",
+      "default": {
+        "top": "0",
+        "right": "0",
+        "bottom": "0",
+        "left": "0"
+      }
+    },
+    "overlayColor": {
+      "type": "string",
+      "default": "#000000"
+    },
+    "overlayOpacity": {
+      "type": "number",
+      "default": 0.35
+    },
+    "contentTextColor": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "heroHeight": {
+      "type": "string",
+      "default": "70vh"
+    },
+    "slideDuration": {
+      "type": "number",
+      "default": 5000
+    }
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js"
+}

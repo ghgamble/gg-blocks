@@ -1,0 +1,85 @@
+.multi-image-home-hero.alignfull {
+	width: 100vw;
+	max-width: 100vw;
+	margin-left: calc(50% - 50vw);
+	margin-right: calc(50% - 50vw);
+	position: relative;
+}
+
+.multi-image-home-hero {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+	color: #fff;
+}
+
+/* Slider background layer */
+.mihh-slider {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	z-index: 1;
+}
+
+.mihh-slide {
+	position: absolute;
+	inset: 0;
+	opacity: 0;
+	transition: opacity 0.8s ease-in-out;
+}
+
+.mihh-slide-image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+}
+
+.mihh-slide.is-active {
+	opacity: 1;
+}
+
+/* Overlay + content */
+.mihh-overlay {
+	position: relative;
+	z-index: 2;
+	inset: 0;
+	display: flex;
+	pointer-events: none;
+	height: 100%;
+	box-sizing: border-box;
+}
+
+.mihh-inner {
+	pointer-events: auto;
+	margin-inline: auto;
+	box-sizing: border-box;
+}
+
+/* Editor-only tweak to avoid outlines */
+.is-editing-post-visual-editor .multi-image-home-hero .mihh-overlay {
+	outline: 0;
+}
+
+/* Alt text list styling in sidebar (optional) */
+.mihh-image-alt-list {
+	margin-top: 1rem;
+	border-top: 1px solid rgba(0, 0, 0, 0.1);
+	padding-top: 0.75rem;
+}
+
+.mihh-image-alt-row {
+	display: flex;
+	gap: 0.75rem;
+	margin-bottom: 0.75rem;
+	align-items: flex-start;
+}
+
+.mihh-image-alt-thumb img {
+	width: 48px;
+	height: 32px;
+	object-fit: cover;
+	border-radius: 3px;
+}
