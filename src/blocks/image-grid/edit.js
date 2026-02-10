@@ -8,24 +8,27 @@ import {
 	Button,
 	PanelBody,
 	ColorPalette,
-	TextControl
+	TextControl,
 } from '@wordpress/components';
 import { useState } from '@wordpress/element';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
 export default function Edit({ attributes, setAttributes }) {
 	const {
-		images,
+		images = [],
 		labelBackgroundColor = '#34d399',
-		overlayBackgroundColor = 'rgba(25, 91, 136, 0.6)'
+		overlayBackgroundColor = 'rgba(25, 91, 136, 0.6)',
 	} = attributes;
+
 	const [dragging, setDragging] = useState(false);
 
+	// ✅ Pull alt from Media Library (alt → alt_text → title)
 	const onSelectImages = (media) => {
 		const newImages = media.map((img) => ({
 			url: img.url,
 			label: '',
 			link: '',
+			alt: img.alt || img.alt_text || img.title || '',
 			id: img.id || img.url,
 		}));
 		setAttributes({ images: newImages });
@@ -33,15 +36,21 @@ export default function Edit({ attributes, setAttributes }) {
 
 	const updateImageField = (index, field, value) => {
 		const updated = [...images];
-		updated[index][field] = value;
+		if (!updated[index]) return;
+		updated[index] = {
+			...updated[index],
+			[field]: value,
+		};
 		setAttributes({ images: updated });
 	};
 
 	const onDragEnd = (result) => {
 		if (!result.destination) return;
+
 		const reordered = Array.from(images);
 		const [moved] = reordered.splice(result.source.index, 1);
 		reordered.splice(result.destination.index, 0, moved);
+
 		setAttributes({ images: reordered });
 	};
 
@@ -56,6 +65,7 @@ export default function Edit({ attributes, setAttributes }) {
 						onChange={(color) => setAttributes({ labelBackgroundColor: color })}
 					/>
 				</PanelBody>
+
 				<PanelBody title="Overlay Background (RGBA)" initialOpen={false}>
 					<TextControl
 						label="Overlay Background Color"
@@ -64,6 +74,20 @@ export default function Edit({ attributes, setAttributes }) {
 						help="Use RGBA for transparency (e.g., rgba(25, 91, 136, 0.6))"
 					/>
 				</PanelBody>
+
+				{images.length > 0 && (
+					<PanelBody title="Image Alt Text" initialOpen={false}>
+						{images.map((img, index) => (
+							<TextControl
+								key={img.id || `alt-${index}`}
+								label={`Alt text for image ${index + 1}`}
+								value={img.alt || ''}
+								onChange={(val) => updateImageField(index, 'alt', val)}
+								help="Describe the image for screen readers. Leave empty if decorative."
+							/>
+						))}
+					</PanelBody>
+				)}
 			</InspectorControls>
 
 			<MediaUploadCheck>
@@ -81,12 +105,24 @@ export default function Edit({ attributes, setAttributes }) {
 				/>
 			</MediaUploadCheck>
 
-			<DragDropContext onDragEnd={onDragEnd} onDragStart={() => setDragging(true)} onDragUpdate={() => setDragging(false)}>
+			<DragDropContext
+				onDragEnd={onDragEnd}
+				onDragStart={() => setDragging(true)}
+				onDragUpdate={() => setDragging(false)}
+			>
 				<Droppable droppableId="image-grid" direction="vertical">
 					{(provided) => (
-						<div className="grid-wrapper" ref={provided.innerRef} {...provided.droppableProps}>
+						<div
+							className="grid-wrapper"
+							ref={provided.innerRef}
+							{...provided.droppableProps}
+						>
 							{images.map((img, index) => (
-								<Draggable key={img.id || `img-${index}`} draggableId={`${img.id || `img-${index}`}`} index={index}>
+								<Draggable
+									key={img.id || `img-${index}`}
+									draggableId={`${img.id || `img-${index}`}`}
+									index={index}
+								>
 									{(provided) => (
 										<div
 											className="styled-img-wrapper"
@@ -95,7 +131,11 @@ export default function Edit({ attributes, setAttributes }) {
 											{...provided.dragHandleProps}
 										>
 											<div className="image-inner">
-												<img src={img.url} alt="" />
+												<img
+													src={img.url}
+													alt={img.alt || ''}
+													aria-hidden={img.alt ? 'false' : 'true'}
+												/>
 												<div
 													className="img-overlay always-visible"
 													style={{ backgroundColor: overlayBackgroundColor }}
@@ -105,17 +145,22 @@ export default function Edit({ attributes, setAttributes }) {
 														value={img.label || ''}
 														placeholder="Overlay label"
 														aria-label={`Overlay label for image ${index + 1}`}
-														onChange={(e) => updateImageField(index, 'label', e.target.value)}
+														onChange={(e) =>
+															updateImageField(index, 'label', e.target.value)
+														}
 													/>
 												</div>
 											</div>
+
 											<input
 												type="url"
 												className="url-input"
 												value={img.link || ''}
 												placeholder="Optional image link (https://...)"
 												aria-label={`Link for image ${index + 1}`}
-												onChange={(e) => updateImageField(index, 'link', e.target.value)}
+												onChange={(e) =>
+													updateImageField(index, 'link', e.target.value)
+												}
 											/>
 										</div>
 									)}

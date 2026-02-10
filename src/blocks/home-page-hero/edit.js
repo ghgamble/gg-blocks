@@ -15,6 +15,7 @@ import {
 	RangeControl,
 	ColorPalette,
 	BoxControl,
+	TextControl,
 } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 import { useMemo } from '@wordpress/element';
@@ -44,7 +45,9 @@ const computeOverlayBg = (color, opacity) => {
 	}
 
 	// rgb/rgba → keep rgb, replace alpha
-	const rgbMatch = /rgba?\(\s*([\d.]+)\s*,\s*([\d.]+)\s*,\s*([\d.]+)(?:\s*,\s*([\d.]+))?\s*\)/i.exec(color || '');
+	const rgbMatch = /rgba?\(\s*([\d.]+)\s*,\s*([\d.]+)\s*,\s*([\d.]+)(?:\s*,\s*([\d.]+))?\s*\)/i.exec(
+		color || ''
+	);
 	if (rgbMatch) {
 		const r = Number(rgbMatch[1]);
 		const g = Number(rgbMatch[2]);
@@ -62,6 +65,8 @@ export default function Edit({ attributes, setAttributes }) {
 	const {
 		mediaUrl,
 		mediaType,
+		mediaAlt,
+		mediaId,
 		hAlign,
 		vAlign,
 		contentMaxWidth,
@@ -73,11 +78,15 @@ export default function Edit({ attributes, setAttributes }) {
 		heroHeight, // e.g., "70vh"
 	} = attributes;
 
+	// ✅ When selecting media, pull alt from the Media Library
+	//    Prefer: alt → alt_text → title
 	const onSelectMedia = (media) => {
 		if (!media || !media.url) return;
 		setAttributes({
 			mediaUrl: media.url,
 			mediaType: media.mime?.startsWith?.('video') ? 'video' : 'image',
+			mediaId: media.id || 0,
+			mediaAlt: media.alt || media.alt_text || media.title || '',
 		});
 	};
 
@@ -130,6 +139,21 @@ export default function Edit({ attributes, setAttributes }) {
 			</BlockControls>
 
 			<InspectorControls>
+				{/* ✅ Image alt editing (only meaningful for images) */}
+				{mediaUrl && mediaType === 'image' && (
+					<PanelBody title={__('Image Accessibility', 'gg-blocks')} initialOpen={true}>
+						<TextControl
+							label={__('Alt text (alternative text)', 'gg-blocks')}
+							value={mediaAlt}
+							onChange={(val) => setAttributes({ mediaAlt: val })}
+							help={__(
+								'Describe the purpose of the image for screen readers. Leave empty if decorative.',
+								'gg-blocks'
+							)}
+						/>
+					</PanelBody>
+				)}
+
 				<PanelBody title={__('Layout', 'gg-blocks')} initialOpen>
 					<SelectControl
 						label={__('Vertical Align', 'gg-blocks')}
@@ -216,14 +240,14 @@ export default function Edit({ attributes, setAttributes }) {
 							<>
 								{!mediaUrl ? (
 									<Placeholder
-										label={__('Homepage Hero Media')}
+										label={__('Homepage Hero Media', 'gg-blocks')}
 										instructions={__(
 											'Upload a video or image to display as the hero background.',
 											'gg-blocks'
 										)}
 									>
 										<Button variant="primary" onClick={open}>
-											{__('Upload Media')}
+											{__('Upload Media', 'gg-blocks')}
 										</Button>
 									</Placeholder>
 								) : (
@@ -241,9 +265,9 @@ export default function Edit({ attributes, setAttributes }) {
 										) : (
 											<img
 												src={mediaUrl}
-												alt=""
+												alt={mediaAlt || ''}
 												className="home-page-hero-image"
-												aria-hidden="true"
+												aria-hidden={mediaAlt ? 'false' : 'true'}
 											/>
 										)}
 
@@ -255,7 +279,7 @@ export default function Edit({ attributes, setAttributes }) {
 
 										<div className="home-page-hero-media-actions">
 											<Button variant="secondary" onClick={open}>
-												{__('Replace Media')}
+												{__('Replace Media', 'gg-blocks')}
 											</Button>
 										</div>
 									</div>

@@ -18,6 +18,14 @@
 			"type": "string",
 			"default": "image"
 		},
+		"mediaAlt": {
+			"type": "string",
+			"default": ""
+		},
+		"mediaId": {
+			"type": "number",
+			"default": 0
+		},
 		"hAlign": {
 			"type": "string",
 			"default": "center"
@@ -60,10 +68,10 @@
 			"type": "string",
 			"default": "#ffffff"
 		},
-        "heroHeight": {
-            "type": "string",
-            "default": "70vh"
-        }
+		"heroHeight": {
+			"type": "string",
+			"default": "70vh"
+		}
 	},
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",

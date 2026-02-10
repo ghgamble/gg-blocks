@@ -45,7 +45,9 @@ const computeOverlayBg = (color, opacity) => {
 	}
 
 	// rgb/rgba → keep rgb, replace alpha
-	const rgbMatch = /rgba?\(\s*([\d.]+)\s*,\s*([\d.]+)\s*,\s*([\d.]+)(?:\s*,\s*([\d.]+))?\s*\)/i.exec(color || '');
+	const rgbMatch = /rgba?\(\s*([\d.]+)\s*,\s*([\d.]+)\s*,\s*([\d.]+)(?:\s*,\s*([\d.]+))?\s*\)/i.exec(
+		color || ''
+	);
 	if (rgbMatch) {
 		const r = Number(rgbMatch[1]);
 		const g = Number(rgbMatch[2]);
@@ -63,6 +65,7 @@ export default function Edit({ attributes, setAttributes }) {
 	const {
 		mediaUrl,
 		mediaAlt,
+		mediaId,
 		hAlign,
 		vAlign,
 		contentMaxWidth,
@@ -75,11 +78,15 @@ export default function Edit({ attributes, setAttributes }) {
 		foldThreshold,
 	} = attributes;
 
+	// When an image is selected, pull its alt from the Media Library.
+	// If alt is empty there, fall back to alt_text or title.
 	const onSelectMedia = (media) => {
 		if (!media || !media.url) return;
+
 		setAttributes({
 			mediaUrl: media.url,
-			mediaAlt: media.alt || '',
+			mediaId: media.id || 0,
+			mediaAlt: media.alt || media.alt_text || media.title || '',
 		});
 	};
 

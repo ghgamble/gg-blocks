@@ -1,4 +1,5 @@
 import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
+import { __ } from '@wordpress/i18n';
 
 /* Helpers (mirror edit.js) */
 const hexToRgb = (hex) => {
@@ -23,7 +24,9 @@ const computeOverlayBg = (color, opacity) => {
 		if (rgb) return `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${o})`;
 	}
 
-	const rgbMatch = /rgba?\(\s*([\d.]+)\s*,\s*([\d.]+)\s*,\s*([\d.]+)(?:\s*,\s*([\d.]+))?\s*\)/i.exec(color || '');
+	const rgbMatch = /rgba?\(\s*([\d.]+)\s*,\s*([\d.]+)\s*,\s*([\d.]+)(?:\s*,\s*([\d.]+))?\s*\)/i.exec(
+		color || ''
+	);
 	if (rgbMatch) {
 		const r = Number(rgbMatch[1]);
 		const g = Number(rgbMatch[2]);
@@ -61,7 +64,8 @@ export default function save({ attributes }) {
 		},
 		'data-fold-threshold': foldThreshold,
 		role: 'region',
-		'aria-label': 'Folding Page Banner',
+		// ✅ use proper aria-* key
+		'aria-label': __('Folding Page Banner', 'gg-blocks'),
 	});
 
 	if (!mediaUrl) {

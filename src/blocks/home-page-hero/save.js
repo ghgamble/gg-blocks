@@ -23,7 +23,9 @@ const computeOverlayBg = (color, opacity) => {
 		if (rgb) return `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${o})`;
 	}
 
-	const rgbMatch = /rgba?\(\s*([\d.]+)\s*,\s*([\d.]+)\s*,\s*([\d.]+)(?:\s*,\s*([\d.]+))?\s*\)/i.exec(color || '');
+	const rgbMatch = /rgba?\(\s*([\d.]+)\s*,\s*([\d.]+)\s*,\s*([\d.]+)(?:\s*,\s*([\d.]+))?\s*\)/i.exec(
+		color || ''
+	);
 	if (rgbMatch) {
 		const r = Number(rgbMatch[1]);
 		const g = Number(rgbMatch[2]);
@@ -40,6 +42,7 @@ export default function save({ attributes }) {
 	const {
 		mediaUrl,
 		mediaType,
+		mediaAlt,
 		hAlign,
 		vAlign,
 		contentMaxWidth,
@@ -78,9 +81,9 @@ export default function save({ attributes }) {
 					) : (
 						<img
 							src={mediaUrl}
-							alt=""
+							alt={mediaAlt || ''}
 							className="home-page-hero-image"
-							aria-hidden="true"
+							aria-hidden={mediaAlt ? 'false' : 'true'}
 						/>
 					)}
 

@@ -1,7 +1,7 @@
 import { useBlockProps } from '@wordpress/block-editor';
 
 export default function save({ attributes }) {
-	const { images, slideDuration } = attributes;
+	const { images = [], slideDuration } = attributes;
 
 	const blockProps = useBlockProps.save({
 		className: 'ggb-image-slider',
@@ -11,13 +11,17 @@ export default function save({ attributes }) {
 	return (
 		<div {...blockProps}>
 			<div className="ggb-image-slider-track">
-			{images.map((img, index) => (
-				img?.url ? (
-					<div key={index} className="slider-image-wrapper">
-						<img src={img.url} alt={img.alt || ''} />
-					</div>
-				) : null
-			))}
+				{images.map((img, index) =>
+					img?.url ? (
+						<div key={img.id || index} className="slider-image-wrapper">
+							<img
+								src={img.url}
+								alt={img.alt || ''}
+								aria-hidden={img.alt ? 'false' : 'true'}
+							/>
+						</div>
+					) : null
+				)}
 			</div>
 		</div>
 	);

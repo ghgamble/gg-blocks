@@ -1,42 +1,50 @@
 // hero-slider-view.js
 document.addEventListener('DOMContentLoaded', function () {
-    const tracks = document.querySelectorAll('.hero-slider__track');
+	const tracks = document.querySelectorAll('.hero-slider__track');
 
-    tracks.forEach(function (track) {
-        const slides = Array.from(track.querySelectorAll('.hero-slider__slide'));
-        if (!slides.length) {
-            return;
-        }
+	// ✅ Respect prefers-reduced-motion for ADA
+	const prefersReducedMotion =
+		window.matchMedia &&
+		window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-        // If there is only one slide, just show it and do nothing else.
-        if (slides.length === 1) {
-            slides[0].classList.add('is-active');
-            return;
-        }
+	tracks.forEach(function (track) {
+		const slides = Array.from(track.querySelectorAll('.hero-slider__slide'));
+		if (!slides.length) {
+			return;
+		}
 
-        // Durations (in ms)
-        const NORMAL_DURATION = 5000; // ~5 seconds for all slides except last
-        const LAST_DURATION   = 5000; // ~5 seconds for the last slides
+		// Always show at least the first slide
+		slides[0].classList.add('is-active');
 
-        let index = 0;
-        let timerId = null;
+		// If there is only one slide OR user prefers reduced motion,
+		// stop here and do not auto-rotate.
+		if (slides.length === 1 || prefersReducedMotion) {
+			return;
+		}
 
-        function showSlide(i) {
-            slides.forEach(function (slide, idx) {
-                slide.classList.toggle('is-active', idx === i);
-            });
+		// Durations (in ms)
+		const NORMAL_DURATION = 5000; // ~5 seconds for all slides except last
+		const LAST_DURATION   = 5000; // ~5 seconds for the last slide
 
-            const isLast = (i === slides.length - 1);
-            const delay  = isLast ? LAST_DURATION : NORMAL_DURATION;
+		let index = 0;
+		let timerId = null;
 
-            clearTimeout(timerId);
-            timerId = setTimeout(function () {
-                index = (index + 1) % slides.length;
-                showSlide(index);
-            }, delay);
-        }
+		function showSlide(i) {
+			slides.forEach(function (slide, idx) {
+				slide.classList.toggle('is-active', idx === i);
+			});
 
-        // Start the loop
-        showSlide(0);
-    });
+			const isLast = (i === slides.length - 1);
+			const delay  = isLast ? LAST_DURATION : NORMAL_DURATION;
+
+			clearTimeout(timerId);
+			timerId = setTimeout(function () {
+				index = (index + 1) % slides.length;
+				showSlide(index);
+			}, delay);
+		}
+
+		// Start the loop from the first slide
+		showSlide(0);
+	});
 });
