@@ -1,35 +1,36 @@
-// edit.js
 import {
     useBlockProps,
     MediaUpload,
     MediaUploadCheck,
 } from '@wordpress/block-editor';
-import { Button } from '@wordpress/components';
+import { Button, TextControl } from '@wordpress/components';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
-export default function Edit( { attributes, setAttributes } ) {
+export default function Edit({ attributes, setAttributes }) {
     const { images = [] } = attributes;
 
+    // Append selected images, pulling alt from Media Library
     const appendImages = (media) => {
         const newOnes = (media || []).map((m) => ({
             id: m.id ?? m.url,
             url: m.url,
-            alt: m.alt || '',
+            alt: m.alt || m.alt_text || m.title || '',
         }));
-        setAttributes({ images: [ ...images, ...newOnes ] });
+        setAttributes({ images: [...images, ...newOnes] });
     };
 
+    // Replace all images, also pulling alt from Media Library
     const replaceImages = (media) => {
         const next = (media || []).map((m) => ({
             id: m.id ?? m.url,
             url: m.url,
-            alt: m.alt || '',
+            alt: m.alt || m.alt_text || m.title || '',
         }));
         setAttributes({ images: next });
     };
 
     const removeImage = (index) => {
-        const next = [ ...images ];
+        const next = [...images];
         next.splice(index, 1);
         setAttributes({ images: next });
     };
@@ -42,11 +43,21 @@ export default function Edit( { attributes, setAttributes } ) {
         setAttributes({ images: next });
     };
 
+    const updateAlt = (index, value) => {
+        const next = [...images];
+        if (!next[index]) return;
+        next[index] = { ...next[index], alt: value };
+        setAttributes({ images: next });
+    };
+
     const blockProps = useBlockProps({ className: 'alignwide multi-img-grid' });
 
     return (
         <div {...blockProps}>
-            <div className="buttons" style={{ display: 'flex', gap: '8px', marginBottom: '12px' }}>
+            <div
+                className="buttons"
+                style={{ display: 'flex', gap: '8px', marginBottom: '12px' }}
+            >
                 <MediaUploadCheck>
                     <MediaUpload
                         onSelect={appendImages}
@@ -81,9 +92,17 @@ export default function Edit( { attributes, setAttributes } ) {
             <DragDropContext onDragEnd={onDragEnd}>
                 <Droppable droppableId="image-grid" direction="vertical">
                     {(provided) => (
-                        <div className="grid-wrapper" ref={provided.innerRef} {...provided.droppableProps}>
+                        <div
+                            className="grid-wrapper"
+                            ref={provided.innerRef}
+                            {...provided.droppableProps}
+                        >
                             {images.map((img, index) => (
-                                <Draggable key={String(img.id ?? `img-${index}`)} draggableId={String(img.id ?? `img-${index}`)} index={index}>
+                                <Draggable
+                                    key={String(img.id ?? `img-${index}`)}
+                                    draggableId={String(img.id ?? `img-${index}`)}
+                                    index={index}
+                                >
                                     {(drag) => (
                                         <figure
                                             className="styled-img-wrapper"
@@ -92,14 +111,39 @@ export default function Edit( { attributes, setAttributes } ) {
                                             {...drag.dragHandleProps}
                                         >
                                             <div className="image-inner">
-                                                {img.url ? <img src={img.url} alt={img.alt || ''} /> : null}
+                                                {img.url ? (
+                                                    <img
+                                                        src={img.url}
+                                                        alt={img.alt || ''}
+                                                    />
+                                                ) : null}
                                             </div>
-                                            <div className="row-actions" style={{ marginTop: '6px' }}>
+
+                                            {/* Alt text editing for accessibility */}
+                                            <div style={{ marginTop: '6px' }}>
+                                                <TextControl
+                                                    label="Alt text"
+                                                    value={img.alt || ''}
+                                                    onChange={(val) =>
+                                                        updateAlt(index, val)
+                                                    }
+                                                    help="Describe this image for screen readers. Leave blank only if the image is purely decorative."
+                                                    aria-label={`Alt text for image ${index + 1}`}
+                                                />
+                                            </div>
+
+                                            <div
+                                                className="row-actions"
+                                                style={{ marginTop: '6px' }}
+                                            >
                                                 <Button
                                                     variant="secondary"
                                                     isDestructive
-                                                    onClick={() => removeImage(index)}
+                                                    onClick={() =>
+                                                        removeImage(index)
+                                                    }
                                                     size="small"
+                                                    aria-label={`Remove image ${index + 1}`}
                                                 >
                                                     Remove
                                                 </Button>

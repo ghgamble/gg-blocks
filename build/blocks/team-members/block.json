@@ -1,0 +1,24 @@
+{
+  "apiVersion": 2,
+  "name": "ggb/team-members",
+  "title": "Team Members Grid",
+  "category": "gg-blocks",
+  "icon": "groups",
+  "description": "A responsive grid of team members. Add as many team member blocks as you like.",
+  "supports": {
+    "align": [
+      "full",
+      "wide"
+    ],
+    "html": false
+  },
+  "attributes": {
+    "backgroundColor": {
+      "type": "string",
+      "default": "#ffffff"
+    }
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}
