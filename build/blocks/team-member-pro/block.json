@@ -47,6 +47,27 @@
     "linkUrl": {
       "type": "string",
       "default": ""
+    },
+    "socialLinks": {
+      "type": "array",
+      "default": [],
+      "items": {
+        "type": "object",
+        "properties": {
+          "service": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "iconClass": {
+            "type": "string"
+          },
+          "ariaLabel": {
+            "type": "string"
+          }
+        }
+      }
     }
   },
   "editorScript": "file:./index.js",
