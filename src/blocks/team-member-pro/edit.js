@@ -206,7 +206,6 @@ export default function Edit({ attributes, setAttributes }) {
 					className="linkedin"
 					value={linkedInUrl}
 					onChange={(value) => {
-						// Strip any accidental <a> tags or HTML
 						const plainUrl = value.replace(
 							/<\/?[^>]+(>|$)/g,
 							''
@@ -217,7 +216,7 @@ export default function Edit({ attributes, setAttributes }) {
 						'Full LinkedIn URL (optional, e.g., https://linkedin.com/in/username)',
 						'gg-blocks'
 					)}
-					allowedFormats={[]} // Prevent link formatting/pasting
+					allowedFormats={[]} 
 				/>
 
 				<div className="link-section">
