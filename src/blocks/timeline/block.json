@@ -1,0 +1,54 @@
+{
+    "apiVersion": 2,
+    "name": "ggb/timeline",
+    "title": "Timeline",
+    "category": "gg-blocks",
+    "description": "Horizontal timeline with responsive vertical stacking on mobile",
+    "supports": {
+        "align": ["full", "wide"],
+        "html": false
+    },
+    "attributes": {
+        "backgroundColor": {
+            "type": "string",
+            "default": "#ffffff"
+        },
+        "accentColor": {
+            "type": "string",
+            "default": "#64748b"
+        },
+        "yearColor": {
+            "type": "string",
+            "default": "#111111"
+        },
+        "eventColor": {
+            "type": "string",
+            "default": "#111111"
+        },
+        "descColor": {
+            "type": "string",
+            "default": "#6b7280"
+        },
+        "yearFontSize": {
+            "type": "number",
+            "default": 18
+        },
+        "eventFontSize": {
+            "type": "number",
+            "default": 13
+        },
+        "descFontSize": {
+            "type": "number",
+            "default": 12
+        },
+        "items": {
+            "type": "array",
+            "default": [
+                { "year": "Year", "event": "Event", "desc": "Description" }
+            ]
+        }
+    },
+    "editorScript": "file:./index.js",
+    "editorStyle": "file:./index.css",
+    "style": "file:./style-index.css"
+}
